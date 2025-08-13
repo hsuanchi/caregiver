@@ -697,28 +697,9 @@
         line-height: 1.6;
       }
 
-      /* Mobile Sidebar Toggle */
+      /* Mobile Sidebar Toggle - Hidden */
       .mobile-toc-toggle {
-        display: none;
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 60px;
-        height: 60px;
-        background: #ff6b35;
-        color: white;
-        border-radius: 50%;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5em;
-        cursor: pointer;
-        z-index: 999;
-        transition: all 0.3s ease;
-      }
-
-      .mobile-toc-toggle:hover {
-        transform: scale(1.1);
+        display: none !important;
       }
 
       /* Disclaimer */
@@ -754,9 +735,6 @@
           display: none;
         }
 
-        .mobile-toc-toggle {
-          display: flex;
-        }
 
         .article-content {
           padding: 30px;
@@ -799,12 +777,6 @@
           grid-template-columns: 1fr;
         }
 
-        .mobile-toc-toggle {
-          bottom: 20px;
-          right: 20px;
-          width: 50px;
-          height: 50px;
-        }
       }
 
       /* Print Styles */
@@ -844,8 +816,6 @@
     <!-- Header Component Container -->
     <div id="header-component"></div>
 
-    <!-- Mobile TOC Toggle -->
-    <div class="mobile-toc-toggle" id="mobileTocToggle">📑</div>
 
     <!-- Article Container -->
     <div class="article-container">

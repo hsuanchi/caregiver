@@ -697,28 +697,30 @@
         line-height: 1.6;
       }
 
-      /* Mobile Sidebar Toggle */
+      /* Mobile Sidebar Toggle - Hidden */
       .mobile-toc-toggle {
-        display: none;
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 60px;
-        height: 60px;
-        background: #ff6b35;
-        color: white;
-        border-radius: 50%;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5em;
-        cursor: pointer;
-        z-index: 999;
-        transition: all 0.3s ease;
+        display: none !important;
       }
 
-      .mobile-toc-toggle:hover {
-        transform: scale(1.1);
+      /* Mobile TOC Overlay Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translate(-50%, -40%);
+        }
+        to {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
       }
 
       /* Disclaimer */
@@ -754,9 +756,6 @@
           display: none;
         }
 
-        .mobile-toc-toggle {
-          display: flex;
-        }
 
         .article-content {
           padding: 30px;
@@ -799,12 +798,6 @@
           grid-template-columns: 1fr;
         }
 
-        .mobile-toc-toggle {
-          bottom: 20px;
-          right: 20px;
-          width: 50px;
-          height: 50px;
-        }
       }
 
       /* Print Styles */
@@ -821,15 +814,6 @@
           background: white;
         }
 
-        .article-container {
-          padding: 0;
-          grid-template-columns: 1fr;
-        }
-
-        .article-content {
-          box-shadow: none;
-          padding: 20px;
-        }
 
         .alert {
           border: 1px solid #ddd;
@@ -844,8 +828,6 @@
     <!-- Header Component Container -->
     <div id="header-component"></div>
 
-    <!-- Mobile TOC Toggle -->
-    <div class="mobile-toc-toggle" id="mobileTocToggle">📑</div>
 
     <!-- Article Container -->
     <div class="article-container">
@@ -1573,7 +1555,8 @@
       const sidebar = document.getElementById("sidebar");
       let isTocOpen = false;
 
-      mobileTocToggle.addEventListener("click", () => {
+      if (mobileTocToggle && sidebar) {
+        mobileTocToggle.addEventListener("click", () => {
         if (!isTocOpen) {
           // Create mobile TOC overlay
           const overlay = document.createElement("div");
@@ -1590,7 +1573,9 @@
                 `;
 
           const mobileToC = sidebar.cloneNode(true);
+          mobileToC.id = "mobileToc";
           mobileToC.style.cssText = `
+                    display: block !important;
                     position: fixed;
                     top: 50%;
                     left: 50%;
@@ -1598,6 +1583,11 @@
                     z-index: 999;
                     max-width: 90%;
                     max-height: 80vh;
+                    overflow-y: auto;
+                    background: white;
+                    padding: 20px;
+                    border-radius: 15px;
+                    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
                     animation: slideIn 0.3s ease;
                 `;
 
@@ -1623,6 +1613,9 @@
           isTocOpen = true;
         }
       });
+      } else {
+        console.log("Mobile TOC Toggle not found:", mobileTocToggle, sidebar);
+      }
 
       // Share Button (檢查是否存在)
       const shareBtn = document.getElementById("shareBtn");
