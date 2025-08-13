@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>組件測試頁面</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #faf8f5;
+        }
+        
+        .test-content {
+            padding: 120px 20px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .test-section {
+            background: white;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2 {
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Component Container -->
+    <div id="header-component"></div>
+
+    <div class="test-content">
+        <div class="test-section">
+            <h1>組件測試頁面</h1>
+            <p>這是一個測試頁面，用來驗證 Header 和 Footer 組件是否正常工作。</p>
+            <p>如果您能看到頁面頂部的導覽列和底部的 Footer，表示組件載入成功！</p>
+        </div>
+
+        <div class="test-section">
+            <h2>測試內容區塊 1</h2>
+            <p>這裡是一些測試內容，用來填充頁面高度，以便測試 Header 的固定定位和 Footer 的顯示效果。</p>
+        </div>
+
+        <div class="test-section">
+            <h2>測試內容區塊 2</h2>
+            <p>繼續添加一些內容，確保頁面有足夠的高度來測試滾動效果。</p>
+        </div>
+
+        <div class="test-section">
+            <h2>測試內容區塊 3</h2>
+            <p>最後一個測試區塊，之後就會看到 Footer 組件。</p>
+        </div>
+    </div>
+
+    <!-- Footer Component Container -->
+    <div id="footer-component"></div>
+
+    <!-- Load Components -->
+    <script src="../assets/js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-footer-component.js"></script>
+
+    <script>
+        // Initialize Components
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 開始初始化組件');
+            
+            // Initialize Header Component  
+            const headerContainer = document.getElementById('header-component');
+            console.log('📋 Header container:', headerContainer);
+            console.log('📋 DeusHeaderComponent available:', !!window.DeusHeaderComponent);
+            
+            if (headerContainer && window.DeusHeaderComponent) {
+                const header = new window.DeusHeaderComponent(headerContainer)
+                    .setDebug(true)
+                    .setTheme('default')
+                    .setLogo('組件測試')
+                    .setNavLinks([
+                        { text: '首頁', href: 'homepage-complete.html' },
+                        { text: '營養素', href: '#nutrients' },
+                        { text: '工具', href: '#tools' },
+                        { text: '測試', href: '#test' }
+                    ]);
+                console.log('✅ Header 組件初始化完成');
+            } else {
+                console.error('❌ Header 組件初始化失敗');
+            }
+            
+            // Initialize Footer Component
+            const footerContainer = document.getElementById('footer-component');
+            console.log('📋 Footer container:', footerContainer);
+            console.log('📋 DeusFooterComponent available:', !!window.DeusFooterComponent);
+            
+            if (footerContainer && window.DeusFooterComponent) {
+                const footer = new window.DeusFooterComponent(footerContainer)
+                    .setDebug(true)
+                    .setTheme('default')
+                    .setCompanyName('組件測試')
+                    .setCompanyDescription('這是一個測試用的 Footer 組件');
+                console.log('✅ Footer 組件初始化完成');
+            } else {
+                console.error('❌ Footer 組件初始化失敗');
+            }
+        });
+    </script>
+</body>
+</html>

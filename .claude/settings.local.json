@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:www.pexels.com)",
+      "Bash(ls:*)",
+      "Bash(node:*)",
+      "Bash(python3:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(find:*)",
+      "Bash(rm:*)",
+      "Bash(diff:*)",
+      "Bash(grep:*)"
+    ],
+    "deny": []
+  }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>組件除錯測試</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        .debug-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 9999;
+        }
+        .content {
+            padding: 120px 20px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            min-height: 80vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-info" id="debugInfo">載入中...</div>
+    
+    <!-- Header Component Container -->
+    <div id="header-component"></div>
+
+    <div class="content">
+        <h1>除錯測試頁面</h1>
+        <p>這個頁面用來測試組件是否正常載入。</p>
+        <p>檢查右上角的除錯資訊。</p>
+    </div>
+
+    <!-- Footer Component Container -->
+    <div id="footer-component"></div>
+
+    <script>
+        const debugInfo = document.getElementById('debugInfo');
+        
+        function updateDebug(message) {
+            console.log(message);
+            debugInfo.innerHTML += '<br>' + message;
+        }
+        
+        updateDebug('🚀 開始載入腳本...');
+    </script>
+
+    <!-- Load Components -->
+    <script src="../assets/js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-footer-component.js"></script>
+
+    <script>
+        updateDebug('📋 檢查組件可用性...');
+        updateDebug('Header: ' + (typeof window.DeusHeaderComponent));
+        updateDebug('Footer: ' + (typeof window.DeusFooterComponent));
+        
+        // Initialize Components
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDebug('🎯 DOM 準備完成，開始初始化...');
+            
+            // Initialize Header Component  
+            const headerContainer = document.getElementById('header-component');
+            updateDebug('Header container: ' + !!headerContainer);
+            
+            if (headerContainer && window.DeusHeaderComponent) {
+                try {
+                    const header = new window.DeusHeaderComponent(headerContainer)
+                        .setDebug(true)
+                        .setTheme('default')
+                        .setLogo('測試頁面');
+                    updateDebug('✅ Header 初始化成功');
+                } catch (e) {
+                    updateDebug('❌ Header 初始化失敗: ' + e.message);
+                }
+            } else {
+                updateDebug('❌ Header 初始化條件不滿足');
+            }
+            
+            // Initialize Footer Component
+            const footerContainer = document.getElementById('footer-component');
+            updateDebug('Footer container: ' + !!footerContainer);
+            
+            if (footerContainer && window.DeusFooterComponent) {
+                try {
+                    const footer = new window.DeusFooterComponent(footerContainer)
+                        .setDebug(true)
+                        .setTheme('default');
+                    updateDebug('✅ Footer 初始化成功');
+                } catch (e) {
+                    updateDebug('❌ Footer 初始化失敗: ' + e.message);
+                }
+            } else {
+                updateDebug('❌ Footer 初始化條件不滿足');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>魚油完整指南：功效、副作用、EPA 與 DHA 怎麼選？ | 營養百科</title>
+    <meta
+      name="description"
+      content="專業營養師詳細解析魚油的功效、副作用、EPA 與 DHA 的黃金比例，並教您如何挑選最適合的魚油產品，守護心血管與大腦健康。"
+    />
+    <meta
+      name="keywords"
+      content="魚油, 魚油功效, 魚油推薦, Omega-3, EPA, DHA, 魚油怎麼選, 三酸甘油酯, 心血管保健, 大腦健康"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+        line-height: 1.8;
+        color: #2d3748;
+        background: #faf8f5;
+      }
+
+      /* Progress Bar */
+      .progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
+        z-index: 1001;
+        transition: width 0.3s ease;
+      }
+
+      .share-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #4a5568;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background: rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .share-btn:hover {
+        background: #ff6b35;
+        color: white;
+      }
+
+      /* Article Layout */
+      .article-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 100px 20px 60px;
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 60px;
+        position: relative;
+      }
+
+      /* Sidebar Table of Contents */
+      .sidebar {
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+      }
+
+      .toc {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .toc-title {
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .toc-list {
+        list-style: none;
+      }
+
+      .toc-list li {
+        margin-bottom: 12px;
+      }
+
+      .toc-list a {
+        color: #4a5568;
+        text-decoration: none;
+        font-size: 0.95em;
+        display: block;
+        padding: 5px 0;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .toc-list a::before {
+        content: "";
+        position: absolute;
+        left: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 0;
+        background: #ff6b35;
+        transition: height 0.3s ease;
+      }
+
+      .toc-list a.active {
+        color: #ff6b35;
+        font-weight: 600;
+      }
+
+      .toc-list a.active::before {
+        height: 20px;
+      }
+
+      .toc-list a:hover {
+        color: #ff6b35;
+        padding-left: 10px;
+      }
+
+      /* Main Content Area */
+      .article-content {
+        background: white;
+        border-radius: 20px;
+        padding: 50px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Article Header */
+      .article-header {
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .article-hero {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        border-radius: 20px;
+        padding: 60px;
+        margin-bottom: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .article-hero::before {
+        content: "🐟";
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        font-size: 150px;
+        opacity: 0.1;
+        transform: rotate(-15deg);
+      }
+
+      .article-hero::after {
+        content: "💊";
+        position: absolute;
+        left: -10px;
+        bottom: -10px;
+        font-size: 100px;
+        opacity: 0.1;
+        transform: rotate(15deg);
+      }
+
+      .article-category {
+        display: inline-block;
+        background: white;
+        color: #ff6b35;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        font-weight: 600;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .article-title {
+        font-size: 2.5em;
+        font-weight: 800;
+        color: #2d3748;
+        line-height: 1.3;
+        margin-bottom: 20px;
+        max-width: 800px;
+      }
+
+      .article-subtitle {
+        font-size: 1.3em;
+        color: #4a5568;
+        line-height: 1.6;
+        max-width: 700px;
+        margin-bottom: 30px;
+      }
+
+      .article-meta {
+        display: flex;
+        gap: 30px;
+        color: #718096;
+        font-size: 0.95em;
+        flex-wrap: wrap;
+      }
+
+      .article-meta span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* Alert Boxes */
+      .alert {
+        padding: 20px 25px;
+        border-radius: 15px;
+        margin: 30px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .alert::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+      }
+
+      .alert-doctor {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+
+      .alert-doctor::before {
+        background: #dc2626;
+      }
+
+      .alert-nutritionist {
+        background: #dbeafe;
+        color: #1e3a8a;
+      }
+
+      .alert-nutritionist::before {
+        background: #2563eb;
+      }
+
+      .alert-tip {
+        background: #f0fdf4;
+        color: #14532d;
+      }
+
+      .alert-tip::before {
+        background: #22c55e;
+      }
+
+      .alert strong {
+        font-weight: 700;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      /* Tables */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .data-table thead {
+        background: linear-gradient(135deg, #ff6b35 0%, #ff8f65 100%);
+        color: white;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 15px 20px;
+        text-align: left;
+      }
+
+      .data-table th {
+        font-weight: 600;
+      }
+
+      .data-table tbody tr {
+        border-bottom: 1px solid #e5e7eb;
+        transition: background 0.3s ease;
+      }
+
+      .data-table tbody tr:hover {
+        background: #f9fafb;
+      }
+
+      .data-table tbody tr:last-child {
+        border-bottom: none;
+      }
+
+      /* Visual Info Cards */
+      .info-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 40px 0;
+      }
+
+      .info-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .info-card:visited {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .info-card:active {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .info-card:focus {
+        outline: 2px solid #ff6b35;
+        outline-offset: 2px;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .info-card-icon {
+        font-size: 3em;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .info-card-title {
+        font-size: 1.3em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 10px;
+      }
+
+      .info-card-desc {
+        color: #718096;
+        font-size: 0.95em;
+        line-height: 1.6;
+      }
+
+      .info-card-value {
+        font-size: 2em;
+        font-weight: 800;
+        color: #ff6b35;
+        margin: 10px 0;
+      }
+
+      /* Quick Read Card Specific Styles */
+      .quick-read-card {
+        cursor: pointer;
+        position: relative;
+        padding-bottom: 50px; /* 為點擊提示留出空間 */
+      }
+
+      .quick-read-card:hover .card-click-hint {
+        transform: translateX(-50%) scale(1.05);
+      }
+
+      .card-click-hint {
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(135deg, #ff6b35, #ff8f65);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 15px;
+        font-size: 0.8em;
+        font-weight: 500;
+        opacity: 1;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        pointer-events: none;
+        text-align: center;
+      }
+
+      .card-click-hint::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid #ff6b35;
+      }
+
+      /* Orange underline for strong text in benefits section */
+      #benefits .info-card-desc strong {
+        border-bottom: 2px solid #ff6b35;
+        padding-bottom: 1px;
+      }
+
+      /* Orange underline for highlighted nutrients */
+      .highlight-nutrient {
+        border-bottom: 2px solid #ff6b35;
+        padding-bottom: 1px;
+      }
+
+      /* Story Section */
+      .story-intro {
+        background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+        border-radius: 20px;
+        padding: 40px;
+        margin: 40px 0;
+        position: relative;
+      }
+
+      .story-intro h3 {
+        font-size: 1.8em;
+        color: #3730a3;
+        margin-bottom: 20px;
+      }
+
+      .story-intro p {
+        font-size: 1.1em;
+        line-height: 1.8;
+        color: #4c1d95;
+      }
+
+      /* Quick Test */
+      .quick-test {
+        background: #f0fdf4;
+        border-radius: 20px;
+        padding: 40px;
+        margin: 40px 0;
+        text-align: center;
+      }
+
+      .quick-test h3 {
+        font-size: 1.8em;
+        color: #14532d;
+        margin-bottom: 20px;
+      }
+
+      .test-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 30px;
+      }
+
+      .test-option {
+        background: #f8fafc;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 18px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .test-option:hover {
+        background: #fff7ed;
+        border-color: #fed7aa;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(251, 146, 60, 0.15);
+      }
+
+      .test-option input[type="checkbox"] {
+        display: none;
+      }
+
+      .test-option.selected {
+        background: linear-gradient(135deg, #ff6b35 0%, #fb923c 100%);
+        border-color: #ff6b35;
+        color: white;
+        box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+      }
+      .test-option.selected:hover {
+        background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+        transform: translateY(-2px);
+        color: white;
+      }
+
+      /* Content Typography */
+      .article-body h2 {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin: 50px 0 30px;
+        padding-top: 20px;
+        position: relative;
+      }
+
+      .article-body h2::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 4px;
+        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
+        border-radius: 2px;
+      }
+
+      .article-body h3 {
+        font-size: 1.5em;
+        font-weight: 600;
+        color: #2d3748;
+        margin: 35px 0 20px;
+      }
+
+      .article-body h4 {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #4a5568;
+        margin: 25px 0 15px;
+      }
+
+      .article-body p {
+        margin-bottom: 20px;
+        color: #4a5568;
+      }
+
+      .article-body ul,
+      .article-body ol {
+        margin: 20px 0;
+        padding-left: 30px;
+        color: #4a5568;
+      }
+
+      .article-body li {
+        margin-bottom: 10px;
+      }
+
+      .article-body blockquote {
+        border-left: 4px solid #ff6b35;
+        padding-left: 20px;
+        margin: 30px 0;
+        font-style: italic;
+        color: #718096;
+      }
+
+      .article-body strong {
+        color: #2d3748;
+        font-weight: 600;
+      }
+
+      /* FAQ Section */
+      .faq-section {
+        margin-top: 60px;
+        padding-top: 40px;
+        border-top: 2px solid #e5e7eb;
+      }
+
+      .faq-item {
+        background: #f9fafb;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-question {
+        padding: 20px 25px;
+        font-weight: 600;
+        color: #2d3748;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .faq-question::after {
+        content: "+";
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5em;
+        color: #ff6b35;
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.active .faq-question::after {
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      .faq-answer {
+        padding: 0 25px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item.active .faq-answer {
+        padding: 0 25px 20px;
+        max-height: 500px;
+      }
+
+      /* Related Articles */
+      .related-section {
+        margin-top: 80px;
+        padding: 60px 0;
+        background: #faf8f5;
+        border-radius: 20px;
+      }
+
+      .related-title {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .related-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .related-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .related-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .related-card-tag {
+        display: inline-block;
+        background: #e0e7ff;
+        color: #3730a3;
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 0.85em;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .related-card-title {
+        font-size: 1.3em;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+
+      .related-card-desc {
+        color: #718096;
+        font-size: 0.95em;
+        line-height: 1.6;
+      }
+
+      /* Mobile Sidebar Toggle */
+      .mobile-toc-toggle {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background: #ff6b35;
+        color: white;
+        border-radius: 50%;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5em;
+        cursor: pointer;
+        z-index: 999;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-toc-toggle:hover {
+        transform: scale(1.1);
+      }
+
+      /* Disclaimer */
+      .disclaimer {
+        background: #f9fafb;
+        padding: 60px 0;
+        text-align: center;
+      }
+      .disclaimer-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .disclaimer h3 {
+        color: #4b5563;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+      }
+      .disclaimer p {
+        color: #6b7280;
+        font-size: 0.95em;
+        line-height: 1.8;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .article-container {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+
+        .sidebar {
+          display: none;
+        }
+
+        .mobile-toc-toggle {
+          display: flex;
+        }
+
+        .article-content {
+          padding: 30px;
+        }
+
+        .article-title {
+          font-size: 2em;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-breadcrumb {
+          display: none;
+        }
+
+        .article-content {
+          padding: 20px;
+          border-radius: 15px;
+        }
+
+        .article-title {
+          font-size: 1.8em;
+        }
+
+        .article-meta {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .data-table {
+          font-size: 0.9em;
+        }
+
+        .data-table th,
+        .data-table td {
+          padding: 10px;
+        }
+
+        .related-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mobile-toc-toggle {
+          bottom: 20px;
+          right: 20px;
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      /* Print Styles */
+      @media print {
+        .header,
+        .sidebar,
+        .mobile-toc-toggle,
+        .share-btn,
+        .related-section {
+          display: none;
+        }
+
+        body {
+          background: white;
+        }
+
+        .article-container {
+          padding: 0;
+          grid-template-columns: 1fr;
+        }
+
+        .article-content {
+          box-shadow: none;
+          padding: 20px;
+        }
+
+        .alert {
+          border: 1px solid #ddd;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Header Component Container -->
+    <div id="header-component"></div>
+
+    <!-- Mobile TOC Toggle -->
+    <div class="mobile-toc-toggle" id="mobileTocToggle">📑</div>
+
+    <!-- Article Container -->
+    <div class="article-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="toc">
+          <h3 class="toc-title">
+            <span>📑</span>
+            <span>目錄</span>
+          </h3>
+          <ul class="toc-list">
+            <li><a href="#summary" class="toc-link">30 秒速讀版</a></li>
+            <li><a href="#self-check" class="toc-link">你需要魚油嗎？</a></li>
+            <li><a href="#basics" class="toc-link">魚油基礎知識</a></li>
+            <li><a href="#benefits" class="toc-link">魚油的神奇功效</a></li>
+            <li><a href="#how-to-choose" class="toc-link">選購攻略</a></li>
+            <li><a href="#how-to-take" class="toc-link">怎麼吃最有效</a></li>
+            <li><a href="#food-sources" class="toc-link">天然食物來源</a></li>
+            <li><a href="#safety" class="toc-link">注意事項</a></li>
+            <li><a href="#faq" class="toc-link">常見問題</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="article-content">
+        <!-- Article Header -->
+        <header class="article-header">
+          <div class="article-hero">
+            <span class="article-category">營養素指南</span>
+            <h1 class="article-title">
+              還在煩惱魚油怎麼選？讓專業營養師幫你一次搞懂！
+            </h1>
+            <p class="article-subtitle">
+              從 EPA、DHA 到
+              TG、rTG，那些讓人頭痛的專有名詞，今天讓我們用最簡單的方式說給你聽。
+            </p>
+            <div class="article-meta">
+              <span>✍️ 專業營養師審核</span>
+              <span>📅 2025 年 7 月 16 日更新</span>
+              <span>⏱️ 閱讀時間：15 分鐘</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Article Body -->
+        <article class="article-body">
+          <!-- Story Introduction -->
+          <div class="story-intro">
+            <h3>🤔 你是不是也有這些困擾？</h3>
+            <p>
+              「老闆，我要買魚油！」走進藥局，架上琳瑯滿目的魚油產品讓人眼花撩亂。EPA、DHA、TG
+              型、rTG
+              型...這些專有名詞是不是讓你頭很大？別擔心，今天就讓營養師用最簡單的方式，帶你一次搞懂魚油的秘密！
+            </p>
+            <p>
+              <strong>💡 這篇文章會告訴你：</strong
+              >你是否需要魚油？如何挑選？怎麼吃最有效？看完保證不再迷茫！
+            </p>
+          </div>
+
+          <section id="summary">
+            <h2>30 秒速讀版</h2>
+
+            <div class="info-cards">
+              <a href="#benefits" class="info-card quick-read-card">
+                <span class="info-card-icon">🐟</span>
+                <h4 class="info-card-title">有什麼好處？</h4>
+                <p class="info-card-desc">
+                  降血脂、護心臟、增記憶<br />抗發炎、護眼睛
+                </p>
+                <div class="card-click-hint">點擊了解詳情</div>
+              </a>
+              <a href="#how-to-choose" class="info-card quick-read-card">
+                <span class="info-card-icon">🛒</span>
+                <h4 class="info-card-title">怎麼選購？</h4>
+                <p class="info-card-desc">
+                  濃度 80% 以上、rTG 型態<br />有 IFOS 認證最安心
+                </p>
+                <div class="card-click-hint">點擊了解詳情</div>
+              </a>
+              <a href="#how-to-take" class="info-card quick-read-card">
+                <span class="info-card-icon">💊</span>
+                <h4 class="info-card-title">怎麼服用？</h4>
+                <p class="info-card-desc">
+                  每日 1000-2000mg<br />隨餐吃吸收最好
+                </p>
+                <div class="card-click-hint">點擊了解詳情</div>
+              </a>
+            </div>
+
+            <p
+              style="
+                text-align: center;
+                margin-top: 30px;
+                color: #718096;
+                font-size: 1.1em;
+              "
+            >
+              還不確定自己需不需要魚油？先來做個快速檢測吧！👇
+            </p>
+          </section>
+
+          <section id="self-check">
+            <h2>快來看看你是不是需要補充魚油的人？</h2>
+
+            <div class="quick-test">
+              <h3>魚油需求自我檢測</h3>
+              <p>以下情況，你中了幾個？</p>
+              <div class="test-options">
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>三餐老是在外，炸雞排是好朋友</span>
+                </label>
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>健檢報告出現紅字（尤其是三酸甘油酯）</span>
+                </label>
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>常常忘東忘西，感覺腦霧很嚴重</span>
+                </label>
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>整天盯著電腦/手機，眼睛超級累</span>
+                </label>
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>關節卡卡不舒服</span>
+                </label>
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>正在懷孕或哺乳中</span>
+                </label>
+              </div>
+              <p style="margin-top: 20px; color: #14532d; font-weight: 600">
+                勾選 2 個以上？你可能真的需要補充魚油囉！
+              </p>
+            </div>
+          </section>
+
+          <section id="basics">
+            <h2>魚油到底是什麼？讓我們從頭說起</h2>
+
+            <h3>🐟 簡單說，魚油就是...</h3>
+            <p>
+              想像一下，如果我們的身體是一台精密的機器，那魚油就像是高級潤滑油！它是從鮭魚、鯖魚、沙丁魚這些「油脂豐富」的深海魚類身上萃取出來的珍貴營養素。
+            </p>
+
+            <p style="margin-bottom: 25px">
+              魚油之所以這麼神奇，主要是因為裡面含有兩種超重要的營養素：<strong
+                class="highlight-nutrient"
+                >EPA</strong
+              >
+              和 <strong class="highlight-nutrient">DHA</strong>。<span
+                class="highlight-nutrient"
+                >這兩個就是魚油發揮功效的秘密武器！</span
+              >
+            </p>
+
+            <div class="info-cards">
+              <div class="info-card">
+                <span class="info-card-icon">🛡️</span>
+                <h4 class="info-card-title">EPA (護心專家)</h4>
+                <p class="info-card-desc">
+                  全名叫「二十碳五烯酸」，<span class="highlight-nutrient"
+                    >是身體的抗發炎戰士</span
+                  ><br />專門對付血管裡的壞東西，降低三酸甘油酯，保護你的心臟
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🧠</span>
+                <h4 class="info-card-title">DHA (護腦專家)</h4>
+                <p class="info-card-desc">
+                  全名叫「二十二碳六烯酸」，<span class="highlight-nutrient"
+                    >是大腦的建築材料</span
+                  ><br />構成大腦和眼睛的重要成分，讓你思路清晰、視力清楚
+                </p>
+              </div>
+            </div>
+
+            <p
+              style="
+                text-align: center;
+                margin-top: 40px;
+                color: #718096;
+                font-size: 1.1em;
+              "
+            >
+              了解了魚油的基本原理，接下來看看它到底能為我們做什麼！👇
+            </p>
+          </section>
+
+          <section id="benefits">
+            <h2>魚油的神奇功效 - 為什麼這麼多人在吃？</h2>
+
+            <p>
+              魚油就像身體的「全能保養師」，從頭到腳都能照顧到！不同族群都有自己的魚油需求，來看看你屬於哪一種：
+            </p>
+
+            <div class="info-cards">
+              <div class="info-card">
+                <span class="info-card-icon">💼</span>
+                <h4 class="info-card-title">外食族的心血管救星</h4>
+                <p class="info-card-desc">
+                  炸雞排、鹽酥雞是好朋友？<strong>EPA 降三酸甘油酯</strong
+                  ><br />幫你平衡外食的油膩，健檢紅字說掰掰！
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🎓</span>
+                <h4 class="info-card-title">考生的大腦營養師</h4>
+                <p class="info-card-desc">
+                  需要清晰思考、提升記憶力？<strong>DHA 是大腦建築師</strong
+                  ><br />讓你思路清晰、專注力滿滿，考試更順利！
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🤰</span>
+                <h4 class="info-card-title">媽媽寶寶的腦力加油站</h4>
+                <p class="info-card-desc">
+                  寶寶的大腦發育關鍵期？<strong>DHA 助攻智力發展</strong
+                  ><br />WHO 建議孕期每日 200mg，為寶寶打好基礎！
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">👴</span>
+                <h4 class="info-card-title">銀髮族的青春守護者</h4>
+                <p class="info-card-desc">
+                  擔心記憶力衰退、心血管問題？<strong>魚油延緩老化</strong
+                  ><br />保護心臟、維持腦力，讓老後生活更有品質！
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">📱</span>
+                <h4 class="info-card-title">3C 族的眼睛保護罩</h4>
+                <p class="info-card-desc">
+                  整天盯螢幕眼睛乾澀疲勞？<strong>DHA 構成視網膜</strong
+                  ><br />守護你的靈魂之窗，減少乾眼困擾！
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🏃</span>
+                <h4 class="info-card-title">運動者的關節潤滑油</h4>
+                <p class="info-card-desc">
+                  關節痠痛、運動恢復慢？<strong>EPA 抗發炎超讚</strong
+                  ><br />減少運動傷害，讓你行走如風、活力滿分！
+                </p>
+              </div>
+            </div>
+
+            <p
+              style="
+                text-align: center;
+                margin-top: 40px;
+                color: #718096;
+                font-size: 1.1em;
+              "
+            >
+              知道魚油這麼適合你了，現在來學學怎麼選購吧！👇
+            </p>
+          </section>
+
+          <section id="how-to-choose">
+            <h2>魚油選購攻略 - 不被騙的完整指南！</h2>
+
+            <p>
+              市面上的魚油產品五花八門，價格從幾百到幾千都有。到底該怎麼選？讓營養師告訴你不踩雷的秘訣！
+            </p>
+
+            <div class="quick-test">
+              <h3>選購小撇步</h3>
+              <p>
+                <strong
+                  >記住這個順序：濃度 > 型態 > 新鮮度 > 認證 > 價格</strong
+                >
+              </p>
+            </div>
+
+            <div class="info-cards">
+              <div class="info-card">
+                <span class="info-card-icon">📊</span>
+                <h4 class="info-card-title">1. 看濃度</h4>
+                <div class="info-card-value">80%+</div>
+                <p class="info-card-desc">
+                  Omega-3 濃度要超過 80%<br />濃度越高，雜質越少
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">⚗️</span>
+                <h4 class="info-card-title">2. 看型態</h4>
+                <div class="info-card-value">rTG 最佳</div>
+                <p class="info-card-desc">
+                  吸收率最好的型態<br />雖然貴但物超所值
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">⚖️</span>
+                <h4 class="info-card-title">3. 看比例</h4>
+                <div class="info-card-value">看需求</div>
+                <p class="info-card-desc">EPA 護心血管<br />DHA 護大腦眼睛</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🌿</span>
+                <h4 class="info-card-title">4. 看新鮮度</h4>
+                <div class="info-card-value">TOTOX < 10</div>
+                <p class="info-card-desc">
+                  數值越低越新鮮<br />新鮮的魚油不會腥
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🔬</span>
+                <h4 class="info-card-title">5. 看萃取法</h4>
+                <div class="info-card-value">超臨界 CO2</div>
+                <p class="info-card-desc">
+                  最純淨的萃取方式<br />無溶劑殘留風險
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🏅</span>
+                <h4 class="info-card-title">6. 看認證</h4>
+                <div class="info-card-value">IFOS 認證</div>
+                <p class="info-card-desc">國際權威認證<br />品質安全有保障</p>
+              </div>
+            </div>
+
+            <div class="alert alert-tip">
+              <strong>💡 小提醒：</strong>
+              不要只看價格！便宜的魚油通常濃度低、雜質多，最後反而花更多錢。
+            </div>
+
+            <p
+              style="
+                text-align: center;
+                margin-top: 40px;
+                color: #718096;
+                font-size: 1.1em;
+              "
+            >
+              選好魚油了？接下來學學怎麼吃才最有效！👇
+            </p>
+          </section>
+
+          <section id="how-to-take">
+            <h2>怎麼吃最有效？魚油服用完全攻略</h2>
+
+            <h3>不同需求的建議劑量</h3>
+
+            <div class="info-cards">
+              <div class="info-card">
+                <span class="info-card-icon">🏃</span>
+                <h4 class="info-card-title">日常保養</h4>
+                <div class="info-card-value">500mg</div>
+                <p class="info-card-desc">
+                  EPA+DHA 總量<br />維持基本健康就夠了
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">❤️</span>
+                <h4 class="info-card-title">心血管保健</h4>
+                <div class="info-card-value">1000-2000mg</div>
+                <p class="info-card-desc">
+                  有效降低三酸甘油酯<br />保護心血管健康
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🧠</span>
+                <h4 class="info-card-title">大腦保養</h4>
+                <div class="info-card-value">500-1000mg</div>
+                <p class="info-card-desc">DHA 為主<br />提升記憶力和專注力</p>
+              </div>
+            </div>
+
+            <h3>什麼時候吃最好？</h3>
+            <div class="alert alert-tip">
+              <strong>💡 最佳服用時間：</strong>
+              <ul>
+                <li>
+                  <strong>隨餐吃</strong>：特別是有油脂的餐點，吸收效果最好
+                </li>
+                <li><strong>分次吃</strong>：一天分 2-3 次，減少腸胃不適</li>
+                <li><strong>冷凍後吃</strong>：怕魚腥味的人的救星！</li>
+              </ul>
+            </div>
+            <h3>安全劑量範圍</h3>
+            <div class="alert alert-tip">
+              <strong>💡 安全劑量建議：</strong>
+              <ul>
+                <li><strong>FDA 建議</strong>：每日 EPA+DHA 不超過 5000mg</li>
+                <li><strong>一般建議</strong>：1000-2000mg 就很足夠了</li>
+                <li><strong>高劑量風險</strong>：超過 3000mg 可能影響凝血</li>
+              </ul>
+            </div>
+
+            <p
+              style="
+                text-align: center;
+                margin-top: 40px;
+                color: #718096;
+                font-size: 1.1em;
+              "
+            >
+              不想吃魚油？也可以從天然食物攝取 Omega-3 喔！👇
+            </p>
+          </section>
+
+          <section id="food-sources">
+            <h2>天然食物也能補充 Omega-3！</h2>
+
+            <h3>Omega-3 食物冠軍榜</h3>
+
+            <div class="info-cards">
+              <div class="info-card">
+                <span class="info-card-icon">🐟</span>
+                <h4 class="info-card-title">鯖魚</h4>
+                <div class="info-card-value">2300mg</div>
+                <p class="info-card-desc">
+                  每 100g 含量<br /><strong>CP 值最高的選擇！</strong>
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🍣</span>
+                <h4 class="info-card-title">沙丁魚</h4>
+                <div class="info-card-value">1900mg</div>
+                <p class="info-card-desc">
+                  連骨頭一起吃<br /><strong>還能補充鈣質！</strong>
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🌿</span>
+                <h4 class="info-card-title">藻油</h4>
+                <div class="info-card-value">素食專用</div>
+                <p class="info-card-desc">
+                  純素來源 DHA<br /><strong>素食者首選！</strong>
+                </p>
+              </div>
+            </div>
+
+            <div class="alert alert-tip">
+              <strong>🐟 營養師建議：</strong>
+              每週吃 2 次深海魚類（大約一個巴掌大），就能攝取到基本的 Omega-3
+              需求！小型魚類比大型魚更安全，重金屬污染較少。
+            </div>
+
+            <p
+              style="
+                text-align: center;
+                margin-top: 40px;
+                color: #718096;
+                font-size: 1.1em;
+              "
+            >
+              吃魚油有什麼需要注意的嗎？來看看安全資訊！👇
+            </p>
+          </section>
+
+          <section id="safety">
+            <h2>安全第一！魚油的注意事項</h2>
+
+            <p>
+              魚油雖然好，但不是每個人都適合，也不是吃越多越好！來看看有什麼要注意的：
+            </p>
+
+            <h3>這些人要特別小心</h3>
+
+            <div class="info-cards">
+              <div class="info-card">
+                <span class="info-card-icon">💊</span>
+                <h4 class="info-card-title">正在吃藥的人</h4>
+                <p class="info-card-desc">
+                  特別是抗凝血藥物<br /><strong>一定要先問醫師！</strong>
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🏥</span>
+                <h4 class="info-card-title">準備開刀的人</h4>
+                <p class="info-card-desc">
+                  術前 2 週要停止服用<br /><strong>避免出血風險</strong>
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🩸</span>
+                <h4 class="info-card-title">凝血功能異常</h4>
+                <p class="info-card-desc">
+                  如血友病患者<br /><strong>絕對要避免使用</strong>
+                </p>
+              </div>
+            </div>
+
+            <h3>常見副作用與解決方法</h3>
+
+            <div class="alert alert-tip">
+              <strong>魚腥味打嗝</strong>
+              <ul>
+                <li>把魚油放冷凍庫，像小冰塊一樣吞</li>
+                <li>選擇腸溶膠囊，在腸道才分解</li>
+                <li>隨餐服用，混合食物一起消化</li>
+              </ul>
+            </div>
+
+            <div class="alert alert-doctor">
+              <strong>腸胃不適</strong>
+              <ul>
+                <li>從低劑量開始，讓身體慢慢適應</li>
+                <li>分次服用，不要一次吞太多</li>
+                <li>絕對不要空腹吃</li>
+              </ul>
+            </div>
+          </section>
+
+          <p
+            style="
+              text-align: center;
+              margin-top: 40px;
+              color: #718096;
+              font-size: 1.1em;
+            "
+          >
+            還有問題嗎？來看看最常被問的問題！👇
+          </p>
+
+          <!-- FAQ Section -->
+          <section id="faq" class="faq-section">
+            <h2>常見問題</h2>
+
+            <div class="faq-item">
+              <div class="faq-question">魚油跟魚肝油不是一樣的東西嗎？</div>
+              <div class="faq-answer">
+                <p><strong>大錯特錯！這兩個完全不一樣喔！</strong></p>
+                <p>簡單記法：</p>
+                <ul>
+                  <li>
+                    <strong>魚油</strong> = 魚的「脂肪」萃取 = 補充
+                    Omega-3（EPA、DHA）
+                  </li>
+                  <li>
+                    <strong>魚肝油</strong> = 魚的「肝臟」萃取 = 補充維生素 A、D
+                  </li>
+                </ul>
+                <p>小心！維生素 A、D 吃太多會中毒，千萬別搞混囉！</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">魚油要空腹吃還是飯後吃？</div>
+              <div class="faq-answer">
+                <p><strong>當然是配飯吃最好！</strong></p>
+                <p>
+                  為什麼呢？因為魚油是「油」，需要其他油脂幫忙才好吸收。建議在一天中最豐盛的那餐（通常是午餐或晚餐）一起吃，吸收效果最讚！
+                </p>
+                <p>
+                  Pro
+                  tip：如果怕魚腥味，可以把魚油放冰箱冷凍，吃起來就像小糖果一樣！
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">我吃素耶，有素食的魚油嗎？</div>
+              <div class="faq-answer">
+                <p><strong>有的！答案是「藻油」！</strong></p>
+                <p>
+                  其實魚的 Omega-3
+                  也是從吃藻類來的，所以直接吃藻油等於是「跳過中間商」！藻油富含
+                  DHA，完全植物來源，素食者的最佳選擇。
+                </p>
+                <p>
+                  別傻傻地狂吃亞麻籽油，轉換率超低的（不到
+                  10%），不如直接吃藻油！
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">吃了魚油一直打魚腥嗝，救命啊！</div>
+              <div class="faq-answer">
+                <p><strong>別擔心，這裡有解方！</strong></p>
+                <p>試試這些小撇步：</p>
+                <ol>
+                  <li>
+                    <strong>冷凍大法</strong>：把魚油放冷凍庫，凍成小冰塊再吞
+                  </li>
+                  <li>
+                    <strong>配餐吃</strong
+                    >：跟著食物一起下肚，混在一起就沒味道了
+                  </li>
+                  <li>
+                    <strong>選腸溶錠</strong>：在腸子才溶解，胃裡不會有味道
+                  </li>
+                  <li>
+                    <strong>挑新鮮的</strong>：TOTOX 值越低越新鮮，腥味自然少
+                  </li>
+                </ol>
+                <p>💡 如果以上都沒用，可能是魚油品質有問題，考慮換個牌子吧！</p>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        <!-- Related Articles -->
+        <h2 class="related-title">相關營養素</h2>
+        <div class="related-grid">
+          <a href="#" class="related-card">
+            <span class="related-card-tag">維生素</span>
+            <h3 class="related-card-title">維生素 D</h3>
+            <p class="related-card-desc">
+              陽光維生素對骨骼健康、免疫功能的重要性，以及如何選擇適合的補充品。
+            </p>
+          </a>
+          <a href="#" class="related-card">
+            <span class="related-card-tag">礦物質</span>
+            <h3 class="related-card-title">鈣質</h3>
+            <p class="related-card-desc">
+              了解鈣質對骨骼、肌肉和神經系統的關鍵作用，以及最佳補充方式。
+            </p>
+          </a>
+          <a href="#" class="related-card">
+            <span class="related-card-tag">其他營養素</span>
+            <h3 class="related-card-title">輔酶 Q10</h3>
+            <p class="related-card-desc">
+              探索細胞能量的關鍵營養素，對心血管健康和抗氧化的重要功能。
+            </p>
+          </a>
+        </div>
+      </main>
+    </div>
+
+    <!-- Disclaimer Section -->
+    <section class="disclaimer">
+      <div class="disclaimer-content">
+        <h3>免責聲明</h3>
+        <p>
+          本資訊僅供教育目的，不能取代專業醫療建議。開始任何營養補充計劃前，請諮詢醫療專業人員。個人需求可能因健康狀況、藥物使用和生活方式而有所不同。
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer Component Container -->
+    <div id="footer-component"></div>
+
+    <!-- Load Components -->
+    <script src="../assets/js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-footer-component.js"></script>
+
+    <script>
+      // Progress Bar
+      function updateProgressBar() {
+        const scrollPosition = window.scrollY;
+        const documentHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (scrollPosition / documentHeight) * 100;
+        document.getElementById("progressBar").style.width =
+          scrollPercentage + "%";
+      }
+
+      window.addEventListener("scroll", updateProgressBar);
+
+      // Table of Contents Highlighting
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".toc-link");
+
+      function highlightTOC() {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100;
+          const sectionHeight = section.offsetHeight;
+          const scrollPosition = window.scrollY;
+
+          if (
+            scrollPosition >= sectionTop &&
+            scrollPosition < sectionTop + sectionHeight
+          ) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", highlightTOC);
+      highlightTOC();
+
+      // Smooth Scroll for TOC Links
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          const targetSection = document.querySelector(targetId);
+
+          if (targetSection) {
+            const yOffset = -80;
+            const y =
+              targetSection.getBoundingClientRect().top +
+              window.pageYOffset +
+              yOffset;
+
+            window.scrollTo({ top: y, behavior: "smooth" });
+          }
+        });
+      });
+
+      // FAQ Toggle
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const item = question.parentElement;
+          item.classList.toggle("active");
+
+          // Close other FAQ items
+          document.querySelectorAll(".faq-item").forEach((otherItem) => {
+            if (otherItem !== item) {
+              otherItem.classList.remove("active");
+            }
+          });
+        });
+      });
+
+      // Mobile TOC Toggle
+      const mobileTocToggle = document.getElementById("mobileTocToggle");
+      const sidebar = document.getElementById("sidebar");
+      let isTocOpen = false;
+
+      mobileTocToggle.addEventListener("click", () => {
+        if (!isTocOpen) {
+          // Create mobile TOC overlay
+          const overlay = document.createElement("div");
+          overlay.className = "mobile-toc-overlay";
+          overlay.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0,0,0,0.5);
+                    z-index: 998;
+                    animation: fadeIn 0.3s ease;
+                `;
+
+          const mobileToC = sidebar.cloneNode(true);
+          mobileToC.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 999;
+                    max-width: 90%;
+                    max-height: 80vh;
+                    animation: slideIn 0.3s ease;
+                `;
+
+          overlay.appendChild(mobileToC);
+          document.body.appendChild(overlay);
+
+          // Close on overlay click
+          overlay.addEventListener("click", (e) => {
+            if (e.target === overlay) {
+              overlay.remove();
+              isTocOpen = false;
+            }
+          });
+
+          // Close on link click
+          mobileToC.querySelectorAll(".toc-link").forEach((link) => {
+            link.addEventListener("click", () => {
+              overlay.remove();
+              isTocOpen = false;
+            });
+          });
+
+          isTocOpen = true;
+        }
+      });
+
+      // Share Button (檢查是否存在)
+      const shareBtn = document.getElementById("shareBtn");
+      if (shareBtn) {
+        shareBtn.addEventListener("click", async (e) => {
+          e.preventDefault();
+
+          if (navigator.share) {
+            try {
+              await navigator.share({
+                title: document.title,
+                text: "來看看這篇關於魚油的完整指南！",
+                url: window.location.href,
+              });
+            } catch (err) {
+              console.log("Share cancelled");
+            }
+          } else {
+            // Fallback - copy to clipboard
+            navigator.clipboard.writeText(window.location.href);
+            alert("連結已複製到剪貼簿！");
+          }
+        });
+      }
+
+      // Add animations
+      const style = document.createElement("style");
+      style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            @keyframes slideIn {
+                from {
+                    opacity: 0;
+                    transform: translate(-50%, -45%);
+                }
+                to {
+                    opacity: 1;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        `;
+      document.head.appendChild(style);
+
+      // Initialize Components
+      function initializeComponents() {
+        console.log("🚀 開始初始化組件");
+
+        // Initialize Header Component
+        const headerContainer = document.getElementById("header-component");
+        console.log("📋 Header container:", headerContainer);
+        console.log(
+          "📋 DeusHeaderComponent available:",
+          !!window.DeusHeaderComponent
+        );
+
+        if (headerContainer && window.DeusHeaderComponent) {
+          const header = new window.DeusHeaderComponent(headerContainer)
+            .setDebug(false)
+            .setTheme("default")
+            .setActionButtons({
+              login: { text: "登入", href: "#login", show: false },
+              signup: { text: "免費註冊", href: "#signup", show: false },
+              share: {
+                text: "分享",
+                show: false,
+                callback: async function (e) {
+                  e.preventDefault();
+                  if (navigator.share) {
+                    try {
+                      await navigator.share({
+                        title: document.title,
+                        text: "來看看這篇關於魚油的完整指南！",
+                        url: window.location.href,
+                      });
+                    } catch (err) {
+                      console.log("Share cancelled");
+                    }
+                  } else {
+                    navigator.clipboard.writeText(window.location.href);
+                    alert("連結已複製到剪貼簿！");
+                  }
+                },
+              },
+            });
+          console.log("✅ Header 組件初始化完成");
+        } else {
+          console.error("❌ Header 組件初始化失敗");
+        }
+
+        // Initialize Footer Component
+        const footerContainer = document.getElementById("footer-component");
+        console.log("📋 Footer container:", footerContainer);
+        console.log(
+          "📋 DeusFooterComponent available:",
+          !!window.DeusFooterComponent
+        );
+
+        if (footerContainer && window.DeusFooterComponent) {
+          const footer = new window.DeusFooterComponent(footerContainer)
+            .setDebug(false)
+            .setTheme("default");
+          console.log("✅ Footer 組件初始化完成");
+        } else {
+          console.error("❌ Footer 組件初始化失敗");
+        }
+      }
+
+      // 確保在所有腳本載入後再初始化
+      document.addEventListener("DOMContentLoaded", function () {
+        // 延遲一點時間確保組件腳本都載入完成
+        setTimeout(initializeComponents, 100);
+      });
+
+      // Interactive test options
+      document.querySelectorAll(".test-option").forEach((option) => {
+        option.addEventListener("click", function () {
+          const checkbox = this.querySelector('input[type="checkbox"]');
+          checkbox.checked = !checkbox.checked;
+          this.classList.toggle("selected", checkbox.checked);
+
+          // For fish oil type test (single selection)
+          if (checkbox.name === "fish-oil-type") {
+            document
+              .querySelectorAll('input[name="fish-oil-type"]')
+              .forEach((cb) => {
+                if (cb !== checkbox) {
+                  cb.checked = false;
+                  cb.parentElement.classList.remove("selected");
+                }
+              });
+          }
+
+          // Count checked items for need test
+          if (checkbox.name === "need-test") {
+            const checkedCount = document.querySelectorAll(
+              'input[name="need-test"]:checked'
+            ).length;
+            const resultText = document.querySelector(
+              ".quick-test p:last-child"
+            );
+            if (checkedCount >= 2) {
+              resultText.style.color = "#dc2626";
+              resultText.innerHTML = `你勾選了 ${checkedCount} 個！看來你真的需要補充魚油了！`;
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

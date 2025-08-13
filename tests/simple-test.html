@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡單測試</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        
+        /* 直接寫 Header 樣式測試 */
+        .test-header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .test-nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .test-logo {
+            font-size: 1.8em;
+            font-weight: 800;
+            color: #ff6b35;
+        }
+        
+        .test-nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .test-nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .test-content {
+            padding: 120px 20px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            min-height: 80vh;
+        }
+        
+        .debug-panel {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: #333;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 12px;
+            max-width: 300px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- 直接的 Header HTML 測試 -->
+    <header class="test-header">
+        <div class="test-nav-container">
+            <div class="test-logo">測試 Header</div>
+            <ul class="test-nav-links">
+                <li><a href="#">首頁</a></li>
+                <li><a href="#">營養素</a></li>
+                <li><a href="#">工具</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="test-content">
+        <h1>Header 顯示測試</h1>
+        <p>如果您能看到頁面頂部的橘色 "測試 Header" 字樣，表示基本的 CSS 定位是正常的。</p>
+        <p>接下來我們會測試 Shadow DOM 組件。</p>
+        
+        <h2>組件容器測試</h2>
+        <p>下面是組件容器，應該會顯示組件內容：</p>
+        
+        <!-- Header Component Container -->
+        <div id="header-component" style="border: 2px dashed red; padding: 10px; margin: 20px 0;">
+            <p>完整版 Header 組件應該出現在這裡</p>
+        </div>
+        
+        <!-- Simple Header Component Container -->
+        <div id="simple-header-component" style="border: 2px dashed green; padding: 10px; margin: 20px 0;">
+            <p>簡化版 Header 組件應該出現在這裡</p>
+        </div>
+
+        <!-- Footer Component Container -->
+        <div id="footer-component" style="border: 2px dashed blue; padding: 10px; margin: 20px 0;">
+            <p>Footer 組件應該出現在這裡</p>
+        </div>
+    </div>
+
+    <div class="debug-panel" id="debugPanel">
+        <strong>除錯資訊：</strong><br>
+        <div id="debugLog">載入中...</div>
+    </div>
+
+    <script>
+        const debugLog = document.getElementById('debugLog');
+        
+        function log(message) {
+            console.log(message);
+            debugLog.innerHTML += '<br>' + message;
+        }
+        
+        log('🚀 開始測試...');
+        log('頁面載入時間: ' + new Date().toLocaleTimeString());
+    </script>
+
+    <!-- Load Components -->
+    <script src="../assets/js/deus-header-component.js" onerror="log('❌ Header 腳本載入失敗')" onload="log('✅ Header 腳本載入成功')"></script>
+    <script src="../assets/js/deus-header-simple.js" onerror="log('❌ 簡化版 Header 腳本載入失敗')" onload="log('✅ 簡化版 Header 腳本載入成功')"></script>
+    <script src="../assets/js/deus-footer-component.js" onerror="log('❌ Footer 腳本載入失敗')" onload="log('✅ Footer 腳本載入成功')"></script>
+
+    <script>
+        log('檢查組件可用性...');
+        log('Header 組件: ' + (typeof window.DeusHeaderComponent));
+        log('簡化版 Header 組件: ' + (typeof window.DeusHeaderSimple));
+        log('Footer 組件: ' + (typeof window.DeusFooterComponent));
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            log('DOM 載入完成');
+            
+            // 檢查容器
+            const headerContainer = document.getElementById('header-component');
+            const simpleHeaderContainer = document.getElementById('simple-header-component');
+            const footerContainer = document.getElementById('footer-component');
+            
+            log('Header 容器: ' + !!headerContainer);
+            log('簡化版 Header 容器: ' + !!simpleHeaderContainer);
+            log('Footer 容器: ' + !!footerContainer);
+            
+            // 嘗試初始化 Header
+            if (headerContainer && window.DeusHeaderComponent) {
+                try {
+                    log('嘗試初始化 Header...');
+                    const header = new window.DeusHeaderComponent(headerContainer);
+                    log('✅ Header 初始化成功');
+                    
+                    // 檢查 Shadow DOM
+                    if (headerContainer.shadowRoot) {
+                        log('✅ Header Shadow DOM 建立成功');
+                    } else {
+                        log('❌ Header Shadow DOM 未建立');
+                    }
+                } catch (e) {
+                    log('❌ Header 初始化失敗: ' + e.message);
+                    log('錯誤堆疊: ' + e.stack);
+                }
+            } else {
+                log('❌ Header 初始化條件不滿足');
+            }
+            
+            // 嘗試初始化簡化版 Header
+            if (simpleHeaderContainer && window.DeusHeaderSimple) {
+                try {
+                    log('嘗試初始化簡化版 Header...');
+                    const simpleHeader = new window.DeusHeaderSimple(simpleHeaderContainer);
+                    log('✅ 簡化版 Header 初始化成功');
+                } catch (e) {
+                    log('❌ 簡化版 Header 初始化失敗: ' + e.message);
+                }
+            } else {
+                log('❌ 簡化版 Header 初始化條件不滿足');
+            }
+            
+            // 嘗試初始化 Footer
+            if (footerContainer && window.DeusFooterComponent) {
+                try {
+                    log('嘗試初始化 Footer...');
+                    const footer = new window.DeusFooterComponent(footerContainer);
+                    log('✅ Footer 初始化成功');
+                } catch (e) {
+                    log('❌ Footer 初始化失敗: ' + e.message);
+                }
+            } else {
+                log('❌ Footer 初始化條件不滿足');
+            }
+        });
+    </script>
+</body>
+</html>
