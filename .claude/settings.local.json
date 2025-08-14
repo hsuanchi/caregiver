@@ -12,7 +12,8 @@
       "Bash(find:*)",
       "Bash(rm:*)",
       "Bash(diff:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(git add:*)"
     ],
     "deny": []
   }

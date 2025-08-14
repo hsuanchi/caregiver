@@ -63,6 +63,14 @@
         color: #ff6b35;
       }
 
+      .mobile-only {
+        display: none;
+      }
+
+      .desktop-only {
+        display: inline;
+      }
+
       .hero-subtitle {
         font-size: 1.3em;
         color: #718096;
@@ -752,14 +760,61 @@
 
       /* Responsive Design */
       @media (max-width: 768px) {
+        .hero {
+          padding: 100px 15px 80px;
+        }
+
         .hero-container {
           grid-template-columns: 1fr;
           gap: 40px;
           text-align: center;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .hero-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          order: 2;
+        }
+
+        .hero-visual {
+          order: 1;
         }
 
         .hero-title {
-          font-size: 2.5em;
+          font-size: 2em;
+          line-height: 1.3;
+        }
+        
+        .mobile-only {
+          display: inline;
+        }
+        
+        .desktop-only {
+          display: none;
+        }
+        
+        .hero-title .highlight {
+          display: inline;
+          font-size: 1em;
+          margin: 0;
+        }
+
+        .hero-subtitle {
+          font-size: 1.1em;
+          padding: 0 10px;
+          line-height: 1.7;
+        }
+
+        .search-container {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .trust-indicators {
+          display: none;
         }
 
         .main-plate {
@@ -768,26 +823,35 @@
           transform: translateY(0);
         }
 
+        .hero-visual {
+          position: relative;
+          margin: 20px auto;
+          width: 320px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
         .floating-element {
           position: absolute;
-          padding: 10px;
-          gap: 8px;
-          transform: scale(0.75);
+          padding: 8px;
+          gap: 6px;
+          transform: scale(0.6);
         }
 
         .floating-element.vitamin {
-          top: 10%;
-          right: 5%;
+          top: 5%;
+          right: 0;
         }
 
         .floating-element.mineral {
-          bottom: 20%;
-          right: 5%;
+          bottom: 15%;
+          right: 0;
         }
 
         .floating-element.omega {
-          top: 30%;
-          left: 5%;
+          top: 25%;
+          left: 0;
         }
 
         .element-icon {
@@ -832,8 +896,9 @@
       <div class="hero-container">
         <div class="hero-content">
           <h1 class="hero-title">
-            您的專屬<br />
-            <span class="highlight">營養智庫</span>：<br />
+            <span class="desktop-only">您的專屬<br /></span>
+            <span class="mobile-only">您的專屬<span class="highlight">營養智庫</span><br /></span>
+            <span class="desktop-only"><span class="highlight">營養智庫</span>：<br /></span>
             科學選擇，健康生活
           </h1>
           <p class="hero-subtitle">
