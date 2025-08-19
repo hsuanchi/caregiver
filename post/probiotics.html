@@ -6,7 +6,7 @@
     <title>益生菌完整指南：功效、副作用、怎麼選才有效？ | 營養百科</title>
     <meta
       name="description"
-      content="專業營養師詳細解析益生菌的功效、副作用、菌株選擇指南、建議劑量和產品選購要點。了解益生菌對健康的重要性。"
+      content="專業營養師詳細解析益生菌的腸道健康功能、免疫支持作用、菌株選擇指南、建議劑量和產品選購要點。了解益生菌對健康的重要性。"
     />
     <meta
       name="keywords"
@@ -99,7 +99,7 @@
       }
 
       .toc-list li {
-        margin-bottom: 12px;
+        margin-bottom: 8px;
       }
 
       .toc-list a {
@@ -107,35 +107,64 @@
         text-decoration: none;
         font-size: 0.95em;
         display: block;
-        padding: 5px 0;
+        padding: 8px 12px;
         transition: all 0.3s ease;
+        position: relative;
+        border-radius: 8px;
+        border-left: 3px solid transparent;
+      }
+
+      /* 第一階層樣式 */
+      .toc-list a:not(.sub-item) {
+        font-weight: 600;
+        background: rgba(255, 107, 53, 0.05);
+        margin-bottom: 4px;
+      }
+
+      /* 第二階層樣式 */
+      .toc-list a.sub-item {
+        margin-left: 16px;
+        font-size: 0.9em;
+        color: #718096;
+        background: rgba(113, 128, 150, 0.03);
+        border-left-color: #e2e8f0;
         position: relative;
       }
 
-      .toc-list a::before {
+      /* 第二階層前的連線效果 */
+      .toc-list a.sub-item::before {
         content: "";
         position: absolute;
-        left: -20px;
+        left: -12px;
         top: 50%;
+        width: 8px;
+        height: 1px;
+        background: #d1d5db;
         transform: translateY(-50%);
-        width: 3px;
-        height: 0;
-        background: #ff6b35;
-        transition: height 0.3s ease;
       }
 
       .toc-list a.active {
         color: #ff6b35;
+        background: rgba(255, 107, 53, 0.1);
+        border-left-color: #ff6b35;
         font-weight: 600;
       }
 
-      .toc-list a.active::before {
-        height: 20px;
+      .toc-list a.active.sub-item {
+        color: #ff6b35;
+        background: rgba(255, 107, 53, 0.08);
+        border-left-color: #ff8f65;
+      }
+
+      .toc-list a.active.sub-item::before {
+        background: #ff8f65;
       }
 
       .toc-list a:hover {
         color: #ff6b35;
-        padding-left: 10px;
+        background: rgba(255, 107, 53, 0.08);
+        border-left-color: #ff8f65;
+        transform: translateX(2px);
       }
 
       /* Main Content Area */
@@ -159,26 +188,6 @@
         margin-bottom: 40px;
         position: relative;
         overflow: hidden;
-      }
-
-      .article-hero::before {
-        content: "🦠";
-        position: absolute;
-        right: -20px;
-        top: -20px;
-        font-size: 150px;
-        opacity: 0.1;
-        transform: rotate(-15deg);
-      }
-
-      .article-hero::after {
-        content: "💊";
-        position: absolute;
-        left: -10px;
-        bottom: -10px;
-        font-size: 100px;
-        opacity: 0.1;
-        transform: rotate(15deg);
       }
 
       .article-category {
@@ -361,7 +370,7 @@
       }
 
       .info-card-icon {
-        font-size: 3em;
+        font-size: 2.5em;
         margin-bottom: 15px;
         display: block;
       }
@@ -390,7 +399,7 @@
       .quick-read-card {
         cursor: pointer;
         position: relative;
-        padding-bottom: 50px; /* 為點擊提示留出空間 */
+        padding-bottom: 50px;
       }
 
       .quick-read-card:hover .card-click-hint {
@@ -724,6 +733,22 @@
         line-height: 1.8;
       }
 
+      /* Summary Box */
+      .summary-box {
+        background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
+        border-radius: 20px;
+        padding: 40px;
+        margin: 40px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .summary-box h3 {
+        font-size: 1.8em;
+        color: #ea580c;
+        margin-bottom: 20px;
+      }
+
       /* Responsive Design */
       @media (max-width: 1024px) {
         .article-container {
@@ -734,7 +759,6 @@
         .sidebar {
           display: none;
         }
-
 
         .article-content {
           padding: 30px;
@@ -776,7 +800,6 @@
         .related-grid {
           grid-template-columns: 1fr;
         }
-
       }
 
       /* Print Styles */
@@ -816,7 +839,6 @@
     <!-- Header Component Container -->
     <div id="header-component"></div>
 
-
     <!-- Article Container -->
     <div class="article-container">
       <!-- Sidebar -->
@@ -829,12 +851,24 @@
           <ul class="toc-list">
             <li><a href="#summary" class="toc-link">30 秒速讀版</a></li>
             <li><a href="#self-check" class="toc-link">你需要益生菌嗎？</a></li>
+            <li>
+              <a href="#target-groups" class="toc-link sub-item">適用人群</a>
+            </li>
             <li><a href="#basics" class="toc-link">益生菌基礎知識</a></li>
-            <li><a href="#benefits" class="toc-link">益生菌的神奇功效</a></li>
-            <li><a href="#how-to-choose" class="toc-link">選購攻略</a></li>
-            <li><a href="#how-to-take" class="toc-link">怎麼吃最有效</a></li>
-            <li><a href="#food-sources" class="toc-link">天然食物來源</a></li>
-            <li><a href="#safety" class="toc-link">注意事項</a></li>
+            <li>
+              <a href="#benefits" class="toc-link sub-item">功能與作用機制</a>
+            </li>
+            <li>
+              <a href="#dosage" class="toc-link sub-item">建議攝取量與時間</a>
+            </li>
+            <li>
+              <a href="#natural-sources" class="toc-link sub-item"
+                >天然食物來源</a
+              >
+            </li>
+            <li>
+              <a href="#product-selection" class="toc-link">如何選擇產品</a>
+            </li>
             <li><a href="#faq" class="toc-link">常見問題</a></li>
           </ul>
         </div>
@@ -845,24 +879,23 @@
         <!-- Article Header -->
         <header class="article-header">
           <div class="article-hero">
-            <span class="article-category">營養素指南</span>
+            <span class="article-category">營養師審核</span>
             <h1 class="article-title">
-              還在困惑益生菌怎麼選？專業營養師教你一次搞懂！
+              益生菌完整指南：功效、副作用、怎麼選才有效？
             </h1>
             <p class="article-subtitle">
-              從菌株種類到 CFU 數量，那些複雜的專有名詞，今天讓我們用最簡單的方式說給你聽。
+              營養師專業提醒：益生菌是維持腸道健康的關鍵，但市面上菌株種類繁多，菌數越高越好嗎？本篇將帶您深入了解益生菌的奧秘，助您選對菌株，打造健康腸道。
             </p>
             <div class="article-meta">
               <span>✍️ 專業營養師審核</span>
-              <span>📅 2025 年 8 月 4 日更新</span>
-              <span>⏱️ 閱讀時間：15 分鐘</span>
+              <span>📅 2025 年 8 月 17 日更新</span>
+              <span>⏱️ 閱讀時間：18 分鐘</span>
             </div>
           </div>
         </header>
 
         <!-- Article Body -->
         <article class="article-body">
-          <!-- Story Introduction -->
           <div class="story-intro">
             <h3>🤔 你是不是也有這些困擾？</h3>
             <p>
@@ -873,7 +906,6 @@
               你是否需要益生菌？如何挑選？怎麼吃最有效？看完保證不再迷茫！
             </p>
           </div>
-
           <section id="summary">
             <h2>30 秒速讀版</h2>
 
@@ -882,23 +914,23 @@
                 <span class="info-card-icon">🦠</span>
                 <h4 class="info-card-title">有什麼好處？</h4>
                 <p class="info-card-desc">
-                  整腸健胃、增強免疫<br />改善過敏、穩定情緒
+                  維持腸道平衡、支持消化<br />增強免疫、改善屏障功能
                 </p>
                 <div class="card-click-hint">點擊了解詳情</div>
               </a>
-              <a href="#how-to-choose" class="info-card quick-read-card">
-                <span class="info-card-icon">🛒</span>
-                <h4 class="info-card-title">怎麼選購？</h4>
-                <p class="info-card-desc">
-                  看菌株編號、CFU 數量<br />認證標章最重要
-                </p>
-                <div class="card-click-hint">點擊了解詳情</div>
-              </a>
-              <a href="#how-to-take" class="info-card quick-read-card">
+              <a href="#dosage" class="info-card quick-read-card">
                 <span class="info-card-icon">💊</span>
                 <h4 class="info-card-title">怎麼服用？</h4>
                 <p class="info-card-desc">
-                  每日 100-500 億 CFU<br />配溫水、避免熱飲
+                  每日 100 - 500 億 CFU<br />餐前服用、配溫水
+                </p>
+                <div class="card-click-hint">點擊了解詳情</div>
+              </a>
+              <a href="#product-selection" class="info-card quick-read-card">
+                <span class="info-card-icon">🛒</span>
+                <h4 class="info-card-title">怎麼選購？</h4>
+                <p class="info-card-desc">
+                  看菌株編號、活菌數量<br />包裝保存、認證標章
                 </p>
                 <div class="card-click-hint">點擊了解詳情</div>
               </a>
@@ -953,24 +985,97 @@
               </p>
             </div>
           </section>
-
-          <section id="basics">
-            <h2>益生菌到底是什麼？讓我們從頭說起</h2>
-
-            <h3>🦠 簡單說，益生菌就是...</h3>
+          <section id="target-groups">
+            <h2>哪些人適合補充益生菌？</h2>
             <p>
-              想像一下，如果我們的腸道是一個大城市，那益生菌就像是「好市民」！它們是對人體有益的活性微生物，主要住在我們的腸道裡，幫忙維持城市的和平與秩序。
+              並非每個人都需要額外補充益生菌，但現代生活型態確實讓許多人的腸道健康亮起紅燈。<span
+                class="highlight-nutrient"
+                ><strong>腸胃功能不佳者</strong>是最直接的受益族群</span
+              >，長期便秘、腹瀉或腸躁症都暗示腸道菌群可能失衡；<span
+                class="highlight-nutrient"
+                ><strong>抗生素使用者</strong></span
+              >則因為藥物會「無差別攻擊」腸道菌群，急需補充好菌來重建平衡；<span
+                class="highlight-nutrient"
+                ><strong>免疫力不佳者</strong></span
+              >可透過調節腸道菌群來強化全身免疫；而<span
+                class="highlight-nutrient"
+                ><strong>高壓力族群</strong></span
+              >常因為「腸腦軸線」失調導致消化問題，益生菌有助穩定情緒。此外，<span
+                class="highlight-nutrient"
+                ><strong>嬰幼兒</strong></span
+              >的腸道菌群尚未成熟，適度補充有助建立健康基礎；<span
+                class="highlight-nutrient"
+                ><strong>經常旅行者</strong></span
+              >則可預防水土不服引起的腸胃不適。
             </p>
 
-            <p style="margin-bottom: 25px">
-              益生菌之所以這麼神奇，主要是因為它們有兩大家族：<strong
+            <div class="info-cards">
+              <div class="info-card">
+                <h4 class="info-card-title">腸胃不適者</h4>
+                <p class="info-card-desc">
+                  <strong>關鍵警訊：</strong>便秘、腹瀉、脹氣、腸躁症 (IBS)<br />
+                  腸道菌群失衡是許多腸胃問題的根源
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">抗生素使用者</h4>
+                <p class="info-card-desc">
+                  <strong>關鍵警訊：</strong>服用抗生素期間或之後出現腹瀉<br />
+                  抗生素會破壞腸道中的好菌
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">免疫力低下者</h4>
+                <p class="info-card-desc">
+                  <strong>關鍵警訊：</strong>容易感冒、過敏、皮膚狀況不佳<br />
+                  約70%的免疫細胞集中在腸道
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">壓力大、情緒不穩的族群</h4>
+                <p class="info-card-desc">
+                  <strong>關鍵警訊：</strong>焦慮、情緒低落、睡眠品質差<br />
+                  腸腦軸線影響神經傳導物質產生
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">嬰幼兒與兒童</h4>
+                <p class="info-card-desc">
+                  <strong>關鍵警訊：</strong>腸絞痛、過敏體質、消化不良<br />
+                  幫助建立健康的腸道環境
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">旅行者</h4>
+                <p class="info-card-desc">
+                  <strong>關鍵警訊：</strong>旅行期間水土不服、腹瀉<br />
+                  預防旅行者腹瀉
+                </p>
+              </div>
+            </div>
+          </section>
+          <section id="basics">
+            <h2>益生菌基礎知識：認識腸道的好夥伴</h2>
+
+            <h3>什麼是益生菌？</h3>
+            <p>
+              益生菌（Probiotics）<span class="highlight-nutrient"
+                >是指對宿主健康有益的活性微生物</span
+              >，主要包括乳酸菌、雙歧桿菌等。當足夠數量的益生菌到達腸道並定植時，<span
                 class="highlight-nutrient"
-                >乳酸菌屬</strong
-              >
-              和 <strong class="highlight-nutrient">雙歧桿菌屬</strong>。<span
-                class="highlight-nutrient"
-                >這兩個家族就是腸道健康的守護神！</span
-              >
+                >可以改善腸道微生物平衡，對健康產生正面影響</span
+              >。
+            </p>
+
+            <h3>主要菌種：各司其職的腸道守護者</h3>
+            <p>
+              益生菌家族龐大，不同菌株有不同的功能，選擇時應針對自身需求。目前市面上常見的益生菌主要分為三大類：<br />1.
+              <strong>乳酸菌屬 (Lactobacillus)</strong>：
+              專精於消化道保健和免疫調節，是最廣泛使用的益生菌類型；<br />2.
+              <strong>雙歧桿菌屬 (Bifidobacterium)</strong>：
+              則是腸道菌群平衡的關鍵角色，特別適合嬰幼兒和便秘問題；<br />3.
+              <strong>布拉酵母菌 (S. boulardii)</strong>：
+              作為唯一的益生酵母，具有不被抗生素影響的獨特優勢，是抗生素期間的最佳選擇。
             </p>
 
             <div class="info-cards">
@@ -978,299 +1083,287 @@
                 <span class="info-card-icon">🥛</span>
                 <h4 class="info-card-title">乳酸菌屬 (Lactobacillus)</h4>
                 <p class="info-card-desc">
-                  <span class="highlight-nutrient">像是腸道的清潔工</span><br />
-                  <strong>明星菌株：</strong>L. acidophilus、L. casei、L. rhamnosus GG<br />
-                  <strong>主攻：</strong>消化改善、乳糖不耐、預防腹瀉
+                  <strong>常見菌株：</strong>L. acidophilus、L. casei、L.
+                  rhamnosus、L. plantarum<br />
+                  <strong>主要功能：</strong
+                  ><span class="highlight-nutrient">幫助消化、改善乳糖不耐</span
+                  >、調節免疫、預防腹瀉
                 </p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">👶</span>
+                <span class="info-card-icon">🦠</span>
                 <h4 class="info-card-title">雙歧桿菌屬 (Bifidobacterium)</h4>
                 <p class="info-card-desc">
-                  <span class="highlight-nutrient">像是腸道的大管家</span><br />
-                  <strong>明星菌株：</strong>B. longum、B. lactis HN019、B. infantis<br />
-                  <strong>主攻：</strong>菌群平衡、便秘改善、免疫增強
+                  <strong>常見菌株：</strong>B. longum、B. breve、B. lactis、B.
+                  infantis<br />
+                  <strong>主要功能：</strong
+                  ><span class="highlight-nutrient">維持腸道菌群平衡</span
+                  >、改善便秘、增強免疫力
                 </p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">🍄</span>
+                <span class="info-card-icon">🧬</span>
                 <h4 class="info-card-title">布拉酵母菌 (S. boulardii)</h4>
                 <p class="info-card-desc">
-                  <span class="highlight-nutrient">抗生素剋星</span><br />
-                  <strong>特殊功能：</strong>益生酵母，不被抗生素影響<br />
-                  <strong>主攻：</strong>抗生素腹瀉、旅行者腹瀉
+                  <strong>特殊功能：</strong>一種益生酵母，不被抗生素影響<br />
+                  <strong>主要功能：</strong
+                  ><span class="highlight-nutrient">預防抗生素相關腹瀉</span
+                  >、旅行者腹瀉
                 </p>
               </div>
             </div>
 
-            <h3>🧠 腸道微生物群：人體的「第二大腦」</h3>
+            <h3>腸道微生物群：人體的「第二大腦」</h3>
             <div class="alert alert-nutritionist">
-              <strong>🔬 營養師科普：</strong>
-              你知道嗎？我們腸道中住著數兆個微生物，總重量可達 1-2 公斤！這些小居民不只影響消化，還會影響免疫、代謝，甚至情緒和認知功能。難怪腸道被稱為人體的「第二大腦」！
+              <strong>營養師科普：</strong>
+              人體腸道中存在數兆個微生物，包括細菌、真菌、病毒等，它們的總重量可達
+              1-2
+              公斤。這些微生物與宿主形成複雜的共生關係，影響消化、免疫、代謝，甚至情緒和認知功能，因此腸道菌群被稱為人體的「第二大腦」。
             </div>
-
-            <p
-              style="
-                text-align: center;
-                margin-top: 40px;
-                color: #718096;
-                font-size: 1.1em;
-              "
-            >
-              了解了益生菌的基本原理，接下來看看它到底能為我們做什麼！👇
-            </p>
           </section>
 
           <section id="benefits">
-            <h2>益生菌的神奇功效 - 為什麼這麼多人在吃？</h2>
+            <h2>功能與作用機制：益生菌如何守護您的健康</h2>
 
+            <h3>主要功能</h3>
             <p>
-              益生菌就像身體的「全方位健康管家」，從腸道到免疫都能照顧到！不同族群都有自己的益生菌需求，來看看你屬於哪一種：
+              益生菌在人體內發揮多重保護作用，就像是腸道生態系統的「多功能管理員」。它們不僅維持腸道內好壞菌的動態平衡，還積極支援消化過程，協助分解食物並合成人體必需的維生素。更重要的是，<span
+                class="highlight-nutrient"
+                >益生菌能強化腸道屏障功能，防止有害物質進入血液循環，</span
+              >同時調節全身免疫系統。近年來科學研究更發現，<span
+                class="highlight-nutrient"
+                >益生菌透過「腸腦軸線」影響大腦功能，對情緒穩定和認知能力都有正面幫助。</span
+              >
             </p>
 
             <div class="info-cards">
               <div class="info-card">
-                <span class="info-card-icon">🍔</span>
-                <h4 class="info-card-title">外食族的腸胃救星</h4>
+                <h4 class="info-card-title">維持腸道微生物平衡</h4>
                 <p class="info-card-desc">
-                  三餐老是便當、炸雞？<strong>益生菌平衡腸道</strong
-                  ><br />改善便秘腹瀉，讓腸胃重回正軌！
+                  • 抑制有害菌生長<br />
+                  • 競爭營養資源<br />
+                  • 產生抗菌物質<br />
+                  • 調節腸道 pH 值
                 </p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">💊</span>
-                <h4 class="info-card-title">抗生素使用者的好夥伴</h4>
+                <h4 class="info-card-title">支持消化功能</h4>
                 <p class="info-card-desc">
-                  抗生素殺光好壞菌？<strong>益生菌重建菌叢</strong
-                  ><br />減少腹瀉副作用，加速腸道復原！
+                  • 分解食物成分<br />
+                  • 產生消化酵素<br />
+                  • 合成維生素 K、B 群<br />
+                  • 促進礦物質吸收
                 </p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">🤧</span>
-                <h4 class="info-card-title">免疫力弱的保護傘</h4>
+                <h4 class="info-card-title">增強免疫功能</h4>
                 <p class="info-card-desc">
-                  動不動就感冒過敏？<strong>益生菌增強免疫</strong
-                  ><br />70% 免疫細胞在腸道，養好腸道就是養免疫！
+                  • 調節免疫細胞活性<br />
+                  • 促進抗體產生<br />
+                  • 維持免疫平衡<br />
+                  • 預防過敏反應
                 </p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">😰</span>
-                <h4 class="info-card-title">壓力族的情緒調節師</h4>
+                <h4 class="info-card-title">改善腸道屏障功能</h4>
                 <p class="info-card-desc">
-                  工作壓力大、情緒不穩？<strong>益生菌穩定心情</strong
-                  ><br />腸腦軸線連結，好腸道帶來好心情！
+                  • 維持腸道黏膜完整<br />
+                  • 增強緊密連接<br />
+                  • 減少腸道通透性<br />
+                  • 防止有害物質進入
                 </p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">👶</span>
-                <h4 class="info-card-title">嬰幼兒的健康基石</h4>
+                <h4 class="info-card-title">神經系統調節</h4>
                 <p class="info-card-desc">
-                  寶寶腸絞痛、過敏體質？<strong>益生菌建立防護</strong
-                  ><br />從小打好腸道基礎，降低過敏風險！
-                </p>
-              </div>
-              <div class="info-card">
-                <span class="info-card-icon">✈️</span>
-                <h4 class="info-card-title">旅行者的隨身保鑣</h4>
-                <p class="info-card-desc">
-                  出國旅遊水土不服？<strong>益生菌預防腹瀉</strong
-                  ><br />旅行前開始吃，讓你玩得開心吃得安心！
+                  • 產生神經傳導物質<br />
+                  • 調節情緒和壓力<br />
+                  • 影響睡眠品質<br />
+                  • 支持認知功能
                 </p>
               </div>
             </div>
-
-            <p
-              style="
-                text-align: center;
-                margin-top: 40px;
-                color: #718096;
-                font-size: 1.1em;
-              "
-            >
-              知道益生菌這麼適合你了，現在來學學怎麼選購吧！👇
-            </p>
           </section>
 
-          <section id="how-to-choose">
-            <h2>益生菌選購攻略 - 不被騙的完整指南！</h2>
+          <section id="dosage">
+            <h2>建議攝取量與時間：怎麼吃最有效？</h2>
 
+            <h3>按健康狀況分組的建議劑量</h3>
             <p>
-              市面上的益生菌產品琳瑯滿目，價格從幾百到幾千都有。到底該怎麼選？讓營養師告訴你不踩雷的秘訣！
+              <span class="highlight-nutrient"
+                >益生菌的攝取劑量並非「越多越好」</span
+              >，而是要根據個人健康狀況和需求來調整。<strong>一般日常保健</strong>建議每日攝取
+              100-500 億 CFU
+              即可維持腸道基本健康；若有明顯的<strong>腸道不適症狀</strong>如便秘或腹瀉，則需要提高到
+              500-1000 億 CFU
+              來加速改善；而在<strong>抗生素治療期間</strong>，由於腸道菌群會大量流失，建議攝取
+              1000 億 CFU 以上來重建菌叢平衡。<span class="highlight-nutrient"
+                >記住劑量的選擇應該循序漸進，讓腸道慢慢適應。</span
+              >
             </p>
 
-            <div class="quick-test">
-              <h3>選購小撇步</h3>
-              <p>
-                <strong
-                  >記住這個順序：菌株編號 > CFU 數量 > 包裝保存 > 認證 > 價格</strong
-                >
-              </p>
-            </div>
-
-            <h3>💊 益生菌產品類型比較</h3>
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>類型</th>
-                  <th>優點</th>
-                  <th>缺點</th>
-                  <th>適用對象</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>膠囊/錠劑</strong></td>
-                  <td>穩定性好、方便攜帶、劑量精確</td>
-                  <td>可能含添加劑、部分菌株不耐胃酸</td>
-                  <td>一般保健使用</td>
-                </tr>
-                <tr>
-                  <td><strong>粉劑</strong></td>
-                  <td>劑量調整方便、溶解快</td>
-                  <td>穩定性較差、需注意保存</td>
-                  <td>兒童、老年人、吞嚥困難者</td>
-                </tr>
-                <tr>
-                  <td><strong>液體/飲品</strong></td>
-                  <td>吸收快、口感好</td>
-                  <td>保存期限短、活菌數易受影響</td>
-                  <td>希望快速吸收者</td>
-                </tr>
-              </tbody>
-            </table>
-
             <div class="info-cards">
-              <div class="info-card">
-                <span class="info-card-icon">🔬</span>
-                <h4 class="info-card-title">1. 看菌株編號</h4>
-                <div class="info-card-value">最重要！</div>
-                <p class="info-card-desc">
-                  <strong>明星菌株：</strong><br />
-                  • L. rhamnosus GG (LGG) - 預防腹瀉、改善過敏<br />
-                  • B. lactis HN019 - 改善便秘、增強免疫<br />
-                  • L. plantarum 299v - 改善腸躁症
-                </p>
-              </div>
-              <div class="info-card">
-                <span class="info-card-icon">📊</span>
-                <h4 class="info-card-title">2. 看 CFU 數量</h4>
-                <div class="info-card-value">100-500 億</div>
-                <p class="info-card-desc">
-                  選擇標示「保證活菌數 (CFU)」的產品<br />
-                  <strong>不是</strong>「出廠菌數」！
-                </p>
-              </div>
-              <div class="info-card">
-                <span class="info-card-icon">📦</span>
-                <h4 class="info-card-title">3. 看包裝保存</h4>
-                <div class="info-card-value">獨立包裝</div>
-                <p class="info-card-desc">避光、防潮、密封包裝<br />獨立小包裝更能維持活菌數</p>
-              </div>
-              <div class="info-card">
-                <span class="info-card-icon">💊</span>
-                <h4 class="info-card-title">4. 看耐酸技術</h4>
-                <div class="info-card-value">腸溶膠囊</div>
-                <p class="info-card-desc">
-                  確保益生菌能順利通過胃酸<br />抵達腸道發揮作用
-                </p>
-              </div>
               <div class="info-card">
                 <span class="info-card-icon">🌿</span>
-                <h4 class="info-card-title">5. 看複方成分</h4>
-                <div class="info-card-value">+益生元</div>
-                <p class="info-card-desc">
-                  添加菊糖、果寡糖等益生元<br />為益生菌提供養分
-                </p>
-              </div>
-              <div class="info-card">
-                <span class="info-card-icon">🏅</span>
-                <h4 class="info-card-title">6. 看品質認證</h4>
-                <div class="info-card-value">SGS 檢驗</div>
-                <p class="info-card-desc">第三方檢驗認證<br />確保品質與安全</p>
-              </div>
-            </div>
-
-            <div class="alert alert-tip">
-              <strong>💡 營養師小撇步：</strong>
-              不要只看 CFU 數量！沒有好的菌株和保存技術，再多的 CFU 也沒用。選擇有明確菌株編號且有臨床研究支持的產品，而非只標示「乳酸菌」或「雙歧桿菌」的產品。
-            </div>
-
-            <p
-              style="
-                text-align: center;
-                margin-top: 40px;
-                color: #718096;
-                font-size: 1.1em;
-              "
-            >
-              選好益生菌了？接下來學學怎麼吃才最有效！👇
-            </p>
-          </section>
-
-          <section id="how-to-take">
-            <h2>怎麼吃最有效？益生菌服用完全攻略</h2>
-
-            <h3>不同需求的建議劑量</h3>
-
-            <div class="info-cards">
-              <div class="info-card">
-                <span class="info-card-icon">🏃</span>
-                <h4 class="info-card-title">日常保養</h4>
-                <div class="info-card-value">100-300 億</div>
-                <p class="info-card-desc">
-                  CFU 總量<br />維持基本腸道健康
-                </p>
+                <h4 class="info-card-title">一般保健</h4>
+                <div class="info-card-value">100-500 億</div>
+                <p class="info-card-desc">CFU 總量<br />維持基本腸道健康</p>
               </div>
               <div class="info-card">
                 <span class="info-card-icon">🩺</span>
                 <h4 class="info-card-title">腸道問題</h4>
-                <div class="info-card-value">300-500 億</div>
-                <p class="info-card-desc">
-                  便秘腹瀉調理<br />改善腸道不適
-                </p>
+                <div class="info-card-value">500-1000 億</div>
+                <p class="info-card-desc">便秘腹瀉調理<br />改善腸道不適</p>
               </div>
               <div class="info-card">
                 <span class="info-card-icon">💊</span>
                 <h4 class="info-card-title">抗生素期間</h4>
-                <div class="info-card-value">500 億以上</div>
+                <div class="info-card-value">1000 億以上</div>
                 <p class="info-card-desc">重建腸道菌叢<br />減少副作用</p>
               </div>
             </div>
 
-            <h3>什麼時候吃最好？</h3>
-            <div class="alert alert-tip">
-              <strong>💡 最佳服用時間：</strong>
-              <ul>
-                <li>
-                  <strong>餐前 30 分鐘</strong>：胃酸濃度較低，活菌存活率高
-                </li>
-                <li><strong>搭配溫開水</strong>：避免熱水破壞活菌</li>
-                <li><strong>固定時間吃</strong>：養成習慣，效果更穩定</li>
-              </ul>
-            </div>
-            <h3>服用注意事項</h3>
-            <div class="alert alert-tip">
-              <strong>💡 服用小撇步：</strong>
-              <ul>
-                <li><strong>持續服用</strong>：至少 2-4 週才見效</li>
-                <li><strong>冷藏保存</strong>：維持活菌活性</li>
-                <li><strong>避免同時</strong>：與抗生素間隔 2 小時以上</li>
-              </ul>
+            <h3>特定族群需求</h3>
+            <p>
+              不同年齡層和生理狀態的人群，對益生菌的需求差異很大。<span
+                class="highlight-nutrient"
+                >嬰幼兒的腸道菌群還在建立階段</span
+              >，需要特別溫和的菌株和較低的劑量；<span
+                class="highlight-nutrient"
+                >兒童正值成長發育期</span
+              >，適量的益生菌有助於強化免疫系統和改善過敏體質；<span
+                class="highlight-nutrient"
+                >孕婦的腸道健康會影響胎兒</span
+              >，但必須選擇安全性高的菌株並諮詢醫師；而<span
+                class="highlight-nutrient"
+                >老年人因為腸道功能退化</span
+              >，更需要益生菌來維持消化道健康。選擇時除了考慮劑量，產品的形式（粉劑、膠囊、咀嚼片）也要配合不同族群的需求。
+            </p>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>族群</th>
+                  <th>建議劑量</th>
+                  <th>注意事項</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>嬰幼兒</strong></td>
+                  <td>10億-100 億 CFU</td>
+                  <td>選擇專用產品，諮詢小兒科醫師</td>
+                </tr>
+                <tr>
+                  <td><strong>兒童</strong></td>
+                  <td>50 億-500 億 CFU</td>
+                  <td>可選擇粉劑或咀嚼片</td>
+                </tr>
+                <tr>
+                  <td><strong>孕婦</strong></td>
+                  <td>依醫師建議</td>
+                  <td>孕期前務必諮詢婦產科醫師</td>
+                </tr>
+                <tr>
+                  <td><strong>老年人</strong></td>
+                  <td>100 億-500 億 CFU</td>
+                  <td>注意吞嚥功能，可選粉劑</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3>最佳攝取時間與方式</h3>
+            <p>
+              益生菌是活的微生物，從吃進嘴巴到抵達腸道，必須經過重重考驗。<span
+                class="highlight-nutrient"
+                >胃酸是益生菌的第一道關卡</span
+              >，pH 值約 1.5-3.5
+              的強酸環境會殺死大部分的益生菌，因此選擇正確的服用時機至關重要。<span
+                class="highlight-nutrient"
+                >餐前 30 分鐘是公認的最佳時機</span
+              >，此時胃酸分泌較少，益生菌通過率最高；如果忘記餐前服用，餐後立即補充也是可行的替代方案。除了時機，<span
+                class="highlight-nutrient"
+                >服用方式也會影響益生菌的存活率</span
+              >——水溫過高會「燙死」益生菌，而茶、咖啡中的單寧酸和咖啡因則可能抑制益生菌活性。記住，益生菌需要時間在腸道定植繁殖，<span
+                class="highlight-nutrient"
+                >至少持續服用 2-4 週才能看到明顯效果</span
+              >。
+            </p>
+
+            <div class="info-cards">
+              <div class="info-card">
+                <h4 class="info-card-title">最佳服用時機</h4>
+                <div class="info-card-value">餐前 30 分鐘</div>
+                <p class="info-card-desc">
+                  空腹時胃酸較少<br />
+                  有利益生菌通過胃部<br />
+                  <strong>替代方案：</strong>餐後立即服用
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">正確服用方法</h4>
+                <div class="info-card-value">溫開水送服</div>
+                <p class="info-card-desc">
+                  水溫不超過 40°C<br />
+                  避免熱水殺死活菌<br />
+                  <strong>禁忌：</strong>茶、咖啡、酒精
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">見效時程</h4>
+                <div class="info-card-value">2-4 週</div>
+                <p class="info-card-desc">
+                  第 1 週：腸道適應期<br />
+                  第 2-4 週：明顯改善<br />
+                  <strong>關鍵：</strong>持續規律服用
+                </p>
+              </div>
             </div>
 
-            <p
-              style="
-                text-align: center;
-                margin-top: 40px;
-                color: #718096;
-                font-size: 1.1em;
-              "
-            >
-              不想吃保健品？也可以從天然食物攝取益生菌喔！👇
-            </p>
+            <h4>服用注意事項</h4>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>情況</th>
+                  <th>建議做法</th>
+                  <th>原因說明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>搭配抗生素</strong></td>
+                  <td>間隔 2 小時以上</td>
+                  <td>避免抗生素殺死益生菌</td>
+                </tr>
+                <tr>
+                  <td><strong>搭配益生元</strong></td>
+                  <td>同時服用效果更佳</td>
+                  <td>益生元是益生菌的食物</td>
+                </tr>
+                <tr>
+                  <td><strong>腸胃敏感者</strong></td>
+                  <td>從低劑量開始</td>
+                  <td>讓腸道慢慢適應</td>
+                </tr>
+                <tr>
+                  <td><strong>旅行期間</strong></td>
+                  <td>提前 1-2 週開始服用</td>
+                  <td>預防水土不服</td>
+                </tr>
+                <tr>
+                  <td><strong>保存方式</strong></td>
+                  <td>依產品指示冷藏或常溫</td>
+                  <td>維持活菌活性</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="alert alert-tip">
+              <strong>營養師小提醒：</strong>
+              益生菌不是藥物，不會立即見效。就像健身需要時間看到肌肉，益生菌也需要時間在腸道「生根」。保持耐心，規律服用，您的腸道會感謝您的！記得選擇適合自己的菌株，並在固定時間服用，養成良好的補充習慣。
+            </div>
           </section>
 
-          <section id="food-sources">
+          <section id="natural-sources">
             <h2>天然食物也能補充益生菌！</h2>
 
             <h3>益生菌食物冠軍榜</h3>
@@ -1302,164 +1395,157 @@
               </div>
             </div>
 
-            <div class="alert alert-tip">
-              <strong>🍽️ 營養師建議：</strong>
-              天然發酵食品的益生菌種類和數量有限，想要治療效果還是建議選擇品質良好的益生菌補充品。但平常多吃發酵食品對維持腸道健康絕對有幫助！
-            </div>
-
-            <p
-              style="
-                text-align: center;
-                margin-top: 40px;
-                color: #718096;
-                font-size: 1.1em;
-              "
-            >
-              吃益生菌有什麼需要注意的嗎？來看看安全資訊！👇
-            </p>
-          </section>
-
-          <section id="safety">
-            <h2>安全第一！益生菌的注意事項</h2>
-
+            <h3>益生菌的食物：「益生元」</h3>
             <p>
-              益生菌雖然相對安全，但不是每個人都適合，也不是吃越多越好！來看看有什麼要注意的：
+              益生元是無法被人體消化吸收的膳食纖維，但能被腸道益生菌利用，促進其生長。<span
+                class="highlight-nutrient"
+                >想像益生元就像是「益生菌的專屬飼料」，提供它們繁殖所需的營養</span
+              >。<strong>菊糖</strong>是最常見的益生元，大量存在於洋蔥、大蒜等日常蔬菜中；<strong>果寡糖</strong>則在香蕉、蜂蜜中含量豐富，口感較甜；<strong>半乳寡糖</strong>是母乳中的天然成分，對嬰幼兒腸道發育特別重要；而<strong>
+                β-葡聚糖</strong
+              >主要來源是燕麥和菇類，同時具有調節血糖的額外好處。<span
+                class="highlight-nutrient"
+                >搭配益生菌一起攝取，效果會更加顯著</span
+              >。
             </p>
-
-            <h3>這些人要特別小心</h3>
 
             <div class="info-cards">
               <div class="info-card">
-                <span class="info-card-icon">🏥</span>
-                <h4 class="info-card-title">免疫力嚴重低下</h4>
-                <p class="info-card-desc">
-                  如器官移植、化療患者<br /><strong>一定要先問醫師！</strong>
-                </p>
+                <h4 class="info-card-title">菊糖 (Inulin)</h4>
+                <p class="info-card-desc">洋蔥、大蒜、蘆筍<br />菊苣根、香蕉</p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">❤️</span>
-                <h4 class="info-card-title">心臟瓣膜疾病</h4>
-                <p class="info-card-desc">
-                  有感染風險<br /><strong>謹慎使用</strong>
-                </p>
+                <h4 class="info-card-title">果寡糖 (FOS)</h4>
+                <p class="info-card-desc">洋蔥、大蒜、香蕉<br />蜂蜜</p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">🤱</span>
-                <h4 class="info-card-title">孕婦和幼兒</h4>
-                <p class="info-card-desc">
-                  選擇專用產品<br /><strong>諮詢專業意見</strong>
-                </p>
+                <h4 class="info-card-title">半乳寡糖 (GOS)</h4>
+                <p class="info-card-desc">母乳、豆類</p>
               </div>
-            </div>
-
-            <h3>常見副作用與解決方法</h3>
-
-            <div class="alert alert-tip">
-              <strong>初期腸道不適</strong>
-              <ul>
-                <li>輕微脹氣、腹鳴是正常反應</li>
-                <li>從低劑量開始，讓身體慢慢適應</li>
-                <li>通常 1-2 週會自然改善</li>
-              </ul>
-            </div>
-
-            <div class="alert alert-doctor">
-              <strong>嚴重不適症狀</strong>
-              <ul>
-                <li>持續腹痛、嚴重腹瀉</li>
-                <li>發燒、皮疹等過敏反應</li>
-                <li>出現這些症狀請立即停用並就醫</li>
-              </ul>
+              <div class="info-card">
+                <h4 class="info-card-title">β-葡聚糖</h4>
+                <p class="info-card-desc">燕麥、大麥、菇類</p>
+              </div>
             </div>
           </section>
 
-          <p
-            style="
-              text-align: center;
-              margin-top: 40px;
-              color: #718096;
-              font-size: 1.1em;
-            "
-          >
-            還有問題嗎？來看看最常被問的問題！👇
-          </p>
+          <section id="product-selection">
+            <h2>如何選擇益生菌產品？完整選購攻略</h2>
+
+            <p>
+              市面上的益生菌產品琳瑯滿目，選擇時應注意以下關鍵指標，才能選到真正有效且適合自己的產品。
+            </p>
+
+            <h3>益生菌產品類型比較</h3>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>類型</th>
+                  <th>優點</th>
+                  <th>缺點</th>
+                  <th>適用對象</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>膠囊/錠劑</strong></td>
+                  <td>穩定性好、方便攜帶、劑量精確</td>
+                  <td>可能含添加劑、部分菌株不耐胃酸</td>
+                  <td>一般保健使用</td>
+                </tr>
+                <tr>
+                  <td><strong>粉劑</strong></td>
+                  <td>劑量調整方便、溶解快</td>
+                  <td>穩定性較差、需注意保存</td>
+                  <td>兒童、老年人、吞嚥困難者</td>
+                </tr>
+                <tr>
+                  <td><strong>液體/飲品</strong></td>
+                  <td>吸收快、口感好</td>
+                  <td>保存期限短、活菌數易受影響</td>
+                  <td>希望快速吸收者</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3>選購六大要點</h3>
+            <p>
+              面對市面上琳瑯滿目的益生菌產品，選對產品比選貴產品更重要。<span
+                class="highlight-nutrient"
+                ><strong>菌株編號</strong></span
+              >是第一要務，有明確編號如「L. rhamnosus
+              GG」才代表有科學實證支持，避免只標示「乳酸菌」的模糊產品；<span
+                class="highlight-nutrient"
+                ><strong>活菌數量</strong></span
+              >要看「保證活菌數」而非「出廠菌數」，因為益生菌在保存期間會逐漸死亡；<span
+                class="highlight-nutrient"
+                ><strong>包裝技術</strong></span
+              >直接影響菌株存活率，獨立小包裝比大瓶裝更能維持活性；<span
+                class="highlight-nutrient"
+                ><strong>複方設計</strong></span
+              >的產品會額外添加益生元，形成「益生菌+益生元」的黃金組合；<span
+                class="highlight-nutrient"
+                ><strong>耐胃酸技術</strong></span
+              >如腸溶膠囊能確保益生菌順利通過胃酸考驗；最後是<span
+                class="highlight-nutrient"
+                ><strong>品質認證</strong></span
+              >，有SGS等第三方檢驗的產品更值得信賴。
+            </p>
+
+            <div class="info-cards">
+              <div class="info-card">
+                <h4 class="info-card-title">1. 看「菌株編號」</h4>
+                <div class="info-card-value">最重要！</div>
+                <p class="info-card-desc">
+                  選擇有明確菌株編號且有臨床研究支持的產品<br />
+                  例如：L. rhamnosus GG (LGG)、B. lactis HN019
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">2. 看「活菌數量」</h4>
+                <div class="info-card-value">100-500 億</div>
+                <p class="info-card-desc">
+                  選擇標示「保證活菌數 (CFU)」的產品<br />
+                  <strong>不是</strong>「出廠菌數」！
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">3. 看「包裝與保存」</h4>
+                <div class="info-card-value">獨立包裝</div>
+                <p class="info-card-desc">
+                  避光、密封包裝<br />獨立小包裝更能維持活菌數
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">4. 看「複方成分」</h4>
+                <div class="info-card-value">+益生元</div>
+                <p class="info-card-desc">
+                  添加益生元為益生菌提供養分<br />達到協同效果
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">5. 看「耐胃酸技術」</h4>
+                <div class="info-card-value">腸溶膠囊</div>
+                <p class="info-card-desc">
+                  確保益生菌能順利通過胃酸<br />抵達腸道發揮作用
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">6. 看「品質認證」</h4>
+                <div class="info-card-value">SGS 檢驗</div>
+                <p class="info-card-desc">第三方檢驗認證<br />確保品質與安全</p>
+              </div>
+            </div>
+
+            <div class="alert alert-tip">
+              <strong>營養師選購提醒：</strong>
+              不要只看 CFU 數量！沒有好的菌株和保存技術，再多的 CFU
+              也沒用。重點是選擇有明確菌株編號且有臨床研究支持的產品，而非只標示「乳酸菌」或「雙歧桿菌」的產品。
+            </div>
+          </section>
 
           <!-- FAQ Section -->
           <section id="faq" class="faq-section">
-            <h2>常見問題</h2>
-
-            <div class="faq-item">
-              <div class="faq-question">益生菌跟酵素不是一樣的東西嗎？</div>
-              <div class="faq-answer">
-                <p><strong>完全不一樣！很多人都搞混了！</strong></p>
-                <p>簡單記法：</p>
-                <ul>
-                  <li>
-                    <strong>益生菌</strong> = 活的微生物 = 調節腸道菌叢平衡
-                  </li>
-                  <li>
-                    <strong>酵素</strong> = 蛋白質 = 幫助分解食物
-                  </li>
-                </ul>
-                <p>兩個功能不同，但可以一起吃來改善消化！</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">益生菌要冷藏嗎？常溫保存可以嗎？</div>
-              <div class="faq-answer">
-                <p><strong>看產品設計！不是都要冷藏！</strong></p>
-                <p>
-                  現在的益生菌技術進步很多，有些經過特殊處理可以常溫保存。重點是要按照產品標示的保存方式！
-                </p>
-                <p>
-                  一般來說：冷藏 > 常溫，但比起保存溫度，更重要的是避免高溫、潮濕和陽光直射。
-                </p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">吃了益生菌多久會有效果？</div>
-              <div class="faq-answer">
-                <p><strong>每個人不一樣，但通常有個時間表！</strong></p>
-                <p>一般效果出現時間：</p>
-                <ol>
-                  <li>
-                    <strong>1-2 週</strong>：輕微腸道不適改善
-                  </li>
-                  <li>
-                    <strong>2-4 週</strong>：排便狀況明顯改善
-                  </li>
-                  <li>
-                    <strong>4-8 週</strong>：免疫力、過敏症狀改善
-                  </li>
-                  <li>
-                    <strong>2-3 個月</strong>：整體腸道健康穩定
-                  </li>
-                </ol>
-                <p>💡 記住：持續服用比間斷服用效果更好！</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">益生菌可以跟其他保健品一起吃嗎？</div>
-              <div class="faq-answer">
-                <p><strong>大部分可以，但有些要注意間隔！</strong></p>
-                <p><strong>可以一起吃的：</strong></p>
-                <ul>
-                  <li>維生素 C、D、B 群 - 有助於免疫功能</li>
-                  <li>鈣片、鎂片 - 維持骨骼健康</li>
-                  <li>魚油、益生元 - 協同效果更好</li>
-                  <li>綠茶素、葉酸 - 抗氧化功能</li>
-                </ul>
-                <p><strong>需要間隔的：</strong></p>
-                <ul>
-                  <li><strong>抗生素</strong>：間隔 2 小時以上，避免益生菌被殺死</li>
-                  <li><strong>高劑量鋅</strong>：可能影響菌叢平衡，建議間隔 1 小時</li>
-                  <li><strong>高纖素食物</strong>：可能影響小腸吸收，建議分開服用</li>
-                </ul>
-              </div>
-            </div>
+            <h2>常見問題解答</h2>
 
             <div class="faq-item">
               <div class="faq-question">益生菌需要長期服用嗎？</div>
@@ -1471,12 +1557,10 @@
                   <li><strong>4-6 週</strong>：菌數回復到原本水平</li>
                   <li><strong>維持效果</strong>：需要持續攝取</li>
                 </ul>
-                <p><strong>建議方式：</strong></p>
-                <ul>
-                  <li>日常保養：持續低劑量服用</li>
-                  <li>問題改善後：可降低劑量但不完全停止</li>
-                  <li>搭配飲食：多吃益生元和發酵食品</li>
-                </ul>
+                <p>
+                  <strong>建議方式：</strong
+                  >日常保養持續低劑量服用，問題改善後可降低劑量但不完全停止。
+                </p>
               </div>
             </div>
 
@@ -1485,63 +1569,150 @@
               <div class="faq-answer">
                 <p><strong>部分可以，但有限制！</strong></p>
                 <p><strong>食物 vs 補充劑比較：</strong></p>
-                <table style="width: 100%; margin: 15px 0; border-collapse: collapse;">
-                  <tr style="background: #f9fafb;">
-                    <th style="padding: 10px; border: 1px solid #e5e7eb; text-align: left;">項目</th>
-                    <th style="padding: 10px; border: 1px solid #e5e7eb; text-align: left;">天然食物</th>
-                    <th style="padding: 10px; border: 1px solid #e5e7eb; text-align: left;">補充劑</th>
+                <table
+                  style="width: 100%; margin: 15px 0; border-collapse: collapse"
+                >
+                  <tr style="background: #f9fafb">
+                    <th
+                      style="
+                        padding: 10px;
+                        border: 1px solid #e5e7eb;
+                        text-align: left;
+                      "
+                    >
+                      項目
+                    </th>
+                    <th
+                      style="
+                        padding: 10px;
+                        border: 1px solid #e5e7eb;
+                        text-align: left;
+                      "
+                    >
+                      天然食物
+                    </th>
+                    <th
+                      style="
+                        padding: 10px;
+                        border: 1px solid #e5e7eb;
+                        text-align: left;
+                      "
+                    >
+                      補充劑
+                    </th>
                   </tr>
                   <tr>
-                    <td style="padding: 10px; border: 1px solid #e5e7eb;"><strong>菌種多元性</strong></td>
-                    <td style="padding: 10px; border: 1px solid #e5e7eb;">有限（2-5 種）</td>
-                    <td style="padding: 10px; border: 1px solid #e5e7eb;">多元（10+ 種）</td>
+                    <td style="padding: 10px; border: 1px solid #e5e7eb">
+                      <strong>菌種多元性</strong>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #e5e7eb">
+                      有限（2-5 種）
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #e5e7eb">
+                      多元（10+ 種）
+                    </td>
                   </tr>
                   <tr>
-                    <td style="padding: 10px; border: 1px solid #e5e7eb;"><strong>活菌數量</strong></td>
-                    <td style="padding: 10px; border: 1px solid #e5e7eb;">不穩定</td>
-                    <td style="padding: 10px; border: 1px solid #e5e7eb;">精確控制</td>
+                    <td style="padding: 10px; border: 1px solid #e5e7eb">
+                      <strong>活菌數量</strong>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #e5e7eb">
+                      不穩定
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #e5e7eb">
+                      精確控制
+                    </td>
                   </tr>
                   <tr>
-                    <td style="padding: 10px; border: 1px solid #e5e7eb;"><strong>特定功效</strong></td>
-                    <td style="padding: 10px; border: 1px solid #e5e7eb;">一般保健</td>
-                    <td style="padding: 10px; border: 1px solid #e5e7eb;">針對性治療</td>
+                    <td style="padding: 10px; border: 1px solid #e5e7eb">
+                      <strong>特定功效</strong>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #e5e7eb">
+                      一般保健
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #e5e7eb">
+                      針對性治療
+                    </td>
                   </tr>
                 </table>
-                <p><strong>結論：</strong>平常保養可以食物為主，有特定問題建議搭配補充劑。</p>
+                <p>
+                  <strong>結論：</strong
+                  >平常保養可以食物為主，有特定問題建議搭配補充劑。
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">益生菌和抗生素可以同時服用嗎？</div>
+              <div class="faq-answer">
+                <p><strong>不建議同時服用，應該間隔至少 2 小時！</strong></p>
+                <p>抗生素會殺死益生菌，降低其效果。建議：</p>
+                <ul>
+                  <li>服用抗生素期間：間隔2小時以上服用益生菌</li>
+                  <li>抗生素療程結束後：大量補充益生菌幫助腸道恢復</li>
+                  <li>選擇抗生素耐受性好的菌株：如布拉酵母菌</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">如何知道益生菌有效？</div>
+              <div class="faq-answer">
+                <p><strong>通常 2-4 週會有改善跡象！</strong></p>
+                <p>一般效果出現時間：</p>
+                <ol>
+                  <li><strong>1-2 週</strong>：輕微腸道不適改善</li>
+                  <li><strong>2-4 週</strong>：排便狀況明顯改善</li>
+                  <li><strong>4-8 週</strong>：免疫力、過敏症狀改善</li>
+                  <li><strong>2-3 個月</strong>：整體腸道健康穩定</li>
+                </ol>
+                <p>記住：持續服用比間斷服用效果更好！</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">益生菌有副作用嗎？</div>
+              <div class="faq-answer">
+                <p><strong>對大多數人來說是安全的！</strong></p>
+                <p><strong>可能的初期反應：</strong></p>
+                <ul>
+                  <li>輕微腹脹、脹氣（通常 1-2 週自行緩解）</li>
+                  <li>排便習慣改變（逐漸正常化）</li>
+                  <li>腸鳴音增加（菌群調整過程）</li>
+                </ul>
+                <p><strong>需要停用並就醫的症狀：</strong></p>
+                <ul>
+                  <li>持續腹痛、嚴重腹瀉</li>
+                  <li>發燒、皮疹等過敏反應</li>
+                  <li>症狀持續惡化</li>
+                </ul>
               </div>
             </div>
           </section>
         </article>
 
         <!-- Related Articles -->
-        <h2 class="related-title">相關營養素指南</h2>
+        <h2 class="related-title">相關營養指南</h2>
         <div class="related-grid">
           <a href="#" class="related-card">
-            <span class="related-card-tag">維生素</span>
-            <h3 class="related-card-title">維生素 D</h3>
+            <span class="related-card-tag">營養素</span>
+            <h3 class="related-card-title">益生元完整指南</h3>
             <p class="related-card-desc">
-              陽光維生素對骨骼健康、免疫功能的重要性，以及如何選擇適合的補充品。
+              了解益生元如何為腸道益生菌提供養分，以及如何從飲食中獲得足夠的益生元。
             </p>
           </a>
           <a href="#" class="related-card">
-            <span class="related-card-tag">礦物質</span>
-            <h3 class="related-card-title">鈣質</h3>
+            <span class="related-card-tag">腸道健康</span>
+            <h3 class="related-card-title">腸道菌群平衡</h3>
             <p class="related-card-desc">
-              了解鈣質對骨骼、肌肉和神經系統的關鍵作用，以及最佳補充方式。
+              深入了解腸道微生物群的組成、功能，以及如何維持健康的腸道生態系統。
             </p>
           </a>
           <a href="#" class="related-card">
-            <span class="related-card-tag">其他營養素</span>
-            <h3 class="related-card-title">魚油 Omega-3</h3>
+            <span class="related-card-tag">功能性食品</span>
+            <h3 class="related-card-title">發酵食品指南</h3>
             <p class="related-card-desc">
-              探索 Omega-3 脂肪酸對心血管健康、大腦功能和發炎反應的重要影響。
-            </p>
-          </a>
-          <a href="#" class="related-card">
-            <span class="related-card-tag">功能性成分</span>
-            <h3 class="related-card-title">益生元</h3>
-            <p class="related-card-desc">
-              了解益生元如何為腸道益生菌提供養分，以及如何從飲食中獲得。
+              探索各種發酵食品的營養價值、製作方法，以及如何將它們融入日常飲食。
             </p>
           </a>
         </div>
@@ -1648,56 +1819,58 @@
       const sidebar = document.getElementById("sidebar");
       let isTocOpen = false;
 
-      mobileTocToggle.addEventListener("click", () => {
-        if (!isTocOpen) {
-          // Create mobile TOC overlay
-          const overlay = document.createElement("div");
-          overlay.className = "mobile-toc-overlay";
-          overlay.style.cssText = `
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background: rgba(0,0,0,0.5);
-                    z-index: 998;
-                    animation: fadeIn 0.3s ease;
-                `;
+      if (mobileTocToggle) {
+        mobileTocToggle.addEventListener("click", () => {
+          if (!isTocOpen) {
+            // Create mobile TOC overlay
+            const overlay = document.createElement("div");
+            overlay.className = "mobile-toc-overlay";
+            overlay.style.cssText = `
+                      position: fixed;
+                      top: 0;
+                      left: 0;
+                      right: 0;
+                      bottom: 0;
+                      background: rgba(0,0,0,0.5);
+                      z-index: 998;
+                      animation: fadeIn 0.3s ease;
+                  `;
 
-          const mobileToC = sidebar.cloneNode(true);
-          mobileToC.style.cssText = `
-                    position: fixed;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    z-index: 999;
-                    max-width: 90%;
-                    max-height: 80vh;
-                    animation: slideIn 0.3s ease;
-                `;
+            const mobileToC = sidebar.cloneNode(true);
+            mobileToC.style.cssText = `
+                      position: fixed;
+                      top: 50%;
+                      left: 50%;
+                      transform: translate(-50%, -50%);
+                      z-index: 999;
+                      max-width: 90%;
+                      max-height: 80vh;
+                      animation: slideIn 0.3s ease;
+                  `;
 
-          overlay.appendChild(mobileToC);
-          document.body.appendChild(overlay);
+            overlay.appendChild(mobileToC);
+            document.body.appendChild(overlay);
 
-          // Close on overlay click
-          overlay.addEventListener("click", (e) => {
-            if (e.target === overlay) {
-              overlay.remove();
-              isTocOpen = false;
-            }
-          });
-
-          // Close on link click
-          mobileToC.querySelectorAll(".toc-link").forEach((link) => {
-            link.addEventListener("click", () => {
-              overlay.remove();
-              isTocOpen = false;
+            // Close on overlay click
+            overlay.addEventListener("click", (e) => {
+              if (e.target === overlay) {
+                overlay.remove();
+                isTocOpen = false;
+              }
             });
-          });
 
-          isTocOpen = true;
-        }
-      });
+            // Close on link click
+            mobileToC.querySelectorAll(".toc-link").forEach((link) => {
+              link.addEventListener("click", () => {
+                overlay.remove();
+                isTocOpen = false;
+              });
+            });
+
+            isTocOpen = true;
+          }
+        });
+      }
 
       // Share Button (檢查是否存在)
       const shareBtn = document.getElementById("shareBtn");
@@ -1726,22 +1899,22 @@
       // Add animations
       const style = document.createElement("style");
       style.textContent = `
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-            
-            @keyframes slideIn {
-                from {
-                    opacity: 0;
-                    transform: translate(-50%, -45%);
-                }
-                to {
-                    opacity: 1;
-                    transform: translate(-50%, -50%);
-                }
-            }
-        `;
+              @keyframes fadeIn {
+                  from { opacity: 0; }
+                  to { opacity: 1; }
+              }
+              
+              @keyframes slideIn {
+                  from {
+                      opacity: 0;
+                      transform: translate(-50%, -45%);
+                  }
+                  to {
+                      opacity: 1;
+                      transform: translate(-50%, -50%);
+                  }
+              }
+          `;
       document.head.appendChild(style);
 
       // Initialize Components
@@ -1837,6 +2010,10 @@
             if (checkedCount >= 2) {
               resultText.style.color = "#dc2626";
               resultText.innerHTML = `你勾選了 ${checkedCount} 個！看來你真的需要補充益生菌了！`;
+            } else {
+              resultText.style.color = "#14532d";
+              resultText.innerHTML =
+                "勾選 2 個以上？你可能真的需要補充益生菌囉！";
             }
           }
         });
