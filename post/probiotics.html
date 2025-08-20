@@ -12,6 +12,10 @@
       name="keywords"
       content="益生菌, 腸道健康, 免疫功能, 乳酸菌, 雙歧桿菌, 腸道菌群, 益生菌功效, 益生菌選擇, 發酵食品, 消化健康"
     />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
 
     <style>
       * {
@@ -1733,6 +1737,7 @@
     <div id="footer-component"></div>
 
     <!-- Load Components -->
+    <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
 
@@ -1920,6 +1925,16 @@
       // Initialize Components
       function initializeComponents() {
         console.log("🚀 開始初始化組件");
+
+        // Initialize Analytics Component
+        if (window.DeusAnalyticsComponent) {
+          const analytics = new window.DeusAnalyticsComponent()
+            .setDebug(false) // 正式環境設為 false
+            .setEnvironment('production');
+          console.log("✅ Analytics 組件初始化完成");
+        } else {
+          console.error("❌ Analytics 組件初始化失敗");
+        }
 
         // Initialize Header Component
         const headerContainer = document.getElementById("header-component");

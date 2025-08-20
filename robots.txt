@@ -1,0 +1,5 @@
+# Robots.txt for https://life.maxlist.xyz/
+
+User-agent: *
+Allow: /
+Disallow: /tests/

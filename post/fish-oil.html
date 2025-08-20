@@ -12,6 +12,10 @@
       name="keywords"
       content="魚油, 魚油功效, 魚油推薦, Omega-3, EPA, DHA, 魚油怎麼選, 三酸甘油酯, 心血管保健, 大腦健康"
     />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
 
     <style>
       * {
@@ -1715,6 +1719,7 @@
     <div id="footer-component"></div>
 
     <!-- Load Components -->
+    <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
 
@@ -1911,6 +1916,16 @@
       // Initialize Components
       function initializeComponents() {
         console.log("🚀 開始初始化組件");
+
+        // Initialize Analytics Component
+        if (window.DeusAnalyticsComponent) {
+          const analytics = new window.DeusAnalyticsComponent()
+            .setDebug(false) // 正式環境設為 false
+            .setEnvironment('production');
+          console.log("✅ Analytics 組件初始化完成");
+        } else {
+          console.error("❌ Analytics 組件初始化失敗");
+        }
 
         // Initialize Header Component
         const headerContainer = document.getElementById("header-component");
