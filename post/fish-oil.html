@@ -99,7 +99,7 @@
       }
 
       .toc-list li {
-        margin-bottom: 12px;
+        margin-bottom: 8px;
       }
 
       .toc-list a {
@@ -107,35 +107,64 @@
         text-decoration: none;
         font-size: 0.95em;
         display: block;
-        padding: 5px 0;
+        padding: 8px 12px;
         transition: all 0.3s ease;
         position: relative;
-      }
-
-      .toc-list a::before {
-        content: "";
-        position: absolute;
-        left: -20px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 3px;
-        height: 0;
-        background: #ff6b35;
-        transition: height 0.3s ease;
+        border-radius: 8px;
+        border-left: 3px solid transparent;
       }
 
       .toc-list a.active {
         color: #ff6b35;
+        background: rgba(255, 107, 53, 0.1);
+        border-left-color: #ff6b35;
         font-weight: 600;
-      }
-
-      .toc-list a.active::before {
-        height: 20px;
       }
 
       .toc-list a:hover {
         color: #ff6b35;
-        padding-left: 10px;
+        background: rgba(255, 107, 53, 0.08);
+        border-left-color: #ff8f65;
+        transform: translateX(2px);
+      }
+
+      /* 第一階層樣式 */
+      .toc-list a:not(.sub-item) {
+        font-weight: 600;
+        background: rgba(255, 107, 53, 0.05);
+        margin-bottom: 4px;
+      }
+
+      /* 第二階層樣式 */
+      .toc-list a.sub-item {
+        margin-left: 16px;
+        font-size: 0.9em;
+        color: #718096;
+        background: rgba(113, 128, 150, 0.03);
+        border-left-color: #e2e8f0;
+        position: relative;
+      }
+
+      /* 第二階層前的連線效果 */
+      .toc-list a.sub-item::before {
+        content: "";
+        position: absolute;
+        left: -12px;
+        top: 50%;
+        width: 8px;
+        height: 1px;
+        background: #d1d5db;
+        transform: translateY(-50%);
+      }
+
+      .toc-list a.active.sub-item {
+        color: #ff6b35;
+        background: rgba(255, 107, 53, 0.08);
+        border-left-color: #ff8f65;
+      }
+
+      .toc-list a.active.sub-item::before {
+        background: #ff8f65;
       }
 
       /* Main Content Area */
@@ -831,18 +860,22 @@
       <aside class="sidebar" id="sidebar">
         <div class="toc">
           <h3 class="toc-title">
-            <span>📑</span>
             <span>目錄</span>
           </h3>
           <ul class="toc-list">
             <li><a href="#summary" class="toc-link">30 秒速讀版</a></li>
             <li><a href="#self-check" class="toc-link">你需要魚油嗎？</a></li>
             <li><a href="#basics" class="toc-link">魚油基礎知識</a></li>
-            <li><a href="#benefits" class="toc-link">魚油的神奇功效</a></li>
-            <li><a href="#how-to-choose" class="toc-link">選購攻略</a></li>
-            <li><a href="#how-to-take" class="toc-link">怎麼吃最有效</a></li>
-            <li><a href="#food-sources" class="toc-link">天然食物來源</a></li>
-            <li><a href="#safety" class="toc-link">注意事項</a></li>
+            <li>
+              <a href="#benefits" class="toc-link sub-item">魚油的神奇功效</a>
+            </li>
+            <li>
+              <a href="#how-to-take" class="toc-link sub-item">怎麼吃最有效</a>
+            </li>
+            <li>
+              <a href="#food-sources" class="toc-link sub-item">天然食物來源</a>
+            </li>
+            <li><a href="#how-to-choose" class="toc-link">如何選擇魚油</a></li>
             <li><a href="#faq" class="toc-link">常見問題</a></li>
           </ul>
         </div>
@@ -897,19 +930,19 @@
                 </p>
                 <div class="card-click-hint">點擊了解詳情</div>
               </a>
-              <a href="#how-to-choose" class="info-card quick-read-card">
-                <span class="info-card-icon">🛒</span>
-                <h4 class="info-card-title">怎麼選購？</h4>
-                <p class="info-card-desc">
-                  濃度 80% 以上、rTG 型態<br />有 IFOS 認證最安心
-                </p>
-                <div class="card-click-hint">點擊了解詳情</div>
-              </a>
               <a href="#how-to-take" class="info-card quick-read-card">
                 <span class="info-card-icon">💊</span>
                 <h4 class="info-card-title">怎麼服用？</h4>
                 <p class="info-card-desc">
                   每日 1000-2000mg<br />隨餐吃吸收最好
+                </p>
+                <div class="card-click-hint">點擊了解詳情</div>
+              </a>
+              <a href="#how-to-choose" class="info-card quick-read-card">
+                <span class="info-card-icon">🛒</span>
+                <h4 class="info-card-title">怎麼選購？</h4>
+                <p class="info-card-desc">
+                  濃度 85% 以上、rTG 型態<br />有 IFOS 認證最安心
                 </p>
                 <div class="card-click-hint">點擊了解詳情</div>
               </a>
@@ -1112,231 +1145,12 @@
                 </p>
               </div>
             </div>
-
-            <p
-              style="
-                text-align: center;
-                margin-top: 40px;
-                color: #718096;
-                font-size: 1.1em;
-              "
-            >
-              知道魚油這麼適合你了，現在來學學怎麼選購吧！
-            </p>
-          </section>
-
-          <section id="how-to-choose">
-            <h2>魚油選購攻略 - 不被騙的完整指南！</h2>
-
-            <p>
-              市面上的魚油產品五花八門，價格從幾百到幾千都有。到底該怎麼選？讓營養師告訴你不踩雷的秘訣！
-            </p>
-
-            <h3>為什麼選對魚油這麼重要？</h3>
-            <p>
-              很多人以為「魚油就是魚油」，隨便買一罐就好。<strong
-                >大錯特錯！</strong
-              >
-              <span class="highlight-nutrient">品質差的魚油不僅效果有限</span
-              >，<span class="highlight-nutrient"
-                >甚至可能有重金屬污染的風險</span
-              >。就像買車一樣，外表看起來差不多，但引擎、性能差很大！學會這 6
-              個選購要點，讓你花的每一分錢都值得！
-            </p>
-
-            <h3>魚油選購的 6 大關鍵指</h3>
-            <p>
-              很多人買魚油時會被價格牽著鼻子走，但這樣很容易踩雷！<strong>專業營養師建議，選魚油要按照這個優先順序來評估</strong>：
-            </p>
-
-            <p>
-              <strong>1. 濃度優先</strong> - 這是最重要的！濃度低於 85%
-              的魚油就像稀釋過的果汁，要吃很多顆才有效果，最後反而更貴更麻煩。
-            </p>
-
-            <p>
-              <strong>2. 型態次之</strong> -
-              有了高濃度還要能被身體吸收才有用。rTG 型態比 EE 型態好吸收 3
-              倍，吃下去才不會浪費。
-            </p>
-
-            <p>
-              <strong>3. 比例搭配</strong> - 不同需求要選不同的 EPA:DHA
-              比例。想護心選 EPA 多的，想補腦選 DHA 多的，均衡保養選 1:1 比例。
-            </p>
-            <p>
-              <strong>4. 新鮮度重要</strong> -
-              再好的魚油如果已經氧化變質，不僅沒效果還可能有害。TOTOX 值低於 10
-              是基本要求。
-            </p>
-
-            <p>
-              <strong>5. 認證加分</strong> - IFOS
-              等第三方認證能確保品質穩定，但前面四項更重要。有認證是加分，沒有也不一定是壞產品。
-            </p>
-
-            <p>
-              <strong>6. 價格最後看</strong> -
-              便宜的通常有問題，但貴的也不一定就好。在前面五項都合格的基礎上，再來比價格才有意義。
-            </p>
-
-            <p style="margin-bottom: 30px">
-              <strong>簡單說：</strong
-              ><span class="highlight-nutrient"
-                >先確保「有效」，再考慮「划算」</span
-              >。<span class="highlight-nutrient"
-                >記住這個順序：濃度 > 型態 > 新鮮度 > 認證 > 價格</span
-              >，買到無效的魚油，再便宜都是浪費錢！
-            </p>
-
-            <div class="info-cards">
-              <div class="info-card">
-                <h4 class="info-card-title">1. 看濃度</h4>
-                <div class="info-card-value">85%+</div>
-                <p class="info-card-desc">
-                  Omega-3 濃度要超過 85%<br />濃度越高，雜質越少
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">2. 看型態</h4>
-                <div class="info-card-value">rTG 最佳</div>
-                <p class="info-card-desc">
-                  吸收率最好的型態<br />雖然貴但物超所值
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">3. 看比例</h4>
-                <div class="info-card-value">看需求</div>
-                <p class="info-card-desc">EPA 護心血管<br />DHA 護大腦眼睛</p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">4. 看新鮮度</h4>
-                <div class="info-card-value">TOTOX < 10</div>
-                <p class="info-card-desc">
-                  數值越低越新鮮<br />新鮮的魚油不會腥
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">5. 看萃取法</h4>
-                <div class="info-card-value">超臨界 CO2</div>
-                <p class="info-card-desc">
-                  最純淨的萃取方式<br />無溶劑殘留風險
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">6. 看認證</h4>
-                <div class="info-card-value">IFOS 認證</div>
-                <p class="info-card-desc">國際權威認證<br />品質安全有保障</p>
-              </div>
-            </div>
-
-            <h3>進階選購技巧：如何避開地雷產品</h3>
-            <p>
-              除了上面 6
-              個基本指標，還有一些「內行人才知道」的小撇步。這些技巧能幫你避開包裝漂亮但品質有問題的產品！
-            </p>
-
-            <table class="data-table" style="margin: 30px 0">
-              <thead>
-                <tr>
-                  <th style="background: #fee2e2; color: #991b1b; width: 50%">
-                    這些產品要小心
-                  </th>
-                  <th style="background: #dcfce7; color: #166534; width: 50%">
-                    優質產品特徵
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td
-                    style="background: #fef2f2; border-left: 4px solid #ef4444"
-                  >
-                    <strong>只標示「魚油 1000mg」</strong><br />
-                    沒說 EPA+DHA 含量的都有鬼
-                  </td>
-                  <td
-                    style="background: #f0fdf4; border-left: 4px solid #22c55e"
-                  >
-                    <strong>清楚標示 EPA+DHA 含量</strong><br />
-                    透明度高，有信心
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    style="background: #fef2f2; border-left: 4px solid #ef4444"
-                  >
-                    <strong>價格異常便宜</strong><br />
-                    一分錢一分貨，太便宜通常有問題
-                  </td>
-                  <td
-                    style="background: #f0fdf4; border-left: 4px solid #22c55e"
-                  >
-                    <strong>有完整溯源資訊</strong><br />
-                    從哪片海域、什麼魚種都寫得清清楚楚
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    style="background: #fef2f2; border-left: 4px solid #ef4444"
-                  >
-                    <strong>沒有第三方檢驗</strong><br />
-                    重金屬、塑化劑風險高
-                  </td>
-                  <td
-                    style="background: #f0fdf4; border-left: 4px solid #22c55e"
-                  >
-                    <strong>膠囊顏色深</strong><br />
-                    通常會添加維生素 E 防氧化
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    style="background: #fef2f2; border-left: 4px solid #ef4444"
-                  >
-                    <strong>包裝透明</strong><br />
-                    光線會讓魚油氧化變質
-                  </td>
-                  <td
-                    style="background: #f0fdf4; border-left: 4px solid #22c55e"
-                  >
-                    <strong>包裝密封性好</strong><br />
-                    獨立分裝或真空包裝
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    style="background: #fef2f2; border-left: 4px solid #ef4444"
-                  >
-                    <strong>來源不明</strong><br />
-                    不知道魚從哪裡來，安全堪憂
-                  </td>
-                  <td
-                    style="background: #f0fdf4; border-left: 4px solid #22c55e"
-                  >
-                    <strong>有客服專線</strong><br />
-                    負責任的廠商不怕你問問題
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <p
-              style="
-                text-align: center;
-                margin-top: 40px;
-                color: #718096;
-                font-size: 1.1em;
-              "
-            >
-              選好魚油了？接下來學學怎麼吃才最有效！
-            </p>
           </section>
 
           <section id="how-to-take">
             <h2>怎麼吃最有效？魚油服用完全攻略</h2>
 
-            <h3>不同需求的建議劑量</h3>
+            <h3>依族群的魚油劑量建議</h3>
 
             <p>
               每個人的需求不同，魚油的劑量也要跟著調整。以下是營養師根據不同健康目標的專業建議：
@@ -1452,25 +1266,55 @@
               以上建議僅供參考，實際劑量請依個人健康狀況調整。如有慢性疾病或正在服用藥物，請先諮詢醫師或營養師。
             </div>
 
-            <h3>什麼時候吃最好？</h3>
-            <div class="alert alert-tip">
-              <strong>💡 最佳服用時間：</strong>
-              <ul>
-                <li>
-                  <strong>隨餐吃</strong>：特別是有油脂的餐點，吸收效果最好
-                </li>
-                <li><strong>分次吃</strong>：一天分 2-3 次，減少腸胃不適</li>
-                <li><strong>冷凍後吃</strong>：怕魚腥味的人的救星！</li>
-              </ul>
-            </div>
-            <h3>安全劑量範圍</h3>
-            <div class="alert alert-tip">
-              <strong>💡 安全劑量建議：</strong>
-              <ul>
-                <li><strong>FDA 建議</strong>：每日 EPA+DHA 不超過 5000mg</li>
-                <li><strong>一般建議</strong>：1000-2000mg 就很足夠了</li>
-                <li><strong>高劑量風險</strong>：超過 3000mg 可能影響凝血</li>
-              </ul>
+            <h2>什麼時候吃最好？</h2>
+            <h3>隨餐吃！科學原理告訴你</h3>
+            <p>
+              魚油是脂溶性營養素，需要其他油脂幫助乳化才能被腸道吸收。<strong>空腹吃魚油就像把油倒在水上，根本無法混合吸收</strong>。<span
+                class="highlight-nutrient"
+                >建議在一天中最豐盛的那餐（通常是午餐或晚餐）服用</span
+              >，因為這時候胃裡有足夠的食物和油脂，能讓魚油充分乳化，提高吸收率。
+            </p>
+
+            <h3>特殊情況的服用建議</h3>
+            <p>
+              不同的健康目標，服用時間也要跟著調整。如果你的目標是<span
+                class="highlight-nutrient"
+                ><strong>降血脂</strong></span
+              >，建議晚餐後服用，因為夜間是膽固醇合成的高峰期，此時補充魚油效果最好。想要<span
+                class="highlight-nutrient"
+                ><strong>改善記憶力</strong></span
+              >的人，則建議早餐後服用，讓大腦一整天都有充足的 DHA 支持。<span
+                class="highlight-nutrient"
+                ><strong>運動族群</strong></span
+              >可以在運動後 30 分鐘內服用，幫助消炎和肌肉恢復。<span
+                class="highlight-nutrient"
+                ><strong>腸胃敏感</strong></span
+              >的人建議選擇腸溶膠囊，避免胃部不適。而有<span
+                class="highlight-nutrient"
+                ><strong>睡眠問題</strong></span
+              >的人，最好避免睡前服用，以免影響消化和睡眠品質。
+            </p>
+
+            <div class="info-cards" style="margin: 30px 0">
+              <div class="info-card">
+                <h4 class="info-card-title">最佳時機</h4>
+                <div class="info-card-value">隨餐服用</div>
+                <p class="info-card-desc">
+                  與含油脂的餐點一起吃<br />吸收率可提升 2-3 倍
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">建議頻率</h4>
+                <div class="info-card-value">分次服用</div>
+                <p class="info-card-desc">
+                  每日分 2-3 次服用<br />減少腸胃不適感
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">小技巧</h4>
+                <div class="info-card-value">冷凍保存</div>
+                <p class="info-card-desc">冷凍後服用無魚腥味<br />更容易吞服</p>
+              </div>
             </div>
 
             <p
@@ -1489,6 +1333,19 @@
             <h2>天然食物也能補充 Omega-3！</h2>
 
             <h3>Omega-3 食物冠軍榜</h3>
+
+            <p>
+              雖然魚油補充劑很方便，但天然食物永遠是最好的營養來源！新鮮的深海魚類不僅含有豐富的
+              Omega-3，還有其他協同營養素，讓身體更容易吸收利用。最重要的是，這些食物吃起來還很美味！
+            </p>
+
+            <p style="margin-bottom: 30px">
+              <strong>聰明選魚小撇步：</strong>選擇小型深海魚類，不僅 Omega-3
+              含量高，重金屬污染風險也較低。記住「<span
+                class="highlight-nutrient"
+                >SMASH 原則</span
+              >」：<strong>S</strong>almon（鮭魚）、<strong>M</strong>ackerel（鯖魚）、<strong>A</strong>nchovies（鯷魚）、<strong>S</strong>ardines（沙丁魚）、<strong>H</strong>erring（鯡魚），這些都是營養師推薦的優質選擇！
+            </p>
 
             <div class="info-cards">
               <div class="info-card">
@@ -1520,9 +1377,212 @@
             <div class="alert alert-tip">
               <strong>🐟 營養師建議：</strong>
               每週吃 2 次深海魚類（大約一個巴掌大），就能攝取到基本的 Omega-3
-              需求！小型魚類比大型魚更安全，重金屬污染較少。
+              需求！
+            </div>
+          </section>
+
+          <section id="how-to-choose">
+            <h2>魚油選購攻略 - 不被騙的完整指南！</h2>
+
+            <p>
+              市面上的魚油產品五花八門，價格從幾百到幾千都有。到底該怎麼選？讓營養師告訴你不踩雷的秘訣！
+            </p>
+
+            <h3>為什麼選對魚油這麼重要？</h3>
+            <p>
+              很多人以為「魚油就是魚油」，隨便買一罐就好。<strong
+                >大錯特錯！</strong
+              >
+              <span class="highlight-nutrient">品質差的魚油不僅效果有限</span
+              >，<span class="highlight-nutrient"
+                >甚至可能有重金屬污染的風險</span
+              >。就像買車一樣，外表看起來差不多，但引擎、性能差很大！學會這 6
+              個選購要點，讓你花的每一分錢都值得！
+            </p>
+
+            <h3>魚油選購的 6 大關鍵指</h3>
+            <p>
+              很多人買魚油時會被價格牽著鼻子走，但這樣很容易踩雷！<strong>專業營養師建議，選魚油要按照這個優先順序來評估</strong>：
+            </p>
+
+            <p>
+              <strong>1. 濃度優先</strong> - 這是最重要的！濃度低於 85%
+              的魚油就像稀釋過的果汁，要吃很多顆才有效果，最後反而更貴更麻煩。
+            </p>
+
+            <p>
+              <strong>2. 新鮮度必看</strong> -
+              再好的魚油如果已經氧化變質，不僅沒效果還可能有害。TOTOX 值低於 10
+              是基本要求。
+            </p>
+            <p>
+              <strong>3. 型態重要</strong> -
+              有了高濃度還要能被身體吸收才有用。rTG 型態比 EE 型態好吸收 3
+              倍，吃下去才不會浪費。
+            </p>
+
+            <p>
+              <strong>4. 比例搭配</strong> - 不同需求要選不同的 EPA:DHA
+              比例。想護心選 EPA 多的，想補腦選 DHA 多的，均衡保養選 1:1 比例。
+            </p>
+
+            <p>
+              <strong>5. 認證加分</strong> - IFOS
+              等第三方認證能確保品質穩定，但前面四項更重要。有認證是加分，沒有也不一定是壞產品。
+            </p>
+
+            <p>
+              <strong>6. 價格最後看</strong> -
+              便宜的通常有問題，但貴的也不一定就好。在前面五項都合格的基礎上，再來比價格才有意義。
+            </p>
+
+            <p style="margin-bottom: 30px">
+              <strong>簡單說：</strong
+              ><span class="highlight-nutrient"
+                >先確保「有效」，再考慮「划算」</span
+              >。<span class="highlight-nutrient"
+                >記住這個順序：濃度 > 新鮮度 > 型態 > 認證 > 價格</span
+              >，買到無效的魚油，再便宜都是浪費錢！
+            </p>
+
+            <div class="info-cards">
+              <div class="info-card">
+                <h4 class="info-card-title">1. 看濃度</h4>
+                <div class="info-card-value">85%+</div>
+                <p class="info-card-desc">
+                  Omega-3 濃度要超過 85%<br />濃度越高，雜質越少
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">2. 看新鮮度</h4>
+                <div class="info-card-value">TOTOX < 10</div>
+                <p class="info-card-desc">
+                  數值越低越新鮮<br />新鮮的魚油不會腥
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">3. 看型態</h4>
+                <div class="info-card-value">rTG 最佳</div>
+                <p class="info-card-desc">
+                  吸收率最好的型態<br />雖然貴但物超所值
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">4. 看比例</h4>
+                <div class="info-card-value">看需求</div>
+                <p class="info-card-desc">EPA 護心血管<br />DHA 護大腦眼睛</p>
+              </div>
+
+              <div class="info-card">
+                <h4 class="info-card-title">5. 看萃取法</h4>
+                <div class="info-card-value">超臨界 CO2</div>
+                <p class="info-card-desc">
+                  最純淨的萃取方式<br />無溶劑殘留風險
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">6. 看認證</h4>
+                <div class="info-card-value">IFOS 認證</div>
+                <p class="info-card-desc">國際權威認證<br />品質安全有保障</p>
+              </div>
             </div>
 
+            <h3>進階選購技巧：如何避開地雷產品</h3>
+            <p>
+              除了上面 6
+              個基本指標，還有一些「內行人才知道」的小撇步。這些技巧能幫你避開包裝漂亮但品質有問題的產品！
+            </p>
+
+            <table class="data-table" style="margin: 30px 0">
+              <thead>
+                <tr>
+                  <th style="background: #fee2e2; color: #991b1b; width: 50%">
+                    這些產品要小心
+                  </th>
+                  <th style="background: #dcfce7; color: #166534; width: 50%">
+                    優質產品特徵
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    style="background: #fef2f2; border-left: 4px solid #ef4444"
+                  >
+                    <strong>只標示「魚油 1000mg」</strong><br />
+                    沒說 EPA+DHA 含量的都有鬼
+                  </td>
+                  <td
+                    style="background: #f0fdf4; border-left: 4px solid #22c55e"
+                  >
+                    <strong>清楚標示 EPA+DHA 含量</strong><br />
+                    透明度高，有信心
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style="background: #fef2f2; border-left: 4px solid #ef4444"
+                  >
+                    <strong>價格異常便宜</strong><br />
+                    一分錢一分貨，太便宜通常有問題
+                  </td>
+                  <td
+                    style="background: #f0fdf4; border-left: 4px solid #22c55e"
+                  >
+                    <strong>有完整溯源資訊</strong><br />
+                    從哪片海域、什麼魚種都寫得清清楚楚
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style="background: #fef2f2; border-left: 4px solid #ef4444"
+                  >
+                    <strong>沒有第三方檢驗</strong><br />
+                    重金屬、塑化劑風險高
+                  </td>
+                  <td
+                    style="background: #f0fdf4; border-left: 4px solid #22c55e"
+                  >
+                    <strong>膠囊顏色深</strong><br />
+                    通常會添加維生素 E 防氧化
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style="background: #fef2f2; border-left: 4px solid #ef4444"
+                  >
+                    <strong>包裝透明</strong><br />
+                    光線會讓魚油氧化變質
+                  </td>
+                  <td
+                    style="background: #f0fdf4; border-left: 4px solid #22c55e"
+                  >
+                    <strong>包裝密封性好</strong><br />
+                    獨立分裝或真空包裝
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style="background: #fef2f2; border-left: 4px solid #ef4444"
+                  >
+                    <strong>來源不明</strong><br />
+                    不知道魚從哪裡來，安全堪憂
+                  </td>
+                  <td
+                    style="background: #f0fdf4; border-left: 4px solid #22c55e"
+                  >
+                    <strong>有客服專線</strong><br />
+                    負責任的廠商不怕你問問題
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>
+              看完上面的對比表格，記住三個快速判斷原則：<strong>看標示是否透明</strong>（好產品會清楚標示
+              EPA+DHA 含量、魚種來源、TOTOX
+              值）、<strong>看價格是否合理</strong>（太便宜通常有問題，性價比才是關鍵）、<strong>看售後服務是否完善</strong>（有客服專線且願意解答疑問的品牌更值得信賴）。
+            </p>
             <p
               style="
                 text-align: center;
@@ -1531,71 +1591,9 @@
                 font-size: 1.1em;
               "
             >
-              吃魚油有什麼需要注意的嗎？來看看安全資訊！
+              還有問題嗎？來看看最常被問的問題！
             </p>
           </section>
-
-          <section id="safety">
-            <h2>安全第一！魚油的注意事項</h2>
-
-            <p>
-              魚油雖然好，但不是每個人都適合，也不是吃越多越好！來看看有什麼要注意的：
-            </p>
-
-            <h3>這些人要特別小心</h3>
-
-            <div class="info-cards">
-              <div class="info-card">
-                <h4 class="info-card-title">正在吃藥的人</h4>
-                <p class="info-card-desc">
-                  特別是抗凝血藥物<br /><strong>一定要先問醫師！</strong>
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">準備開刀的人</h4>
-                <p class="info-card-desc">
-                  術前 2 週要停止服用<br /><strong>避免出血風險</strong>
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">凝血功能異常</h4>
-                <p class="info-card-desc">
-                  如血友病患者<br /><strong>絕對要避免使用</strong>
-                </p>
-              </div>
-            </div>
-
-            <h3>常見副作用與解決方法</h3>
-
-            <div class="alert alert-tip">
-              <strong>魚腥味打嗝</strong>
-              <ul>
-                <li>把魚油放冷凍庫，像小冰塊一樣吞</li>
-                <li>選擇腸溶膠囊，在腸道才分解</li>
-                <li>隨餐服用，混合食物一起消化</li>
-              </ul>
-            </div>
-
-            <div class="alert alert-doctor">
-              <strong>腸胃不適</strong>
-              <ul>
-                <li>從低劑量開始，讓身體慢慢適應</li>
-                <li>分次服用，不要一次吞太多</li>
-                <li>絕對不要空腹吃</li>
-              </ul>
-            </div>
-          </section>
-
-          <p
-            style="
-              text-align: center;
-              margin-top: 40px;
-              color: #718096;
-              font-size: 1.1em;
-            "
-          >
-            還有問題嗎？來看看最常被問的問題！
-          </p>
 
           <!-- FAQ Section -->
           <section id="faq" class="faq-section">
