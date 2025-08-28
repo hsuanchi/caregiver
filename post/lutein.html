@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>葉黃素完整指南：功效、副作用、怎麼選才有效？ | 營養師審核</title>
+    <meta name="description" content="專業營養師詳細解析葉黃素的護眼功效、黃斑部保護作用、藍光過濾功能、建議劑量和產品選擇指南。了解葉黃素對眼部健康的重要性。" />
+    <meta name="keywords" content="葉黃素, 護眼, 黃斑部病變, 藍光, 玉米黃質, 眼部健康, 葉黃素功效, 葉黃素食物, 視力保護, 抗氧化" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+        line-height: 1.8;
+        color: #2d3748;
+        background: #faf8f5;
+      }
+
+      /* Progress Bar */
+      .progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
+        z-index: 1001;
+        transition: width 0.3s ease;
+      }
+
+      /* Article Layout */
+      .article-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 100px 20px 60px;
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 60px;
+        position: relative;
+      }
+
+      /* Sidebar Table of Contents */
+      .sidebar {
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+      }
+
+      .toc {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .toc-title {
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .toc-list {
+        list-style: none;
+      }
+
+      .toc-list li {
+        margin-bottom: 8px;
+      }
+
+      .toc-list a {
+        color: #4a5568;
+        text-decoration: none;
+        font-size: 0.95em;
+        display: block;
+        padding: 8px 12px;
+        transition: all 0.3s ease;
+        position: relative;
+        border-radius: 8px;
+        border-left: 3px solid transparent;
+      }
+
+      .toc-list a.active {
+        color: #ff6b35;
+        background: rgba(255, 107, 53, 0.1);
+        border-left-color: #ff6b35;
+        font-weight: 600;
+      }
+
+      .toc-list a:hover {
+        color: #ff6b35;
+        background: rgba(255, 107, 53, 0.08);
+        border-left-color: #ff8f65;
+        transform: translateX(2px);
+      }
+
+      /* 第一階層樣式 */
+      .toc-list a:not(.sub-item) {
+        font-weight: 600;
+        background: rgba(255, 107, 53, 0.05);
+        margin-bottom: 4px;
+      }
+
+      /* 第二階層樣式 */
+      .toc-list a.sub-item {
+        margin-left: 16px;
+        font-size: 0.9em;
+        color: #718096;
+        background: rgba(113, 128, 150, 0.03);
+        border-left-color: #e2e8f0;
+        position: relative;
+      }
+
+      /* 第二階層前的連線效果 */
+      .toc-list a.sub-item::before {
+        content: "";
+        position: absolute;
+        left: -12px;
+        top: 50%;
+        width: 8px;
+        height: 1px;
+        background: #d1d5db;
+        transform: translateY(-50%);
+      }
+
+      .toc-list a.active.sub-item {
+        color: #ff6b35;
+        background: rgba(255, 107, 53, 0.08);
+        border-left-color: #ff8f65;
+      }
+
+      .toc-list a.active.sub-item::before {
+        background: #ff8f65;
+      }
+
+      /* Main Content Area */
+      .article-content {
+        background: white;
+        border-radius: 20px;
+        padding: 50px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Article Header */
+      .article-header {
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .article-hero {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        border-radius: 20px;
+        padding: 60px;
+        margin-bottom: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .article-hero::before {
+        content: "👁️";
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        font-size: 150px;
+        opacity: 0.1;
+        transform: rotate(-15deg);
+      }
+
+      .article-category {
+        display: inline-block;
+        background: white;
+        color: #ff6b35;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        font-weight: 600;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .article-title {
+        font-size: 2.5em;
+        font-weight: 800;
+        color: #2d3748;
+        line-height: 1.3;
+        margin-bottom: 20px;
+        max-width: 800px;
+      }
+
+      .article-subtitle {
+        font-size: 1.3em;
+        color: #4a5568;
+        line-height: 1.6;
+        max-width: 700px;
+        margin-bottom: 30px;
+      }
+
+      .article-meta {
+        display: flex;
+        gap: 30px;
+        color: #718096;
+        font-size: 0.95em;
+        flex-wrap: wrap;
+      }
+
+      .article-meta span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* Alert Boxes */
+      .alert {
+        padding: 20px 25px;
+        border-radius: 15px;
+        margin: 30px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .alert::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+      }
+
+      .alert-doctor {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+
+      .alert-doctor::before {
+        background: #dc2626;
+      }
+
+      .alert-nutritionist {
+        background: #dbeafe;
+        color: #1e3a8a;
+      }
+
+      .alert-nutritionist::before {
+        background: #2563eb;
+      }
+
+      .alert-tip {
+        background: #f0fdf4;
+        color: #14532d;
+      }
+
+      .alert-tip::before {
+        background: #22c55e;
+      }
+
+      .alert strong {
+        font-weight: 700;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      /* Tables */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .data-table thead {
+        background: linear-gradient(135deg, #ff6b35 0%, #ff8f65 100%);
+        color: white;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 15px 20px;
+        text-align: left;
+      }
+
+      .data-table th {
+        font-weight: 600;
+      }
+
+      .data-table tbody tr {
+        border-bottom: 1px solid #e5e7eb;
+        transition: background 0.3s ease;
+      }
+
+      .data-table tbody tr:hover {
+        background: #f9fafb;
+      }
+
+      .data-table tbody tr:last-child {
+        border-bottom: none;
+      }
+
+      /* Visual Info Cards */
+      .info-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 40px 0;
+      }
+
+      .info-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      }
+
+      .info-card-icon {
+        font-size: 3em;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .info-card-title {
+        font-size: 1.3em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 10px;
+      }
+
+      .info-card-desc {
+        color: #718096;
+        font-size: 0.95em;
+        line-height: 1.6;
+      }
+
+      .info-card-value {
+        font-size: 2em;
+        font-weight: 800;
+        color: #ff6b35;
+        margin: 10px 0;
+      }
+      
+      .highlight-nutrient {
+        border-bottom: 2px solid #ff6b35;
+        padding-bottom: 1px;
+      }
+
+      /* Story Section */
+      .story-intro {
+        background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+        border-radius: 20px;
+        padding: 40px;
+        margin: 40px 0;
+        position: relative;
+      }
+
+      .story-intro h3 {
+        font-size: 1.8em;
+        color: #3730a3;
+        margin-bottom: 20px;
+      }
+
+      .story-intro p {
+        font-size: 1.1em;
+        line-height: 1.8;
+        color: #4c1d95;
+      }
+
+      /* Quick Test */
+      .quick-test {
+        background: #f0fdf4;
+        border-radius: 20px;
+        padding: 40px;
+        margin: 40px 0;
+        text-align: center;
+      }
+
+      .quick-test h3 {
+        font-size: 1.8em;
+        color: #14532d;
+        margin-bottom: 20px;
+      }
+
+      .test-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 30px;
+      }
+
+      .test-option {
+        background: #f8fafc;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 18px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .test-option:hover {
+        background: #fff7ed;
+        border-color: #fed7aa;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(251, 146, 60, 0.15);
+      }
+
+      .test-option input[type="checkbox"] {
+        display: none;
+      }
+
+      .test-option.selected {
+        background: linear-gradient(135deg, #ff6b35 0%, #fb923c 100%);
+        border-color: #ff6b35;
+        color: white;
+        box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+      }
+      .test-option.selected:hover {
+        background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+        transform: translateY(-2px);
+        color: white;
+      }
+
+      /* Content Typography */
+      .article-body h2 {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin: 50px 0 30px;
+        padding-top: 20px;
+        position: relative;
+      }
+
+      .article-body h2::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 4px;
+        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
+        border-radius: 2px;
+      }
+
+      .article-body h3 {
+        font-size: 1.5em;
+        font-weight: 600;
+        color: #2d3748;
+        margin: 35px 0 20px;
+      }
+
+      .article-body h4 {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #4a5568;
+        margin: 25px 0 15px;
+      }
+
+      .article-body p {
+        margin-bottom: 20px;
+        color: #4a5568;
+      }
+
+      .article-body ul,
+      .article-body ol {
+        margin: 20px 0;
+        padding-left: 30px;
+        color: #4a5568;
+      }
+
+      .article-body li {
+        margin-bottom: 10px;
+      }
+
+      .article-body blockquote {
+        border-left: 4px solid #ff6b35;
+        padding-left: 20px;
+        margin: 30px 0;
+        font-style: italic;
+        color: #718096;
+      }
+
+      .article-body strong {
+        color: #2d3748;
+        font-weight: 600;
+      }
+
+      /* FAQ Section */
+      .faq-section {
+        margin-top: 60px;
+        padding-top: 40px;
+        border-top: 2px solid #e5e7eb;
+      }
+
+      .faq-item {
+        background: #f9fafb;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-question {
+        padding: 20px 25px;
+        font-weight: 600;
+        color: #2d3748;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .faq-question::after {
+        content: "+";
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5em;
+        color: #ff6b35;
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.active .faq-question::after {
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      .faq-answer {
+        padding: 0 25px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item.active .faq-answer {
+        padding: 0 25px 20px;
+        max-height: 500px;
+      }
+
+      /* Related Articles */
+      .related-section {
+        margin-top: 80px;
+        padding: 60px 0;
+        background: #faf8f5;
+        border-radius: 20px;
+      }
+
+      .related-title {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .related-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .related-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .related-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .related-card-tag {
+        display: inline-block;
+        background: #e0e7ff;
+        color: #3730a3;
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 0.85em;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .related-card-title {
+        font-size: 1.3em;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+
+      .related-card-desc {
+        color: #718096;
+        font-size: 0.95em;
+        line-height: 1.6;
+      }
+
+      /* Disclaimer */
+      .disclaimer {
+        background: #f9fafb;
+        padding: 60px 0;
+        text-align: center;
+      }
+      .disclaimer-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .disclaimer h3 {
+        color: #4b5563;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+      }
+      .disclaimer p {
+        color: #6b7280;
+        font-size: 0.95em;
+        line-height: 1.8;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .article-container {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+
+        .sidebar {
+          display: none;
+        }
+
+        .article-content {
+          padding: 30px;
+        }
+
+        .article-title {
+          font-size: 2em;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .article-content {
+          padding: 20px;
+          border-radius: 15px;
+        }
+
+        .article-title {
+          font-size: 1.8em;
+        }
+
+        .article-meta {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .data-table {
+          font-size: 0.9em;
+        }
+
+        .data-table th,
+        .data-table td {
+          padding: 10px;
+        }
+
+        .related-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Header Component Container -->
+    <div id="header-component"></div>
+
+    <!-- Article Container -->
+    <div class="article-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="toc">
+          <h3 class="toc-title">
+            <span>📑</span>
+            <span>目錄</span>
+          </h3>
+          <ul class="toc-list">
+            <li><a href="#summary" class="toc-link">30 秒速讀版</a></li>
+            <li><a href="#self-check" class="toc-link">你需要葉黃素嗎？</a></li>
+            <li><a href="#basics" class="toc-link">葉黃素基礎知識</a></li>
+            <li><a href="#benefits" class="toc-link sub-item">功效與作用機制</a></li>
+            <li><a href="#dosage" class="toc-link sub-item">建議攝取量與時間</a></li>
+            <li><a href="#food-sources" class="toc-link sub-item">天然食物來源</a></li>
+            <li><a href="#how-to-choose" class="toc-link">如何選擇葉黃素產品</a></li>
+            <li><a href="#safety" class="toc-link">安全資訊與副作用</a></li>
+            <li><a href="#faq" class="toc-link">常見問題</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="article-content">
+        <!-- Article Header -->
+        <header class="article-header">
+          <div class="article-hero">
+            <span class="article-category">營養素指南</span>
+            <h1 class="article-title">
+              葉黃素完整指南：功效、副作用、怎麼選才有效？
+            </h1>
+            <p class="article-subtitle">
+              營養師專業提醒：葉黃素是守護靈魂之窗的關鍵營養素，但市面上產品眾多，您知道酯化型和游離型有何不同？黃金比例5:1又是什麼？本篇將帶您深入了解葉黃素，助您選對產品，清晰看世界。
+            </p>
+            <div class="article-meta">
+              <span>✍️ 專業營養師審核</span>
+              <span>📅 2025 年 8 月 27 日更新</span>
+              <span>⏱️ 閱讀時間：13 分鐘</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Article Body -->
+        <article class="article-body">
+          <div class="alert alert-doctor">
+              <strong>醫師警告：</strong>葉黃素補充劑並非藥物，無法治療眼疾。若有眼睛不適或視力問題，請務必尋求專業眼科醫師診斷與治療。
+          </div>
+
+          <section id="summary">
+            <h2>30 秒速讀版</h2>
+            <div class="info-cards">
+              <div class="info-card">
+                <span class="info-card-icon">🛡️</span>
+                <h4 class="info-card-title">有什麼好處？</h4>
+                <p class="info-card-desc">
+                  過濾藍光、保護黃斑部<br />抗氧化、維持視力健康
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">💊</span>
+                <h4 class="info-card-title">怎麼服用？</h4>
+                <p class="info-card-desc">
+                  每日 6-10mg (保健)<br />隨餐或飯後搭配油脂
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🛒</span>
+                <h4 class="info-card-title">怎麼選購？</h4>
+                <p class="info-card-desc">
+                  選「游離型」、黃金比例 5:1<br />搭配玉米黃素效果加倍
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="self-check">
+            <h2>快來看看你是不是需要補充葉黃素的人？</h2>
+            <div class="quick-test">
+              <h3>葉黃素需求自我檢測</h3>
+              <p>以下情況，你中了幾個？</p>
+              <div class="test-options">
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>長時間使用手機/電腦</span>
+                </label>
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>眼睛容易乾澀、疲勞</span>
+                </label>
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>年齡超過50歲</span>
+                </label>
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>高度近視者 (超過600度)</span>
+                </label>
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>經常在戶外或強光下工作</span>
+                </label>
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>有黃斑部病變家族史</span>
+                </label>
+              </div>
+              <p style="margin-top: 20px; color: #14532d; font-weight: 600">
+                勾選 2 個以上？你可能真的需要補充葉黃素囉！
+              </p>
+            </div>
+          </section>
+
+          <section id="basics">
+            <h2>葉黃素是什麼？游離型與酯化型有何不同？</h2>
+            <p>
+              葉黃素（Lutein）是一種類胡蘿蔔素，屬於葉黃素類家族的一員。它和它的好夥伴玉米黃素（Zeaxanthin）是構成我們視網膜黃斑部的核心色素。<span class="highlight-nutrient">人體無法自行合成葉黃素，必須完全依賴飲食攝取</span>，這也是為什麼它被稱為「必需營養素」。
+            </p>
+            <h3>葉黃素的兩種型態：游離型 vs. 酯化型</h3>
+            <p>市面上的葉黃素產品主要分為兩種型態，它們在吸收和利用上有所差異：</p>
+            <table class="data-table">
+              <thead>
+                <tr><th>型態</th><th>特點</th><th>優點</th><th>缺點</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>游離型葉黃素 (Free Lutein)</strong></td>
+                  <td>分子量小，不含脂肪酸</td>
+                  <td><span class="highlight-nutrient">可直接吸收，吸收率高</span></td>
+                  <td>穩定性稍差，成本較高</td>
+                </tr>
+                <tr>
+                  <td><strong>酯化型葉黃素 (Lutein Ester)</strong></td>
+                  <td>分子量大，含有脂肪酸</td>
+                  <td>穩定性高，不易氧化</td>
+                  <td>需經酵素分解，吸收率受影響</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="alert alert-nutritionist">
+              <strong>營養師提醒：</strong>雖然兩種型態都能被利用，但考量到吸收效率，<span class="highlight-nutrient">建議優先選擇「游離型」葉黃素</span>，特別是對於消化功能不佳的族群。
+            </div>
+          </section>
+
+          <section id="benefits">
+            <h2>葉黃素的功效與作用機制</h2>
+            <p>葉黃素就像眼睛內建的太陽眼鏡和防護罩，透過多種方式保護我們的視力。</p>
+            <div class="info-cards">
+              <div class="info-card">
+                <span class="info-card-icon">☀️</span>
+                <h4 class="info-card-title">過濾有害藍光</h4>
+                <p class="info-card-desc">吸收來自3C產品和陽光的高能量藍光，減少對視網膜感光細胞的直接傷害。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🛡️</span>
+                <h4 class="info-card-title">抗氧化保護</h4>
+                <p class="info-card-desc">中和光線產生的自由基，減少視網膜的氧化壓力，延緩細胞老化。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🎯</span>
+                <h4 class="info-card-title">強化黃斑部功能</h4>
+                <p class="info-card-desc">增加黃斑色素密度，提升視覺的清晰度與對比度，並減少眩光的不適感。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="dosage">
+            <h2>每日建議攝取量與最佳時間</h2>
+            <h3>每日建議攝取量</h3>
+            <table class="data-table">
+              <thead>
+                <tr><th>族群/目的</th><th>每日建議劑量 (毫克)</th><th>注意事項</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>一般日常保健</strong></td>
+                  <td>6 - 10 mg</td>
+                  <td>適合學生、一般上班族維持基本眼部健康。</td>
+                </tr>
+                <tr>
+                  <td><strong>加強保養</strong></td>
+                  <td>10 - 20 mg</td>
+                  <td>適合長時間用眼、高度近視及中老年族群。</td>
+                </tr>
+                <tr>
+                  <td><strong>預防黃斑部病變 (AREDS2)</strong></td>
+                  <td>10 mg 葉黃素 + 2 mg 玉米黃素</td>
+                  <td>根據大型臨床研究的建議配方。</td>
+                </tr>
+              </tbody>
+            </table>
+            <h3>最佳攝取時間與方式</h3>
+            <p><span class="highlight-nutrient">葉黃素是脂溶性營養素，隨餐或飯後服用，讓食物中的油脂幫助其吸收，效果最好。</span></p>
+            <ul>
+              <li><strong>最佳時間</strong>：隨餐或飯後30分鐘內。</li>
+              <li><strong>黃金搭檔</strong>：與魚油(Omega-3)一起服用，不僅能幫助葉黃素吸收，DHA本身也是視網膜的重要成分，有加乘效果。</li>
+              <li><strong>持續是關鍵</strong>：葉黃素需要在體內累積，建議至少持續服用2-4個月才能看到效果。</li>
+            </ul>
+          </section>
+
+          <section id="food-sources">
+            <h2>富含葉黃素的食物來源排行</h2>
+            <div class="alert alert-tip">
+              <strong>營養師小撇步：</strong>想從食物中高效補充葉黃素，記得「綠色蔬菜用油炒，搭配一顆好蛋黃」！
+            </div>
+            <table class="data-table">
+              <thead>
+                <tr><th>食物名稱</th><th>每100g葉黃素含量 (毫克)</th><th>備註</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>羽衣甘藍</strong></td><td><strong>39.5</strong></td><td>葉黃素之王，沙拉或清炒皆宜。</td></tr>
+                <tr><td><strong>菠菜</strong></td><td>20.4</td><td>建議搭配油脂烹調以利吸收。</td></tr>
+                <tr><td><strong>芥菜</strong></td><td>12.2</td><td>台灣常見的深綠色蔬菜。</td></tr>
+                <tr><td><strong>蛋黃</strong></td><td>0.5</td><td>含量雖不高，但生物利用率極佳。</td></tr>
+                <tr><td><strong>南瓜</strong></td><td>1.5</td><td>黃橙色蔬菜的代表。</td></tr>
+                <tr><td><strong>奇異果</strong></td><td>0.1</td><td>水果中葉黃素含量較豐富的選擇。</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="how-to-choose">
+            <h2>如何選擇葉黃素產品？</h2>
+            <p>面對琳瑯滿目的產品，掌握以下幾個關鍵，就能選到最適合你的葉黃素：</p>
+            <ol>
+              <li><strong>看型態：優先選擇「游離型」</strong><br>游離型葉黃素分子小，不需經過身體消化，可直接被吸收，生物利用率較高。</li>
+              <li><strong>看比例：認明「黃金比例 5:1」</strong><br><span class="highlight-nutrient">葉黃素與玉米黃素的比例為 5:1 (例如: 10mg葉黃素搭配2mg玉米黃素)</span>，是根據美國國家眼科研究所(NEI)大型研究(AREDS2)證實最有效的組合。</li>
+              <li><strong>看劑量：依需求選擇</strong><br>日常保健每日6-10mg即可，若為高度用眼族群或中老年人，可選擇10-20mg的劑量。</li>
+              <li><strong>看複方：尋找加分成分</strong><br>優質的產品常會搭配<span class="highlight-nutrient">魚油(Omega-3)、花青素、維生素A/C/E、鋅</span>等對眼睛有益的複方成分，達到全方位保護。</li>
+              <li><strong>看認證：選擇專利原料與第三方檢驗</strong><br>選擇使用如FloraGLO®等國際專利原料，並附有SGS等重金屬、塑化劑檢驗報告的品牌，品質更有保障。</li>
+            </ol>
+          </section>
+
+          <section id="safety">
+            <h2>葉黃素的副作用與安全資訊</h2>
+            <p>葉黃素是一種非常安全的營養素，在建議劑量下幾乎沒有副作用。但仍有幾點需注意：</p>
+            <ul>
+              <li><strong>皮膚變黃</strong>：長期每日攝取超過20mg的高劑量葉黃素，極少數人可能因色素沉積導致手掌、腳掌皮膚暫時性變黃，此為無害現象，停用後即可恢復。</li>
+              <li><strong>適用對象</strong>：孕婦、哺乳期婦女雖然一般認為安全，但仍建議諮詢醫師後再補充。</li>
+              <li><strong>藥物交互作用</strong>：目前無已知的重大藥物交互作用，但若服用影響脂肪吸收的藥物，可能會降低葉黃素的吸收率。</li>
+            </ul>
+          </section>
+
+          <section id="faq" class="faq-section">
+            <h2>常見問題</h2>
+            <div class="faq-item">
+              <div class="faq-question">Q1：葉黃素和玉米黃素的「黃金比例5:1」是什麼意思？</div>
+              <div class="faq-answer">
+                <p><strong>A：這是指葉黃素與玉米黃素的最佳攝取比例。</strong> 根據AREDS2研究，黃斑部中葉黃素與玉米黃素的自然比例約為5:1。因此，補充劑若能按照這個比例設計，被認為能更有效地在黃斑部累積，發揮最佳的保護作用。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q2：葉黃素要吃多久才有效？需要長期服用嗎？</div>
+              <div class="faq-answer">
+                <p><strong>A：葉黃素需要時間累積，建議長期持續服用。</strong> 葉黃素在體內累積需要時間，通常需要持續補充 <strong>2-4個月</strong> 才能達到黃斑部飽和濃度，進而發揮保護作用。由於葉黃素會隨著時間代謝，且眼睛持續暴露在光線和氧化壓力下，因此建議長期持續攝取以維持保護效果。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q3：游離型和酯化型葉黃素，哪種比較好？</div>
+              <div class="faq-answer">
+                <p><strong>A：游離型吸收率較高，是目前的主流選擇。</strong></p>
+                <ul>
+                  <li><strong>游離型</strong>：分子小，可直接吸收，適合所有族群，特別是消化吸收能力較差者。</li>
+                  <li><strong>酯化型</strong>：分子大，需經酵素分解，穩定性較高，但吸收率受個人消化能力影響。</li>
+                </ul>
+                <p>考量到吸收效率，多數專家會建議優先選擇游離型葉黃素。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q4：葉黃素可以治療近視或散光嗎？</div>
+              <div class="faq-answer">
+                <p><strong>A：不能。</strong> 葉黃素主要作用是保護黃斑部，過濾藍光，預防黃斑部病變等眼部疾病。它無法改變眼睛的屈光度，因此不能治療近視、散光或老花眼。若有這些問題，仍需尋求眼科醫師的專業診斷和矯正。</p>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        <!-- Related Articles -->
+        <h2 class="related-title">相關營養素</h2>
+        <div class="related-grid">
+          <a href="./fish-oil.html" class="related-card">
+            <span class="related-card-tag">脂肪酸</span>
+            <h3 class="related-card-title">魚油 (Omega-3)</h3>
+            <p class="related-card-desc">
+              DHA是視網膜的重要成分，與葉黃素搭配有加乘效果，是眼睛保健的黃金搭檔。
+            </p>
+          </a>
+          <a href="./coenzyme-q10.html" class="related-card">
+            <span class="related-card-tag">抗氧化物</span>
+            <h3 class="related-card-title">輔酶 Q10</h3>
+            <p class="related-card-desc">
+              強效的抗氧化劑，能保護全身細胞，包含眼睛的微細血管，免於自由基傷害。
+            </p>
+          </a>
+          <a href="./vitamin-b.html" class="related-card">
+            <span class="related-card-tag">維生素</span>
+            <h3 class="related-card-title">維生素B群</h3>
+            <p class="related-card-desc">
+              維持神經系統健康，包含視神經的正常運作，對於緩解眼睛疲勞也有幫助。
+            </p>
+          </a>
+        </div>
+      </main>
+    </div>
+
+    <!-- Disclaimer Section -->
+    <section class="disclaimer">
+      <div class="disclaimer-content">
+        <h3>免責聲明</h3>
+        <p>
+          本資訊僅供教育目的，不能取代專業醫療建議。開始任何營養補充計劃前，請諮詢醫療專業人員。個人需求可能因健康狀況、藥物使用和生活方式而有所不同。
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer Component Container -->
+    <div id="footer-component"></div>
+
+    <!-- Load Components -->
+    <script src="../assets/js/deus-analytics-component.js"></script>
+    <script src="../assets/js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-footer-component.js"></script>
+
+    <script>
+      // Progress Bar
+      function updateProgressBar() {
+        const scrollPosition = window.scrollY;
+        const documentHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (scrollPosition / documentHeight) * 100;
+        document.getElementById("progressBar").style.width =
+          scrollPercentage + "%";
+      }
+
+      window.addEventListener("scroll", updateProgressBar);
+
+      // Table of Contents Highlighting
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".toc-link");
+
+      function highlightTOC() {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100;
+          const sectionHeight = section.offsetHeight;
+          const scrollPosition = window.scrollY;
+
+          if (
+            scrollPosition >= sectionTop &&
+            scrollPosition < sectionTop + sectionHeight
+          ) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", highlightTOC);
+      highlightTOC();
+
+      // Smooth Scroll for TOC Links
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          const targetSection = document.querySelector(targetId);
+
+          if (targetSection) {
+            const yOffset = -80;
+            const y =
+              targetSection.getBoundingClientRect().top +
+              window.pageYOffset +
+              yOffset;
+
+            window.scrollTo({ top: y, behavior: "smooth" });
+          }
+        });
+      });
+
+      // FAQ Toggle
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const item = question.parentElement;
+          item.classList.toggle("active");
+
+          // Close other FAQ items
+          document.querySelectorAll(".faq-item").forEach((otherItem) => {
+            if (otherItem !== item) {
+              otherItem.classList.remove("active");
+            }
+          });
+        });
+      });
+      
+      // Interactive test options
+      document.querySelectorAll(".test-option").forEach((option) => {
+        option.addEventListener("click", function () {
+          const checkbox = this.querySelector('input[type="checkbox"]');
+          checkbox.checked = !checkbox.checked;
+          if (checkbox.checked) {
+            this.classList.add("selected");
+          } else {
+            this.classList.remove("selected");
+          }
+        });
+      });
+
+      // Initialize Components
+      document.addEventListener("DOMContentLoaded", function () {
+        // Analytics
+        if (window.DeusAnalyticsComponent) {
+          new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
+        }
+        // Header
+        const headerContainer = document.getElementById("header-component");
+        if (headerContainer && window.DeusHeaderComponent) {
+          new window.DeusHeaderComponent(headerContainer)
+            .setDebug(false)
+            .setTheme("default");
+        }
+        // Footer
+        const footerContainer = document.getElementById("footer-component");
+        if (footerContainer && window.DeusFooterComponent) {
+          new window.DeusFooterComponent(footerContainer)
+            .setDebug(false)
+            .setTheme("default");
+        }
+      });
+    </script>
+</body>
+</html>

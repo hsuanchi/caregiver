@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>輔酶Q10完整指南：功效、副作用、心臟保健與挑選方法 | 營養師審核</title>
+    <meta name="description" content="專業營養師詳細解析輔酶Q10的心血管保護功能、細胞能量代謝作用、抗氧化效果、建議劑量和產品選擇指南。了解CoQ10對健康的重要性。" />
+    <meta name="keywords" content="輔酶Q10, CoQ10, 心臟保健, 能量代謝, 抗氧化, 泛醌, 泛醌醇, 他汀類藥物, Q10功效, Q10推薦, 抗疲勞" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+        line-height: 1.8;
+        color: #2d3748;
+        background: #faf8f5;
+      }
+
+      /* Progress Bar */
+      .progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
+        z-index: 1001;
+        transition: width 0.3s ease;
+      }
+
+      /* Article Layout */
+      .article-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 100px 20px 60px;
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 60px;
+        position: relative;
+      }
+
+      /* Sidebar Table of Contents */
+      .sidebar {
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+      }
+
+      .toc {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .toc-title {
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .toc-list {
+        list-style: none;
+      }
+
+      .toc-list li {
+        margin-bottom: 8px;
+      }
+
+      .toc-list a {
+        color: #4a5568;
+        text-decoration: none;
+        font-size: 0.95em;
+        display: block;
+        padding: 8px 12px;
+        transition: all 0.3s ease;
+        position: relative;
+        border-radius: 8px;
+        border-left: 3px solid transparent;
+      }
+
+      .toc-list a.active {
+        color: #ff6b35;
+        background: rgba(255, 107, 53, 0.1);
+        border-left-color: #ff6b35;
+        font-weight: 600;
+      }
+
+      .toc-list a:hover {
+        color: #ff6b35;
+        background: rgba(255, 107, 53, 0.08);
+        border-left-color: #ff8f65;
+        transform: translateX(2px);
+      }
+
+      /* 第一階層樣式 */
+      .toc-list a:not(.sub-item) {
+        font-weight: 600;
+        background: rgba(255, 107, 53, 0.05);
+        margin-bottom: 4px;
+      }
+
+      /* 第二階層樣式 */
+      .toc-list a.sub-item {
+        margin-left: 16px;
+        font-size: 0.9em;
+        color: #718096;
+        background: rgba(113, 128, 150, 0.03);
+        border-left-color: #e2e8f0;
+        position: relative;
+      }
+
+      /* 第二階層前的連線效果 */
+      .toc-list a.sub-item::before {
+        content: "";
+        position: absolute;
+        left: -12px;
+        top: 50%;
+        width: 8px;
+        height: 1px;
+        background: #d1d5db;
+        transform: translateY(-50%);
+      }
+
+      .toc-list a.active.sub-item {
+        color: #ff6b35;
+        background: rgba(255, 107, 53, 0.08);
+        border-left-color: #ff8f65;
+      }
+
+      .toc-list a.active.sub-item::before {
+        background: #ff8f65;
+      }
+
+      /* Main Content Area */
+      .article-content {
+        background: white;
+        border-radius: 20px;
+        padding: 50px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Article Header */
+      .article-header {
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .article-hero {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        border-radius: 20px;
+        padding: 60px;
+        margin-bottom: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .article-hero::before {
+        content: "⚡️";
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        font-size: 150px;
+        opacity: 0.1;
+        transform: rotate(-15deg);
+      }
+
+      .article-category {
+        display: inline-block;
+        background: white;
+        color: #ff6b35;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        font-weight: 600;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .article-title {
+        font-size: 2.5em;
+        font-weight: 800;
+        color: #2d3748;
+        line-height: 1.3;
+        margin-bottom: 20px;
+        max-width: 800px;
+      }
+
+      .article-subtitle {
+        font-size: 1.3em;
+        color: #4a5568;
+        line-height: 1.6;
+        max-width: 700px;
+        margin-bottom: 30px;
+      }
+
+      .article-meta {
+        display: flex;
+        gap: 30px;
+        color: #718096;
+        font-size: 0.95em;
+        flex-wrap: wrap;
+      }
+
+      .article-meta span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* Alert Boxes */
+      .alert {
+        padding: 20px 25px;
+        border-radius: 15px;
+        margin: 30px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .alert::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+      }
+
+      .alert-doctor {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+
+      .alert-doctor::before {
+        background: #dc2626;
+      }
+
+      .alert-nutritionist {
+        background: #dbeafe;
+        color: #1e3a8a;
+      }
+
+      .alert-nutritionist::before {
+        background: #2563eb;
+      }
+
+      .alert-tip {
+        background: #f0fdf4;
+        color: #14532d;
+      }
+
+      .alert-tip::before {
+        background: #22c55e;
+      }
+
+      .alert strong {
+        font-weight: 700;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      /* Tables */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .data-table thead {
+        background: linear-gradient(135deg, #ff6b35 0%, #ff8f65 100%);
+        color: white;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 15px 20px;
+        text-align: left;
+      }
+
+      .data-table th {
+        font-weight: 600;
+      }
+
+      .data-table tbody tr {
+        border-bottom: 1px solid #e5e7eb;
+        transition: background 0.3s ease;
+      }
+
+      .data-table tbody tr:hover {
+        background: #f9fafb;
+      }
+
+      .data-table tbody tr:last-child {
+        border-bottom: none;
+      }
+
+      /* Visual Info Cards */
+      .info-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 40px 0;
+      }
+
+      .info-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      }
+
+      .info-card-icon {
+        font-size: 3em;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .info-card-title {
+        font-size: 1.3em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 10px;
+      }
+
+      .info-card-desc {
+        color: #718096;
+        font-size: 0.95em;
+        line-height: 1.6;
+      }
+
+      .info-card-value {
+        font-size: 2em;
+        font-weight: 800;
+        color: #ff6b35;
+        margin: 10px 0;
+      }
+      
+      .highlight-nutrient {
+        border-bottom: 2px solid #ff6b35;
+        padding-bottom: 1px;
+      }
+
+      /* Story Section */
+      .story-intro {
+        background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+        border-radius: 20px;
+        padding: 40px;
+        margin: 40px 0;
+        position: relative;
+      }
+
+      .story-intro h3 {
+        font-size: 1.8em;
+        color: #3730a3;
+        margin-bottom: 20px;
+      }
+
+      .story-intro p {
+        font-size: 1.1em;
+        line-height: 1.8;
+        color: #4c1d95;
+      }
+
+      /* Quick Test */
+      .quick-test {
+        background: #f0fdf4;
+        border-radius: 20px;
+        padding: 40px;
+        margin: 40px 0;
+        text-align: center;
+      }
+
+      .quick-test h3 {
+        font-size: 1.8em;
+        color: #14532d;
+        margin-bottom: 20px;
+      }
+
+      .test-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 30px;
+      }
+
+      .test-option {
+        background: #f8fafc;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 18px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .test-option:hover {
+        background: #fff7ed;
+        border-color: #fed7aa;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(251, 146, 60, 0.15);
+      }
+
+      .test-option input[type="checkbox"] {
+        display: none;
+      }
+
+      .test-option.selected {
+        background: linear-gradient(135deg, #ff6b35 0%, #fb923c 100%);
+        border-color: #ff6b35;
+        color: white;
+        box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+      }
+      .test-option.selected:hover {
+        background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+        transform: translateY(-2px);
+        color: white;
+      }
+
+      /* Content Typography */
+      .article-body h2 {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin: 50px 0 30px;
+        padding-top: 20px;
+        position: relative;
+      }
+
+      .article-body h2::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 4px;
+        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
+        border-radius: 2px;
+      }
+
+      .article-body h3 {
+        font-size: 1.5em;
+        font-weight: 600;
+        color: #2d3748;
+        margin: 35px 0 20px;
+      }
+
+      .article-body h4 {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #4a5568;
+        margin: 25px 0 15px;
+      }
+
+      .article-body p {
+        margin-bottom: 20px;
+        color: #4a5568;
+      }
+
+      .article-body ul,
+      .article-body ol {
+        margin: 20px 0;
+        padding-left: 30px;
+        color: #4a5568;
+      }
+
+      .article-body li {
+        margin-bottom: 10px;
+      }
+
+      .article-body blockquote {
+        border-left: 4px solid #ff6b35;
+        padding-left: 20px;
+        margin: 30px 0;
+        font-style: italic;
+        color: #718096;
+      }
+
+      .article-body strong {
+        color: #2d3748;
+        font-weight: 600;
+      }
+
+      /* FAQ Section */
+      .faq-section {
+        margin-top: 60px;
+        padding-top: 40px;
+        border-top: 2px solid #e5e7eb;
+      }
+
+      .faq-item {
+        background: #f9fafb;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-question {
+        padding: 20px 25px;
+        font-weight: 600;
+        color: #2d3748;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .faq-question::after {
+        content: "+";
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5em;
+        color: #ff6b35;
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.active .faq-question::after {
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      .faq-answer {
+        padding: 0 25px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item.active .faq-answer {
+        padding: 0 25px 20px;
+        max-height: 500px;
+      }
+
+      /* Related Articles */
+      .related-section {
+        margin-top: 80px;
+        padding: 60px 0;
+        background: #faf8f5;
+        border-radius: 20px;
+      }
+
+      .related-title {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .related-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .related-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .related-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .related-card-tag {
+        display: inline-block;
+        background: #e0e7ff;
+        color: #3730a3;
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 0.85em;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .related-card-title {
+        font-size: 1.3em;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+
+      .related-card-desc {
+        color: #718096;
+        font-size: 0.95em;
+        line-height: 1.6;
+      }
+
+      /* Disclaimer */
+      .disclaimer {
+        background: #f9fafb;
+        padding: 60px 0;
+        text-align: center;
+      }
+      .disclaimer-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .disclaimer h3 {
+        color: #4b5563;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+      }
+      .disclaimer p {
+        color: #6b7280;
+        font-size: 0.95em;
+        line-height: 1.8;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .article-container {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+
+        .sidebar {
+          display: none;
+        }
+
+        .article-content {
+          padding: 30px;
+        }
+
+        .article-title {
+          font-size: 2em;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .article-content {
+          padding: 20px;
+          border-radius: 15px;
+        }
+
+        .article-title {
+          font-size: 1.8em;
+        }
+
+        .article-meta {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .data-table {
+          font-size: 0.9em;
+        }
+
+        .data-table th,
+        .data-table td {
+          padding: 10px;
+        }
+
+        .related-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Header Component Container -->
+    <div id="header-component"></div>
+
+    <!-- Article Container -->
+    <div class="article-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="toc">
+          <h3 class="toc-title">
+            <span>📑</span>
+            <span>目錄</span>
+          </h3>
+          <ul class="toc-list">
+            <li><a href="#summary" class="toc-link">30 秒速讀版</a></li>
+            <li><a href="#self-check" class="toc-link">你需要Q10嗎？</a></li>
+            <li><a href="#basics" class="toc-link">輔酶Q10基礎知識</a></li>
+            <li><a href="#benefits" class="toc-link sub-item">功效與作用機制</a></li>
+            <li><a href="#dosage" class="toc-link sub-item">建議攝取量與時間</a></li>
+            <li><a href="#food-sources" class="toc-link sub-item">天然食物來源</a></li>
+            <li><a href="#how-to-choose" class="toc-link">如何選擇Q10產品</a></li>
+            <li><a href="#safety" class="toc-link">安全資訊與副作用</a></li>
+            <li><a href="#faq" class="toc-link">常見問題</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="article-content">
+        <!-- Article Header -->
+        <header class="article-header">
+          <div class="article-hero">
+            <span class="article-category">營養素指南</span>
+            <h1 class="article-title">
+              輔酶Q10完整指南：心臟的能量火星塞，該如何補充？
+            </h1>
+            <p class="article-subtitle">
+              營養師專業提醒：輔酶Q10是人體細胞的「能量發電廠」，40歲後會急速下降。本篇將帶您了解如何正確補充Q10，找回青春活力。
+            </p>
+            <div class="article-meta">
+              <span>✍️ 專業營養師審核</span>
+              <span>📅 2025 年 8 月 27 日更新</span>
+              <span>⏱️ 閱讀時間：12 分鐘</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Article Body -->
+        <article class="article-body">
+          <!-- Story Introduction -->
+          <div class="story-intro">
+            <h3>🤔 你的身體電池快沒電了嗎？</h3>
+            <p>
+              常常覺得累、精神不濟，甚至感覺心臟有點「無力」嗎？這可能是身體的能量貨幣「輔酶Q10」正在悄悄流失！特別是過了40歲，或是正在服用降血脂藥物的朋友，更要注意。
+            </p>
+            <p>
+              <strong>💡 這篇文章會告訴你：</strong>
+              你是否需要補充Q10？如何從飲食和保健品中聰明攝取？以及如何挑選最適合你的Q10產品，讓我們一起把身體的發電機重新點燃！
+            </p>
+          </div>
+
+          <section id="summary">
+            <h2>30 秒速讀版</h2>
+            <div class="info-cards">
+              <div class="info-card">
+                <span class="info-card-icon">❤️</span>
+                <h4 class="info-card-title">有什麼好處？</h4>
+                <p class="info-card-desc">
+                  心臟保健、提升能量<br />強力抗氧化、改善疲勞
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">💊</span>
+                <h4 class="info-card-title">怎麼服用？</h4>
+                <p class="info-card-desc">
+                  每日 30-100mg<br />隨餐或飯後搭配油脂
+                </p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🛒</span>
+                <h4 class="info-card-title">怎麼選購？</h4>
+                <p class="info-card-desc">
+                  40歲以上選「還原型」<br />搭配油脂的軟膠囊佳
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="self-check">
+            <h2>快來看看你是不是需要補充Q10的人？</h2>
+            <div class="quick-test">
+              <h3>輔酶Q10需求自我檢測</h3>
+              <p>以下情況，你中了幾個？</p>
+              <div class="test-options">
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>年齡超過40歲</span>
+                </label>
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>正在服用Statin類降血脂藥</span>
+                </label>
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>容易感到疲勞、精神不濟</span>
+                </label>
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>有心血管健康方面的擔憂</span>
+                </label>
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>高強度運動者或運動員</span>
+                </label>
+                <label class="test-option">
+                  <input type="checkbox" name="need-test" />
+                  <span>希望提升新陳代謝、保持活力</span>
+                </label>
+              </div>
+              <p style="margin-top: 20px; color: #14532d; font-weight: 600">
+                勾選 2 個以上？你可能真的需要補充輔酶Q10囉！
+              </p>
+            </div>
+          </section>
+
+          <section id="basics">
+            <h2>輔酶Q10基礎知識：細胞的能量來源</h2>
+            <p>
+              輔酶Q10（Coenzyme Q10，CoQ10）是一種存在於所有細胞中的脂溶性化合物，也稱為泛醌（ubiquinone）。<span class="highlight-nutrient">它是細胞粒線體呼吸鏈的重要組成部分，對ATP（身體的能量貨幣）的產生至關重要</span>，可以說是人體細胞能量的火星塞。
+            </p>
+            <h3>氧化型 vs 還原型：哪個適合你？</h3>
+            <p>輔酶Q10在體內以兩種形式存在，並可互相轉化：</p>
+            <ul>
+              <li><strong>氧化型 (Ubiquinone)</strong>：傳統、較便宜的形式，但需要身體自行轉化才能利用。年輕、健康的人轉換能力較好。</li>
+              <li><strong>還原型 (Ubiquinol)</strong>：<span class="highlight-nutrient">是已活化的形式，生物利用率高，抗氧化能力更強。</span>特別適合40歲以上、吸收能力較差或尋求高效能補充的人。</li>
+            </ul>
+            <h3>Q10在哪裡最重要？</h3>
+            <p>Q10存在於全身，但在能量需求越大的器官，濃度就越高。其中最重要的就是我們的心臟，它24小時不停地跳動，是體內Q10濃度最高的地方。肝臟、腎臟和肌肉也是Q10的主要儲存與作用場所。</p>
+          </section>
+
+          <section id="benefits">
+            <h2>功效與作用機制：Q10如何守護您的健康</h2>
+            <p>輔酶Q10的功能就像一個多才多藝的健康管家，從提供能量到對抗老化，無所不包。</p>
+            <div class="info-cards">
+              <div class="info-card">
+                <span class="info-card-icon">⚡️</span>
+                <h4 class="info-card-title">細胞能量產生</h4>
+                <p class="info-card-desc">作為電子傳遞鏈的一環，直接參與ATP的生成，為全身細胞提供運作能量。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🛡️</span>
+                <h4 class="info-card-title">抗氧化保護</h4>
+                <p class="info-card-desc">清除有害的自由基，保護細胞膜和DNA免受損傷，並能再生維生素E，加強抗氧化防線。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">❤️</span>
+                <h4 class="info-card-title">心血管健康</h4>
+                <p class="info-card-desc">改善心肌功能、保護血管內皮細胞、並有助於維持健康的血壓水平。</p>
+              </div>
+            </div>
+            <div class="alert alert-nutritionist">
+              <strong>營養師提醒：</strong>人體合成Q10的能力在20歲達到高峰，40歲後會顯著下降。這也是為什麼中年以後，補充Q10對維持活力與心血管健康特別重要。
+            </div>
+          </section>
+
+          <section id="dosage">
+            <h2>建議攝取量與時間：怎麼吃最有效？</h2>
+            <p>攝取適當的劑量與在正確的時間服用，才能讓Q10發揮最大效益。</p>
+            <h3>每日建議攝取量</h3>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>族群/目的</th>
+                  <th>每日建議劑量 (毫克)</th>
+                  <th>注意事項</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>一般保健</strong></td>
+                  <td>30 - 100 mg</td>
+                  <td>適合年輕族群或作為基礎保養。</td>
+                </tr>
+                <tr>
+                  <td><strong>心血管保護</strong></td>
+                  <td>100 - 300 mg</td>
+                  <td>針對有心血管風險或希望加強保養者。</td>
+                </tr>
+                <tr>
+                  <td><strong>服用他汀類藥物者</strong></td>
+                  <td>100 - 200 mg</td>
+                  <td>彌補因藥物被抑制的Q10合成。</td>
+                </tr>
+                <tr>
+                  <td><strong>運動員</strong></td>
+                  <td>100 - 300 mg</td>
+                  <td>支持高強度運動的能量需求與恢復。</td>
+                </tr>
+              </tbody>
+            </table>
+            <h3>最佳攝取時間與方式</h3>
+            <p><span class="highlight-nutrient">Q10是脂溶性的，這意味著它需要和油脂一起攝取才能被好好吸收。</span>因此，最佳的服用時間是「隨餐」或「飯後」。</p>
+            <ul>
+              <li><strong>最佳時間</strong>：隨餐或飯後立即服用，特別是含有油脂的餐點。</li>
+              <li><strong>搭配好物</strong>：與魚油等富含Omega-3的保健品一起吃，是心血管保健的黃金組合。</li>
+              <li><strong>避免時段</strong>：因為Q10有提振精神的效果，建議避免在睡前服用，以免影響睡眠。</li>
+            </ul>
+          </section>
+
+          <section id="food-sources">
+            <h2>富含輔酶Q10的天然食物來源</h2>
+            <div class="alert alert-tip">
+              <strong>營養師小撇步：</strong>食物中的Q10含量有限，且在烹調過程中容易流失。若想達到保健效果，特別是針對心血管保護，依賴保健食品的補充會是更有效率的選擇。
+            </div>
+            <table class="data-table">
+              <thead>
+                <tr><th>食物類別</th><th>食物名稱</th><th>每100g含量 (毫克)</th><th>備註</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>內臟類</strong></td><td>豬心</td><td>~12.7</td><td>含量最高，但膽固醇也較高</td></tr>
+                <tr><td><strong>內臟類</strong></td><td>牛心</td><td>~11.3</td><td>含量豐富，膽固醇較高</td></tr>
+                <tr><td><strong>魚類</strong></td><td>鯖魚</td><td>~6.8</td><td>富含Omega-3，有益心血管</td></tr>
+                <tr><td><strong>魚類</strong></td><td>沙丁魚</td><td>~5.1</td><td>富含Omega-3，有益心血管</td></tr>
+                <tr><td><strong>肉類</strong></td><td>牛肉</td><td>~2.6</td><td>紅肉來源，適量攝取</td></tr>
+                <tr><td><strong>植物性</strong></td><td>花生</td><td>~2.7</td><td>堅果類來源</td></tr>
+                <tr><td><strong>植物性</strong></td><td>芝麻</td><td>~1.7</td><td>可添加於料理中</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="how-to-choose">
+            <h2>如何選擇Q10產品？氧化型 vs 還原型</h2>
+            <p>市面上的Q10主要分為「氧化型(Ubiquinone)」和「還原型(Ubiquinol)」兩種，這是選購時最關鍵的一環。</p>
+            <table class="data-table">
+              <thead>
+                <tr><th>類型</th><th>吸收率</th><th>價格</th><th>優點</th><th>缺點</th><th>適用對象</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>氧化型 (Ubiquinone)</strong></td><td>普通</td><td>較低</td><td>價格實惠、研究歷史悠久</td><td>需在體內轉化、受年齡影響</td><td>年輕人、一般基礎保養</td></tr>
+                <tr><td><strong>還原型 (Ubiquinol)</strong></td><td><strong>高 (約3-8倍)</strong></td><td>較高</td><td>無需轉化、直接利用、抗氧化力強</td><td>價格昂貴、穩定性要求高</td><td><strong>40歲以上</strong>、吸收能力差者、追求高效能者</td></tr>
+              </tbody>
+            </table>
+            <h3>選購要點總整理</h3>
+            <ol>
+              <li><strong>看型態 (最重要)</strong>：根據您的年齡和需求選擇「氧化型」或「還原型」。<span class="highlight-nutrient">40歲以上建議優先選擇<strong>還原型</strong></span>。</li>
+              <li><strong>確認劑量</strong>：根據您的健康目標選擇適當的劑量，一般保健可從30-100毫克開始。</li>
+              <li><strong>選擇膠囊劑型</strong>：Q10為脂溶性，通常以<span class="highlight-nutrient">油劑軟膠囊</span>的形式能提供較好的穩定性和吸收率。</li>
+              <li><strong>檢查複方成分</strong>：若產品添加維生素E或油脂（如米糠油、橄欖油），有助於增加Q10的穩定性和吸收。</li>
+              <li><strong>認明專利原料與認證</strong>：選擇使用國際大廠專利原料（如：日本Kaneka）並通過第三方公正單位檢驗的品牌，品質與安全更有保障。</li>
+            </ol>
+          </section>
+
+          <section id="safety">
+            <h2>安全資訊與副作用</h2>
+            <p>在建議劑量下，輔酶Q10對大多數健康成年人是安全的，且耐受性良好。副作用非常罕見，但仍有幾點需要注意。</p>
+            <ul>
+              <li><strong>輕微副作用</strong>：極少數人可能出現輕微的胃腸道不適，如噁心、腹瀉或食慾下降。若發生此情況，可將劑量分次或降低劑量。</li>
+              <li><strong>藥物交互作用</strong>：這是需要特別留意的部分。
+                <ul>
+                  <li><span class="highlight-nutrient"><strong>抗凝血藥物 (Warfarin)</strong></span>：Q10的結構類似維生素K，理論上可能降低Warfarin藥效，增加血栓風險。併用時務必告知醫師。</li>
+                  <li><span class="highlight-nutrient"><strong>降血壓藥物</strong></span>：Q10有輕微的降血壓效果，與降血壓藥併用可能增強藥效，需注意監測血壓。</li>
+                </ul>
+              </li>
+            </ul>
+            <div class="alert alert-doctor">
+              <strong>醫師警告：</strong>正在服用慢性病藥物（特別是抗凝血劑、降血壓藥）的患者，在補充Q10前請務必諮詢您的醫師或藥師。孕婦、哺乳期婦女及兒童也不建議常規補充。
+            </div>
+          </section>
+
+          <!-- FAQ Section -->
+          <section id="faq" class="faq-section">
+            <h2>常見問題</h2>
+            <div class="faq-item">
+              <div class="faq-question">Q1：氧化型和還原型Q10，到底該怎麼選？</div>
+              <div class="faq-answer">
+                <p><strong>A：關鍵在於「年齡」和「吸收效率」。</strong></p>
+                <ul>
+                  <li><strong>40歲以下/年輕族群</strong>：身體的轉換能力尚佳，選擇價格較實惠的「氧化型」作為日常保養即可。</li>
+                  <li><strong>40歲以上/熟齡族群/特定需求者</strong>：身體將氧化型轉換為活性還原型態的效率變差，直接補充「還原型」能更有效率地被身體利用，是更佳的選擇。</li>
+                </ul>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q2：聽說吃降血脂藥(Statin)的人一定要補充Q10？</div>
+              <div class="faq-answer">
+                <p><strong>A：強烈建議。</strong> Statin類藥物在抑制膽固醇合成的同時，也會阻斷體內Q10的生成路徑。研究證實，這會導致血液和肌肉中的Q10濃度下降，是造成肌肉痠痛、疲勞等副作用的可能原因之一。補充Q10有助於緩解這些不適。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q3：Q10可以跟魚油一起吃嗎？</div>
+              <div class="faq-answer">
+                <p><strong>A：可以，而且是很好的組合！</strong> Q10和魚油都是脂溶性營養素，一起隨餐服用有助於吸收。此外，兩者對於心血管保健有協同作用，Q10提供心肌能量，魚油的Omega-3則能抗發炎、降血脂，是維持心血管健康的黃金搭檔。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q4：補充Q10會不會影響睡眠？</div>
+              <div class="faq-answer">
+                <p><strong>A：對少數人有可能。</strong> 因為Q10參與細胞能量產生，如果在晚上服用較高劑量，可能會讓精神變好，進而影響睡眠。若有此情況，建議將Q10改在早餐或午餐後服用。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q5：Q10對皮膚也有好處嗎？</div>
+              <div class="faq-answer">
+                <p><strong>A：是的。</strong> Q10的強力抗氧化功能可以幫助皮膚抵抗自由基的傷害，延緩膠原蛋白的流失，維持皮膚彈性。因此，許多美容保養品中也會添加Q10成分。</p>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        <!-- Related Articles -->
+        <h2 class="related-title">相關營養素</h2>
+        <div class="related-grid">
+          <a href="./fish-oil.html" class="related-card">
+            <span class="related-card-tag">脂肪酸</span>
+            <h3 class="related-card-title">魚油 (Omega-3)</h3>
+            <p class="related-card-desc">
+              心血管健康的守護神，了解EPA與DHA的黃金比例，以及如何挑選高品質魚油。
+            </p>
+          </a>
+          <a href="./probiotics.html" class="related-card">
+            <span class="related-card-tag">微生物</span>
+            <h3 class="related-card-title">益生菌</h3>
+            <p class="related-card-desc">
+              腸道健康的關鍵，探索不同菌株的功效，學習如何打造健康的腸道菌群。
+            </p>
+          </a>
+          <a href="./magnesium.html" class="related-card">
+            <span class="related-card-tag">礦物質</span>
+            <h3 class="related-card-title">鎂</h3>
+            <p class="related-card-desc">
+              放鬆身心的必要礦物質，對於肌肉功能、神經系統和睡眠品質至關重要。
+            </p>
+          </a>
+        </div>
+      </main>
+    </div>
+
+    <!-- Disclaimer Section -->
+    <section class="disclaimer">
+      <div class="disclaimer-content">
+        <h3>免責聲明</h3>
+        <p>
+          本資訊僅供教育目的，不能取代專業醫療建議。開始任何營養補充計劃前，請諮詢醫療專業人員。個人需求可能因健康狀況、藥物使用和生活方式而有所不同。
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer Component Container -->
+    <div id="footer-component"></div>
+
+    <!-- Load Components -->
+    <script src="../assets/js/deus-analytics-component.js"></script>
+    <script src="../assets/js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-footer-component.js"></script>
+
+    <script>
+      // Progress Bar
+      function updateProgressBar() {
+        const scrollPosition = window.scrollY;
+        const documentHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (scrollPosition / documentHeight) * 100;
+        document.getElementById("progressBar").style.width =
+          scrollPercentage + "%";
+      }
+
+      window.addEventListener("scroll", updateProgressBar);
+
+      // Table of Contents Highlighting
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".toc-link");
+
+      function highlightTOC() {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100;
+          const sectionHeight = section.offsetHeight;
+          const scrollPosition = window.scrollY;
+
+          if (
+            scrollPosition >= sectionTop &&
+            scrollPosition < sectionTop + sectionHeight
+          ) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", highlightTOC);
+      highlightTOC();
+
+      // Smooth Scroll for TOC Links
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          const targetSection = document.querySelector(targetId);
+
+          if (targetSection) {
+            const yOffset = -80;
+            const y =
+              targetSection.getBoundingClientRect().top +
+              window.pageYOffset +
+              yOffset;
+
+            window.scrollTo({ top: y, behavior: "smooth" });
+          }
+        });
+      });
+
+      // FAQ Toggle
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const item = question.parentElement;
+          item.classList.toggle("active");
+
+          // Close other FAQ items
+          document.querySelectorAll(".faq-item").forEach((otherItem) => {
+            if (otherItem !== item) {
+              otherItem.classList.remove("active");
+            }
+          });
+        });
+      });
+      
+      // Interactive test options
+      document.querySelectorAll(".test-option").forEach((option) => {
+        option.addEventListener("click", function () {
+          const checkbox = this.querySelector('input[type="checkbox"]');
+          checkbox.checked = !checkbox.checked;
+          if (checkbox.checked) {
+            this.classList.add("selected");
+          } else {
+            this.classList.remove("selected");
+          }
+        });
+      });
+
+      // Initialize Components
+      document.addEventListener("DOMContentLoaded", function () {
+        // Analytics
+        if (window.DeusAnalyticsComponent) {
+          new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
+        }
+        // Header
+        const headerContainer = document.getElementById("header-component");
+        if (headerContainer && window.DeusHeaderComponent) {
+          new window.DeusHeaderComponent(headerContainer)
+            .setDebug(false)
+            .setTheme("default");
+        }
+        // Footer
+        const footerContainer = document.getElementById("footer-component");
+        if (footerContainer && window.DeusFooterComponent) {
+          new window.DeusFooterComponent(footerContainer)
+            .setDebug(false)
+            .setTheme("default");
+        }
+      });
+    </script>
+</body>
+</html>

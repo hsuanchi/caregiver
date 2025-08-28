@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>維生素D完整指南：陽光營養素與鈣質吸收的關鍵鑰匙</title>
+    <meta name="description" content="深入了解維生素D3功效、每日建議攝取量(IU)、D2與D3的差別及最佳補充方式。本篇指南提供科學實證，助您維持骨骼健康與提升保護力。" />
+    <meta name="keywords" content="維生素D, 維生素D3, 維生素D功效, 曬太陽, 鈣質吸收, IU" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+        line-height: 1.8;
+        color: #2d3748;
+        background: #faf8f5;
+      }
+
+      /* Progress Bar */
+      .progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
+        z-index: 1001;
+        transition: width 0.3s ease;
+      }
+
+      /* Article Layout */
+      .article-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 100px 20px 60px;
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 60px;
+        position: relative;
+      }
+
+      /* Sidebar Table of Contents */
+      .sidebar {
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+      }
+
+      .toc {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .toc-title {
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .toc-list {
+        list-style: none;
+      }
+
+      .toc-list li {
+        margin-bottom: 8px;
+      }
+
+      .toc-list a {
+        color: #4a5568;
+        text-decoration: none;
+        font-size: 0.95em;
+        display: block;
+        padding: 8px 12px;
+        transition: all 0.3s ease;
+        position: relative;
+        border-radius: 8px;
+        border-left: 3px solid transparent;
+      }
+
+      .toc-list a.active {
+        color: #ff6b35;
+        background: rgba(255, 107, 53, 0.1);
+        border-left-color: #ff6b35;
+        font-weight: 600;
+      }
+
+      .toc-list a:hover {
+        color: #ff6b35;
+        background: rgba(255, 107, 53, 0.08);
+        border-left-color: #ff8f65;
+        transform: translateX(2px);
+      }
+
+      /* Main Content Area */
+      .article-content {
+        background: white;
+        border-radius: 20px;
+        padding: 50px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Article Header */
+      .article-header {
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .article-hero {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        border-radius: 20px;
+        padding: 60px;
+        margin-bottom: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .article-hero::before {
+        content: "☀️";
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        font-size: 150px;
+        opacity: 0.1;
+        transform: rotate(-15deg);
+      }
+
+      .article-category {
+        display: inline-block;
+        background: white;
+        color: #ff6b35;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        font-weight: 600;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .article-title {
+        font-size: 2.5em;
+        font-weight: 800;
+        color: #2d3748;
+        line-height: 1.3;
+        margin-bottom: 20px;
+        max-width: 800px;
+      }
+
+      .article-subtitle {
+        font-size: 1.3em;
+        color: #4a5568;
+        line-height: 1.6;
+        max-width: 700px;
+        margin-bottom: 30px;
+      }
+
+      .article-meta {
+        display: flex;
+        gap: 30px;
+        color: #718096;
+        font-size: 0.95em;
+        flex-wrap: wrap;
+      }
+
+      .article-meta span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* Alert Boxes */
+      .alert {
+        padding: 20px 25px;
+        border-radius: 15px;
+        margin: 30px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .alert::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+      }
+
+      .alert-doctor {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+
+      .alert-doctor::before {
+        background: #dc2626;
+      }
+
+      .alert-nutritionist {
+        background: #dbeafe;
+        color: #1e3a8a;
+      }
+
+      .alert-nutritionist::before {
+        background: #2563eb;
+      }
+
+      .alert-tip {
+        background: #f0fdf4;
+        color: #14532d;
+      }
+
+      .alert-tip::before {
+        background: #22c55e;
+      }
+
+      .alert strong {
+        font-weight: 700;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      /* Tables */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .data-table thead {
+        background: linear-gradient(135deg, #ff6b35 0%, #ff8f65 100%);
+        color: white;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 15px 20px;
+        text-align: left;
+      }
+
+      .data-table th {
+        font-weight: 600;
+      }
+
+      .data-table tbody tr {
+        border-bottom: 1px solid #e5e7eb;
+        transition: background 0.3s ease;
+      }
+
+      .data-table tbody tr:hover {
+        background: #f9fafb;
+      }
+
+      .data-table tbody tr:last-child {
+        border-bottom: none;
+      }
+
+      /* Visual Info Cards */
+      .info-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 40px 0;
+      }
+
+      .info-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      }
+
+      .info-card-icon {
+        font-size: 3em;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .info-card-title {
+        font-size: 1.3em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 10px;
+      }
+
+      .info-card-desc {
+        color: #718096;
+        font-size: 0.95em;
+        line-height: 1.6;
+      }
+      
+      .highlight-nutrient {
+        border-bottom: 2px solid #ff6b35;
+        padding-bottom: 1px;
+      }
+
+      /* Content Typography */
+      .article-body h2 {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin: 50px 0 30px;
+        padding-top: 20px;
+        position: relative;
+      }
+
+      .article-body h2::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 4px;
+        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
+        border-radius: 2px;
+      }
+
+      .article-body h3 {
+        font-size: 1.5em;
+        font-weight: 600;
+        color: #2d3748;
+        margin: 35px 0 20px;
+      }
+
+      .article-body h4 {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #4a5568;
+        margin: 25px 0 15px;
+      }
+
+      .article-body p {
+        margin-bottom: 20px;
+        color: #4a5568;
+      }
+
+      .article-body ul,
+      .article-body ol {
+        margin: 20px 0;
+        padding-left: 30px;
+        color: #4a5568;
+      }
+
+      .article-body li {
+        margin-bottom: 10px;
+      }
+
+      .article-body strong {
+        color: #2d3748;
+        font-weight: 600;
+      }
+
+      /* FAQ Section */
+      .faq-section {
+        margin-top: 60px;
+        padding-top: 40px;
+        border-top: 2px solid #e5e7eb;
+      }
+
+      .faq-item {
+        background: #f9fafb;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-question {
+        padding: 20px 25px;
+        font-weight: 600;
+        color: #2d3748;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .faq-question::after {
+        content: "+";
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5em;
+        color: #ff6b35;
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.active .faq-question::after {
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      .faq-answer {
+        padding: 0 25px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item.active .faq-answer {
+        padding: 0 25px 20px;
+        max-height: 500px;
+      }
+
+      /* Related Articles */
+      .related-title {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .related-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .related-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .related-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .related-card-tag {
+        display: inline-block;
+        background: #e0e7ff;
+        color: #3730a3;
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 0.85em;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .related-card-title {
+        font-size: 1.3em;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+
+      .related-card-desc {
+        color: #718096;
+        font-size: 0.95em;
+        line-height: 1.6;
+      }
+
+      /* Disclaimer */
+      .disclaimer {
+        background: #f9fafb;
+        padding: 60px 0;
+        text-align: center;
+      }
+      .disclaimer-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .disclaimer h3 {
+        color: #4b5563;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+      }
+      .disclaimer p {
+        color: #6b7280;
+        font-size: 0.95em;
+        line-height: 1.8;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .article-container {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+
+        .sidebar {
+          display: none;
+        }
+
+        .article-content {
+          padding: 30px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .article-content {
+          padding: 20px;
+          border-radius: 15px;
+        }
+
+        .article-title {
+          font-size: 1.8em;
+        }
+
+        .article-meta {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .data-table {
+          font-size: 0.9em;
+        }
+
+        .data-table th,
+        .data-table td {
+          padding: 10px;
+        }
+
+        .related-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Header Component Container -->
+    <div id="header-component"></div>
+
+    <!-- Article Container -->
+    <div class="article-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="toc">
+          <h3 class="toc-title">
+            <span>📑</span>
+            <span>目錄</span>
+          </h3>
+          <ul class="toc-list">
+            <li><a href="#basics" class="toc-link">維生素D是什麼？</a></li>
+            <li><a href="#benefits" class="toc-link">四大核心功效</a></li>
+            <li><a href="#dosage" class="toc-link">建議攝取量與時間</a></li>
+            <li><a href="#food-sources" class="toc-link">天然食物來源</a></li>
+            <li><a href="#who-needs-it" class="toc-link">哪些人更需要？</a></li>
+            <li><a href="#how-to-choose" class="toc-link">如何選擇產品？</a></li>
+            <li><a href="#safety" class="toc-link">安全資訊與副作用</a></li>
+            <li><a href="#faq" class="toc-link">常見問題</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="article-content">
+        <!-- Article Header -->
+        <header class="article-header">
+          <div class="article-hero">
+            <span class="article-category">營養素指南</span>
+            <h1 class="article-title">
+              維生素D完整指南：陽光營養素與鈣質吸收的關鍵鑰匙
+            </h1>
+            <p class="article-subtitle">
+              超過八成的國人體內維生素D濃度不足！它不僅是營養素，更像是一種荷爾蒙，影響著全身的健康。想有效補充，記得選擇活性較高的「D3」型態，並隨餐服用。
+            </p>
+            <div class="article-meta">
+              <span>✍️ 專業營養師審核</span>
+              <span>📅 2025 年 8 月 27 日更新</span>
+              <span>⏱️ 閱讀時間：10 分鐘</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Article Body -->
+        <article class="article-body">
+          <div class="alert alert-doctor">
+              <strong>醫師警告：</strong>維生素D是脂溶性的，長期極高劑量（每日超過 4,000 IU）的補充可能導致體內鈣濃度過高，引發不適。除非有醫師指示，否則請遵循建議劑量補充。
+          </div>
+
+          <section id="basics">
+            <h2>維生素D是什麼？不只是維生素而已</h2>
+            <p>
+              維生素D，又被稱為「<span class="highlight-nutrient">陽光維生素</span>」，是一種獨特的脂溶性維生素。說它獨特，是因為人體可以透過曬太陽自行合成，而且它在體內的作用方式更像是一種荷爾蒙，調控著許多重要的生理機能。
+            </p>
+            <p>
+              如果說鈣質是蓋房子的「磚塊」，那麼維生素D就是指揮磚塊去哪裡的「<span class="highlight-nutrient">總工程師</span>」。沒有這位總工程師的指令，吃再多的鈣質也無法被有效利用，難以鞏固我們的骨骼健康。
+            </p>
+          </section>
+
+          <section id="benefits">
+            <h2>維生素D的四大核心功效</h2>
+            <p>維生素D的重要性遠超乎我們的想像，以下是它最關鍵的四大功效：</p>
+            <div class="info-cards">
+              <div class="info-card">
+                <span class="info-card-icon">🦴</span>
+                <h4 class="info-card-title">增進鈣吸收</h4>
+                <p class="info-card-desc">促進小腸吸收鈣質，維持血液中鈣磷平衡，是鞏固骨骼與牙齒健康的基礎。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🛡️</span>
+                <h4 class="info-card-title">提升保護力</h4>
+                <p class="info-card-desc">在調節人體保護系統中扮演重要角色，有助於維持健康的防護力，應對外在挑戰。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">💪</span>
+                <h4 class="info-card-title">維持肌肉功能</h4>
+                <p class="info-card-desc">有助於維持肌肉的正常生理與功能，對年長者維持身體平衡、減少跌倒風險尤其重要。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">😊</span>
+                <h4 class="info-card-title">支持陽光好心情</h4>
+                <p class="info-card-desc">與大腦中調節情緒的神經傳導物質有關，充足的維生素D有助於維持正向情緒。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="dosage">
+            <h2>建議攝取量與最佳時間</h2>
+            <h3>每日建議攝取量</h3>
+            <table class="data-table">
+              <thead>
+                <tr><th>對象</th><th>每日建議攝取量 (IU)</th><th>注意事項</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>一般成人</strong></td>
+                  <td>400 - 800 IU</td>
+                  <td>作為日常保健，維持基本健康水平。</td>
+                </tr>
+                <tr>
+                  <td><strong>缺乏或高風險族群</strong></td>
+                  <td>1000 - 2000 IU</td>
+                  <td>如長者、室內工作者，建議經檢測後補充。</td>
+                </tr>
+                <tr>
+                  <td><strong>每日上限</strong></td>
+                  <td>2000 IU</td>
+                  <td>長期補充不建議超過此劑量。</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="alert alert-nutritionist">
+              <strong>營養師提醒：</strong>IU (International Unit) 是國際單位，對於維生素D，1微克(μg) = 40 IU。所以若產品標示 10 微克，就等於 400 IU。
+            </div>
+            <h3>最佳攝取時間與方式</h3>
+            <p><span class="highlight-nutrient">維生素D是脂溶性的，隨餐或飯後服用，讓食物中的油脂幫助其吸收，效果最好。</span>與鈣片一起服用更是絕佳組合，能達到最好的補鈣效益。</p>
+          </section>
+
+          <section id="food-sources">
+            <h2>富含維生素D的天然食物來源</h2>
+            <p>雖然日曬是主要來源，但透過特定食物也能補充維生素D。</p>
+            <table class="data-table">
+              <thead>
+                <tr><th>食物類別</th><th>食物名稱</th><th>每100g含量 (IU)</th><th>備註</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>高油脂魚類</strong></td><td>野生鮭魚</td><td><strong>600-1000</strong></td><td>天然食物中的含量冠軍</td></tr>
+                <tr><td><strong>高油脂魚類</strong></td><td>鯖魚</td><td>~400</td><td>價格實惠的好選擇</td></tr>
+                <tr><td><strong>蛋類</strong></td><td>蛋黃</td><td>~40</td><td>建議選擇戶外放養雞蛋</td></tr>
+                <tr><td><strong>菇類</strong></td><td>經紫外線照射的蘑菇</td><td><strong>400+</strong></td><td>素食者的優質來源</td></tr>
+                <tr><td><strong>強化食品</strong></td><td>強化牛奶/豆漿</td><td>~100</td><td>需查看產品營養標示</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="who-needs-it">
+            <h2>哪些人是補充維生素D的重點族群？</h2>
+            <div class="info-cards">
+                <div class="info-card">
+                    <span class="info-card-icon">🏢</span>
+                    <h4 class="info-card-title">室內上班族</h4>
+                    <p class="info-card-desc">缺乏日曬機會，難以自行合成足夠的維生素D。</p>
+                </div>
+                <div class="info-card">
+                    <span class="info-card-icon">👵</span>
+                    <h4 class="info-card-title">高齡長者</h4>
+                    <p class="info-card-desc">皮膚合成效率下降，且飲食攝取可能不足。</p>
+                </div>
+                <div class="info-card">
+                    <span class="info-card-icon">☂️</span>
+                    <h4 class="info-card-title">注重防曬者</h4>
+                    <p class="info-card-desc">防曬產品會阻擋UVB，影響維生素D合成。</p>
+                </div>
+                <div class="info-card">
+                    <span class="info-card-icon">🥗</span>
+                    <h4 class="info-card-title">全素食者</h4>
+                    <p class="info-card-desc">飲食來源D2效率較差，且不易從食物中攝取足夠D3。</p>
+                </div>
+            </div>
+          </section>
+
+          <section id="how-to-choose">
+            <h2>如何選擇維生素D產品？D2 vs. D3</h2>
+            <p>市面上的維生素D補充品主要分為 D2 和 D3 兩種，從人體吸收與利用效率來看，<span class="highlight-nutrient">維生素D3 是更理想的補充選擇</span>。</p>
+            <table class="data-table">
+              <thead>
+                <tr><th>特性</th><th>維生素 D3 (膽鈣化醇)</th><th>維生素 D2 (麥角鈣化醇)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>主要來源</strong></td><td>動物性來源、人體日曬合成</td><td>植物性來源 (酵母、蕈菇類)</td></tr>
+                <tr><td><strong>轉化與活性</strong></td><td><span class="highlight-nutrient">在體內提升濃度效果更佳、持續時間更長</span></td><td>提升濃度效果較差、持續時間較短</td></tr>
+                <tr><td><strong>建議</strong></td><td><strong>補充品的首選</strong></td><td>適合素食者，但需注意補充效率</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="safety">
+            <h2>安全資訊與副作用</h2>
+            <p>在建議劑量下，維生素D對大多數人來說非常安全。副作用通常僅在長期超高劑量攝取下才會發生。</p>
+            <ul>
+                <li><strong>高鈣血症</strong>：這是最主要的副作用，僅發生在長期每日攝取極高劑量（>4,000 IU）的情況下。可能症狀包括噁心、嘔吐、虛弱、頻尿等。</li>
+                <li><strong>藥物交互作用</strong>：長期使用類固醇或部分利尿劑者，在補充前應諮詢醫師。</li>
+            </ul>
+          </section>
+
+          <section id="faq" class="faq-section">
+            <h2>常見問題</h2>
+            <div class="faq-item">
+              <div class="faq-question">Q1: 維生素D可以跟鈣片一起吃嗎？</div>
+              <div class="faq-answer">
+                <p><strong>A: 絕佳組合！</strong> 維生素D和鈣質是協同作戰的最佳拍檔。維生素D負責「開門」(促進吸收)，鈣質負責「鞏固」(強化骨骼)。兩者一起在飯後服用，能達到最好的補鈣效益。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q2: 透過玻璃窗曬太陽，可以合成維生素D嗎？</div>
+              <div class="faq-answer">
+                <p><strong>A: 不行。</strong> 能幫助人體合成維生素D的是紫外線中的 UVB，而一般玻璃會阻擋絕大部分的 UVB。因此，必須在戶外直接接觸陽光才有效。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q3: 補充維生素D多久才能看到效果？</div>
+              <div class="faq-answer">
+                <p><strong>A: 維生素D對骨骼和保護力的支持是長期且基礎的。</strong> 一般來說，持續補充1-3個月後，體內的維生素D濃度會顯著提升。但要維持健康，應將其視為長期保養的一部分，而非短期特效藥。</p>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        <!-- Related Articles -->
+        <div class="related-title">相關營養素</div>
+        <div class="related-grid">
+          <a href="./fish-oil.html" class="related-card">
+            <span class="related-card-tag">礦物質</span>
+            <h3 class="related-card-title">鈣</h3>
+            <p class="related-card-desc">
+              了解鈣質對骨骼、肌肉和神經系統的關鍵作用，以及與維生素D的協同關係。
+            </p>
+          </a>
+          <a href="./magnesium.html" class="related-card">
+            <span class="related-card-tag">礦物質</span>
+            <h3 class="related-card-title">鎂</h3>
+            <p class="related-card-desc">
+              鎂參與體內維生素D的活化過程，是不可或缺的輔助因子。
+            </p>
+          </a>
+          <a href="./vitamin-b.html" class="related-card">
+            <span class="related-card-tag">維生素</span>
+            <h3 class="related-card-title">維生素B群</h3>
+            <p class="related-card-desc">
+              B群是能量代謝的基礎，與維生素D共同維持身體的正常生理機能。
+            </p>
+          </a>
+        </div>
+      </main>
+    </div>
+
+    <!-- Disclaimer Section -->
+    <section class="disclaimer">
+      <div class="disclaimer-content">
+        <h3>免責聲明</h3>
+        <p>
+          本資訊僅供教育目的，不能取代專業醫療建議。開始任何營養補充計劃前，請諮詢醫療專業人員。個人需求可能因健康狀況、藥物使用和生活方式而有所不同。
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer Component Container -->
+    <div id="footer-component"></div>
+
+    <!-- Load Components -->
+    <script src="../assets/js/deus-analytics-component.js"></script>
+    <script src="../assets/js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-footer-component.js"></script>
+
+    <script>
+      // Progress Bar
+      function updateProgressBar() {
+        const scrollPosition = window.scrollY;
+        const documentHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (scrollPosition / documentHeight) * 100;
+        document.getElementById("progressBar").style.width =
+          scrollPercentage + "%";
+      }
+
+      window.addEventListener("scroll", updateProgressBar);
+
+      // Table of Contents Highlighting
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".toc-link");
+
+      function highlightTOC() {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100;
+          if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", highlightTOC);
+      document.addEventListener("DOMContentLoaded", highlightTOC);
+
+      // Smooth Scroll for TOC Links
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          const targetSection = document.querySelector(targetId);
+
+          if (targetSection) {
+            const yOffset = -80;
+            const y =
+              targetSection.getBoundingClientRect().top +
+              window.pageYOffset +
+              yOffset;
+
+            window.scrollTo({ top: y, behavior: "smooth" });
+          }
+        });
+      });
+
+      // FAQ Toggle
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const item = question.parentElement;
+          item.classList.toggle("active");
+
+          document.querySelectorAll(".faq-item").forEach((otherItem) => {
+            if (otherItem !== item) {
+              otherItem.classList.remove("active");
+            }
+          });
+        });
+      });
+
+      // Initialize Components
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.DeusAnalyticsComponent) {
+          new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
+        }
+        const headerContainer = document.getElementById("header-component");
+        if (headerContainer && window.DeusHeaderComponent) {
+          new window.DeusHeaderComponent(headerContainer).setDebug(false).setTheme("default");
+        }
+        const footerContainer = document.getElementById("footer-component");
+        if (footerContainer && window.DeusFooterComponent) {
+          new window.DeusFooterComponent(footerContainer).setDebug(false).setTheme("default");
+        }
+      });
+    </script>
+</body>
+</html>
