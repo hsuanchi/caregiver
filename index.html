@@ -935,7 +935,7 @@
             />
           </div>
 
-          <div class="floating-element vitamin">
+          <div class="floating-element vitamin" style="cursor: pointer" onclick="window.location.href='post/vitamin-d.html'">
             <div class="element-icon">D</div>
             <div class="element-text">
               <h4>維生素D</h4>
@@ -1008,7 +1008,7 @@
       </div>
 
       <div class="nutrients-grid">
-        <div class="nutrient-card fade-in">
+        <div class="nutrient-card fade-in" style="cursor: pointer" onclick="window.location.href='post/vitamin-d.html'">
           <div class="nutrient-header">
             <h3 class="nutrient-title">維生素D</h3>
             <p class="nutrient-desc">
@@ -1112,7 +1112,7 @@
           </div>
         </div>
 
-        <div class="nutrient-card fade-in">
+        <div class="nutrient-card fade-in" style="cursor: pointer" onclick="window.location.href='post/coenzyme-q10.html'">
           <div class="nutrient-header">
             <h3 class="nutrient-title">輔酶Q10</h3>
             <p class="nutrient-desc">
@@ -1152,7 +1152,7 @@
           <div class="category-items">
             <h4>包含營養素</h4>
             <p class="category-items-list">
-              維生素B群、葉酸、維生素C、維生素D、維生素E、維生素K
+              <a href="post/vitamin-b.html" style="color: #ff6b35; text-decoration: none; font-weight: 600">維生素B群</a>、葉酸、維生素C、<a href="post/vitamin-d.html" style="color: #ff6b35; text-decoration: none; font-weight: 600">維生素D</a>、維生素E、維生素K
             </p>
           </div>
         </div>
@@ -1165,7 +1165,7 @@
           </p>
           <div class="category-items">
             <h4>包含營養素</h4>
-            <p class="category-items-list">鈣、鋅、鐵、鎂</p>
+            <p class="category-items-list">鈣、鋅、鐵、<a href="post/magnesium.html" style="color: #ff6b35; text-decoration: none; font-weight: 600">鎂</a></p>
           </div>
         </div>
 
@@ -1178,11 +1178,11 @@
           <div class="category-items">
             <h4>包含營養素</h4>
             <p class="category-items-list">
-              葉黃素、<a
+              <a href="post/lutein.html" style="color: #ff6b35; text-decoration: none; font-weight: 600">葉黃素</a>、<a
                 href="post/fish-oil.html"
                 style="color: #ff6b35; text-decoration: none; font-weight: 600"
                 >魚油</a
-              >、益生菌、膠原蛋白、輔酶Q10、軟骨素、薑黃素、葡萄糖胺
+              >、<a href="post/probiotics.html" style="color: #ff6b35; text-decoration: none; font-weight: 600">益生菌</a>、膠原蛋白、<a href="post/coenzyme-q10.html" style="color: #ff6b35; text-decoration: none; font-weight: 600">輔酶Q10</a>、軟骨素、薑黃素、葡萄糖胺
             </p>
           </div>
         </div>
@@ -1465,6 +1465,9 @@
           const header = new window.DeusHeaderComponent(headerContainer)
             .setDebug(false)
             .setTheme("default");
+          console.log("✅ Header 組件初始化完成");
+        } else {
+          console.error("❌ Header 組件初始化失敗");
         }
 
         // Initialize Footer Component
@@ -1473,6 +1476,9 @@
           const footer = new window.DeusFooterComponent(footerContainer)
             .setDebug(false)
             .setTheme("default");
+          console.log("✅ Footer 組件初始化完成");
+        } else {
+          console.error("❌ Footer 組件初始化失敗");
         }
       });
     </script>

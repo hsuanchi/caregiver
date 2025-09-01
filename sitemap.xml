@@ -14,15 +14,15 @@
   
   <!-- 文章頁面 - 高優先級 -->
   <url>
-    <loc>https://life.maxlist.xyz/post/fish-oil.html</loc>
-    <lastmod>2025-01-20</lastmod>
+        <loc>https://life.maxlist.xyz/post/fish-oil.html</loc>
+    <lastmod>2025-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://life.maxlist.xyz/post/probiotics.html</loc>
-    <lastmod>2025-01-20</lastmod>
+        <loc>https://life.maxlist.xyz/post/probiotics.html</loc>
+    <lastmod>2025-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -41,9 +41,23 @@
     <priority>0.8</priority>
   </url>
 
-  <url>
+    <url>
     <loc>https://life.maxlist.xyz/post/vitamin-d.html</loc>
-    <lastmod>2025-08-27</lastmod>
+    <lastmod>2025-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://life.maxlist.xyz/post/magnesium.html</loc>
+    <lastmod>2025-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://life.maxlist.xyz/post/vitamin-b.html</loc>
+    <lastmod>2025-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
