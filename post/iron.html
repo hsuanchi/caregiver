@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>鐵質完整指南：功效、食物與鐵劑挑選全攻略 | Caregiver 營養百科</title>
+    <meta name="description" content="專業營養師解析鐵質功效、缺鐵警訊、高鐵食物與鐵劑挑選。了解如何有效補鐵，告別疲勞、掉髮與注意力不集中，重拾活力。" />
+    <meta name="keywords" content="鐵, 補鐵, 缺鐵, 缺鐵性貧血, 鐵劑, 高鐵食物, 掉髮, 疲勞, 鐵蛋白, 甘胺酸亞鐵, 血紅素鐵" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+        line-height: 1.8;
+        color: #2d3748;
+        background: #faf8f5;
+      }
+
+      /* Progress Bar - Red Theme */
+      .progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: linear-gradient(90deg, #ef4444 0%, #f87171 100%);
+        z-index: 1001;
+        transition: width 0.3s ease;
+      }
+
+      /* Article Layout */
+      .article-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 100px 20px 60px;
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 60px;
+        position: relative;
+      }
+
+      /* Sidebar Table of Contents - Red Theme */
+      .sidebar {
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+      }
+
+      .toc {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .toc-title {
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .toc-list {
+        list-style: none;
+      }
+
+      .toc-list li {
+        margin-bottom: 8px;
+      }
+
+      .toc-list a {
+        color: #4a5568;
+        text-decoration: none;
+        font-size: 0.95em;
+        display: block;
+        padding: 8px 12px;
+        transition: all 0.3s ease;
+        position: relative;
+        border-radius: 8px;
+        border-left: 3px solid transparent;
+      }
+
+      .toc-list a.active {
+        color: #ef4444;
+        background: rgba(239, 68, 68, 0.1);
+        border-left-color: #ef4444;
+        font-weight: 600;
+      }
+
+      .toc-list a:hover {
+        color: #ef4444;
+        background: rgba(239, 68, 68, 0.08);
+        border-left-color: #f87171;
+        transform: translateX(2px);
+      }
+
+      .toc-title-link {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* Main Content Area */
+      .article-content {
+        background: white;
+        border-radius: 20px;
+        padding: 50px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Article Header - Red Theme */
+      .article-header {
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .article-hero {
+        background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+        border-radius: 20px;
+        padding: 60px;
+        margin-bottom: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .article-hero::before {
+        content: "🩸";
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        font-size: 150px;
+        opacity: 0.1;
+        transform: rotate(-15deg);
+      }
+
+      .article-category {
+        display: inline-block;
+        background: white;
+        color: #b91c1c;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        font-weight: 600;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .article-title {
+        font-size: 2.5em;
+        font-weight: 800;
+        color: #2d3748;
+        line-height: 1.3;
+        margin-bottom: 20px;
+        max-width: 800px;
+      }
+
+      .article-subtitle {
+        font-size: 1.3em;
+        color: #4a5568;
+        line-height: 1.6;
+        max-width: 700px;
+        margin-bottom: 30px;
+      }
+
+      .article-meta {
+        display: flex;
+        gap: 30px;
+        color: #718096;
+        font-size: 0.95em;
+        flex-wrap: wrap;
+      }
+
+      .article-meta span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* Alert Boxes */
+      .alert {
+        padding: 20px 25px;
+        border-radius: 15px;
+        margin: 30px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .alert::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+      }
+
+      .alert-doctor {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+
+      .alert-doctor::before {
+        background: #dc2626;
+      }
+
+      .alert-nutritionist {
+        background: #dbeafe;
+        color: #1e3a8a;
+      }
+
+      .alert-nutritionist::before {
+        background: #2563eb;
+      }
+
+      .alert-tip {
+        background: #f0fdf4;
+        color: #14532d;
+      }
+
+      .alert-tip::before {
+        background: #22c55e;
+      }
+
+      .alert strong {
+        font-weight: 700;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      /* Tables - Red Theme */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .data-table thead {
+        background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
+        color: white;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 15px 20px;
+        text-align: left;
+      }
+
+      .data-table th {
+        font-weight: 600;
+      }
+
+      .data-table tbody tr {
+        border-bottom: 1px solid #e5e7eb;
+        transition: background 0.3s ease;
+      }
+
+      .data-table tbody tr:hover {
+        background: #f9fafb;
+      }
+
+      .data-table tbody tr:last-child {
+        border-bottom: none;
+      }
+
+      /* Visual Info Cards */
+      .info-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 40px 0;
+      }
+
+      .info-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      }
+
+      .info-card-icon {
+        font-size: 3em;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .info-card-title {
+        font-size: 1.3em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 10px;
+      }
+
+      .info-card-desc {
+        color: #718096;
+        font-size: 0.95em;
+        line-height: 1.6;
+      }
+      
+      /* Quick Read Card Specific Styles */
+      .quick-read-card {
+        cursor: pointer;
+        position: relative;
+        padding-bottom: 50px; /* 為點擊提示留出空間 */
+      }
+
+      .quick-read-card:hover .card-click-hint {
+        transform: translateX(-50%) scale(1.05);
+      }
+
+      .card-click-hint {
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(135deg, #ef4444, #f87171);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 15px;
+        font-size: 0.8em;
+        font-weight: 500;
+        opacity: 1;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        pointer-events: none;
+        text-align: center;
+      }
+
+      .card-click-hint::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid #ef4444;
+      }
+
+      .highlight-nutrient {
+        border-bottom: 2px solid #ef4444;
+        padding-bottom: 1px;
+      }
+
+      /* High-Risk Group Cards */
+      .risk-group-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+      }
+
+      .risk-card {
+        background: #fffbeb;
+        border-left: 4px solid #f59e0b;
+        border-radius: 12px;
+        padding: 25px;
+        transition: all 0.3s ease;
+      }
+
+      .risk-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(245, 158, 11, 0.15);
+      }
+
+      .risk-card-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+      }
+
+      .risk-card-icon {
+        font-size: 2em;
+      }
+
+      .risk-card-title {
+        font-size: 1.1em;
+        font-weight: 700;
+        color: #b45309;
+      }
+
+      .risk-card-desc {
+        color: #78350f;
+        font-size: 0.95em;
+        line-height: 1.6;
+      }
+
+      /* Safety Info Section */
+      .safety-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 30px;
+      }
+
+      .safety-item {
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+      }
+
+      .safety-item-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .safety-icon {
+        font-size: 2.5em;
+      }
+
+      .safety-item h4 {
+        font-size: 1.4em;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .safety-item-content p {
+        line-height: 1.7;
+        font-size: 1.05em;
+      }
+
+      .safety-warning {
+        background: #fff5f5;
+        border-left: 6px solid #ef4444;
+        color: #7f1d1d;
+      }
+      .safety-warning h4 { color: #c53030; }
+
+      /* Content Typography - Red Theme */
+      .article-body h2 {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin: 50px 0 30px;
+        padding-top: 20px;
+        position: relative;
+      }
+
+      .article-body h2::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 4px;
+        background: linear-gradient(90deg, #ef4444 0%, #f87171 100%);
+        border-radius: 2px;
+      }
+
+      .article-body h3 {
+        font-size: 1.5em;
+        font-weight: 600;
+        color: #2d3748;
+        margin: 35px 0 20px;
+      }
+
+      .article-body h4 {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #4a5568;
+        margin: 25px 0 15px;
+      }
+
+      .article-body p {
+        margin-bottom: 20px;
+        color: #4a5568;
+      }
+
+      .article-body ul,
+      .article-body ol {
+        margin: 20px 0;
+        padding-left: 30px;
+        color: #4a5568;
+      }
+
+      .article-body li {
+        margin-bottom: 10px;
+      }
+
+      .article-body strong {
+        color: #2d3748;
+        font-weight: 600;
+      }
+
+      /* FAQ Section - Red Theme */
+      .faq-section {
+        margin-top: 60px;
+        padding-top: 40px;
+        border-top: 2px solid #e5e7eb;
+      }
+
+      .faq-item {
+        background: #f9fafb;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-question {
+        padding: 20px 25px;
+        font-weight: 600;
+        color: #2d3748;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .faq-question::after {
+        content: "+";
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5em;
+        color: #ef4444;
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.active .faq-question::after {
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      .faq-answer {
+        padding: 0 25px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item.active .faq-answer {
+        padding: 0 25px 20px;
+        max-height: 500px;
+      }
+
+      /* Related Articles */
+      .related-section-title {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        text-align: center;
+        margin-bottom: 40px;
+        margin-top: 60px;
+      }
+
+      .related-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .related-card {
+        background: #f9fafb;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #e5e7eb;
+      }
+
+      .related-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .related-card-icon {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+
+      .related-card[href*="vitamin-b"] .related-card-icon { background: linear-gradient(135deg, #60a5fa, #3b82f6); }
+      .related-card[href*="magnesium"] .related-card-icon { background: linear-gradient(135deg, #a78bfa, #8b5cf6); }
+      .related-card[href*="vitamin-d"] .related-card-icon { background: linear-gradient(135deg, #fde68a, #fca5a5); }
+
+      .related-card-content {
+        flex-grow: 1;
+      }
+
+      .related-card-tag {
+        display: inline-block;
+        padding: 5px 15px;
+        border-radius: 999px;
+        font-size: 0.85em;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .related-card[href*="vitamin-b"] .related-card-tag { background: #eff6ff; color: #1e40af; }
+      .related-card[href*="magnesium"] .related-card-tag { background: #f5f3ff; color: #6d28d9; }
+      .related-card[href*="vitamin-d"] .related-card-tag { background: #fef3c7; color: #b45309; }
+
+      .related-card-title {
+        font-size: 1.3em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+
+      .related-card-desc {
+        color: #718096;
+        font-size: 0.95em;
+        line-height: 1.6;
+      }
+      
+      .related-card-cta {
+        margin-top: auto;
+        padding-top: 15px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .related-card[href*="vitamin-b"] .related-card-cta { color: #3b82f6; }
+      .related-card[href*="magnesium"] .related-card-cta { color: #8b5cf6; }
+      .related-card[href*="vitamin-d"] .related-card-cta { color: #f97316; }
+
+      .related-card:hover .related-card-cta { transform: translateX(5px); }
+
+      /* Disclaimer */
+      .disclaimer {
+        background: #f9fafb;
+        padding: 60px 0;
+        text-align: center;
+      }
+      .disclaimer-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .disclaimer h3 {
+        color: #4b5563;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+      }
+      .disclaimer p {
+        color: #6b7280;
+        font-size: 0.95em;
+        line-height: 1.8;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .article-container {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+
+        .sidebar {
+          display: none;
+        }
+
+        .article-content {
+          padding: 30px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .article-content {
+          padding: 20px;
+          border-radius: 15px;
+        }
+
+        .article-title {
+          font-size: 1.8em;
+        }
+
+        .article-meta {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .data-table {
+          font-size: 0.9em;
+        }
+
+        .data-table th,
+        .data-table td {
+          padding: 10px;
+        }
+      }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Header Component Container -->
+    <div id="header-component"></div>
+
+    <!-- Article Container -->
+    <div class="article-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="toc">
+          <a href="#article-top" class="toc-title-link">
+            <h3 class="toc-title">
+              <span>📑</span>
+              <span>目錄</span>
+            </h3>
+          </a>
+          <ul class="toc-list">
+            <li><a href="#summary" class="toc-link">30 秒速讀版</a></li>
+            <li><a href="#basic-info" class="toc-link">鐵是什麼？不只是補血</a></li>
+            <li><a href="#deficiency-signs" class="toc-link">缺鐵的8大警訊</a></li>
+            <li><a href="#diagnosis" class="toc-link">如何診斷？別只看血紅素</a></li>
+            <li><a href="#how-to-supplement" class="toc-link">如何聰明補充鐵質</a></li>
+            <li><a href="#product-selection" class="toc-link">如何挑選鐵劑</a></li>
+            <li><a href="#special-groups" class="toc-link">不同族群與安全警示</a></li>
+            <li><a href="#faq" class="toc-link">常見問題</a></li>
+            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="article-content">
+        <!-- Article Header -->
+        <header class="article-header" id="article-top">
+          <div class="article-hero">
+            <span class="article-category">礦物質指南</span>
+            <h1 class="article-title">鐵質完整指南：從食物到保健品，完整補鐵策略</h1>
+            <p class="article-subtitle">經常疲勞、掉髮、注意力不集中？你可能不是壓力大，而是缺鐵了！本篇帶你了解如何有效補鐵，重拾活力。</p>
+            <div class="article-meta">
+              <span>✍️ 專業營養師審核</span>
+              <span>📅 2025 年 9 月 5 日更新</span>
+              <span>⏱️ 閱讀時間：15 分鐘</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Article Body -->
+        <article class="article-body">
+             <section id="summary">
+                <h2>30 秒速讀版</h2>
+                <div class="info-cards">
+                  <a href="#deficiency-signs" class="info-card quick-read-card">
+                    <span class="info-card-icon">😴</span>
+                    <h4 class="info-card-title">有什麼警訊？</h4>
+                    <p class="info-card-desc">極度疲勞、掉髮、臉色蒼白<br />都是缺鐵的徵兆</p>
+                    <div class="card-click-hint">點擊了解詳情</div>
+                  </a>
+                  <a href="#how-to-supplement" class="info-card quick-read-card">
+                    <span class="info-card-icon">🥬</span>
+                    <h4 class="info-card-title">怎麼補充？</h4>
+                    <p class="info-card-desc">多吃紅肉、深綠色蔬菜<br />搭配維生素C效果加倍</p>
+                    <div class="card-click-hint">點擊了解詳情</div>
+                  </a>
+                  <a href="#product-selection" class="info-card quick-read-card">
+                    <span class="info-card-icon">💊</span>
+                    <h4 class="info-card-title">怎麼選購？</h4>
+                    <p class="info-card-desc">首選「甘胺酸亞鐵」<br />吸收好、副作用少</p>
+                    <div class="card-click-hint">點擊了解詳情</div>
+                  </a>
+                </div>
+              </section>
+
+             <section id="basic-info">
+                <h2>鐵是什麼？不只是補血，更是全身機能的引擎</h2>
+                <p>鐵（Iron）是人體中不可或缺的微量礦物質，其在生理運作中扮演著多重且至關重要的角色。將鐵的功用僅僅視為「補血」，是極大化地低估了其對整體健康的影響。</p>       
+                <p>鐵質是紅血球中<strong class="highlight-nutrient">血紅素（Hemoglobin）</strong>與<strong class="highlight-nutrient">肌紅素（Myoglobin）</strong>的主要構成元素。血紅素負責將氧氣從肺部運送至身體每一個細胞，而肌紅素則將氧氣儲存在肌肉細胞中。可以說，<strong class="highlight-nutrient">鐵是身體的「氧氣運輸大隊長」</strong>，直接影響到身體各部分的能量供應與代謝。</p>
+                <p>此外，鐵質也參與神經傳導物質的合成，例如血清素、多巴胺等，這些物質在<strong class="highlight-nutrient">情緒調節、睡眠、記憶與學習</strong>中扮演著關鍵角色。這解釋了為什麼許多人會感覺「腦霧」或注意力不集中，其背後可能並非單純的心理因素，而是鐵缺乏導致的大腦供氧不足。</p>
+             </section>
+
+             <section id="deficiency-signs">
+                <h2>身體的「缺鐵」警訊</h2>
+                <p>缺鐵性貧血是全世界最常見的營養素缺乏症之一。然而，許多人即使已經處於缺鐵狀態，卻因為症狀輕微或與其他狀況混淆而未能察覺。以下是八大常見警訊：</p>
+                <div class="info-cards">
+                  <div class="info-card">
+                    <span class="info-card-icon">😴</span>
+                    <h4 class="info-card-title">極度疲勞與虛弱</h4>
+                    <p class="info-card-desc">最普遍的警訊，因全身組織供氧不足而感到疲累。</p>
+                  </div>
+                  <div class="info-card">
+                    <span class="info-card-icon">😵</span>
+                    <h4 class="info-card-title">頭暈、頭痛、臉色蒼白</h4>
+                    <p class="info-card-desc">大腦供氧不足，且紅血球減少影響肌膚顏色。</p>
+                  </div>
+                  <div class="info-card">
+                    <span class="info-card-icon">💇‍♀️</span>
+                    <h4 class="info-card-title">掉髮與指甲脆弱</h4>
+                    <p class="info-card-desc">髮根養分不足導致落髮，指甲變薄、易斷裂。</p>
+                  </div>
+                  <div class="info-card">
+                    <span class="info-card-icon">💓</span>
+                    <h4 class="info-card-title">心悸與呼吸急促</h4>
+                    <p class="info-card-desc">心臟需更努力工作來彌補血液中的氧氣不足。</p>
+                  </div>
+                  <div class="info-card">
+                    <span class="info-card-icon">🦵</span>
+                    <h4 class="info-card-title">不寧腿症候群</h4>
+                    <p class="info-card-desc">腿部會感到麻癢，像有螞蟻在爬，與鐵缺乏有關。</p>
+                  </div>
+                  <div class="info-card">
+                    <span class="info-card-icon">🧊</span>
+                    <h4 class="info-card-title">口腔問題與異食癖</h4>
+                    <p class="info-card-desc">舌頭發炎、疼痛，或渴望食用冰塊、泥土等非食物。</p>
+                  </div>
+                   <div class="info-card">
+                    <span class="info-card-icon">😟</span>
+                    <h4 class="info-card-title">情緒與認知問題</h4>
+                    <p class="info-card-desc">影響神經傳導物質，導致易怒、注意力不集中。</p>
+                  </div>
+                  <div class="info-card">
+                    <span class="info-card-icon">🤒</span>
+                    <h4 class="info-card-title">經常感染</h4>
+                    <p class="info-card-desc">鐵質缺乏會削弱免疫力，使身體更容易受感染。</p>
+                  </div>
+                </div>
+             </section>
+
+             <section id="diagnosis">
+                <h2>如何診斷？別只看血紅素！</h2>
+                <p>許多人誤以為「不貧血」就等於「不缺鐵」。事實上，鐵質缺乏是一個漸進的過程。當身體的鐵儲存量下降時，血紅素（Hb）水平可能仍然正常，但疲勞、掉髮等症狀已經出現。</p>
+                <div class="alert alert-tip">
+                  <strong>💡 關鍵指標：鐵蛋白 (Ferritin)</strong> 
+                  要精準判斷是否缺鐵，最關鍵的指標是抽血檢測「鐵蛋白」，它能反映體內的鐵儲存量。即使血紅素正常，若鐵蛋白水平已低於 30 ng/ml，就已是「潛伏性缺鐵」，需要及早處理。
+                </div>
+             </section>
+
+             <section id="how-to-supplement">
+                <h2>如何聰明補充鐵質？</h2>
+                <h3>每日鐵質建議攝取量</h3>
+                <p>根據衛福部建議，鐵的每日攝取量因年齡、性別與生理狀況而異。成年女性因每月生理期，需求量（15mg）比男性（10mg）高；而懷孕中後期與哺乳期女性的需求量更是高達每日 45mg。</p>
+                
+                <h3>飲食補鐵攻略：動物性 vs. 植物性</h3>
+                <p>食物中的鐵質分為兩種：吸收率高的<strong class="highlight-nutrient">血基質鐵</strong>（來自動物性食物）和吸收率較低的<strong class="highlight-nutrient">非血基質鐵</strong>（來自植物性食物）。</p>
+                <table class="data-table">
+                  <thead>
+                    <tr><th>食物來源</th><th>代表食物</th><th>每100克鐵含量 (毫克)</th><th>吸收技巧</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><strong>動物性 (高吸收率)</strong></td><td>豬血</td><td>28</td><td>-</td></tr>
+                    <tr><td></td><td>豬肝</td><td>18</td><td>避免過量，因維生素A風險</td></tr>
+                    <tr><td></td><td>瘦牛肉</td><td>1.7-3.7</td><td>-</td></tr>
+                    <tr><td><strong>植物性 (低吸收率)</strong></td><td>紅莧菜</td><td>8.5-11.8</td><td>搭配維生素C，加熱去除草酸</td></tr>
+                    <tr><td></td><td>黑芝麻</td><td>10.3</td><td>避免與高鈣食物同食</td></tr>
+                    <tr><td></td><td>紅豆</td><td>4.5</td><td>浸泡與發酵可減少植酸</td></tr>
+                  </tbody>
+                </table>
+
+                <h3>聰明搭配，提升吸收效率</h3>
+                <p>掌握正確的搭配策略是補鐵關鍵。在攝取植物性高鐵食物時，搭配富含<strong class="highlight-nutrient">維生素C</strong>的食物（如芭樂、奇異果、番茄）可將吸收率提升數倍。同時，應避免在餐後立即飲用<strong class="highlight-nutrient">茶或咖啡</strong>，並將<strong class="highlight-nutrient">高鈣食物</strong>（如牛奶、鈣片）與補鐵餐點錯開至少一小時食用。</p>
+             </section>
+
+             <section id="product-selection">
+                <h2>如何挑選鐵劑？</h2>
+                <p>對於飲食無法滿足需求，或已確診缺鐵的族群，補充鐵劑是必要的。市售鐵劑主要分為傳統的二價/三價鐵，以及吸收率更高、副作用更少的新型態鐵劑。</p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>類型</th>
+                            <th>吸收率</th>
+                            <th>優點</th>
+                            <th>適用對象</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>傳統二價鐵</strong><br>(如硫酸亞鐵)</td>
+                            <td>中高</td>
+                            <td>價格便宜、效果快</td>
+                            <td>腸胃耐受性佳者</td>
+                        </tr>
+                        <tr>
+                            <td><strong>甘胺酸亞鐵</strong><br>(螯合型)</td>
+                            <td><strong>極高</strong></td>
+                            <td><strong>吸收率高、腸胃刺激低</strong></td>
+                            <td><strong>追求高效率、易便秘、腸胃敏感者</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>血紅素鐵多肽</strong></td>
+                            <td>高</td>
+                            <td>副作用少、類食物型態</td>
+                            <td>腸胃敏感、對鐵劑氣味敏感者</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="alert alert-nutritionist">
+                  <strong>💡 營養師觀點：</strong> 對於多數需要補充鐵劑的人，<strong class="highlight-nutrient">甘胺酸亞鐵</strong>是兼具高吸收率與低副作用的理想選擇，能有效補鐵同時避免便秘等不適。
+                </div>
+             </section>
+
+             <section id="special-groups">
+                <h2>不同族群與安全警示</h2>
+                <h3>高風險族群補鐵計畫</h3>
+                <div class="risk-group-cards">
+                  <div class="risk-card">
+                    <div class="risk-card-header"><span class="risk-card-icon">🤰</span><h4 class="risk-card-title">孕婦與哺乳期女性</h4></div>
+                    <p class="risk-card-desc">需求量最高，每日需45mg。單靠飲食難以滿足，應諮詢醫師考慮補充鐵劑。</p>
+                  </div>
+                  <div class="risk-card">
+                    <div class="risk-card-header"><span class="risk-card-icon">🩸</span><h4 class="risk-card-title">經期女性</h4></div>
+                    <p class="risk-card-desc">經血量多者流失大量鐵質，若有疲勞、掉髮等症狀，應加強鐵質攝取。</p>
+                  </div>
+                  <div class="risk-card">
+                    <div class="risk-card-header"><span class="risk-card-icon">🌿</span><h4 class="risk-card-title">素食者</h4></div>
+                    <p class="risk-card-desc">主要挑戰是提升植物性鐵的吸收率，務必搭配維生素C，並考慮補充劑。</p>
+                  </div>
+                </div>
+
+                <h3>安全警示：過量風險</h3>
+                <div class="safety-container">
+                  <div class="safety-item safety-warning">
+                    <div class="safety-item-header">
+                      <span class="safety-icon">⚠️</span>
+                      <h4>過量風險 & 特殊疾病</h4>
+                    </div>
+                    <div class="safety-item-content">
+                      <p><strong>醫師警告：</strong>切勿在未經診斷下自行補充高劑量鐵劑。特別是<strong class="highlight-nutrient">海洋性貧血</strong>患者，體內鐵質容易堆積，額外補鐵可能導致鐵質過量，引發嚴重併發症，應嚴格遵循醫囑。</p>
+                    </div>
+                  </div>
+                </div>
+             </section>
+
+             <section id="faq" class="faq-section">
+                <h2>常見問題</h2>
+                <div class="faq-item">
+                  <div class="faq-question">Q1: 吃鐵劑會便秘怎麼辦？</div>
+                  <div class="faq-answer">
+                    <p><strong>A:</strong> 這是傳統二價鐵常見的副作用。建議可以改為飯後服用、從低劑量開始，或直接選擇對腸胃較溫和的<strong class="highlight-nutrient">甘胺酸亞鐵</strong>。同時，多喝水、攝取足夠膳食纖維也有幫助。</p>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <div class="faq-question">Q2: 為什麼喝茶或咖啡會影響鐵吸收？</div>
+                  <div class="faq-answer">
+                    <p><strong>A:</strong> 茶與咖啡中的<strong class="highlight-nutrient">單寧酸</strong>會與鐵質結合，形成不易吸收的複合物，顯著抑制鐵的吸收。建議在用餐或服用鐵劑的前後1-2小時，避免飲用茶或咖啡。</p>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <div class="faq-question">Q3: 櫻桃、葡萄、紅火龍果真的能補血嗎？</div>
+                  <div class="faq-answer">
+                    <p><strong>A:</strong> 這是一個常見迷思。櫻桃和葡萄的鐵含量其實很低。紅火龍果的鐵含量相對較高，且富含維生素C有助吸收，是較好的選擇。但若要高效補鐵，仍以動物性來源或鐵劑為主。</p>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <div class="faq-question">Q4: 海洋性貧血可以補鐵嗎？</div>
+                  <div class="faq-answer">
+                    <p><strong>A: 絕對不可以自行補充！</strong> 海洋性貧血是基因缺陷導致血紅素製造異常，患者體內鐵質不但不缺，反而容易堆積。額外補鐵會造成鐵質沉積，傷害心臟、肝臟等器官。務必遵循醫師指示，切勿自行服用含鐵保健食品。</p>
+                  </div>
+                </div>
+             </section>
+        </article>
+
+        <!-- Related Articles -->
+        <section id="related-nutrients">
+          <h2 class="related-section-title">探索相關營養素</h2>
+          <div class="related-grid">
+            <a href="./vitamin-b.html" class="related-card">
+              <div class="related-card-icon">⚡️</div>
+              <div class="related-card-content">
+                <span class="related-card-tag">維生素</span>
+                <h3 class="related-card-title">維生素 B 群</h3>
+                <p class="related-card-desc">B群（特別是B12與葉酸）是製造紅血球的關鍵夥伴，與鐵質共同對抗貧血。</p>
+              </div>
+              <div class="related-card-cta">了解更多 <span>&rarr;</span></div>
+            </a>
+            <a href="./magnesium.html" class="related-card">
+              <div class="related-card-icon">💎</div>
+              <div class="related-card-content">
+                <span class="related-card-tag">礦物質</span>
+                <h3 class="related-card-title">鎂</h3>
+                <p class="related-card-desc">鎂參與能量代謝，缺乏時也會導致疲勞，與缺鐵症狀相似，兩者共同維持活力。</p>
+              </div>
+              <div class="related-card-cta">了解更多 <span>&rarr;</span></div>
+            </a>
+            <a href="./vitamin-d.html" class="related-card">
+              <div class="related-card-icon">☀️</div>
+              <div class="related-card-content">
+                <span class="related-card-tag">維生素</span>
+                <h3 class="related-card-title">維生素 D</h3>
+                <p class="related-card-desc">維生素D調節免疫功能，而鐵質是免疫細胞運作的基礎，兩者共同鞏固身體防線。</p>
+              </div>
+              <div class="related-card-cta">了解更多 <span>&rarr;</span></div>
+            </a>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- Disclaimer Section -->
+    <section class="disclaimer">
+      <div class="disclaimer-content">
+        <h3>免責聲明</h3>
+        <p>本資訊僅供教育目的，不能取代專業醫療建議。開始任何營養補充計劃前，請諮詢醫療專業人員。個人需求可能因健康狀況、藥物使用和生活方式而有所不同。</p>
+      </div>
+    </section>
+
+    <!-- Footer Component Container -->
+    <div id="footer-component"></div>
+
+    <!-- Load Components -->
+    <script src="../assets/js/deus-analytics-component.js"></script>
+    <script src="../assets/js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-footer-component.js"></script>
+
+    <script>
+      // Progress Bar
+      function updateProgressBar() {
+        const scrollPosition = window.scrollY;
+        const documentHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (scrollPosition / documentHeight) * 100;
+        document.getElementById("progressBar").style.width =
+          scrollPercentage + "%";
+      }
+      window.addEventListener("scroll", updateProgressBar);
+
+      // Table of Contents Highlighting
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".toc-link");
+
+      function highlightTOC() {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100;
+          if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+          }
+        });
+      }
+      window.addEventListener("scroll", highlightTOC);
+
+      // Smooth Scroll for TOC Links
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          const targetSection = document.querySelector(targetId);
+
+          if (targetSection) {
+            const yOffset = -80;
+            const y =
+              targetSection.getBoundingClientRect().top +
+              window.pageYOffset +
+              yOffset;
+
+            window.scrollTo({ top: y, behavior: "smooth" });
+          }
+        });
+      });
+
+      // FAQ Toggle
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const item = question.parentElement;
+          item.classList.toggle("active");
+
+          document.querySelectorAll(".faq-item").forEach((otherItem) => {
+            if (otherItem !== item) {
+              otherItem.classList.remove("active");
+            }
+          });
+        });
+      });
+
+      // Initialize Components
+      document.addEventListener("DOMContentLoaded", function () {
+        highlightTOC(); // Initial call on page load
+
+        if (window.DeusAnalyticsComponent) {
+          new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
+          console.log("✅ Analytics 組件初始化完成");
+        } else {
+          console.error("❌ Analytics 組件初始化失敗");
+        }
+        const headerContainer = document.getElementById("header-component");
+        if (headerContainer && window.DeusHeaderComponent) {
+          new window.DeusHeaderComponent(headerContainer).setDebug(false).setTheme("default");
+          console.log("✅ Header 組件初始化完成");
+        } else {
+          console.error("❌ Header 組件初始化失敗");
+        }
+        const footerContainer = document.getElementById("footer-component");
+        if (footerContainer && window.DeusFooterComponent) {
+          new window.DeusFooterComponent(footerContainer).setDebug(false).setTheme("default");
+          console.log("✅ Footer 組件初始化完成");
+        } else {
+          console.error("❌ Footer 組件初始化失敗");
+        }
+      });
+    </script>
+</body>
+</html>
