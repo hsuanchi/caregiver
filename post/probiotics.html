@@ -194,6 +194,26 @@
         overflow: hidden;
       }
 
+      .article-hero::before {
+        content: "🦠";
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        font-size: 150px;
+        opacity: 0.1;
+        transform: rotate(-15deg);
+      }
+
+      .article-hero::after {
+        content: "🌿";
+        position: absolute;
+        left: -10px;
+        bottom: -10px;
+        font-size: 100px;
+        opacity: 0.1;
+        transform: rotate(15deg);
+      }
+
       .article-category {
         display: inline-block;
         background: white;
@@ -855,24 +875,13 @@
           <ul class="toc-list">
             <li><a href="#summary" class="toc-link">30 秒速讀版</a></li>
             <li><a href="#self-check" class="toc-link">你需要益生菌嗎？</a></li>
-            <li>
-              <a href="#target-groups" class="toc-link sub-item">適用人群</a>
-            </li>
-            <li><a href="#basics" class="toc-link sub-item">益生菌基礎知識</a></li>
-            <li>
-              <a href="#benefits" class="toc-link sub-item">功能與作用機制</a>
-            </li>
-            <li>
-              <a href="#dosage" class="toc-link sub-item">建議攝取量與時間</a>
-            </li>
-            <li>
-              <a href="#natural-sources" class="toc-link sub-item"
-                >天然食物來源</a
-              >
-            </li>
-            <li>
-              <a href="#product-selection" class="toc-link">如何選擇產品</a>
-            </li>
+            <li><a href="#target-groups" class="toc-link sub-item">6大適用族群</a></li>
+            <li><a href="#basics" class="toc-link">益生菌基礎知識</a></li>
+            <li><a href="#benefits" class="toc-link sub-item">5大核心功效</a></li>
+            <li><a href="#dosage" class="toc-link">如何聰明補充益生菌？</a></li>
+            <li><a href="#natural-sources" class="toc-link sub-item">天然食物來源</a></li>
+            <li><a href="#product-selection" class="toc-link">如何挑選益生菌產品？</a></li>
+            <li><a href="#safety-info" class="toc-link">重要注意事項</a></li>
             <li><a href="#faq" class="toc-link">常見問題</a></li>
           </ul>
         </div>
@@ -1289,7 +1298,7 @@
                 >服用方式也會影響益生菌的存活率</span
               >——水溫過高會「燙死」益生菌，而茶、咖啡中的單寧酸和咖啡因則可能抑制益生菌活性。記住，益生菌需要時間在腸道定植繁殖，<span
                 class="highlight-nutrient"
-                >至少持續服用 2-4 週才能看到明顯效果</span
+                >至少持續補充 2-4 週才能看到明顯效果</span
               >。
             </p>
 
@@ -1335,22 +1344,22 @@
               <tbody>
                 <tr>
                   <td><strong>搭配抗生素</strong></td>
-                  <td>間隔 2 小時以上</td>
+                  <td>間隔 2 小時以上補充</td>
                   <td>避免抗生素殺死益生菌</td>
                 </tr>
                 <tr>
                   <td><strong>搭配益生元</strong></td>
-                  <td>同時服用效果更佳</td>
+                  <td>同時攝取效果更佳</td>
                   <td>益生元是益生菌的食物</td>
                 </tr>
                 <tr>
                   <td><strong>腸胃敏感者</strong></td>
-                  <td>從低劑量開始</td>
+                  <td>從低劑量開始補充</td>
                   <td>讓腸道慢慢適應</td>
                 </tr>
                 <tr>
                   <td><strong>旅行期間</strong></td>
-                  <td>提前 1-2 週開始服用</td>
+                  <td>提前 1-2 週開始補充</td>
                   <td>預防水土不服</td>
                 </tr>
                 <tr>
@@ -1547,6 +1556,30 @@
             </div>
           </section>
 
+          <section id="safety-info">
+            <h2>重要注意事項</h2>
+            <div class="safety-container">
+              <div class="safety-item safety-warning">
+                <div class="safety-item-header">
+                  <span class="safety-icon">⚠️</span>
+                  <h4>副作用 & 適用對象</h4>
+                </div>
+                <div class="safety-item-content">
+                  <p><strong>醫師警告：</strong>雖然益生菌對多數人安全，但免疫功能嚴重不全者（如化療、器官移植患者）應在醫師指導下使用。初期服用可能出現輕微脹氣或排便習慣改變，通常一至兩週後會緩解。</p>
+                </div>
+              </div>
+              <div class="safety-item" style="background: #f0f9ff; border-left: 6px solid #0ea5e9; color: #0c4a6e;">
+                <div class="safety-item-header">
+                  <span class="safety-icon">🤝</span>
+                  <h4 style="color: #0369a1;">益生元：益生菌的最佳夥伴</h4>
+                </div>
+                <div class="safety-item-content">
+                  <p><strong>營養師小撇步：</strong>益生元（Prebiotics）是益生菌的「食物」，能幫助好菌在腸道中生長茁壯。常見的益生元包括<strong class="highlight-nutrient">果寡糖、菊糖</strong>等，富含於洋蔥、大蒜、香蕉、蘆筍等食物中。選擇同時含有益生菌與益生元的產品（稱為共生質 Synbiotics），效果更佳！</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <!-- FAQ Section -->
           <section id="faq" class="faq-section">
             <h2>常見問題解答</h2>
@@ -1696,28 +1729,25 @@
         </article>
 
         <!-- Related Articles -->
-        <h2 class="related-title">相關營養指南</h2>
+        <h2 class="related-title" style="margin-top: 60px; border-top: 2px solid #e5e7eb; padding-top: 40px;">探索相關營養素</h2>
         <div class="related-grid">
-          <a href="#" class="related-card">
-            <span class="related-card-tag">營養素</span>
-            <h3 class="related-card-title">益生元完整指南</h3>
-            <p class="related-card-desc">
-              了解益生元如何為腸道益生菌提供養分，以及如何從飲食中獲得足夠的益生元。
-            </p>
+          <a href="./fish-oil.html" class="related-card">
+            <div class="related-card-icon" style="background: linear-gradient(135deg, #fb923c, #f97316);">🐟</div>
+            <span class="related-card-tag" style="background: #fff7ed; color: #9a3412;">脂肪酸</span>
+            <h3 class="related-card-title">魚油 (Omega-3)</h3>
+            <p class="related-card-desc">了解 Omega-3 如何與益生菌協同作用，支持腸道健康與抗發炎。</p>
           </a>
-          <a href="#" class="related-card">
-            <span class="related-card-tag">腸道健康</span>
-            <h3 class="related-card-title">腸道菌群平衡</h3>
-            <p class="related-card-desc">
-              深入了解腸道微生物群的組成、功能，以及如何維持健康的腸道生態系統。
-            </p>
+          <a href="./vitamin-d.html" class="related-card">
+            <div class="related-card-icon" style="background: linear-gradient(135deg, #facc15, #eab308);">☀️</div>
+            <span class="related-card-tag" style="background: #fefce8; color: #854d0e;">維生素</span>
+            <h3 class="related-card-title">維生素 D</h3>
+            <p class="related-card-desc">維生素 D 不僅影響骨骼，也與腸道免疫功能密切相關。</p>
           </a>
-          <a href="#" class="related-card">
-            <span class="related-card-tag">功能性食品</span>
-            <h3 class="related-card-title">發酵食品指南</h3>
-            <p class="related-card-desc">
-              探索各種發酵食品的營養價值、製作方法，以及如何將它們融入日常飲食。
-            </p>
+          <a href="./magnesium.html" class="related-card">
+            <div class="related-card-icon" style="background: linear-gradient(135deg, #a78bfa, #8b5cf6);">💎</div>
+            <span class="related-card-tag" style="background: #f5f3ff; color: #6d28d9;">礦物質</span>
+            <h3 class="related-card-title">鎂</h3>
+            <p class="related-card-desc">鎂有助於維持腸道肌肉正常收縮，與益生菌共同維護消化道健康。</p>
           </a>
         </div>
       </main>

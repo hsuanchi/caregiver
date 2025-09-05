@@ -470,6 +470,68 @@
         line-height: 1.8;
       }
 
+      /* Related Articles */
+      .related-section-title {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        text-align: center;
+        margin-bottom: 40px;
+        margin-top: 60px;
+        border-top: 2px solid #e5e7eb;
+        padding-top: 40px;
+      }
+
+      .related-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .related-card {
+        background: #f9fafb;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #e5e7eb;
+      }
+
+      .related-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .related-card-icon {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+
+      .related-card-title {
+        font-size: 1.3em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+
+      .related-card-desc {
+        color: #718096;
+        font-size: 0.95em;
+        line-height: 1.8;
+      }
+
       /* Responsive Design */
       @media (max-width: 1024px) {
         .article-container {
@@ -651,10 +713,10 @@
             </table>
             <h3>最佳攝取時間和方式</h3>
             <ul>
-                <li><strong>晚餐後或睡前服用</strong>：有助於肌肉放鬆和改善睡眠品質。</li>
-                <li><strong>分次服用</strong>：提高吸收率，減少腸胃不適的可能。</li>
+                <li><strong>晚餐後或睡前補充</strong>：有助於肌肉放鬆和改善睡眠品質。</li>
+                <li><strong>分次攝取</strong>：提高吸收率，減少腸胃不適的可能。</li>
                 <li><strong>搭配維生素 D 和 B6</strong>：可以促進鎂的吸收。</li>
-                <li><strong>避免與高劑量鈣質同時服用</strong>：兩者會競爭吸收，建議間隔 2 小時。</li>
+                <li><strong>避免與高劑量鈣質同時攝取</strong>：兩者會競爭吸收，建議間隔 2 小時。</li>
             </ul>
           </section>
 
@@ -777,6 +839,27 @@
             </div>
           </section>
         </article>
+
+        <!-- Related Articles -->
+        <section id="related-nutrients">
+          <h2 class="related-section-title">探索相關營養素</h2>
+          <div class="related-grid">
+            <a href="./vitamin-d.html" class="related-card">
+              <div class="related-card-icon" style="background: linear-gradient(135deg, #facc15, #eab308);">☀️</div>
+              <div class="related-card-content">
+                <h3 class="related-card-title">維生素 D</h3>
+                <p class="related-card-desc">維生素 D 能促進鎂的吸收，兩者協同作用，共同維護骨骼與神經肌肉健康。</p>
+              </div>
+            </a>
+            <a href="#" class="related-card"> <!-- 鈣質頁面尚不存在，暫時將連結設為 # -->
+              <div class="related-card-icon" style="background: linear-gradient(135deg, #a3a3a3, #737373);">🦴</div>
+              <div class="related-card-content">
+                <h3 class="related-card-title">鈣質</h3>
+                <p class="related-card-desc">鎂與鈣質在體內相互平衡，共同調節肌肉收縮與心臟功能，維持骨骼健康。</p>
+              </div>
+            </a>
+          </div>
+        </section>
         
         <!-- Disclaimer Section -->
         <section class="disclaimer">

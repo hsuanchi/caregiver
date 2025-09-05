@@ -320,7 +320,7 @@
       /* Visual Info Cards */
       .info-cards {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 20px;
         margin: 40px 0;
       }
@@ -328,7 +328,7 @@
       .info-card {
         background: white;
         border-radius: 15px;
-        padding: 30px;
+        padding: 25px;
         text-align: center;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         transition: all 0.3s ease;
@@ -336,7 +336,8 @@
         overflow: hidden;
         text-decoration: none;
         color: inherit;
-        display: block;
+        display: flex;
+        flex-direction: column;
       }
 
       .info-card:hover {
@@ -345,21 +346,22 @@
       }
 
       .info-card-icon {
-        font-size: 3em;
+        font-size: 2.5em;
         margin-bottom: 15px;
         display: block;
       }
 
       .info-card-title {
-        font-size: 1.3em;
+        font-size: 1.1em;
         font-weight: 700;
         color: #2d3748;
         margin-bottom: 10px;
+        flex-grow: 1;
       }
 
       .info-card-desc {
         color: #718096;
-        font-size: 0.95em;
+        font-size: 0.9em;
         line-height: 1.6;
       }
       
@@ -487,20 +489,39 @@
         line-height: 1.7;
         margin-top: 15px;
       }
-
-      /* Advanced Science Section */
-      #advanced-science .info-cards {
-        grid-template-columns: 1fr;
-        gap: 25px;
+      
+      /* Selection Table Style */
+      .selection-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 15px;
+        margin: 40px 0;
       }
-
-      #advanced-science .info-card {
-        text-align: left;
-        display: flex;
-        align-items: center;
-        gap: 25px;
+      .selection-table tr {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+        transition: all 0.3s ease;
+      }
+      .selection-table tr:hover {
+        transform: translateY(-5px) scale(1.01);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      .selection-table td {
         padding: 25px;
+        vertical-align: top;
       }
+      .selection-table td:first-child {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        font-size: 2.5em;
+        text-align: center;
+        width: 80px;
+        vertical-align: middle;
+        padding: 20px;
+      }
+      .selection-table td:last-child { border-top-right-radius: 15px; border-bottom-right-radius: 15px; }
+
 
       #advanced-science .info-card-icon {
         font-size: 3em;
@@ -1059,71 +1080,64 @@
 
           <section id="product-selection">
             <h2>如何挑選維生素 D 保健品？</h2>
-            <div class="selection-cards">
-              <div class="selection-card">
-                <div class="selection-card-header">
-                  <span class="selection-card-icon">🧬</span>
-                  <div class="selection-card-main">
-                    <h4 class="selection-card-title">型態 (Type)</h4>
-                    <p class="selection-card-recommendation">優先選擇 <strong>D3</strong></p>
-                  </div>
-                </div>
-                <p class="selection-card-desc">研究顯示 D3 在提升及維持體內濃度方面，效率顯著優於 D2。素食者可選擇由地衣萃取的植物性 D3，兼顧效率與生活方式。</p>
-              </div>
-              <div class="selection-card">
-                <div class="selection-card-header">
-                  <span class="selection-card-icon">⚖️</span>
-                  <div class="selection-card-main">
-                    <h4 class="selection-card-title">劑量 (Dosage)</h4>
-                    <p class="selection-card-recommendation">建議 <strong>400-2,000 IU</strong></p>
-                  </div>
-                </div>
-                <p class="selection-card-desc">嬰兒每日 400 IU；成人 600-800 IU；年長者 800 IU 以上。可依據日曬、飲食與健康狀況，在醫師或營養師指導下調整。</p>
-              </div>
-              <div class="selection-card">
-                <div class="selection-card-header">
-                  <span class="selection-card-icon">💊</span>
-                  <div class="selection-card-main">
-                    <h4 class="selection-card-title">劑型 (Form)</h4>
-                    <p class="selection-card-recommendation"><strong>錠劑、滴劑、噴劑</strong> 各有優勢</p>
-                  </div>
-                </div>
-                <p class="selection-card-desc">錠劑方便；滴劑適合嬰幼兒或需精準調整劑量者；噴劑吸收快速。可依個人偏好與需求選擇。</p>
-              </div>
-              <div class="selection-card">
-                <div class="selection-card-header">
-                  <span class="selection-card-icon">🏅</span>
-                  <div class="selection-card-main">
-                    <h4 class="selection-card-title">品質 (Quality)</h4>
-                    <p class="selection-card-recommendation">尋找 <strong>信譽品牌 / 第三方檢驗</strong></p>
-                  </div>
-                </div>
-                <p class="selection-card-desc">選擇原料來源透明（如瑞士 DSM），並通過 SGS 等第三方檢驗的產品，更能確保品質與安全，避免重金屬或塑化劑污染。</p>
-              </div>
-            </div>
+            <table class="selection-table">
+              <tbody>
+                <tr>
+                  <td>🧬</td>
+                  <td>
+                    <h4 class="info-card-title">型態 (Type) - 優先選擇 D3</h4>
+                    <p class="info-card-desc">研究顯示 D3 在提升及維持體內濃度方面，效率顯著優於 D2。素食者可選擇由地衣萃取的植物性 D3，兼顧效率與生活方式。</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>⚖️</td>
+                  <td>
+                    <h4 class="info-card-title">劑量 (Dosage) - 建議 400-2,000 IU</h4>
+                    <p class="info-card-desc">嬰兒每日 400 IU；成人 600-800 IU；年長者 800 IU 以上。可依據日曬、飲食與健康狀況，在醫師或營養師指導下調整。</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>💊</td>
+                  <td>
+                    <h4 class="info-card-title">劑型 (Form) - 錠劑、滴劑、噴劑各有優勢</h4>
+                    <p class="info-card-desc">錠劑方便；滴劑適合嬰幼兒或需精準調整劑量者；噴劑吸收快速。可依個人偏好與需求選擇。</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>🏅</td>
+                  <td>
+                    <h4 class="info-card-title">品質 (Quality) - 尋找信譽品牌 / 第三方檢驗</h4>
+                    <p class="info-card-desc">選擇原料來源透明（如瑞士 DSM），並通過 SGS 等第三方檢驗的產品，更能確保品質與安全，避免重金屬或塑化劑污染。</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </section>
 
           <section id="advanced-science">
             <h2>維生素 D 的進階科學</h2>
-            <div class="info-cards" style="grid-template-columns: 1fr;">
-              <div class="info-card">
-                <span class="info-card-icon">🛡️</span>
-                <h4 class="info-card-title">免疫力的調節器</h4>
-                <p class="info-card-desc">研究顯示，維生素 D 能活化 T 細胞，並可能有助於調節「細胞激素風暴」。哈佛大學 VITAL 研究發現，每日補充<strong class="highlight-nutrient">2,000 IU 的 D3</strong>，能在<strong class="highlight-nutrient">五年內</strong>將自體免疫疾病的發生率<strong class="highlight-nutrient">降低 22%</strong>。</p>
-              </div>
-              <div class="info-card">
-                <span class="info-card-icon">😊</span>
-                <h4 class="info-card-title">陽光與心情</h4>
-                <p class="info-card-desc">大腦中與情緒調節相關的區域都存在維生素 D 受體。低維生素 D 水平與憂鬱症、焦慮的風險增加顯著相關。</p>
-              </div>
-              <div class="info-card">
-                <span class="info-card-icon">🧠</span>
-                <h4 class="info-card-title">大腦的守護者</h4>
-                <p class="info-card-desc">新興研究指出，低水平的維生素 D 與大腦容量較小，以及失智症和中風的風險增加有關。一項大型研究推估，高達<strong class="highlight-nutrient">17% 的失智症病例</strong>或可透過將維生素 D 提升至正常水平來避免。</p>
-              </div>
-            </div>
-           
-          
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>領域</th>
+                  <th>關鍵發現與科學實證</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>免疫調節</strong></td>
+                  <td>研究顯示，維生素 D 能活化 T 細胞，並可能有助於調節「細胞激素風暴」。哈佛大學 VITAL 研究發現，每日補充<strong class="highlight-nutrient">2,000 IU 的 D3</strong>，能在<strong class="highlight-nutrient">五年內</strong>將自體免疫疾病的發生率<strong class="highlight-nutrient">降低 22%</strong>。</td>
+                </tr>
+                <tr>
+                  <td><strong>心理健康</strong></td>
+                  <td>大腦中與情緒調節相關的區域（如海馬迴）都存在維生素 D 受體。低維生素 D 水平與憂鬱症、焦慮的風險增加顯著相關。</td>
+                </tr>
+                <tr>
+                  <td><strong>大腦功能</strong></td>
+                  <td>新興研究指出，低水平的維生素 D 與大腦容量較小，以及失智症和中風的風險增加有關。一項大型研究推估，高達<strong class="highlight-nutrient">17% 的失智症病例</strong>或可透過將維生素 D 提升至正常水平來避免。</td>
+                </tr>
+              </tbody>
+            </table>
           </section>
 
           <section id="safety-info">
@@ -1135,7 +1149,7 @@
                   <h4>過量風險 & 藥物交互作用</h4>
                 </div>
                 <div class="safety-item-content">
-                  <p><strong>醫師警告：</strong>維生素 D 為脂溶性，長期每日攝取超過 4,000 IU 可能導致高血鈣症，引發噁心、虛弱等中毒症狀。正在服用特定藥物（如類固醇、心臟病藥物、利尿劑）者，補充前請務必諮詢醫師。</p>
+                  <p><strong>醫師警告：</strong>維生素 D 為脂溶性，長期每日攝取超過 4,000 IU 可能導致高血鈣症，引發噁心、虛弱等中毒症狀。正在使用特定藥物（如類固醇、心臟病藥物、利尿劑）者，補充前請務必諮詢醫師。</p>
                 </div>
               </div>
               <div class="safety-item safety-synergy">
@@ -1161,7 +1175,7 @@
             <div class="faq-item">
               <div class="faq-question">Q2: 維生素 D 要什麼時候吃比較好？飯前還是飯後？</div>
               <div class="faq-answer">
-                <p><strong>A:</strong> 維生素 D 是脂溶性的，建議<span class="highlight-nutrient">隨餐或飯後服用</span>，特別是與含有脂肪的食物一起吃，有助於提高吸收率。</p>
+                <p><strong>A:</strong> 維生素 D 是脂溶性的，建議<span class="highlight-nutrient">隨餐或飯後補充</span>，特別是與含有脂肪的食物一起吃，有助於提高吸收率。</p>
               </div>
             </div>
             <div class="faq-item">
