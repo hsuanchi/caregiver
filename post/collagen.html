@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>膠原蛋白完整指南：功效、副作用、怎麼選？營養師帶你一次搞懂！ | Caregiver 營養百科</title>
+    <meta
+      name="description"
+      content="膠原蛋白是維持青春的關鍵，但市面上產品五花八門，你真的吃對了嗎？專業營養師為你解析膠原蛋白的功效、最佳補充時機，並教你如何挑選最適合的膠原蛋白補充品。"
+    />
+    <meta
+      name="keywords"
+      content="膠原蛋白, 膠原蛋白功效, 補充膠原蛋白, 膠原蛋白推薦, 胜肽, 水解膠原蛋白, 膠原蛋白流失"
+    />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+        line-height: 1.8;
+        color: #2d3748;
+        background: #faf8f5;
+      }
+
+      /* Progress Bar */
+      .progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 4px;
+        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
+        z-index: 1001;
+        transition: width 0.3s ease;
+      }
+
+      .share-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #4a5568;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background: rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .share-btn:hover {
+        background: #ff6b35;
+        color: white;
+      }
+
+      /* Article Layout */
+      .article-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 100px 20px 60px;
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 60px;
+        position: relative;
+      }
+
+      /* Sidebar Table of Contents */
+      .sidebar {
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+      }
+
+      .toc {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .toc-title {
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .toc-list {
+        list-style: none;
+      }
+
+      .toc-list li {
+        margin-bottom: 8px;
+      }
+
+      .toc-list a {
+        color: #4a5568;
+        text-decoration: none;
+        font-size: 0.95em;
+        display: block;
+        padding: 8px 12px;
+        transition: all 0.3s ease;
+        position: relative;
+        border-radius: 8px;
+        border-left: 3px solid transparent;
+      }
+
+      .toc-list a.active {
+        color: #ff6b35;
+        background: rgba(255, 107, 53, 0.1);
+        border-left-color: #ff6b35;
+        font-weight: 600;
+      }
+
+      .toc-list a:hover {
+        color: #ff6b35;
+        background: rgba(255, 107, 53, 0.08);
+        border-left-color: #ff8f65;
+        transform: translateX(2px);
+      }
+      
+      .toc-list a:not(.sub-item) {
+        font-weight: 600;
+        background: rgba(255, 107, 53, 0.05);
+        margin-bottom: 4px;
+      }
+
+      .toc-list a.sub-item {
+        margin-left: 16px;
+        font-size: 0.9em;
+        color: #718096;
+        background: rgba(113, 128, 150, 0.03);
+        border-left-color: #e2e8f0;
+        position: relative;
+      }
+
+      .toc-list a.sub-item::before {
+        content: "";
+        position: absolute;
+        left: -12px;
+        top: 50%;
+        width: 8px;
+        height: 1px;
+        background: #d1d5db;
+        transform: translateY(-50%);
+      }
+
+      .toc-list a.active.sub-item {
+        color: #ff6b35;
+        background: rgba(255, 107, 53, 0.08);
+        border-left-color: #ff8f65;
+      }
+
+      .toc-list a.active.sub-item::before {
+        background: #ff8f65;
+      }
+
+      /* Main Content Area */
+      .article-content {
+        background: white;
+        border-radius: 20px;
+        padding: 50px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Article Header */
+      .article-header {
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .article-hero {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        border-radius: 20px;
+        padding: 60px;
+        margin-bottom: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .article-hero::before {
+        content: "✨";
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        font-size: 150px;
+        opacity: 0.1;
+        transform: rotate(-15deg);
+      }
+      
+      .article-category {
+        display: inline-block;
+        background: white;
+        color: #ff6b35;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        font-weight: 600;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .article-title {
+        font-size: 2.5em;
+        font-weight: 800;
+        color: #2d3748;
+        line-height: 1.3;
+        margin-bottom: 20px;
+      }
+
+      .article-subtitle {
+        font-size: 1.3em;
+        color: #4a5568;
+        line-height: 1.6;
+        max-width: 700px;
+        margin-bottom: 30px;
+      }
+
+      .article-meta {
+        display: flex;
+        gap: 30px;
+        color: #718096;
+        font-size: 0.95em;
+        flex-wrap: wrap;
+      }
+
+      .article-meta span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* Content Typography */
+      .article-body h2 {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin: 50px 0 30px;
+        padding-top: 20px;
+        position: relative;
+      }
+
+      .article-body h2::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 4px;
+        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
+        border-radius: 2px;
+      }
+
+      .article-body h3 {
+        font-size: 1.5em;
+        font-weight: 600;
+        color: #2d3748;
+        margin: 35px 0 20px;
+      }
+      
+      .article-body p {
+        margin-bottom: 20px;
+        color: #4a5568;
+      }
+      
+      .alert {
+        padding: 20px 25px;
+        border-radius: 15px;
+        margin: 30px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .alert::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+      }
+
+      .alert-tip {
+        background: #fffbeb;
+        color: #b45309;
+      }
+
+      .highlight-nutrient {
+        border-bottom: 2px solid #ff6b35;
+        padding-bottom: 1px;
+      }
+      
+      .info-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin: 40px 0;
+      }
+
+      .info-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+      
+      .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      }
+
+      .info-card-icon {
+        font-size: 3em;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .info-card-title {
+        font-size: 1.3em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 10px;
+      }
+
+      .info-card-desc {
+        color: #718096;
+        font-size: 0.95em;
+        line-height: 1.6;
+      }
+      
+      .risk-group-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+      }
+
+      .risk-card {
+        background: #fefce8;
+        border-left: 4px solid #f59e0b;
+        border-radius: 12px;
+        padding: 25px;
+        transition: all 0.3s ease;
+      }
+
+      .risk-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(245, 158, 11, 0.15);
+      }
+
+      .risk-card-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+      }
+
+      .risk-card-icon {
+        font-size: 2em;
+      }
+
+      .risk-card-title {
+        font-size: 1.1em;
+        font-weight: 700;
+        color: #b45309;
+      }
+
+      .quick-test {
+        background: #f0fdf4;
+        border-radius: 20px;
+        padding: 40px;
+        margin: 40px 0;
+        text-align: center;
+      }
+
+      .quick-test h3 {
+        font-size: 1.8em;
+        color: #14532d;
+        margin-bottom: 20px;
+      }
+
+      .test-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 30px;
+      }
+
+      .test-option {
+        background: #f8fafc;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 18px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .test-option:hover {
+        background: #fff7ed;
+        border-color: #fed7aa;
+      }
+
+      .test-option input[type="checkbox"] {
+        display: none;
+      }
+
+      .test-option.selected {
+        background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+        border-color: #3b82f6;
+        color: white;
+      }
+      
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .data-table thead {
+        background: linear-gradient(135deg, #ff6b35 0%, #ff8f65 100%);
+        color: white;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 15px 20px;
+        text-align: left;
+      }
+      
+      .faq-section {
+        margin-top: 60px;
+        padding-top: 40px;
+        border-top: 2px solid #e5e7eb;
+      }
+
+      .faq-item {
+        background: #f9fafb;
+        border-radius: 15px;
+        margin-bottom: 20px;
+      }
+
+      .faq-question {
+        padding: 20px 25px;
+        font-weight: 600;
+        color: #2d3748;
+        cursor: pointer;
+        position: relative;
+      }
+      
+      .faq-question::after {
+        content: "+";
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5em;
+        color: #ff6b35;
+        transition: transform 0.3s ease;
+      }
+      
+      .faq-item.active .faq-question::after {
+        transform: rotate(45deg);
+      }
+
+      .faq-answer {
+        padding: 0 25px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .faq-item.active .faq-answer {
+        padding: 0 25px 20px;
+        max-height: 500px;
+      }
+      
+      .related-title {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .related-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .related-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .related-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .related-card-tag {
+        display: inline-block;
+        background: #fef3c7;
+        color: #b45309;
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 0.85em;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .related-card-title {
+        font-size: 1.3em;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 10px;
+      }
+
+      .related-card-desc {
+        color: #718096;
+        font-size: 0.95em;
+      }
+      
+      .disclaimer {
+        background: #f9fafb;
+        padding: 60px 0;
+        text-align: center;
+      }
+      .disclaimer-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .disclaimer h3 {
+        color: #4b5563;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+      }
+      .disclaimer p {
+        color: #6b7280;
+        font-size: 0.95em;
+      }
+
+      @media (max-width: 1024px) {
+        .article-container {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+        .sidebar {
+          display: none;
+        }
+      }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Header Component -->
+    <div id="header-component"></div>
+
+    <!-- Article Container -->
+    <div class="article-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="toc">
+          <h3 class="toc-title">
+            <span>目錄</span>
+          </h3>
+          <ul class="toc-list">
+            <li><a href="#basics" class="toc-link">膠原蛋白是什麼？</a></li>
+            <li><a href="#functions" class="toc-link">膠原蛋白的四大功效</a></li>
+            <li><a href="#loss-factors" class="toc-link">誰偷走了你的膠原蛋白？</a></li>
+            <li><a href="#supplements" class="toc-link">膠原蛋白補充品怎麼挑？</a></li>
+            <li><a class="toc-link sub-item" href="#supplement-comparison">常見膠原蛋白比較分析</a></li>
+            <li><a class="toc-link sub-item" href="#best-time">最佳補充時機</a></li>
+            <li><a href="#dietary-sources" class="toc-link">如何從飲食中補充？</a></li>
+            <li><a href="#myths" class="toc-link">常見迷思與風險</a></li>
+            <li><a href="#faq" class="toc-link">常見問題</a></li>
+            <li><a href="#related-title" class="toc-link">相關營養素</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="article-content">
+        <!-- Article Header -->
+        <header class="article-header">
+          <div class="article-hero">
+            <span class="article-category">美容營養指南</span>
+            <h1 class="article-title">
+              膠原蛋白全攻略：吃對了，效果看得見！
+            </h1>
+            <p class="article-subtitle">
+              從魚鱗、豬皮到植物性來源，市面上的膠原蛋白產品讓人眼花撩亂。讓專業營養師教你如何選擇最有效的膠原蛋白補充品，留住青春光采。
+            </p>
+            <div class="article-meta">
+              <span>✍️ 專業營養師審核</span>
+              <span>📅 2025 年 9 月 8 日更新</span>
+              <span>⏱️ 閱讀時間：10 分鐘</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Article Body -->
+        <article class="article-body">
+
+          <section id="basics">
+            <h2>膠原蛋白是什麼？</h2>
+            <p>膠原蛋白（Collagen）是人體內最豐富的蛋白質，約佔總蛋白質含量的30%。它的英文名字源自希臘語「kólla」，意為「膠水」。這個名字非常貼切，因為膠原蛋白就像是身體的強力膠水，將細胞、組織和器官緊密地連結在一起，提供結構支撐、強度和彈性。</p>
+            
+            <h3>人體的「鋼筋水泥」</h3>
+            <p>如果將我們的身體比喻為一棟建築，那膠原蛋白就扮演著「鋼筋」的角色。它構成了一個遍佈全身的纖維網絡，稱為<strong class="highlight-nutrient">細胞外基質 (Extracellular Matrix, ECM)</strong>。這個基質不僅支撐著皮膚、骨骼、肌腱和韌帶，更為細胞的生長、分化和修復提供了必要的環境。</p>
+            
+            <div class="info-cards" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
+              <div class="info-card">
+                <span class="info-card-icon">🧬</span>
+                <h4 class="info-card-title">三股螺旋結構</h4>
+                <p class="info-card-desc">膠原蛋白由三條多肽鏈纏繞而成，形成獨特而穩固的三股螺旋結構，賦予其卓越的抗拉強度。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">👨‍👩‍👧‍👦</span>
+                <h4 class="info-card-title">龐大的家族</h4>
+                <p class="info-card-desc">目前已發現至少28種不同類型的膠原蛋白，其中以第一、二、三型最為常見，佔了人體總量的80-90%。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">⏳</span>
+                <h4 class="info-card-title">會流失的資產</h4>
+                <p class="info-card-desc">人體能自行合成膠原蛋白，但從25歲左右開始，合成速度會減慢，流失速度則加快，這是老化的主要原因之一。</p>
+              </div>
+            </div>
+
+            <div class="alert alert-tip">
+              <strong>💡 關鍵迷思破解：吃膠原蛋白，補的不是膠原蛋白本身！</strong>
+              <p>許多人誤以為吃進去的膠原蛋白會直接跑到皮膚上。事實上，任何蛋白質吃下肚後，都會在消化道被分解成最小的單位——<strong class="highlight-nutrient">胺基酸和短胜肽</strong>。我們的身體會吸收這些「原料」，然後根據各部位的需求，重新組合成所需的蛋白質。</p>
+              <p>那麼，補充膠原蛋白的意義何在？關鍵在於它提供了特定且豐富的「原料」，尤其是<strong class="highlight-nutrient">甘胺酸、脯胺酸和羥脯胺酸</strong>。這些是合成膠原蛋白最重要的胺基酸。更重要的是，特定的膠原蛋白胜肽（如Pro-Hyp, Hyp-Gly）被證實能像「信號兵」一樣，刺激纖維母細胞，喚醒其「開工」合成更多膠原蛋白和玻尿酸的能力。所以，補充膠原蛋白更像是在<strong class="highlight-nutrient">提供原料並同時發送開工信號</strong>。</p>
+            </div>
+          </section>
+
+          <section id="functions">
+            <h2>膠原蛋白的四大功效</h2>
+            <p>膠原蛋白是維持身體結構與功能的關鍵，其益處不僅限於皮膚美容，更涵蓋了關節、骨骼甚至心血管的健康。</p>
+
+            <div class="info-cards">
+              <div class="info-card">
+                <span class="info-card-icon">😊</span>
+                <h4 class="info-card-title">維持肌膚彈性</h4>
+                <p class="info-card-desc">第一型和第三型膠原蛋白是皮膚真皮層的主要成分，能支撐皮膚結構，保持水潤、緊緻與彈性。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">💪</span>
+                <h4 class="info-card-title">支持關節健康</h4>
+                <p class="info-card-desc">第二型膠原蛋白是關節軟骨的主要成分，能提供緩衝、減少摩擦，維持關節活動的順暢度。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🦴</span>
+                <h4 class="info-card-title">強化骨骼結構</h4>
+                <p class="info-card-desc">膠原蛋白提供了骨骼的「骨架」，讓鈣質等礦物質能附著其上，增加骨骼的韌性，預防骨折。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">💅</span>
+                <h4 class="info-card-title">強韌髮絲指甲</h4>
+                <p class="info-card-desc">膠原蛋白能為毛囊和甲床提供營養，有助於頭髮和指甲的健康生長，減少斷裂和脆弱。</p>
+              </div>
+            </div>
+          </section>
+          
+          <section id="loss-factors">
+            <h2>誰偷走了你的膠原蛋白？</h2>
+            <p>膠原蛋白的流失是個不可避免的自然過程，但某些生活習慣和環境因素會加速這個過程，讓我們提早面臨老化問題。</p>
+            
+             <div class="risk-group-cards">
+              <div class="risk-card">
+                <div class="risk-card-header"><span class="risk-card-icon">⏳</span><h4 class="risk-card-title">年齡增長</h4></div>
+                <p class="risk-card-desc">最主要的因素。25歲後，膠原蛋白合成能力下降，每年約流失1%。</p>
+              </div>
+              <div class="risk-card">
+                <div class="risk-card-header"><span class="risk-card-icon">☀️</span><h4 class="risk-card-title">紫外線曝曬</h4></div>
+                <p class="risk-card-desc">UVA和UVB會產生自由基，破壞膠原蛋白結構，是造成「光老化」的元兇。</p>
+              </div>
+              <div class="risk-card">
+                <div class="risk-card-header"><span class="risk-card-icon">🍩</span><h4 class="risk-card-title">高糖飲食</h4></div>
+                <p class="risk-card-desc">過多的糖分會引發「糖化反應(AGEs)」，使膠原蛋白變脆、失去彈性。</p>
+              </div>
+              <div class="risk-card">
+                <div class="risk-card-header"><span class="risk-card-icon">🚬</span><h4 class="risk-card-title">抽菸與空汙</h4></div>
+                <p class="risk-card-desc">香菸中的化學物質和空氣汙染物會大量產生自由基，加速膠原蛋白分解。</p>
+              </div>
+              <div class="risk-card">
+                <div class="risk-card-header"><span class="risk-card-icon">😴</span><h4 class="risk-card-title">睡眠不足</h4></div>
+                <p class="risk-card-desc">睡眠是身體修復的黃金時間，長期熬夜會影響膠原蛋白的再生。</p>
+              </div>
+              <div class="risk-card">
+                <div class="risk-card-header"><span class="risk-card-icon">😟</span><h4 class="risk-card-title">長期壓力</h4></div>
+                <p class="risk-card-desc">壓力荷爾蒙「皮質醇」會分解膠原蛋白和彈力蛋白，讓皮膚變薄。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="supplements">
+            <h2>膠原蛋白補充品怎麼挑？</h2>
+            <p>市面上的膠原蛋白產品琳瑯滿目，從劑型、來源到複方成分都有很大的差異。一個聰明的選擇策略，應該綜合考量<strong class="highlight-nutrient">「分子大小」、「來源」與「複方成分」</strong>這三大核心指標。</p>
+            
+            <div class="quick-test" style="background: #fffbeb; text-align: left; padding: 30px;">
+              <h3 style="color: #b45309; text-align: center; margin-bottom: 25px;">一張圖搞懂你該怎麼選</h3>
+              <div class="info-cards" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 0;">
+                <div class="info-card" style="padding: 20px;">
+                  <h4 class="info-card-title">愛美保養族</h4>
+                  <p class="info-card-desc">選擇<strong class="highlight-nutrient">第一型</strong>膠原蛋白，以<strong class="highlight-nutrient">魚來源</strong>的胜肽為主，並搭配<strong class="highlight-nutrient">維生素C、玻尿酸</strong>等複方。
+                  </p>
+                </div>
+                <div class="info-card" style="padding: 20px;">
+                  <h4 class="info-card-title">靈活行動族</h4>
+                  <p class="info-card-desc">尋找<strong class="highlight-nutrient">非變性第二型膠原蛋白(UC-II)</strong>，每日劑量40mg即可，可搭配軟骨素、葡萄糖胺。
+                  </p>
+                </div>
+                <div class="info-card" style="padding: 20px;">
+                  <h4 class="info-card-title">素食主義者</h4>
+                  <p class="info-card-desc">沒有植物性膠原蛋白。請<strong class="highlight-nutrient">攝取足夠蛋白質</strong>，並多補充<strong class="highlight-nutrient">維生素C</strong>，促進自體合成。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="alert alert-tip" style="margin-top: 40px;">
+              <strong>💡 關鍵必看：胜肽級小分子是基本門檻</strong>
+              <p style="margin-bottom: 0;">未經處理的膠原蛋白分子量高達30萬道爾頓(Dalton)，人體難以吸收。現今的技術透過<strong class="highlight-nutrient">「水解技術」</strong>將大分子膠原蛋白切成小分子的<strong class="highlight-nutrient">「膠原蛋白胜肽」</strong>，分子量通常介於1000-5000道爾頓之間，這大大提高了生物利用率。因此，選擇標明為「水解膠原蛋白」或「膠原蛋白胜肽」的產品是基本要求。</p>
+            </div>
+
+            <h3 id="supplement-comparison">常見膠原蛋白比較分析</h3>
+            <p>不同來源和類型的膠原蛋白，其胺基酸組成和適用性略有不同。了解其差異，能幫助你針對自身需求（如皮膚美容、關節保養）做出更精準的選擇。</p>
+            <h4>表 1：常見膠原蛋白補充品比較分析</h4>
+            <div style="overflow-x: auto; padding-bottom: 10px;">
+              <table class="data-table">
+                <thead>
+                  <tr><th>主要訴求</th><th>膠原蛋白來源/類型</th><th>主要類型</th><th>優點</th><th>注意事項</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><span style="display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.9em; font-weight: 600; background-color: #fffbeb; color: #b45309;">肌膚美容</span></td><td><strong>魚來源膠原蛋白</strong></td><td><strong class="highlight-nutrient">第一型</strong></td><td>分子量較小，被認為吸收率較佳，腥味相對較淡。</td><td>需注意是否來自純淨水域，對海鮮過敏者不適用。</td></tr>
+                  <tr><td><span style="display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.9em; font-weight: 600; background-color: #f0f9ff; color: #0c4a6e;">肌膚美容/綜合</span></td><td><strong>豬/牛來源膠原蛋白</strong></td><td>第一、三型</td><td>胺基酸組成與人體最接近，價格相對實惠。</td><td>需注意是否有藥物殘留、來源是否安全，味道可能較重。</td></tr>
+                  <tr><td><span style="display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.9em; font-weight: 600; background-color: #f7fee7; color: #365314;">關節保養</span></td><td><strong>非變性第二型膠原蛋白 (UC-II/UC2)</strong></td><td><strong class="highlight-nutrient">第二型</strong></td><td>透過特殊低溫技術萃取，保留完整三股螺旋結構，能透過「口服耐受性」機制調節關節舒適度。</td><td>每日建議劑量僅40mg，與一般膠原蛋白胜肽不同。</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 id="best-time">最佳補充時機與神隊友</h3>
+            <div class="info-cards" style="grid-template-columns: repeat(3, 1fr);">
+              <div class="info-card">
+                <h4 class="info-card-title">睡前或空腹吃</h4>
+                <p class="info-card-desc">在<strong class="highlight-nutrient">空腹或睡前</strong>補充，可以避免食物中的其他蛋白質競爭吸收，讓膠原蛋白胜肽的吸收效果最大化。</p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">尋找神隊友：維生素C</h4>
+                <p class="info-card-desc">維生素C是合成膠原蛋白過程中不可或缺的<strong class="highlight-nutrient">輔酶</strong>。缺乏維生素C，補充再多原料也無法順利合成。選擇含有維生素C的複方產品，或與富含C的水果一起食用。</p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">其他加分複方</h4>
+                <p class="info-card-desc">優質的產品還會添加<strong class="highlight-nutrient">玻尿酸（透明質酸鈉）、賽洛美（神經醯胺）、彈力蛋白</strong>等，提供更全面的養顏美容或行動力支持。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="dietary-sources">
+            <h2>如何從飲食中補充？</h2>
+            <p>除了補充品，我們也可以從天然食物中攝取膠原蛋白。富含膠質的食物通常存在於動物的結締組織中。</p>
+            
+            <h4>表 2：富含膠原蛋白的食物</h4>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>食物類別</th>
+                  <th>食物項目</th>
+                  <th>說明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>動物皮</strong></td><td>豬皮、雞皮、魚皮</td><td>最直接的來源，但通常也伴隨著較高的脂肪。</td></tr>
+                <tr><td><strong>結締組織</strong></td><td>豬腳、豬耳朵、牛筋、雞腳</td><td>富含膠質，口感Q彈，但熱量和脂肪含量需注意。</td></tr>
+                <tr><td><strong>帶骨湯品</strong></td><td>大骨湯、魚骨湯</td><td>長時間熬煮能將骨骼和軟骨中的膠原蛋白釋放至湯中。</td></tr>
+                <tr><td><strong>海鮮</strong></td><td>魚鱗、海參</td><td>魚鱗是魚膠原蛋白的主要來源；海參則是優質的膠原蛋白來源。</td></tr>
+              </tbody>
+            </table>
+            <div class="alert alert-tip" style="margin-top: 2em;">
+              <strong>💡 營養師小提醒：別忘了「協同作戰」的營養素</strong>
+              <p>與其瘋狂吃豬腳，不如採取更聰明的策略。人體合成膠原蛋白是一個複雜的工廠，需要各種原料和工具。除了補充膠原蛋白胜肽外，確保飲食中富含以下營養素，才能讓合成工廠高效運轉：</p>
+              <ul style="list-style-type: disc; padding-left: 20px; margin-top: 10px;">
+                  <li><strong class="highlight-nutrient">優質蛋白質：</strong>豆類、魚、蛋、肉類是基礎原料。</li>
+                  <li><strong class="highlight-nutrient">維生素C：</strong>芭樂、奇異果、柑橘類水果是最佳催化劑。</li>
+                  <li><strong class="highlight-nutrient">鋅、銅等礦物質：</strong>牡蠣、堅果等有助於穩定膠原蛋白結構。</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="myths">
+            <h2>常見迷思與風險</h2>
+            <p>關於膠原蛋白，有許多似是而非的說法。了解真相，才能讓你吃得安心又有效。</p>
+            
+            <div class="info-cards" style="grid-template-columns: 1fr 1fr; gap: 25px;">
+              <div class="info-card" style="background: #fefce8; border-top: 5px solid #facc15;">
+                <h4 class="info-card-title" style="color: #a16207;">迷思一：擦的膠原蛋白也有效？</h4>
+                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>膠原蛋白是大分子，無法穿透皮膚表層進入真皮層作用。外用保養品中的膠原蛋白主要功能是<strong class="highlight-nutrient">保濕</strong>，無法補充流失的膠原蛋白。</p>
+              </div>
+              <div class="info-card" style="background: #f0fdf4; border-top: 5px solid #4ade80;">
+                <h4 class="info-card-title" style="color: #166534;">迷思二：植物性膠原蛋白（如木耳、秋葵）？</h4>
+                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong><strong class="highlight-nutrient">植物不含膠原蛋白</strong>。木耳、秋葵等黏滑的物質是水溶性膳食纖維和多醣體，雖然對健康有益，但並非膠原蛋白。</p>
+              </div>
+              <div class="info-card" style="background: #fee2e2; border-top: 5px solid #ef4444;">
+                <h4 class="info-card-title" style="color: #b91c1c;">迷思三：吃了會長子宮肌瘤？</h4>
+                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>單純的膠原蛋白本身是蛋白質，不會導致肌瘤。問題可能出在部分產品為了速效而添加<strong class="highlight-nutrient">雌激素或胎盤素</strong>等成分。選擇信譽良好、成分單純的品牌非常重要。</p>
+              </div>
+              <div class="info-card" style="background: #eff6ff; border-top: 5px solid #60a5fa;">
+                <h4 class="info-card-title" style="color: #1e40af;">迷思四：吃膠原蛋白會變胖？</h4>
+                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>純的膠原蛋白粉熱量很低。會導致發胖的原因，通常是產品中添加了過多的<strong class="highlight-nutrient">糖、奶精、香料</strong>來改善風味。選擇成分單純、無過多添加物的產品是關鍵。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="faq" class="faq-section">
+            <h2>常見問題</h2>
+            <div class="faq-item">
+              <div class="faq-question">Q1: 吃膠原蛋白多久才會看到效果？</div>
+              <div class="faq-answer">
+                <p><strong>A: 因人而異，但通常需要持續補充。</strong> 人體的代謝更新需要時間。根據多數研究和消費者回饋，建議<strong class="highlight-nutrient">每天持續補充至少8-12週</strong>，較能感受到皮膚保水度、彈性或關節舒適度的改善。這不是仙丹，耐心和持續是關鍵。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q2: 素食者該如何補充膠原蛋白？</div>
+              <div class="faq-answer">
+                <p><strong>A: 雖然植物不含膠原蛋白，但素食者可以透過「促進自體合成」的方式來保養。</strong> 策略如下：</p>
+                <ul><li><strong>攝取足夠的「原料」：</strong>確保飲食中有豐富的甘胺酸、脯胺酸，如豆類、堅果、種子等。</li><li><strong>補充足夠的「催化劑」：</strong>多吃富含維生素C的蔬果。</li><li><strong>考慮「素食膠原蛋白」：</strong>市面上已有透過基因工程酵母菌發酵製成的「類人膠原蛋白」，可作為素食者的選擇。</li></ul>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q3: 懷孕或哺乳期間可以吃膠原蛋白嗎？</div>
+              <div class="faq-answer">
+                <p><strong>A: 建議諮詢醫師。</strong> 懷孕和哺乳是特殊時期，雖然純的膠原蛋白是安全的蛋白質，但市售產品可能含有其他複方成分。為了安全起見，在補充任何保健食品前，都應該先<strong class="highlight-nutrient">諮詢您的婦產科醫師或營養師</strong>。</p>
+              </div>
+            </div>
+          </section>
+        </article>
+
+    
+
+        <!-- Related Articles Section -->
+        <section id="related-articles">
+          <h2 class="related-title" id="related-title">相關營養素</h2>
+          <div class="related-grid">
+            <a href="vitamin-c.html" class="related-card">
+              <div class="related-card-content">
+                <span class="related-card-tag">維生素</span>
+                <h3 class="related-card-title">維生素 C</h3>
+                <p class="related-card-desc">
+                  促進膠原蛋白合成的關鍵輔酶，同時具備強大抗氧化力，是對抗老化的重要夥伴。
+                </p>
+              </div>
+            </a>
+            <a href="hyaluronic-acid.html" class="related-card">
+              <div class="related-card-content">
+                <span class="related-card-tag" style="background-color: #f0f9ff; color: #0c4a6e;">美容營養素</span>
+                <h3 class="related-card-title">玻尿酸 (透明質酸)</h3>
+                <p class="related-card-desc">
+                  強效的保濕因子，能攜帶大量水分，與膠原蛋白協同作用，維持肌膚水潤澎彈。
+                </p>
+              </div>
+            </a>
+             <a href="protein.html" class="related-card">
+              <div class="related-card-content">
+                <span class="related-card-tag" style="background-color: #fef2f2; color: #991b1b;">基礎營養</span>
+                <h3 class="related-card-title">蛋白質</h3>
+                <p class="related-card-desc">
+                  構成身體所有組織的基礎，攝取足夠的優質蛋白質是合成膠原蛋白的根本。
+                </p>
+              </div>
+            </a>
+          </div>
+        </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- Disclaimer Section -->
+    <section class="disclaimer">
+      <div class="disclaimer-content">
+        <h3>免責聲明</h3>
+        <p>
+          本資訊僅供教育目的，不能取代專業醫療建議。開始任何營養補充計劃前，請諮詢醫療專業人員。個人需求可能因健康狀況、藥物使用和生活方式而有所不同。
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer Component -->
+    <div id="footer-component"></div>
+
+    <!-- Load Components -->
+    <script src="../assets/js/deus-analytics-component.js"></script>
+    <script src="../assets:js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-footer-component.js"></script>
+
+    <script>
+      // Progress Bar
+      window.addEventListener("scroll", () => {
+        const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        document.getElementById("progressBar").style.width = scrollPercentage + "%";
+      });
+
+      // TOC Highlighting
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".toc-link");
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          if (pageYOffset >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+        navLinks.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      // FAQ Toggle
+      document.querySelectorAll(".faq-question").forEach(question => {
+        question.addEventListener("click", () => {
+          question.parentElement.classList.toggle("active");
+        });
+      });
+      
+      // Smooth Scroll for TOC Links
+      document.querySelectorAll(".toc-link").forEach(link => {
+        link.addEventListener("click", function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const headerOffset = document.getElementById('header-component')?.offsetHeight || 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+          }
+        });
+      });
+
+      // Component Initialization
+      document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(() => {
+            // Mock components if they don't exist to prevent errors
+            if (typeof window.DeusHeaderComponent === 'undefined') {
+                document.getElementById("header-component").innerHTML = '<!-- Header Placeholder -->';
+            } else {
+                new window.DeusHeaderComponent(document.getElementById("header-component"));
+            }
+            if (typeof window.DeusFooterComponent === 'undefined') {
+                document.getElementById("footer-component").innerHTML = '<!-- Footer Placeholder -->';
+            } else {
+                new window.DeusFooterComponent(document.getElementById("footer-component"));
+            }
+            if (typeof window.DeusAnalyticsComponent !== 'undefined') {
+               new window.DeusAnalyticsComponent().setEnvironment('production');
+            }
+        }, 100);
+      });
+    </script>
+
+</body>
+</html>
