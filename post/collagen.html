@@ -17,6 +17,36 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
 
+    <!-- JSON-LD for Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://life.maxlist.xyz/post/collagen.html"
+      },
+      "headline": "膠原蛋白全攻略：吃對了，效果看得見！",
+      "description": "從魚鱗、豬皮到植物性來源，市面上的膠原蛋白產品讓人眼花撩亂。讓專業營養師教你如何選擇最有效的膠原蛋白補充品，留住青春光采。",
+      "image": "https://life.maxlist.xyz/assets/images/collagen-og.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "url": "https://life.maxlist.xyz/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
+        }
+      },
+      "datePublished": "2024-09-08",
+      "dateModified": "2025-09-08"
+    }
+    </script>
+
     <style>
       * {
         margin: 0;
@@ -43,6 +73,29 @@
         z-index: 1001;
         transition: width 0.3s ease;
       }
+
+      /* Breadcrumb Navigation */
+      .breadcrumb {
+        margin-bottom: 20px;
+        font-size: 0.9em;
+        color: #718096;
+      }
+
+      .breadcrumb a {
+        color: #718096;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .breadcrumb a:hover {
+        color: #ff6b35;
+      }
+
+      .breadcrumb .separator {
+        margin: 0 8px;
+        color: #a0aec0;
+      }
+
 
       .share-btn {
         display: flex;
@@ -611,6 +664,11 @@
         <!-- Article Header -->
         <header class="article-header">
           <div class="article-hero">
+            <nav class="breadcrumb">
+              <a href="../index.html">首頁</a>
+              <span class="separator">/</span>
+              <span>膠原蛋白全攻略</span>
+            </nav>
             <span class="article-category">美容營養指南</span>
             <h1 class="article-title">
               膠原蛋白全攻略：吃對了，效果看得見！
@@ -917,7 +975,7 @@
 
     <!-- Load Components -->
     <script src="../assets/js/deus-analytics-component.js"></script>
-    <script src="../assets:js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
 
     <script>
@@ -930,7 +988,8 @@
       // TOC Highlighting
       const sections = document.querySelectorAll("section[id]");
       const navLinks = document.querySelectorAll(".toc-link");
-      window.addEventListener("scroll", () => {
+
+      function highlightTOC() {
         let current = "";
         sections.forEach(section => {
           const sectionTop = section.offsetTop - 100;
@@ -944,7 +1003,7 @@
             link.classList.add("active");
           }
         });
-      });
+      }
 
       // FAQ Toggle
       document.querySelectorAll(".faq-question").forEach(question => {
@@ -974,22 +1033,29 @@
 
       // Component Initialization
       document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(() => {
-            // Mock components if they don't exist to prevent errors
-            if (typeof window.DeusHeaderComponent === 'undefined') {
-                document.getElementById("header-component").innerHTML = '<!-- Header Placeholder -->';
-            } else {
-                new window.DeusHeaderComponent(document.getElementById("header-component"));
-            }
-            if (typeof window.DeusFooterComponent === 'undefined') {
-                document.getElementById("footer-component").innerHTML = '<!-- Footer Placeholder -->';
-            } else {
-                new window.DeusFooterComponent(document.getElementById("footer-component"));
-            }
-            if (typeof window.DeusAnalyticsComponent !== 'undefined') {
-               new window.DeusAnalyticsComponent().setEnvironment('production');
-            }
-        }, 100);
+        highlightTOC(); // Initial call on page load
+        window.addEventListener("scroll", highlightTOC);
+
+        if (window.DeusAnalyticsComponent) {
+          new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
+          console.log("✅ Analytics 組件初始化完成");
+        } else {
+          console.error("❌ Analytics 組件初始化失敗");
+        }
+        const headerContainer = document.getElementById("header-component");
+        if (headerContainer && window.DeusHeaderComponent) {
+          new window.DeusHeaderComponent(headerContainer).setDebug(false).setTheme("default");
+          console.log("✅ Header 組件初始化完成");
+        } else {
+          console.error("❌ Header 組件初始化失敗");
+        }
+        const footerContainer = document.getElementById("footer-component");
+        if (footerContainer && window.DeusFooterComponent) {
+          new window.DeusFooterComponent(footerContainer).setDebug(false).setTheme("default");
+          console.log("✅ Footer 組件初始化完成");
+        } else {
+          console.error("❌ Footer 組件初始化失敗");
+        }
       });
     </script>
 

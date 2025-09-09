@@ -17,6 +17,36 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
 
+    <!-- JSON-LD for Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://life.maxlist.xyz/post/calcium.html"
+      },
+      "headline": "鈣質完整指南：骨質疏鬆、抽筋、失眠都跟它有關？",
+      "description": "從碳酸鈣、檸檬酸鈣到海藻鈣，市面上的鈣片琳瑯滿目，讓專業營養師教你如何選擇最適合自己的鈣質補充品。",
+      "image": "https://life.maxlist.xyz/assets/images/calcium-og.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "url": "https://life.maxlist.xyz/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
+        }
+      },
+      "datePublished": "2024-09-07",
+      "dateModified": "2025-09-10"
+    }
+    </script>
+
     <style>
       * {
         margin: 0;
@@ -43,6 +73,29 @@
         z-index: 1001;
         transition: width 0.3s ease;
       }
+
+      /* Breadcrumb Navigation */
+      .breadcrumb {
+        margin-bottom: 20px;
+        font-size: 0.9em;
+        color: #718096;
+      }
+
+      .breadcrumb a {
+        color: #718096;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .breadcrumb a:hover {
+        color: #ff6b35;
+      }
+
+      .breadcrumb .separator {
+        margin: 0 8px;
+        color: #a0aec0;
+      }
+
 
       .share-btn {
         display: flex;
@@ -616,6 +669,11 @@
         <!-- Article Header -->
         <header class="article-header">
           <div class="article-hero">
+            <nav class="breadcrumb">
+              <a href="../index.html">首頁</a>
+              <span class="separator">/</span>
+              <span>鈣質完整指南</span>
+            </nav>
             <span class="article-category">礦物質指南</span>
             <h1 class="article-title">
               鈣質全攻略：骨質疏鬆、抽筋、失眠都跟它有關？
@@ -1189,10 +1247,27 @@
 
       // Component Initialization
       document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(() => {
-            if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component"));
-            if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component"));
-            if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setEnvironment('production');
-        }, 100);
+        const navLinks = document.querySelectorAll(".toc-link");
+        navLinks.forEach(link => {
+            link.addEventListener("click", function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute("href");
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = document.getElementById('header-component')?.offsetHeight || 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
+        if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
+        if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
       });
     </script>

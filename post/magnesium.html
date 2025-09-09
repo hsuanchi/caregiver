@@ -17,6 +17,36 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
 
+    <!-- JSON-LD for Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://life.maxlist.xyz/post/magnesium.html"
+      },
+      "headline": "鎂質完整指南：功效、副作用、失眠與抽筋的救星？",
+      "description": "鎂是人體不可或缺的「萬能礦物質」，參與超過 300 種生化反應。現代人因飲食精緻化和壓力，普遍有鎂攝取不足的問題，可能導致失眠、抽筋、焦慮等。本篇將帶您了解如何正確補鎂，找回身心平衡。",
+      "image": "https://life.maxlist.xyz/assets/images/magnesium-og.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "url": "https://life.maxlist.xyz/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
+        }
+      },
+      "datePublished": "2024-08-27",
+      "dateModified": "2025-08-27"
+    }
+    </script>
+
     <style>
       * {
         margin: 0;
@@ -42,6 +72,28 @@
         background: linear-gradient(90deg, #8b5cf6 0%, #a78bfa 100%);
         z-index: 1001;
         transition: width 0.3s ease;
+      }
+
+      /* Breadcrumb Navigation */
+      .breadcrumb {
+        margin-bottom: 20px;
+        font-size: 0.9em;
+        color: #718096;
+      }
+
+      .breadcrumb a {
+        color: #718096;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .breadcrumb a:hover {
+        color: #8b5cf6;
+      }
+
+      .breadcrumb .separator {
+        margin: 0 8px;
+        color: #a0aec0;
       }
 
       .share-btn {
@@ -611,6 +663,11 @@
         <!-- Article Header -->
         <header class="article-header">
           <div class="article-hero">
+            <nav class="breadcrumb">
+              <a href="../index.html">首頁</a>
+              <span class="separator">/</span>
+              <span>鎂質完整指南</span>
+            </nav>
             <span class="article-category">礦物質指南</span>
             <h1 class="article-title">
               鎂質完整指南：功效、副作用、失眠與抽筋的救星？

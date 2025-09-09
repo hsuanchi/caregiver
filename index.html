@@ -17,6 +17,25 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="shortcut icon" type="image/svg+xml" href="favicon.svg">
 
+    <!-- JSON-LD for Structured Data (WebSite) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "營養百科",
+      "url": "https://life.maxlist.xyz/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://life.maxlist.xyz/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+
     <style>
       * {
         margin: 0;
@@ -1008,7 +1027,7 @@
       </div>
 
       <div class="nutrients-grid">
-        <div class="nutrient-card fade-in" style="cursor: pointer" onclick="window.location.href='post/vitamin-d.html'">
+        <a href="post/vitamin-d.html" class="nutrient-card fade-in" style="text-decoration: none; color: inherit;">
           <div class="nutrient-header">
             <h3 class="nutrient-title">維生素D</h3>
             <p class="nutrient-desc">
@@ -1025,9 +1044,9 @@
               </ul>
             </div>
           </div>
-        </div>
+        </a>
 
-        <div class="nutrient-card fade-in" style="cursor: pointer" onclick="window.location.href='post/calcium.html'">
+        <a href="post/calcium.html" class="nutrient-card fade-in" style="text-decoration: none; color: inherit;">
           <div class="nutrient-header">
             <h3 class="nutrient-title">鈣質</h3>
             <p class="nutrient-desc">
@@ -1044,13 +1063,9 @@
               </ul>
             </div>
           </div>
-        </div>
+        </a>
 
-        <div
-          class="nutrient-card fade-in"
-          style="cursor: pointer"
-          onclick="window.location.href='post/fish-oil.html'"
-        >
+        <a href="post/fish-oil.html" class="nutrient-card fade-in" style="text-decoration: none; color: inherit;">
           <div class="nutrient-header">
             <h3 class="nutrient-title">魚油</h3>
             <p class="nutrient-desc">
@@ -1066,15 +1081,10 @@
                 <li>抗發炎作用</li>
               </ul>
             </div>
-            <div style="margin-top: 20px; text-align: center">
-              <span style="color: #ff6b35; font-weight: 600; font-size: 0.9em"
-                >點擊了解更多 →</span
-              >
-            </div>
           </div>
-        </div>
+        </a>
 
-        <div class="nutrient-card fade-in" style="cursor: pointer" onclick="window.location.href='post/collagen.html'">
+        <a href="post/collagen.html" class="nutrient-card fade-in" style="text-decoration: none; color: inherit;">
           <div class="nutrient-header">
             <h3 class="nutrient-title">膠原蛋白</h3>
             <p class="nutrient-desc">
@@ -1091,9 +1101,9 @@
               </ul>
             </div>
           </div>
-        </div>
+        </a>
 
-        <div class="nutrient-card fade-in" style="cursor: pointer" onclick="window.location.href='post/curcumin.html'">
+        <a href="post/curcumin.html" class="nutrient-card fade-in" style="text-decoration: none; color: inherit;">
           <div class="nutrient-header">
             <h3 class="nutrient-title">薑黃素</h3>
             <p class="nutrient-desc">
@@ -1110,9 +1120,9 @@
               </ul>
             </div>
           </div>
-        </div>
+        </a>
 
-        <div class="nutrient-card fade-in" style="cursor: pointer" onclick="window.location.href='post/coenzyme-q10.html'">
+        <a href="post/coenzyme-q10.html" class="nutrient-card fade-in" style="text-decoration: none; color: inherit;">
           <div class="nutrient-header">
             <h3 class="nutrient-title">輔酶Q10</h3>
             <p class="nutrient-desc">
@@ -1129,7 +1139,7 @@
               </ul>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </section>
 
@@ -1143,7 +1153,7 @@
       </div>
 
       <div class="category-grid">
-        <div class="category-card fade-in">
+        <div class="category-card fade-in" style="cursor: pointer;" onclick="window.location.href='#vitamins'">
           <div class="category-icon">🌟</div>
           <h3 class="category-title">維生素類</h3>
           <p class="category-desc">
@@ -1157,7 +1167,7 @@
           </div>
         </div>
 
-        <div class="category-card fade-in">
+        <div class="category-card fade-in" style="cursor: pointer;" onclick="window.location.href='#minerals'">
           <div class="category-icon">💎</div>
           <h3 class="category-title">礦物質類</h3>
           <p class="category-desc">
@@ -1169,7 +1179,7 @@
           </div>
         </div>
 
-        <div class="category-card fade-in">
+        <div class="category-card fade-in" style="cursor: pointer;" onclick="window.location.href='#other-nutrients'">
           <div class="category-icon">🌿</div>
           <h3 class="category-title">其他營養素</h3>
           <p class="category-desc">

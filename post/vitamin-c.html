@@ -17,6 +17,36 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
 
+    <!-- JSON-LD for Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://life.maxlist.xyz/post/vitamin-c.html"
+      },
+      "headline": "維生素C怎麼吃最有效？營養師完整解析",
+      "description": "從天然食物到發泡錠，市面上的維生素C產品該怎麼選？讓專業營養師帶你一次搞懂。",
+      "image": "https://life.maxlist.xyz/assets/images/vitamin-c-og.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "url": "https://life.maxlist.xyz/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
+        }
+      },
+      "datePublished": "2024-09-08",
+      "dateModified": "2025-09-08"
+    }
+    </script>
+
     <style>
       * {
         margin: 0;
@@ -42,6 +72,28 @@
         background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
         z-index: 1001;
         transition: width 0.3s ease;
+      }
+
+      /* Breadcrumb Navigation */
+      .breadcrumb {
+        margin-bottom: 20px;
+        font-size: 0.9em;
+        color: #718096;
+      }
+
+      .breadcrumb a {
+        color: #718096;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .breadcrumb a:hover {
+        color: #ff6b35;
+      }
+
+      .breadcrumb .separator {
+        margin: 0 8px;
+        color: #a0aec0;
       }
 
       .share-btn {
@@ -328,6 +380,11 @@
         <!-- Article Header -->
         <header class="article-header">
           <div class="article-hero">
+            <nav class="breadcrumb">
+              <a href="../index.html">首頁</a>
+              <span class="separator">/</span>
+              <span>維生素C完整指南</span>
+            </nav>
             <span class="article-category">維生素</span>
             <h1 class="article-title">
               維生素C怎麼吃最有效？營養師完整解析
@@ -378,11 +435,26 @@
 
       // Component Initialization
       document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(() => {
-            if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component"));
-            if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component"));
-            if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setEnvironment('production');
-        }, 100);
+        if (window.DeusAnalyticsComponent) {
+          new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
+          console.log("✅ Analytics 組件初始化完成");
+        } else {
+          console.error("❌ Analytics 組件初始化失敗");
+        }
+        const headerContainer = document.getElementById("header-component");
+        if (headerContainer && window.DeusHeaderComponent) {
+          new window.DeusHeaderComponent(headerContainer).setDebug(false).setTheme("default");
+          console.log("✅ Header 組件初始化完成");
+        } else {
+          console.error("❌ Header 組件初始化失敗");
+        }
+        const footerContainer = document.getElementById("footer-component");
+        if (footerContainer && window.DeusFooterComponent) {
+          new window.DeusFooterComponent(footerContainer).setDebug(false).setTheme("default");
+          console.log("✅ Footer 組件初始化完成");
+        } else {
+          console.error("❌ Footer 組件初始化失敗");
+        }
       });
     </script>
 

@@ -17,6 +17,36 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
 
+    <!-- JSON-LD for Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://life.maxlist.xyz/post/vitamin-b.html"
+      },
+      "headline": "還在為疲勞困擾？維生素 B 群完整指南告訴你答案！",
+      "description": "維生素 B 群是身體的「能量轉換器」，8 種成員各司其職。現代人生活壓力大、飲食不均，B 群缺乏很常見。讓營養師帶你一次搞懂 B 群的秘密！",
+      "image": "https://life.maxlist.xyz/assets/images/vitamin-b-og.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "url": "https://life.maxlist.xyz/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
+        }
+      },
+      "datePublished": "2024-08-20",
+      "dateModified": "2025-08-20"
+    }
+    </script>
+
     <style>
       * {
         margin: 0;
@@ -42,6 +72,28 @@
         background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
         z-index: 1001;
         transition: width 0.3s ease;
+      }
+
+      /* Breadcrumb Navigation */
+      .breadcrumb {
+        margin-bottom: 20px;
+        font-size: 0.9em;
+        color: #718096;
+      }
+
+      .breadcrumb a {
+        color: #718096;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .breadcrumb a:hover {
+        color: #ff6b35;
+      }
+
+      .breadcrumb .separator {
+        margin: 0 8px;
+        color: #a0aec0;
       }
 
       .share-btn {
@@ -890,6 +942,11 @@
         <!-- Article Header -->
         <header class="article-header">
           <div class="article-hero">
+            <nav class="breadcrumb">
+              <a href="../index.html">首頁</a>
+              <span class="separator">/</span>
+              <span>維生素 B 群完整指南</span>
+            </nav>
             <span class="article-category">營養師審核</span>
             <h1 class="article-title">
               還在為疲勞困擾？維生素 B 群完整指南告訴你答案！

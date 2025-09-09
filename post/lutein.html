@@ -11,6 +11,36 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
 
+    <!-- JSON-LD for Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://life.maxlist.xyz/post/lutein.html"
+      },
+      "headline": "葉黃素完整指南：功效、副作用、怎麼選才有效？",
+      "description": "營養師專業提醒：葉黃素是守護靈魂之窗的關鍵營養素，但市面上產品眾多，您知道酯化型和游離型有何不同？黃金比例 5:1 又是什麼？本篇將帶您深入了解葉黃素，助您選對產品，清晰看世界。",
+      "image": "https://life.maxlist.xyz/assets/images/lutein-og.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "url": "https://life.maxlist.xyz/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
+        }
+      },
+      "datePublished": "2024-08-27",
+      "dateModified": "2025-08-27"
+    }
+    </script>
+
     <style>
       * {
         margin: 0;
@@ -36,6 +66,28 @@
         background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
         z-index: 1001;
         transition: width 0.3s ease;
+      }
+
+      /* Breadcrumb Navigation */
+      .breadcrumb {
+        margin-bottom: 20px;
+        font-size: 0.9em;
+        color: #718096;
+      }
+
+      .breadcrumb a {
+        color: #718096;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .breadcrumb a:hover {
+        color: #ff6b35;
+      }
+
+      .breadcrumb .separator {
+        margin: 0 8px;
+        color: #a0aec0;
       }
 
       /* Article Layout */
@@ -714,7 +766,6 @@
       <aside class="sidebar" id="sidebar">
         <div class="toc">
           <h3 class="toc-title">
-            <span>📑</span>
             <span>目錄</span>
           </h3>
           <ul class="toc-list">
@@ -736,6 +787,11 @@
         <!-- Article Header -->
         <header class="article-header">
           <div class="article-hero">
+            <nav class="breadcrumb">
+              <a href="../index.html">首頁</a>
+              <span class="separator">/</span>
+              <span>葉黃素完整指南</span>
+            </nav>
             <span class="article-category">營養素指南</span>
             <h1 class="article-title">
               葉黃素完整指南：功效、副作用、怎麼選才有效？
