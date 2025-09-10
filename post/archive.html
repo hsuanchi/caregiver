@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文章彙整 | Caregiver 營養百科</title>
+    <meta name="description" content="探索所有關於營養補充品的專業文章，從維生素、礦物質到特殊營養素，提供您最完整、最科學的健康指南。" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+        line-height: 1.8;
+        color: #2d3748;
+        background: #f7fafc;
+      }
+
+      .progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 4px;
+        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
+        z-index: 1001;
+        transition: width 0.3s ease;
+      }
+
+      .page-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 120px 20px 60px;
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 60px;
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 120px;
+        height: fit-content;
+        max-height: calc(100vh - 140px);
+        overflow-y: auto;
+      }
+
+      .tree-nav {
+        background: white;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+      }
+
+      .tree-nav h3 {
+        font-size: 1.3em;
+        margin-bottom: 20px;
+        color: #2d3748;
+      }
+
+      .tree-view {
+        list-style: none;
+      }
+
+      .tree-node > .node-label {
+        font-weight: 700;
+        cursor: pointer;
+        padding: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 8px;
+        transition: background 0.3s ease;
+      }
+      .tree-node > .node-label:hover {
+          background: #f1f5f9;
+      }
+
+      .tree-node > .node-label::after {
+        content: '▸';
+        transition: transform 0.3s ease;
+      }
+
+      .tree-node.open > .node-label::after {
+        transform: rotate(90deg);
+      }
+
+      .tree-children {
+        list-style: none;
+        padding-left: 15px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+      }
+
+      .tree-node.open > .tree-children {
+        max-height: 1000px; /* Adjust as needed */
+      }
+
+      .tree-leaf a {
+        display: block;
+        padding: 6px 8px;
+        color: #4a5568;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 0.95em;
+      }
+
+      .tree-leaf a:hover {
+        background: #eef2ff;
+        color: #4338ca;
+      }
+
+      .main-content {
+        min-width: 0;
+      }
+
+      .archive-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .archive-title {
+        font-size: 3em;
+        font-weight: 800;
+        color: #2d3748;
+        margin-bottom: 15px;
+      }
+
+      .archive-subtitle {
+        font-size: 1.2em;
+        color: #718096;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      
+      .filter-controls {
+          background: white;
+          padding: 20px;
+          border-radius: 15px;
+          margin-bottom: 40px;
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+          align-items: center;
+      }
+      .filter-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          flex-grow: 1;
+      }
+      .filter-btn {
+          background: #f1f5f9;
+          color: #475569;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 20px;
+          cursor: pointer;
+          font-size: 0.9em;
+          font-weight: 600;
+          transition: all 0.3s ease;
+      }
+      .filter-btn:hover {
+          background: #e2e8f0;
+      }
+      .filter-btn.active {
+          background: #ff6b35;
+          color: white;
+          box-shadow: 0 2px 10px rgba(255, 107, 53, 0.3);
+      }
+      .search-input, .sort-select {
+          border: 2px solid #e2e8f0;
+          border-radius: 20px;
+          padding: 8px 16px;
+          font-size: 0.9em;
+          transition: all 0.3s ease;
+          background-color: white;
+      }
+      .search-input:focus, .sort-select:focus {
+          outline: none;
+          border-color: #ff6b35;
+          box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+      }
+      .search-input { width: 220px; }
+
+      .archive-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .article-card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+        transition: all 0.3s ease;
+        display: grid;
+        grid-template-columns: 2.5fr 1fr;
+        overflow: hidden;
+        border: 1px solid #e2e8f0;
+      }
+
+      .article-card.hidden {
+          display: none;
+      }
+
+      .article-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+        border-color: #ff6b35;
+      }
+
+      .card-content {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-tag {
+        display: inline-block;
+        background: #fff7ed;
+        color: #c2410c;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.85em;
+        font-weight: 600;
+        margin-bottom: 15px;
+        align-self: flex-start;
+      }
+      
+      .card-tag.vitamin { background: #eff6ff; color: #1d4ed8; }
+      .card-tag.mineral { background: #f0f9ff; color: #0c4a6e; }
+      .card-tag.herbal { background: #f7fee7; color: #365314; }
+      .card-tag.protein { background: #fef2f2; color: #991b1b; }
+      .card-tag.other { background: #f5f3ff; color: #5b21b6; }
+
+      .card-title {
+        font-size: 1.5em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 10px;
+        line-height: 1.4;
+        text-decoration: none;
+      }
+
+      .card-desc {
+        color: #718096;
+        font-size: 1em;
+        flex-grow: 1;
+        margin-bottom: 20px;
+      }
+      
+      .card-read-more {
+        color: #ff6b35;
+        font-weight: 600;
+        text-decoration: none;
+        align-self: flex-start;
+      }
+      .card-read-more:hover {
+          text-decoration: underline;
+      }
+
+      .card-metadata {
+          background: #f8fafc;
+          padding: 30px;
+          border-left: 1px solid #e2e8f0;
+          font-size: 0.9em;
+      }
+      .card-metadata h4 {
+          font-size: 1.1em;
+          color: #4a5568;
+          margin-top: 0;
+          margin-bottom: 15px;
+          border-bottom: 2px solid #cbd5e1;
+          padding-bottom: 10px;
+      }
+      .card-metadata p {
+          margin-bottom: 12px;
+          color: #718096;
+      }
+      .card-metadata strong {
+          color: #4a5568;
+          display: block;
+          margin-bottom: 4px;
+      }
+      .card-metadata span {
+          word-wrap: break-word;
+      }
+
+      #no-results {
+          text-align: center;
+          padding: 50px;
+          font-size: 1.2em;
+          color: #718096;
+          display: none;
+      }
+
+      @media (max-width: 1024px) {
+        .page-container {
+            grid-template-columns: 1fr;
+        }
+        .sidebar {
+            display: none; /* Hide sidebar on smaller screens */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .article-card {
+          grid-template-columns: 1fr;
+        }
+        .card-metadata {
+            border-left: none;
+            border-top: 1px solid #e2e8f0;
+        }
+        .archive-title {
+          font-size: 2.5em;
+        }
+        .filter-controls {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .search-input, .sort-select {
+            width: 100%;
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="header-component"></div>
+
+    <div class="page-container">
+        <aside class="sidebar">
+            <nav class="tree-nav">
+                <h3><a href="#archive-title" style="text-decoration: none; color: inherit;">文章目錄</a></h3>
+                <ul class="tree-view" id="treeView"></ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="archive-header">
+                <h1 class="archive-title" id="archive-title">文章總覽</h1>
+                <p class="archive-subtitle">這裡彙整了所有關於營養補充品的資訊與心得分享，希望能幫助您在探索健康的路上，找到最適合自己的方向。</p>
+            </header>
+
+            <div class="filter-controls" id="filter-controls">
+                <div class="filter-tags">
+                    <button class="filter-btn active" data-filter="all">全部</button>
+                    <button class="filter-btn" data-filter="vitamin">維生素</button>
+                    <button class="filter-btn" data-filter="mineral">礦物質</button>
+                    <button class="filter-btn" data-filter="herbal">草本營養</button>
+                    <button class="filter-btn" data-filter="protein">蛋白質</button>
+                    <button class="filter-btn" data-filter="other">其他</button>
+                </div>
+                <select id="sortSelect" class="sort-select">
+                    <option value="default">預設排序</option>
+                    <option value="modified-desc">依最後更新 (新到舊)</option>
+                    <option value="modified-asc">依最後更新 (舊到新)</option>
+                    <option value="published-desc">依發布日期 (新到舊)</option>
+                    <option value="published-asc">依發布日期 (舊到新)</option>
+                </select>
+                <input type="text" id="searchInput" class="search-input" placeholder="搜尋關鍵字...">
+            </div>
+
+            <div class="archive-grid">
+                <div class="article-card" id="card-folic-acid" data-category="vitamin" data-published="2025-09-10" data-modified="2025-09-10">
+                    <div class="card-content">
+                        <span class="card-tag vitamin">維生素</span>
+                        <a href="folic-acid.html" class="card-title-link"><h2 class="card-title">葉酸完整指南：不只是孕婦專利！</h2></a>
+                        <p class="card-desc">專業營養師詳細解析「葉酸」與「活性葉酸」的關鍵差異，從備孕、心血管健康到情緒支持，帶您了解葉酸的完整功效。</p>
+                        <a href="folic-acid.html" class="card-read-more">閱讀全文 &rarr;</a>
+                    </div>
+                    <div class="card-metadata">
+                        <h4>文章資訊</h4>
+                        <p><strong>關鍵字:</strong> <span>葉酸, 活性葉酸, 5-MTHF, 備孕, 懷孕, 神經管缺陷, 心血管, 半胱胺酸, 維生素B9, 葉酸功效</span></p>
+                        <p><strong>發布日期:</strong> <span>2025-09-10</span></p>
+                        <p><strong>最後更新:</strong> <span>2025-09-10</span></p>
+                    </div>
+                </div>
+    
+                <div class="article-card" id="card-vitamin-c" data-category="vitamin" data-published="2024-09-09" data-modified="2025-09-09">
+                    <div class="card-content">
+                        <span class="card-tag vitamin">維生素</span>
+                        <a href="vitamin-c.html" class="card-title-link"><h2 class="card-title">維生素C完整指南：不只是預防感冒！</h2></a>
+                        <p class="card-desc">維生素C是美白、抗老、提升免疫力的關鍵，但你吃對了嗎？營養師為你破解感冒迷思，解析維生素C功效與建議量。</p>
+                        <a href="vitamin-c.html" class="card-read-more">閱讀全文 &rarr;</a>
+                    </div>
+                    <div class="card-metadata">
+                        <h4>文章資訊</h4>
+                        <p><strong>關鍵字:</strong> <span>維生素C, Vitamin C, 維他命C, 美白, 抗氧化, 膠原蛋白, 感冒, 推薦, 劑量, 發泡錠</span></p>
+                        <p><strong>發布日期:</strong> <span>2024-09-09</span></p>
+                        <p><strong>最後更新:</strong> <span>2025-09-09</span></p>
+                    </div>
+                </div>
+    
+                <div class="article-card" id="card-calcium" data-category="mineral" data-published="2024-09-07" data-modified="2025-09-10">
+                    <div class="card-content">
+                        <span class="card-tag mineral">礦物質</span>
+                        <a href="calcium.html" class="card-title-link"><h2 class="card-title">鈣質完整指南：骨質疏鬆、抽筋、失眠都跟它有關？</h2></a>
+                        <p class="card-desc">從碳酸鈣、檸檬酸鈣到海藻鈣，市面上的鈣片琳瑯滿目，讓專業營養師教你如何選擇最適合自己的鈣質補充品。</p>
+                        <a href="calcium.html" class="card-read-more">閱讀全文 &rarr;</a>
+                    </div>
+                    <div class="card-metadata">
+                        <h4>文章資訊</h4>
+                        <p><strong>關鍵字:</strong> <span>鈣, 鈣質, 補鈣, 碳酸鈣, 檸檬酸鈣, 海藻鈣, 骨質疏鬆, 鈣片推薦, 缺鈣, 鈣過量</span></p>
+                        <p><strong>發布日期:</strong> <span>2024-09-07</span></p>
+                        <p><strong>最後更新:</strong> <span>2025-09-10</span></p>
+                    </div>
+                </div>
+    
+                <div class="article-card" id="card-probiotics" data-category="other" data-published="2024-08-17" data-modified="2025-08-17">
+                    <div class="card-content">
+                        <span class="card-tag other">益生菌</span>
+                        <a href="probiotics.html" class="card-title-link"><h2 class="card-title">益生菌完整指南：功效、副作用、怎麼選才有效？</h2></a>
+                        <p class="card-desc">營養師專業提醒：益生菌是維持腸道健康的關鍵，但市面上菌株種類繁多，菌數越高越好嗎？本篇將帶您深入了解益生菌的奧秘。</p>
+                        <a href="probiotics.html" class="card-read-more">閱讀全文 &rarr;</a>
+                    </div>
+                    <div class="card-metadata">
+                        <h4>文章資訊</h4>
+                        <p><strong>關鍵字:</strong> <span>益生菌, 腸道健康, 免疫功能, 乳酸菌, 雙歧桿菌, 腸道菌群, 益生菌功效, 益生菌選擇, 發酵食品, 消化健康</span></p>
+                        <p><strong>發布日期:</strong> <span>2024-08-17</span></p>
+                        <p><strong>最後更新:</strong> <span>2025-08-17</span></p>
+                    </div>
+                </div>
+    
+                <div class="article-card" id="card-lutein" data-category="other" data-published="2024-08-27" data-modified="2025-08-27">
+                    <div class="card-content">
+                        <span class="card-tag other">其他營養素</span>
+                        <a href="lutein.html" class="card-title-link"><h2 class="card-title">葉黃素完整指南：功效、副作用、怎麼選才有效？</h2></a>
+                        <p class="card-desc">葉黃素是守護靈魂之窗的關鍵營養素，但市面上產品眾多，您知道酯化型和游離型有何不同？黃金比例 5:1 又是什麼？</p>
+                        <a href="lutein.html" class="card-read-more">閱讀全文 &rarr;</a>
+                    </div>
+                    <div class="card-metadata">
+                        <h4>文章資訊</h4>
+                        <p><strong>關鍵字:</strong> <span>葉黃素, 護眼, 黃斑部病變, 藍光, 玉米黃質, 眼部健康, 葉黃素功效, 葉黃素食物, 視力保護, 抗氧化</span></p>
+                        <p><strong>發布日期:</strong> <span>2024-08-27</span></p>
+                        <p><strong>最後更新:</strong> <span>2025-08-27</span></p>
+                    </div>
+                </div>
+    
+                <div class="article-card" id="card-iron" data-category="mineral" data-published="2024-09-05" data-modified="2025-09-05">
+                    <div class="card-content">
+                        <span class="card-tag mineral">礦物質</span>
+                        <a href="iron.html" class="card-title-link"><h2 class="card-title">鐵質完整指南：從食物到保健品，完整補鐵策略</h2></a>
+                        <p class="card-desc">經常疲勞、掉髮、注意力不集中？你可能不是壓力大，而是缺鐵了！本篇帶你了解如何有效補鐵，重拾活力。</p>
+                        <a href="iron.html" class="card-read-more">閱讀全文 &rarr;</a>
+                    </div>
+                    <div class="card-metadata">
+                        <h4>文章資訊</h4>
+                        <p><strong>關鍵字:</strong> <span>鐵, 補鐵, 缺鐵, 缺鐵性貧血, 鐵劑, 高鐵食物, 掉髮, 疲勞, 鐵蛋白, 甘胺酸亞鐵, 血紅素鐵</span></p>
+                        <p><strong>發布日期:</strong> <span>2024-09-05</span></p>
+                        <p><strong>最後更新:</strong> <span>2025-09-05</span></p>
+                    </div>
+                </div>
+    
+                <div class="article-card" id="card-fish-oil" data-category="other" data-published="2024-07-16" data-modified="2025-07-16">
+                    <div class="card-content">
+                        <span class="card-tag other">其他營養素</span>
+                        <a href="fish-oil.html" class="card-title-link"><h2 class="card-title">魚油完整指南：EPA 與 DHA 怎麼選？</h2></a>
+                        <p class="card-desc">專業營養師詳細解析魚油的功效、副作用、EPA 與 DHA 的黃金比例，並教您如何挑選最適合的魚油產品。</p>
+                        <a href="fish-oil.html" class="card-read-more">閱讀全文 &rarr;</a>
+                    </div>
+                    <div class="card-metadata">
+                        <h4>文章資訊</h4>
+                        <p><strong>關鍵字:</strong> <span>魚油, 魚油功效, 魚油推薦, Omega-3, EPA, DHA, 魚油怎麼選, 三酸甘油酯, 心血管保健, 大腦健康</span></p>
+                        <p><strong>發布日期:</strong> <span>2024-07-16</span></p>
+                        <p><strong>最後更新:</strong> <span>2025-07-16</span></p>
+                    </div>
+                </div>
+    
+                <div class="article-card" id="card-curcumin" data-category="herbal" data-published="2024-09-08" data-modified="2025-09-08">
+                    <div class="card-content">
+                        <span class="card-tag herbal">草本營養</span>
+                        <a href="curcumin.html" class="card-title-link"><h2 class="card-title">薑黃素全攻略：不只是咖哩！抗發炎、護肝的超級營養素</h2></a>
+                        <p class="card-desc">薑黃素的強大功效備受矚目，但你知道它的吸收率極低嗎？讓專業營養師教你如何挑選高生物利用率的產品。</p>
+                        <a href="curcumin.html" class="card-read-more">閱讀全文 &rarr;</a>
+                    </div>
+                    <div class="card-metadata">
+                        <h4>文章資訊</h4>
+                        <p><strong>關鍵字:</strong> <span>薑黃, 薑黃素, 薑黃素功效, 薑黃素推薦, 黑胡椒, 吸收率, 抗發炎, 關節, 劑量</span></p>
+                        <p><strong>發布日期:</strong> <span>2024-09-08</span></p>
+                        <p><strong>最後更新:</strong> <span>2025-09-08</span></p>
+                    </div>
+                </div>
+    
+                <div class="article-card" id="card-collagen" data-category="protein" data-published="2024-09-08" data-modified="2025-09-08">
+                    <div class="card-content">
+                        <span class="card-tag protein">蛋白質</span>
+                        <a href="collagen.html" class="card-title-link"><h2 class="card-title">膠原蛋白全攻略：吃對了，效果看得見！</h2></a>
+                        <p class="card-desc">從魚鱗、豬皮到植物性來源，市面上的膠原蛋白產品讓人眼花撩亂。讓專業營養師教你如何選擇最有效的膠原蛋白補充品。</p>
+                        <a href="collagen.html" class="card-read-more">閱讀全文 &rarr;</a>
+                    </div>
+                    <div class="card-metadata">
+                        <h4>文章資訊</h4>
+                        <p><strong>關鍵字:</strong> <span>膠原蛋白, 膠原蛋白功效, 補充膠原蛋白, 膠原蛋白推薦, 胜肽, 水解膠原蛋白, 膠原蛋白流失</span></p>
+                        <p><strong>發布日期:</strong> <span>2024-09-08</span></p>
+                        <p><strong>最後更新:</strong> <span>2025-09-08</span></p>
+                    </div>
+                </div>
+    
+                <div class="article-card" id="card-vitamin-e" data-category="vitamin" data-published="2024-09-08" data-modified="2025-09-08">
+                    <div class="card-content">
+                        <span class="card-tag vitamin">維生素</span>
+                        <a href="vitamin-e.html" class="card-title-link"><h2 class="card-title">維生素E終極指南：不只抗老！解開天然迷思</h2></a>
+                        <p class="card-desc">維生素E是守護全身細胞的關鍵營養素，但你知道「天然」與「合成」的吸收率天差地遠嗎？讓專家帶你一次看懂。</p>
+                        <a href="vitamin-e.html" class="card-read-more">閱讀全文 &rarr;</a>
+                    </div>
+                    <div class="card-metadata">
+                        <h4>文章資訊</h4>
+                        <p><strong>關鍵字:</strong> <span>維生素E, Vitamin E, 生育醇, 生育三烯酚, 抗氧化, 抗老化, 皮膚, 備孕, 推薦, 天然, 杏仁</span></p>
+                        <p><strong>發布日期:</strong> <span>2024-09-08</span></p>
+                        <p><strong>最後更新:</strong> <span>2025-09-08</span></p>
+                    </div>
+                </div>
+    
+                <div class="article-card" id="card-vitamin-d" data-category="vitamin" data-published="2024-09-01" data-modified="2025-09-01">
+                    <div class="card-content">
+                        <span class="card-tag vitamin">維生素</span>
+                        <a href="vitamin-d.html" class="card-title-link"><h2 class="card-title">認識維生素D：你的免疫防線、情緒穩定劑與大腦守護者</h2></a>
+                        <p class="card-desc">超過八成國人缺乏「陽光荷爾蒙」？本篇完整說明維生素D的進階科學，從免疫、情緒到大腦功能的全面影響。</p>
+                        <a href="vitamin-d.html" class="card-read-more">閱讀全文 &rarr;</a>
+                    </div>
+                    <div class="card-metadata">
+                        <h4>文章資訊</h4>
+                        <p><strong>關鍵字:</strong> <span>維生素D, 免疫防線, 情緒穩定劑, 大腦守護者, 陽光荷爾蒙, VITAL 研究, 失智, 維生素 D3, 骨骼健康</span></p>
+                        <p><strong>發布日期:</strong> <span>2024-09-01</span></p>
+                        <p><strong>最後更新:</strong> <span>2025-09-01</span></p>
+                    </div>
+                </div>
+    
+                <div class="article-card" id="card-vitamin-b" data-category="vitamin" data-published="2024-08-20" data-modified="2025-08-20">
+                    <div class="card-content">
+                        <span class="card-tag vitamin">維生素</span>
+                        <a href="vitamin-b.html" class="card-title-link"><h2 class="card-title">維生素 B 群完整指南：功效、副作用、怎麼選才有效？</h2></a>
+                        <p class="card-desc">維生素 B 群是身體的「能量轉換器」，8 種成員各司其職。現代人生活壓力大、飲食不均，B 群缺乏很常見。</p>
+                        <a href="vitamin-b.html" class="card-read-more">閱讀全文 &rarr;</a>
+                    </div>
+                    <div class="card-metadata">
+                        <h4>文章資訊</h4>
+                        <p><strong>關鍵字:</strong> <span>維生素 B 群, B 群功效, B 群副作用, B 群怎麼選, 能量代謝, 提神, 抗疲勞, 神經健康, 素食 B12, B 群推薦</span></p>
+                        <p><strong>發布日期:</strong> <span>2024-08-20</span></p>
+                        <p><strong>最後更新:</strong> <span>2025-08-20</span></p>
+                    </div>
+                </div>
+    
+                <div class="article-card" id="card-magnesium" data-category="mineral" data-published="2024-08-27" data-modified="2025-08-27">
+                    <div class="card-content">
+                        <span class="card-tag mineral">礦物質</span>
+                        <a href="magnesium.html" class="card-title-link"><h2 class="card-title">鎂質完整指南：失眠與抽筋的救星？</h2></a>
+                        <p class="card-desc">鎂是人體不可或缺的「萬能礦物質」，參與超過 300 種生化反應。現代人因飲食精緻化和壓力，普遍有鎂攝取不足的問題。</p>
+                        <a href="magnesium.html" class="card-read-more">閱讀全文 &rarr;</a>
+                    </div>
+                    <div class="card-metadata">
+                        <h4>文章資訊</h4>
+                        <p><strong>關鍵字:</strong> <span>鎂質, 鎂劑, 失眠, 肌肉抽筋, 壓力, 心血管健康, 鎂質功效, 鎂質副作用, 鎂質推薦, 鎂質食物, 睡眠改善</span></p>
+                        <p><strong>發布日期:</strong> <span>2024-08-27</span></p>
+                        <p><strong>最後更新:</strong> <span>2025-08-27</span></p>
+                    </div>
+                </div>
+    
+                <div class="article-card" id="card-coenzyme-q10" data-category="other" data-published="2024-08-27" data-modified="2025-08-27">
+                    <div class="card-content">
+                        <span class="card-tag other">其他營養素</span>
+                        <a href="coenzyme-q10.html" class="card-title-link"><h2 class="card-title">輔酶 Q10 完整指南：心臟的能量火星塞</h2></a>
+                        <p class="card-desc">營養師專業提醒：輔酶 Q10 是人體細胞的「能量發電廠」，40 歲後會急速下降。本篇將帶您了解如何正確補充 Q10。</p>
+                        <a href="coenzyme-q10.html" class="card-read-more">閱讀全文 &rarr;</a>
+                    </div>
+                    <div class="card-metadata">
+                        <h4>文章資訊</h4>
+                        <p><strong>關鍵字:</strong> <span>輔酶 Q10, CoQ10, 心臟保健, 能量代謝, 抗氧化, 泛醌, 泛醌醇, 他汀類藥物, Q10 功效, Q10 推薦, 抗疲勞</span></p>
+                        <p><strong>發布日期:</strong> <span>2024-08-27</span></p>
+                        <p><strong>最後更新:</strong> <span>2025-08-27</span></p>
+                    </div>
+                </div>
+            </div>
+            <div id="no-results">
+                <p>找不到符合條件的文章 😅</p>
+            </div>
+        </main>
+    </div>
+
+    <div id="footer-component"></div>
+
+    <script src="../assets/js/deus-analytics-component.js"></script>
+    <script src="../assets/js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-footer-component.js"></script>
+
+    <script>
+      window.addEventListener("scroll", () => {
+        const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        document.getElementById("progressBar").style.width = scrollPercentage + "%";
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
+        if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
+        if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+        
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const searchInput = document.getElementById('searchInput');
+        const sortSelect = document.getElementById('sortSelect');
+        const archiveGrid = document.querySelector('.archive-grid');
+        const articleCards = document.querySelectorAll('.article-card');
+        const noResults = document.getElementById('no-results');
+        const treeView = document.getElementById('treeView');
+
+        function generateTreeView() {
+            const categories = {};
+            articleCards.forEach((card, index) => {
+                const category = card.querySelector('.card-tag').textContent.trim();
+                const title = card.querySelector('.card-title').textContent.trim();
+                const cardId = card.id || `card-${index}`;
+                card.id = cardId;
+
+                if (!categories[category]) {
+                    categories[category] = [];
+                }
+                categories[category].push({ title, id: cardId });
+            });
+
+            let treeHTML = '';
+            for (const category in categories) {
+                treeHTML += `
+                    <li class="tree-node">
+                        <span class="node-label">${category}</span>
+                        <ul class="tree-children">
+                `;
+                categories[category].forEach(article => {
+                    treeHTML += `<li class="tree-leaf"><a href="#${article.id}">${article.title}</a></li>`;
+                });
+                treeHTML += `</ul></li>`;
+            }
+            treeView.innerHTML = treeHTML;
+        }
+
+        function attachTreeEvents() {
+            treeView.addEventListener('click', function(e) {
+                if (e.target.classList.contains('node-label')) {
+                    e.target.parentElement.classList.toggle('open');
+                }
+                if (e.target.tagName === 'A') {
+                    e.preventDefault();
+                    const targetId = e.target.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        targetElement.style.transition = 'all 0.3s ease';
+                        targetElement.style.boxShadow = '0 0 0 3px #ff6b35';
+                        setTimeout(() => {
+                            targetElement.style.boxShadow = '';
+                        }, 1500);
+                    }
+                }
+            });
+        }
+
+        function sortAndFilterArticles() {
+            const selectedCategory = document.querySelector('.filter-btn.active').dataset.filter;
+            const searchTerm = searchInput.value.toLowerCase();
+            const sortValue = sortSelect.value;
+
+            let cardsArray = Array.from(articleCards);
+
+            // Sorting
+            cardsArray.sort((a, b) => {
+                const dateA = new Date(a.dataset[sortValue.split('-')[0]]);
+                const dateB = new Date(b.dataset[sortValue.split('-')[0]]);
+                if (sortValue.endsWith('-asc')) {
+                    return dateA - dateB;
+                } else if (sortValue.endsWith('-desc')) {
+                    return dateB - dateA;
+                } else {
+                    return 0; // Default order
+                }
+            });
+
+            // Filtering and Re-appending
+            archiveGrid.innerHTML = ''; // Clear grid
+            let visibleCount = 0;
+            cardsArray.forEach(card => {
+                const category = card.dataset.category;
+                const title = card.querySelector('.card-title').textContent.toLowerCase();
+                const desc = card.querySelector('.card-desc').textContent.toLowerCase();
+                const keywords = card.querySelector('.card-metadata span').textContent.toLowerCase();
+
+                const categoryMatch = (selectedCategory === 'all' || category === selectedCategory);
+                const searchMatch = (title.includes(searchTerm) || desc.includes(searchTerm) || keywords.includes(searchTerm));
+
+                if (categoryMatch && searchMatch) {
+                    archiveGrid.appendChild(card);
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    // Don't append if it doesn't match
+                }
+            });
+
+            if (visibleCount === 0) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+        }
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                sortAndFilterArticles();
+            });
+        });
+
+        searchInput.addEventListener('input', sortAndFilterArticles);
+        sortSelect.addEventListener('change', sortAndFilterArticles);
+
+        function updateCategoryCounts() {
+            const counts = {
+                all: 0,
+                vitamin: 0,
+                mineral: 0,
+                herbal: 0,
+                protein: 0,
+                other: 0
+            };
+
+            articleCards.forEach(card => {
+                const category = card.dataset.category;
+                counts.all++;
+                if (counts.hasOwnProperty(category)) {
+                    counts[category]++;
+                }
+            });
+
+            filterButtons.forEach(button => {
+                const filter = button.dataset.filter;
+                const count = counts[filter];
+                const originalText = button.textContent.replace(/\s*\(\d+\)/, '');
+                button.textContent = `${originalText} (${count})`;
+            });
+        }
+
+        generateTreeView();
+        attachTreeEvents();
+        updateCategoryCounts();
+
+        document.querySelector('a[href="#archive-title"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#archive-title').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+      });
+    </script>
+</body>
+</html>

@@ -8,7 +8,10 @@
 - [ ] 加入 GA4 分析組件
 - [ ] 加入 Header 組件
 - [ ] 加入 Footer 組件
+- [ ] **更新文章彙整頁面**
+- [ ] **新增內部連結**
 - [ ] 更新 sitemap.xml
+- [ ] **最終驗證**
 
 ---
 
@@ -27,24 +30,43 @@
     <title>頁面標題 | 營養百科</title>
     <meta name="description" content="頁面描述（建議 150-160 字元）" />
     <meta name="keywords" content="關鍵字1, 關鍵字2, 關鍵字3" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
+
+    <!-- JSON-LD for Structured Data (SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://life.maxlist.xyz/post/your-new-page.html"
+      },
+      "headline": "文章主標題",
+      "description": "文章的詳細描述",
+      "image": "https://life.maxlist.xyz/assets/images/your-og-image.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "url": "https://life.maxlist.xyz/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
+        }
+      },
+      "datePublished": "YYYY-MM-DD",
+      "dateModified": "YYYY-MM-DD"
+    }
+    </script>
 
     <style>
       /* 頁面樣式 */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
-        line-height: 1.6;
-        color: #2d3748;
-        background: #faf8f5;
-      }
-
-      /* 其他樣式... */
     </style>
   </head>
   <body>
@@ -59,13 +81,13 @@
     <!-- Footer Component Container -->
     <div id="footer-component"></div>
 
-    <!-- Load Components (步驟 2-4 會用到) -->
+    <!-- Load Components -->
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
 
     <script>
-      // 初始化組件 (步驟 2-4 會用到)
+      // 初始化組件
     </script>
   </body>
 </html>
@@ -80,12 +102,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize Analytics Component
   if (window.DeusAnalyticsComponent) {
-    const analytics = new window.DeusAnalyticsComponent()
-      .setDebug(false) // 開發時設為 true，正式環境設為 false
-      .setEnvironment("production");
-    console.log("✅ Analytics 組件初始化完成");
-  } else {
-    console.error("❌ Analytics 組件初始化失敗");
+    new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
   }
 
   // 其他組件初始化...
@@ -94,23 +111,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 ### 3️⃣ **加入 Header 組件**
 
-在上述初始化代碼中繼續加入：
+在初始化代碼中繼續加入：
 
 ```javascript
 // Initialize Header Component
 const headerContainer = document.getElementById("header-component");
 if (headerContainer && window.DeusHeaderComponent) {
-  const header = new window.DeusHeaderComponent(headerContainer)
-    .setDebug(false)
-    .setTheme("default")
-    .setNavLinks([
-      { text: "首頁", href: "../index.html" },
-      { text: "營養素", href: "../index.html#nutrients" },
-      { text: "工具", href: "../index.html#tools" },
-    ]);
-  console.log("✅ Header 組件初始化完成");
-} else {
-  console.error("❌ Header 組件初始化失敗");
+  new window.DeusHeaderComponent(headerContainer).setDebug(false);
 }
 ```
 
@@ -122,23 +129,26 @@ if (headerContainer && window.DeusHeaderComponent) {
 // Initialize Footer Component
 const footerContainer = document.getElementById("footer-component");
 if (footerContainer && window.DeusFooterComponent) {
-  const footer = new window.DeusFooterComponent(footerContainer)
-    .setDebug(false)
-    .setTheme("default");
-  console.log("✅ Footer 組件初始化完成");
-} else {
-  console.error("❌ Footer 組件初始化失敗");
+  new window.DeusFooterComponent(footerContainer).setDebug(false);
 }
 ```
 
-### 5️⃣ **更新 sitemap.xml**
+### 5️⃣ **更新文章彙整頁面**
+
+若新增的是文章頁面，請打開 `/post/archive.html`，手動新增該篇文章的卡片資訊，以確保目錄同步更新。
+
+### 6️⃣ **新增內部連結**
+
+思考新頁面與既有頁面的關聯性，在至少 1-2 個相關的舊頁面中，加入連向此新頁面的文字連結，以建立更緊密的站內連結結構。
+
+### 7️⃣ **更新 sitemap.xml**
 
 打開 `/sitemap.xml` 檔案，在 `</urlset>` 標籤前加入新頁面：
 
 ```xml
 <url>
   <loc>https://life.maxlist.xyz/post/your-new-page.html</loc>
-  <lastmod>2025-01-20</lastmod>
+  <lastmod>YYYY-MM-DD</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
 </url>
@@ -158,7 +168,13 @@ if (footerContainer && window.DeusFooterComponent) {
 - `monthly`: 每月更新的內容
 - `yearly`: 很少更新的內容
 
-### 6️⃣ **路徑注意事項**
+### 8️⃣ **最終驗證**
+
+- **響應式檢查**：在桌面和手機兩種尺寸下，檢查頁面排版是否正常。
+- **連結檢查**：點擊頁面上的所有連結，確保沒有失效連結 (404)。
+- **主控台檢查**：在瀏覽器中打開開發者工具 (F12)，確認 Console 面板沒有任何紅色錯誤訊息。
+
+### 9️⃣ **路徑注意事項**
 
 根據頁面位置調整腳本路徑：
 

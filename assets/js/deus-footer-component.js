@@ -275,6 +275,7 @@
                         <div class="footer-section">
                             <h3>資源中心</h3>
                             <ul class="footer-links">
+                            <li><a href="/post/archive.html">文章彙整</a></li>
                             <li><a href="/#experts">營養知識</a></li>
                             <li><a href="/#tools">健康工具</a></li>
                                 <li><a href="/#faq">常見問題</a></li>
