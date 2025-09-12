@@ -47,6 +47,9 @@
     }
     </script>
 
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <style>
       * {
         margin: 0;
@@ -72,45 +75,6 @@
         background: linear-gradient(90deg, #f97316 0%, #fb923c 100%);
         z-index: 1001;
         transition: width 0.3s ease;
-      }
-
-      /* Breadcrumb Navigation */
-      .breadcrumb {
-        margin-bottom: 20px;
-        font-size: 0.9em;
-        color: #718096;
-      }
-
-      .breadcrumb a {
-        color: #718096;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .breadcrumb a:hover {
-        color: #ff6b35;
-      }
-
-      .breadcrumb .separator {
-        margin: 0 8px;
-        color: #a0aec0;
-      }
-
-      .share-btn {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: #4a5568;
-        text-decoration: none;
-        padding: 8px 16px;
-        border-radius: 20px;
-        background: rgba(0, 0, 0, 0.05);
-        transition: all 0.3s ease;
-      }
-
-      .share-btn:hover {
-        background: #f97316;
-        color: white;
       }
 
       /* Article Layout */
@@ -637,12 +601,7 @@
       <!-- Main Content -->
       <main class="article-content">
         <!-- Article Header -->
-        <header class="article-header">
-          <nav class="breadcrumb">
-            <a href="../index.html">首頁</a>
-            <span class="separator">/</span>
-            <span>維生素C完整指南</span>
-          </nav>
+
           <div class="article-hero">
             <span class="article-category">維生素指南</span>
             <h1 class="article-title">
@@ -732,10 +691,6 @@
               <div class="risk-card">
                 <div class="risk-card-header"><span class="risk-card-icon">🤯</span><h4 class="risk-card-title">壓力山大族</h4></div>
                 <p class="risk-card-desc">長期處於心理或生理壓力下，腎上腺素會大量分泌，這個過程會快速消耗體內的維生素C。</p>
-              </div>
-              <div class="risk-card">
-                <div class="risk-card-header"><span class="risk-card-icon">🍽️</span><h4 class="risk-card-title">外食族/挑食者</h4></div>
-                <p class="risk-card-desc">飲食不均衡，新鮮蔬果攝取不足，是維生素C缺乏最主要的原因。</p>
               </div>
               <div class="risk-card">
                 <div class="risk-card-header"><span class="risk-card-icon">☀️</span><h4 class="risk-card-title">追求美肌者</h4></div>
@@ -969,3 +924,120 @@
         </div>
       </main>
     </div>
+
+    <!-- Footer Component -->
+    <div id="footer-component"></div>
+
+    <!-- Load Components -->
+    <script src="../assets/js/deus-analytics-component.js"></script>
+    <script src="../assets/js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-footer-component.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Progress Bar
+        function updateProgressBar() {
+          const scrollPosition = window.scrollY;
+          const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollPercentage = (scrollPosition / documentHeight) * 100;
+          document.getElementById("progressBar").style.width = scrollPercentage + "%";
+        }
+        window.addEventListener("scroll", updateProgressBar);
+
+        // TOC Highlighting
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".toc-link");
+        function highlightTOC() {
+          let current = "";
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (window.pageYOffset >= sectionTop) {
+              current = section.getAttribute("id");
+            }
+          });
+          navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+              link.classList.add("active");
+            }
+          });
+        }
+        window.addEventListener("scroll", highlightTOC);
+        highlightTOC();
+
+        // FAQ Toggle
+        document.querySelectorAll(".faq-question").forEach(question => {
+          question.addEventListener("click", () => {
+            question.parentElement.classList.toggle("active");
+          });
+        });
+
+        // Smooth Scroll for TOC Links
+        document.querySelectorAll(".toc-link").forEach(link => {
+          link.addEventListener("click", function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              const headerOffset = document.getElementById('header-component')?.offsetHeight || 80;
+              const elementPosition = targetElement.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+              window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+            }
+          });
+        });
+
+        // Component Initialization
+        if (window.DeusAnalyticsComponent) {
+          new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
+        }
+        const headerContainer = document.getElementById("header-component");
+        if (headerContainer && window.DeusHeaderComponent) {
+          new window.DeusHeaderComponent(headerContainer).setDebug(false).setTheme("default");
+        }
+        const footerContainer = document.getElementById("footer-component");
+        if (footerContainer && window.DeusFooterComponent) {
+          new window.DeusFooterComponent(footerContainer).setDebug(false).setTheme("default");
+        }
+
+        // Chart.js Initialization
+        const ctx = document.getElementById('vitaminCChart');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['19-30歲', '31-50歲', '51歲以上'],
+                    datasets: [{
+                        label: '男性缺乏率 (%)',
+                        data: [35.2, 40.5, 45.8],
+                        backgroundColor: 'rgba(249, 115, 22, 0.6)',
+                        borderColor: 'rgba(249, 115, 22, 1)',
+                        borderWidth: 1
+                    }, {
+                        label: '女性缺乏率 (%)',
+                        data: [38.9, 42.1, 48.3],
+                        backgroundColor: 'rgba(251, 146, 60, 0.6)',
+                        borderColor: 'rgba(251, 146, 60, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'top' },
+                        title: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: { display: true, text: '缺乏率 (%)' }
+                        }
+                    }
+                }
+            });
+        }
+      });
+    </script>
+
+</body>
+</html>

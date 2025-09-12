@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>維生素K完整指南：K2功效才是關鍵！補鈣、補D為何一定要有它？ | 營養百科</title>
+    <meta name="description" content="專業營養師揭示維生素K1與K2的驚人差異！不只是凝血，K2更是引導鈣質進入骨骼、保護心血管的關鍵。了解K2功效、建議劑量與如何選擇。" />
+    <meta name="keywords" content="維生素K, 維生素K2, MK-7, K1, 骨質疏鬆, 鈣化, 維生素D, 納豆, 凝血, 維生素K功效" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
+
+    <!-- JSON-LD for Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://life.maxlist.xyz/post/vitamin-k.html"
+      },
+      "headline": "維生素K完整指南：K2功效才是關鍵！補鈣、補D為何一定要有它？",
+      "description": "多數人只知道維生素K能幫助凝血，卻忽略了K2在骨骼與心血管健康的革命性角色。本文將帶您認識這位鈣質的交通警察，為何它是現代營養學的超級巨星。",
+      "image": "https://life.maxlist.xyz/assets/images/vitamin-k-og.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "url": "https://life.maxlist.xyz/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
+        }
+      },
+      "datePublished": "2025-09-11",
+      "dateModified": "2025-09-11"
+    }
+    </script>
+
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        :root {
+          --primary-color: #0D9488; /* Teal */
+          --primary-color-light: #5EEAD4;
+          --primary-color-dark: #0F766E;
+          --primary-color-bg: #F0FDFA;
+          --primary-color-text: #115E59;
+        }
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+  
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+          line-height: 1.8;
+          color: #2d3748;
+          background: #fdfdfc;
+        }
+  
+        /* Progress Bar */
+        .progress-bar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 0%;
+          height: 4px;
+          background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-color-light) 100%);
+          z-index: 1001;
+          transition: width 0.3s ease;
+        }
+  
+        /* Article Layout */
+        .article-container {
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 100px 20px 60px;
+          display: grid;
+          grid-template-columns: 280px 1fr;
+          gap: 60px;
+          position: relative;
+        }
+  
+        /* Sidebar Table of Contents */
+        .sidebar {
+          position: sticky;
+          top: 100px;
+          height: fit-content;
+          max-height: calc(100vh - 120px);
+          overflow-y: auto;
+        }
+  
+        .toc {
+          background: white;
+          border-radius: 20px;
+          padding: 30px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+  
+        .toc-title {
+          font-size: 1.2em;
+          font-weight: 700;
+          color: #2d3748;
+          margin-bottom: 20px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+  
+        .toc-list {
+          list-style: none;
+        }
+  
+        .toc-list li {
+          margin-bottom: 8px;
+        }
+  
+        .toc-list a {
+          color: #4a5568;
+          text-decoration: none;
+          font-size: 0.95em;
+          display: block;
+          padding: 8px 12px;
+          transition: all 0.3s ease;
+          position: relative;
+          border-radius: 8px;
+          border-left: 3px solid transparent;
+        }
+  
+        .toc-list a.active {
+          color: var(--primary-color);
+          background: var(--primary-color-bg);
+          border-left-color: var(--primary-color);
+          font-weight: 600;
+        }
+  
+        .toc-list a:hover {
+          color: var(--primary-color);
+          background: rgba(13, 148, 136, 0.08);
+          border-left-color: var(--primary-color-light);
+          transform: translateX(2px);
+        }
+        
+        .toc-list a:not(.sub-item) {
+          font-weight: 600;
+          background: rgba(13, 148, 136, 0.05);
+          margin-bottom: 4px;
+        }
+  
+        .toc-list a.sub-item {
+          margin-left: 16px;
+          font-size: 0.9em;
+          color: #718096;
+          background: rgba(113, 128, 150, 0.03);
+          border-left-color: #e2e8f0;
+          position: relative;
+        }
+  
+        .toc-list a.sub-item::before {
+          content: "";
+          position: absolute;
+          left: -12px;
+          top: 50%;
+          width: 8px;
+          height: 1px;
+          background: #d1d5db;
+          transform: translateY(-50%);
+        }
+  
+        .toc-list a.active.sub-item {
+          color: var(--primary-color);
+          background: rgba(13, 148, 136, 0.08);
+          border-left-color: var(--primary-color-light);
+        }
+  
+        .toc-list a.active.sub-item::before {
+          background: var(--primary-color-light);
+        }
+  
+        /* Main Content Area */
+        .article-content {
+          background: white;
+          border-radius: 20px;
+          padding: 50px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+  
+        /* Article Header */
+        .article-header {
+          margin-bottom: 60px;
+          position: relative;
+        }
+  
+        .article-hero {
+          background: linear-gradient(135deg, #CCFBF1 0%, #99F6E4 100%);
+          border-radius: 20px;
+          padding: 60px;
+          margin-bottom: 40px;
+          position: relative;
+          overflow: hidden;
+        }
+  
+        .article-hero::before {
+          content: "🦴";
+          position: absolute;
+          right: -20px;
+          top: -20px;
+          font-size: 150px;
+          opacity: 0.1;
+          transform: rotate(-15deg);
+        }
+        
+        .article-category {
+          display: inline-block;
+          background: white;
+          color: var(--primary-color-dark);
+          padding: 8px 20px;
+          border-radius: 20px;
+          font-size: 0.9em;
+          font-weight: 600;
+          margin-bottom: 20px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+  
+        .article-title {
+          font-size: 2.5em;
+          font-weight: 800;
+          color: #2d3748;
+          line-height: 1.3;
+          margin-bottom: 20px;
+        }
+  
+        .article-subtitle {
+          font-size: 1.3em;
+          color: #4a5568;
+          line-height: 1.6;
+          max-width: 700px;
+          margin-bottom: 30px;
+        }
+  
+        .article-meta {
+          display: flex;
+          gap: 30px;
+          color: #718096;
+          font-size: 0.95em;
+          flex-wrap: wrap;
+        }
+  
+        .article-meta span {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        
+        /* Key Takeaways Box */
+        .takeaways-box {
+          background: #fff;
+          border: 2px solid var(--primary-color-light);
+          border-radius: 20px;
+          padding: 30px;
+          margin: -20px 0 40px 0;
+          box-shadow: 0 8px 25px rgba(13, 148, 136, 0.1);
+        }
+        .takeaways-box h3 {
+          font-size: 1.5em;
+          font-weight: 700;
+          color: var(--primary-color-dark);
+          margin-bottom: 20px;
+          text-align: center;
+        }
+        .takeaways-box ul {
+          list-style: none;
+          padding: 0;
+        }
+        .takeaways-box li {
+          display: flex;
+          align-items: flex-start;
+          gap: 15px;
+          margin-bottom: 15px;
+          color: #374151;
+        }
+        .takeaways-box li::before {
+          content: '✅';
+          font-size: 1.2em;
+          color: var(--primary-color);
+          flex-shrink: 0;
+        }
+  
+        /* Content Typography */
+        .article-body h2 {
+          font-size: 2em;
+          font-weight: 700;
+          color: #2d3748;
+          margin: 50px 0 30px;
+          padding-top: 20px;
+          position: relative;
+        }
+  
+        .article-body h2::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 50px;
+          height: 4px;
+          background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-color-light) 100%);
+          border-radius: 2px;
+        }
+  
+        .article-body h3 {
+          font-size: 1.5em;
+          font-weight: 600;
+          color: #2d3748;
+          margin: 35px 0 20px;
+        }
+        
+        .article-body p {
+          margin-bottom: 20px;
+          color: #4a5568;
+        }
+        
+        .alert {
+          padding: 20px 25px;
+          border-radius: 15px;
+          margin: 30px 0;
+          position: relative;
+          overflow: hidden;
+        }
+  
+        .alert::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 5px;
+        }
+  
+        .alert-tip {
+          background: var(--primary-color-bg);
+          color: var(--primary-color-text);
+        }
+        .alert-danger {
+          background: #FEF2F2;
+          color: #991B1B;
+        }
+  
+        .highlight-nutrient {
+          border-bottom: 2px solid var(--primary-color);
+          padding-bottom: 1px;
+        }
+        
+        .info-cards {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
+          margin: 40px 0;
+        }
+  
+        .info-card {
+          background: white;
+          border-radius: 15px;
+          padding: 30px;
+          text-align: center;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+          transition: all 0.3s ease;
+        }
+        
+        .info-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+  
+        .info-card-icon {
+          font-size: 3em;
+          margin-bottom: 15px;
+          display: block;
+        }
+  
+        .info-card-title {
+          font-size: 1.3em;
+          font-weight: 700;
+          color: #2d3748;
+          margin-bottom: 10px;
+        }
+  
+        .info-card-desc {
+          color: #718096;
+          font-size: 0.95em;
+          line-height: 1.6;
+        }
+        
+        /* Comparison Cards */
+        .comparison-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .comparison-card {
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .comparison-card h4 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .comparison-card.k1 {
+            background: #F0FDF4;
+            border: 2px solid #10B981;
+            color: #065F46;
+        }
+        .comparison-card.k2 {
+            background: #F0F9FF;
+            border: 2px solid #0EA5E9;
+            color: #0369A1;
+        }
+        
+        /* Chart Container */
+        .chart-container {
+          width: 100%;
+          max-width: 600px;
+          margin: 40px auto;
+          padding: 20px;
+          background: #fff;
+          border-radius: 20px;
+          box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+  
+        /* Quick Test */
+        .quick-test {
+          background: var(--primary-color-bg);
+          border-radius: 20px;
+          padding: 40px;
+          margin: 40px 0;
+          text-align: center;
+        }
+  
+        .quick-test h3 {
+          font-size: 1.8em;
+          color: var(--primary-color-text);
+          margin-bottom: 20px;
+        }
+  
+        .test-options {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 15px;
+          margin-top: 30px;
+        }
+  
+        .test-option {
+          background: #f8fafc;
+          border: 2px solid #e2e8f0;
+          border-radius: 12px;
+          padding: 18px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+  
+        .test-option:hover {
+          background: #CCFBF1;
+          border-color: #99F6E4;
+        }
+         .test-option.selected {
+          background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-dark) 100%);
+          border-color: var(--primary-color);
+          color: white;
+        }
+        
+        .data-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 30px 0;
+        }
+        .data-table th, .data-table td {
+          padding: 15px;
+          text-align: left;
+          border-bottom: 1px solid #e2e8f0;
+        }
+        .data-table thead th {
+          background-color: #f8fafc;
+          font-weight: 600;
+          color: #475569;
+          border-bottom: 2px solid var(--primary-color);
+        }
+        .data-table tbody tr:nth-child(even) {
+          background-color: #f8fafc;
+        }
+        .data-table tbody tr:hover {
+          background-color: #f1f5f9;
+        }
+        
+        .faq-section {
+          margin-top: 60px;
+          padding-top: 40px;
+          border-top: 2px solid #e5e7eb;
+        }
+  
+        .faq-item {
+          background: #f9fafb;
+          border-radius: 15px;
+          margin-bottom: 20px;
+        }
+  
+        .faq-question {
+          padding: 20px 25px;
+          font-weight: 600;
+          color: #2d3748;
+          cursor: pointer;
+          position: relative;
+        }
+        
+        .faq-question::after {
+          content: "+";
+          position: absolute;
+          right: 25px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 1.5em;
+          color: var(--primary-color);
+          transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+          transform: rotate(45deg);
+        }
+  
+        .faq-answer {
+          padding: 0 25px;
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+          padding: 0 25px 20px;
+          max-height: 500px;
+        }
+        
+        .related-title {
+          font-size: 2em;
+          font-weight: 700;
+          color: #2d3748;
+          text-align: center;
+          margin-bottom: 40px;
+        }
+  
+        .related-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 30px;
+        }
+  
+        .related-card {
+          background: white;
+          border-radius: 15px;
+          padding: 30px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+          transition: all 0.3s ease;
+          text-decoration: none;
+          color: inherit;
+        }
+  
+        .related-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+  
+        .related-card-tag {
+          display: inline-block;
+          background: var(--primary-color-bg);
+          color: var(--primary-color-text);
+          padding: 5px 15px;
+          border-radius: 15px;
+          font-size: 0.85em;
+          font-weight: 600;
+          margin-bottom: 15px;
+        }
+  
+        .related-card-title {
+          font-size: 1.3em;
+          font-weight: 600;
+          color: #2d3748;
+          margin-bottom: 10px;
+        }
+  
+        .related-card-desc {
+          color: #718096;
+          font-size: 0.95em;
+        }
+        
+        .disclaimer {
+          background: #f9fafb;
+          padding: 60px 0;
+          text-align: center;
+        }
+        .disclaimer-content {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+        .disclaimer h3 {
+          color: #4b5563;
+          margin-bottom: 15px;
+          font-size: 1.5em;
+        }
+        .disclaimer p {
+          color: #6b7280;
+          font-size: 0.95em;
+        }
+  
+        @media (max-width: 1024px) {
+          .article-container {
+            grid-template-columns: 1fr;
+            gap: 0;
+          }
+          .sidebar {
+            display: none;
+          }
+        }
+         @media (max-width: 768px) {
+          .comparison-container {
+            grid-template-columns: 1fr;
+          }
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Header Component -->
+    <div id="header-component"></div>
+
+    <!-- Article Container -->
+    <div class="article-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="toc">
+          <h3 class="toc-title">
+            <span>目錄</span>
+          </h3>
+          <ul class="toc-list">
+            <li><a href="#takeaways" class="toc-link">本文重點速覽</a></li>
+            <li><a href="#expert-secret" class="toc-link">專家的秘密：K1 vs K2</a></li>
+            <li><a href="#k2-functions" class="toc-link">K2：鈣質的交通警察</a></li>
+            <li><a href="#d3-k2-synergy" class="toc-link">補D為何必備K2？</a></li>
+            <li><a href="#who-needs-it" class="toc-link">哪些人更需要K2？</a></li>
+            <li><a href="#how-much" class="toc-link sub-item">我需要多少維生素K？</a></li>
+            <li><a href="#supplements" class="toc-link">維生素K補充品怎麼挑？</a></li>
+            <li><a href="#natural-sources" class="toc-link sub-item">天然食物中的K1與K2</a></li>
+            <li><a href="#faq" class="toc-link">其他相關問題</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="article-content">
+        <!-- Article Header -->
+        <header class="article-header">
+          <div class="article-hero">
+            <span class="article-category">維生素指南</span>
+            <h1 class="article-title">
+              被遺忘的超級營養素：維生素K2，不只是凝血，更是骨骼與心血管的守護神
+            </h1>
+            <p class="article-subtitle">
+              你可能知道補鈣、補D對骨骼很重要，但你補的鈣，是否跑錯地方了？如果少了維生素K2這位「交通警察」，答案可能讓你驚訝！本文將揭示K2的驚人功效，以及為何它是現代營養學中最被低估的明星。
+            </p>
+            <div class="article-meta">
+              <span>✍️ 專業營養師審核</span>
+              <span>📅 2025 年 9 月 11 日更新</span>
+              <span>⏱️ 閱讀時間：11 分鐘</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Article Body -->
+        <article class="article-body">
+
+          <section id="takeaways">
+            <div class="takeaways-box">
+              <h3>本文重點速覽</h3>
+              <ul>
+                <li><strong>K1 vs. K2 功能大不同：</strong>K1主要負責「凝血」，來源是深綠色蔬菜；K2才是負責「鈣質導航」的關鍵，能將鈣帶入骨骼、清出血管，來源是發酵與動物性食物。</li>
+                <li><strong>補D又補鈣，K2是必備搭檔：</strong>維生素D負責增加鈣的吸收，但K2才是確保這些鈣能被「正確使用」的交通警察。單獨補充高劑量D3而缺乏K2，可能增加血管鈣化風險。</li>
+                <li><strong>優先選擇 K2 (MK-7)：</strong>挑選補充品時，請認明「K2」，特別是生物利用率最高的「MK-7」形式，才是對骨骼與心血管保健最有效率的選擇。</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="expert-secret">
+            <h2>專家的秘密：你聽過的維生素K，可能不是你需要的那個</h2>
+            <p>提到維生素K，99%的人會立刻想到「幫助血液凝固」。這個答案沒有錯，但只說對了一半。事實上，維生素K是一個家族，主要由兩位成員組成，而它們的功能有著天壤之別。</p>
+            
+            <div class="comparison-container">
+                <div class="comparison-card k1">
+                    <h4>🥬 維生素 K1 (Phylloquinone)</h4>
+                    <p style="font-size: 4em; margin: 20px 0;">🩸</p>
+                    <p><strong>角色：凝血專家。</strong> 主要存在於深綠色葉菜中，負責活化肝臟中的凝血蛋白。當你受傷時，K1確保你的血液能正常凝固，防止失血過多。它的功能非常專一，也相對單純。</p>
+                </div>
+                <div class="comparison-card k2">
+                    <h4>🧀 維生素 K2 (Menaquinone)</h4>
+                    <p style="font-size: 4em; margin: 20px 0;">🚦</p>
+                    <p><strong>角色：鈣質的交通警察。</strong> 主要由腸道細菌製造或存在於發酵食品、動物性食品中。它的任務是<strong class="highlight-nutrient">指揮鈣質去到該去的地方（骨骼和牙齒）</strong>，並<strong class="highlight-nutrient">防止鈣質跑到不該去的地方（血管和軟組織）</strong>。</p>
+                </div>
+            </div>
+
+            <div class="alert alert-tip">
+              <strong>💡 為什麼這個區別至關重要？</strong>
+              <p>現代飲食中，我們很容易從蔬菜中攝取足夠的K1來滿足凝血需求，因此K1缺乏症非常罕見。然而，<strong class="highlight-nutrient">K2的攝取卻普遍嚴重不足</strong>，這導致我們的身體雖然有足夠的鈣，卻沒有一位稱職的「交通警察」來指揮它們，進而引發了許多現代健康問題，例如骨質疏鬆和動脈鈣化。接下來的內容，我們將聚焦在這位被遺忘的超級巨星——維生素K2。</p>
+            </div>
+          </section>
+
+          <section id="k2-functions">
+            <h2>K2：鈣質的交通警察</h2>
+            <p>維生素K2的核心工作，是透過「活化」兩種關鍵蛋白質，來精準調控鈣質在體內的流向。</p>
+            <div class="info-cards" style="grid-template-columns: repeat(2, 1fr); gap: 20px;">
+              <div class="info-card">
+                <span class="info-card-icon">🦴</span>
+                <h4 class="info-card-title">骨鈣素 (Osteocalcin)</h4>
+                <p class="info-card-desc">這是由骨骼細胞製造的蛋白質，被K2活化後，它就像一隻<strong class="highlight-nutrient">強力膠</strong>，能將血液中的鈣質牢牢地「黏」到骨骼基質上，促進骨質礦化，增加骨密度。沒有K2，骨鈣素就處於「未開機」狀態，無法有效工作。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">❤️</span>
+                <h4 class="info-card-title">基質Gla蛋白 (MGP)</h4>
+                <p class="info-card-desc">這是一種存在於血管壁的蛋白質，被K2活化後，它會變成一個強效的<strong class="highlight-nutrient">鈣質清道夫</strong>，主動清除沉積在血管壁上的鈣，防止血管鈣化、硬化，維持血管的彈性與健康。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="d3-k2-synergy">
+            <h2>補D為何必備K2？超級搭檔的協同作用</h2>
+            <p>近年來，補充維生素D3已成為全民健康運動，但許多人忽略了，<strong class="highlight-nutrient">單獨補充高劑量的維生素D而沒有足夠的K2，可能存在潛在風險</strong>。這兩者就像一支球隊的明星前鋒和王牌後衛，缺一不可。</p>
+            
+            <div class="info-cards" style="grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: center; text-align: center;">
+              <div class="info-card">
+                  <span class="info-card-icon">☀️</span>
+                  <h4 class="info-card-title">維生素D3 的任務</h4>
+                  <p class="info-card-desc">提高腸道對鈣質的吸收率，大幅增加血液中的鈣濃度。</p>
+              </div>
+              <div style="font-size: 3em; color: var(--primary-color);">+</div>
+              <div class="info-card">
+                  <span class="info-card-icon">🚦</span>
+                  <h4 class="info-card-title">維生素K2 的任務</h4>
+                  <p class="info-card-desc">指揮血液中增加的鈣質，將其精準地運送到骨骼中儲存。</p>
+              </div>
+            </div>
+
+            <div class="alert alert-danger">
+              <strong>💡 缺乏K2的潛在風險：</strong>
+              <p style="margin-bottom:0;">當你補充了大量的維生素D，血液中的鈣濃度會顯著升高。如果此時體內缺乏足夠的K2來擔任交通警察，這些無處可去的鈣，就可能沉積在不該去的地方，例如<strong class="highlight-nutrient" style="border-bottom-color: #EF4444;">動脈、腎臟或關節</strong>，反而增加了血管鈣化和腎結石的風險。因此，<strong class="highlight-nutrient" style="border-bottom-color: #EF4444;">補充維生素D3時，務必確保同時攝取足夠的維生素K2</strong>，這是一個負責任且更安全的補充策略。</p>
+            </div>
+          </section>
+
+          <section id="who-needs-it">
+            <h2>哪些人更需要維生素K2？</h2>
+            <p>由於現代飲食習慣的改變，K2缺乏的情況比想像中更為普遍。以下族群應特別注意K2的補充：</p>
+            <div class="quick-test">
+              <h3>維生素K2潛在需求檢測</h3>
+              <p>以下情況，符合你的生活習慣嗎？</p>
+              <div class="test-options">
+                  <label class="test-option"><input type="checkbox"><span>正在補充維生素D3或鈣片</span></label>
+                  <label class="test-option"><input type="checkbox"><span>已停經的婦女</span></label>
+                  <label class="test-option"><input type="checkbox"><span>不喜歡或很少吃發酵食品（如納豆、起司）</span></label>
+                  <label class="test-option"><input type="checkbox"><span>有骨質疏鬆或心血管疾病的家族史</span></label>
+                  <label class="test-option"><input type="checkbox"><span>年過50歲</span></label>
+                  <label class="test-option"><input type="checkbox"><span>長期使用抗生素</span></label>
+              </div>
+              <p style="margin-top: 20px; font-weight: 600; color: var(--primary-color-text);">勾選2項以上？你可能就是需要優先補充維生素K2的族群！</p>
+            </div>
+          </section>
+
+          <section id="how-much">
+            <h2>我需要多少維生素K？</h2>
+            <p>目前官方對於維生素K的建議攝取量，主要還是基於K1的凝血功能所制定，尚未針對K2的骨骼與心血管益處提供明確的建議值。這是因為K2的相關研究相對較新，全球衛生組織需要更長的時間來累積證據並形成共識。不過，根據現有臨床研究，我們可以得出一個相當可靠的補充參考。</p>
+            
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>項目</th>
+                  <th>每日建議攝取量 (微克, µg)</th>
+                  <th>主要目的</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>維生素K1 (官方建議)</strong></td><td>男性 120 µg / 女性 90 µg</td><td>維持正常凝血功能</td></tr>
+                <tr><td><strong>維生素K2 (研究建議)</strong></td><td><strong class="highlight-nutrient">100 - 200 µg</strong></td><td>支持骨骼與心血管健康</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="supplements">
+            <h2>維生素K補充品怎麼挑？</h2>
+            <p>挑選維生素K補充品時，關鍵在於分清楚你的目標是什麼，並選擇正確的形式。</p>
+            
+            <div class="quick-test" style="background: #ECFDF5; text-align: left; padding: 40px;">
+              <h3 style="color: #065F46; text-align: center; margin-bottom: 25px;">一張圖搞懂你該怎麼選</h3>
+              <div class="selection-guide" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                <div class="guide-card" style="background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); border-top: 5px solid #5EEAD4; flex: 1; min-width: 250px;">
+                  <h4 class="info-card-title" style="font-size: 1.2em;">👉 如果你的目標是<strong class="highlight-nutrient">骨骼與心血管</strong></h4>
+                  <p class="info-card-desc" style="color: #4a5568;">請<strong class="highlight-nutrient">務必選擇「維生素K2」</strong>，特別是<strong class="highlight-nutrient">「MK-7」</strong>形式。MK-7在體內的半衰期最長，生物利用率最高，是目前公認最有效率的K2形式。</p>
+                </div>
+                <div class="guide-card" style="background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); border-top: 5px solid #2DD4BF; flex: 1; min-width: 250px;">
+                  <h4 class="info-card-title" style="font-size: 1.2em;">👉 如果你正在<strong class="highlight-nutrient">補充維生素D3</strong></h4>
+                  <p class="info-card-desc" style="color: #4a5568;">尋找<strong class="highlight-nutrient">「D3+K2」的複方產品</strong>是最佳策略。這能確保你增加的血鈣能被有效利用，達到1+1>2的協同效果，同時避免潛在風險。</p>
+                </div>
+                <div class="guide-card" style="background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); border-top: 5px solid #0D9488; flex: 1; min-width: 250px;">
+                  <h4 class="info-card-title" style="font-size: 1.2em;">👉 如果你只是想<strong class="highlight-nutrient">維持基本凝血</strong>功能</h4>
+                  <p class="info-card-desc" style="color: #4a5568;">你可能<strong class="highlight-nutrient">不需要額外補充</strong>。日常飲食中的深綠色蔬菜通常就能提供足夠的維生素K1。</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="natural-sources">
+            <h2>天然食物中的K1與K2</h2>
+            <p>維生素K1和K2的食物來源截然不同，這也是造成現代人普遍缺乏K2的主要原因。下方的圖表清楚顯示，即使在均衡飲食下，我們攝取的K1遠多於K2，但真正對骨骼與心血管有益的K2卻遠未達到健康建議量。</p>
+            <div class="info-cards">
+              <div class="info-card">
+                <span class="info-card-icon">🥬</span>
+                <h4 class="info-card-title">K1 的主要來源</h4>
+                <p class="info-card-desc">羽衣甘藍、菠菜、青花菜、萵苣等<strong class="highlight-nutrient">深綠色葉菜</strong>。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🧀</span>
+                <h4 class="info-card-title">K2 的主要來源</h4>
+                <p class="info-card-desc"><strong class="highlight-nutrient">納豆</strong>是含量冠軍，其次是硬質起司、蛋黃、牛肝、雞肉等<strong class="highlight-nutrient">發酵食品與動物性食品</strong>。</p>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="vitaminKComparisonChart"></canvas>
+            </div>
+          </section>
+
+          <section id="faq" class="faq-section">
+            <h2>其他相關問題</h2>
+            <div class="faq-item">
+              <div class="faq-question">Q1: 我正在服用抗凝血劑（如Warfarin/華法林），可以補充維生素K嗎？</div>
+              <div class="faq-answer">
+                <p><strong>A: 絕對不行！請務必諮詢您的醫師。</strong></p>
+                <p>傳統的抗凝血劑（如Warfarin）的作用機制，就是透過<strong class="highlight-nutrient">抑制維生素K的活性</strong>來達到抗凝血的效果。如果你在服藥期間額外補充維生素K，會直接抵銷藥效，可能導致血栓等嚴重後果。因此，<strong class="highlight-nutrient">正在服用這類藥物的患者，嚴禁自行補充任何形式的維生素K</strong>，並且應保持日常飲食中綠色蔬菜攝取量的穩定。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q2: K2的MK-4和MK-7有什麼不同？該選哪一種？</div>
+              <div class="faq-answer">
+                <p><strong>A: 主要差異在於「半衰期」，建議優先選擇MK-7。</strong></p>
+                <ul>
+                  <li><strong>MK-4：</strong>半衰期很短，只有幾個小時，需要一天多次補充才能維持血液中的穩定濃度。</li>
+                  <li><strong>MK-7：</strong>半衰期很長，可達72小時，每天補充一次即可在體內維持高效濃度。</li>
+                </ul>
+                <p>因此，從效率和方便性的角度來看，<strong class="highlight-nutrient">MK-7是目前公認更優質的K2補充形式。</strong></p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q3: 為什麼市面上很多綜合維他命裡都沒有維生素K？</div>
+              <div class="faq-answer">
+                <p><strong>A: 主要就是為了避免與抗凝血藥物產生交互作用。</strong> 為了讓產品適用於最廣泛的人群，並避免潛在的用藥風險，許多綜合維他命的製造商會選擇不添加維生素K。這也凸顯了如果你有特定需求（如骨骼、心血管保健），需要尋找專門的D3+K2產品，而非依賴一般的綜合維他命。</p>
+              </div>
+            </div>
+          </section>
+        </article>
+        
+        <section id="related-articles" style="margin-top: 60px;">
+          <h2 class="related-title" id="related-title">相關營養素</h2>
+          <div class="related-grid">
+            <a href="./vitamin-d.html" class="related-card">
+              <div class="related-card-content">
+                <span class="related-card-tag" style="background-color: #FEFCE8; color: #A16207;">維生素</span>
+                <h3 class="related-card-title">維生素 D</h3>
+                <p class="related-card-desc">
+                  負責增加血鈣濃度，是K2的最佳拍檔，共同確保鈣質能被有效利用。
+                </p>
+              </div>
+            </a>
+            <a href="./calcium.html" class="related-card">
+              <div class="related-card-content">
+                <span class="related-card-tag" style="background-color: #EFF6FF; color: #1E40AF;">礦物質</span>
+                <h3 class="related-card-title">鈣</h3>
+                <p class="related-card-desc">
+                  骨骼的主要建材，需要K2的引導才能被精準地運用到骨骼中。
+                </p>
+              </div>
+            </a>
+             <a href="./magnesium.html" class="related-card">
+              <div class="related-card-content">
+                <span class="related-card-tag" style="background-color: #FDF2F8; color: #9D174D;">礦物質</span>
+                <h3 class="related-card-title">鎂</h3>
+                <p class="related-card-desc">
+                  參與體內數百種酵素反應，包括維生素D的活化，是維持骨骼健康不可或缺的輔助角色。
+                </p>
+              </div>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Disclaimer Section -->
+    <section class="disclaimer">
+      <div class="disclaimer-content">
+        <h3>免責聲明</h3>
+        <p>
+          本資訊僅供教育目的，不能取代專業醫療建議。開始任何營養補充計劃前，請諮詢醫療專業人員。個人需求可能因健康狀況、藥物使用和生活方式而有所不同。
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer Component Container -->
+    <div id="footer-component"></div>
+
+    <!-- Load Components -->
+    <script src="../assets/js/deus-analytics-component.js"></script>
+    <script src="../assets/js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-footer-component.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Progress Bar
+        window.addEventListener("scroll", () => {
+          const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+          const progressBar = document.getElementById("progressBar");
+          if(progressBar) progressBar.style.width = scrollPercentage + "%";
+        });
+  
+        // TOC Highlighting
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".toc-link");
+        window.addEventListener("scroll", () => {
+          let current = "";
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (pageYOffset >= sectionTop) {
+              current = section.getAttribute("id");
+            }
+          });
+          navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+              link.classList.add("active");
+            }
+          });
+        });
+  
+        // FAQ Toggle
+        document.querySelectorAll(".faq-question").forEach(question => {
+          question.addEventListener("click", () => {
+            const item = question.parentElement;
+            item.classList.toggle("active");
+            // Close other FAQ items
+            document.querySelectorAll(".faq-item").forEach((otherItem) => {
+              if (otherItem !== item) {
+                otherItem.classList.remove("active");
+              }
+            });
+          });
+        });
+        
+        // Smooth Scroll for TOC Links
+        document.querySelectorAll(".toc-link").forEach(link => {
+          link.addEventListener("click", function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              const headerOffset = document.getElementById('header-component')?.offsetHeight || 80;
+              const elementPosition = targetElement.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+              });
+            }
+          });
+        });
+  
+        // Interactive test options
+        document.querySelectorAll('.quick-test .test-option').forEach(label => {
+            const checkbox = label.querySelector('input[type="checkbox"]');
+            if(checkbox){
+                label.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    checkbox.checked = !checkbox.checked;
+                    label.classList.toggle('selected', checkbox.checked);
+                });
+            }
+        });
+  
+        // Initialize Components
+        if (window.DeusAnalyticsComponent) {
+          new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
+        }
+        const headerContainer = document.getElementById("header-component");
+        if (headerContainer && window.DeusHeaderComponent) {
+          new window.DeusHeaderComponent(headerContainer).setDebug(false);
+        }
+        const footerContainer = document.getElementById("footer-component");
+        if (footerContainer && window.DeusFooterComponent) {
+          new window.DeusFooterComponent(footerContainer).setDebug(false);
+        }
+  
+        // Chart.js Initialization
+        if (typeof Chart !== 'undefined') {
+          const ctx = document.getElementById('vitaminKComparisonChart')?.getContext('2d');
+          if(ctx) {
+            new Chart(ctx, {
+              type: 'bar',
+              data: {
+                labels: ['維生素 K1', '維生素 K2'],
+                datasets: [{
+                  label: '每日平均攝取量 (µg)',
+                  data: [250, 35], // 模擬數據：K1攝取充足，K2嚴重不足
+                  backgroundColor: '#0D9488', // Primary color
+                  borderColor: '#0F766E',
+                  borderWidth: 1,
+                  borderRadius: 5,
+                }, {
+                  label: '健康建議攝取量 (µg)',
+                  data: [120, 100], // K1官方建議, K2研究建議
+                  backgroundColor: '#A7F3D0', // Lighter shade
+                  borderColor: '#5EEAD4',
+                  borderWidth: 1,
+                  borderRadius: 5,
+                }]
+              },
+              options: {
+                responsive: true,
+                plugins: {
+                  legend: {
+                    position: 'top',
+                  },
+                  title: {
+                    display: true,
+                    text: '維生素K1與K2：建議攝取 vs. 實際攝取量巨大落差',
+                    font: {
+                      size: 16,
+                      weight: 'bold'
+                    },
+                    padding: {
+                      top: 10,
+                      bottom: 20
+                    }
+                  },
+                  tooltip: {
+                    callbacks: {
+                      label: function(context) {
+                        let label = context.dataset.label || '';
+                        if (label) {
+                          label += ': ';
+                        }
+                        if (context.parsed.y !== null) {
+                          label += context.parsed.y + ' µg';
+                        }
+                        return label;
+                      }
+                    }
+                  }
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    title: {
+                      display: true,
+                      text: '微克 (µg)'
+                    }
+                  }
+                }
+              },
+            });
+          }
+        }
+      });
+    </script>
+</body>
+</html>
