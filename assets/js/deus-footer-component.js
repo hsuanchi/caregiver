@@ -24,7 +24,8 @@
         email: "contact@nutrition-wiki.com",
         phone: "0800-123-456",
         socialLinks: {
-          facebook: "#",
+          facebook: "https://www.facebook.com/profile.php?id=61580668362044",
+          facebook: "https://www.facebook.com/profile.php?id=61580668362044/",
           instagram: "#",
           youtube: "#",
         },
@@ -286,13 +287,13 @@
                         <div class="footer-section">
                             <h3>關於我們</h3>
                             <div class="social-links">
-                                <a href="${this._config.socialLinks.facebook}" class="social-link" aria-label="Facebook">
+                                <a href="${this._config.socialLinks.facebook}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                                     <span>f</span>
                                 </a>
-                                <a href="${this._config.socialLinks.instagram}" class="social-link" aria-label="Instagram">
+                                <a href="${this._config.socialLinks.instagram}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                                     <span>IG</span>
                                 </a>
-                                <a href="${this._config.socialLinks.youtube}" class="social-link" aria-label="YouTube">
+                                <a href="${this._config.socialLinks.youtube}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                                     <span>▶</span>
                                 </a>
                             </div>
