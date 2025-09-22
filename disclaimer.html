@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>免責聲明 | Caregiver 營養百科</title>
+    <meta name="description" content="Caregiver 營養百科網站的官方免責聲明。本站所有資訊僅供參考，不能取代專業醫療建議。" />
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="./favicon.svg">
+
+    <style>
+      body { font-family: sans-serif; line-height: 1.8; color: #333; background-color: #f8f9fa; }
+      main { max-width: 800px; margin: 2rem auto; padding: 2rem; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+      h1, h2 { color: #2c3e50; border-bottom: 2px solid #dee2e6; padding-bottom: 0.5rem; }
+      h1 { font-size: 2.5rem; text-align: center; border-bottom: none; margin-bottom: 1.5rem; }
+      h2 { font-size: 1.6rem; margin-top: 2.5rem; }
+      p, li { color: #495057; }
+      ul { padding-left: 20px; }
+      strong { color: #c0392b; }
+      .alert {
+        padding: 1.5rem;
+        margin: 2rem 0;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        text-align: center;
+      }
+      .alert-doctor {
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        color: #721c24;
+      }
+      .alert-doctor h2 {
+        border-bottom: none;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Component Container -->
+    <div id="header-component"></div>
+
+    <main>
+      <h1>免責聲明</h1>
+      <p>最後更新日期：2025年9月22日</p>
+
+      <div class="alert alert-doctor">
+        <h2>⚠️ 重要提醒：請務必諮詢專業醫師</h2>
+        <p>本網站（Caregiver 營養百科）提供的所有資訊，包括但不限於文字、圖表、圖片及其他任何形式的資料，<strong>其目的僅為提供一般性的健康資訊與知識分享，絕不能取代專業醫師、藥師或其他合格醫療人員的診斷、建議或治療。</strong></p>
+        <p>若您有任何醫療狀況或健康問題，請務必立即尋求專業醫療協助。<strong>切勿因為閱讀本網站的任何內容，而延誤就醫或忽視專業醫療建議。</strong></r>
+      </div>
+
+      <h2>一、資訊僅供參考</h2>
+      <p>本網站所有內容均基於公開研究、學術文獻及作者的知識經驗整理而成，我們力求資訊的準確性與即時性，但無法對其完整性、精確度或適用性做出任何明示或暗示的保證。健康與營養科學領域的研究不斷進展，本站內容可能無法反映最新的科學發現。</p>
+
+      <h2>二、不構成醫療建議</h2>
+      <p>本網站的任何內容均不應被視為醫療建議。關於個人健康狀況、飲食計畫、營養補充品的使用，您必須諮詢具備合格執照的醫療專業人員，並根據您的個人情況進行評估。</p>
+
+      <h2>三、不承擔任何責任</h2>
+      <p>對於任何讀者因使用或依賴本網站資訊而直接或間接導致的任何形式的損失、損害或傷害（無論是身體、心理或財務上的），本網站及其所有者、作者和編輯均不承擔任何法律責任。您將自行承擔使用本網站資訊的所有風險。</p>
+
+      <h2>四、外部連結</h2>
+      <p>本網站可能包含連向第三方網站的連結，這些連結僅為方便讀者而提供。我們無法控制這些第三方網站的內容，亦不對其內容的準確性、合法性或安全性負責。點擊任何外部連結，代表您將自行承擔一切風險。</p>
+
+      <h2>五、內容變更權利</h2>
+      <p>我們保留隨時修改、新增或刪除本網站任何內容及本免責聲明的權利，恕不另行通知。</p>
+
+      <p><strong>當您開始使用本網站時，即表示您已閱讀、理解並完全同意本免責聲明的所有條款。如果您不同意，請立即停止使用本網站。</strong></p>
+
+    </main>
+
+    <!-- Footer Component Container -->
+    <div id="footer-component"></div>
+
+    <!-- Load Components -->
+    <script src="./assets/js/deus-analytics-component.js"></script>
+    <script src="./assets/js/deus-header-component.js"></script>
+    <script src="./assets/js/deus-footer-component.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
+        if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
+        if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+      });
+    </script>
+  </body>
+</html>

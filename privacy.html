@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>隱私權政策 | Caregiver 營養百科</title>
+    <meta name="description" content="Caregiver 營養百科網站的官方隱私權政策，說明我們如何收集、使用和保護您的資訊。" />
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="./favicon.svg">
+
+    <style>
+      body { font-family: sans-serif; line-height: 1.8; color: #333; background-color: #f8f9fa; }
+      main { max-width: 800px; margin: 2rem auto; padding: 2rem; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+      h1, h2 { color: #2c3e50; border-bottom: 2px solid #dee2e6; padding-bottom: 0.5rem; }
+      h1 { font-size: 2.5rem; text-align: center; border-bottom: none; margin-bottom: 1.5rem; }
+      h2 { font-size: 1.6rem; margin-top: 2.5rem; }
+      p, li { color: #495057; }
+      ul { padding-left: 20px; }
+      code { background-color: #e9ecef; padding: 2px 6px; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <!-- Header Component Container -->
+    <div id="header-component"></div>
+
+    <main>
+      <h1>隱私權政策</h1>
+      <p>最後更新日期：2025年9月22日</p>
+
+      <p>歡迎您造訪 Caregiver 營養百科（以下簡稱「本網站」）。我們非常重視您的隱私權，並致力於保護您的個人資訊。本隱私權政策旨在說明我們如何收集、使用、保護及處理您的資訊。</p>
+
+      <h2>一、資訊收集的類型</h2>
+      <p>當您瀏覽本網站時，我們可能會收集以下類型的資訊：</p>
+      <ul>
+        <li><strong>非個人識別資訊：</strong>為了改善網站內容與使用者體驗，我們會透過第三方分析工具（如 Google Analytics）收集匿名的瀏覽數據。這些數據包括您所瀏覽的頁面、停留時間、瀏覽器類型、作業系統、引薦來源網址等。這些資訊無法用於識別您的個人身分。</li>
+        <li><strong>您主動提供的資訊：</strong>如果您透過電子郵件或聯絡表單與我們聯繫，我們將會收集您所提供的資訊（如姓名、電子郵件地址），以便回覆您的詢問。</li>
+      </ul>
+
+      <h2>二、Cookie 的使用</h2>
+      <p>本網站使用 Cookie 技術。Cookie 是儲存在您電腦中的小型文字檔案，用於：</p>
+      <ul>
+        <li>確保網站基本功能的正常運作。</li>
+        <li>協助我們的前述分析工具收集匿名的流量數據，以了解訪客的互動模式。</li>
+      </ul>
+      <p>您可以隨時透過您的瀏覽器設定，來管理、限制或刪除 Cookie。但請注意，若停用 Cookie，可能會影響本網站部分功能的正常使用。</p>
+
+      <h2>三、資訊的使用與分享</h2>
+      <p>我們所收集的資訊將僅用於以下目的：</p>
+      <ul>
+        <li>網站營運、維護及內容優化。</li>
+        <li>分析網站流量與使用者行為，以改善我們的服務。</li>
+        <li>回覆您的提問或請求。</li>
+      </ul>
+      <p>除非獲得您的明確同意或基於法律要求，我們絕不會將您的個人資訊出售、交換或以任何形式轉讓給任何第三方。</p>
+
+      <h2>四、第三方服務</h2>
+      <p>本網站使用第三方服務（如 Google Analytics）來協助分析。這些第三方服務提供商有其自身的隱私權政策，建議您亦可查閱他們的政策以了解更多資訊。</p>
+
+      <h2>五、資訊安全</h2>
+      <p>我們採取合理的技術及管理措施來保護您的資訊安全。然而，沒有任何網路傳輸或電子儲存方式是 100% 安全的，因此我們無法保證資訊的絕對安全。</p>
+
+      <h2>六、隱私權政策的變更</h2>
+      <p>我們可能會不時修訂本隱私權政策。任何變更都將公布於此頁面，並更新頁首的「最後更新日期」。我們鼓勵您定期查看本頁面，以了解最新的隱私權政策。</p>
+
+      <h2>七、聯絡我們</h2>
+      <p>如果您對本隱私權政策有任何疑問，歡迎透過電子郵件與我們聯繫：<code>contact@nutrition-wiki.com</code>。</p>
+
+    </main>
+
+    <!-- Footer Component Container -->
+    <div id="footer-component"></div>
+
+    <!-- Load Components -->
+    <script src="./assets/js/deus-analytics-component.js"></script>
+    <script src="./assets/js/deus-header-component.js"></script>
+    <script src="./assets/js/deus-footer-component.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
+        if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
+        if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+      });
+    </script>
+  </body>
+</html>

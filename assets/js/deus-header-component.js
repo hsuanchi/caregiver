@@ -18,12 +18,10 @@
         debug: false,
         theme: "default",
         logo: "營養百科",
-        logoUrl: "/",
+        logoUrl: "/index.html",
         showMobileMenu: false,
         navLinks: [
-          //   { text: "專屬優惠", href: "/#function" },
-          { text: "營養素", href: "/#nutrients" },
-          { text: "工具", href: "/#tools" },
+          { text: "營養素", href: "/post/archive.html" },
         ],
         actionButtons: {
           login: { text: "登入", href: "#login", show: true },

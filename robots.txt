@@ -3,3 +3,5 @@
 User-agent: *
 Allow: /
 Disallow: /tests/
+
+Sitemap: https://life.maxlist.xyz/sitemap.xml

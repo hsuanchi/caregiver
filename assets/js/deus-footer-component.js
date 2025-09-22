@@ -19,13 +19,12 @@
         theme: "default",
         companyName: "營養百科",
         companyDescription:
-          "專業營養師團隊打造的營養素百科，提供最權威、最易懂的營養素資訊",
+          "專業營養團隊打造的營養素百科，提供專業、易懂的健康資訊",
         copyright: "© 2025 營養百科 版權所有",
         email: "contact@nutrition-wiki.com",
         phone: "0800-123-456",
         socialLinks: {
-          facebook: "https://www.facebook.com/profile.php?id=61580668362044",
-          facebook: "https://www.facebook.com/profile.php?id=61580668362044/",
+          facebook: "https://www.facebook.com/people/%E7%87%9F%E9%A4%8A%E7%99%BE%E7%A7%91/61580668362044/",
           instagram: "#",
           youtube: "#",
         },
@@ -269,6 +268,9 @@
                             <ul class="footer-links">
                                 <li><a href="/post/fish-oil.html">魚油</a></li>
                                 <li><a href="/post/probiotics.html">益生菌</a></li>
+                                <li><a href="/post/vitamin-c.html">維生素C</a></li>
+                                <li><a href="/post/calcium.html">鈣</a></li>
+                                <li><a href="/post/zinc.html">鋅</a></li>
                             </ul>
                         </div>
 
@@ -276,18 +278,23 @@
                         <div class="footer-section">
                             <h3>資源中心</h3>
                             <ul class="footer-links">
-                            <li><a href="/post/archive.html">文章彙整</a></li>
-                            <li><a href="/#experts">營養知識</a></li>
-                            <li><a href="/#tools">健康工具</a></li>
-                                <li><a href="/#faq">常見問題</a></li>
+                                <li><a href="/post/archive.html">文章彙整</a></li>
+                                <li><a href="/about.html">關於我們</a></li>
+                                <li><a href="/post/official-health-sites.html">官方資料</a></li>
                             </ul>
                         </div>
 
                         <!-- Contact -->
                         <div class="footer-section">
-                            <h3>關於我們</h3>
+                            <h3><a href="/about.html" style="color: inherit; text-decoration: none;">關於我們</a></h3>
+                            <div class="contact-info" style="margin-bottom: 20px;">
+                                <div class="contact-item">
+                                    <span class="contact-icon">✉️</span>
+                                    <a href="mailto:${this._config.email}" style="color: #a0aec0; text-decoration: none;">${this._config.email}</a>
+                                </div>
+                            </div>
                             <div class="social-links">
-                                <a href="${this._config.socialLinks.facebook}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                <a href="${this._config.socialLinks.facebook}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook" id="facebook-link">
                                     <span>f</span>
                                 </a>
                                 <a href="${this._config.socialLinks.instagram}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -304,9 +311,9 @@
                     <div class="footer-bottom">
                         <div class="copyright">${this._config.copyright}</div>
                         <ul class="footer-bottom-links">
-                            <li><a href="#privacy">隱私權政策</a></li>
-                            <li><a href="#terms">服務條款</a></li>
-                            <li><a href="#disclaimer">免責聲明</a></li>
+                            <li><a href="/privacy.html">隱私權政策</a></li>
+                            <li><a href="#">服務條款</a></li>
+                            <li><a href="/disclaimer.html">免責聲明</a></li>
                         </ul>
                     </div>
 

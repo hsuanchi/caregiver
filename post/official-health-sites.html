@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>推薦的國際官方營養健康網站 | 營養百科</title>
+    <meta name="description" content="探索由世界各國官方機構提供的權威營養與健康資訊網站，例如日本厚生勞動省、美國國家衛生院 (NIH) 等，獲取最可靠的健康知識。" />
+    <meta name="keywords" content="官方營養網站, 健康資訊, 日本厚生勞動省, 美國NIH, ODS, Nutrition.gov, 權威健康網站, PubMed, Cochrane Library, The Lancet, NEJM" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
+
+    <!-- JSON-LD for Structured Data (SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://life.maxlist.xyz/post/official-health-sites.html"
+      },
+      "headline": "想找最權威的營養資訊？盤點全球官方健康網站與專業期刊資料庫",
+      "description": "探索由世界各國官方機構提供的權威營養與健康資訊網站，以及頂尖的專業研究期刊資料庫，獲取最可靠的健康知識。",
+      "image": "https://life.maxlist.xyz/assets/images/homepage_banner.jpeg",
+      "author": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "url": "https://life.maxlist.xyz/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://life.maxlist.xyz/Image_logo_facebook.png"
+        }
+      },
+      "datePublished": "2025-09-22",
+      "dateModified": "2025-09-22"
+    }
+    </script>
+
+    <style>
+      body { font-family: sans-serif; line-height: 1.6; color: #333; background: #f7fafc; }
+      .page-container {
+        max-width: 1200px;
+        margin: 120px auto 2rem;
+        padding: 0 1rem;
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+          "page-header page-header"
+          "sidebar main-content";
+        gap: 2rem 60px;
+      }
+      .page-header {
+        grid-area: page-header;
+        text-align: center;
+      }
+      main { 
+        grid-area: main-content;
+        max-width: none; 
+        margin: 0; 
+      }
+      .sidebar {
+        grid-area: sidebar;
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+      }
+      .tree-nav {
+        background: #fff;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+        border: 1px solid #e2e8f0;
+      }
+      .tree-nav h3 {
+        font-size: 1.3em;
+        margin-bottom: 20px;
+        color: #2d3748;
+        margin-top: 0;
+      }
+      .tree-view {
+        list-style: none;
+        padding-left: 0;
+      }
+      .tree-leaf a {
+        display: block;
+        padding: 8px 12px;
+        color: #4a5568;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 0.95em;
+        transition: all 0.2s ease;
+      }
+      .tree-leaf a:hover, .tree-leaf a.active {
+        background: #eef2ff;
+        color: #4338ca;
+        transform: translateX(4px);
+      }
+      h1, h2, h3 { color: #2c3e50; }
+      h1 { font-size: 2.2rem; margin-bottom: 1rem; }
+      h2 { font-size: 1.8rem; border-bottom: 2px solid #3498db; padding-bottom: 0.5rem; margin-top: 2.5rem; scroll-margin-top: 100px; }
+      .subtitle { font-size: 1.1rem; color: #7f8c8d; margin-bottom: 2rem; }
+      .site-card { border: 1px solid #e0e0e0; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; background-color: #fff; transition: box-shadow 0.3s; }
+      .site-card:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+      .site-card h3 { margin-top: 0; font-size: 1.5rem; }
+      .site-card h3 a { text-decoration: none; color: #2980b9; }
+      .site-card h3 a:hover { text-decoration: underline; }
+      .site-card .country { font-weight: bold; color: #e67e22; }
+      .disclaimer { font-size: 0.9rem; color: #95a5a6; text-align: center; margin-top: 3rem; padding: 1rem; background-color: #ecf0f1; border-radius: 5px; }
+      .alert { padding: 1rem; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid; }
+      .alert-tip { background-color: #e6f7ff; border-color: #91d5ff; color: #0050b3; }
+
+      @media (max-width: 1024px) {
+        .page-container {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+              "page-header"
+              "main-content";
+            gap: 2rem 0;
+        }
+        .sidebar {
+            display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Component Container -->
+    <div id="header-component"></div>
+
+    <div class="page-container">
+        <header class="page-header">
+          <h1>想找最權威的營養資訊？</h1>
+          <p class="subtitle">盤點全球官方健康網站與專業期刊資料庫，跟網路謠言與錯誤資訊說再見！</p>
+        </header>
+
+        <aside class="sidebar">
+            <nav class="tree-nav">
+                <h3>目錄</h3>
+                <ul class="tree-view" id="treeView"></ul>
+            </nav>
+        </aside>
+
+        <main>
+          <div class="alert alert-tip">
+            <strong>💡 為什麼要參考官方與學術網站？</strong>
+            這些網站的資訊由國家級機構或頂尖學術單位發布，內容基於科學研究和專家共識，具有最高的準確性和權威性，能幫助您做出最可靠的健康決策。
+          </div>
+
+          <h2 id="official-sites">權威營養資訊網站清單</h2>
+
+          <div class="site-card">
+            <h3><a href="https://ods.od.nih.gov/" target="_blank" rel="noopener noreferrer">美國國立衛生研究院 - 膳食補充劑辦公室 (ODS)</a></h3>
+            <p class="country">🇺🇸 美國</p>
+            <p>由美國頂尖醫學研究機構 NIH 維護，提供各種維生素、礦物質、草藥和其他膳食補充劑的詳細科學證據，內容客觀且深入，是專業人士和一般民眾查詢補充劑資訊的首選。</p>
+          </div>
+
+          <div class="site-card">
+            <h3><a href="https://www.nutrition.gov/" target="_blank" rel="noopener noreferrer">Nutrition.gov</a></h3>
+            <p class="country">🇺🇸 美國</p>
+            <p>美國農業部 (USDA) 贊助的官方網站，整合了聯邦政府提供的所有營養與健康資源。內容涵蓋健康飲食、體重管理、食品安全等，資訊全面且非常貼近民眾的日常生活。</p>
+          </div>
+          
+          <div class="site-card">
+            <h3><a href="https://www.ejim.ncgg.go.jp/" target="_blank" rel="noopener noreferrer">日本厚生勞動省 - 「統合醫療」情報網 (eJIM)</a></h3>
+            <p class="country">🇯🇵 日本</p>
+            <p>日本官方提供補充與替代療法 (CAM) 資訊的入口網站。內容包含對各種保健食品、療法安全性和有效性的科學評估，資訊嚴謹且更新頻繁，特別適合想了解亞洲觀點的讀者。</p>
+          </div>
+
+          <div class="site-card">
+            <h3><a href="https://www.nhs.uk/live-well/eat-well/" target="_blank" rel="noopener noreferrer">英國國民保健署 - Eat Well (NHS)</a></h3>
+            <p class="country">🇬🇧 英國</p>
+            <p>英國 NHS 提供的官方飲食指南，以其清晰易懂的「The Eatwell Guide」而聞名。網站提供大量實用的健康食譜、飲食建議和卡路里計算工具，非常適合尋求具體飲食計畫的民眾。</p>
+          </div>
+
+          <div class="site-card">
+            <h3><a href="https://www.eatforhealth.gov.au/" target="_blank" rel="noopener noreferrer">澳洲政府 - Eat for Health</a></h3>
+            <p class="country">🇦🇺 澳洲</p>
+            <p>此網站詳細介紹了澳洲的官方飲食指南，內容涵蓋所有年齡層（從嬰兒到老年人）的營養需求。它提供了豐富的食物選擇建議和份量指南，科學且實用。</p>
+          </div>
+
+          <h2 id="research-databases">專業研究與期刊資料庫</h2>
+
+          <div class="site-card">
+            <h3><a href="https://www.ncbi.nlm.nih.gov/pmc/" target="_blank" rel="noopener noreferrer">PubMed Central (PMC)</a></h3>
+            <p class="country">🌐 國際</p>
+            <p>由美國國家醫學圖書館 (NLM) 維護的免費全文資料庫，收錄了數百萬篇生物醫學和生命科學領域的期刊文獻。是尋找營養學研究論文最重要、最基礎的工具之一。</p>
+          </div>
+
+          <div class="site-card">
+            <h3><a href="https://www.cochranelibrary.com/" target="_blank" rel="noopener noreferrer">Cochrane Library</a></h3>
+            <p class="country">🌐 國際</p>
+            <p>全球公認的實證醫學黃金標準。它提供高品質的系統性文獻回顧 (Systematic Reviews)，幫助專業人士和民眾評估特定營養素或飲食介入措施的真實效益與風險。</p>
+          </div>
+
+          <div class="site-card">
+            <h3><a href="https://ajcn.nutrition.org/" target="_blank" rel="noopener noreferrer">美國臨床營養學期刊 (AJCN)</a></h3>
+            <p class="country">🇺🇸 美國</p>
+            <p>營養學和飲食學領域排名頂尖的權威期刊之一，發表大量關於人類營養的最新、最重要的原創研究論文。</p>
+          </div>
+
+          <div class="site-card">
+            <h3><a href="https://www.thelancet.com/" target="_blank" rel="noopener noreferrer">刺胳針 (The Lancet)</a></h3>
+            <p class="country">🇬🇧 英國</p>
+            <p>世界頂級的綜合醫學期刊之一，經常發表對全球公共衛生具有重大影響的營養學研究報告和評論，例如 EAT-Lancet 的「地球健康飲食」報告。</p>
+          </div>
+
+          <div class="site-card">
+            <h3><a href="https://www.nejm.org/" target="_blank" rel="noopener noreferrer">新英格蘭醫學雜誌 (NEJM)</a></h3>
+            <p class="country">🇺🇸 美國</p>
+            <p>全球最具影響力的醫學期刊之一，雖然是綜合期刊，但其發表的營養學相關研究（如地中海飲食、間歇性斷食等）通常是改變臨床實踐的里程碑式研究。</p>
+          </div>
+
+          <div class="disclaimer">
+            <strong>免責聲明：</strong>本頁面提供的網站連結均為外部官方網站，其內容由該機構負責。本站僅為資訊整理與推薦，不對其網站內容的準確性或完整性提供任何保證。在做出任何健康決策前，請務必諮詢您的醫師或合格的醫療專業人員。
+          </div>
+        </main>
+    </div>
+
+    <!-- Footer Component Container -->
+    <div id="footer-component"></div>
+
+    <!-- Load Components -->
+    <script src="../assets/js/deus-analytics-component.js"></script>
+    <script src="../assets/js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-footer-component.js"></script>
+
+    <script>
+      // Initialize Components
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize Analytics Component
+        if (window.DeusAnalyticsComponent) {
+          new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
+        }
+
+        // Initialize Header Component
+        const headerContainer = document.getElementById("header-component");
+        if (headerContainer && window.DeusHeaderComponent) {
+          new window.DeusHeaderComponent(headerContainer).setDebug(false);
+        }
+
+        // Initialize Footer Component
+        const footerContainer = document.getElementById("footer-component");
+        if (footerContainer && window.DeusFooterComponent) {
+          new window.DeusFooterComponent(footerContainer).setDebug(false);
+        }
+
+        // TOC Generation
+        const tocContainer = document.getElementById('treeView');
+        const mainContent = document.querySelector('main');
+        const headers = mainContent.querySelectorAll('h2');
+        const tocLinks = [];
+
+        if (tocContainer && headers.length > 0) {
+            let tocHTML = '';
+            headers.forEach((header, index) => {
+                const id = header.id || 'section-' + index;
+                if (!header.id) {
+                    header.id = id;
+                }
+                tocHTML += `<li class="tree-leaf"><a href="#${id}">${header.textContent}</a></li>`;
+            });
+            tocContainer.innerHTML = tocHTML;
+
+            const links = tocContainer.querySelectorAll('a');
+            links.forEach(link => tocLinks.push(link));
+
+            tocContainer.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(e.target.getAttribute('href'));
+                    if (targetElement) {
+                        const headerOffset = 100; // Header height
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+
+            // Highlight TOC link on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        tocLinks.forEach(link => {
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            } else {
+                                link.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-50% 0px -50% 0px' });
+
+            headers.forEach(header => observer.observe(header));
+        }
+      });
+    </script>
+  </body>
+</html>

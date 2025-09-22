@@ -1393,6 +1393,7 @@
           const item = question.parentElement;
           item.classList.toggle("active");
 
+          // Close other open FAQ items for a cleaner accordion effect
           document.querySelectorAll(".faq-item").forEach((otherItem) => {
             if (otherItem !== item) {
               otherItem.classList.remove("active");
