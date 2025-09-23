@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>文章彙整 | Caregiver 營養百科</title>
+    <title>文章總覽 | 營養百科</title>
     <meta name="description" content="探索所有關於營養補充品的專業文章，從維生素、礦物質到特殊營養素，提供您最完整、最科學的健康指南。" />
     
     <!-- Favicon -->
@@ -371,11 +371,29 @@
                 <input type="text" id="searchInput" class="search-input" placeholder="搜尋關鍵字...">
             </div>
 
+            <!-- 
+                =========================================================================
+                重要維護提醒 (IMPORTANT MAINTENANCE NOTE)
+                =========================================================================
+                當新增或修改任何文章 (`post/*.html`) 時，請務必手動檢查並同步更新以下相關檔案，
+                以確保整個專案的資料一致性。
+                
+                檢查項目：
+                1.  **本檔案 (`archive.html`)**:
+                    - 新增或更新對應的文章卡片 HTML。
+                    - 確認標題、描述、`data-` 日期與關鍵字皆為最新。
+                
+                2.  **網站地圖 (`sitemap.xml`)**:
+                    - 新增或更新該文章的 `<url>` 區塊，特別是 `<lastmod>` 日期。
+                
+                3.  **其他相關文章**:
+                    - 檢查是否有其他文章的「相關營養素」區塊需要加入新文章的連結。
+            -->
             <div class="archive-grid">
                 <div class="article-card" id="card-official-sites" data-category="other" data-published="2025-09-22" data-modified="2025-09-22">
                     <div class="card-content">
                         <span class="card-tag other">其他</span>
-                        <a href="official-health-sites.html" class="card-title-link"><h2 class="card-title">想找最權威的營養資訊？盤點全球5大官方健康網站</h2></a>
+                        <a href="official-health-sites.html" class="card-title-link"><h2 class="card-title">權威營養資訊 - 破解謠言！營養師必備的官方網站與期刊資料庫</h2></a>
                         <p class="card-desc">探索由世界各國官方機構提供的權威營養與健康資訊網站，例如日本厚生勞動省、美國國家衛生院 (NIH) 等，獲取最可靠的健康知識。</p>
                         <a href="official-health-sites.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -389,7 +407,7 @@
                 <div class="article-card" id="card-vitamin-a" data-category="vitamin" data-published="2025-09-17" data-modified="2025-09-17">
                     <div class="card-content">
                         <span class="card-tag vitamin">維生素</span>
-                        <a href="vitamin-a.html" class="card-title-link"><h2 class="card-title">不只是顧眼睛！維生素A的3大功效、食物來源與注意事項</h2></a>
+                        <a href="vitamin-a.html" class="card-title-link"><h2 class="card-title">維生素A - 不只顧眼睛！解鎖視覺、皮膚與免疫的3大關鍵</h2></a>
                         <p class="card-desc">維生素A是維持視覺、皮膚健康與免疫功能的關鍵營養素。本文將深入探討維生素A的功效、富含維生素A的食物、建議攝取量，以及補充時的注意事項。</p>
                         <a href="vitamin-a.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -418,7 +436,7 @@
                 <div class="article-card" id="card-zinc" data-category="mineral" data-published="2025-09-12" data-modified="2025-09-12">
                     <div class="card-content">
                         <span class="card-tag mineral">礦物質</span>
-                        <a href="zinc.html" class="card-title-link"><h2 class="card-title">鋅完整指南：不只為男性！解密「生命火星塞」</h2></a>
+                        <a href="zinc.html" class="card-title-link"><h2 class="card-title">鋅 - 點燃300種代謝反應的生命火星塞</h2></a>
                         <p class="card-desc">常常感冒、掉髮、皮膚差？你可能不是體質弱，而是缺鋅了！本文將揭示這個微量卻極其關鍵的礦物質，如何成為點燃你全身超過300種代謝反應的「生命火星塞」。</p>
                         <a href="zinc.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -433,7 +451,7 @@
                 <div class="article-card" id="card-vitamin-k" data-category="vitamin" data-published="2025-09-11" data-modified="2025-09-11">
                     <div class="card-content">
                         <span class="card-tag vitamin">維生素</span>
-                        <a href="vitamin-k.html" class="card-title-link"><h2 class="card-title">維生素K完整指南：K2功效才是關鍵！</h2></a>
+                        <a href="vitamin-k.html" class="card-title-link"><h2 class="card-title">維生素K完整指南：K2功效才是關鍵！補鈣、補D為何一定要有它？</h2></a>
                         <p class="card-desc">專業營養師揭示維生素K1與K2的驚人差異！不只是凝血，K2更是引導鈣質進入骨骼、保護心血管的關鍵。</p>
                         <a href="vitamin-k.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -447,7 +465,7 @@
                 <div class="article-card" id="card-folic-acid" data-category="vitamin" data-published="2025-09-10" data-modified="2025-09-10">
                     <div class="card-content">
                         <span class="card-tag vitamin">維生素</span>
-                        <a href="folic-acid.html" class="card-title-link"><h2 class="card-title">葉酸完整指南：不只是孕婦專利！</h2></a>
+                        <a href="folic-acid.html" class="card-title-link"><h2 class="card-title">葉酸 - 不只孕婦必備！守護心血管與新生的秘密功臣</h2></a>
                         <p class="card-desc">專業營養師詳細解析「葉酸」與「活性葉酸」的關鍵差異，從備孕、心血管健康到情緒支持，帶您了解葉酸的完整功效。</p>
                         <a href="folic-acid.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -462,7 +480,7 @@
                 <div class="article-card" id="card-vitamin-c" data-category="vitamin" data-published="2024-09-09" data-modified="2025-09-09">
                     <div class="card-content">
                         <span class="card-tag vitamin">維生素</span>
-                        <a href="vitamin-c.html" class="card-title-link"><h2 class="card-title">維生素C完整指南：不只是預防感冒！</h2></a>
+                        <a href="vitamin-c.html" class="card-title-link"><h2 class="card-title">維生素C - 打造透亮美肌與強效保護力的抗氧化之王</h2></a>
                         <p class="card-desc">維生素C是美白、抗老、提升免疫力的關鍵，但你吃對了嗎？營養師為你破解感冒迷思，解析維生素C功效與建議量。</p>
                         <a href="vitamin-c.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -477,7 +495,7 @@
                 <div class="article-card" id="card-calcium" data-category="mineral" data-published="2024-09-07" data-modified="2025-09-10">
                     <div class="card-content">
                         <span class="card-tag mineral">礦物質</span>
-                        <a href="calcium.html" class="card-title-link"><h2 class="card-title">鈣質完整指南：骨質疏鬆、抽筋、失眠都跟它有關？</h2></a>
+                        <a href="calcium.html" class="card-title-link"><h2 class="card-title">鈣 - 不只補骨！終結抽筋、失眠的關鍵礦物質</h2></a>
                         <p class="card-desc">從碳酸鈣、檸檬酸鈣到海藻鈣，市面上的鈣片琳瑯滿目，讓專業營養師教你如何選擇最適合自己的鈣質補充品。</p>
                         <a href="calcium.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -492,7 +510,7 @@
                 <div class="article-card" id="card-probiotics" data-category="other" data-published="2024-08-17" data-modified="2025-08-17">
                     <div class="card-content">
                         <span class="card-tag other">益生菌</span>
-                        <a href="probiotics.html" class="card-title-link"><h2 class="card-title">益生菌完整指南：功效、副作用、怎麼選才有效？</h2></a>
+                        <a href="probiotics.html" class="card-title-link"><h2 class="card-title">益生菌 - 重建腸道好菌平衡的消化專家</h2></a>
                         <p class="card-desc">營養師專業提醒：益生菌是維持腸道健康的關鍵，但市面上菌株種類繁多，菌數越高越好嗎？本篇將帶您深入了解益生菌的奧秘。</p>
                         <a href="probiotics.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -507,7 +525,7 @@
                 <div class="article-card" id="card-lutein" data-category="other" data-published="2024-08-27" data-modified="2025-08-27">
                     <div class="card-content">
                         <span class="card-tag other">其他營養素</span>
-                        <a href="lutein.html" class="card-title-link"><h2 class="card-title">葉黃素完整指南：功效、副作用、怎麼選才有效？</h2></a>
+                        <a href="lutein.html" class="card-title-link"><h2 class="card-title">葉黃素 - 3C世代的內建護眼藍光濾鏡</h2></a>
                         <p class="card-desc">葉黃素是守護靈魂之窗的關鍵營養素，但市面上產品眾多，您知道酯化型和游離型有何不同？黃金比例 5:1 又是什麼？</p>
                         <a href="lutein.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -522,7 +540,7 @@
                 <div class="article-card" id="card-iron" data-category="mineral" data-published="2024-09-05" data-modified="2025-09-05">
                     <div class="card-content">
                         <span class="card-tag mineral">礦物質</span>
-                        <a href="iron.html" class="card-title-link"><h2 class="card-title">鐵質完整指南：從食物到保健品，完整補鐵策略</h2></a>
+                        <a href="iron.html" class="card-title-link"><h2 class="card-title">鐵 - 告別疲勞、擁有紅潤氣色的活力元素</h2></a>
                         <p class="card-desc">經常疲勞、掉髮、注意力不集中？你可能不是壓力大，而是缺鐵了！本篇帶你了解如何有效補鐵，重拾活力。</p>
                         <a href="iron.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -537,7 +555,7 @@
                 <div class="article-card" id="card-fish-oil" data-category="other" data-published="2024-07-16" data-modified="2025-07-16">
                     <div class="card-content">
                         <span class="card-tag other">其他營養素</span>
-                        <a href="fish-oil.html" class="card-title-link"><h2 class="card-title">魚油完整指南：EPA 與 DHA 怎麼選？</h2></a>
+                        <a href="fish-oil.html" class="card-title-link"><h2 class="card-title">魚油 - 暢通思緒、保護心血管的關鍵Omega-3</h2></a>
                         <p class="card-desc">專業營養師詳細解析魚油的功效、副作用、EPA 與 DHA 的黃金比例，並教您如何挑選最適合的魚油產品。</p>
                         <a href="fish-oil.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -552,7 +570,7 @@
                 <div class="article-card" id="card-curcumin" data-category="herbal" data-published="2024-09-08" data-modified="2025-09-08">
                     <div class="card-content">
                         <span class="card-tag herbal">草本營養</span>
-                        <a href="curcumin.html" class="card-title-link"><h2 class="card-title">薑黃素全攻略：不只是咖哩！抗發炎、護肝的超級營養素</h2></a>
+                        <a href="curcumin.html" class="card-title-link"><h2 class="card-title">薑黃素 - 身體的天然抗發炎超級滅火器</h2></a>
                         <p class="card-desc">薑黃素的強大功效備受矚目，但你知道它的吸收率極低嗎？讓專業營養師教你如何挑選高生物利用率的產品。</p>
                         <a href="curcumin.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -567,7 +585,7 @@
                 <div class="article-card" id="card-collagen" data-category="protein" data-published="2024-09-08" data-modified="2025-09-08">
                     <div class="card-content">
                         <span class="card-tag protein">蛋白質</span>
-                        <a href="collagen.html" class="card-title-link"><h2 class="card-title">膠原蛋白全攻略：吃對了，效果看得見！</h2></a>
+                        <a href="collagen.html" class="card-title-link"><h2 class="card-title">膠原蛋白 - 吃出澎潤Q彈的青春實踐指南</h2></a>
                         <p class="card-desc">從魚鱗、豬皮到植物性來源，市面上的膠原蛋白產品讓人眼花撩亂。讓專業營養師教你如何選擇最有效的膠原蛋白補充品。</p>
                         <a href="collagen.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -582,7 +600,7 @@
                 <div class="article-card" id="card-vitamin-e" data-category="vitamin" data-published="2024-09-08" data-modified="2025-09-08">
                     <div class="card-content">
                         <span class="card-tag vitamin">維生素</span>
-                        <a href="vitamin-e.html" class="card-title-link"><h2 class="card-title">維生素E終極指南：不只抗老！解開天然迷思</h2></a>
+                        <a href="vitamin-e.html" class="card-title-link"><h2 class="card-title">維生素E - 保護細胞、對抗歲月痕跡的抗老戰士</h2></a>
                         <p class="card-desc">維生素E是守護全身細胞的關鍵營養素，但你知道「天然」與「合成」的吸收率天差地遠嗎？讓專家帶你一次看懂。</p>
                         <a href="vitamin-e.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -597,7 +615,7 @@
                 <div class="article-card" id="card-vitamin-d" data-category="vitamin" data-published="2024-09-01" data-modified="2025-09-01">
                     <div class="card-content">
                         <span class="card-tag vitamin">維生素</span>
-                        <a href="vitamin-d.html" class="card-title-link"><h2 class="card-title">認識維生素D：你的免疫防線、情緒穩定劑與大腦守護者</h2></a>
+                        <a href="vitamin-d.html" class="card-title-link"><h2 class="card-title">維生素D - 不只是維生素，更是身體的陽光總指揮</h2></a>
                         <p class="card-desc">超過八成國人缺乏「陽光荷爾蒙」？本篇完整說明維生素D的進階科學，從免疫、情緒到大腦功能的全面影響。</p>
                         <a href="vitamin-d.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -612,8 +630,8 @@
                 <div class="article-card" id="card-vitamin-b" data-category="vitamin" data-published="2024-08-20" data-modified="2025-08-20">
                     <div class="card-content">
                         <span class="card-tag vitamin">維生素</span>
-                        <a href="vitamin-b.html" class="card-title-link"><h2 class="card-title">維生素 B 群完整指南：功效、副作用、怎麼選才有效？</h2></a>
-                        <p class="card-desc">維生素 B 群是身體的「能量轉換器」，8 種成員各司其職。現代人生活壓力大、飲食不均，B 群缺乏很常見。</p>
+                        <a href="vitamin-b.html" class="card-title-link"><h2 class="card-title">維生素B群 - 啟動身體能量、告別疲勞的活力發電機</h2></a>
+                        <p class="card-desc">提神抗疲勞你吃對B群了嗎？營養師詳解8種B群功效，一次破解「晚上吃會失眠、尿黃才有效」等5大迷思，教你為壓力、熬夜、素食等不同需求找到最佳B群。</p>
                         <a href="vitamin-b.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
                     <div class="card-metadata">
@@ -627,7 +645,7 @@
                 <div class="article-card" id="card-magnesium" data-category="mineral" data-published="2024-08-27" data-modified="2025-08-27">
                     <div class="card-content">
                         <span class="card-tag mineral">礦物質</span>
-                        <a href="magnesium.html" class="card-title-link"><h2 class="card-title">鎂質完整指南：失眠與抽筋的救星？</h2></a>
+                        <a href="magnesium.html" class="card-title-link"><h2 class="card-title">鎂 - 還在亂買鎂？營養師教你從5大類型（甘胺酸鎂、檸檬酸鎂等）挑對配方，一次搞懂如何改善失眠、抽筋與焦慮</h2></a>
                         <p class="card-desc">鎂是人體不可或缺的「萬能礦物質」，參與超過 300 種生化反應。現代人因飲食精緻化和壓力，普遍有鎂攝取不足的問題。</p>
                         <a href="magnesium.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -642,7 +660,7 @@
                 <div class="article-card" id="card-coenzyme-q10" data-category="other" data-published="2024-08-27" data-modified="2025-08-27">
                     <div class="card-content">
                         <span class="card-tag other">其他營養素</span>
-                        <a href="coenzyme-q10.html" class="card-title-link"><h2 class="card-title">輔酶 Q10 完整指南：心臟的能量火星塞</h2></a>
+                        <a href="coenzyme-q10.html" class="card-title-link"><h2 class="card-title">輔酶Q10 - 點燃心臟活力的能量火星塞</h2></a>
                         <p class="card-desc">營養師專業提醒：輔酶 Q10 是人體細胞的「能量發電廠」，40 歲後會急速下降。本篇將帶您了解如何正確補充 Q10。</p>
                         <a href="coenzyme-q10.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -836,4 +854,8 @@
       });
     </script>
 </body>
+</html>l>
+</html>tml>  </script>
+</body>
+</html>l>
 </html>
