@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>維生素A - 不只顧眼睛！解鎖視覺、皮膚與免疫的3大關鍵 | 營養百科</title>
+    <meta name="description" content="維生素A是維持視覺、皮膚健康與免疫功能的關鍵營養素。本文將深入探討維生素A的功效、富含維生素A的食物、建議攝取量，以及補充時的注意事項。" />
+    <meta name="keywords" content="維生素A, 維他命A, 視黃醇, A醇, 貝他胡蘿蔔素, 眼睛保健, 皮膚健康, 免疫力" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
+
+    <!-- JSON-LD for Structured Data (SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://life.maxlist.xyz/post/vitamin-a.html"
+      },
+      "headline": "維生素A - 不只顧眼睛！解鎖視覺、皮膚與免疫的3大關鍵",
+      "description": "維生素A並非單一物質，而是一個包含視黃醇、視黃醛、視黃酸的化合物家族。本篇完整指南將從其生物化學、生理功能到臨床意義，深入探討其在視覺、免疫、皮膚與細胞分化中的關鍵角色。",
+      "image": "https://life.maxlist.xyz/assets/images/vitamin-a-og.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "url": "https://life.maxlist.xyz/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
+        }
+      },
+      "datePublished": "2025-09-17",
+      "dateModified": "2025-09-19"
+    }
+    </script>
+
+    <style>
+      :root {
+        --primary-color: #f97316; /* Orange */
+        --primary-color-light: #fb923c;
+        --primary-color-dark: #c2410c;
+        --primary-color-bg: #fff7ed;
+        --primary-color-text: #9a3412;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+        line-height: 1.8;
+        color: #2d3748;
+        background: #fdfdfc;
+      }
+
+      .progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-color-light) 100%);
+        z-index: 1001;
+        transition: width 0.3s ease;
+      }
+
+      .article-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 100px 20px 60px;
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 60px;
+        position: relative;
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+      }
+
+      .toc {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .toc-title {
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .toc-list { list-style: none; }
+      .toc-list li { margin-bottom: 8px; }
+      .toc-list a {
+        color: #4a5568;
+        text-decoration: none;
+        font-size: 0.95em;
+        display: block;
+        padding: 8px 12px;
+        transition: all 0.3s ease;
+        position: relative;
+        border-radius: 8px;
+        border-left: 3px solid transparent;
+      }
+      .toc-list a.active {
+        color: var(--primary-color);
+        background: var(--primary-color-bg);
+        border-left-color: var(--primary-color);
+        font-weight: 600;
+      }
+      .toc-list a:hover {
+        color: var(--primary-color);
+        background: rgba(249, 115, 22, 0.08);
+        border-left-color: var(--primary-color-light);
+        transform: translateX(2px);
+      }
+
+      .article-content {
+        background: white;
+        border-radius: 20px;
+        padding: 50px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .article-hero {
+        background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
+        border-radius: 20px;
+        padding: 60px;
+        margin-bottom: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+      .article-hero::before {
+        content: "🥕";
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        font-size: 150px;
+        opacity: 0.1;
+        transform: rotate(-15deg);
+      }
+      .article-category {
+        display: inline-block;
+        background: white;
+        color: var(--primary-color-dark);
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        font-weight: 600;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .article-title {
+        font-size: 2.5em;
+        font-weight: 800;
+        color: #2d3748;
+        line-height: 1.3;
+        margin-bottom: 20px;
+      }
+      .article-subtitle {
+        font-size: 1.3em;
+        color: #4a5568;
+        line-height: 1.6;
+        max-width: 700px;
+        margin-bottom: 30px;
+      }
+      .article-meta {
+        display: flex;
+        gap: 30px;
+        color: #718096;
+        font-size: 0.95em;
+        flex-wrap: wrap;
+      }
+      .article-meta span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .article-body h2 {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin: 50px 0 30px;
+        padding-top: 20px;
+        position: relative;
+      }
+      .article-body h2::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-color-light) 100%);
+        border-radius: 2px;
+      }
+      .article-body h3 {
+        font-size: 1.5em;
+        font-weight: 600;
+        color: #2d3748;
+        margin: 35px 0 20px;
+      }
+      .article-body p {
+        margin-bottom: 20px;
+        color: #4a5568;
+      }
+      .highlight-nutrient {
+        border-bottom: 2px solid var(--primary-color);
+        padding-bottom: 1px;
+      }
+      .info-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 40px 0;
+      }
+      .info-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+      .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      }
+      .info-card-icon {
+        font-size: 3em;
+        margin-bottom: 15px;
+        display: block;
+      }
+      .info-card-title {
+        font-size: 1.3em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 10px;
+      }
+      .info-card-desc {
+        color: #718096;
+        font-size: 0.95em;
+        line-height: 1.6;
+      }
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        font-size: 0.95em;
+      }
+      .data-table th, .data-table td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      .data-table thead th {
+        background-color: #f8fafc;
+        font-weight: 600;
+        color: #475569;
+        border-bottom: 2px solid var(--primary-color);
+      }
+      .data-table tbody tr:nth-child(even) { background-color: #f8fafc; }
+      .data-table tbody tr:hover { background-color: #fff7ed; }
+      .alert {
+        padding: 20px 25px;
+        border-radius: 15px;
+        margin: 30px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .alert-tip {
+        background: var(--primary-color-bg);
+        color: var(--primary-color-text);
+      }
+      .alert-doctor {
+        background: #fef2f2;
+        color: #991b1b;
+      }
+      .related-title {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        text-align: center;
+        margin: 60px 0 40px;
+        border-top: 2px solid #e5e7eb;
+        padding-top: 40px;
+      }
+      .related-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+      .related-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+      }
+      .related-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+      .related-card-tag {
+        display: inline-block;
+        background: #ffedd5;
+        color: #9a3412;
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 0.85em;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      .related-card-title {
+        font-size: 1.3em;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 10px;
+      }
+      .related-card-desc {
+        color: #718096;
+        font-size: 0.95em;
+      }
+      .disclaimer {
+        background: #f9fafb;
+        padding: 60px 0;
+        text-align: center;
+      }
+      .disclaimer-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .disclaimer h3 {
+        color: #4b5563;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+      }
+      .disclaimer p {
+        color: #6b7280;
+        font-size: 0.95em;
+      }
+
+      @media (max-width: 1024px) {
+        .article-container { grid-template-columns: 1fr; gap: 0; }
+        .sidebar { display: none; }
+      }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="header-component"></div>
+
+    <div class="article-container">
+      <aside class="sidebar" id="sidebar">
+        <div class="toc">
+          <h3 class="toc-title">目錄</h3>
+          <ul class="toc-list">
+            <li><a href="#basics" class="toc-link">維生素A是什麼？</a></li>
+            <li><a href="#functions" class="toc-link">維生素A的核心功效</a></li>
+            <li><a href="#biochemistry" class="toc-link">維生素A的生化之旅</a></li>
+            <li><a href="#how-much" class="toc-link">我需要多少維生素A？</a></li>
+            <li><a href="#food-sources" class="toc-link">天然食物來源</a></li>
+            <li><a href="#supplements" class="toc-link">補充品怎麼挑？</a></li>
+            <li><a href="#safety" class="toc-link">安全與風險</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="article-content">
+        <header class="article-header">
+          <div class="article-hero">
+            <span class="article-category">維生素指南</span>
+            <h1 class="article-title">維生素A - 不只顧眼睛！解鎖視覺、皮膚與免疫的3大關鍵</h1>
+            <p class="article-subtitle">維生素A是維持視覺、皮膚健康與免疫功能的關鍵營養素。本文將深入探討維生素A的功效、富含維生素A的食物、建議攝取量，以及補充時的注意事項。</p>
+            <div class="article-meta">
+              <span>✍️ 營養百科團隊編寫</span>
+              <span>📅 2025 年 9 月 19 日更新</span>
+              <span>⏱️ 閱讀時間：8 分鐘</span>
+            </div>
+          </div>
+        </header>
+
+        <article class="article-body">
+          <section id="basics">
+            <h2>維生素A是什麼？兩種形式，兩種來源</h2>
+            <p>維生素A並非單一的化學物質，而是一個涵蓋多種不飽和有機化合物的總稱，這些化合物共同展現了視黃醇（retinol）的生物活性，是維持人體正常生理機能不可或缺的必需營養素。作為一種脂溶性維生素，其吸收、運輸、儲存及代謝過程與膳食中的脂肪密切相關。</p>
+            <p>維生素A家族的成員可根據其膳食來源和化學形式，主要分為兩大類：</p>
+            <div class="info-cards" style="grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div class="info-card">
+                <span class="info-card-icon">🥩</span>
+                <h4 class="info-card-title">已成形維生素A (Retinoids)</h4>
+                <p class="info-card-desc">來自動物性食物，是身體可直接利用的「活性」形式，生物利用率高。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🥕</span>
+                <h4 class="info-card-title">維生素A原 (Carotenoids)</h4>
+                <p class="info-card-desc">來自植物性食物，是維生素A的「前驅物」，需經身體轉化才能利用。</p>
+              </div>
+            </div>
+            <div class="alert alert-tip">
+              <strong>💡 關鍵區別：</strong>
+              <p style="margin-bottom:0;">已成形維生素A效力強大，但過量攝取有毒性風險；維生素A原則提供了一條受生物學調控的安全途徑，身體會根據自身需求將其轉化，大大降低了中毒的風險。</p>
+            </div>
+          </section>
+
+          <section id="functions">
+            <h2>維生素A的核心功效</h2>
+            <p>基於其深刻的生物化學機制，維生素A對人體健康的影響是廣泛而多層面的。從維持敏銳的視覺到構建堅固的免疫防線，再到引導生命的生長與發育，維生素A在各個生理系統中都扮演著不可或缺的角色。</p>
+            <div class="info-cards">
+              <div class="info-card">
+                <span class="info-card-icon">👁️</span>
+                <h4 class="info-card-title">視覺：超越夜盲症</h4>
+                <p class="info-card-desc">除了預防夜盲症，維生素A對於維持眼結膜與角膜的健康至關重要。嚴重缺乏會導致乾眼症，最終可能造成永久性失明。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">✨</span>
+                <h4 class="info-card-title">皮膚與細胞健康</h4>
+                <p class="info-card-desc">維生素A對於上皮細胞的正常分化和更新至關重要，有助於維持皮膚的光滑與健康，這也是類視黃醇被廣泛應用於皮膚科學的基礎。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🛡️</span>
+                <h4 class="info-card-title">免疫系統的守護者</h4>
+                <p class="info-card-desc">維生素A素有「抗感染維他命」之稱，它能維持呼吸道、消化道黏膜的完整性，並直接參與免疫細胞的發育與分化，構建身體的縱深防禦。</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">👶</span>
+                <h4 class="info-card-title">生長與發育</h4>
+                <p class="info-card-desc">透過調控基因，視黃酸在胚胎發育過程中不可或缺，精準引導心臟、四肢等器官的形成，並對兒童的骨骼和牙齒生長至關重要。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="biochemistry">
+            <h2>維生素A的生化之旅：從吸收到作用</h2>
+            <p>維生素A在體內的旅程與其功能的多樣性，根植於其複雜的生物化學代謝途徑。從消化道吸收，到肝臟儲存，再到轉化為功能各異的活性分子，每一步都受到精密的調控。</p>
+            <h3>吸收、代謝與儲存：從腸道到肝臟的旅程</h3>
+            <p>作為一種脂溶性維生素，維生素A的吸收過程高度依賴膳食脂肪的存在。在小腸中，食物中的脂肪與膽汁酸鹽作用，形成微膠粒（micelles），將脂溶性的維生素A分子包裹其中，以便於吸收。</p>
+            <ul>
+                <li><strong>吸收與轉化：</strong>在腸道黏膜細胞內，來自動物性食物的視黃酯被水解為視黃醇。而來自植物性食物的維生素A原類胡蘿蔔素，則在特定酵素的催化下，被裂解成視黃醛，隨後再被還原為視黃醇。</li>
+                <li><strong>包裝與運輸：</strong>吸收後的視黃醇在腸道細胞內會再次被酯化，並與其他脂質一同被組裝進乳糜微粒（chylomicrons）中，進入淋巴系統，最終匯入血液循環。</li>
+                <li><strong>肝臟儲存：</strong>肝臟是維生素A最主要的儲存器官，約有80-90%的總儲備量都集中於此。當身體需要時，肝臟會將儲存的維生素A釋放至血液，運輸至目標細胞。</li>
+            </ul>
+            <h3>視覺循環：光轉導的分子傑作</h3>
+            <p>維生素A在視覺中的核心作用，是透過一個被稱為「沃爾德視覺循環」（Wald's Visual Cycle）的精妙生化過程來實現的。此循環確保了視網膜感光細胞在接收光子後能夠產生神經信號，並在極短時間內恢復感光能力。</p>
+            <ol>
+                <li><strong>視紫質形成：</strong>血液中的視黃醇被運輸至眼部，轉化為11-順式-視黃醛。</li>
+                <li><strong>結合與激活：</strong>11-順式-視黃醛與視蛋白結合，形成對光敏感的視紫質。</li>
+                <li><strong>光致異構化：</strong>當光子擊中視紫質，11-順式-視黃醛瞬間變構為全反式-視黃醛，觸發視覺信號。</li>
+                <li><strong>信號轉導：</strong>構型的轉變啟動一系列信號傳遞，最終產生神經衝動傳至大腦。</li>
+                <li><strong>再生：</strong>全反式-視黃醛從視蛋白上脫離，再被轉化回11-順式-視黃醛，完成循環。維生素A缺乏會阻礙此過程，導致夜盲症。</li>
+            </ol>
+            <h3>視黃酸：基因表現的類激素調節劑</h3>
+            <p>雖然視黃醛在視覺中至關重要，但維生素A在視覺以外的大多數全身性效應，是由其不可逆的氧化產物——<strong class="highlight-nutrient">視黃酸（Retinoic Acid, RA）</strong>所介導的。視黃酸的功能機制類似於類固醇激素，它作為一個強效的信號分子，直接調控基因的轉錄。</p>
+            <div class="alert alert-tip">
+              <strong>💡 雙重身份的奧秘：開關 vs. 編程師</strong>
+              <p>維生素A的生物學核心在於其雙重身份：</p>
+              <ul>
+                <li style="margin-bottom: 5px;"><strong>視黃醛 (Retinal):</strong> 在視覺中扮演快速反應、可循環利用的「化學開關」。</li>
+                <li style="margin-bottom: 0;"><strong>視黃酸 (Retinoic Acid):</strong> 是一個作用緩慢但影響深遠的「基因編程師」，調控細胞分化與生長。</li>
+              </ul>
+              <p style="margin-bottom: 0;">從視黃醛到視黃酸的轉化是<strong class="highlight-nutrient">不可逆的</strong>，這意味著一旦維生素A被投入到基因調控的路徑中，就無法再被回收用於視覺循環。這種功能上的分歧完美地解釋了為何維生素A缺乏會引發如此多樣化的症狀——從快速發作的夜盲症到進展較慢的免疫力低下和皮膚問題。</p>
+            </div>
+          </section>
+
+          <section id="how-much">
+            <h2>我需要多少維生素A？</h2>
+            <p>維生素A的建議攝取量以「視網醇當量 (RE)」計算。成年男性的每日建議攝取量為600微克RE，女性為500微克RE。了解自己的需求是聰明補充的第一步。</p>
+            <table class="data-table">
+              <thead>
+                <tr><th>年齡層</th><th>每日建議攝取量 (μg RE)</th><th>每日上限攝取量 (μg RE)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>成人男性 (19歲以上)</td><td>600</td><td>3000</td></tr>
+                <tr><td>成人女性 (19歲以上)</td><td>500</td><td>3000</td></tr>
+                <tr><td>懷孕期</td><td>+100</td><td>3000</td></tr>
+                <tr><td>哺乳期</td><td>+400</td><td>3000</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="food-sources">
+            <h2>天然食物來源</h2>
+            <p>透過均衡飲食，我們可以輕鬆從動物性及植物性食物中獲取足夠的維生素A。</p>
+            <table class="data-table">
+              <thead>
+                <tr><th>食物來源</th><th>食物項目</th><th>每100克含量 (μg RE)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>動物性</td><td>豬肝</td><td><strong>11853</strong></td></tr>
+                <tr><td>動物性</td><td>雞蛋 (蛋黃)</td><td>253</td></tr>
+                <tr><td>植物性</td><td>胡蘿蔔</td><td>1128</td></tr>
+                <tr><td>植物性</td><td>菠菜</td><td>633</td></tr>
+                <tr><td>植物性</td><td>地瓜</td><td>1298</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="supplements">
+            <h2>補充品怎麼挑？</h2>
+            <p>多數人可從飲食中獲取足夠維生素A，通常不建議常規補充高劑量補充品。若有特殊需求，請務必諮詢醫師或營養師。選擇補充品時，應注意其形式：</p>
+            <ul>
+              <li><strong>β-胡蘿蔔素 vs. 視黃醇：</strong>對於一般保健，選擇β-胡蘿蔔素補充品相對安全，因為身體會視需求轉換，較不易過量。</li>
+              <li><strong>魚肝油：</strong>是維生素A和D的豐富來源，但需注意劑量，避免兩者同時過量。</li>
+            </ul>
+            <h3>進階知識：A醇、A醛、A酸，到底差在哪？</h3>
+            <p>在保養品領域，你可能常聽到A醇、A醛、A酸，它們都是維生素A的衍生物（統稱類維A，Retinoids），在皮膚上扮演著「基因編程器」的角色，能促進膠原蛋白增生、加速角質代謝。但它們的活性與刺激性大不相同。</p>
+            <table class="data-table">
+              <thead>
+                <tr><th>名稱</th><th>活性/刺激性</th><th>取得方式</th><th>主要用途</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>A醇 (Retinol)</strong></td><td>弱</td><td>保養品</td><td>溫和抗老、撫平細紋</td></tr>
+                <tr><td><strong>A醛 (Retinal)</strong></td><td>中</td><td>保養品</td><td>效果比A醇快，刺激性也較高</td></tr>
+                <tr><td><strong>A酸 (Retinoic Acid)</strong></td><td><strong>最強</strong></td><td><strong>處方藥</strong></td><td>治療嚴重痤瘡、光老化，需醫師處方</td></tr>
+              </tbody>
+            </table>
+            <div class="alert alert-tip">
+              <strong>💡 轉換路徑：</strong>
+              <p style="margin-bottom:0;">A醇 → A醛 → A酸。A醇和A醛都需要在皮膚內經過轉換，最終變成A酸才能發揮作用。直接使用A酸效果最強，但刺激性也最大，因此被列為藥品管理。</p>
+            </div>
+          </section>
+
+          <section id="safety">
+            <h2>安全與風險</h2>
+            <div class="alert alert-doctor">
+              <strong>醫師警告：已成形維生素A的過量風險</strong>
+              <p>維生素A是脂溶性的，過量攝取會累積在體內產生毒性。急性中毒可能導致頭痛、噁心；慢性中毒則可能引發肝損傷、骨骼疼痛、掉髮等問題。特別是孕婦，過量攝取「已成形」的維生素A（視黃醇），有導致胎兒畸形的風險。</p>
+            </div>
+          </section>
+
+          <h2 class="related-title">相關營養素</h2>
+          <div class="related-grid">
+            <a href="zinc.html" class="related-card">
+              <div class="related-card-content">
+                <span class="related-card-tag">礦物質</span>
+                <h3 class="related-card-title">鋅</h3>
+                <p class="related-card-desc">鋅是將維生素A從肝臟運輸至全身所需的關鍵礦物質，兩者協同作用，維持視覺健康。</p>
+              </div>
+            </a>
+            <a href="vitamin-e.html" class="related-card">
+              <div class="related-card-content">
+                <span class="related-card-tag">維生素</span>
+                <h3 class="related-card-title">維生素 E</h3>
+                <p class="related-card-desc">作為抗氧化劑，維生素E可以保護維生素A不被氧化，維持其活性。</p>
+              </div>
+            </a>
+            <a href="lutein.html" class="related-card">
+              <div class="related-card-content">
+                <span class="related-card-tag">其他營養素</span>
+                <h3 class="related-card-title">葉黃素</h3>
+                <p class="related-card-desc">與維生素A同為保護眼睛的重要營養素，葉黃素主要負責過濾藍光，保護黃斑部。</p>
+              </div>
+            </a>
+            <a href="vitamin-d.html" class="related-card">
+              <div class="related-card-content">
+                <span class="related-card-tag">維生素</span>
+                <h3 class="related-card-title">維生素 D</h3>
+                <p class="related-card-desc">
+                  同為脂溶性維生素，維生素D與維生素A在免疫調節與細胞分化上扮演協同角色，共同維持身體健康。
+                </p>
+              </div>
+            </a>
+          </div>
+        </article>
+
+        <section class="disclaimer">
+          <div class="disclaimer-content">
+            <h3>免責聲明</h3>
+            <p>本資訊僅供教育目的，不能取代專業醫療建議。開始任何營養補充計劃前，請諮詢醫療專業人員。</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="footer-component"></div>
+
+    <script src="../assets/js/deus-analytics-component.js"></script>
+    <script src="../assets/js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-footer-component.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Progress Bar
+        window.addEventListener("scroll", () => {
+          const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+          document.getElementById("progressBar").style.width = scrollPercentage + "%";
+        });
+
+        // TOC Highlighting
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".toc-link");
+        window.addEventListener("scroll", () => {
+          let current = "";
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (pageYOffset >= sectionTop) {
+              current = section.getAttribute("id");
+            }
+          });
+          navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+              link.classList.add("active");
+            }
+          });
+        });
+
+        // Smooth Scroll for TOC Links
+        document.querySelectorAll(".toc-link").forEach(link => {
+          link.addEventListener("click", function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              const headerOffset = document.getElementById('header-component')?.offsetHeight || 80;
+              const elementPosition = targetElement.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+              window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+            }
+          });
+        });
+
+        // Initialize Components
+        if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
+        if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
+        if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+      });
+    </script>
+</body>
+</html>
