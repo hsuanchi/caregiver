@@ -7,7 +7,7 @@
   <!-- 首頁 - 最高優先級 -->
   <url>
     <loc>https://life.maxlist.xyz/</loc>
-    <lastmod>2025-01-20</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -129,13 +129,6 @@
   <url>
     <loc>https://life.maxlist.xyz/post/vitamin-k.html</loc>
     <lastmod>2025-09-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://life.maxlist.xyz/post/vitamin-a.html</loc>
-    <lastmod>2025-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

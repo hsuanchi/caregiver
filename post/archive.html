@@ -10,6 +10,38 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
 
+    <!-- Open Graph for Social Media -->
+    <meta property="og:site_name" content="營養百科" />
+
+    <!-- JSON-LD for WebSite (Site Name in Search Results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "營養百科",
+      "alternateName": "Max行銷誌營養百科",
+      "url": "https://life.maxlist.xyz/"
+    }
+    </script>
+
+    <!-- JSON-LD for Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "營養百科",
+        "item": "https://life.maxlist.xyz/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "文章總覽"
+      }]
+    }
+    </script>
+
     <style>
       * {
         margin: 0;
@@ -432,20 +464,6 @@
                         <p><strong>最後更新:</strong> <span>2025-09-22</span></p>
                     </div>
                 </div>
-                <div class="article-card" id="card-vitamin-a" data-category="vitamin" data-published="2025-09-17" data-modified="2025-09-17">
-                    <div class="card-content">
-                        <span class="card-tag vitamin">維生素</span>
-                        <a href="vitamin-a.html" class="card-title-link"><h2 class="card-title">維生素A - 不只顧眼睛！解鎖視覺、皮膚與免疫的3大關鍵</h2></a>
-                        <p class="card-desc">維生素A是維持視覺、皮膚健康與免疫功能的關鍵營養素。本文將深入探討維生素A的功效、富含維生素A的食物、建議攝取量，以及補充時的注意事項。</p>
-                        <a href="vitamin-a.html" class="card-read-more">閱讀全文 &rarr;</a>
-                    </div>
-                    <div class="card-metadata">
-                        <h4>文章資訊</h4>
-                        <p><strong>關鍵字:</strong> <span>維生素A, 維他命A, 視黃醇, A醇, 貝他胡蘿蔔素, 眼睛保健, 皮膚健康, 免疫力</span></p>
-                        <p><strong>發布日期:</strong> <span>2025-09-17</span></p>
-                        <p><strong>最後更新:</strong> <span>2025-09-17</span></p>
-                    </div>
-                </div>
                 <div class="article-card" id="card-protein" data-category="protein" data-published="2024-09-15" data-modified="2025-09-15">
                     <div class="card-content">
                         <span class="card-tag protein">蛋白質</span>
@@ -732,21 +750,31 @@
         const treeView = document.getElementById('treeView');
 
         function generateTreeView() {
+            const categoryOrder = ["維生素", "礦物質", "草本營養", "蛋白質"]; // 定義期望的順序
             const categories = {};
             articleCards.forEach((card, index) => {
                 const category = card.querySelector('.card-tag').textContent.trim();
                 const title = card.querySelector('.card-title').textContent.trim();
                 const cardId = card.id || `card-${index}`;
                 card.id = cardId;
-
+        
                 if (!categories[category]) {
                     categories[category] = [];
                 }
                 categories[category].push({ title, id: cardId });
             });
-
+        
+            // 取得所有分類名稱並排序
+            const sortedCategories = Object.keys(categories).sort((a, b) => {
+                const indexA = categoryOrder.indexOf(a);
+                const indexB = categoryOrder.indexOf(b);
+                if (indexA === -1) return 1; // a 不在期望順序中，排到後面
+                if (indexB === -1) return -1; // b 不在期望順序中，排到後面
+                return indexA - indexB;
+            });
+        
             let treeHTML = '';
-            for (const category in categories) {
+            sortedCategories.forEach(category => {
                 treeHTML += `
                     <li class="tree-node">
                         <span class="node-label">${category}</span>
@@ -756,7 +784,7 @@
                     treeHTML += `<li class="tree-leaf"><a href="#${article.id}">${article.title}</a></li>`;
                 });
                 treeHTML += `</ul></li>`;
-            }
+            });
             treeView.innerHTML = treeHTML;
         }
 
@@ -882,8 +910,4 @@
       });
     </script>
 </body>
-</html>l>
-</html>tml>  </script>
-</body>
-</html>l>
 </html>
