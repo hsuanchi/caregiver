@@ -26,7 +26,7 @@
         "@type": "WebPage",
         "@id": "https://life.maxlist.xyz/post/probiotics.html"
       },
-      "headline": "益生菌 - 菌數越多越好嗎？營養師教你破解菌株編號、CFU的6大迷思，為便秘、過敏、免疫力挑對產品",
+      "headline": "益生菌 - 重建腸道好菌平衡的消化專家 | 營養百科",
       "description": "益生菌菌數越多越好嗎？營養師教你破解菌株編號、CFU的6大迷思，並提供腸胃、過敏、免疫力等不同需求的產品挑選指南，讓你不再花冤枉錢。",
       "image": "https://life.maxlist.xyz/assets/images/probiotics-og.jpg",
       "author": {
@@ -946,7 +946,7 @@
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a>
               <span class="separator">/</span>
-              <span>益生菌完整指南</span>
+              <span>益生菌 - 重建腸道好菌平衡的消化專家</span>
             </nav>
             <span class="article-category">營養師審核</span>
             <h1 class="article-title">益生菌 - 重建腸道好菌平衡的消化專家</h1>
@@ -1998,39 +1998,7 @@
         );
 
         if (headerContainer && window.DeusHeaderComponent) {
-          const header = new window.DeusHeaderComponent(headerContainer)
-            .setDebug(false)
-            .setTheme("default")
-            .setNavLinks([
-              { text: "首頁", href: "../index.html" },
-              { text: "營養素", href: "../index.html#nutrients" },
-              { text: "工具", href: "../index.html#tools" },
-            ])
-            .setActionButtons({
-              login: { text: "登入", href: "#login", show: false },
-              signup: { text: "免費註冊", href: "#signup", show: false },
-              share: {
-                text: "分享",
-                show: false,
-                callback: async function (e) {
-                  e.preventDefault();
-                  if (navigator.share) {
-                    try {
-                      await navigator.share({
-                        title: document.title,
-                        text: "來看看這篇關於益生菌的完整指南！",
-                        url: window.location.href,
-                      });
-                    } catch (err) {
-                      console.log("Share cancelled");
-                    }
-                  } else {
-                    navigator.clipboard.writeText(window.location.href);
-                    alert("連結已複製到剪貼簿！");
-                  }
-                },
-              },
-            });
+          const header = new window.DeusHeaderComponent(headerContainer).setDebug(false).setTheme("default");
           console.log("✅ Header 組件初始化完成");
         } else {
           console.error("❌ Header 組件初始化失敗");
@@ -2086,10 +2054,6 @@
           }
         });
       });
-    </script>
-  </body>
-</html>
-
     </script>
   </body>
 </html>

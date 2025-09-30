@@ -24,8 +24,8 @@
           { text: "營養素", href: "/post/archive.html" },
         ],
         actionButtons: {
-          login: { text: "登入", href: "#login", show: true },
-          signup: { text: "註冊", href: "#signup", show: true },
+          login: { text: "登入", href: "#login", show: false },
+          signup: { text: "註冊", href: "#signup", show: false },
           share: { text: "分享", show: false, callback: null },
         },
       };

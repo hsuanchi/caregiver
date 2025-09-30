@@ -35,6 +35,9 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
 
+    <!-- Open Graph for Social Media -->
+    <meta property="og:site_name" content="營養百科" />
+
     <!-- JSON-LD for Structured Data (SEO) -->
     <script type="application/ld+json">
     {
@@ -62,6 +65,35 @@
       },
       "datePublished": "YYYY-MM-DD",
       "dateModified": "YYYY-MM-DD"
+    }
+    </script>
+
+    <!-- JSON-LD for WebSite (Site Name in Search Results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "營養百科",
+      "alternateName": "Max行銷誌營養百科",
+      "url": "https://life.maxlist.xyz/"
+    }
+    </script>
+
+    <!-- JSON-LD for Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "營養百科",
+        "item": "https://life.maxlist.xyz/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "目前頁面的標題"
+      }]
     }
     </script>
 

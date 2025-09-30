@@ -2,7 +2,7 @@
 <html lang="zh-TW">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
     <title>關於我們 | 營養百科</title>
     <meta name="description" content="了解 Caregiver 營養百科背後的團隊與使命。我們是由一群充滿熱情的專業營養師組成，致力於提供最準確、最易懂的健康資訊。" />
     <meta name="keywords" content="關於我們, 營養師團隊, 我們的使命, 營養百科" />
@@ -10,6 +10,9 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="shortcut icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Open Graph for Social Media -->
+    <meta property="og:site_name" content="營養百科" />
 
     <!-- JSON-LD for Structured Data (SEO) -->
     <script type="application/ld+json">
@@ -27,6 +30,35 @@
           "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
         }
       }
+    }
+    </script>
+
+    <!-- JSON-LD for WebSite (Site Name in Search Results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "營養百科",
+      "alternateName": "Max行銷誌營養百科",
+      "url": "https://life.maxlist.xyz/"
+    }
+    </script>
+
+    <!-- JSON-LD for Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "營養百科",
+        "item": "https://life.maxlist.xyz/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "關於我們"
+      }]
     }
     </script>
 
