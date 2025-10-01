@@ -405,27 +405,37 @@
 
             <!-- 
                 =========================================================================
-                重要維護提醒 (IMPORTANT MAINTENANCE NOTE)
+                DEV NOTE: 新增/更新文章卡片維護指南
                 =========================================================================
-                當新增或修改任何文章 (`post/*.html`) 時，請務必手動檢查並同步更新以下相關檔案，
-                以確保整個專案的資料一致性。
-                
-                檢查項目：
-                1.  **本檔案 (`archive.html`)**:
-                    - 新增或更新對應的文章卡片 HTML。
-                    - 確認標題、描述、`data-` 日期與關鍵字皆為最新。
-                
-                2.  **網站地圖 (`sitemap.xml`)**:
-                    - 新增或更新該文章的 `<url>` 區塊，特別是 `<lastmod>` 日期。
-                
-                3.  **其他相關文章**:
-                    - 檢查是否有其他文章的「相關營養素」區塊需要加入新文章的連結。
+                當新增或修改文章時，請務必手動更新此處對應的文章卡片。
+                為確保資料一致性與功能正常，請檢查以下項目：
+
+                1.  **複製貼上模板**:
+                    複製下方任一 `.article-card` 區塊作為新文章的模板。
+
+                2.  **更新 `<div>` 屬性**:
+                    - `id`: 必須是唯一的，建議使用 `card-營養素英文名` (e.g., `card-vitamin-c`)。
+                    - `data-category`: 分類標籤，用於篩選功能。可選值: `vitamin`, `mineral`, `herbal`, `protein`, `other`。
+                    - `data-published`: 首次發布日期 (YYYY-MM-DD)。
+                    - `data-modified`: 最後更新日期 (YYYY-MM-DD)。
+
+                3.  **更新卡片內容**:
+                    - `.card-tag`: 分類標籤的顯示文字與對應的 class。
+                    - `href`: 確認連結指向正確的 .html 檔案。
+                    - `.card-title`: 文章主標題，應與目標頁面的 `<h1>` 一致。
+                    - `.card-desc`: 文章的簡短描述，應與目標頁面的 `<meta name="description">` 內容相符。
+                    - `關鍵字`: 更新為目標文章的關鍵字。
+                    - `發布日期` & `最後更新`: 更新為對應日期。
+
+                4.  **同步更新其他檔案**:
+                    - `sitemap.xml`: 新增或更新該文章的 `<url>` 區塊。
+                    - 相關文章區塊: 在其他相關頁尾的「相關營養素」區塊加入連結。
             -->
             <div class="archive-grid">
                 <div class="article-card" id="card-potassium" data-category="mineral" data-published="2025-09-18" data-modified="2025-09-18">
                     <div class="card-content">
                         <span class="card-tag mineral">礦物質</span>
-                        <a href="potassium.html" class="card-title-link"><h2 class="card-title">鉀 - 不只是消水腫！平衡血壓、穩定心跳的電解質之王</h2></a>
+                        <a href="potassium.html" class="card-title-link"><h2 class="card-title">鉀 - 終結水腫、抽筋的電解質之王</h2></a>
                         <p class="card-desc">還在吃重鹹、容易水腫？2025免費鉀離子終極指南，5分鐘帶你認識這位「電解質之王」，搞懂高鉀食物排行，學會如何平衡血壓、穩定心跳，向水腫說掰掰！</p>
                         <a href="potassium.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -467,7 +477,7 @@
                 <div class="article-card" id="card-protein" data-category="protein" data-published="2024-09-15" data-modified="2025-09-15">
                     <div class="card-content">
                         <span class="card-tag protein">蛋白質</span>
-                        <a href="protein.html" class="card-title-link"><h2 class="card-title">蛋白質 - 不只增肌減脂！搞懂5大核心功效與9大缺乏警訊的免費指南</h2></a>
+                        <a href="protein.html" class="card-title-link"><h2 class="card-title">蛋白質 - 不只增肌減脂！更是維持生命的基石</h2></a>
                         <p class="card-desc">想增肌減脂、提升免疫力？這份2025免費蛋白質終極指南，10分鐘帶你搞懂5大核心功效、計算每日攝取量，破解高蛋白傷腎迷思，教你從原型食物聰明吃，高效打造理想體態！</p>
                         <a href="protein.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -497,7 +507,7 @@
                 <div class="article-card" id="card-vitamin-k" data-category="vitamin" data-published="2025-09-11" data-modified="2025-09-11">
                     <div class="card-content">
                         <span class="card-tag vitamin">維生素</span>
-                        <a href="vitamin-k.html" class="card-title-link"><h2 class="card-title">維生素K - 別只知道K1！營養師揭秘K2的5大功效，搞懂補鈣為何必備它</h2></a>
+                        <a href="vitamin-k.html" class="card-title-link"><h2 class="card-title">維生素K - 補鈣、補D為何一定要有它？K2才是預防骨鬆與血管鈣化的關鍵</h2></a>
                         <p class="card-desc">你補的鈣和D都浪費了嗎？2025免費維生素K終極指南，5分鐘教你認識K2這位「鈣質神隊友」，搞懂K1/K2驚人差異與5大功效，學會如何預防骨鬆與血管鈣化，聰明守護骨骼與心血管！</p>
                         <a href="vitamin-k.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -526,7 +536,7 @@
                 <div class="article-card" id="card-vitamin-c" data-category="vitamin" data-published="2024-09-09" data-modified="2025-09-09">
                     <div class="card-content">
                         <span class="card-tag vitamin">維生素</span>
-                        <a href="vitamin-c.html" class="card-title-link"><h2 class="card-title">維生素C - 感冒才吃有效嗎？營養師破解4大迷思，教你選對劑型有效美肌抗老</h2></a>
+                        <a href="vitamin-c.html" class="card-title-link"><h2 class="card-title">維生素C - 打造透亮美肌與強效保護力的抗氧化之王</h2></a>
                         <p class="card-desc">還在以為檸檬的維生素C含量最高？2025免費維生素C終極指南，5分鐘帶你破解4大迷思，看懂天然食物排行，從7種劑型中為美肌、抗老、免疫力找到最佳方案，高效補充無負擔！</p>
                         <a href="vitamin-c.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -556,7 +566,7 @@
                 <div class="article-card" id="card-probiotics" data-category="other" data-published="2024-08-17" data-modified="2025-08-17">
                     <div class="card-content">
                         <span class="card-tag other">益生菌</span>
-                        <a href="probiotics.html" class="card-title-link"><h2 class="card-title">益生菌 - 菌數越多越好？營養師破解6大迷思，教你為腸胃、過敏挑對菌</h2></a>
+                        <a href="probiotics.html" class="card-title-link"><h2 class="card-title">益生菌 - 重建腸道好菌平衡的消化專家</h2></a>
                         <p class="card-desc">益生菌菌數越多越好？2025免費益生菌終極指南，5分鐘教你破解菌株編號、CFU的6大迷思，並為便秘、過敏、免疫力等不同需求，提供精準產品挑選策略，讓你不再花冤枉錢！</p>
                         <a href="probiotics.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -571,7 +581,7 @@
                 <div class="article-card" id="card-lutein" data-category="other" data-published="2024-08-27" data-modified="2025-08-27">
                     <div class="card-content">
                         <span class="card-tag other">其他營養素</span>
-                        <a href="lutein.html" class="card-title-link"><h2 class="card-title">葉黃素 - 游離型跟酯化型哪個好？搞懂黃金比例5:1的秘密</h2></a>
+                        <a href="lutein.html" class="card-title-link"><h2 class="card-title">葉黃素 - 3C世代的內建護眼藍光濾鏡</h2></a>
                         <p class="card-desc">眼睛乾澀、疲勞、怕光？2025免費葉黃素終極指南，5分鐘教你搞懂游離型與酯化型差異、黃金比例5:1的秘密，從7大功效與食物排行中，為3C世代的你挑對產品，守護靈魂之窗！</p>
                         <a href="lutein.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -601,7 +611,7 @@
                 <div class="article-card" id="card-fish-oil" data-category="other" data-published="2024-07-16" data-modified="2025-07-16">
                     <div class="card-content">
                         <span class="card-tag other">其他營養素</span>
-                        <a href="fish-oil.html" class="card-title-link"><h2 class="card-title">魚油 - EPA、DHA、rTG怎麼選？營養師教你6大關鍵，買對不買貴</h2></a>
+                        <a href="fish-oil.html" class="card-title-link"><h2 class="card-title">魚油 - 暢通思緒、保護心血管的關鍵Omega-3</h2></a>
                         <p class="card-desc">市面魚油8成不合格？2025免費魚油終極指南，10分鐘教你讀懂rTG、濃度與IFOS認證等6大關鍵，破解EPA/DHA黃金比例，從此買對不買貴，聰明守護心血管與大腦健康！</p>
                         <a href="fish-oil.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -616,7 +626,7 @@
                 <div class="article-card" id="card-curcumin" data-category="herbal" data-published="2024-09-08" data-modified="2025-09-08">
                     <div class="card-content">
                         <span class="card-tag herbal">草本營養</span>
-                        <a href="curcumin.html" class="card-title-link"><h2 class="card-title">薑黃素 - 你吃的可能無效！營養師揭秘3大關鍵，選對配方有效抗發炎</h2></a>
+                        <a href="curcumin.html" class="card-title-link"><h2 class="card-title">薑黃素 - 身體的天然抗發炎超級滅火器</h2></a>
                         <p class="card-desc">還在只吃薑黃粉？你可能白吃了！2025免費薑黃素終極指南，5分鐘教你搞懂黑胡椒、微脂體如何提升20倍吸收率，選對配方，讓每一分錢都花在刀口上，真正有效抗發炎！</p>
                         <a href="curcumin.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -631,7 +641,7 @@
                 <div class="article-card" id="card-collagen" data-category="protein" data-published="2024-09-08" data-modified="2025-09-08">
                     <div class="card-content">
                         <span class="card-tag protein">蛋白質</span>
-                        <a href="collagen.html" class="card-title-link"><h2 class="card-title">膠原蛋白 - 吃的有用嗎？營養師破解4大迷思，教你選對胜肽吃出Q彈肌</h2></a>
+                        <a href="collagen.html" class="card-title-link"><h2 class="card-title">膠原蛋白 - 吃出澎潤Q彈的青春實踐指南</h2></a>
                         <p class="card-desc">吃的膠原蛋白是智商稅嗎？這份2025免費終極指南，5分鐘帶你破解4大迷思，搞懂胜肽、UC-II的差別，教你如何選對產品、在最佳時機補充，真正吃出Q彈水潤肌，留住青春！</p>
                         <a href="collagen.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -661,7 +671,7 @@
                 <div class="article-card" id="card-vitamin-d" data-category="vitamin" data-published="2024-09-01" data-modified="2025-09-01">
                     <div class="card-content">
                         <span class="card-tag vitamin">維生素</span>
-                        <a href="vitamin-d.html" class="card-title-link"><h2 class="card-title">維生素D - 你是那80%的缺乏者嗎？哈佛研究證實4大功效，能降22%自體免疫風險</h2></a>
+                        <a href="vitamin-d.html" class="card-title-link"><h2 class="card-title">維生素D - 不只是維生素，更是身體的陽光總指揮</h2></a>
                         <p class="card-desc">你是那80%的維生素D缺乏者嗎？2025免費維生素D終極指南，5分鐘帶你解讀8大警訊，搞懂D2/D3差異，哈佛研究證實能降22%自體免疫風險、預防失智，教你如何正確補充陽光荷爾蒙！</p>
                         <a href="vitamin-d.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -676,7 +686,7 @@
                 <div class="article-card" id="card-vitamin-b" data-category="vitamin" data-published="2024-08-20" data-modified="2025-08-20">
                     <div class="card-content">
                         <span class="card-tag vitamin">維生素</span>
-                        <a href="vitamin-b.html" class="card-title-link"><h2 class="card-title">維生素B群 - 提神抗疲勞你吃對了嗎？營養師破解5大迷思，詳解8種B群功效</h2></a>
+                        <a href="vitamin-b.html" class="card-title-link"><h2 class="card-title">維生素B群 - 啟動身體能量、告別疲勞的活力發電機</h2></a>
                         <p class="card-desc">總是精神不濟？2025免費B群終極指南，5分鐘帶你破解「晚上吃會失眠、尿黃才有效」等5大迷思，搞懂8種B群功效，為壓力、熬夜、素食等不同需求找到最佳B群，真正告別疲勞！</p>
                         <a href="vitamin-b.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
@@ -706,7 +716,7 @@
                 <div class="article-card" id="card-coenzyme-q10" data-category="other" data-published="2024-08-27" data-modified="2025-08-27">
                     <div class="card-content">
                         <span class="card-tag other">其他營養素</span>
-                        <a href="coenzyme-q10.html" class="card-title-link"><h2 class="card-title">輔酶Q10 - 不只強心！搞懂還原型/氧化型5大功效，逆轉疲勞的完整指南</h2></a>
+                        <a href="coenzyme-q10.html" class="card-title-link"><h2 class="card-title">輔酶Q10 - 點燃心臟活力的能量火星塞</h2></a>
                         <p class="card-desc">常感疲勞、心力交瘁？這份2025免費Q10終極指南，5分鐘教你秒懂還原型(Ubiquinol)與氧化型的吸收率差異，破解5大功效與副作用，讓你選對「心臟發電機」，重拾青春活力！</p>
                         <a href="coenzyme-q10.html" class="card-read-more">閱讀全文 &rarr;</a>
                     </div>
