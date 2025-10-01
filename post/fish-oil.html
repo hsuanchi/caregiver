@@ -1981,29 +1981,24 @@
       document.head.appendChild(style);
 
       // Initialize Components
-      function initializeComponents() {
-        console.log("🚀 開始初始化組件");
-
+      document.addEventListener("DOMContentLoaded", function () {
         // Initialize Analytics Component
         if (window.DeusAnalyticsComponent) {
-          const analytics = new window.DeusAnalyticsComponent()
-            .setDebug(false) // 正式環境設為 false
-            .setEnvironment('production');
-          console.log("✅ Analytics 組件初始化完成");
-        } else {
-          console.error("❌ Analytics 組件初始化失敗");
+          new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
         }
 
         // Initialize Header Component
         const headerContainer = document.getElementById("header-component");
-        console.log("📋 Header container:", headerContainer);
-        console.log(
-          "📋 DeusHeaderComponent available:",
-          !!window.DeusHeaderComponent
-        );
-
         if (headerContainer && window.DeusHeaderComponent) {
-          const header = new window.DeusHeaderComponent(headerContainer)
+          new window.DeusHeaderComponent(headerContainer).setDebug(false);
+        }
+
+        // Initialize Footer Component
+        const footerContainer = document.getElementById("footer-component");
+        if (footerContainer && window.DeusFooterComponent) {
+          new window.DeusFooterComponent(footerContainer).setDebug(false);
+        }
+      });
 
       // Interactive test options
       document.querySelectorAll(".test-option").forEach((option) => {

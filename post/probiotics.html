@@ -1804,255 +1804,91 @@
         document.getElementById("progressBar").style.width =
           scrollPercentage + "%";
       }
-
       window.addEventListener("scroll", updateProgressBar);
 
-      // Table of Contents Highlighting
+      // TOC Highlighting
       const sections = document.querySelectorAll("section[id]");
       const navLinks = document.querySelectorAll(".toc-link");
 
       function highlightTOC() {
         let current = "";
-
-        sections.forEach((section) => {
+        sections.forEach(section => {
           const sectionTop = section.offsetTop - 100;
-          const sectionHeight = section.offsetHeight;
-          const scrollPosition = window.scrollY;
-
-          if (
-            scrollPosition >= sectionTop &&
-            scrollPosition < sectionTop + sectionHeight
-          ) {
+          if (pageYOffset >= sectionTop) {
             current = section.getAttribute("id");
           }
         });
 
-        navLinks.forEach((link) => {
+        navLinks.forEach(link => {
           link.classList.remove("active");
           if (link.getAttribute("href") === "#" + current) {
             link.classList.add("active");
           }
         });
       }
-
       window.addEventListener("scroll", highlightTOC);
-      highlightTOC();
-
-      // Smooth Scroll for TOC Links
-      navLinks.forEach((link) => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute("href");
-          const targetSection = document.querySelector(targetId);
-
-          if (targetSection) {
-            const yOffset = -80;
-            const y =
-              targetSection.getBoundingClientRect().top +
-              window.pageYOffset +
-              yOffset;
-
-            window.scrollTo({ top: y, behavior: "smooth" });
-          }
-        });
-      });
 
       // FAQ Toggle
-      document.querySelectorAll(".faq-question").forEach((question) => {
+      document.querySelectorAll(".faq-question").forEach(question => {
         question.addEventListener("click", () => {
-          const item = question.parentElement;
-          item.classList.toggle("active");
-
-          // Close other FAQ items
-          document.querySelectorAll(".faq-item").forEach((otherItem) => {
-            if (otherItem !== item) {
-              otherItem.classList.remove("active");
-            }
-          });
+          question.parentElement.classList.toggle("active");
         });
       });
 
-      // Mobile TOC Toggle
-      const mobileTocToggle = document.getElementById("mobileTocToggle");
-      const sidebar = document.getElementById("sidebar");
-      let isTocOpen = false;
-
-      if (mobileTocToggle) {
-        mobileTocToggle.addEventListener("click", () => {
-          if (!isTocOpen) {
-            // Create mobile TOC overlay
-            const overlay = document.createElement("div");
-            overlay.className = "mobile-toc-overlay";
-            overlay.style.cssText = `
-                      position: fixed;
-                      top: 0;
-                      left: 0;
-                      right: 0;
-                      bottom: 0;
-                      background: rgba(0,0,0,0.5);
-                      z-index: 998;
-                      animation: fadeIn 0.3s ease;
-                  `;
-
-            const mobileToC = sidebar.cloneNode(true);
-            mobileToC.style.cssText = `
-                      position: fixed;
-                      top: 50%;
-                      left: 50%;
-                      transform: translate(-50%, -50%);
-                      z-index: 999;
-                      max-width: 90%;
-                      max-height: 80vh;
-                      animation: slideIn 0.3s ease;
-                  `;
-
-            overlay.appendChild(mobileToC);
-            document.body.appendChild(overlay);
-
-            // Close on overlay click
-            overlay.addEventListener("click", (e) => {
-              if (e.target === overlay) {
-                overlay.remove();
-                isTocOpen = false;
-              }
-            });
-
-            // Close on link click
-            mobileToC.querySelectorAll(".toc-link").forEach((link) => {
-              link.addEventListener("click", () => {
-                overlay.remove();
-                isTocOpen = false;
-              });
-            });
-
-            isTocOpen = true;
-          }
-        });
-      }
-
-      // Share Button (檢查是否存在)
-      const shareBtn = document.getElementById("shareBtn");
-      if (shareBtn) {
-        shareBtn.addEventListener("click", async (e) => {
+      // Smooth Scroll for TOC Links
+      document.querySelectorAll(".toc-link").forEach(link => {
+        link.addEventListener("click", function(e) {
           e.preventDefault();
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
 
-          if (navigator.share) {
-            try {
-              await navigator.share({
-                title: document.title,
-                text: "來看看這篇關於益生菌的完整指南！",
-                url: window.location.href,
-              });
-            } catch (err) {
-              console.log("Share cancelled");
-            }
-          } else {
-            // Fallback - copy to clipboard
-            navigator.clipboard.writeText(window.location.href);
-            alert("連結已複製到剪貼簿！");
+          if (targetElement) {
+            const headerOffset = document.getElementById('header-component')?.offsetHeight || 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
           }
         });
-      }
+      });
 
-      // Add animations
-      const style = document.createElement("style");
-      style.textContent = `
-              @keyframes fadeIn {
-                  from { opacity: 0; }
-                  to { opacity: 1; }
-              }
-              
-              @keyframes slideIn {
-                  from {
-                      opacity: 0;
-                      transform: translate(-50%, -45%);
-                  }
-                  to {
-                      opacity: 1;
-                      transform: translate(-50%, -50%);
-                  }
-              }
-          `;
-      document.head.appendChild(style);
+      // Interactive test options
+      document.querySelectorAll(".quick-test .test-option").forEach(label => {
+          const checkbox = label.querySelector('input[type="checkbox"]');
+          label.addEventListener('click', (e) => {
+              e.preventDefault();
+              checkbox.checked = !checkbox.checked;
+              label.classList.toggle('selected', checkbox.checked);
+          });
+      });
 
-      // Initialize Components
-      function initializeComponents() {
-        console.log("🚀 開始初始化組件");
+      // Component Initialization
+      document.addEventListener("DOMContentLoaded", function() {
+        highlightTOC(); // Initial call on page load
 
-        // Initialize Analytics Component
         if (window.DeusAnalyticsComponent) {
-          const analytics = new window.DeusAnalyticsComponent()
-            .setDebug(false) // 正式環境設為 false
-            .setEnvironment('production');
+          new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
           console.log("✅ Analytics 組件初始化完成");
         } else {
           console.error("❌ Analytics 組件初始化失敗");
         }
-
-        // Initialize Header Component
         const headerContainer = document.getElementById("header-component");
-        console.log("📋 Header container:", headerContainer);
-        console.log(
-          "📋 DeusHeaderComponent available:",
-          !!window.DeusHeaderComponent
-        );
-
         if (headerContainer && window.DeusHeaderComponent) {
-          const header = new window.DeusHeaderComponent(headerContainer).setDebug(false).setTheme("default");
+          new window.DeusHeaderComponent(headerContainer).setDebug(false).setTheme("default");
           console.log("✅ Header 組件初始化完成");
         } else {
           console.error("❌ Header 組件初始化失敗");
         }
-
-        // Initialize Footer Component
         const footerContainer = document.getElementById("footer-component");
-        console.log("📋 Footer container:", footerContainer);
-        console.log(
-          "📋 DeusFooterComponent available:",
-          !!window.DeusFooterComponent
-        );
-
         if (footerContainer && window.DeusFooterComponent) {
-          const footer = new window.DeusFooterComponent(footerContainer)
-            .setDebug(false)
-            .setTheme("default");
+          new window.DeusFooterComponent(footerContainer).setDebug(false).setTheme("default");
           console.log("✅ Footer 組件初始化完成");
         } else {
           console.error("❌ Footer 組件初始化失敗");
         }
-      }
-
-      // 確保在所有腳本載入後再初始化
-      document.addEventListener("DOMContentLoaded", function () {
-        // 延遲一點時間確保組件腳本都載入完成
-        setTimeout(initializeComponents, 100);
-      });
-
-      // Interactive test options
-      document.querySelectorAll(".test-option").forEach((option) => {
-        option.addEventListener("click", function () {
-          const checkbox = this.querySelector('input[type="checkbox"]');
-          checkbox.checked = !checkbox.checked;
-          this.classList.toggle("selected", checkbox.checked);
-
-          // Count checked items for need test
-          if (checkbox.name === "need-test") {
-            const checkedCount = document.querySelectorAll(
-              'input[name="need-test"]:checked'
-            ).length;
-            const resultText = document.querySelector(
-              ".quick-test p:last-child"
-            );
-            if (checkedCount >= 2) {
-              resultText.style.color = "#dc2626";
-              resultText.innerHTML = `你勾選了 ${checkedCount} 個！看來你真的需要補充益生菌了！`;
-            } else {
-              resultText.style.color = "#14532d";
-              resultText.innerHTML =
-                "勾選 2 個以上？你可能真的需要補充益生菌囉！";
-            }
-          }
-        });
       });
     </script>
   </body>
