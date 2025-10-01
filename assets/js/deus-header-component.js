@@ -22,6 +22,7 @@
         showMobileMenu: false,
         navLinks: [
           { text: "營養素", href: "/post/archive.html" },
+          { text: "互動式資料庫", href: "/post/tools/nutrient-dashboard.html" },
         ],
         actionButtons: {
           login: { text: "登入", href: "#login", show: false },

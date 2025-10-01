@@ -278,6 +278,7 @@
                         <div class="footer-section">
                             <h3>資源中心</h3>
                             <ul class="footer-links">
+                                <li><a href="/post/tools/nutrient-dashboard.html">互動式營養素資料庫</a></li>
                                 <li><a href="/post/archive.html">文章彙整</a></li>
                                 <li><a href="/about.html">關於我們</a></li>
                                 <li><a href="/post/official-health-sites.html">官方資料</a></li>
