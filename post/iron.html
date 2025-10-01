@@ -188,16 +188,6 @@
         position: relative;
         overflow: hidden;
       }
-      
-      .article-hero::before {
-        content: "🩸";
-        position: absolute;
-        right: -20px;
-        top: -20px;
-        font-size: 150px;
-        opacity: 0.1;
-        transform: rotate(-15deg);
-      }
 
       .article-category {
         display: inline-block;
@@ -359,12 +349,6 @@
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
       }
 
-      .info-card-icon {
-        font-size: 3em;
-        margin-bottom: 15px;
-        display: block;
-      }
-
       .info-card-title {
         font-size: 1.3em;
         font-weight: 700;
@@ -452,11 +436,6 @@
         gap: 15px;
         margin-bottom: 15px;
       }
-
-      .risk-card-icon {
-        font-size: 2em;
-      }
-
       .risk-card-title {
         font-size: 1.1em;
         font-weight: 700;
@@ -489,11 +468,6 @@
         gap: 15px;
         margin-bottom: 20px;
       }
-
-      .safety-icon {
-        font-size: 2.5em;
-      }
-
       .safety-item h4 {
         font-size: 1.4em;
         font-weight: 700;
@@ -804,7 +778,7 @@
           <ul class="toc-list">
             <li><a href="#summary" class="toc-link">30 秒速讀版</a></li>
             <li><a href="#basic-info" class="toc-link">鐵是什麼？不只是補血</a></li>
-            <li><a href="#deficiency-signs" class="toc-link">缺鐵的8大警訊</a></li>
+            <li><a href="#deficiency-signs" class="toc-link">缺鐵的6大警訊</a></li>
             <li><a href="#diagnosis" class="toc-link">如何診斷？別只看血紅素</a></li>
             <li><a href="#how-to-supplement" class="toc-link">如何聰明補充鐵質</a></li>
             <li><a href="#product-selection" class="toc-link">如何挑選鐵劑</a></li>
@@ -842,19 +816,16 @@
                 <h2>30 秒速讀版</h2>
                 <div class="info-cards">
                   <a href="#deficiency-signs" class="info-card quick-read-card">
-                    <span class="info-card-icon">😴</span>
                     <h4 class="info-card-title">有什麼警訊？</h4>
                     <p class="info-card-desc">極度疲勞、掉髮、臉色蒼白<br />都是缺鐵的徵兆</p>
                     <div class="card-click-hint">點擊了解詳情</div>
                   </a>
                   <a href="#how-to-supplement" class="info-card quick-read-card">
-                    <span class="info-card-icon">🥬</span>
                     <h4 class="info-card-title">怎麼補充？</h4>
                     <p class="info-card-desc">多吃紅肉、深綠色蔬菜<br />搭配維生素C效果加倍</p>
                     <div class="card-click-hint">點擊了解詳情</div>
                   </a>
                   <a href="#product-selection" class="info-card quick-read-card">
-                    <span class="info-card-icon">💊</span>
                     <h4 class="info-card-title">怎麼選購？</h4>
                     <p class="info-card-desc">首選「甘胺酸亞鐵」<br />吸收好、副作用少</p>
                     <div class="card-click-hint">點擊了解詳情</div>
@@ -870,48 +841,32 @@
              </section>
 
              <section id="deficiency-signs">
-                <h2>身體的「缺鐵」警訊</h2>
-                <p>缺鐵性貧血是全世界最常見的營養素缺乏症之一。然而，許多人即使已經處於缺鐵狀態，卻因為症狀輕微或與其他狀況混淆而未能察覺。以下是八大常見警訊：</p>
+                <h2>身體的求救信號：缺鐵的6大警訊</h2>
+                <p>當身體的鐵存量不足時，會發出一系列警訊。這些症狀往往容易被忽略或歸因於其他問題，及早辨識是維持健康的關鍵。</p>
                 <div class="info-cards">
                   <div class="info-card">
-                    <span class="info-card-icon">😴</span>
-                    <h4 class="info-card-title">極度疲勞與虛弱</h4>
-                    <p class="info-card-desc">最普遍的警訊，因全身組織供氧不足而感到疲累。</p>
+                    <h4 class="info-card-title">1. 極度疲勞與蒼白</h4>
+                    <p class="info-card-desc">最普遍的警訊。因全身組織與大腦供氧不足，導致持續疲倦、頭暈，且紅血球減少會使臉色、嘴唇和眼瞼內側顯得蒼白。</p>
                   </div>
                   <div class="info-card">
-                    <span class="info-card-icon">😵</span>
-                    <h4 class="info-card-title">頭暈、頭痛、臉色蒼白</h4>
-                    <p class="info-card-desc">大腦供氧不足，且紅血球減少影響肌膚顏色。</p>
+                    <h4 class="info-card-title">2. 掉髮與指甲問題</h4>
+                    <p class="info-card-desc">髮根養分不足導致異常掉髮，指甲也可能變得脆弱、易斷裂，甚至出現匙狀指（指甲凹陷）。</p>
                   </div>
                   <div class="info-card">
-                    <span class="info-card-icon">💇‍♀️</span>
-                    <h4 class="info-card-title">掉髮與指甲脆弱</h4>
-                    <p class="info-card-desc">髮根養分不足導致落髮，指甲變薄、易斷裂。</p>
+                    <h4 class="info-card-title">3. 心悸、呼吸急促與免疫力下降</h4>
+                    <p class="info-card-desc">心臟需更費力地工作來彌補血液中的氧氣不足，導致心悸。同時，鐵質缺乏也會削弱免疫力，使身體更容易受感染。</p>
                   </div>
                   <div class="info-card">
-                    <span class="info-card-icon">💓</span>
-                    <h4 class="info-card-title">心悸與呼吸急促</h4>
-                    <p class="info-card-desc">心臟需更努力工作來彌補血液中的氧氣不足。</p>
+                    <h4 class="info-card-title">4. 神經與情緒問題</h4>
+                    <p class="info-card-desc">影響神經傳導物質，導致易怒、注意力不集中，或是在休息時腿部出現難以忍受的麻癢感（不寧腿症候群）。</p>
                   </div>
                   <div class="info-card">
-                    <span class="info-card-icon">🦵</span>
-                    <h4 class="info-card-title">不寧腿症候群</h4>
-                    <p class="info-card-desc">腿部會感到麻癢，像有螞蟻在爬，與鐵缺乏有關。</p>
+                    <h4 class="info-card-title">5. 口腔問題與異食癖 (Pica)</h4>
+                    <p class="info-card-desc">可能出現舌頭發炎、疼痛、口角炎，或產生想食用冰塊、泥土、粉筆等非食物物質的奇特渴望。</p>
                   </div>
                   <div class="info-card">
-                    <span class="info-card-icon">🧊</span>
-                    <h4 class="info-card-title">口腔問題與異食癖</h4>
-                    <p class="info-card-desc">舌頭發炎、疼痛，或渴望食用冰塊、泥土等非食物。</p>
-                  </div>
-                   <div class="info-card">
-                    <span class="info-card-icon">😟</span>
-                    <h4 class="info-card-title">情緒與認知問題</h4>
-                    <p class="info-card-desc">影響神經傳導物質，導致易怒、注意力不集中。</p>
-                  </div>
-                  <div class="info-card">
-                    <span class="info-card-icon">🤒</span>
-                    <h4 class="info-card-title">經常感染</h4>
-                    <p class="info-card-desc">鐵質缺乏會削弱免疫力，使身體更容易受感染。</p>
+                    <h4 class="info-card-title">6. 手腳冰冷</h4>
+                    <p class="info-card-desc">鐵質影響甲狀腺功能與血液循環，缺鐵可能導致即使在溫暖環境下，手腳依然感覺冰冷。</p>
                   </div>
                 </div>
              </section>
@@ -993,15 +948,15 @@
                 <h3>高風險族群補鐵計畫</h3>
                 <div class="risk-group-cards">
                   <div class="risk-card">
-                    <div class="risk-card-header"><span class="risk-card-icon">🤰</span><h4 class="risk-card-title">孕婦與哺乳期女性</h4></div>
+                    <div class="risk-card-header"><h4 class="risk-card-title">孕婦與哺乳期女性</h4></div>
                     <p class="risk-card-desc">需求量最高，每日需45mg。單靠飲食難以滿足，應諮詢醫師考慮補充鐵劑。</p>
                   </div>
                   <div class="risk-card">
-                    <div class="risk-card-header"><span class="risk-card-icon">🩸</span><h4 class="risk-card-title">經期女性</h4></div>
+                    <div class="risk-card-header"><h4 class="risk-card-title">經期女性</h4></div>
                     <p class="risk-card-desc">經血量多者流失大量鐵質，若有疲勞、掉髮等症狀，應加強鐵質攝取。</p>
                   </div>
                   <div class="risk-card">
-                    <div class="risk-card-header"><span class="risk-card-icon">🌿</span><h4 class="risk-card-title">素食者</h4></div>
+                    <div class="risk-card-header"><h4 class="risk-card-title">素食者</h4></div>
                     <p class="risk-card-desc">主要挑戰是提升植物性鐵的吸收率，務必搭配維生素C，並考慮補充劑。</p>
                   </div>
                 </div>
@@ -1010,7 +965,6 @@
                 <div class="safety-container">
                   <div class="safety-item safety-warning">
                     <div class="safety-item-header">
-                      <span class="safety-icon">⚠️</span>
                       <h4>過量風險 & 特殊疾病</h4>
                     </div>
                     <div class="safety-item-content">
