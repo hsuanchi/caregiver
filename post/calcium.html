@@ -25,7 +25,7 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "營養百科",
-      "alternateName": "Max行銷誌營養百科",
+      "alternateName": "營養百科",
       "url": "https://life.maxlist.xyz/"
     }
     </script>
@@ -514,6 +514,298 @@
         text-align: left;
       }
       
+      /* --- Infographic: Calcium Dual Role Donut Chart --- */
+      .chart-dual-role {
+          display: flex;
+          align-items: center;
+          gap: 40px;
+          background-color: #f8fafc;
+          border: 1px solid #e2e8f0;
+          border-radius: 20px;
+          padding: 30px;
+          margin: 40px 0;
+          flex-wrap: wrap; /* Allow wrapping on small screens */
+      }
+
+      .donut-chart-visual {
+          position: relative;
+          width: 180px;
+          height: 180px;
+          flex-shrink: 0;
+          margin: 0 auto; /* Center when wrapped */
+      }
+
+      .donut-chart-segment {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          /* The magic: create a cone gradient with a sharp 1% line */
+          background: conic-gradient(#ff6b35 0% 1%, #718096 1% 100%);
+      }
+
+      .donut-chart-text {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 70%;
+          height: 70%;
+          background-color: #f8fafc; /* Match container background */
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          font-size: 1.1em;
+          font-weight: 600;
+          color: #2d3748;
+          line-height: 1.3;
+      }
+
+      .donut-chart-legend {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+      }
+
+      .legend-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 15px;
+      }
+
+      .legend-value {
+          font-size: 2em;
+          font-weight: 700;
+          flex-shrink: 0;
+      }
+      
+      .legend-item.legend-99 .legend-value { color: #718096; }
+      .legend-item.legend-1 .legend-value { color: #ff6b35; }
+
+      .legend-label {
+          font-size: 0.95em;
+          line-height: 1.6;
+      }
+      .legend-label strong {
+          display: block;
+          color: #2d3748;
+          font-size: 1.1em;
+          margin-bottom: 4px;
+      }
+      
+      /* --- Infographic: Peak Bone Mass Chart --- */
+      .peak-bone-mass-chart {
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        padding: 30px;
+        margin: 40px 0;
+      }
+      .peak-bone-mass-chart h4 {
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .peak-bone-mass-chart svg {
+        width: 100%;
+        height: auto;
+        font-family: inherit;
+      }
+      .peak-bone-mass-chart .axis-line {
+        stroke: #cbd5e1;
+        stroke-width: 2;
+      }
+      .peak-bone-mass-chart .main-curve {
+        fill: none;
+        stroke: #4a5568;
+        stroke-width: 3;
+        stroke-linecap: round;
+      }
+      .peak-bone-mass-chart .highlight-line {
+        fill: none;
+        stroke: #ff6b35;
+        stroke-width: 3;
+        stroke-dasharray: 4 4;
+      }
+      .peak-bone-mass-chart .marker-dot {
+        fill: #4a5568;
+      }
+      .peak-bone-mass-chart .marker-text {
+        font-size: 12px;
+        fill: #2d3748;
+        text-anchor: middle;
+      }
+      .peak-bone-mass-chart .axis-label {
+        font-size: 12px;
+        fill: #718096;
+        text-anchor: middle;
+      }
+      
+      /* --- Infographic: Supplement Comparison Cards --- */
+      .supplement-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin: 40px 0;
+      }
+      .supplement-card {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        border-top: 5px solid;
+        transition: all 0.3s ease;
+      }
+      .supplement-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+      }
+
+      /* Card Color Themes */
+      .card-carbonate { border-color: #60a5fa; } /* Blue */
+      .card-citrate { border-color: #f59e0b; } /* Amber */
+      .card-algae { border-color: #22c55e; } /* Green */
+      .card-chelate { border-color: #ef4444; } /* Red */
+
+      .card-header { text-align: center; }
+      .card-title {
+        font-size: 1.5em;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+      .card-carbonate .card-title { color: #1e40af; }
+      .card-citrate .card-title { color: #92400e; }
+      .card-algae .card-title { color: #15803d; }
+      .card-chelate .card-title { color: #991b1b; }
+
+      .card-calcium-content {
+        font-size: 1.1em;
+        font-weight: 600;
+        color: #4a5568;
+        margin-bottom: 20px;
+      }
+      .card-calcium-content span { font-size: 1.5em; font-weight: 800; color: #1a202c; }
+
+      .card-section { margin-bottom: 20px; }
+      .card-section-title {
+        font-size: 0.9em;
+        font-weight: 600;
+        color: #718096;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .absorption-bar {
+        height: 10px;
+        background-color: #e2e8f0;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      .absorption-bar-fill {
+        height: 100%;
+        border-radius: 5px;
+      }
+      .card-carbonate .absorption-bar-fill { background-color: #60a5fa; }
+      .card-citrate .absorption-bar-fill { background-color: #f59e0b; }
+      .card-algae .absorption-bar-fill { background-color: #22c55e; }
+      .card-chelate .absorption-bar-fill { background-color: #ef4444; }
+
+      .card-pros-cons ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      .card-pros-cons li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 5px;
+        font-size: 0.95em;
+      }
+      .card-pros-cons .icon {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+      
+      .card-footer {
+        margin-top: auto; /* Push footer to the bottom */
+        padding-top: 15px;
+        border-top: 1px solid #e2e8f0;
+        text-align: center;
+      }
+      .card-audience-tag {
+        display: inline-block;
+        padding: 6px 15px;
+        border-radius: 999px;
+        font-size: 0.85em;
+        font-weight: 600;
+      }
+      .card-carbonate .card-audience-tag { background-color: #e0f2fe; color: #0c4a6e; }
+      .card-citrate .card-audience-tag { background-color: #fffbeb; color: #92400e; }
+      .card-algae .card-audience-tag { background-color: #f0fdf4; color: #166534; }
+      .card-chelate .card-audience-tag { background-color: #fee2e2; color: #991b1b; }
+      
+      /* --- Infographic: Calcium Synergy Diagram --- */
+      .synergy-diagram-container {
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        padding: 30px;
+        margin: 40px 0;
+      }
+      .synergy-diagram svg {
+        width: 100%;
+        height: auto;
+        font-family: inherit;
+        overflow: visible; /* Allow labels to go outside viewBox */
+      }
+      .synergy-diagram .connector-line {
+        stroke: #94a3b8;
+        stroke-width: 2;
+        fill: none;
+      }
+      .synergy-diagram .center-node circle {
+        fill: #ff6b35;
+        stroke: #fff;
+        stroke-width: 5;
+      }
+      .synergy-diagram .center-node text {
+        fill: white;
+        font-weight: 700;
+        font-size: 28px;
+      }
+      .synergy-diagram .satellite-node circle {
+        stroke: #fff;
+        stroke-width: 4;
+      }
+      .synergy-diagram .satellite-node text.node-title {
+        font-weight: 700;
+        font-size: 16px;
+      }
+      .synergy-diagram .satellite-node text.node-desc {
+        font-size: 13px;
+        fill: #4a5568;
+      }
+      /* Node colors */
+      .node-d circle { fill: #f59e0b; }
+      .node-d .node-title { fill: #92400e; }
+      .node-k2 circle { fill: #22c55e; }
+      .node-k2 .node-title { fill: #15803d; }
+      .node-mg circle { fill: #8b5cf6; }
+      .node-mg .node-title { fill: #5b21b6; }
+      
+      @media (max-width: 768px) {
+          .chart-dual-role {
+              flex-direction: column; /* Stack chart and legend */
+              gap: 30px;
+          }
+      }
+
       .faq-section {
         margin-top: 60px;
         padding-top: 40px;
@@ -706,7 +998,24 @@
             <p>鈣是人體內含量最豐富的礦物質，一位60公斤的成年人體內約有1公斤的鈣，是構成我們身體的關鍵元素。但您知道嗎？這大量的鈣質在體內扮演著兩種截然不同，卻又息息相關的角色：</p>
             
             <h3>鈣的雙重角色：<span class="highlight-nutrient">99%的結構支撐 vs 1%的生命調控</span></h3>
-            <p>絕大多數（約99%）的鈣質，以<strong class="highlight-nutrient">「羥磷灰石」</strong>的結晶形式，成為我們骨骼與牙齒的堅固建材，如同一個巨大的「鈣質銀行」。而僅佔總量1%的鈣，則以<strong class="highlight-nutrient">鈣離子</strong>的形式存在於血液和細胞中，負責調控心跳、神經傳導、肌肉收縮等攸關生死的即時任務。</p>
+            
+            <div class="chart-dual-role">
+                <div class="donut-chart-visual">
+                    <div class="donut-chart-segment"></div>
+                    <div class="donut-chart-text">鈣的<br>雙重角色</div>
+                </div>
+                <div class="donut-chart-legend">
+                    <div class="legend-item legend-99">
+                        <div class="legend-value">99%</div>
+                        <div class="legend-label"><strong>結構鈣 (骨骼銀行)</strong><br>構成骨骼與牙齒的堅固建材。</div>
+                    </div>
+                    <div class="legend-item legend-1">
+                        <div class="legend-value">1%</div>
+                        <div class="legend-label"><strong>離子鈣 (生命總司令)</strong><br>調控心跳、神經傳導與肌肉收縮。</div>
+                    </div>
+                </div>
+            </div>
+
 
             <h3>骨骼：一個動態的「健康銀行帳戶」</h3>
             <p>大眾普遍將骨骼視為一個靜態、不變的支架，但事實上，骨骼是一個充滿活力的動態組織，無時無刻不在進行著稱為「重塑」（Remodeling）的過程。這個過程可以比喻為一個健康銀行帳戶的資金流動，涉及兩種關鍵細胞的協同作用：</p>
@@ -761,10 +1070,39 @@
               <li><strong>青少年期 (13-18 歲)：</strong> 此階段的鈣需求量達到峰值的 <strong class="highlight-nutrient">1200 毫克/日</strong>，以支持快速的骨骼生長，並為達成理想的巔峰骨量做最後衝刺。</li>
               <li><strong>懷孕與哺乳期：</strong> 儘管官方建議攝取量維持在 1000 毫克/日，但其背後的生理意義卻截然不同。這引出了所謂的「懷孕悖論」。<span class="highlight-nutrient">當飲食攝取嚴重不足時，為了滿足胎兒發育的剛性需求，母體唯一的選擇就是分解自身的骨骼，釋放鈣質。</span></li>
             </ul>
+            
+            <div class="peak-bone-mass-chart">
+              <h4>知識補給站：巔峰骨量 (Peak Bone Mass) 人生曲線</h4>
+              <svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">
+                <!-- Axes -->
+                <line x1="30" y1="200" x2="470" y2="200" class="axis-line"></line>
+                <line x1="30" y1="200" x2="30" y2="50" class="axis-line"></line>
+                <!-- Y-Axis Label -->
+                <text x="15" y="40" class="axis-label" transform="rotate(-90, 15, 40)">骨骼質量</text>
+                <!-- X-Axis Label -->
+                <text x="250" y="230" class="axis-label">年齡</text>
 
-            <div class="alert alert-tip" style="background: #fffbeb; color: #b45309;">
-              <strong>知識補給站：關鍵的窗口期——巔峰骨量 (Peak Bone Mass)</strong>
-              <p>「巔峰骨量」是指一個人在其一生中所能達到的骨骼質量的最高點，是決定其日後骨骼健康的關鍵指標。研究數據顯示，這個巔峰值通常在青春期晚期至成年早期達成。這一事實引出了一個核心觀念：<span class="highlight-nutrient">骨質疏鬆症實質上是一種「始於兒少，顯於老年」的疾病</span>。<strong><span class="highlight-nutrient">世界骨質疏鬆基金會指出，若能在年輕時期將巔峰骨密度提升 10%，便可將骨質疏鬆症的發生延緩 13 年。</span></strong></p>
+                <!-- Main Curve -->
+                <path d="M 40 195 C 100 100, 150 60, 220 60 S 350 80, 460 180" class="main-curve"></path>
+
+                <!-- Peak Marker -->
+                <circle cx="220" cy="60" r="4" class="marker-dot"></circle>
+                <line x1="220" y1="65" x2="220" y2="95" stroke="#4a5568" stroke-width="1" stroke-dasharray="2 2"></line>
+                <text x="220" y="110" class="marker-text">30歲 巔峰</text>
+
+                <!-- Menopause Highlight -->
+                <path d="M 340 105 C 370 130, 400 150, 430 168" class="highlight-line"></path>
+                <line x1="340" y1="105" x2="340" y2="135" stroke="#ff6b35" stroke-width="1" stroke-dasharray="2 2"></line>
+                <text x="340" y="150" class="marker-text" fill="#c05621">50歲 更年期後<br/>(女性流失加速)</text>
+
+                <!-- Age Ticks -->
+                <text x="40" y="215" class="axis-label">0</text>
+                <text x="220" y="215" class="axis-label">30</text>
+                <text x="460" y="215" class="axis-label">80</text>
+              </svg>
+              <p style="font-size: 0.9em; color: #718096; text-align: center; margin-top: 15px;">
+                上圖清晰地展示了骨質疏鬆是「始於兒少，顯於老年」的疾病。在30歲前努力存夠「骨本」，是預防老年骨折的最佳策略。
+              </p>
             </div>
 
             <h3>攝取量-國際參考指標</h3>
@@ -945,28 +1283,55 @@
 
             <h3>提升鈣吸收的其他營養素</h3>
             <p>想讓吃進去的鈣質真正被身體利用，光靠單打獨鬥是不夠的，它需要一個「神隊友」團隊的協助。以下是提升鈣吸收率的其他營養素：</p>
-            <div class="key-factor-cards" style="grid-template-columns: 1fr; gap: 20px;">
-              <div class="key-factor-card" style="border-top: 5px solid #f59e0b;">
-                <div class="key-factor-header">
-                  <h4 class="key-factor-title" style="color: #b45309; margin: 0;"><a href="vitamin-d.html" style="color: inherit; text-decoration: none;">維生素 D</a>：鈣質的專屬司機</h4>
+            <div class="synergy-diagram-container">
+                <div class="synergy-diagram">
+                    <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+                            </marker>
+                        </defs>
+
+                        <!-- Lines -->
+                        <path class="connector-line" d="M 220 200 Q 260 120 290 80" marker-end="url(#arrow)"></path>
+                        <path class="connector-line" d="M 380 200 Q 340 120 310 80" marker-end="url(#arrow)"></path>
+                        <path class="connector-line" d="M 220 200 Q 260 280 290 320" marker-end="url(#arrow)"></path>
+
+                        <!-- Center Node -->
+                        <g class="center-node" transform="translate(300, 200)">
+                            <circle r="60"></circle>
+                            <text text-anchor="middle" dy=".3em">鈣</text>
+                        </g>
+
+                        <!-- Satellite Nodes -->
+                        <g class="satellite-node node-d" transform="translate(150, 200)">
+                            <circle r="40"></circle>
+                            <text text-anchor="middle" dy=".3em" class="node-title">維生素 D</text>
+                        </g>
+                        <g transform="translate(150, 260)">
+                             <text text-anchor="middle" class="node-desc">專屬司機，提升吸收</text>
+                        </g>
+                        
+                        <g class="satellite-node node-k2" transform="translate(450, 80)">
+                            <circle r="40"></circle>
+                             <text text-anchor="middle" dy=".3em" class="node-title">維生素 K2</text>
+                        </g>
+                        <g transform="translate(450, 140)">
+                             <text text-anchor="middle" class="node-desc">交通警察，引導至骨骼</text>
+                        </g>
+                        
+                        <g class="satellite-node node-mg" transform="translate(450, 320)">
+                            <circle r="40"></circle>
+                             <text text-anchor="middle" dy=".3em" class="node-title">鎂</text>
+                        </g>
+                         <g transform="translate(450, 380)">
+                             <text text-anchor="middle" class="node-desc">平衡夥伴，協同作用</text>
+                        </g>
+                    </svg>
                 </div>
-                <p class="info-card-desc">這是影響鈣吸收最重要的單一因素。維生素 D 如同鈣質的「專屬司機」，它能促使腸道細胞製造一種特殊的<strong class="highlight-nutrient">鈣結合蛋白</strong>，負責將鈣從腸道「搬運」到血液中。缺乏維生素 D，再多的鈣也只能滯留在腸道，無法被利用。</p>
-              </div>
-              <div class="key-factor-card" style="border-top: 5px solid #8b5cf6;">
-                <div class="key-factor-header">
-                  <h4 class="key-factor-title" style="color: #6d28d9; margin: 0;"><a href="magnesium.html" style="color: inherit; text-decoration: none;">鎂</a>：鈣質的平衡夥伴</h4>
-                </div>
-                <p class="info-card-desc">鎂和鈣是焦不離孟的夥伴。鎂能協助調節體內的鈣平衡，確保鈣質能順利進入骨骼，而非沉積在錯誤的地方。理想的<strong class="highlight-nutrient">鈣鎂攝取比例常被認為是 2:1</strong>，有助於鈣質的有效利用，維持骨骼與肌肉的正常功能。</p>
-              </div>
-              <div class="key-factor-card" style="border-top: 5px solid #22c55e;">
-                <div class="key-factor-header">
-                  <h4 class="key-factor-title" style="color: #15803d; margin: 0;">酸性環境：鈣質的助溶劑</h4>
-                </div>
-                <p class="info-card-desc">鈣在酸性環境中溶解度較高，更容易被吸收。充足的胃酸是天然的助溶劑。此外，隨餐補充<strong class="highlight-nutrient">維生素 C</strong>（如芭樂、奇異果），或選擇<strong class="highlight-nutrient">檸檬酸鈣</strong>，都能幫助創造有利於鈣吸收的微環境。</p>
-              </div>
             </div>
 
-                  </section>
+          </section>
 
           <section id="supplements">
             <h2>鈣營養品怎麼挑？</h2>
@@ -984,6 +1349,7 @@
                 <p class="risk-card-desc">飲食中完全不含乳製品，需要更謹慎地規劃植物性鈣質的來源與吸收。</p>
               </div>
               <div class="risk-card">
+                <div class="risk-card-header"><h4 class="risk-card-title">乳糖不耐症者</h4></div>
                 <p class="risk-card-desc">無法從牛奶等主要乳製品中獲取鈣質，是攝取不足的常見族群。</p>
               </div>
               <div class="risk-card">
@@ -1005,22 +1371,103 @@
               <p style="margin-bottom: 0;">消費者在選購鈣營養品時，最容易混淆的一點是標示上的劑量。瓶身上顯著的數字（如 1250 毫克）通常指的是鈣化合物（如碳酸鈣）的總重量，而非身體能實際利用的<strong class="highlight-nutrient">「元素鈣」（Elemental Calcium）</strong>含量。真正的有效劑量必須查看產品背後的「營養標示」才能確定。</p>
             </div>
 
-            <h3 id="supplement-comparison">常見鈣營養品比較分析表</h3>
+            <h3 id="supplement-comparison">常見鈣營養品比較分析</h3>
             <p>市面上的鈣營養品令人眼花撩亂，從鈣的來源、劑量到複方成分都有很大的差異。一個好的選擇策略，應該是綜合考量<strong class="highlight-nutrient">「元素鈣含量」、「吸收率」與「個人耐受度」</strong>這三大核心指標。下表旨在幫助您根據自身需求（如腸胃敏感度、成本考量、飲食限制）做出明智的選擇，找到最適合您的產品。</p>
-            <h4>表 5：常見鈣營養品比較分析</h4>
-            <div style="overflow-x: auto; padding-bottom: 10px;">
-              <table class="data-table">
-                <thead>
-                  <tr><th>適用對象</th><th>鈣的形式</th><th>元素鈣含量 (%)</th><th>吸收特性</th><th>優點</th><th>缺點</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td><span style="display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.9em; font-weight: 600; background-color: #eef2ff; color: #4338ca;">一般大眾</span></td><td><strong>碳酸鈣</strong></td><td>約 <strong class="highlight-nutrient">40%</strong></td><td>需胃酸輔助，建議隨餐服用</td><td>元素鈣含量最高，價格實惠</td><td>易引起脹氣、便秘</td></tr>
-                  <tr><td><span style="display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.9em; font-weight: 600; background-color: #f0fdf4; color: #166534;">長者/胃藥服用者</span></td><td><strong>檸檬酸鈣</strong></td><td>約 <strong class="highlight-nutrient">21%</strong></td><td>不需胃酸，可隨時服用</td><td>吸收率佳，腸胃副作用較少</td><td>元素鈣含量較低，價格較高</td></tr>
-                  <tr><td><span style="display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.9em; font-weight: 600; background-color: #fefce8; color: #854d0e;">素食者/尋求天然來源</span></td><td><strong>海藻鈣</strong></td><td>約 <strong class="highlight-nutrient">32%</strong></td><td>多孔結構有助吸收</td><td>天然植物來源（適合素食），含鎂等多種微量礦物質</td><td>價格昂貴，本質仍屬碳酸鈣</td></tr>
-                  <tr><td><span style="display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.9em; font-weight: 600; background-color: #fef2f2; color: #991b1b;">吸收不良/腸胃敏感者</span></td><td><strong>胺基酸螯合鈣</strong></td><td>約 <strong class="highlight-nutrient">15-16%</strong></td><td>極高 (約 <strong class="highlight-nutrient">80%</strong>)</td><td>吸收率極佳，對腸胃溫和</td><td>元素鈣含量低，價格昂貴</td></tr>
-                </tbody>
-              </table>
+            
+            <div class="supplement-cards-grid">
+              <!-- Card 1: Carbonate -->
+              <div class="supplement-card card-carbonate">
+                <div class="card-header">
+                  <h4 class="card-title">碳酸鈣</h4>
+                  <p class="card-calcium-content">元素鈣含量: <span>40%</span></p>
+                </div>
+                <div class="card-section">
+                  <p class="card-section-title">吸收率</p>
+                  <div class="absorption-bar"><div class="absorption-bar-fill" style="width: 40%;"></div></div>
+                </div>
+                <div class="card-section card-pros-cons">
+                  <ul>
+                    <li><svg class="icon" viewBox="0 0 20 20" fill="#34d399"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 元素鈣含量最高</li>
+                    <li><svg class="icon" viewBox="0 0 20 20" fill="#34d399"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 價格實惠</li>
+                    <li><svg class="icon" viewBox="0 0 20 20" fill="#f87171"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg> 需胃酸輔助，要隨餐吃</li>
+                    <li><svg class="icon" viewBox="0 0 20 20" fill="#f87171"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg> 容易引起脹氣、便秘</li>
+                  </ul>
+                </div>
+                <div class="card-footer">
+                  <span class="card-audience-tag">一般大眾</span>
+                </div>
+              </div>
+
+              <!-- Card 2: Citrate -->
+              <div class="supplement-card card-citrate">
+                <div class="card-header">
+                  <h4 class="card-title">檸檬酸鈣</h4>
+                  <p class="card-calcium-content">元素鈣含量: <span>21%</span></p>
+                </div>
+                <div class="card-section">
+                  <p class="card-section-title">吸收率</p>
+                  <div class="absorption-bar"><div class="absorption-bar-fill" style="width: 60%;"></div></div>
+                </div>
+                <div class="card-section card-pros-cons">
+                  <ul>
+                    <li><svg class="icon" viewBox="0 0 20 20" fill="#34d399"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 吸收率佳，不需胃酸</li>
+                    <li><svg class="icon" viewBox="0 0 20 20" fill="#34d399"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 腸胃副作用較少</li>
+                    <li><svg class="icon" viewBox="0 0 20 20" fill="#f87171"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg> 元素鈣含量較低</li>
+                    <li><svg class="icon" viewBox="0 0 20 20" fill="#f87171"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg> 價格較高</li>
+                  </ul>
+                </div>
+                <div class="card-footer">
+                  <span class="card-audience-tag">長者/胃藥服用者</span>
+                </div>
+              </div>
+
+              <!-- Card 3: Algae -->
+              <div class="supplement-card card-algae">
+                <div class="card-header">
+                  <h4 class="card-title">海藻鈣</h4>
+                  <p class="card-calcium-content">元素鈣含量: <span>32%</span></p>
+                </div>
+                <div class="card-section">
+                  <p class="card-section-title">吸收率</p>
+                  <div class="absorption-bar"><div class="absorption-bar-fill" style="width: 50%;"></div></div>
+                </div>
+                <div class="card-section card-pros-cons">
+                  <ul>
+                    <li><svg class="icon" viewBox="0 0 20 20" fill="#34d399"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 天然植物來源 (適合素食)</li>
+                    <li><svg class="icon" viewBox="0 0 20 20" fill="#34d399"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 含鎂等多種微量礦物質</li>
+                    <li><svg class="icon" viewBox="0 0 20 20" fill="#f87171"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg> 價格昂貴</li>
+                    <li><svg class="icon" viewBox="0 0 20 20" fill="#f87171"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg> 本質仍屬碳酸鈣</li>
+                  </ul>
+                </div>
+                <div class="card-footer">
+                  <span class="card-audience-tag">素食者/尋求天然來源</span>
+                </div>
+              </div>
+
+              <!-- Card 4: Chelate -->
+              <div class="supplement-card card-chelate">
+                <div class="card-header">
+                  <h4 class="card-title">胺基酸螯合鈣</h4>
+                  <p class="card-calcium-content">元素鈣含量: <span>~16%</span></p>
+                </div>
+                <div class="card-section">
+                  <p class="card-section-title">吸收率</p>
+                  <div class="absorption-bar"><div class="absorption-bar-fill" style="width: 80%;"></div></div>
+                </div>
+                <div class="card-section card-pros-cons">
+                  <ul>
+                    <li><svg class="icon" viewBox="0 0 20 20" fill="#34d399"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 吸收率極佳 (約 80%)</li>
+                    <li><svg class="icon" viewBox="0 0 20 20" fill="#34d399"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 對腸胃溫和不刺激</li>
+                    <li><svg class="icon" viewBox="0 0 20 20" fill="#f87171"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg> 元素鈣含量最低</li>
+                    <li><svg class="icon" viewBox="0 0 20 20" fill="#f87171"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg> 價格非常昂貴</li>
+                  </ul>
+                </div>
+                <div class="card-footer">
+                  <span class="card-audience-tag">吸收不良/腸胃敏感者</span>
+                </div>
+              </div>
             </div>
+
 
             <h3 id="best-use">營養品的最佳使用方式</h3>
             <div class="info-cards" style="grid-template-columns: repeat(3, 1fr);">
@@ -1270,3 +1717,7 @@
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
       });
     </script>
+
+</body>
+</html>
+
