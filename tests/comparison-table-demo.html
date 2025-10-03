@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>比較表格設計範例 - 營養百科</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2d3748;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 40px;
+        }
+
+        /* 進階比較表格樣式 */
+        .comparison-table-container {
+            overflow-x: auto;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            min-width: 800px;
+        }
+
+        .comparison-header-main {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            padding: 20px;
+            font-weight: 600;
+            text-align: left;
+            border-radius: 20px 0 0 0;
+        }
+
+        .comparison-header-option {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            color: #2d3748;
+            padding: 20px;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+            border-left: 1px solid #e2e8f0;
+        }
+
+        .comparison-recommended {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8f65 100%);
+            color: white;
+            position: relative;
+        }
+
+        .option-badge {
+            position: absolute;
+            top: -8px;
+            right: 10px;
+            background: #22c55e;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .comparison-row {
+            border-bottom: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .comparison-row:hover {
+            background: #f8fafc;
+            transform: scale(1.01);
+        }
+
+        .comparison-label {
+            background: #f8fafc;
+            padding: 20px;
+            font-weight: 600;
+            color: #4a5568;
+            border-right: 2px solid #e2e8f0;
+            width: 200px;
+        }
+
+        .comparison-cell {
+            padding: 20px;
+            text-align: center;
+            border-left: 1px solid #e2e8f0;
+            vertical-align: middle;
+        }
+
+        .comparison-cell.comparison-recommended {
+            background: linear-gradient(135deg, #fff5f0 0%, #fed7d7 100%);
+            border-left: 3px solid #ff6b35;
+        }
+
+        .rating-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .rating-high { background: #dcfce7; color: #166534; }
+        .rating-very-high { background: #bbf7d0; color: #14532d; }
+        .rating-medium { background: #fef3c7; color: #92400e; }
+        .rating-low { background: #fee2e2; color: #991b1b; }
+
+        .price-tag {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #ff6b35;
+        }
+
+        .pros-cons {
+            text-align: left;
+            font-size: 0.9em;
+        }
+
+        .pros {
+            color: #166534;
+            margin-bottom: 5px;
+        }
+
+        .cons {
+            color: #991b1b;
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .comparison-table-container {
+                margin: 20px -15px;
+                border-radius: 0;
+            }
+            
+            .comparison-table {
+                min-width: 600px;
+            }
+            
+            .comparison-header-main,
+            .comparison-header-option,
+            .comparison-label,
+            .comparison-cell {
+                padding: 15px 10px;
+                font-size: 0.9em;
+            }
+        }
+
+        .demo-section {
+            margin: 60px 0;
+        }
+
+        .demo-title {
+            color: #2d3748;
+            border-bottom: 3px solid #ff6b35;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>比較表格設計範例</h1>
+        <p class="subtitle">展示新的進階比較表格樣式設計</p>
+
+        <div class="demo-section">
+            <h2 class="demo-title">範例 1：Omega-3 補充品比較</h2>
+            <div class="comparison-table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="comparison-header-main">比較項目</th>
+                            <th class="comparison-header-option comparison-recommended">
+                                <div class="option-badge">推薦</div>
+                                <strong>魚油 (Fish Oil)</strong>
+                            </th>
+                            <th class="comparison-header-option">
+                                <strong>磷蝦油 (Krill Oil)</strong>
+                            </th>
+                            <th class="comparison-header-option">
+                                <strong>亞麻籽油 (Flaxseed Oil)</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="comparison-row">
+                            <td class="comparison-label">主要成分</td>
+                            <td class="comparison-cell comparison-recommended">
+                                <strong>EPA & DHA</strong>
+                            </td>
+                            <td class="comparison-cell">
+                                <strong>EPA & DHA</strong> + 蝦紅素
+                            </td>
+                            <td class="comparison-cell">
+                                <strong>ALA</strong>
+                            </td>
+                        </tr>
+                        <tr class="comparison-row">
+                            <td class="comparison-label">生物利用率</td>
+                            <td class="comparison-cell comparison-recommended">
+                                <div class="rating-badge rating-high">高</div>
+                            </td>
+                            <td class="comparison-cell">
+                                <div class="rating-badge rating-very-high">極高</div>
+                            </td>
+                            <td class="comparison-cell">
+                                <div class="rating-badge rating-low">極低</div>
+                            </td>
+                        </tr>
+                        <tr class="comparison-row">
+                            <td class="comparison-label">價格範圍</td>
+                            <td class="comparison-cell comparison-recommended">
+                                <span class="price-tag">NT$ 300-800</span>
+                            </td>
+                            <td class="comparison-cell">
+                                <span class="price-tag">NT$ 800-1500</span>
+                            </td>
+                            <td class="comparison-cell">
+                                <span class="price-tag">NT$ 200-500</span>
+                            </td>
+                        </tr>
+                        <tr class="comparison-row">
+                            <td class="comparison-label">優缺點</td>
+                            <td class="comparison-cell comparison-recommended">
+                                <div class="pros-cons">
+                                    <div class="pros">✓ 性價比高、研究完整</div>
+                                    <div class="cons">✗ 可能有魚腥味</div>
+                                </div>
+                            </td>
+                            <td class="comparison-cell">
+                                <div class="pros-cons">
+                                    <div class="pros">✓ 吸收率極佳、無腥味</div>
+                                    <div class="cons">✗ 價格昂貴、濃度偏低</div>
+                                </div>
+                            </td>
+                            <td class="comparison-cell">
+                                <div class="pros-cons">
+                                    <div class="pros">✓ 純素來源、價格便宜</div>
+                                    <div class="cons">✗ 轉換率極低</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="comparison-row">
+                            <td class="comparison-label">適合族群</td>
+                            <td class="comparison-cell comparison-recommended">
+                                <strong>一般成人、預算考量者</strong>
+                            </td>
+                            <td class="comparison-cell">
+                                <strong>追求高品質、預算充足者</strong>
+                            </td>
+                            <td class="comparison-cell">
+                                <strong>素食者、預算有限者</strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">範例 2：維生素C 劑型比較</h2>
+            <div class="comparison-table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="comparison-header-main">比較項目</th>
+                            <th class="comparison-header-option">
+                                <strong>一般型</strong>
+                            </th>
+                            <th class="comparison-header-option comparison-recommended">
+                                <div class="option-badge">推薦</div>
+                                <strong>中性/緩衝型</strong>
+                            </th>
+                            <th class="comparison-header-option">
+                                <strong>微脂體型</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="comparison-row">
+                            <td class="comparison-label">酸鹼值</td>
+                            <td class="comparison-cell">
+                                <div class="rating-badge rating-low">酸性</div>
+                            </td>
+                            <td class="comparison-cell comparison-recommended">
+                                <div class="rating-badge rating-high">中性</div>
+                            </td>
+                            <td class="comparison-cell">
+                                <div class="rating-badge rating-high">中性</div>
+                            </td>
+                        </tr>
+                        <tr class="comparison-row">
+                            <td class="comparison-label">吸收率</td>
+                            <td class="comparison-cell">
+                                <div class="rating-badge rating-medium">中等</div>
+                            </td>
+                            <td class="comparison-cell comparison-recommended">
+                                <div class="rating-badge rating-high">高</div>
+                            </td>
+                            <td class="comparison-cell">
+                                <div class="rating-badge rating-very-high">極高</div>
+                            </td>
+                        </tr>
+                        <tr class="comparison-row">
+                            <td class="comparison-label">價格</td>
+                            <td class="comparison-cell">
+                                <span class="price-tag">NT$ 100-300</span>
+                            </td>
+                            <td class="comparison-cell comparison-recommended">
+                                <span class="price-tag">NT$ 200-500</span>
+                            </td>
+                            <td class="comparison-cell">
+                                <span class="price-tag">NT$ 500-1200</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

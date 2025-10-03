@@ -332,6 +332,56 @@
    </table>
    ```
 
+### 5. **進階比較表格 (`.comparison-table`)**
+   - 用於多個項目（如不同劑型、來源）的詳細優劣比較，特別是當有「推薦選項」時。
+   - 此表格設計更具視覺引導性，能幫助讀者快速抓住重點。
+
+   ```html
+   <div class="comparison-table-container">
+       <table class="comparison-table">
+           <thead>
+               <tr>
+                   <th class="comparison-header-main">比較項目</th>
+                   <th class="comparison-header-option comparison-recommended">
+                       <div class="option-badge">推薦</div>
+                       <strong>魚油 (Fish Oil)</strong>
+                   </th>
+                   <th class="comparison-header-option">
+                       <strong>磷蝦油 (Krill Oil)</strong>
+                   </th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr class="comparison-row">
+                   <td class="comparison-label">生物利用率</td>
+                   <td class="comparison-cell comparison-recommended">
+                       <div class="rating-badge rating-high">高</div>
+                   </td>
+                   <td class="comparison-cell">
+                       <div class="rating-badge rating-very-high">極高</div>
+                   </td>
+               </tr>
+               <tr class="comparison-row">
+                   <td class="comparison-label">優缺點</td>
+                   <td class="comparison-cell comparison-recommended">
+                       <div class="pros-cons">
+                           <div class="pros">✓ 性價比高、研究完整</div>
+                           <div class="cons">✗ 可能有魚腥味</div>
+                       </div>
+                   </td>
+                   <td class="comparison-cell">
+                       <div class="pros-cons">
+                           <div class="pros">✓ 吸收率極佳、無腥味</div>
+                           <div class="cons">✗ 價格昂貴、濃度偏低</div>
+                       </div>
+                   </td>
+               </tr>
+           </tbody>
+       </table>
+   </div>
+   ```
+   > **注意**: 此表格的完整 CSS 樣式較為複雜，已內建於各文章頁面的 `<style>` 區塊中。您可以在 `tests/comparison-table-demo.html` 中找到完整的實作範例。
+
 ---
 
 ## 📊 整合 SVG 視覺化圖表
