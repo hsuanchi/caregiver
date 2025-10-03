@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>魚油 - 暢通思緒、保護心血管的關鍵Omega-3 | 營養百科</title>
+    <title>魚油完整指南：功效、劑量與6大選購標準全解析 | 營養百科</title>
     <meta
       name="description"
-      content="市面魚油8成不合格？2025免費魚油終極指南，10分鐘教你讀懂rTG、濃度與IFOS認證等6大關鍵，破解EPA/DHA黃金比例，從此買對不買貴，聰明守護心血管與大腦健康！"
+      content="一份真正專業的魚油指南。本文將深度解析 Omega-3 的科學原理，提供各年齡層的精準劑量建議，並系統性比較 rTG、EE 型態，教您讀懂 TOTOX、IFOS 等關鍵指標，做出最明智的健康投資。"
     />
     <meta
       name="keywords"
-      content="魚油, 魚油功效, 魚油推薦, Omega-3, EPA, DHA, 魚油怎麼選, 三酸甘油酯, 心血管保健, 大腦健康"
+      content="魚油, 魚油功效, 魚油推薦, Omega-3, EPA, DHA, 魚油怎麼選, 三酸甘油酯, 心血管保健, 大腦健康, rTG, TOTOX"
     />
     
     <!-- Favicon -->
@@ -25,7 +25,7 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "營養百科",
-      "alternateName": "營養百科",
+      "alternateName": "Max行銷誌營養百科",
       "url": "https://life.maxlist.xyz/"
     }
     </script>
@@ -39,8 +39,8 @@
         "@type": "WebPage",
         "@id": "https://life.maxlist.xyz/post/fish-oil.html"
       },
-      "headline": "魚油 - 暢通思緒、保護心血管的關鍵Omega-3 | 營養百科",
-      "description": "從 EPA、DHA 到 TG、rTG，那些讓人頭痛的專有名詞，今天讓我們用最簡單的方式說給你聽。",
+      "headline": "魚油完整指南：功效、劑量與6大選購標準全解析 | 營養百科",
+      "description": "從 EPA、DHA 到 TG、rTG，本篇指南將以科學為本，系統性地解析魚油的各個面向，幫助您做出最專業的選擇。",
       "image": "https://life.maxlist.xyz/assets/images/fish-oil-og.jpg",
       "author": {
         "@type": "Organization",
@@ -56,7 +56,7 @@
         }
       },
       "datePublished": "2024-07-16",
-      "dateModified": "2025-07-16"
+      "dateModified": "2025-10-03"
     }
     </script>
 
@@ -894,94 +894,175 @@
         }
       }
 
-      /* --- SVG VISUALIZATION STYLES --- */
+      /* Benefits Section Info Cards */
+      #benefits .info-card {
+        text-align: left;
+      }
+      #benefits .info-card-title {
+        color: #ff6b35;
+      }
 
-      /* EPA vs DHA Dual Function Cards */
-      .dual-function-container {
+      /* --- SVG VISUALIZATION STYLES --- */
+      
+      /* Dosage Infographic */
+      .dosage-infographic-container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
         margin: 40px 0;
       }
-      .dual-function-card {
-        background: #fff;
-        border-radius: 15px;
-        padding: 30px;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        border: 1px solid #f3f4f6;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      .dosage-card {
+        background-color: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 16px;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
       }
-      .dual-function-card:hover {
+      .dosage-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(255, 107, 53, 0.1);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
       }
-      .dual-function-card svg {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 20px;
+      .dosage-card-header {
+        margin-bottom: 15px;
       }
-      .dual-function-card h4 {
-        font-size: 1.5em;
+      .dosage-card-title {
+        font-size: 1.3em;
         font-weight: 700;
-        margin-bottom: 10px;
         color: #2d3748;
       }
-      .dual-function-card p {
+      .dosage-card-subtitle {
         font-size: 0.95em;
-        color: #4a5568;
-        line-height: 1.6;
+        color: #718096;
       }
-      .dual-function-card strong {
-        color: #ff6b35;
+      .dosage-card-dose {
+        font-size: 1.8em;
+        font-weight: 800;
+        color: #2d3748;
+        margin-bottom: 15px;
+      }
+      .dosage-card-dose .unit {
+        font-size: 0.6em;
+        font-weight: 500;
+        color: #718096;
+        margin-left: 5px;
+      }
+      .ratio-info {
+        margin-top: auto; /* Pushes this section to the bottom */
+      }
+      .ratio-label {
+        font-size: 0.9em;
         font-weight: 600;
+        color: #4a5568;
+        margin-bottom: 8px;
+        text-align: center;
       }
-      @media (max-width: 600px) {
-        .dual-function-container {
-          grid-template-columns: 1fr;
-        }
+      .ratio-bar {
+        display: flex;
+        height: 12px;
+        border-radius: 6px;
+        overflow: hidden;
+        background-color: #e5e7eb;
+      }
+      .ratio-bar-epa {
+        background-color: #ff6b35; /* EPA color */
+        transition: width 0.5s ease;
+      }
+      .ratio-bar-dha {
+        background-color: #2563eb; /* DHA color */
+        transition: width 0.5s ease;
+      }
+      .ratio-legend {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        font-size: 0.9em;
+        color: #718096;
+        margin-top: 20px;
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .legend-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
       }
 
-      /* Selection Funnel */
-      .selection-funnel-container {
+      /* Step by Step Guide */
+      .step-guide-container {
         background: #f9fafb;
         border-radius: 20px;
-        padding: 40px 20px;
+        padding: 40px;
         margin: 40px 0;
       }
-      .selection-funnel-title {
+      .step-guide-title {
         text-align: center;
         font-size: 1.8em;
         font-weight: 700;
         color: #2d3748;
+        margin-bottom: 40px;
+      }
+      .step-guide {
+        list-style: none;
+        padding: 0;
+        position: relative;
+        counter-reset: step-counter;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .step-guide::before { /* The connecting line */
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        bottom: 20px;
+        width: 3px;
+        background: #e2e8f0;
+        transform: translateX(-50%);
+      }
+      .step-guide-item {
+        position: relative;
+        padding-left: 60px;
         margin-bottom: 30px;
       }
-      .funnel-svg {
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-        display: block;
+      .step-guide-item:last-child {
+        margin-bottom: 0;
       }
-      .funnel-step text {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      .step-guide-item::before { /* The number circle */
+        content: counter(step-counter);
+        counter-increment: step-counter;
+        position: absolute;
+        left: 20px;
+        top: 0;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ff8f65, #ff6b35);
+        color: white;
+        font-size: 1.2em;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
+        z-index: 1;
+      }
+      .step-guide-item h4 {
+        font-size: 1.3em;
         font-weight: 600;
-        fill: #fff;
-        transition: transform 0.3s ease;
+        color: #2d3748;
+        margin: 0 0 5px 0;
       }
-      .funnel-step:hover {
-        transform: scale(1.02);
-        cursor: default;
-      }
-      .funnel-step .step-number {
-        font-size: 24px;
-        font-weight: 800;
-      }
-      .funnel-step .step-title {
-        font-size: 18px;
-      }
-      .funnel-step .step-desc {
-        font-size: 14px;
-        font-weight: 500;
+      .step-guide-item p {
+        font-size: 1em;
+        color: #4a5568;
+        margin: 0;
+        line-height: 1.6;
       }
 
       /* Do's and Don'ts List */
@@ -1026,6 +1107,138 @@
           grid-template-columns: 1fr 1fr;
         }
       }
+
+      /* EPA vs DHA Comparison Card */
+      .comparison-card-container {
+        background-color: #f9fafb;
+        border-radius: 16px;
+        padding: 32px;
+        margin: 40px 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .comparison-panel {
+        text-align: center;
+      }
+      .comparison-panel .nutrient-name {
+        font-size: 2.5em;
+        font-weight: 800;
+        margin-bottom: 8px;
+      }
+      .comparison-panel .nutrient-subtitle {
+        font-size: 1.1em;
+        font-weight: 600;
+        color: #4a5568;
+        margin-bottom: 16px;
+      }
+      .comparison-panel .nutrient-desc {
+        color: #4a5568;
+        line-height: 1.7;
+      }
+      .epa-color {
+        color: #ff6b35; /* Orange for EPA */
+      }
+      .dha-color {
+        color: #2563eb; /* Blue for DHA */
+      }
+
+      @media (min-width: 768px) {
+        .comparison-card-container {
+          grid-template-columns: 1fr 1fr;
+          align-items: start;
+        }
+        .comparison-card-container {
+          padding: 40px;
+        }
+      }
+
+      /* Concentration Chart */
+      .concentration-chart-container {
+        background-color: #f9fafb;
+        border-radius: 20px;
+        padding: 40px;
+        margin: 40px 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+      .chart-panel h4 {
+        font-size: 1.3em;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 20px;
+      }
+      .donut-chart-svg {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+      }
+      .donut-chart-svg circle {
+        transition: stroke-dashoffset 1.5s ease-in-out;
+      }
+      .chart-text-percent {
+        font-size: 2.2em;
+        font-weight: 800;
+      }
+      .chart-text-label {
+        font-size: 0.9em;
+        fill: #718096;
+      }
+      .chart-panel p {
+        margin-top: 20px;
+        font-size: 0.95em;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #4a5568;
+      }
+
+      @media (min-width: 768px) {
+        .concentration-chart-container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* rTG vs EE Absorption Chart */
+      .absorption-chart-container {
+        background-color: #f9fafb;
+        border-radius: 20px;
+        padding: 40px;
+        margin: 40px 0;
+      }
+      .absorption-chart-title {
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 32px;
+      }
+      .absorption-svg {
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+        display: block;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+      .bar-label {
+        font-size: 14px;
+        fill: #4a5568;
+        text-anchor: middle;
+        font-weight: 600;
+      }
+      .bar-value {
+        font-size: 16px;
+        fill: white;
+        text-anchor: middle;
+        font-weight: 700;
+      }
+      .absorption-rate-badge {
+        font-size: 12px;
+        font-weight: 700;
+        text-anchor: middle;
+      }
     </style>
   </head>
   <body>
@@ -1041,23 +1254,19 @@
       <aside class="sidebar" id="sidebar">
         <div class="toc">
           <h3 class="toc-title">
-            <span>目錄</span>
+            <span>本篇指南</span>
           </h3>
           <ul class="toc-list">
-            <li><a href="#summary" class="toc-link">30 秒速讀版</a></li>
-            <li><a href="#self-check" class="toc-link">你需要魚油嗎？</a></li>
-            <li><a href="#basics" class="toc-link">魚油基礎知識</a></li>
-            <li>
-              <a href="#benefits" class="toc-link sub-item">魚油的神奇功效</a>
-            </li>
-            <li>
-              <a href="#how-to-take" class="toc-link sub-item">怎麼吃最有效</a>
-            </li>
-            <li>
-              <a href="#food-sources" class="toc-link sub-item">天然食物來源</a>
-            </li>
-            <li><a href="#how-to-choose" class="toc-link">如何選擇魚油</a></li>
-            <li><a href="#faq" class="toc-link">常見問題</a></li>
+            <li><a href="#summary" class="toc-link">快速總覽</a></li>
+            <li><a href="#self-check" class="toc-link">需求自我檢測</a></li>
+            <li><a href="#basics" class="toc-link">Omega-3 基礎科學</a></li>
+            <li><a href="#benefits" class="toc-link">經實證的6大功效</a></li>
+            <li><a href="#how-to-take" class="toc-link">最佳服用方式</a></li>
+            <li><a href="#how-to-choose" class="toc-link">專業選購標準</a></li>
+            <li><a href="#deep-comparison" class="toc-link">進階比較分析</a></li>
+            <li><a href="#safety" class="toc-link">安全注意事項</a></li>
+            <li><a href="#myths" class="toc-link">副作用與迷思破解</a></li>
+            <li><a href="#faq" class="toc-link">常見問題解析</a></li>
           </ul>
         </div>
       </aside>
@@ -1073,14 +1282,14 @@
               <span>魚油完整指南</span>
             </nav>
             <span class="article-category">營養素指南</span>
-            <h1 class="article-title">魚油 - 暢通思緒、保護心血管的關鍵Omega-3</h1>
+            <h1 class="article-title">魚油完整指南：功效、劑量與6大選購標準全解析</h1>
             <p class="article-subtitle">
-              EPA、DHA、rTG 怎麼選？營養師教你讀懂魚油濃度、新鮮度（TOTOX）、IFOS認證等6大關鍵指標，破解魚油迷思，讓你買對不買貴，聰明守護心血管與大腦健康。
+              本篇指南將以科學為本，系統性地解析 Omega-3 的關鍵指標（如濃度、rTG型態、TOTOX值），並提供各年齡層的精準劑量建議，幫助您為自己與家人的健康，做出最明智的投資。
             </p>
             <div class="article-meta">
-              <span>✍️ 營養百科團隊編寫</span>
-              <span>📅 2025 年 7 月 16 日更新</span>
-              <span>⏱️ 閱讀時間：15 分鐘</span>
+              <span>營養百科團隊編寫</span>
+              <span>2025 年 10 月 3 日更新</span>
+              <span>閱讀時間：15 分鐘</span>
             </div>
           </div>
         </header>
@@ -1088,39 +1297,30 @@
         <!-- Article Body -->
         <article class="article-body">
           <!-- Story Introduction -->
-          <div class="story-intro">
-            <h3>🤔 你是不是也有這些困擾？</h3>
-            <p>
-              「老闆，我要買魚油！」走進藥局，架上琳瑯滿目的魚油產品讓人眼花撩亂。EPA、DHA、TG 型、rTG 型...這些專有名詞是不是讓你頭很大？別擔心，今天就讓營養師用最簡單的方式，帶你一次搞懂魚油的秘密！
-            </p>
-            <p>
-              <strong>💡 這篇文章會告訴你：</strong
-              >你是否需要魚油？如何挑選？怎麼吃最有效？看完保證不再迷茫！
-            </p>
-          </div>
+      
 
           <section id="summary">
-            <h2>30 秒速讀版</h2>
+            <h2>快速總覽</h2>
 
             <div class="info-cards">
               <a href="#benefits" class="info-card quick-read-card">
-                <h4 class="info-card-title">有什麼好處？</h4>
+                <h4 class="info-card-title">核心功效</h4>
                 <p class="info-card-desc">
-                  降血脂、護心臟、增記憶<br />抗發炎、護眼睛
+                  <strong>降血脂、護心臟、增記憶</strong><br />抗發炎、護眼睛
                 </p>
                 <div class="card-click-hint">點擊了解詳情</div>
               </a>
               <a href="#how-to-take" class="info-card quick-read-card">
-                <h4 class="info-card-title">怎麼服用？</h4>
+                <h4 class="info-card-title">服用方式</h4>
                 <p class="info-card-desc">
-                  每日 1000-2000 mg<br />隨餐吃吸收最好
+                  每日 <strong>1000-2000 mg</strong><br /><strong>隨餐服用</strong>以達最佳吸收
                 </p>
                 <div class="card-click-hint">點擊了解詳情</div>
               </a>
               <a href="#how-to-choose" class="info-card quick-read-card">
-                <h4 class="info-card-title">怎麼選購？</h4>
+                <h4 class="info-card-title">選購標準</h4>
                 <p class="info-card-desc">
-                  濃度 85% 以上、rTG 型態<br />有 IFOS 認證最安心
+                  Omega-3 濃度 <strong>> 85%</strong><br />選擇 <strong>rTG 型態</strong>以確保吸收
                 </p>
                 <div class="card-click-hint">點擊了解詳情</div>
               </a>
@@ -1134,122 +1334,101 @@
                 font-size: 1.1em;
               "
             >
-              還不確定自己需不需要魚油？先來做個快速檢測吧！
+              在深入探討前，您可以透過以下檢測，快速評估自己對魚油的需求程度。
             </p>
           </section>
 
           <section id="self-check">
-            <h2>快來看看你是不是需要補充魚油的人？</h2>
+            <h2>需求自我檢測</h2>
 
             <div class="quick-test">
-              <h3>魚油需求自我檢測</h3>
-              <p>以下情況，你中了幾個？</p>
+              <h3>Omega-3 需求評估</h3>
+              <p>請檢視您的生活與飲食習慣，是否存在以下情況？</p>
               <div class="test-options">
                 <label class="test-option">
                   <input type="checkbox" name="need-test" />
-                  <span>三餐老是在外，炸雞排是好朋友</span>
+                  <span>經常外食，飲食內容多高油、精緻澱粉</span>
                 </label>
                 <label class="test-option">
                   <input type="checkbox" name="need-test" />
-                  <span>健檢報告出現紅字（尤其是三酸甘油酯）</span>
+                  <span>健檢報告提示三酸甘油酯等指數異常</span>
                 </label>
                 <label class="test-option">
                   <input type="checkbox" name="need-test" />
-                  <span>常常忘東忘西，感覺腦霧很嚴重</span>
+                  <span>需要高度專注力，但常感思緒不清</span>
                 </label>
                 <label class="test-option">
                   <input type="checkbox" name="need-test" />
-                  <span>整天盯著電腦/手機，眼睛超級累</span>
+                  <span>長時間使用3C產品，眼睛易感乾澀</span>
                 </label>
                 <label class="test-option">
                   <input type="checkbox" name="need-test" />
-                  <span>關節卡卡不舒服</span>
+                  <span>有運動習慣，關注關節保養與恢復</span>
                 </label>
                 <label class="test-option">
                   <input type="checkbox" name="need-test" />
-                  <span>正在懷孕或哺乳中</span>
+                  <span>正處於備孕、懷孕或哺乳階段</span>
                 </label>
               </div>
               <p style="margin-top: 20px; color: #14532d; font-weight: 600">
-                勾選 2 個以上？你可能真的需要補充魚油囉！
+                <strong>若符合 2 項以上</strong>，表示補充高品質 Omega-3 可能對您有顯著幫助。
               </p>
             </div>
           </section>
 
           <section id="basics">
-            <h2>魚油到底是什麼？讓我們從頭說起</h2>
+            <h2>Omega-3 基礎科學：魚油為何如此重要？</h2>
 
             <p>
-              想像一下，如果我們的身體是一台精密的機器，那魚油就像是高級潤滑油！它是從鮭魚、鯖魚、沙丁魚這些「油脂豐富」的深海魚類身上萃取出來的珍貴營養素。
+              魚油是從富含脂肪的深海魚類（如鮭魚、鯖魚）中萃取的油脂。其核心價值在於富含一種特殊且關鍵的營養素——「Omega-3 脂肪酸」。
             </p>
 
-            <h3>魚油的科學小秘密</h3>
+            <h3>人體無法自行合成的必需脂肪酸</h3>
             <p>
-              魚油的神奇之處在於它含有「Omega-3 脂肪酸」這個特殊家族。<span
+              Omega-3 脂肪酸如同維生素和礦物質，是維持人體正常生理機能所必需，但我們的身體卻<span
                 class="highlight-nutrient"
-                >這種脂肪酸是人體「必需」但「無法自製」的營養素</span
-              >，就像維生素一樣，一定要從外界補充。
-            </p>
-
-            <p style="margin-bottom: 30px">
-              <strong>有趣的是</strong>，魚類本身也不會製造 Omega-3！它們是透過吃海藻才獲得這些營養素的。所以當我們吃魚油時，其實是在「借用」魚類幫我們濃縮好的海洋精華。這也就是為什麼有些素食者會選擇直接吃藻油的原因。
-            </p>
-
-            <h3>為什麼是「深海魚」才有效？</h3>
-            <p>
-              你可能會好奇，為什麼一定要是深海魚？答案很簡單：<strong
-                >環境越惡劣，營養素越豐富！</strong
-              >
-              深海的低溫高壓環境，<span class="highlight-nutrient"
-                >深海魚必須製造更多的 Omega-3 來維持細胞膜的流動性</span
-              >，<span class="highlight-nutrient"
-                >就像在極地生存需要更厚的脂肪層一樣</span
+                >無法自行製造，必須完全依賴飲食攝取</span
               >。
             </p>
 
+            <p style="margin-bottom: 30px">
+              一個有趣的科學事實是，魚類本身也無法製造 Omega-3，牠們是透過攝食海洋中的微藻來累積這種珍貴的脂肪酸。因此，當我們攝取魚油時，實際上是在獲取經過魚類生物濃縮後的海洋營養精華。這也解釋了為何素食者會選擇直接攝取「藻油」作為替代方案。
+            </p>
+
+            <h3>為何「深海魚」的 Omega-3 含量特別豐富？</h3>
             <p>
-              而且深海魚類通常壽命較長、體型較大，Omega-3 的含量也更加濃縮。這就是為什麼鮭魚、鯖魚、沙丁魚會成為魚油的主要來源，而不是養殖的淡水魚。
+              答案在於生存環境的挑戰。深海的低溫與高壓，<span class="highlight-nutrient"
+                >促使魚類必須在細胞膜中合成更多的 Omega-3 不飽和脂肪酸，以維持細胞膜的流動性與正常功能</span
+              >，這類似於陸地動物在寒帶需要更厚脂肪層的生存機制。
             </p>
 
+            <p>
+              因此，相較於一般養殖魚類，生長於嚴峻環境的深海魚（如<strong>鮭魚、鯖魚、沙丁魚</strong>）體內 Omega-3 的含量與濃度都更高，使其成為萃取高品質魚油的理想來源。
+            </p>
+
+            <h3>EPA 與 DHA：Omega-3 家族的兩大核心成員</h3>
             <p style="margin-bottom: 25px">
-              魚油之所以這麼神奇，主要是因為裡面含有兩種超重要的營養素：<strong
+              Omega-3 家族包含多種脂肪酸，但對人體健康最重要的莫過於 EPA 與 DHA。它們各自扮演著不同的關鍵角色，<strong
                 class="highlight-nutrient"
-              >因為不同的健康需求，需要不同的比例！想要保護心血管？EPA 要多一點。想要增強腦力？DHA 要多一點。了解這個差別，選魚油時就不會霧煞煞了！
+                >針對不同的健康目標，需要不同的 EPA/DHA 比例</strong
+              >。理解兩者的差異，是精準選擇魚油的第一步。
             </p>
 
-            <div class="dual-function-container">
-              <div class="dual-function-card">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" style="stop-color:#ff8f65; stop-opacity:1" />
-                      <stop offset="100%" style="stop-color:#ff6b35; stop-opacity:1" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M50 10 C 85 20, 85 60, 50 90 C 15 60, 15 20, 50 10 Z" fill="url(#shieldGradient)"/>
-                  <path d="M50 15 C 80 25, 80 60, 50 85 C 20 60, 20 25, 50 15 Z" fill="#fff"/>
-                  <path d="M50 30 C 60 40, 60 60, 50 70 C 40 60, 40 40, 50 30 Z" fill="url(#shieldGradient)"/>
-                  <text x="50" y="25" font-family="Arial, sans-serif" font-size="12" fill="#ff6b35" text-anchor="middle" font-weight="bold">EPA</text>
-                </svg>
-                <h4>EPA (護心專家)</h4>
-                <p>身體的<strong>抗發炎戰士</strong>，專門清理血管，降低三酸甘油酯，有如心血管的守護神。</p>
+            <!-- EPA vs DHA Comparison Card -->
+            <div class="comparison-card-container">
+              <div class="comparison-panel">
+                <h3 class="nutrient-name epa-color">EPA</h3>
+                <p class="nutrient-subtitle">二十碳五烯酸 (Eicosapentaenoic Acid)</p>
+                <p class="nutrient-desc">
+                  被譽為「血管清道夫」。主要功能是<strong>抗發炎</strong>、<strong>降低三酸甘油酯</strong>，有助於維持心血管系統暢通，對於外食族、三高族群與心血管保健至關重要。
+                </p>
               </div>
-              <div class="dual-function-card">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="brainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" style="stop-color:#60a5fa; stop-opacity:1" />
-                      <stop offset="100%" style="stop-color:#3b82f6; stop-opacity:1" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M 50,20 C 25,20 20,40 20,55 C 20,70 30,80 50,80 C 70,80 80,70 80,55 C 80,40 75,20 50,20 Z" fill="url(#brainGradient)"/>
-                  <path d="M 50,25 C 55,25 58,30 55,35 C 50,45 60,50 50,60 C 40,50 50,45 45,35 C 42,30 45,25 50,25 Z" fill="#fff" opacity="0.3"/>
-                  <path d="M 35,40 C 30,45 30,55 35,60" fill="none" stroke="#fff" stroke-width="2" opacity="0.5"/>
-                  <path d="M 65,40 C 70,45 70,55 65,60" fill="none" stroke="#fff" stroke-width="2" opacity="0.5"/>
-                  <text x="50" y="90" font-family="Arial, sans-serif" font-size="12" fill="#3b82f6" text-anchor="middle" font-weight="bold">DHA</text>
-                </svg>
-                <h4>DHA (護腦專家)</h4>
-                <p>大腦與視網膜的<strong>關鍵建築材料</strong>，負責提升思考力與專注力，讓您思緒清晰。</p>
+              <div class="comparison-panel">
+                <h3 class="nutrient-name dha-color">DHA</h3>
+                <p class="nutrient-subtitle">二十二碳六烯酸 (Docosahexaenoic Acid)</p>
+                <p class="nutrient-desc">
+                  被稱為「大腦建築師」。是構成大腦與視網膜的重要結構成分，主要功能是<strong>支持腦部發育</strong>、<strong>維持認知功能與記憶力</strong>，對於學生、孕婦與銀髮族特別有益。
+                </p>
               </div>
             </div>
 
@@ -1261,542 +1440,502 @@
                 font-size: 1.1em;
               "
             >
-              了解了魚油的基本原理，接下來看看它到底能為我們做什麼！
+              了解 Omega-3 的基礎科學後，我們來看看它能為健康帶來哪些經科學實證的好處。
             </p>
           </section>
 
           <section id="benefits">
-            <h2>魚油的神奇功效 - 為什麼這麼多人在吃？</h2>
+            <h2>經科學實證的 6 大健康功效</h2>
 
             <p>
-              魚油就像身體的「全能保養師」，從頭到腳都能照顧到！不同族群都有自己的魚油需求，來看看你屬於哪一種：
+              Omega-3 的健康效益已獲得大量科學研究的支持。以下將概述其在六個核心領域中最具代表性的功效。
             </p>
 
             <div class="info-cards">
               <div class="info-card">
-                <h4 class="info-card-title">外食族的心血管救星</h4>
+                <h4 class="info-card-title">維護心血管健康</h4>
                 <p class="info-card-desc">
-                  炸雞排、鹽酥雞是好朋友？<strong>EPA 降三酸甘油酯</strong
-                  ><br />幫你平衡外食的油膩，健檢紅字說掰掰！
+                  EPA 已被證實能有效<strong>降低血液中的三酸甘油酯濃度</strong>，並具有抗發炎特性，有助於維持血管彈性與暢通。
                 </p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">考生的大腦營養師</h4>
+                <h4 class="info-card-title">支持大腦功能與認知</h4>
                 <p class="info-card-desc">
-                  需要清晰思考、提升記憶力？<strong>DHA 是大腦建築師</strong
-                  ><br />讓你思路清晰、專注力滿滿，考試更順利！
+                  DHA 是大腦皮質和視網膜的主要結構脂肪，充足的 DHA 對於<strong>維持記憶力、專注力與學習能力</strong>至關重要。
                 </p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">媽媽寶寶的腦力加油站</h4>
+                <h4 class="info-card-title">促進胎兒與嬰幼兒發展</h4>
                 <p class="info-card-desc">
-                  寶寶的大腦發育關鍵期？<strong>DHA 助攻智力發展</strong
-                  ><br />WHO 建議孕期每日 200 mg，為寶寶打好基礎！
+                  DHA 對於胎兒在懷孕期間的<strong>腦部與視力正常發育</strong>扮演關鍵角色。世界衛生組織(WHO)亦建議孕期應補充DHA。
                 </p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">銀髮族的青春守護者</h4>
+                <h4 class="info-card-title">維持老年健康</h4>
                 <p class="info-card-desc">
-                  擔心記憶力衰退、心血管問題？<strong>魚油延緩老化</strong
-                  ><br />保護心臟、維持腦力，讓老後生活更有品質！
+                  長期且充足地攝取 Omega-3，有助於<strong>延緩與年齡相關的認知功能下降</strong>，並支持心血管健康，提升老年生活品質。
                 </p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">3C 族的眼睛保護罩</h4>
+                <h4 class="info-card-title">舒緩眼睛乾澀</h4>
                 <p class="info-card-desc">
-                  整天盯螢幕眼睛乾澀疲勞？<strong>DHA 構成視網膜</strong
-                  ><br />守護你的靈魂之窗，減少乾眼困擾！
+                  DHA 能幫助維持視網膜健康，並有助於淚膜的穩定。研究指出，補充 Omega-3 對於<strong>改善長時間使用3C產品所造成的眼睛乾澀</strong>有正面效益。
                 </p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">運動者的關節潤滑油</h4>
+                <h4 class="info-card-title">支援關節健康</h4>
                 <p class="info-card-desc">
-                  關節痠痛、運動恢復慢？<strong>EPA 抗發炎超讚</strong
-                  ><br />減少運動傷害，讓你行走如風、活力滿分！
+                  EPA 的抗發炎特性，有助於<strong>減輕運動後的發炎反應</strong>，並對維持關節的靈活性與舒適度提供支持。
                 </p>
               </div>
             </div>
           </section>
 
           <section id="how-to-take">
-            <h2>怎麼吃最有效？魚油服用完全攻略</h2>
+            <h2>最佳服用方式：劑量、時間與黃金比例</h2>
 
-            <h3>依族群的魚油劑量建議</h3>
-
+            <h3>各族群的建議劑量與比例</h3>
             <p>
-              每個人的需求不同，魚油的劑量也要跟著調整。以下是營養師根據不同健康目標的專業建議：
+              攝取 Omega-3 並非越多越好。劑量不足無法達到預期效果，過量則可能造成身體負擔。以下是針對不同健康目標與年齡層的視覺化補充建議：
             </p>
 
-            <table class="data-table" style="margin: 30px 0">
-              <thead>
-                <tr>
-                  <th style="width: 30%">族群</th>
-                  <th style="width: 35%">每日建議劑量</th>
-                  <th style="width: 35%">主要功效</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>日常保養</strong><br />健康成人</td>
-                  <td><strong>1000 mg</strong><br />建議 EPA+DHA 1比1</td>
-                  <td>維持基本健康<br />預防慢性疾病</td>
-                </tr>
-                <tr>
-                  <td><strong>心血管保健</strong><br />三高族群</td>
-                  <td><strong>1000-2000 mg</strong><br />建議 EPA+DHA 2比1</td>
-                  <td>降低三酸甘油酯<br />改善血管彈性</td>
-                </tr>
-                <tr>
-                  <td><strong>大腦保養</strong><br />學生、上班族</td>
-                  <td><strong>800-1200 mg</strong><br />建議 EPA+DHA 1比2</td>
-                  <td>提升記憶力<br />增強專注力</td>
-                </tr>
-                <tr>
-                  <td><strong>孕婦哺乳</strong><br />懷孕及哺乳期</td>
-                  <td><strong>200-300 mg</strong><br />建議 EPA+DHA 1比3</td>
-                  <td>胎兒腦部發育<br />降低早產風險</td>
-                </tr>
-                <tr>
-                  <td><strong>兒童發育</strong><br />3-12 歲</td>
-                  <td><strong>200-500 mg</strong><br />建議 EPA+DHA 1比2</td>
-                  <td>大腦發育<br />學習能力提升</td>
-                </tr>
-                <tr>
-                  <td><strong>銀髮保健</strong><br />65 歲以上</td>
-                  <td><strong>1000-1500 mg</strong><br />建議 EPA+DHA 1.5比1</td>
-                  <td>預防失智<br />關節保養</td>
-                </tr>
-                <tr>
-                  <td><strong>運動族群</strong><br />高強度訓練</td>
-                  <td><strong>1500-2500 mg</strong><br />建議 EPA+DHA 2比1</td>
-                  <td>抗發炎<br />加速恢復</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <h3>依年齡的魚油劑量建議</h3>
-
-            <p>
-              除了依據健康需求選擇劑量，年齡也是重要的考量因素。不同年齡層的代謝能力和營養需求都不同，以下是依年齡的詳細建議：
-            </p>
-
-            <table class="data-table" style="margin: 30px 0">
-              <thead>
-                <tr>
-                  <th style="width: 30%">年齡層</th>
-                  <th style="width: 35%">每日建議劑量</th>
-                  <th style="width: 35%">注意事項</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>0-6 個月</strong><br />嬰兒期</td>
-                  <td><strong>不建議</strong><br />母乳優先</td>
-                  <td>透過母親補充 DHA<br />母乳是最佳來源</td>
-                </tr>
-                <tr>
-                  <td><strong>6個月-2歲</strong><br />幼兒期</td>
-                  <td><strong>100-200 mg</strong><br />（DHA 為主）</td>
-                  <td>選擇液體或粉狀<br />務必諮詢小兒科醫師</td>
-                </tr>
-                <tr>
-                  <td><strong>3-12 歲</strong><br />兒童期</td>
-                  <td><strong>250-500 mg</strong><br />（EPA+DHA 總量）</td>
-                  <td>支持腦部發育<br />改善學習專注力</td>
-                </tr>
-                <tr>
-                  <td><strong>13-18 歲</strong><br />青少年期</td>
-                  <td><strong>500-800 mg</strong><br />（EPA+DHA 總量）</td>
-                  <td>課業壓力大時可增量<br />注意情緒穩定</td>
-                </tr>
-                <tr>
-                  <td><strong>19-30 歲</strong><br />青年期</td>
-                  <td><strong>1000-1500 mg</strong><br />（EPA+DHA 總量）</td>
-                  <td>工作壓力適應期<br />建立良好保養習慣</td>
-                </tr>
-                <tr>
-                  <td><strong>31-50 歲</strong><br />中年期</td>
-                  <td><strong>1000-1500 mg</strong><br />（EPA+DHA 總量）</td>
-                  <td>預防慢性疾病<br />維持代謝健康</td>
-                </tr>
-                <tr>
-                  <td><strong>51-65 歲</strong><br />熟年期</td>
-                  <td><strong>1200-1800 mg</strong><br />（EPA+DHA 總量）</td>
-                  <td>關注心血管健康<br />預防認知退化</td>
-                </tr>
-                <tr>
-                  <td><strong>65 歲以上</strong><br />銀髮期</td>
-                  <td><strong>1500-2000 mg</strong><br />（EPA+DHA 總量）</td>
-                  <td>預防失智症<br />維持關節靈活</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div class="alert alert-doctor">
-              <strong>重要提醒：</strong>
-              以上建議僅供參考，實際劑量請依個人健康狀況調整。如有慢性疾病或正在服用藥物，請先諮詢醫師或營養師。
+            <div class="dosage-infographic-container">
+              <!-- Card 1: Daily Maintenance -->
+              <div class="dosage-card">
+                <div class="dosage-card-header">
+                  <div class="dosage-card-title">日常保養</div>
+                  <div class="dosage-card-subtitle">健康成人</div>
+                </div>
+                <div class="dosage-card-dose">1000<span class="unit">mg</span></div>
+                <div class="ratio-info">
+                  <div class="ratio-label">EPA : DHA ≈ 1 : 1</div>
+                  <div class="ratio-bar">
+                    <div class="ratio-bar-epa" style="width: 50%"></div>
+                    <div class="ratio-bar-dha" style="width: 50%"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 2: Cardiovascular -->
+              <div class="dosage-card">
+                <div class="dosage-card-header">
+                  <div class="dosage-card-title">心血管保健</div>
+                  <div class="dosage-card-subtitle">三高族群</div>
+                </div>
+                <div class="dosage-card-dose">1000-2000<span class="unit">mg</span></div>
+                <div class="ratio-info">
+                  <div class="ratio-label">EPA : DHA ≈ 2 : 1</div>
+                  <div class="ratio-bar">
+                    <div class="ratio-bar-epa" style="width: 67%"></div>
+                    <div class="ratio-bar-dha" style="width: 33%"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 3: Brain Health -->
+              <div class="dosage-card">
+                <div class="dosage-card-header">
+                  <div class="dosage-card-title">大腦與認知</div>
+                  <div class="dosage-card-subtitle">學生、上班族</div>
+                </div>
+                <div class="dosage-card-dose">800-1200<span class="unit">mg</span></div>
+                <div class="ratio-info">
+                  <div class="ratio-label">EPA : DHA ≈ 1 : 2</div>
+                  <div class="ratio-bar">
+                    <div class="ratio-bar-epa" style="width: 33%"></div>
+                    <div class="ratio-bar-dha" style="width: 67%"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 4: Pregnancy -->
+              <div class="dosage-card">
+                <div class="dosage-card-header">
+                  <div class="dosage-card-title">孕婦與哺乳</div>
+                  <div class="dosage-card-subtitle">懷孕及哺乳期</div>
+                </div>
+                <div class="dosage-card-dose">200-300<span class="unit">mg (DHA)</span></div>
+                <div class="ratio-info">
+                  <div class="ratio-label">以 DHA 為主</div>
+                  <div class="ratio-bar">
+                    <div class="ratio-bar-epa" style="width: 10%"></div>
+                    <div class="ratio-bar-dha" style="width: 90%"></div>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <h2>什麼時候吃最好？</h2>
-            <h3>隨餐吃！科學原理告訴你</h3>
+            <div class="ratio-legend">
+                <div class="legend-item"><span class="legend-dot" style="background-color: #ff6b35;"></span> EPA</div>
+                <div class="legend-item"><span class="legend-dot" style="background-color: #2563eb;"></span> DHA</div>
+            </div>
+            
             <p>
-              魚油是脂溶性營養素，需要其他油脂幫助乳化才能被腸道吸收。<strong>空腹攝取魚油就像把油倒在水上，根本無法混合吸收</strong>。<span
-                class="highlight-nutrient"
-                >建議在一天中最豐盛的那餐（通常是午餐或晚餐）補充</span
-              >，因為這時候胃裡有足夠的食物和油脂，能讓魚油充分乳化，提高吸收率。
+                請注意，衛福部建議成人每日的 Omega-3 總攝取量不應超過 <strong>2000 mg</strong>。若有特殊醫療需求（如高三酸甘油酯血症），務必在醫師指導下調整劑量。
             </p>
 
-            <h3>特殊情況的服用建議</h3>
+            <h3>最佳服用時間：隨餐或餐後</h3>
             <p>
-              不同的健康目標，補充時間也要跟著調整。如果你的目標是<span
+              魚油屬於脂溶性營養素，其吸收需要脂肪的輔助。因此，將魚油與含有脂肪的正餐一同服用，是提升其生物利用率的關鍵。<strong
+                >空腹服用會大幅降低吸收效果</strong
+              >。<span
+                class="highlight-nutrient"
+                >建議在一天中最豐盛的一餐（通常是午餐或晚餐）時，隨餐或餐後立即補充</span
+              >，食物中的脂肪能促進魚油乳化，<span class="highlight-nutrient"><strong>最高可提升數倍的吸收率</strong></span>。
+            </p>
+
+            <h3>效益最大化的服用技巧</h3>
+            <p>
+              除了基本的隨餐服用，針對特定目標，調整服用時間能讓效益更佳化。例如，以<span
                 class="highlight-nutrient"
                 ><strong>降血脂</strong></span
-              >，建議晚餐後服用，因為夜間是膽固醇合成的高峰期，此時補充魚油效果最好。想要<span
+              >為目標者，可考慮於<strong>晚餐後</strong>服用，以應對夜間膽固醇合成的高峰期。需要<span
                 class="highlight-nutrient"
-                ><strong>改善記憶力</strong></span
-              >的人，則建議早餐後服用，讓大腦一整天都有充足的 DHA 支持。<span
-                class="highlight-nutrient"
-                ><strong>運動族群</strong></span
-              >可以在運動後 30 分鐘內服用，幫助消炎和肌肉恢復。<span
-                class="highlight-nutrient"
-                ><strong>腸胃敏感</strong></span
-              >的人建議選擇腸溶膠囊，避免胃部不適。而有<span
-                class="highlight-nutrient"
-                ><strong>睡眠問題</strong></span
-              >的人，最好避免睡前補充，以免影響消化和睡眠品質。
-            </p>
-
-            <div class="info-cards" style="margin: 30px 0">
-              <div class="info-card">
-                <h4 class="info-card-title">最佳時機</h4>
-                <div class="info-card-value">隨餐服用</div>
-                <p class="info-card-desc">
-                  與含油脂的餐點一起吃<br />吸收率可提升 2-3 倍
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">建議頻率</h4>
-                <div class="info-card-value">分次服用</div>
-                <p class="info-card-desc">
-                  每日分 2-3 次服用<br />減少腸胃不適感
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">小技巧</h4>
-                <div class="info-card-value">冷凍保存</div>
-                <p class="info-card-desc">冷凍後服用無魚腥味<br />更容易吞服</p>
-              </div>
-            </div>
-
-            <p
-              style="
-                text-align: center;
-                margin-top: 40px;
-                color: #718096;
-                font-size: 1.1em;
-              "
-            >
-              不想吃魚油？也可以從天然食物攝取 Omega-3 喔！
+                ><strong>增強日間專注力</strong></span
+              >者，則可於<strong>早餐後</strong>服用，為大腦提供一天的營養支持。對於腸胃較敏感者，選擇<strong>腸溶型膠囊</strong>，或將每日劑量<strong>分次服用</strong>，均有助於減少不適感。
             </p>
           </section>
 
           <section id="food-sources">
-            <h2>天然食物也能補充 Omega-3！</h2>
-
-            <h3>Omega-3 食物冠軍榜</h3>
-
+            <h2>天然食物來源的 Omega-3</h2>
             <p>
-              雖然魚油補充劑很方便，但天然食物永遠是最好的營養來源！新鮮的深海魚類不僅含有豐富的
-              Omega-3，還有其他協同營養素，讓身體更容易吸收利用。最重要的是，這些食物吃起來還很美味！
+              雖然營養補充品提供了一種高效便利的選擇，但直接從天然食物中攝取 Omega-3 仍是維持健康的基石。新鮮的深海魚類不僅富含 EPA 與 DHA，還提供優質蛋白質、維生素 D 等多種協同營養素。
             </p>
-
             <p style="margin-bottom: 30px">
-              <strong>聰明選魚小撇步：</strong>選擇小型深海魚類，不僅 Omega-3
-              含量高，重金屬污染風險也較低。記住「<span
+              在選擇魚種時，建議優先考慮位於食物鏈較前端的小型深海魚，以降低重金屬累積的風險。一個實用的選魚原則是「<span
                 class="highlight-nutrient"
                 >SMASH 原則</span
-              >」：<strong>S</strong>almon（鮭魚）、<strong>M</strong>ackerel（鯖魚）、<strong>A</strong>nchovies（鯷魚）、<strong>S</strong>ardines（沙丁魚）、<strong>H</strong>erring（鯡魚），這些都是營養師推薦的優質選擇！
+              >」：<strong>S</strong>almon（鮭魚）、<strong>M</strong>ackerel（鯖魚）、<strong>A</strong>nchovies（鯷魚）、<strong>S</strong>ardines（沙丁魚）、<strong>H</strong>erring（鯡魚），這些均是 Omega-3 含量豐富且相對安全的優質選擇。
             </p>
-
-            <div class="info-cards">
-              <div class="info-card">
-                <h4 class="info-card-title">鯖魚</h4>
-                <div class="info-card-value">2300 mg</div>
-                <p class="info-card-desc">
-                  每 100g 含量<br /><strong>CP 值最高的選擇！</strong>
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">沙丁魚</h4>
-                <div class="info-card-value">1900 mg</div>
-                <p class="info-card-desc">
-                  連骨頭一起吃<br /><strong>還能補充鈣質！</strong>
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">藻油</h4>
-                <div class="info-card-value">素食專用</div>
-                <p class="info-card-desc">
-                  純素來源 DHA<br /><strong>素食者首選！</strong>
-                </p>
-              </div>
-            </div>
-
             <div class="alert alert-tip">
-              <strong>🐟 營養師建議：</strong>
-              每週吃 2 次深海魚類（大約一個巴掌大），就能攝取到基本的 Omega-3
-              需求！
+              <strong>飲食建議：</strong>
+              一般成人建議<strong>每週至少攝取兩份（約一個手掌大小）</strong>富含脂肪的深海魚類，以滿足基本的 Omega-3 需求。
             </div>
           </section>
 
           <section id="how-to-choose">
-            <h2>魚油選購攻略 - 不被騙的完整指南！</h2>
+            <h2>專業選購標準：如何辨識高品質魚油？</h2>
 
             <p>
-              市面上的魚油產品五花八門，價格從幾百到幾千都有。到底該怎麼選？讓營養師告訴你不踩雷的秘訣！
+              選購魚油不僅是消費，更是對自身健康的投資。然而，市面上產品的品質落差極大，價格也未必反映真實價值。為了確保您的每一分錢都花在刀口上，我們將系統性地解析選購魚油的關鍵指標，讓您學會如何辨識真正優質的產品。
             </p>
 
-            <h3>為什麼選對魚油這麼重要？</h3>
+            <h3>為何選對魚油至關重要？</h3>
             <p>
-              很多人以為「魚油就是魚油」，隨便買一罐就好。<strong
-                >大錯特錯！</strong
-              >
-              <span class="highlight-nutrient">品質差的魚油不僅效果有限</span
-              >，<span class="highlight-nutrient"
-                >甚至可能有重金屬污染的風險</span
-              >。就像買車一樣，外表看起來差不多，但引擎、性能差很大！學會這 6
-              個選購要點，讓你花的每一分錢都值得！
+              品質低劣的魚油不僅 Omega-3 濃度不足、有效性堪慮，更可能因製程不當而含有過多的氧化物、重金屬或環境毒素，對健康反而造成潛在風險。因此，學會辨識高品質魚油的關鍵指標，是保障自身權益與健康的第一步。
             </p>
 
-            <h3>魚油選購的 6 大關鍵指</h3>
-            <p>
-              很多人買魚油時會被價格牽著鼻子走，但這樣很容易踩雷！<strong>專業營養師建議，選魚油要按照這個優先順序來評估</strong>：
-            </p>
-
-            <p>
-              <strong>1. 濃度優先</strong> - 這是最重要的！濃度低於 85% 的魚油就像稀釋過的果汁，要吃很多顆才有效果，最後反而更貴更麻煩。
-            </p>
-
-            <p>
-              <strong>2. 新鮮度必看</strong> - 再好的魚油如果已經氧化變質，不僅沒效果還可能有害。TOTOX 值低於 10 是基本要求。
-            </p>
-            <p>
-              <strong>3. 型態重要</strong> - 有了高濃度還要能被身體吸收才有用。rTG 型態比 EE 型態好吸收 3 倍，吃下去才不會浪費。
-            </p>
-
-            <p>
-              <strong>4. 比例搭配</strong> - 不同需求要選不同的 EPA:DHA
-              比例。想護心選 EPA 多的，想補腦選 DHA 多的，均衡保養選 1:1 比例。
-            </p>
-
-            <p>
-              <strong>5. 認證加分</strong> - IFOS
-              等第三方認證能確保品質穩定，但前面四項更重要。有認證是加分，沒有也不一定是壞產品。
-            </p>
-
-            <p>
-              <strong>6. 價格最後看</strong> -
-              便宜的通常有問題，但貴的也不一定就好。在前面五項都合格的基礎上，再來比價格才有意義。
-            </p>
-
-            <p style="margin-bottom: 30px">
-              <strong>簡單說：</strong
-              ><span class="highlight-nutrient"
-                >先確保「有效」，再考慮「划算」</span
-              >。<span class="highlight-nutrient"
-                >記住這個順序：濃度 > 新鮮度 > 型態 > 認證 > 價格</span
-              >，買到無效的魚油，再便宜都是浪費錢！
-            </p>
-
-            <div class="selection-funnel-container">
-              <h3 class="selection-funnel-title">魚油選購黃金漏斗</h3>
-              <svg class="funnel-svg" viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg">
-                <g class="funnel-step" style="transition-delay: 0s;">
-                  <polygon points="0,0 300,0 270,60 30,60" style="fill:#ff6b35;" />
-                  <text x="150" y="35" text-anchor="middle">
-                    <tspan class="step-number" x="45" dy="-5">1</tspan>
-                    <tspan class="step-title" x="150" dy="0">看濃度</tspan>
-                    <tspan class="step-desc" x="150" dy="18">Omega-3 > 85%</tspan>
+            <!-- Concentration Chart -->
+            <div class="concentration-chart-container">
+              <div class="chart-panel">
+                <h4>一般魚油</h4>
+                <svg class="donut-chart-svg" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="45" fill="transparent" stroke="#e5e7eb" stroke-width="10"></circle>
+                  <circle class="donut-fg" cx="50" cy="50" r="45" fill="transparent" stroke="#fb923c" stroke-width="10" stroke-linecap="round" transform="rotate(-90 50 50)" style="stroke-dasharray: 282.7; stroke-dashoffset: 197.9;"></circle>
+                  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+                    <tspan class="chart-text-percent" fill="#ef4444">30%</tspan>
+                    <tspan x="50%" dy="1.2em" class="chart-text-label">Omega-3</tspan>
                   </text>
-                </g>
-                <g class="funnel-step" style="transition-delay: 0.1s;">
-                  <polygon points="30,60 270,60 250,120 50,120" style="fill:#f97316;" />
-                  <text x="150" y="95" text-anchor="middle">
-                    <tspan class="step-number" x="65" dy="-5">2</tspan>
-                    <tspan class="step-title" x="150" dy="0">看新鮮度</tspan>
-                    <tspan class="step-desc" x="150" dy="18">TOTOX < 10</tspan>
+                </svg>
+                <p>大部分為不必要的飽和脂肪與雜質，需服用多顆才能達到建議劑量。</p>
+              </div>
+              <div class="chart-panel">
+                <h4>高品質魚油</h4>
+                <svg class="donut-chart-svg" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="45" fill="transparent" stroke="#e5e7eb" stroke-width="10"></circle>
+                  <circle class="donut-fg" cx="50" cy="50" r="45" fill="transparent" stroke="#ff6b35" stroke-width="10" stroke-linecap="round" transform="rotate(-90 50 50)" style="stroke-dasharray: 282.7; stroke-dashoffset: 42.4;"></circle>
+                   <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+                    <tspan class="chart-text-percent" fill="#166534">> 85%</tspan>
+                    <tspan x="50%" dy="1.2em" class="chart-text-label">Omega-3</tspan>
                   </text>
+                </svg>
+                <p>每一顆都富含高純度的有效成分，確保每一次補充都高效、純淨。</p>
+              </div>
+            </div>
+            
+            <h3>吸收率的科學：為何 rTG 型態是首選？</h3>
+            <p>
+              魚油的「分子型態」是決定其生物利用率（吸收率）的核心因素，也是最容易被忽略的技術細節。
+            </p>
+            <ul>
+                <li><strong>TG (三酸甘油酯):</strong> 這是魚體內天然存在的形式，結構穩定，人體吸收率良好。但未經濃縮的天然魚油，Omega-3 含量通常較低（約30%）。</li>
+                <li><strong>EE (乙酯):</strong> 為了提高 Omega-3 濃度，需透過「酯化反應」將魚油加工成 EE 形式。雖然濃度提升，但其分子結構與人體天然吸收的形式不同，<span class="highlight-nutrient"><strong>導致吸收率是三者中最低的</strong></span>。</li>
+                <li><strong>rTG (再酯化三酸甘油酯):</strong> 這是目前最先進也最理想的形式。它是將高濃度的 EE 魚油，透過專利技術「還原」回天然的 TG 結構。因此，rTG 型態<span class="highlight-nutrient"><strong>完美結合了「高濃度」與「高吸收率」兩大優點</strong></span>。權威研究指出，其吸收率顯著高於 EE 型態，能讓吃進去的每一分 Omega-3 都被最大化利用。</li>
+            </ul>
+
+             <!-- rTG vs EE Absorption Chart -->
+            <div class="absorption-chart-container">
+              <h3 class="absorption-chart-title">魚油型態與吸收率效益比較</h3>
+              <svg class="absorption-svg" viewBox="0 0 200 150">
+                <!-- EE Bar -->
+                <g>
+                  <rect x="30" y="80" width="60" height="50" rx="4" fill="#a0aec0"/>
+                  <text x="60" y="105" class="bar-value">基準</text>
+                  <text x="60" y="145" class="bar-label">EE 型態</text>
                 </g>
-                <g class="funnel-step" style="transition-delay: 0.2s;">
-                  <polygon points="50,120 250,120 230,180 70,180" style="fill:#fb923c;" />
-                  <text x="150" y="155" text-anchor="middle">
-                    <tspan class="step-number" x="85" dy="-5">3</tspan>
-                    <tspan class="step-title" x="150" dy="0">看型態</tspan>
-                    <tspan class="step-desc" x="150" dy="18">rTG 吸收率最佳</tspan>
-                  </text>
+                <!-- rTG Bar -->
+                <g>
+                  <rect x="110" y="22" width="60" height="108" rx="4" fill="#ff6b35"/>
+                  <text x="140" y="42" class="bar-value">+70%</text>
+                  <text x="140" y="145" class="bar-label">rTG 型態</text>
                 </g>
-                <g class="funnel-step" style="transition-delay: 0.3s;">
-                  <polygon points="70,180 230,180 210,240 90,240" style="fill:#fbbf24;" />
-                   <text x="150" y="215" text-anchor="middle" fill="#422006">
-                    <tspan class="step-number" x="105" dy="-5">4</tspan>
-                    <tspan class="step-title" x="150" dy="0">看比例</tspan>
-                    <tspan class="step-desc" x="150" dy="18">依需求選擇 EPA/DHA</tspan>
-                  </text>
-                </g>
-                <g class="funnel-step" style="transition-delay: 0.4s;">
-                  <polygon points="90,240 210,240 190,300 110,300" style="fill:#fcd34d;" />
-                  <text x="150" y="275" text-anchor="middle" fill="#422006">
-                    <tspan class="step-number" x="125" dy="-5">5</tspan>
-                    <tspan class="step-title" x="150" dy="0">看萃取</tspan>
-                    <tspan class="step-desc" x="150" dy="18">超臨界 CO2 萃取</tspan>
-                  </text>
-                </g>
-                <g class="funnel-step" style="transition-delay: 0.5s;">
-                  <polygon points="110,300 190,300 170,360 130,360" style="fill:#fef08a;" />
-                  <text x="150" y="335" text-anchor="middle" fill="#422006">
-                    <tspan class="step-number" x="145" dy="-5">6</tspan>
-                    <tspan class="step-title" x="150" dy="0">看認證</tspan>
-                    <tspan class="step-desc" x="150" dy="18">IFOS 五星認證</tspan>
-                  </text>
-                </g>
+                <!-- Comparison Line -->
+                 <line x1="30" y1="80" x2="170" y2="80" stroke="#a0aec0" stroke-width="1" stroke-dasharray="2,2"/>
               </svg>
             </div>
 
-            <h3>進階選購技巧：如何避開地雷產品</h3>
+            <h3>高品質魚油的 6 大關鍵指標</h3>
             <p>
-              除了上面 6
-              個基本指標，還有一些「內行人才知道」的小撇步。這些技巧能幫你避開包裝漂亮但品質有問題的產品！
+              面對琳瑯滿目的魚油產品，許多人容易陷入「價格迷思」，但這往往是選購錯誤的開端。一個更科學、更具效益的評估方式，是依循以下的關鍵指標優先順序：
             </p>
 
+            <div class="step-guide-container">
+              <h3 class="step-guide-title">魚油選購的黃金評估流程</h3>
+              <ol class="step-guide">
+                <li class="step-guide-item">
+                  <h4>第一步：檢視濃度</h4>
+                  <p>這是首要指標。選擇 <strong>Omega-3 總濃度 > 85%</strong> 的產品，才能確保效率，避免攝取過多不必要的脂肪。</p>
+                </li>
+                <li class="step-guide-item">
+                  <h4>第二步：確認新鮮度</h4>
+                  <p>氧化的魚油有害無益。尋找明確標示 <strong>TOTOX 總氧化值 < 10</strong> 的產品，數值越低代表越新鮮。</p>
+                </li>
+                <li class="step-guide-item">
+                  <h4>第三步：選擇型態</h4>
+                  <p>為了確保最佳吸收率，應優先選擇 <strong>rTG 型態</strong> 的魚油，讓攝取效益最大化。</p>
+                </li>
+                <li class="step-guide-item">
+                  <h4>第四步：審視比例</h4>
+                  <p>根據您的主要健康目標（如心血管或大腦保健），選擇合適的 <strong>EPA/DHA 比例</strong>。</p>
+                </li>
+                <li class="step-guide-item">
+                  <h4>第五步：了解萃取技術</h4>
+                  <p><strong>超臨界 CO2 萃取</strong>是目前公認能兼顧純淨度、無化學溶劑殘留的頂尖技術。</p>
+                </li>
+                <li class="step-guide-item">
+                  <h4>第六步：查核認證</h4>
+                  <p>尋找具有國際公信力的第三方認證，如 <strong>IFOS</strong> (國際魚油標準) 的五星認證，或確認產品符合 <strong>GOED</strong> (全球 EPA & DHA Omega-3 組織) 的嚴格標準，能為品質提供多一層保障。</p>
+                </li>
+              </ol>
+            </div>
+
+            <h3>進階選購技巧：避開常見的行銷陷阱</h3>
+            
             <div class="dos-donts-container">
               <div class="do-list">
-                <h4><center>✅ 聰明選購這樣挑</center></h4>
+                <h4><center>專業選購的 checklist</center></h4>
                 <ul class="dos-donts-list">
                   <li>
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#22c55e"/></svg>
-                    <p><strong>標示透明：</strong>清楚列出 EPA+DHA 含量、魚種來源與 TOTOX 值。</p>
+                    <p><strong>標示透明完整：</strong>產品應清楚列出 <strong>EPA 與 DHA 的個別及總含量</strong>、魚種來源、分子型態與 <strong>TOTOX 值</strong>。</p>
                   </li>
                   <li>
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#22c55e"/></svg>
-                    <p><strong>價格合理：</strong>專注於「性價比」，而非盲目追求最低價。</p>
+                    <p><strong>合理的性價比：</strong>專注於「每毫克 Omega-3 的成本」，而非單純的總價或膠囊顆數。</p>
                   </li>
                   <li>
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#22c55e"/></svg>
-                    <p><strong>不透光包裝：</strong>使用能阻擋光線的瓶器或獨立排裝，防止氧化。</p>
+                    <p><strong>優良的包裝：</strong>選擇能有效阻擋光線的<strong>不透光瓶器</strong>或<strong>獨立排裝</strong>，以防止 Omega-3 氧化。</p>
                   </li>
                 </ul>
               </div>
               <div class="dont-list">
-                <h4><center>❌ 小心地雷這樣閃</center></h4>
+                <h4><center>應警惕的危險信號</center></h4>
                 <ul class="dos-donts-list">
                   <li>
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 14L12 14.59 10.59 16 9 14.41 10.41 13 9 11.59 10.59 10 12 11.41 13.41 10 15 11.59 13.59 13 15 14.41z" fill="#ef4444"/></svg>
-                    <p><strong>標示不清：</strong>只寫「魚油 1000mg」，卻不提 Omega-3 實際含量。</p>
+                    <p><strong>模糊的濃度標示：</strong>例如只寫「魚油 1000mg」，卻<strong>對 Omega-3 的實際百分比或含量含糊其辭</strong>。</p>
                   </li>
                   <li>
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 14L12 14.59 10.59 16 9 14.41 10.41 13 9 11.59 10.59 10 12 11.41 13.41 10 15 11.59 13.59 13 15 14.41z" fill="#ef4444"/></svg>
-                    <p><strong>來源不明：</strong>無法追溯魚種、捕撈海域，安全存疑。</p>
+                    <p><strong>來源不明：</strong>無法清楚說明魚種、捕撈海域，或宣稱使用大型魚類（如鮪魚、旗魚），這可能伴隨較高的重金屬風險。</p>
                   </li>
                    <li>
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 14L12 14.59 10.59 16 9 14.41 10.41 13 9 11.59 10.59 10 12 11.41 13.41 10 15 11.59 13.59 13 15 14.41z" fill="#ef4444"/></svg>
-                    <p><strong>缺乏檢驗：</strong>沒有提供重金屬、塑化劑等第三方檢驗報告。</p>
+                    <p><strong>缺乏第三方檢驗：</strong>無法提供<strong>重金屬、塑化劑、戴奧辛</strong>等污染物的第三方公正檢驗報告。</p>
                   </li>
                 </ul>
               </div>
             </div>
+          </section>
 
+          <section id="deep-comparison">
+            <h2>進階比較分析：魚油 vs. 磷蝦油 vs. 亞麻籽油</h2>
             <p>
-              看完上面的對比表格，記住三個快速判斷原則：<strong>看標示是否透明</strong>（好產品會清楚標示
-              EPA+DHA 含量、魚種來源、TOTOX
-              值）、<strong>看價格是否合理</strong>（太便宜通常有問題，性價比才是關鍵）、<strong>看售後服務是否完善</strong>（有客服專線且願意解答疑問的品牌更值得信賴）。
+              Omega-3 的補充品來源多樣，其中魚油、磷蝦油和亞麻籽油是最普遍的三種。了解它們在成分、結構與效益上的根本差異，是做出正確選擇的基礎。
             </p>
-            <p
-              style="
-                text-align: center;
-                margin-top: 40px;
-                color: #718096;
-                font-size: 1.1em;
-              "
-            >
-              還有問題嗎？來看看最常被問的問題！
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>比較項目</th>
+                  <th><strong>魚油 (Fish Oil)</strong></th>
+                  <th><strong>磷蝦油 (Krill Oil)</strong></th>
+                  <th><strong>亞麻籽油 (Flaxseed Oil)</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>主要成分</td>
+                  <td><strong>EPA & DHA</strong></td>
+                  <td><strong>EPA & DHA</strong> + 蝦紅素</td>
+                  <td><strong>ALA</strong></td>
+                </tr>
+                <tr>
+                  <td>分子結構</td>
+                  <td>三酸甘油酯 (TG/rTG)</td>
+                  <td><strong>磷脂質 (Phospholipid)</strong></td>
+                  <td>三酸甘油酯 (TG)</td>
+                </tr>
+                <tr>
+                  <td>生物利用率</td>
+                  <td>高 (rTG 型態最佳)</td>
+                  <td><strong>極高</strong> (磷脂質結構更易被身體利用)</td>
+                  <td><strong>極低</strong> (ALA 轉換為EPA/DHA的比率 <5%)</td>
+                </tr>
+                <tr>
+                  <td>優點</td>
+                  <td>可達高濃度、性價比高、科學研究最完整</td>
+                  <td>生物利用率極佳、含天然抗氧化物、無魚腥味</td>
+                  <td><strong>純素來源</strong>、成本較低</td>
+                </tr>
+                <tr>
+                  <td>限制</td>
+                  <td>品質參差不齊、部分產品有魚腥味</td>
+                  <td><strong>Omega-3 濃度普遍偏低</strong>、價格昂貴</td>
+                  <td><strong>無法作為可靠的 EPA/DHA 直接來源</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>綜合評估</strong></td>
+                  <td><strong>綜合效益最佳，是多數人的首選</strong></td>
+                  <td><strong>預算充足且極度在意吸收率者的進階選擇</strong></td>
+                  <td><strong>僅適合素食者作為輔助，非主要的 Omega-3 來源</strong></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="alert alert-nutritionist">
+              <strong>專業總結：</strong>
+              對於非素食者而言，選擇一款高品質的 <strong>rTG 魚油</strong>，是補充 EPA/DHA 最具成本效益且最高效的方式。雖然磷蝦油的生物利用率略高，但其 Omega-3 總量通常較低，若要達到相同的有效劑量，需付出更高的成本。而亞麻籽油因其極低的「ALA轉換率」，使其無法被視為可靠的 EPA/DHA 來源。
+            </div>
+          </section>
+          
+          <section id="safety">
+            <h2>安全注意事項與藥物交互作用</h2>
+            <p>
+              雖然魚油對絕大多數人是安全的，但在特定情況下，仍需謹慎使用或在使用前諮詢醫療專業人員。
+            </p>
+            <ul>
+              <li><strong>正在服用抗凝血藥物者：</strong>高劑量的魚油可能具有抗凝血效果。若您正在服用抗凝血劑（如 Warfarin 華法林）或抗血小板藥物（如 Aspirin 阿斯匹靈），併用魚油可能會增加出血風險，務必先諮詢您的醫師。</li>
+              <li><strong>手術前後：</strong>為避免影響凝血功能，通常建議在<strong>預定手術前兩週</strong>暫停服用魚油，並在術後經醫師評估後再決定何時恢復補充。</li>
+              <li><strong>對魚類或海鮮過敏者：</strong>若您對魚類或海鮮存在已知的嚴重過敏反應，應避免服用魚油，並可考慮選擇純淨的藻油作為替代方案。</li>
+              <li><strong>懷孕後期：</strong>雖然孕期補充 DHA 對胎兒有益，但在懷孕 32 週後，建議與您的婦產科醫師討論，評估是否需要調整劑量或暫停使用，以避免影響生產時的凝血功能。</li>
+            </ul>
+             <p>
+              保健食品旨在輔助健康，不能取代正規醫療。若您有任何既有疾病或正在服用處方藥物，在開始補充任何保健食品前，都應先諮詢您的醫師或藥師，以確保安全。
+            </p>
+          </section>
+
+          <section id="myths">
+            <h2>常見副作用與迷思破解</h2>
+            <p>
+              即便魚油對健康有諸多益處，消費者在補充時仍可能遇到一些小困擾或常見疑問。本章節將針對這些問題提供清晰的解答與實用建議。
+            </p>
+            
+            <h3>常見副作用與應對策略</h3>
+            <h4>打嗝有魚腥味</h4>
+            <p>
+              這是最常見的副作用，通常與產品的新鮮度或個人消化情況有關。高品質、低 TOTOX 值的魚油本身腥味極淡。若仍有此困擾，可嘗試以下方法：
+            </p>
+            <ul>
+              <li><strong>確保隨餐服用：</strong>與食物一同消化能有效減少異味。</li>
+              <li><strong>選擇腸溶型膠囊：</strong>這類膠囊會通過胃部，直接在腸道溶解，從根本上避免胃部產生氣味。</li>
+              <li><strong>冷藏或冷凍保存：</strong>低溫儲存有助於保持魚油穩定，部分使用者發現冷凍後服用可顯著減少不適感。</li>
+            </ul>
+
+            <h4>腸胃不適</h4>
+            <p>
+              部分使用者在初期或服用高劑量時，可能會感到輕微的腸胃不適。這通常是因為身體尚在適應較高劑量的脂肪酸。建議的應對方式為：
+            </p>
+            <ul>
+              <li><strong>從低劑量開始：</strong>讓身體有時間適應，一週後再逐漸增加至目標劑量。</li>
+              <li><strong>分次服用：</strong>將一天的總劑量分散在二至三餐後服用，以減輕單次攝取的負擔。</li>
+            </ul>
+
+            <h3>三大常見迷思破解</h3>
+            <h4>迷思一：吃魚油會變胖嗎？</h4>
+            <p>
+              這是一個普遍的誤解。雖然魚油是脂肪，但每顆膠囊的熱量極低（通常約 10-15 大卡），在每日總熱量攝取中佔比微乎其微，<strong>完全不足以導致體重增加</strong>。相反地，部分研究指出，高品質的 Omega-3 反而有助於促進新陳代謝。體重管理的關鍵，仍在於整體的飲食結構與熱量平衡，而非單一的補充品。
+            </p>
+
+            <h4>迷思二：只要是 Omega-3 就一樣好？</h4>
+            <p>
+              這是一個關鍵的觀念誤區。Omega-3 是一個家族，其中對人體效益最直接、最重要的是海洋來源的 <strong>EPA 與 DHA</strong>。植物來源（如亞麻籽油、奇亞籽）的 Omega-3 主要是 <strong>ALA</strong>，雖然身體能將其轉換為 EPA/DHA，但<span class="highlight-nutrient"><strong>轉換率極低（通常不到 5%）</strong></span>。因此，若想達到特定的健康目標，直接補充含有 EPA/DHA 的魚油或藻油，是遠比依賴 ALA 轉換更為高效、可靠的策略。
+            </p>
+
+            <h4>迷思三：我每週都有吃魚，還需要額外補充嗎？</h4>
+            <p>
+              規律攝取魚類是極佳的飲食習慣。然而，是否需要「額外」補充，取決於您的「攝取量」與「健康目標」。若要達到每日 1000 mg 的保健劑量，相當於每天都需攝取約 100 克的鮭魚或鯖魚。對於大多數現代飲食習慣而言，<strong>要「穩定地」透過飲食達到此劑量，具有一定的挑戰性</strong>，且需注意不同魚種的重金屬風險。因此，對於有特定健康需求、或無法規律攝取足量深海魚的族群而言，高品質的魚油補充品提供了一個更純淨、便利且劑量精準的選擇。
             </p>
           </section>
 
           <!-- FAQ Section -->
           <section id="faq" class="faq-section">
-            <h2>常見問題</h2>
+            <h2>常見問題解析</h2>
 
             <div class="faq-item">
-              <div class="faq-question">魚油跟魚肝油不是一樣的東西嗎？</div>
+              <div class="faq-question">魚油和魚肝油是相同的產品嗎？</div>
               <div class="faq-answer">
-                <p><strong>大錯特錯！這兩個完全不一樣喔！</strong></p>
-                <p>簡單記法：</p>
+                <p><strong>完全不同。</strong> 這是一個常見但關鍵的誤解。</p>
                 <ul>
                   <li>
-                    <strong>魚油</strong> = 魚的「脂肪」萃取 = 補充 Omega-3 (EPA、DHA)
+                    <strong>魚油</strong>萃取自魚類的「脂肪」，主要提供 <strong>Omega-3 (EPA、DHA)</strong>。
                   </li>
                   <li>
-                    <strong>魚肝油</strong> = 魚的「肝臟」萃取 = 補充維生素 A、D
+                    <strong>魚肝油</strong>則萃取自魚類的「肝臟」，主要提供 <strong>維生素 A 與 D</strong>。
                   </li>
                 </ul>
-                <p>小心！維生素 A、D 吃太多會中毒，千萬別搞混囉！</p>
+                <p>兩者的成分與功效截然不同。尤其需注意，維生素 A、D 屬於脂溶性維生素，過量攝取會在體內累積，可能引發毒性反應，切勿混淆。</p>
               </div>
             </div>
 
             <div class="faq-item">
-              <div class="faq-question">魚油要空腹吃還是飯後吃？</div>
+              <div class="faq-question">空腹服用魚油是否可行？</div>
               <div class="faq-answer">
-                <p><strong>當然是配飯吃最好！</strong></p>
+                <p><strong>不建議。</strong> 為了達到最佳吸收效果，魚油應與含有脂肪的餐點一同服用。</p>
                 <p>
-                  為什麼呢？因為魚油是「油」，需要其他油脂幫忙才好吸收。建議在一天中最豐盛的那餐（通常是午餐或晚餐）一起吃，吸收效果最讚！
-                </p>
-                <p>
-                  Pro tip：如果怕魚腥味，可以把魚油放冰箱冷凍，吃起來就像小糖果一樣！
-                </p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">我吃素耶，有素食的魚油嗎？</div>
-              <div class="faq-answer">
-                <p><strong>有的！答案是「藻油」！</strong></p>
-                <p>
-                  其實魚的 Omega-3 也是從吃藻類來的，所以直接吃藻油等於是「跳過中間商」！藻油富含 DHA，完全植物來源，素食者的最佳選擇。
-                </p>
-                <p>
-                  別傻傻地狂吃亞麻籽油，轉換率超低的（不到 10%），不如直接吃藻油！
+                  魚油是脂溶性營養素，需要脂肪來啟動消化和吸收的機制。在餐後服用，食物中的脂肪可以幫助魚油乳化，使其更容易被小腸吸收，從而大幅提升生物利用率。
                 </p>
               </div>
             </div>
 
             <div class="faq-item">
-              <div class="faq-question">吃了魚油一直打魚腥嗝，救命啊！</div>
+              <div class="faq-question">素食者應如何補充 EPA 與 DHA？</div>
               <div class="faq-answer">
-                <p><strong>別擔心，這裡有解方！</strong></p>
-                <p>試試這些小撇步：</p>
+                <p><strong>「藻油」是素食者的最佳選擇。</strong></p>
+                <p>
+                  藻油直接從海洋微藻中萃取，是 EPA 與 DHA 的原始來源，完全為植物性。
+                </p>
+                <p>
+                  許多人誤以為可以透過攝取亞麻籽油、奇亞籽油來補充，但這些植物來源提供的是 ALA。如前文所述，人體將 ALA 轉換為 EPA/DHA 的效率極低，因此直接補充藻油是更為高效、可靠的方式。
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">如何處理服用後產生的魚腥味？</div>
+              <div class="faq-answer">
+                <p>產生魚腥味通常與產品的新鮮度或個人腸胃狀況有關。您可以嘗試以下幾種方法來改善：</p>
                 <ol>
                   <li>
-                    <strong>冷凍大法</strong>：把魚油放冷凍庫，凍成小冰塊再吞
+                    <strong>確保隨餐服用</strong>：與食物一同消化能有效減少異味。
                   </li>
                   <li>
-                    <strong>配餐吃</strong
-                    >：跟著食物一起下肚，混在一起就沒味道了
+                    <strong>選擇腸溶型膠囊</strong>：這類膠囊會通過胃部，直接在腸道溶解，避免胃部產生氣味。
                   </li>
                   <li>
-                    <strong>選腸溶錠</strong>：在腸子才溶解，胃裡不會有味道
+                    <strong>檢查產品新鮮度</strong>：優先選擇明確標示低 TOTOX 值的產品，高新鮮度的魚油本身腥味極低。
                   </li>
                   <li>
-                    <strong>挑新鮮的</strong>：TOTOX 值越低越新鮮，腥味自然少
+                    <strong>冷藏或冷凍保存</strong>：低溫儲存有助於保持魚油穩定，部分使用者發現冷凍後服用可減少不適感。
                   </li>
                 </ol>
-                <p>💡 如果以上都沒用，可能是魚油品質有問題，考慮換個牌子吧！</p>
+                <p>若嘗試後仍有嚴重不適，可能代表該產品品質不佳或不適合您的體質，建議考慮更換品牌。</p>
               </div>
             </div>
           </section>
         </article>
 
         <!-- Related Articles -->
-        <h2 class="related-title">相關營養素</h2>
+        <h2 class="related-title">相關營養素指南</h2>
         <div class="related-grid">
           <a href="./vitamin-d.html" class="related-card">
             <div class="related-card-content">
@@ -1828,7 +1967,7 @@
       <div class="disclaimer-content">
         <h3>免責聲明</h3>
         <p>
-          本資訊僅供教育目的，不能取代專業醫療建議。開始任何營養補充計劃前，請諮詢醫療專業人員。個人需求可能因健康狀況、藥物使用和生活方式而有所不同。
+          本站資訊僅供教育與參考目的，不能取代專業醫療建議、診斷或治療。在開始任何新的營養補充計劃或更改現有健康方案前，請務必諮詢您的醫師或合格的醫療專業人員。
         </p>
       </div>
     </section>
@@ -2080,7 +2219,7 @@
             );
             if (checkedCount >= 2) {
               resultText.style.color = "#dc2626";
-              resultText.innerHTML = `你勾選了 ${checkedCount} 個！看來你真的需要補充魚油了！`;
+              resultText.innerHTML = `您已符合 ${checkedCount} 個項目，補充高品質 Omega-3 可能對您有顯著幫助。`;
             }
           }
         });

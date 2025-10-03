@@ -750,6 +750,161 @@
       .card-algae .card-audience-tag { background-color: #f0fdf4; color: #166534; }
       .card-chelate .card-audience-tag { background-color: #fee2e2; color: #991b1b; }
       
+      /* --- Myth Busting Section Styles --- */
+      .myth-risk-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin: 40px 0;
+      }
+
+      .myth-risk-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .myth-risk-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+      }
+
+      .myth-warning {
+        background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+        border-left: 5px solid #f59e0b;
+      }
+
+      .myth-danger {
+        background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+        border-left: 5px solid #ef4444;
+      }
+
+      .myth-risk-icon {
+        font-size: 2.5em;
+        flex-shrink: 0;
+        margin-top: 5px;
+      }
+
+      .myth-risk-content h4 {
+        font-size: 1.3em;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #2d3748;
+      }
+
+      .myth-risk-content p {
+        color: #4a5568;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .myth-busting-section {
+        margin: 60px 0;
+      }
+
+      .myth-busting-section h3 {
+        font-size: 1.8em;
+        font-weight: 700;
+        color: #2d3748;
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+      }
+
+      .myth-busting-section h3::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
+        border-radius: 2px;
+      }
+
+      .myth-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 25px;
+      }
+
+      .myth-item {
+        background: white;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: 1px solid #e2e8f0;
+      }
+
+      .myth-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        border-color: #ff6b35;
+      }
+
+      .myth-question {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #f1f5f9;
+      }
+
+      .myth-number {
+        background: linear-gradient(135deg, #ff6b35 0%, #ff8f65 100%);
+        color: white;
+        font-weight: 700;
+        font-size: 0.9em;
+        padding: 8px 12px;
+        border-radius: 20px;
+        min-width: 40px;
+        text-align: center;
+        flex-shrink: 0;
+      }
+
+      .myth-question h4 {
+        font-size: 1.1em;
+        font-weight: 600;
+        color: #2d3748;
+        margin: 0;
+      }
+
+      .myth-answer {
+        color: #4a5568;
+        line-height: 1.6;
+      }
+
+      .myth-answer strong {
+        color: #ff6b35;
+        font-weight: 600;
+      }
+
+      @media (max-width: 768px) {
+        .myth-risk-section {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        
+        .myth-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .myth-risk-card {
+          padding: 20px;
+        }
+        
+        .myth-item {
+          padding: 20px;
+        }
+      }
+      
       /* --- Infographic: Calcium Synergy Diagram --- */
       .synergy-diagram-container {
         background-color: #f8fafc;
@@ -1489,49 +1644,108 @@
           <section id="myths">
             <h2>補鈣常見迷思與風險</h2>
             <p>補鈣是門大學問，許多廣為流傳的說法其實並不正確。同時，不當的補充方式也可能帶來風險。讓我們一次釐清這些重要觀念。</p>
-            <div class="info-cards" style="grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 40px;">
-              <div class="info-card" style="background: #fffbeb; border-top: 5px solid #f59e0b;">
-                <h4 class="info-card-title" style="color: #b45309;">缺鈣的警訊：身體的無聲抗議</h4>
-                <p class="info-card-desc" style="text-align: left;">長期缺鈣就像是慢慢掏空你的「骨骼銀行」。初期你可能只會覺得半夜容易抽筋、指甲變脆。但當身體為了維持血鈣穩定，不斷從骨骼「提款」時，最終會導致<strong class="highlight-nutrient">骨質疏鬆</strong>。這時骨頭變得像海砂屋一樣脆弱，一個不小心的跌倒就可能造成嚴重骨折。</p>
+            
+            <!-- 風險提醒區塊 -->
+            <div class="myth-risk-section">
+              <div class="myth-risk-card myth-warning">
+                <div class="myth-risk-icon">⚠️</div>
+                <div class="myth-risk-content">
+                  <h4>缺鈣的警訊：身體的無聲抗議</h4>
+                  <p>長期缺鈣就像是慢慢掏空你的「骨骼銀行」。初期你可能只會覺得半夜容易抽筋、指甲變脆。但當身體為了維持血鈣穩定，不斷從骨骼「提款」時，最終會導致<strong class="highlight-nutrient">骨質疏鬆</strong>。</p>
+                </div>
               </div>
-              <div class="info-card" style="background: #fee2e2; border-top: 5px solid #ef4444;">
-                <h4 class="info-card-title" style="color: #b91c1c;">鈣過量的風險：補過頭更傷身</h4>
-                <p class="info-card-desc" style="text-align: left;">補鈣並非越多越好！當血液中鈣太多（高血鈣症），通常不是食物造成，而是補充劑吃過量或有潛在疾病。過多的鈣會讓腎臟負擔過重，增加<strong class="highlight-nutrient">腎結石</strong>風險；還可能導致便秘、噁心，甚至影響心臟正常跳動。記住，<strong class="highlight-nutrient">補鈣前最好先諮詢專業意見</strong>。</p>
+              <div class="myth-risk-card myth-danger">
+                <div class="myth-risk-icon">🚨</div>
+                <div class="myth-risk-content">
+                  <h4>鈣過量的風險：補過頭更傷身</h4>
+                  <p>補鈣並非越多越好！當血液中鈣太多（高血鈣症），通常不是食物造成，而是補充劑吃過量。過多的鈣會讓腎臟負擔過重，增加<strong class="highlight-nutrient">腎結石</strong>風險。</p>
+                </div>
               </div>
             </div>
 
-            <div class="info-cards" style="grid-template-columns: repeat(4, 1fr); gap: 25px; margin-top: 40px;">
-              <div class="info-card" style="background: #fef2f2; border-top: 5px solid #f87171;">
-                <h4 class="info-card-title" style="color: #b91c1c;">迷思一：喝大骨湯補鈣？</h4>
-                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>骨頭中的鈣很難溶出，一碗大骨湯的鈣含量微乎其微，反而喝進一堆脂肪和普林。想補鈣，不如喝杯牛奶或吃塊板豆腐。</p>
-              </div>
-              <div class="info-card" style="background: #fefce8; border-top: 5px solid #facc15;">
-                <h4 class="info-card-title" style="color: #a16207;">迷思二：豆漿能取代牛奶？</h4>
-                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>天然豆漿的鈣含量只有牛奶的 1/10！除非是額外添加鈣的「鈣強化豆漿」，否則不能作為主要的鈣質來源。</p>
-              </div>
-              <div class="info-card" style="background: #f0fdf4; border-top: 5px solid #4ade80;">
-                <h4 class="info-card-title" style="color: #166534;">迷思三：所有豆腐都高鈣？</h4>
-                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>只有用「硫酸鈣（石膏）」製作的傳統板豆腐、豆干鈣含量才高。嫩豆腐、雞蛋豆腐的鈣含量則非常低。</p>
-              </div>
-              <div class="info-card" style="background: #eff6ff; border-top: 5px solid #60a5fa;">
-                <h4 class="info-card-title" style="color: #1e40af;">迷思四：吃鈣片會腎結石？</h4>
-                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>對健康人來說，適量補鈣反而有助於預防結石。關鍵在於「草酸」，而非鈣。足夠的鈣能在腸道與草酸結合，從糞便排出，避免草酸被吸收後在腎臟形成結石。</p>
-              </div>
-              <div class="info-card" style="background: #f5f3ff; border-top: 5px solid #a78bfa;">
-                <h4 class="info-card-title" style="color: #5b21b6;">迷思五：補鈣越多越好？</h4>
-                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>人體單次吸收鈣的上限約 500 毫克。一次補充高劑量，吸收率反而會下降。分次補充、不過量才是聰明做法。</p>
-              </div>
-              <div class="info-card" style="background: #fafafa; border-top: 5px solid #78716c;">
-                <h4 class="info-card-title" style="color: #44403c;">迷思六：只有老人才需補鈣？</h4>
-                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>骨質疏鬆是「始於兒少，顯於老年」的疾病。青少年時期是儲存「骨本」的黃金期，此時存得越多，老年時能流失的本錢才越厚。</p>
-              </div>
-              <div class="info-card" style="background: #fdf2f8; border-top: 5px solid #f472b6;">
-                <h4 class="info-card-title" style="color: #9d174d;">迷思七：抽筋就是缺鈣？</h4>
-                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>不一定。雖然缺鈣是原因之一，但脫水、電解質不平衡（缺鎂、鉀）、血液循環不良或過度疲勞也可能導致抽筋。</p>
-              </div>
-              <div class="info-card" style="background: #fff7ed; border-top: 5px solid #fb923c;">
-                <h4 class="info-card-title" style="color: #9a3412;">迷思八：蝦皮很補鈣？</h4>
-                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>蝦皮的鈣含量雖高，但鈉含量也極高，且很難一次吃下足夠份量。過多的鈉反而會加速鈣質流失，得不償失。</p>
+            <!-- 迷思破解區塊 -->
+            <div class="myth-busting-section">
+              <h3>8大補鈣迷思一次破解</h3>
+              <div class="myth-grid">
+                <div class="myth-item">
+                  <div class="myth-question">
+                    <span class="myth-number">01</span>
+                    <h4>喝大骨湯補鈣？</h4>
+                  </div>
+                  <div class="myth-answer">
+                    <p><strong>事實：</strong>骨頭中的鈣很難溶出，一碗大骨湯的鈣含量微乎其微，反而喝進一堆脂肪和普林。想補鈣，不如喝杯牛奶或吃塊板豆腐。</p>
+                  </div>
+                </div>
+
+                <div class="myth-item">
+                  <div class="myth-question">
+                    <span class="myth-number">02</span>
+                    <h4>豆漿能取代牛奶？</h4>
+                  </div>
+                  <div class="myth-answer">
+                    <p><strong>事實：</strong>天然豆漿的鈣含量只有牛奶的 1/10！除非是額外添加鈣的「鈣強化豆漿」，否則不能作為主要的鈣質來源。</p>
+                  </div>
+                </div>
+
+                <div class="myth-item">
+                  <div class="myth-question">
+                    <span class="myth-number">03</span>
+                    <h4>所有豆腐都高鈣？</h4>
+                  </div>
+                  <div class="myth-answer">
+                    <p><strong>事實：</strong>只有用「硫酸鈣（石膏）」製作的傳統板豆腐、豆干鈣含量才高。嫩豆腐、雞蛋豆腐的鈣含量則非常低。</p>
+                  </div>
+                </div>
+
+                <div class="myth-item">
+                  <div class="myth-question">
+                    <span class="myth-number">04</span>
+                    <h4>吃鈣片會腎結石？</h4>
+                  </div>
+                  <div class="myth-answer">
+                    <p><strong>事實：</strong>對健康人來說，適量補鈣反而有助於預防結石。關鍵在於「草酸」，而非鈣。足夠的鈣能在腸道與草酸結合，從糞便排出。</p>
+                  </div>
+                </div>
+
+                <div class="myth-item">
+                  <div class="myth-question">
+                    <span class="myth-number">05</span>
+                    <h4>補鈣越多越好？</h4>
+                  </div>
+                  <div class="myth-answer">
+                    <p><strong>事實：</strong>人體單次吸收鈣的上限約 500 毫克。一次補充高劑量，吸收率反而會下降。分次補充、不過量才是聰明做法。</p>
+                  </div>
+                </div>
+
+                <div class="myth-item">
+                  <div class="myth-question">
+                    <span class="myth-number">06</span>
+                    <h4>只有老人才需補鈣？</h4>
+                  </div>
+                  <div class="myth-answer">
+                    <p><strong>事實：</strong>骨質疏鬆是「始於兒少，顯於老年」的疾病。青少年時期是儲存「骨本」的黃金期，此時存得越多，老年時能流失的本錢才越厚。</p>
+                  </div>
+                </div>
+
+                <div class="myth-item">
+                  <div class="myth-question">
+                    <span class="myth-number">07</span>
+                    <h4>抽筋就是缺鈣？</h4>
+                  </div>
+                  <div class="myth-answer">
+                    <p><strong>事實：</strong>不一定。雖然缺鈣是原因之一，但脫水、電解質不平衡（缺鎂、鉀）、血液循環不良或過度疲勞也可能導致抽筋。</p>
+                  </div>
+                </div>
+
+                <div class="myth-item">
+                  <div class="myth-question">
+                    <span class="myth-number">08</span>
+                    <h4>蝦皮很補鈣？</h4>
+                  </div>
+                  <div class="myth-answer">
+                    <p><strong>事實：</strong>蝦皮的鈣含量雖高，但鈉含量也極高，且很難一次吃下足夠份量。過多的鈉反而會加速鈣質流失，得不償失。</p>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
