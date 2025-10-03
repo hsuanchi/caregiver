@@ -14,9 +14,8 @@
     />
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
-
+    <link rel="icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
+    <link rel="shortcut icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
     <!-- JSON-LD for Structured Data -->
     <script type="application/ld+json">
     {
@@ -226,16 +225,6 @@
         overflow: hidden;
       }
 
-      .article-hero::before {
-        content: "🌿";
-        position: absolute;
-        right: -20px;
-        top: -20px;
-        font-size: 150px;
-        opacity: 0.1;
-        transform: rotate(-15deg);
-      }
-      
       .article-category {
         display: inline-block;
         background: white;
@@ -359,12 +348,6 @@
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
       }
 
-      .info-card-icon {
-        font-size: 3em;
-        margin-bottom: 15px;
-        display: block;
-      }
-
       .info-card-title {
         font-size: 1.3em;
         font-weight: 700;
@@ -403,10 +386,6 @@
         align-items: center;
         gap: 15px;
         margin-bottom: 15px;
-      }
-
-      .risk-card-icon {
-        font-size: 2em;
       }
 
       .risk-card-title {
@@ -645,17 +624,14 @@
             
             <div class="info-cards" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
               <div class="info-card">
-                <span class="info-card-icon">🌿</span>
                 <h4 class="info-card-title">薑黃 (Turmeric)</h4>
                 <p class="info-card-desc">指整株植物的根莖，或將其乾燥後磨成的香料粉末，是天然的食材。</p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">✨</span>
                 <h4 class="info-card-title">類薑黃素 (Curcuminoids)</h4>
                 <p class="info-card-desc">薑黃中所有活性化合物的總稱，其中包含了薑黃素、去甲氧基薑黃素等。</p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">💛</span>
                 <h4 class="info-card-title">薑黃素 (Curcumin)</h4>
                 <p class="info-card-desc">類薑黃素中<strong class="highlight-nutrient">最主要、活性最強</strong>的成分，但僅佔一般薑黃粉重量的<strong class="highlight-nutrient">2% - 5%</strong>。</p>
               </div>
@@ -818,17 +794,17 @@
           <section id="who-needs-it">
             <h2>誰適合補充薑黃素？</h2>
             <p>由於其抗發炎和抗氧化的特性，薑黃素適合多種族群作為日常保健的一部分，特別是以下幾類人士：</p>
-             <div class="risk-group-cards">
+             <div class="risk-group-cards" style="grid-template-columns: repeat(3, 1fr);">
               <div class="risk-card">
-                <div class="risk-card-header"><span class="risk-card-icon">👨‍💼</span><h4 class="risk-card-title">應酬頻繁/熬夜族</h4></div>
+                <div class="risk-card-header"><h4 class="risk-card-title">應酬頻繁/熬夜族</h4></div>
                 <p class="risk-card-desc">經常需要飲酒、作息不規律者，薑黃素有助於支持肝臟功能，促進新陳代謝。</p>
               </div>
               <div class="risk-card">
-                <div class="risk-card-header"><span class="risk-card-icon">🏃</span><h4 class="risk-card-title">關節卡卡/運動員</h4></div>
+                <div class="risk-card-header"><h4 class="risk-card-title">關節卡卡/運動員</h4></div>
                 <p class="risk-card-desc">希望維持關節靈活度、舒緩運動後不適感的人，薑黃素是很好的選擇。</p>
               </div>
               <div class="risk-card">
-                <div class="risk-card-header"><span class="risk-card-icon">👩‍🦳</span><h4 class="risk-card-title">銀髮族</h4></div>
+                <div class="risk-card-header"><h4 class="risk-card-title">銀髮族</h4></div>
                 <p class="risk-card-desc">隨著年齡增長，身體的發炎反應和氧化壓力增加，薑黃素有助於調節生理機能。</p>
               </div>
             </div>

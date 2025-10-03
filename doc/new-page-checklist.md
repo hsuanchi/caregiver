@@ -32,9 +32,8 @@
     <meta name="keywords" content="關鍵字1, 關鍵字2, 關鍵字3" />
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
-
+    <link rel="icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
+    <link rel="shortcut icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
     <!-- Open Graph for Social Media -->
     <meta property="og:site_name" content="營養百科" />
 

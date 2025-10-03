@@ -14,9 +14,8 @@
     />
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
-
+    <link rel="icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
+    <link rel="shortcut icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
     <!-- JSON-LD for Structured Data -->
     <script type="application/ld+json">
     {
@@ -225,16 +224,6 @@
         position: relative;
         overflow: hidden;
       }
-
-      .article-hero::before {
-        content: "🥑";
-        position: absolute;
-        right: -20px;
-        top: -20px;
-        font-size: 150px;
-        opacity: 0.1;
-        transform: rotate(-15deg);
-      }
       
       .article-category {
         display: inline-block;
@@ -329,8 +318,8 @@
       }
 
       .alert-tip {
-        background: #f7fee7;
-        color: #365314;
+        background: #fffbeb;
+        color: #b45309;
       }
 
       .highlight-nutrient {
@@ -357,12 +346,6 @@
       .info-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 25px rgba(0, 0,  0, 0.12);
-      }
-
-      .info-card-icon {
-        font-size: 3em;
-        margin-bottom: 15px;
-        display: block;
       }
 
       .info-card-title {
@@ -403,10 +386,6 @@
         align-items: center;
         gap: 15px;
         margin-bottom: 15px;
-      }
-
-      .risk-card-icon {
-        font-size: 2em;
       }
 
       .risk-card-title {
@@ -670,17 +649,14 @@
             
             <div class="info-cards" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
               <div class="info-card">
-                <span class="info-card-icon">✨</span>
                 <h4 class="info-card-title">使命一：對抗老化、守護肌膚</h4>
                 <p class="info-card-desc">維生素E能中斷自由基的連鎖反應，<strong class="highlight-nutrient">減少紫外線、壓力、污染對皮膚細胞的傷害</strong>，維持肌膚彈性與光澤，是名副其實的「吃的美容聖品」。</p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">❤️</span>
                 <h4 class="info-card-title">使命二：維持心血管健康</h4>
                 <p class="info-card-desc">它能保護血管壁上的脂質不被氧化，特別是<strong class="highlight-nutrient">防止壞膽固醇（LDL）氧化</strong>，這是維持血管暢通、預防心血管問題的關鍵第一步。</p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">👶</span>
                 <h4 class="info-card-title">使命三：增進生殖健康</h4>
                 <p class="info-card-desc">維生素E的學名「生育醇」正揭示了它對生殖系統的重要性，它有助於<strong class="highlight-nutrient">維持荷爾蒙平衡</strong>，對於準備懷孕的男女雙方都是重要的營養素。</p>
               </div>
@@ -702,8 +678,8 @@
                 <tr><td>哺乳期</td><td>14 mg (21 IU)</td><td>1000 mg (1500 IU)</td></tr>
               </tbody>
             </table>
-            <div class="alert alert-tip">
-              <strong>💡 單位小知識：mg vs. IU</strong>
+            <div class="alert alert-tip" style="background: #fffbeb; color: #b45309;">
+              <strong>單位小知識：mg vs. IU</strong>
               <p style="margin-bottom:0;">你可能會在瓶罐上看到不同的單位。簡單來說，IU (國際單位) 是舊的計算方式，現在則多以毫克(mg)標示。<br>換算公式：<strong class="highlight-nutrient">1 mg 的天然維生素E ≈ 1.49 IU</strong>；<strong class="highlight-nutrient">1 mg 的合成維生素E ≈ 1.1 IU</strong>。</p>
             </div>
             
@@ -711,15 +687,15 @@
             <p>雖然嚴重的維生素E缺乏症在台灣不常見，但「攝取不足」的亞健康狀態卻可能影響許多人，特別是以下族群：</p>
              <div class="risk-group-cards">
               <div class="risk-card">
-                <div class="risk-card-header"><span class="risk-card-icon">🥗</span><h4 class="risk-card-title">嚴格低脂飲食者</h4></div>
+                <div class="risk-card-header"><h4 class="risk-card-title">嚴格低脂飲食者</h4></div>
                 <p class="risk-card-desc">維生素E需要油脂幫助吸收，長期執行極低脂飲食，可能影響其攝取與利用。</p>
               </div>
               <div class="risk-card">
-                <div class="risk-card-header"><span class="risk-card-icon">🍳</span><h4 class="risk-card-title">常吃加工食品者</h4></div>
+                <div class="risk-card-header"><h4 class="risk-card-title">常吃加工食品者</h4></div>
                 <p class="risk-card-desc">精煉和加工過程會大量破壞食物中的維生素E，導致攝取量下降。</p>
               </div>
               <div class="risk-card">
-                <div class="risk-card-header"><span class="risk-card-icon">🤰</span><h4 class="risk-card-title">備孕及懷孕婦女</h4></div>
+                <div class="risk-card-header"><h4 class="risk-card-title">備孕及懷孕婦女</h4></div>
                 <p class="risk-card-desc">維生素E對胎兒發育和母體健康至關重要，需求量會比平時更高。</p>
               </div>
           
@@ -748,8 +724,8 @@
                 </tbody>
               </table>
             </div>
-             <div class="alert alert-tip">
-              <strong>💡 營養師小提醒：怕高溫、怕光、怕氧氣</strong>
+             <div class="alert alert-tip" style="background: #fffbeb; color: #b45309;">
+              <strong>營養師小提醒：怕高溫、怕光、怕氧氣</strong>
               <p>維生素E同樣很嬌貴。儲存堅果和油脂時，應<strong class="highlight-nutrient">避免陽光直射和高溫環境</strong>，並盡快食用完畢，以減少氧化造成的流失。這也是為什麼冷壓初榨的植物油通常含有更豐富的維生素E。</p>
             </div>
           </section>
@@ -782,8 +758,8 @@
             <h3 id="expert-secret">專家的秘密：單一成員 vs. 完整家族的戰爭</h3>
             <p>多數人，甚至是許多專家，都忽略了一個足以改變遊戲規則的關鍵知識：<strong class="highlight-nutrient">高劑量的「單方 α-生育醇」，可能會反過來傷害你獲得「完整維生素E家族」的驚人益處。</strong></p>
             <p>維生素E是一個包含八位成員的大家族（四種生育醇、四種生育三烯酚）。近十年的尖端研究發現，家族中的「生育三烯酚 (Tocotrienols)」才是真正的特種部隊，在保護神經、心血管方面展現了更強大的潛力。</p>
-            <div class="alert alert-tip" style="background: #ecfccb;">
-                <strong>💡 董事會的比喻：一個足以改變你選擇的思維模型</strong>
+            <div class="alert alert-tip" style="background: #fffbeb; color: #b45309;">
+                <strong>董事會的比喻：一個足以改變你選擇的思維模型</strong>
                 <p>想像維生素E家族是一個公司的董事會，有八位董事。市售常見的高劑量維生素E，就像只給了董事長「α-生育醇」最高的薪水和最大的權力。結果，他變得過於強勢，壟斷了所有發言權，導致其他七位更具創新能力的董事（特別是「生育三烯酚」們）完全被邊緣化，他們的才華無法貢獻。</p>
                 <p style="margin-bottom: 0;">這就是多數人正在對身體做的事：<strong class="highlight-nutrient">補充高劑量單方 α-生育醇，會競爭排擠、並抑制了體內其他更珍貴的維生素E成員的吸收與作用。</strong>追求平衡與協同，永遠勝過極端地最大化單一元素。</p>
             </div>

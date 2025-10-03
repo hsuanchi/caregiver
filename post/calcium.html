@@ -14,9 +14,8 @@
     />
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
-
+    <link rel="icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
+    <link rel="shortcut icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
     <!-- Open Graph for Social Media -->
     <meta property="og:site_name" content="營養百科" />
 
@@ -277,16 +276,6 @@
         position: relative;
         overflow: hidden;
       }
-
-      .article-hero::before {
-        content: "🦴";
-        position: absolute;
-        right: -20px;
-        top: -20px;
-        font-size: 150px;
-        opacity: 0.1;
-        transform: rotate(-15deg);
-      }
       
       .article-category {
         display: inline-block;
@@ -382,8 +371,8 @@
       }
 
       .alert-tip {
-        background: #f0fdf4;
-        color: #14532d;
+        background: #fffbeb;
+        color: #b45309;
       }
 
       .highlight-nutrient {
@@ -410,12 +399,6 @@
       .info-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-      }
-
-      .info-card-icon {
-        font-size: 3em;
-        margin-bottom: 15px;
-        display: block;
       }
 
       .info-card-title {
@@ -457,10 +440,6 @@
         align-items: center;
         gap: 15px;
         margin-bottom: 15px;
-      }
-
-      .risk-card-icon {
-        font-size: 2em;
       }
 
       .risk-card-title {
@@ -727,28 +706,23 @@
             <p>鈣是人體內含量最豐富的礦物質，一位60公斤的成年人體內約有1公斤的鈣，是構成我們身體的關鍵元素。但您知道嗎？這大量的鈣質在體內扮演著兩種截然不同，卻又息息相關的角色：</p>
             
             <h3>鈣的雙重角色：<span class="highlight-nutrient">99%的結構支撐 vs 1%的生命調控</span></h3>
-            <ul style="list-style-type: disc; padding-left: 20px;">
-              <li><strong>結構性角色 (99%)：</strong> 絕大多數（約99%）的鈣質，以<strong class="highlight-nutrient">「羥磷灰石」</strong>的結晶形式，成為我們骨骼與牙齒的堅固建材。它賦予骨骼支撐身體的剛性，保護我們的內臟，並讓我們能有力地咀嚼食物。您可以將骨骼視為一個巨大的「鈣質銀行」。</li>
-              <li style="margin-top: 1em;"><strong>調節性角色 (1%)：</strong> 僅佔總量1%的鈣，以<strong class="highlight-nutrient">鈣離子</strong>的形式存在於血液和細胞中。儘管數量極少，這1%的鈣卻是維持生命運作的「總司令」，負責調控心跳、神經傳導、肌肉收縮、血液凝固等攸關生死的即時任務。</li>
-            </ul>
+            <p>絕大多數（約99%）的鈣質，以<strong class="highlight-nutrient">「羥磷灰石」</strong>的結晶形式，成為我們骨骼與牙齒的堅固建材，如同一個巨大的「鈣質銀行」。而僅佔總量1%的鈣，則以<strong class="highlight-nutrient">鈣離子</strong>的形式存在於血液和細胞中，負責調控心跳、神經傳導、肌肉收縮等攸關生死的即時任務。</p>
 
             <h3>骨骼：一個動態的「健康銀行帳戶」</h3>
             <p>大眾普遍將骨骼視為一個靜態、不變的支架，但事實上，骨骼是一個充滿活力的動態組織，無時無刻不在進行著稱為「重塑」（Remodeling）的過程。這個過程可以比喻為一個健康銀行帳戶的資金流動，涉及兩種關鍵細胞的協同作用：</p>
             <div class="info-cards" style="grid-template-columns: 1fr 1fr; gap: 20px;">
               <div class="info-card">
-                <span class="info-card-icon">👷</span>
                 <h4 class="info-card-title">造骨細胞 (Osteoblasts)</h4>
                 <p class="info-card-desc">如同「建築工人」，負責合成新的骨骼基質，並調控鈣、磷等礦物質沉積其上，形成新的骨質。</p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">🧨</span>
                 <h4 class="info-card-title">蝕骨細胞 (Osteoclasts)</h4>
                 <p class="info-card-desc">如同「拆除團隊」，負責分解陳舊或受損的骨質，將其礦物質釋放回血液中，以供身體其他部位使用或進行再循環。</p>
               </div>
             </div>
 
-            <div class="alert alert-tip">
-              <strong>💡 鈣恆定的悖論：為何1%的「總司令」能犧牲99%的「銀行」？</strong>
+            <div class="alert alert-tip" style="background: #fffbeb; color: #b45309;">
+              <strong>鈣恆定的悖論：為何1%的「總司令」能犧牲99%的「銀行」？</strong>
               <p>人體內存在一套精密而嚴格的調控系統，稱為<strong class="highlight-nutrient">「鈣恆定」</strong>，其首要任務是將血液中的鈣離子濃度維持在一個極其狹窄的範圍內。這個系統揭示了一個深刻的生理學原理：<strong>為了確保即時的生存，身體會優先滿足那1%調節性鈣的需求，即便這意味著要犧牲99%的骨骼儲備。</strong></p>
               <p>當飲食中的鈣攝取不足，導致血鈣濃度有下降趨勢時，身體會立即啟動補償措施。副甲狀腺分泌的荷爾蒙會發出訊號，激活<strong class="highlight-nutrient">「蝕骨細胞」</strong>（如同拆除團隊），從骨骼這個巨大的「鈣銀行」中提取鈣質，釋放到血液中，以迅速恢復血鈣的正常水平。這個過程完美解釋了<strong class="highlight-nutrient">骨質疏鬆症為何是一種「沉默的疾病」</strong>——即使您的骨骼銀行已瀕臨破產，血液檢查中的鈣指數仍可能完全正常。</p>
             </div>
@@ -788,10 +762,9 @@
               <li><strong>懷孕與哺乳期：</strong> 儘管官方建議攝取量維持在 1000 毫克/日，但其背後的生理意義卻截然不同。這引出了所謂的「懷孕悖論」。<span class="highlight-nutrient">當飲食攝取嚴重不足時，為了滿足胎兒發育的剛性需求，母體唯一的選擇就是分解自身的骨骼，釋放鈣質。</span></li>
             </ul>
 
-            <div class="alert alert-tip">
-              <strong>💡 知識補給站：關鍵的窗口期——巔峰骨量 (Peak Bone Mass)</strong>
+            <div class="alert alert-tip" style="background: #fffbeb; color: #b45309;">
+              <strong>知識補給站：關鍵的窗口期——巔峰骨量 (Peak Bone Mass)</strong>
               <p>「巔峰骨量」是指一個人在其一生中所能達到的骨骼質量的最高點，是決定其日後骨骼健康的關鍵指標。研究數據顯示，這個巔峰值通常在青春期晚期至成年早期達成。這一事實引出了一個核心觀念：<span class="highlight-nutrient">骨質疏鬆症實質上是一種「始於兒少，顯於老年」的疾病</span>。<strong><span class="highlight-nutrient">世界骨質疏鬆基金會指出，若能在年輕時期將巔峰骨密度提升 10%，便可將骨質疏鬆症的發生延緩 13 年。</span></strong></p>
-              <p>對抗骨質疏鬆症最有效的策略，不僅僅是在老年時期減緩流失，更重要的是在童年和青少年這段關鍵的「存款期」內，最大化地儲存骨本。使用「骨骼銀行」的比喻能更有效地傳達此一概念：整個青少年時期是努力存錢的階段，而成年後的歲月則是在不斷提款。一個較高的初始存款，意味著可以承受更多的提款而不至於「破產」（即發生骨折）。這種觀念將防治焦點從被動治療轉向了主動的、終身性的預防。</p>
             </div>
 
             <h3>攝取量-國際參考指標</h3>
@@ -823,8 +796,8 @@
                 </tbody>
               </table>
             </div>
-            <div class="alert alert-tip" style="margin-top: 2em;">
-              <strong>💡 小提醒：無可避免的衰退——年齡與荷爾蒙的影響</strong>
+            <div class="alert alert-tip" style="margin-top: 2em; background: #fffbeb; color: #b45309;">
+              <strong>小提醒：無可避免的衰退——年齡與荷爾蒙的影響</strong>
               <p>隨著年齡增長，骨質流失會自然加速。對於女性而言，<strong class="highlight-nutrient">停經</strong>是一個重要的轉捩點。雌激素是一種能夠有效抑制骨質分解的荷爾蒙，停經後雌激素水平急劇下降，導致骨質在數年內快速流失，使其成為骨質疏鬆症的高風險族群。這也解釋了為何停經後婦女是鈣質與維生素 D 補充劑的主要建議對象。</p>
             </div>
 
@@ -837,22 +810,18 @@
             <h3>鈣質來源分類</h3>
             <div class="info-cards">
               <div class="info-card">
-                <span class="info-card-icon">🥛</span>
                 <h4 class="info-card-title">乳製品</h4>
                 <p class="info-card-desc">牛奶、起司和優格是鈣質的極佳來源，不僅含量豐富，其生物利用率也相對較高。</p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">🌿</span>
                 <h4 class="info-card-title">植物性來源</h4>
                 <p class="info-card-desc">對於素食者或乳糖不耐症者，應優先選擇低草酸蔬菜（如芥蘭、羽衣甘藍）及傳統板豆腐。</p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">🐟</span>
                 <h4 class="info-card-title">海鮮類</h4>
                 <p class="info-card-desc">可連骨食用的小魚，如小魚乾、罐頭沙丁魚等，是鈣質的超級來源。</p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">🧃</span>
                 <h4 class="info-card-title">鈣質強化食品</h4>
                 <p class="info-card-desc">鈣強化豆漿、杏仁奶、柳橙汁和穀物麥片等，為鈣質攝取提供了更多元的選擇。</p>
               </div>
@@ -921,8 +890,8 @@
                 </tbody>
               </table>
             </div>
-            <div class="alert alert-tip" style="margin-top: 2em;">
-              <strong>💡 營養師小知識：高含量不等於高吸收</strong>
+            <div class="alert alert-tip" style="margin-top: 2em; background: #fffbeb; color: #b45309;">
+              <strong>營養師小知識：高含量不等於高吸收</strong>
               <p>從這些數據中可以發現一個關於植物性飲食的有趣現象。例如，一杯煮熟的菠菜含有 <strong class="highlight-nutrient">245 毫克鈣</strong>，看似是一個豐富的來源。然而，由於其極高的<strong class="highlight-nutrient">草酸</strong>含量，這些鈣的<strong class="highlight-nutrient">生物利用度</strong>非常低。相比之下，鈣含量較低但草酸含量也低的蔬菜，如羽衣甘藍和綠花椰菜，卻能提供更多可被身體吸收的鈣。這意味著，對於依賴植物性飲食的個體（如素食者或乳糖不耐症患者），確保鈣質充足不僅取決於攝取的總鈣量，更需要對哪些植物來源的鈣具有更高的生物利用度有深入的理解。因此，膳食規劃時，鈣質來源的<strong class="highlight-nutrient">「品質」與「數量」</strong>同等重要。</p>
             </div>
 
@@ -933,42 +902,35 @@
             <p>食物營養標示上所列的鈣含量，並不完全等同於身體能吸收的量。多種因素會影響鈣的生物利用度：</p>
             <div class="info-cards" style="grid-template-columns: repeat(3, 1fr);">
               <div class="info-card">
-                <span class="info-card-icon"></span>
                 <h4 class="info-card-title">攝取量</h4>
                 <p class="info-card-desc">單次攝取量越低，吸收率越高。這就是為什麼建議將鈣質「少量多次」補充的原因。</p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon"></span>
                 <h4 class="info-card-title">年齡</h4>
                 <p class="info-card-desc">嬰兒和幼兒的吸收率最高（可達60%），成年後會逐漸下降至約25%。</p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon"></span>
                 <h4 class="info-card-title">食物來源</h4>
                 <p class="info-card-desc">乳製品和鈣強化食品的吸收率通常較佳，約為30%。</p>
               </div>
             </div>
 
             <h3 id="calcium-thieves">飲食中的「鈣質小偷」</h3>
-            <p>某些食物中的天然成分會阻礙鈣質的吸收，我們稱之為「抗營養素」。了解它們，才能更聰明地補鈣！</p>
+            <p>某些食物中的天然成分會阻礙鈣質的吸收，我們稱之為「抗營養素」。了解它們，才能更聰明地補鈣。</p>
             <div class="info-cards">
               <div class="info-card">
-                
                 <h4 class="info-card-title">草酸 (Oxalates)</h4>
                 <p class="info-card-desc">最強效的抑制劑，常見於菠菜、甜菜根。它會與鈣結合，使其無法被吸收。</p>
               </div>
               <div class="info-card">
-                
                 <h4 class="info-card-title">植酸 (Phytates)</h4>
                 <p class="info-card-desc">存在於全穀類、豆類和種子中，同樣會降低鈣的吸收率。</p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon"></span>
                 <h4 class="info-card-title">過量的鈉</h4>
                 <p class="info-card-desc">高鹽飲食會增加鈣質從尿液中排泄的量，讓補進來的鈣白白流失。</p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon"></span>
                 <h4 class="info-card-title">咖啡因與酒精</h4>
                 <p class="info-card-desc">長期過量攝取咖啡、濃茶及酒精，都會干擾鈣的平衡與吸收。</p>
               </div>
@@ -1018,11 +980,10 @@
                 <p class="risk-card-desc">雌激素下降會加速骨質流失，使骨質疏鬆的風險顯著增高。</p>
               </div>
               <div class="risk-card">
-                <div class="risk-card-header"><h4 class="risk-card-title">純素食者</h4></div>
+                <div class="risk-card-header"><h4 class="risk-card-title">素食者</h4></div>
                 <p class="risk-card-desc">飲食中完全不含乳製品，需要更謹慎地規劃植物性鈣質的來源與吸收。</p>
               </div>
               <div class="risk-card">
-                <div class="risk-card-header"><h4 class="risk-card-title">乳糖不耐症者</h4></div>
                 <p class="risk-card-desc">無法從牛奶等主要乳製品中獲取鈣質，是攝取不足的常見族群。</p>
               </div>
               <div class="risk-card">
@@ -1030,17 +991,17 @@
                 <p class="risk-card-desc">如克隆氏症、乳糜瀉等腸道疾病，會直接影響身體對鈣質的吸收能力。</p>
               </div>
               <div class="risk-card">
-                <div class="risk-card-header"><span class="risk-card-icon"></span><h4 class="risk-card-title">長期飲食攝取不足者</h4></div>
+                <div class="risk-card-header"><h4 class="risk-card-title">長期飲食攝取不足者</h4></div>
                 <p class="risk-card-desc">因偏食、食慾不振或執行特定飲食法，導致鈣質攝取長期未達建議標準。</p>
               </div>
               <div class="risk-card">
-                <div class="risk-card-header"><span class="risk-card-icon"></span><h4 class="risk-card-title">長期服用特定藥物者</h4></div>
+                <div class="risk-card-header"><h4 class="risk-card-title">長期服用特定藥物者</h4></div>
                 <p class="risk-card-desc">長期使用類固醇、利尿劑等藥物，可能會干擾鈣的吸收或增加其流失。</p>
               </div>
             </div>
 
-            <div class="alert alert-tip" style="margin-top: 40px;">
-              <strong>💡 關鍵必看：解讀標示 — 元素鈣 vs. 化合物重量</strong>
+            <div class="alert alert-tip" style="margin-top: 40px; background: #fffbeb; color: #b45309;">
+              <strong>關鍵必看：解讀標示 — 元素鈣 vs. 化合物重量</strong>
               <p style="margin-bottom: 0;">消費者在選購鈣營養品時，最容易混淆的一點是標示上的劑量。瓶身上顯著的數字（如 1250 毫克）通常指的是鈣化合物（如碳酸鈣）的總重量，而非身體能實際利用的<strong class="highlight-nutrient">「元素鈣」（Elemental Calcium）</strong>含量。真正的有效劑量必須查看產品背後的「營養標示」才能確定。</p>
             </div>
 

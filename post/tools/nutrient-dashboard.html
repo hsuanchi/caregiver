@@ -7,9 +7,8 @@
     <meta name="description" content="探索所有關於營養補充品的專業文章，提供您最完整、最科學的健康指南。" />
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-    <link rel="shortcut icon" type="image/svg+xml" href="../../favicon.svg">
-
+    <link rel="icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
+    <link rel="shortcut icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
     <!-- Open Graph for Social Media -->
     <meta property="og:site_name" content="營養百科" />
 
@@ -150,9 +149,9 @@
 
        - name: (String) The primary name of the nutrient (e.g., '維生素C').
 
-       - func: (String) A brief, one-sentence description of its main function.
+       - en_name: (String) The English name of the nutrient (NEWLY ADDED).
 
-       - remarks: (String) A short, supplementary note (e.g., '需仰賴脂肪協助吸收').
+       - func: (String) A brief, one-sentence description of its main function.
 
        - status: (String) Set to '已涵蓋' if the article exists, or '待補齊'
          if it is a placeholder. This controls the card's color and the
@@ -174,8 +173,8 @@
         type: '礦物質類',
         goals: ['免疫強化', '抗氧化與抗發炎'],
         name: '硒',
+        en_name: 'Selenium',
         func: '構成體內重要抗氧化酵素，保護細胞免於損傷',
-        remarks: '每日需求量少於 100 毫克',
         status: '已涵蓋', // Assuming you just wrote the article
         link: '../selenium.html', // The path to the new file
         title: '硒 - 對抗癌症與病毒的隱形守護者'
@@ -185,42 +184,50 @@
     -->
     <script>
         const nutrientData = [
-            // type: 結構分類 (原 category); goals: 健康目標/症狀 (新 subcategory, 可多選)
-            { type: '維生素類', goals: ['能量代謝', '神經與情緒健康', '皮膚與黏膜健康'], name: '維生素B群', func: '參與能量代謝、維持神經系統', status: '已涵蓋', link: '../vitamin-b.html', title: '啟動身體能量、告別疲勞的活力發電機' },
-            { type: '維生素類', goals: ['心血管健康', '新生與發育', '神經與情緒健康'], name: '葉酸（B9）', func: '守護心血管與新生的秘密功臣', status: '已涵蓋', link: '../folic-acid.html', title: '不只孕婦必備！守護心血管與新生的秘密功臣' },
-            { type: '維生素類', goals: ['免疫強化', '抗氧化與抗發炎', '肌膚與膠原蛋白'], name: '維生素C（抗壞血酸）', func: '強力抗氧化、有助於膠原蛋白合成', status: '已涵蓋', link: '../vitamin-c.html', title: '打造透亮美肌與強效保護力的抗氧化之王' },
-            { type: '維生素類', goals: ['視力維護', '免疫強化', '皮膚與黏膜健康'], name: '維生素A', func: '維持視力、免疫功能和上皮組織完整', status: '已涵蓋', link: '../vitamin-a.html', title: '不只顧眼睛！解鎖視覺、皮膚與免疫的3大關鍵' },
-            { type: '維生素類', goals: ['骨骼與牙齒健康', '免疫強化', '內分泌調節'], name: '維生素D', func: '協助鈣質吸收、調節免疫功能', status: '已涵蓋', link: '../vitamin-d.html', title: '不只是維生素，更是身體的陽光總指揮' },
-            { type: '維生素類', goals: ['抗氧化與抗發炎', '心血管健康', '細胞保護'], name: '維生素E', func: '具抗氧化作用，保護細胞膜', status: '已涵蓋', link: '../vitamin-e.html', title: '保護細胞、對抗歲月痕跡的抗老戰士' },
-            { type: '維生素類', goals: ['骨骼與牙齒健康', '心血管健康', '血液凝固'], name: '維生素K', func: '參與血液凝固和骨骼代謝', status: '已涵蓋', link: '../vitamin-k.html', title: '補鈣、補D為何一定要有它？K2才是預防骨鬆與血管鈣化的關鍵' },
+            // type: 結構分類; goals: 健康目標/症狀
+            { type: '維生素類', goals: ['能量代謝', '神經與情緒健康', '皮膚與黏膜健康'], name: '維生素B群', en_name: 'Vitamin B Complex', func: '參與能量代謝、維持神經系統', status: '已涵蓋', link: '../vitamin-b.html', title: '啟動身體能量、告別疲勞的活力發電機' },
+            { type: '維生素類', goals: ['心血管健康', '新生與發育', '神經與情緒健康'], name: '葉酸（B9）', en_name: 'Folic Acid (B9)', func: '守護心血管與新生的秘密功臣', status: '已涵蓋', link: '../folic-acid.html', title: '不只孕婦必備！守護心血管與新生的秘密功臣' },
+            { type: '維生素類', goals: ['免疫強化', '抗氧化與抗發炎', '肌膚與膠原蛋白'], name: '維生素C（抗壞血酸）', en_name: 'Vitamin C (Ascorbic Acid)', func: '強力抗氧化、有助於膠原蛋白合成', status: '已涵蓋', link: '../vitamin-c.html', title: '打造透亮美肌與強效保護力的抗氧化之王' },
+            { type: '維生素類', goals: ['視力維護', '免疫強化', '皮膚與黏膜健康'], name: '維生素A', en_name: 'Vitamin A', func: '維持視力、免疫功能和上皮組織完整', status: '已涵蓋', link: '../vitamin-a.html', title: '不只顧眼睛！解鎖視覺、皮膚與免疫的3大關鍵' },
+            { type: '維生素類', goals: ['骨骼與牙齒健康', '免疫強化', '內分泌調節'], name: '維生素D', en_name: 'Vitamin D', func: '協助鈣質吸收、調節免疫功能', status: '已涵蓋', link: '../vitamin-d.html', title: '不只是維生素，更是身體的陽光總指揮' },
+            { type: '維生素類', goals: ['抗氧化與抗發炎', '心血管健康', '細胞保護'], name: '維生素E', en_name: 'Vitamin E', func: '具抗氧化作用，保護細胞膜', status: '已涵蓋', link: '../vitamin-e.html', title: '保護細胞、對抗歲月痕跡的抗老戰士' },
+            { type: '維生素類', goals: ['骨骼與牙齒健康', '心血管健康', '血液凝固'], name: '維生素K', en_name: 'Vitamin K', func: '參與血液凝固和骨骼代謝', status: '已涵蓋', link: '../vitamin-k.html', title: '補鈣、補D為何一定要有它？K2才是預防骨鬆與血管鈣化的關鍵' },
             
-            { type: '礦物質類', goals: ['骨骼與牙齒健康', '神經與肌肉功能', '睡眠與放鬆'], name: '鈣', func: '構成骨骼與牙齒，參與肌肉收縮', status: '已涵蓋', link: '../calcium.html', title: '不只補骨！終結抽筋、失眠的關鍵礦物質' },
-            { type: '礦物質類', goals: ['睡眠與放鬆', '神經與肌肉功能', '能量代謝'], name: '鎂', func: '參與能量代謝、神經與肌肉功能', status: '已涵蓋', link: '../magnesium.html', title: '終結失眠與抽筋的放鬆礦物質' },
-            { type: '礦物質類', goals: ['心血管健康', '體液平衡', '神經與肌肉功能'], name: '鉀', func: '維持體液平衡、神經傳導與肌肉收縮', status: '已涵蓋', link: '../potassium.html', title: '終結水腫、抽筋的電解質之王' },
-            { type: '礦物質類', goals: ['體液平衡', '神經與肌肉功能'], name: '鈉', func: '維持體液平衡', status: '待補齊', link: null, title: null },
-            { type: '礦物質類', goals: ['骨骼與牙齒健康', '能量代謝'], name: '磷', func: '構成骨骼與牙齒，參與能量代謝', status: '待補齊', link: null, title: null },
-            { type: '礦物質類', goals: ['血紅素與氣色', '能量代謝', '新生與發育'], name: '鐵', func: '構成血紅素，負責氧氣運輸', status: '已涵蓋', link: '../iron.html', title: '告別疲勞、擁有紅潤氣色的活力元素' },
-            { type: '礦物質類', goals: ['免疫強化', '生長發育與修復', '皮膚與黏膜健康'], name: '鋅', func: '參與免疫功能、生長發育與細胞修復', status: '已涵蓋', link: '../zinc.html', title: '點燃300種代謝反應的生命火星塞' },
-            { type: '礦物質類', goals: ['甲狀腺與代謝', '內分泌調節'], name: '碘', func: '構成甲狀腺素，調節新陳代謝', status: '待補齊', link: null, title: null },
-            { type: '礦物質類', goals: ['抗氧化與抗發炎', '細胞保護'], name: '硒', func: '具抗氧化作用，保護細胞', status: '待補齊', link: null, title: null },
-            { type: '礦物質類', goals: ['能量代謝', '細胞保護'], name: '銅、錳、氟、鉻', func: '參與多種生理代謝過程', status: '待補齊', link: null, title: null },
+            { type: '礦物質類', goals: ['骨骼與牙齒健康', '神經與肌肉功能', '睡眠與放鬆'], name: '鈣', en_name: 'Calcium', func: '構成骨骼與牙齒，參與肌肉收縮', status: '已涵蓋', link: '../calcium.html', title: '不只補骨！終結抽筋、失眠的關鍵礦物質' },
+            { type: '礦物質類', goals: ['睡眠與放鬆', '神經與肌肉功能', '能量代謝'], name: '鎂', en_name: 'Magnesium', func: '參與能量代謝、神經與肌肉功能', status: '已涵蓋', link: '../magnesium.html', title: '終結失眠與抽筋的放鬆礦物質' },
+            { type: '礦物質類', goals: ['心血管健康', '體液平衡', '神經與肌肉功能'], name: '鉀', en_name: 'Potassium', func: '維持體液平衡、神經傳導與肌肉收縮', status: '已涵蓋', link: '../potassium.html', title: '終結水腫、抽筋的電解質之王' },
+            { type: '礦物質類', goals: ['體液平衡', '神經與肌肉功能'], name: '鈉', en_name: 'Sodium', func: '維持體液平衡', status: '待補齊', link: null, title: null },
+            { type: '礦物質類', goals: ['骨骼與牙齒健康', '能量代謝'], name: '磷', en_name: 'Phosphorus', func: '構成骨骼與牙齒，參與能量代謝', status: '待補齊', link: null, title: null },
+            { type: '礦物質類', goals: ['血紅素與氣色', '能量代謝', '新生與發育'], name: '鐵', en_name: 'Iron', func: '構成血紅素，負責氧氣運輸', status: '已涵蓋', link: '../iron.html', title: '告別疲勞、擁有紅潤氣色的活力元素' },
+            { type: '礦物質類', goals: ['免疫強化', '生長發育與修復', '皮膚與黏膜健康'], name: '鋅', en_name: 'Zinc', func: '參與免疫功能、生長發育與細胞修復', status: '已涵蓋', link: '../zinc.html', title: '點燃300種代謝反應的生命火星塞' },
+            { type: '礦物質類', goals: ['甲狀腺與代謝', '內分泌調節'], name: '碘', en_name: 'Iodine', func: '構成甲狀腺素，調節新陳代謝', status: '待補齊', link: null, title: null },
+            { type: '礦物質類', goals: ['抗氧化與抗發炎', '細胞保護'], name: '硒', en_name: 'Selenium', func: '具抗氧化作用，保護細胞', status: '待補齊', link: null, title: null },
+            { type: '礦物質類', goals: ['能量代謝', '細胞保護'], name: '銅', en_name: 'Copper', func: '參與能量代謝、鐵質運輸與結締組織形成', status: '待補齊', link: null, title: null },
+            { type: '礦物質類', goals: ['骨骼與牙齒健康', '抗氧化與抗發炎'], name: '錳', en_name: 'Manganese', func: '參與骨骼形成與能量代謝的輔酶', status: '待補齊', link: null, title: null },
+            { type: '礦物質類', goals: ['骨骼與牙齒健康'], name: '氟', en_name: 'Fluoride', func: '強化牙齒琺瑯質，預防蛀牙', status: '待補齊', link: null, title: null },
+            { type: '礦物質類', goals: ['內分泌調節', '能量代謝'], name: '鉻', en_name: 'Chromium', func: '協助胰島素作用，維持血糖穩定', status: '待補齊', link: null, title: null },
             
-            { type: '機能性成分', goals: ['關節與軟骨', '運動修復與支持'], name: '葡萄糖胺與軟骨素', func: '為關節軟骨的重要成分', status: '待補齊', link: null, title: null },
-            { type: '機能性成分', goals: ['肌膚與膠原蛋白', '關節與軟骨', '骨骼與牙齒健康'], name: '膠原蛋白', func: '提供結構支撐，存在於皮膚、骨骼', status: '已涵蓋', link: '../collagen.html', title: '吃出澎潤Q彈的青春實踐指南' },
-            { type: '機能性成分', goals: ['視力維護', '抗氧化與抗發炎'], name: '葉黃素', func: '有助於保護眼睛免受藍光傷害', status: '已涵蓋', link: '../lutein.html', title: '3C世代的內建護眼藍光濾鏡' },
-            { type: '機能性成分', goals: ['抗氧化與抗發炎', '消化道健康', '細胞保護'], name: '薑黃素', func: '具有強大的抗發炎與抗氧化作用', status: '已涵蓋', link: '../curcumin.html', title: '身體的天然抗發炎超級滅火器' },
-            { type: '機能性成分', goals: ['抗氧化與抗發炎', '視力維護', '心血管健康'], name: '茄紅素、花青素', func: '強效抗氧化劑', status: '待補齊', link: null, title: null },
-            { type: '機能性成分', goals: ['心血管健康', '能量代謝', '抗氧化與抗發炎'], name: '輔酶Q10（CoQ10）', func: '參與細胞能量生成，具備抗氧化作用', status: '已涵蓋', link: '../coenzyme-q10.html', title: '點燃心臟活力的能量火星塞' },
-            { type: '機能性成分', goals: ['腸道菌群平衡', '免疫強化', '消化道健康'], name: '益生菌（Probiotics）', func: '有助於平衡腸道菌群', status: '已涵蓋', link: '../probiotics.html', title: '重建腸道好菌平衡的消化專家' },
-            { type: '機能性成分', goals: ['腸道菌群平衡', '消化道健康'], name: '益生質（Prebiotics）', func: '益生菌的食物，能促進益生菌生長', status: '待補齊', link: null, title: null },
-            { type: '機能性成分', goals: ['消化道健康', '體重管理'], name: '膳食纖維', func: '維護腸道蠕動、增加飽足感', status: '待補齊', link: null, title: null },
-            { type: '機能性成分', goals: ['心血管健康', '腦部認知', '抗氧化與抗發炎'], name: '魚油（Omega-3脂肪酸）', func: '包含DHA與EPA，有助於維持心血管健康與腦部功能', status: '已涵蓋', link: '../fish-oil.html', title: '暢通思緒、保護心血管的關鍵Omega-3' },
-            { type: '機能性成分', goals: ['睡眠與放鬆', '神經與情緒健康'], name: 'GABA', func: '大腦的天然安定劑，幫助緩解焦慮與失眠', status: '已涵蓋', link: '../gaba.html', title: '告別焦慮與失眠，大腦的天然安定劑' },
-            { type: '機能性成分', goals: ['肝臟解毒與代謝', '肌膚與膠原蛋白', '抗氧化與抗發炎'], name: '穀胱甘肽 (GSH)', func: '人體的抗氧化之母，參與肝臟解毒與美白', status: '已涵蓋', link: '../glutathione.html', title: '打造發光肌與強效肝臟解毒的抗氧化之母' },
-            { type: '機能性成分', goals: ['運動修復與支持', '肌肉與能量'], name: '胺基酸', func: '蛋白質的基本組成單位，用於肌肉修復與合成（如BCAA）', status: '待補齊', link: null, title: null },
-            { type: '機能性成分', goals: ['免疫強化', '心血管健康'], name: 'β-葡聚醣', func: '有助於調節免疫', status: '待補齊', link: null, title: null },
+            { type: '機能性成分', goals: ['關節與軟骨', '運動修復與支持'], name: '葡萄糖胺', en_name: 'Glucosamine', func: '構成關節軟骨與滑液的重要成分', status: '待補齊', link: null, title: null },
+            { type: '機能性成分', goals: ['關節與軟骨', '運動修復與支持'], name: '軟骨素', en_name: 'Chondroitin', func: '提供關節軟骨彈性與保水性', status: '待補齊', link: null, title: null },
+            { type: '機能性成分', goals: ['肌膚與膠原蛋白', '關節與軟骨', '骨骼與牙齒健康'], name: '膠原蛋白', en_name: 'Collagen', func: '提供結構支撐，存在於皮膚、骨骼', status: '已涵蓋', link: '../collagen.html', title: '吃出澎潤Q彈的青春實踐指南' },
+            { type: '機能性成分', goals: ['視力維護', '抗氧化與抗發炎'], name: '葉黃素', en_name: 'Lutein', func: '有助於保護眼睛免受藍光傷害', status: '已涵蓋', link: '../lutein.html', title: '3C世代的內建護眼藍光濾鏡' },
+            { type: '機能性成分', goals: ['抗氧化與抗發炎', '消化道健康', '細胞保護'], name: '薑黃素', en_name: 'Curcumin', func: '具有強大的抗發炎與抗氧化作用', status: '已涵蓋', link: '../curcumin.html', title: '身體的天然抗發炎超級滅火器' },
+            { type: '機能性成分', goals: ['抗氧化與抗發炎', '心血管健康', '細胞保護'], name: '茄紅素', en_name: 'Lycopene', func: '強效抗氧化劑，尤其對攝護腺健康有益', status: '待補齊', link: null, title: null },
+            { type: '機能性成分', goals: ['抗氧化與抗發炎', '視力維護', '心血管健康'], name: '花青素', en_name: 'Anthocyanins', func: '強效抗氧化劑，有助於改善夜間視力與血管健康', status: '待補齊', link: null, title: null },
+            { type: '機能性成分', goals: ['心血管健康', '能量代謝', '抗氧化與抗發炎'], name: '輔酶Q10（CoQ10）', en_name: 'Coenzyme Q10 (CoQ10)', func: '參與細胞能量生成，具備抗氧化作用', status: '已涵蓋', link: '../coenzyme-q10.html', title: '點燃心臟活力的能量火星塞' },
+            { type: '機能性成分', goals: ['腸道菌群平衡', '免疫強化', '消化道健康'], name: '益生菌（Probiotics）', en_name: 'Probiotics', func: '有助於平衡腸道菌群', status: '已涵蓋', link: '../probiotics.html', title: '重建腸道好菌平衡的消化專家' },
+            { type: '機能性成分', goals: ['腸道菌群平衡', '消化道健康'], name: '益生質（Prebiotics）', en_name: 'Prebiotics', func: '益生菌的食物，能促進益生菌生長', status: '待補齊', link: null, title: null },
+            { type: '機能性成分', goals: ['消化道健康', '體重管理'], name: '膳食纖維', en_name: 'Dietary Fiber', func: '維護腸道蠕動、增加飽足感', status: '待補齊', link: null, title: null },
+            { type: '機能性成分', goals: ['心血管健康', '腦部認知', '抗氧化與抗發炎'], name: '魚油（Omega-3脂肪酸）', en_name: 'Fish Oil (Omega-3 Fatty Acids)', func: '包含DHA與EPA，有助於維持心血管健康與腦部功能', status: '已涵蓋', link: '../fish-oil.html', title: '暢通思緒、保護心血管的關鍵Omega-3' },
+            { type: '機能性成分', goals: ['睡眠與放鬆', '神經與情緒健康'], name: 'GABA', en_name: 'GABA (Gamma-Aminobutyric Acid)', func: '大腦的天然安定劑，幫助緩解焦慮與失眠', status: '已涵蓋', link: '../gaba.html', title: '告別焦慮與失眠，大腦的天然安定劑' },
+            { type: '機能性成分', goals: ['肝臟解毒與代謝', '肌膚與膠原蛋白', '抗氧化與抗發炎'], name: '穀胱甘肽 (GSH)', en_name: 'Glutathione (GSH)', func: '人體的抗氧化之母，參與肝臟解毒與美白', status: '已涵蓋', link: '../glutathione.html', title: '打造發光肌與強效肝臟解毒的抗氧化之母' },
+            { type: '機能性成分', goals: ['運動修復與支持', '肌肉與能量'], name: '胺基酸', en_name: 'Amino Acids', func: '蛋白質的基本組成單位，用於肌肉修復與合成（如BCAA）', status: '待補齊', link: null, title: null },
+            { type: '機能性成分', goals: ['免疫強化', '心血管健康'], name: 'β-葡聚醣', en_name: 'Beta-Glucans', func: '有助於調節免疫', status: '待補齊', link: null, title: null },
         ];
 
+        // 核心修改：在數據載入後立即進行英文名稱排序 (A->Z)
+        nutrientData.sort((a, b) => a.en_name.localeCompare(b.en_name));
+        
         // 將所有目標整理出來，用於生成多選標籤
         const ALL_HEALTH_GOALS = [
             ...new Set(nutrientData.flatMap(item => item.goals))
@@ -243,18 +250,23 @@
                 `<span class="text-xs font-medium text-slate-600 bg-slate-200 px-2 py-0.5 rounded-full">${goal}</span>`
             ).join(' ');
 
+            const enNameDisplay = nutrient.en_name ? `<span class="text-base font-medium text-slate-500">(${nutrient.en_name})</span>` : '';
+
             const card = `
                 <div class="bg-white rounded-lg shadow-md p-5 flex flex-col h-full border-l-4 border-${statusColor}-500 transition hover:shadow-xl hover:transform hover:-translate-y-1">
                     <div class="flex-grow">
                         <div class="flex justify-between items-start mb-2">
-                             <h3 class="text-lg font-bold text-slate-900">${nutrient.name}</h3>
+                             <h3 class="text-lg font-bold text-slate-900">
+                                 ${nutrient.name} 
+                                 ${enNameDisplay}
+                             </h3>
                              <span class="text-xs font-semibold text-${statusColor}-800 bg-${statusColor}-100 px-2 py-1 rounded-full">${nutrient.status}</span>
                         </div>
                         <p class="text-sm text-slate-500 mb-1">類型: ${nutrient.type}</p>
                         <div class="flex flex-wrap gap-1 mb-3">${goalTags}</div>
                         <p class="text-slate-700 text-sm mb-3">${nutrient.func}</p>
                     </div>
-                    ${nutrient.link ? `<a href="${nutrient.link}" target="_blank" class="mt-4 block w-full text-center bg-teal-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-teal-700 transition">閱讀文章</a>` : ''}
+                    ${nutrient.link ? `<a href="${nutrient.link}" class="mt-4 block w-full text-center bg-teal-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-teal-700 transition">閱讀文章</a>` : ''}
                 </div>
             `;
             return card;
@@ -282,6 +294,7 @@
                 const lowerSearchTerm = searchTerm.toLowerCase();
                 filteredData = filteredData.filter(item => 
                     item.name.toLowerCase().includes(lowerSearchTerm) ||
+                    item.en_name.toLowerCase().includes(lowerSearchTerm) || // Allow searching by English name
                     item.func.toLowerCase().includes(lowerSearchTerm) ||
                     item.type.toLowerCase().includes(lowerSearchTerm) ||
                     item.goals.some(goal => goal.toLowerCase().includes(lowerSearchTerm))
