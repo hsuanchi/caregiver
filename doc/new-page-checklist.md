@@ -1,10 +1,10 @@
-# 📋 新增頁面檢查清單
+# 新增頁面檢查清單
 
 當您要為網站新增頁面時，請按照以下步驟確保頁面完整且符合網站標準。
 
-> ✍️ **文章寫作指南請參考** [`doc/writing-guide.md`](writing-guide.md) - 專注於內容結構、寫作風格、視覺化設計等內容層面
+> **文章寫作指南請參考** [`doc/writing-guide.md`](writing-guide.md) - 專注於內容結構、寫作風格、視覺化設計等內容層面
 
-## 🎯 快速檢查清單
+## 快速檢查清單
 
 ### 基礎結構
 - [ ] 建立 HTML 檔案
@@ -35,7 +35,7 @@
 - [ ] 驗證所有內部連結正常
 - [ ] 檢查相關營養素連結
 
-> 💡 **詳細寫作指南請參考** [`doc/writing-guide.md`](writing-guide.md)
+> **詳細寫作指南請參考** [`doc/writing-guide.md`](writing-guide.md)
 
 ### 網站整合
 - [ ] **更新文章彙整頁面**
@@ -46,9 +46,9 @@
 
 ---
 
-## 📝 詳細步驟指南
+## 詳細步驟指南
 
-### 1️⃣ **建立基本 HTML 結構**
+### 1. **建立基本 HTML 結構**
 
 使用以下模板作為新頁面的起點：
 
@@ -155,7 +155,7 @@
 </html>
 ```
 
-### 2️⃣ **加入 GA4 分析追蹤**
+### 2. **加入 GA4 分析追蹤**
 
 在 `<script>` 標籤中加入以下初始化代碼：
 
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 ```
 
-### 3️⃣ **加入 Header 組件**
+### 3. **加入 Header 組件**
 
 在初始化代碼中繼續加入：
 
@@ -183,7 +183,7 @@ if (headerContainer && window.DeusHeaderComponent) {
 }
 ```
 
-### 4️⃣ **加入 Footer 組件**
+### 4. **加入 Footer 組件**
 
 在初始化代碼中加入：
 
@@ -195,15 +195,15 @@ if (footerContainer && window.DeusFooterComponent) {
 }
 ```
 
-### 5️⃣ **更新文章彙整頁面**
+### 5. **更新文章彙整頁面**
 
 若新增的是文章頁面，請打開 `/post/archive.html`，手動新增該篇文章的卡片資訊，以確保目錄同步更新。
 
-### 6️⃣ **新增內部連結**
+### 6. **新增內部連結**
 
 思考新頁面與既有頁面的關聯性，在至少 1-2 個相關的舊頁面中，加入連向此新頁面的文字連結，以建立更緊密的站內連結結構。
 
-### 7️⃣ **更新 sitemap.xml**
+### 7. **更新 sitemap.xml**
 
 打開 `/sitemap.xml` 檔案，在 `</urlset>` 標籤前加入新頁面：
 
@@ -230,7 +230,7 @@ if (footerContainer && window.DeusFooterComponent) {
 - `monthly`: 每月更新的內容
 - `yearly`: 很少更新的內容
 
-### 8️⃣ **內容品質檢查**
+### 8. **內容品質檢查**
 
 #### 文章結構驗證
 - [ ] **標題策略**：確認標題符合 V.I.P. + B.R.A.V.E. 框架
@@ -250,9 +250,9 @@ if (footerContainer && window.DeusFooterComponent) {
 - [ ] 包含互動式 FAQ 設計
 - [ ] 檢查所有圖表在手機上的顯示效果
 
-> 💡 **詳細寫作指南和範例請參考** [`doc/writing-guide.md`](writing-guide.md)
+> **詳細寫作指南和範例請參考** [`doc/writing-guide.md`](writing-guide.md)
 
-### 9️⃣ **SEO 優化檢查**
+### 9. **SEO 優化檢查**
 
 #### Meta 標籤驗證
 - [ ] `<title>` 長度在 50-60 字元之間
@@ -272,7 +272,7 @@ if (footerContainer && window.DeusFooterComponent) {
 - [ ] 所有內部連結使用相對路徑
 - [ ] 檢查連結文字是否描述性強
 
-### 🔟 **技術功能檢查**
+### 10. **技術功能檢查**
 
 #### 互動功能測試
 - [ ] 進度條功能正常運作
@@ -286,7 +286,7 @@ if (footerContainer && window.DeusFooterComponent) {
 - [ ] 手機版（320px-767px）顯示正常
 - [ ] 所有文字在手機上可讀性良好
 
-### 1️⃣1️⃣ **最終驗證**
+### 11. **最終驗證**
 
 #### 瀏覽器相容性
 - [ ] Chrome 最新版本測試通過
@@ -306,7 +306,7 @@ if (footerContainer && window.DeusFooterComponent) {
 - [ ] 顏色對比度符合標準
 - [ ] 鍵盤導航功能正常
 
-### 1️⃣2️⃣ **實用檢查工具**
+### 12. **實用檢查工具**
 
 #### 線上工具推薦
 - **SEO 檢查**：[Google PageSpeed Insights](https://pagespeed.web.dev/)
@@ -325,16 +325,16 @@ document.querySelectorAll('a[href^="../"], a[href^="./"]').forEach(link => {
 });
 ```
 
-### 1️⃣3️⃣ **技術檢查重點**
+### 13. **技術檢查重點**
 
-#### 🔍 需要特別注意的技術項目
+#### 需要特別注意的技術項目
 - **JSON-LD 資料完整性**：確認所有結構化資料欄位都有填寫
 - **內部連結策略**：確保相關營養素連結有意義且正確
 - **響應式設計**：特別檢查圖表在手機上的顯示效果
 - **可訪問性**：確保所有 SVG 圖表有適當的 alt 文字
 - **組件初始化**：確認所有 JavaScript 組件正常載入
 
-### 1️⃣4️⃣ **路徑注意事項**
+### 14. **路徑注意事項**
 
 根據頁面位置調整腳本路徑：
 
@@ -344,7 +344,7 @@ document.querySelectorAll('a[href^="../"], a[href^="./"]').forEach(link => {
 | 子目錄 `/post/xxx.html`              | `src="../assets/js/xxx.js"`    |
 | 二級子目錄 `/post/category/xxx.html` | `src="../../assets/js/xxx.js"` |
 
-### 1️⃣5️⃣ **常見錯誤預防**
+### 15. **常見錯誤預防**
 
 #### 容易遺漏的項目
 - [ ] 忘記更新 `dateModified` 日期
@@ -361,7 +361,7 @@ document.querySelectorAll('a[href^="../"], a[href^="./"]').forEach(link => {
 
 ---
 
-## 🚀 快速檢查模板
+## 快速檢查模板
 
 ### 新頁面發布前 5 分鐘檢查
 ```
@@ -388,7 +388,7 @@ document.querySelectorAll('a[href^="../"], a[href^="./"]').forEach(link => {
 
 ---
 
-## 📊 檢查清單統計
+## 檢查清單統計
 
 - **總檢查項目**：75+ 項
 - **基礎結構**：5 項

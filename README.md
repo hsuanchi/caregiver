@@ -1,4 +1,4 @@
-## 📖 API 文件
+## API 文件
 
 ### 建構函數
 
@@ -37,7 +37,7 @@ homepage.reset(); // 重置所有設定
 homepage.destroy(); // 銷毀組件，清理資源
 ```
 
-## 🎨 使用範例
+## 使用範例
 
 ### 基本初始化
 
@@ -138,7 +138,7 @@ homepage.reset().setTheme("light").setDebug(false).initialize();
 homepage.destroy();
 ```
 
-## 🔒 Shadow DOM 隔離驗證
+## Shadow DOM 隔離驗證
 
 組件使用 Closed Shadow DOM 確保完全隔離：
 
@@ -155,7 +155,7 @@ const finalStyleCount = document.head.querySelectorAll("style").length;
 console.log("CSS 隔離:", initialStyleCount === finalStyleCount); // 應該是 true
 ```
 
-## 📱 響應式支援
+## 響應式支援
 
 組件內建響應式設計，支援以下斷點：
 
@@ -163,14 +163,14 @@ console.log("CSS 隔離:", initialStyleCount === finalStyleCount); // 應該是 
 - **平板版** (≤ 768px): 調整字體大小和間距
 - **手機版** (≤ 480px): 單欄佈局
 
-## 🎯 瀏覽器支援
+## 瀏覽器支援
 
 支援 2022 年以來的現代瀏覽器：
 
-- ✅ Chrome 88+
-- ✅ Firefox 85+
-- ✅ Safari 14+
-- ✅ Edge 88+
+- Chrome 88+
+- Firefox 85+
+- Safari 14+
+- Edge 88+
 
 必需功能：
 
@@ -181,7 +181,7 @@ console.log("CSS 隔離:", initialStyleCount === finalStyleCount); // 應該是 
 - Promise
 - Fetch API
 
-## 🔧 除錯功能
+## 除錯功能
 
 ### 開啟除錯模式
 
@@ -195,12 +195,12 @@ const homepage = new CaregiverHomepage(
 
 ### 除錯訊息類型
 
-- 🚀 **初始化訊息**: 組件載入狀態
-- 📋 **設定訊息**: 參數設定和驗證
-- 🎨 **樣式訊息**: CSS 載入狀態
-- 📝 **內容訊息**: DOM 建立狀態
-- 🔗 **事件訊息**: 事件監聽器狀態
-- 🔍 **互動訊息**: 使用者操作回饋
+- **初始化訊息**: 組件載入狀態
+- **設定訊息**: 參數設定和驗證
+- **樣式訊息**: CSS 載入狀態
+- **內容訊息**: DOM 建立狀態
+- **事件訊息**: 事件監聽器狀態
+- **互動訊息**: 使用者操作回饋
 
 ### 正式環境建議
 
@@ -213,7 +213,7 @@ const homepage = new CaregiverHomepage(
   .initialize();
 ```
 
-## 🏗️ 專案結構
+## 專案結構
 
 ```
 caregiver-web/
@@ -226,28 +226,28 @@ caregiver-web/
 └── README.md                   # 本文件
 ```
 
-## 🚨 重要注意事項
+## 重要注意事項
 
 ### Shadow DOM 隔離要求
 
-- ✅ **正確**：所有 CSS 都在 Shadow DOM 內
-- ❌ **錯誤**：不可將 CSS 注入到主頁面 `<head>`
+- **正確**：所有 CSS 都在 Shadow DOM 內
+- **錯誤**：不可將 CSS 注入到主頁面 `<head>`
 
 ### Debug 參數要求
 
-- ✅ **正確**：`setDebug(false)` 時不輸出任何除錯訊息
-- ❌ **錯誤**：忽略 debug 設定，總是輸出訊息
+- **正確**：`setDebug(false)` 時不輸出任何除錯訊息
+- **錯誤**：忽略 debug 設定，總是輸出訊息
 
 ### 鏈式呼叫要求
 
-- ✅ **正確**：所有 setter 方法都回傳 `this`
-- ❌ **錯誤**：setter 方法回傳其他值或 undefined
+- **正確**：所有 setter 方法都回傳 `this`
+- **錯誤**：setter 方法回傳其他值或 undefined
 
-## 🔄 版本更新
+## 版本更新
 
 所有更新都會保持向後相容性，不會產生 Breaking Changes。
 
-## 📞 技術支援
+## 技術支援
 
 如有問題，請檢查：
 
