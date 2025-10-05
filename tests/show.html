@@ -3,201 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info Card 美化建議預覽</title>
+    <title>膳食纖維：終極資訊圖表</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Basic page styles */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
-            background-color: #f0f2f5;
-            padding: 40px;
-            color: #2d3748;
-        }
-        .preview-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        h1, h2 {
-            text-align: center;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #2d3748;
-        }
-        h2 {
-            font-size: 1.8rem;
-            margin-top: 60px;
-            color: #4a5568;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 15px;
-        }
-        .cards-wrapper {
-            padding: 40px 0;
-        }
-
-        /* Base Card Styles */
-        .info-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
-        }
-        .info-card-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #2d3748;
-        }
-        .info-card-desc {
-            font-size: 1rem;
-            color: #718096;
-            line-height: 1.6;
-        }
-
-        /* --- Suggestion 1 Styles --- */
-        .suggestion-1 .info-card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            border-top: 4px solid #ff6b35;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .suggestion-1 .info-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        /* --- Suggestion 2 Styles --- */
-        .suggestion-2 .info-card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .suggestion-2 .info-card-icon-wrapper {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: #fff7ed;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-            flex-shrink: 0;
-        }
-        .suggestion-2 .info-card-icon-wrapper svg {
-            width: 30px;
-            height: 30px;
-            stroke: #ff6b35;
-            stroke-width: 1.5;
-        }
-
-        /* --- Suggestion 3 Styles --- */
-        .suggestion-3 .info-card {
-            background: linear-gradient(145deg, #ffffff, #f9f9f9);
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(45, 55, 72, 0.07);
-            border: 1px solid #f0f0f0;
-            padding: 30px;
-            text-align: center;
-            transition: border-color 0.3s ease, transform 0.3s ease;
-        }
-        .suggestion-3 .info-card:hover {
-            transform: translateY(-5px);
-            border-color: #ff6b35;
-        }
-        .suggestion-3 .info-card-title {
-            color: #2d3748;
-        }
-        .suggestion-3 .info-card-desc {
-            color: #4a5568;
-        }
+        body { font-family: 'Inter', 'Noto Sans TC', sans-serif; background-color: #EFECCA; }
+        .chart-container { position: relative; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; height: 320px; max-height: 400px; }
+        @media (min-width: 768px) { .chart-container { height: 400px; } }
     </style>
 </head>
-<body>
-    <div class="preview-container">
-        <h1>資訊卡片 (Info Card) 美化建議預覽</h1>
+<body class="text-gray-800">
 
-        <!-- Suggestion 1 -->
-        <section class="suggestion-1">
-            <h2>建議一：互動性與品牌識別</h2>
-            <div class="cards-wrapper">
-                <div class="info-cards">
-                    <div class="info-card">
-                        <h4 class="info-card-title">調節膽固醇</h4>
-                        <p class="info-card-desc">高黏度的水溶性纖維能結合膽汁酸，促使其排出體外，從而降低血液中的「壞膽固醇」。</p>
+    <div class="max-w-7xl mx-auto p-4 md:p-8">
+
+        <header class="text-center py-12">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-[#00A0B0] mb-4">纖維的真相</h1>
+            <p class="text-lg md:text-xl text-[#6A4A3C] max-w-3xl mx-auto">一份視覺化指南，助您了解膳食纖維在健康中的關鍵角色，以及如何攝取足夠的份量。</p>
+        </header>
+
+        <main class="space-y-16 md:space-y-24">
+
+            <section id="fiber-gap" class="bg-white rounded-2xl shadow-xl p-6 md:p-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl font-bold text-[#FF6B35] mb-4">全球纖維鴻溝</h2>
+                        <p class="text-lg text-[#6A4A3C] mb-2">衛生主管機關建議成人每日攝取至少28克纖維。然而，一般人平均僅攝取約15克。</p>
+                        <p class="text-base text-gray-500">這個顯著的差距被稱為「纖維鴻溝」，是一項與多種慢性病風險增加相關的公共衛生議題。這張圖表清楚地顯示了我們與每日目標的距離。</p>
                     </div>
-                    <div class="info-card">
-                        <h4 class="info-card-title">穩定血糖</h4>
-                        <p class="info-card-desc">延緩胃排空和糖分吸收，減緩餐後血糖的急劇上升，對糖尿病管理至關重要。</p>
-                    </div>
-                    <div class="info-card">
-                        <h4 class="info-card-title">體重管理</h4>
-                        <p class="info-card-desc">增加飽足感、降低食物的能量密度，並透過腸道荷爾蒙調節食慾，有助於控制體重。</p>
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="fiberGapChart"></canvas>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Suggestion 2 -->
-        <section class="suggestion-2">
-            <h2>建議二：結構化視覺元素</h2>
-            <div class="cards-wrapper">
-                <div class="info-cards">
-                    <div class="info-card">
-                        <div class="info-card-icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
-                        </div>
-                        <h4 class="info-card-title">調節膽固醇</h4>
-                        <p class="info-card-desc">高黏度的水溶性纖維能結合膽汁酸，促使其排出體外，從而降低血液中的「壞膽固醇」。</p>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-card-icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h12A2.25 2.25 0 0020.25 14.25V3M3.75 21h16.5M16.5 3.75h.008v.008H16.5V3.75z" /></svg>
-                        </div>
-                        <h4 class="info-card-title">穩定血糖</h4>
-                        <p class="info-card-desc">延緩胃排空和糖分吸收，減緩餐後血糖的急劇上升，對糖尿病管理至關重要。</p>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-card-icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.153.043m-7.5 0A48.667 48.667 0 0012 4.5c-2.291 0-4.545.16-6.75.47m-13.5 0c-1.01.143-2.01.317-3 .52m3-.52l-2.62 10.726c-.122.499.106 1.028.589 1.202a5.988 5.988 0 002.153.043" /></svg>
-                        </div>
-                        <h4 class="info-card-title">體重管理</h4>
-                        <p class="info-card-desc">增加飽足感、降低食物的能量密度，並透過腸道荷爾蒙調節食慾，有助於控制體重。</p>
+            <section id="recommendations">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-[#00A0B0]">各大機構的建議為何？</h2>
+                    <p class="text-lg text-[#6A4A3C] max-w-3xl mx-auto mt-2">全球不同的衛生組織建議略有差異，但都同意一件事：我們需要更多纖維。此處比較了針對成人的每日指南與我們平均攝取量的殘酷現實。</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-xl p-6 md:p-10">
+                    <div class="chart-container h-96 md:h-[500px] max-w-4xl">
+                        <canvas id="recommendationsChart"></canvas>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Suggestion 3 -->
-        <section class="suggestion-3">
-            <h2>建議三：現代化漸層與版面優化</h2>
-            <div class="cards-wrapper">
-                <div class="info-cards">
-                    <div class="info-card">
-                        <h4 class="info-card-title">調節膽固醇</h4>
-                        <p class="info-card-desc">高黏度的水溶性纖維能結合膽汁酸，促使其排出體外，從而降低血液中的「壞膽固醇」。</p>
-                    </div>
-                    <div class="info-card">
-                        <h4 class="info-card-title">穩定血糖</h4>
-                        <p class="info-card-desc">延緩胃排空和糖分吸收，減緩餐後血糖的急劇上升，對糖尿病管理至關重要。</p>
-                    </div>
-                    <div class="info-card">
-                        <h4 class="info-card-title">體重管理</h4>
-                        <p class="info-card-desc">增加飽足感、降低食物的能量密度，並透過腸道荷爾蒙調節食慾，有助於控制體重。</p>
+            </section>
+            
+            <section id="food-sources">
+                 <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-[#FF6B35]">高纖維食物主要來源</h2>
+                    <p class="text-lg text-[#6A4A3C] max-w-3xl mx-auto mt-2">當您知道從何處尋找時，達成纖維目標就更容易了。豆類、蔬菜和全穀物是纖維的能量庫。這張圖表突顯了常見份量中的纖維含量，助您做出更明智的選擇。</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-xl p-6 md:p-10">
+                     <div class="chart-container h-96 md:h-[500px] max-w-4xl">
+                        <canvas id="foodSourcesChart"></canvas>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
+            <section id="strategies">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-[#00A0B0]">如何彌合您的纖維鴻溝</h2>
+                    <p class="text-lg text-[#6A4A3C] max-w-3xl mx-auto mt-2">增加纖維攝取量不必困難。遵循這些簡單、系統化的步驟，逐步且舒適地達成您的每日目標。</p>
+                </div>
+                <div class="relative flex flex-col items-center md:flex-row md:justify-center gap-8 md:gap-4 px-4">
+                    <div class="absolute top-0 h-full w-1 bg-[#F7C59F] hidden md:block" style="left: calc(50% - 2px);"></div>
+                    
+                    <div class="w-full md:w-1/4 bg-white p-6 rounded-xl shadow-lg z-10 border-t-4 border-[#FF6B35]">
+                        <h3 class="text-xl font-bold text-[#FF6B35] mb-2">第一步：緩慢開始</h3>
+                        <p class="text-[#6A4A3C]">在數週內逐漸增加高纖維食物，讓您的消化系統有時間適應並避免不適。</p>
+                    </div>
+                    <div class="w-full md:w-1/4 bg-white p-6 rounded-xl shadow-lg z-10 border-t-4 border-[#00A0B0]">
+                        <h3 class="text-xl font-bold text-[#00A0B0] mb-2">第二步：補充水分</h3>
+                        <p class="text-[#6A4A3C]">喝足夠的水。纖維在吸收水分後效果最好，有助於軟化糞便並幫助消化。</p>
+                    </div>
+                    <div class="w-full md:w-1/4 bg-white p-6 rounded-xl shadow-lg z-10 border-t-4 border-[#FF6B35]">
+                        <h3 class="text-xl font-bold text-[#FF6B35] mb-2">第三步：聰明替換</h3>
+                        <p class="text-[#6A4A3C]">選擇全麥麵包而非白麵包，糙米而非白米，並在沙拉和湯中加入豆類或扁豆。</p>
+                    </div>
+                     <div class="w-full md:w-1/4 bg-white p-6 rounded-xl shadow-lg z-10 border-t-4 border-[#00A0B0]">
+                        <h3 class="text-xl font-bold text-[#00A0B0] mb-2">第四步：優先選擇全食物</h3>
+                        <p class="text-[#6A4A3C]">選擇完整的水果和蔬菜，而非通常已去除天然纖維的果汁。</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="supplements">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-[#FF6B35]">選擇纖維補充劑</h2>
+                    <p class="text-lg text-[#6A4A3C] max-w-3xl mx-auto mt-2">雖然食物應始終是您纖維的主要來源，但若您難以達成目標，補充劑會是個實用的工具。正確的選擇取決於您的具體健康需求。</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-center text-center">
+                        <div class="text-5xl mb-4">🎯</div>
+                        <h3 class="text-xl font-bold text-[#6A4A3C] mb-2">您的目標是：</h3>
+                        <p class="text-2xl font-semibold text-[#00A0B0]">改善腸道規律性</p>
+                        <hr class="w-1/4 my-4 border-t-2 border-[#F7C59F]">
+                        <h4 class="font-semibold text-[#6A4A3C] mb-2">考慮此類型：</h4>
+                        <p class="text-lg font-bold text-[#FF6B35]">低發酵性纖維</p>
+                        <p class="text-[#6A4A3C] mt-1">例如：洋車前子殼。它對便秘有效，且產氣和腹脹副作用極小。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-center text-center">
+                        <div class="text-5xl mb-4">🌿</div>
+                        <h3 class="text-xl font-bold text-[#6A4A3C] mb-2">您的目標是：</h3>
+                        <p class="text-2xl font-semibold text-[#00A0B0]">滋養腸道菌群</p>
+                         <hr class="w-1/4 my-4 border-t-2 border-[#F7C59F]">
+                        <h4 class="font-semibold text-[#6A4A3C] mb-2">考慮此類型：</h4>
+                        <p class="text-lg font-bold text-[#FF6B35]">高發酵性（益生元）</p>
+                        <p class="text-[#6A4A3C] mt-1">例如：菊苣纖維（菊粉）。它非常適合餵養有益的腸道微生物。</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-center text-center md:col-span-2 lg:col-span-1">
+                        <div class="text-5xl mb-4">⚖️</div>
+                        <h3 class="text-xl font-bold text-[#6A4A3C] mb-2">您的目標是：</h3>
+                        <p class="text-2xl font-semibold text-[#00A0B0]">改善飽足感與血糖</p>
+                         <hr class="w-1/4 my-4 border-t-2 border-[#F7C59F]">
+                        <h4 class="font-semibold text-[#6A4A3C] mb-2">考慮此類型：</h4>
+                        <p class="text-lg font-bold text-[#FF6B35]">黏性水溶性纖維</p>
+                        <p class="text-[#6A4A3C] mt-1">例如：β-葡聚醣（來自燕麥）或抗性麥芽糊精。有助於您感到飽足並管理血糖。</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center py-12 mt-16 md:mt-24 border-t-2 border-[#F7C59F]">
+            <p class="text-[#6A4A3C]">資料來源於「膳食纖維實踐指南」。</p>
+            <p class="text-sm text-gray-500 mt-2">本資訊圖表僅供參考，不構成醫療建議。</p>
+        </footer>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                  return label.join(' ');
+                }
+                return label;
+            };
+
+            const wrapLabel = (label) => {
+                const maxLength = 16;
+                if (label.length <= maxLength) return label;
+                const words = label.split(' ');
+                let lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + word).length > maxLength) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const fiberGapCtx = document.getElementById('fiberGapChart')?.getContext('2d');
+            if (fiberGapCtx) {
+                new Chart(fiberGapCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['平均攝取量', '尚需補充'],
+                        datasets: [{
+                            label: '每日纖維攝取量 (公克)',
+                            data: [15, 13],
+                            backgroundColor: ['#FF6B35', '#F7C59F'],
+                            borderColor: '#ffffff',
+                            borderWidth: 4,
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '70%',
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    font: { size: 14, family: "'Noto Sans TC', sans-serif" }
+                                }
+                            },
+                            title: {
+                                display: false,
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    title: tooltipTitleCallback
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const recommendationsCtx = document.getElementById('recommendationsChart')?.getContext('2d');
+            if (recommendationsCtx) {
+                const recommendationLabels = ['世界衛生組織 (WHO)', '英國營養科學諮詢委員會 (UK SACN)', '美國食品藥物管理局 (US FDA DV)', '平均實際攝取量'];
+                new Chart(recommendationsCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: recommendationLabels.map(l => wrapLabel(l)),
+                        datasets: [{
+                            label: '每日公克數',
+                            data: [25, 30, 28, 15],
+                             backgroundColor: [
+                                '#00A0B0',
+                                '#00A0B0',
+                                '#00A0B0',
+                                '#FF6B35'
+                            ],
+                            borderColor: [
+                                '#007E8C',
+                                '#007E8C',
+                                '#007E8C',
+                                '#D95A2B'
+                            ],
+                            borderWidth: 2,
+                            borderRadius: 5
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        indexAxis: 'y',
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                title: { display: true, text: '每日公克數', font: { size: 14, family: "'Noto Sans TC', sans-serif" } }
+                            },
+                             y: {
+                                ticks: { font: { family: "'Noto Sans TC', sans-serif" } }
+                            }
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            title: {
+                                display: true,
+                                text: '每日纖維建議量 vs. 實際攝取量',
+                                font: { size: 18, weight: 'bold', family: "'Noto Sans TC', sans-serif" }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    title: tooltipTitleCallback
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            const foodSourcesCtx = document.getElementById('foodSourcesChart')?.getContext('2d');
+            if(foodSourcesCtx) {
+                const foodData = [
+                    { food: '青豆 (1杯, 熟)', fiber: 9.0 },
+                    { food: '扁豆 (1/2杯, 熟)', fiber: 8.0 },
+                    { food: '黑豆 (1/2杯, 熟)', fiber: 7.5 },
+                    { food: '全麥義大利麵 (1杯, 熟)', fiber: 6.0 },
+                    { food: '蘋果 (中等大小, 帶皮)', fiber: 4.5 },
+                    { food: '杏仁 (30克)', fiber: 3.8 },
+                ].sort((a, b) => a.fiber - b.fiber);
+
+                const foodLabels = foodData.map(item => wrapLabel(item.food));
+                const foodFiber = foodData.map(item => item.fiber);
+
+                new Chart(foodSourcesCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: foodLabels,
+                        datasets: [{
+                            label: '每份纖維含量 (克)',
+                            data: foodFiber,
+                            backgroundColor: '#00A0B0',
+                            borderColor: '#007E8C',
+                            borderWidth: 1,
+                            borderRadius: 4,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        indexAxis: 'y',
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                title: { display: true, text: '纖維公克數', font: { size: 14, weight: '500', family: "'Noto Sans TC', sans-serif" } }
+                            },
+                            y: {
+                                ticks: { font: { size: 12, family: "'Noto Sans TC', sans-serif" } }
+                            }
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            title: {
+                                display: true,
+                                text: '常見食物的纖維含量',
+                                font: { size: 18, weight: 'bold', family: "'Noto Sans TC', sans-serif" }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    title: tooltipTitleCallback
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
+

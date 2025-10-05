@@ -14,11 +14,22 @@
     <meta property="og:site_name" content="營養百科" />
     <meta property="og:title" content="膳食纖維 - 不只通便！解鎖腸道健康、穩定血糖的終極指南 | 營養百科" />
     <meta property="og:description" content="市售纖維粉該怎麼選？營養師帶你5分鐘搞懂水溶性與非水溶性纖維的差別，解析洋車前子、菊苣纖維等4大關鍵補充品，從根本改善便秘與代謝問題。" />
-    <meta property="og:image" content="https://life.maxlist.xyz/assets/images/homepage_banner.jpeg" />
+    <meta property="og:image" content="https://life.maxlist.xyz/assets/images/dietary-fiber-og.jpg" />
     <meta property="og:url" content="https://life.maxlist.xyz/post/dietary-fiber.html" />
     <meta property="og:type" content="article" />
 
-    <!-- JSON-LD for Structured Data (SEO) -->
+    <!-- JSON-LD for WebSite (Site Name in Search Results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "營養百科",
+      "alternateName": "營養百科",
+      "url": "https://life.maxlist.xyz/"
+    }
+    </script>
+
+    <!-- JSON-LD for Article -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -29,7 +40,7 @@
       },
       "headline": "膳食纖維 - 不只通便！解鎖腸道健康、穩定血糖的終極指南",
       "description": "市售纖維粉該怎麼選？營養師帶你5分鐘搞懂水溶性與非水溶性纖維的差別，解析洋車前子、菊苣纖維等4大關鍵補充品，從根本改善便秘與代謝問題。",
-      "image": "https://life.maxlist.xyz/assets/images/homepage_banner.jpeg",
+      "image": "https://life.maxlist.xyz/assets/images/dietary-fiber-og.jpg",
       "author": {
         "@type": "Organization",
         "name": "Caregiver 營養百科",
@@ -40,22 +51,11 @@
         "name": "Caregiver 營養百科",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://life.maxlist.xyz/pic/Nutrition Encyclopedia.png"
+          "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
         }
       },
       "datePublished": "2025-10-04",
       "dateModified": "2025-10-04"
-    }
-    </script>
-
-    <!-- JSON-LD for WebSite (Site Name in Search Results) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "營養百科",
-      "alternateName": "營養百科",
-      "url": "https://life.maxlist.xyz/"
     }
     </script>
 
@@ -76,305 +76,967 @@
       }]
     }
     </script>
-    
-    <link rel="stylesheet" href="../assets/css/main.css">
+
     <style>
-        /* Page-specific styles from writing-guide */
-        .article-hero { padding: 50px 20px; text-align: center; background-color: #f8f9fa; }
-        .article-category { font-size: 1rem; font-weight: bold; color: #ff6b35; }
-        .article-title { font-size: 2.5rem; font-weight: bold; margin: 10px 0; }
-        .article-subtitle { font-size: 1.2rem; color: #6c757d; max-width: 800px; margin: 0 auto; }
-        main { max-width: 900px; margin: 40px auto; padding: 20px; }
-        h2 { font-size: 2rem; margin-top: 40px; margin-bottom: 20px; border-bottom: 2px solid #ff6b35; padding-bottom: 10px; }
-        h3 { font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; }
-        .alert { padding: 20px; margin: 20px 0; border-radius: 10px; border-left: 5px solid; }
-        .alert-tip { background-color: #e6f7f2; border-color: #28a745; color: #155724; }
-        .alert-nutritionist { background-color: #e7f3fe; border-color: #007bff; color: #004085; }
-        .alert-doctor { background-color: #fbeae5; border-color: #dc3545; color: #721c24; }
-        .alert strong { font-weight: bold; }
-        .info-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0; }
-        .info-card { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center; }
-        .info-card-title { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
-        .info-card-desc { font-size: 1rem; color: #555; }
-        .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .data-table th, .data-table td { padding: 15px; text-align: left; border-bottom: 1px solid #dee2e6; }
-        .data-table thead th { background-color: #f8f9fa; font-weight: bold; }
-        .data-table tbody tr:nth-child(even) { background-color: #f8f9fa; }
-        .data-table strong { color: #ff6b35; }
-        .risk-group-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
-        .risk-card { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 20px; border-radius: 5px; }
-        .risk-card-title { font-weight: bold; margin-bottom: 10px; }
-        .highlight-nutrient { border-bottom: 2px solid #ff6b35; padding-bottom: 1px; font-weight: bold; }
-        .faq-item { margin-bottom: 15px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; }
-        .faq-question { background: #f8f9fa; padding: 15px; font-weight: bold; cursor: pointer; }
-        .faq-answer { padding: 15px; background: #fff; }
-        .comparison-table-container { overflow-x: auto; margin: 30px 0; }
-        .comparison-table { width: 100%; border-collapse: collapse; min-width: 600px; }
-        .comparison-header-main { background-color: #f8f9fa; text-align: left; padding: 15px; font-size: 1.1rem; }
-        .comparison-header-option { background-color: #fff; text-align: center; padding: 15px; border-bottom: 3px solid #dee2e6; }
-        .comparison-header-option strong { font-size: 1.2rem; }
-        .comparison-recommended { border-bottom-color: #ff6b35 !important; }
-        .option-badge { background-color: #ff6b35; color: white; padding: 3px 8px; border-radius: 12px; font-size: 0.8rem; display: inline-block; margin-bottom: 5px; }
-        .comparison-label { background-color: #f8f9fa; font-weight: bold; padding: 15px; text-align: right; width: 25%; }
-        .comparison-cell { text-align: center; padding: 15px; vertical-align: top; }
-        .rating-badge { padding: 5px 12px; border-radius: 15px; font-weight: bold; color: white; display: inline-block; }
-        .rating-high { background-color: #28a745; }
-        .rating-medium { background-color: #ffc107; color: #333; }
-        .rating-low { background-color: #dc3545; }
-        .pros-cons { text-align: left; max-width: 250px; margin: 0 auto; }
-        .pros { color: #28a745; margin-bottom: 5px; }
-        .cons { color: #dc3545; }
+      /* Copied from calcium.html for consistency */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+        line-height: 1.8;
+        color: #2d3748;
+        background: #faf8f5;
+      }
+
+      .progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 4px;
+        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
+        z-index: 1001;
+        transition: width 0.3s ease;
+      }
+
+
+
+      /* Breadcrumb Navigation */
+
+      .breadcrumb {
+
+        margin-bottom: 20px;
+
+        font-size: 0.9em;
+
+        color: #718096;
+
+      }
+
+
+
+      .breadcrumb a {
+
+        color: #718096;
+
+        text-decoration: none;
+
+        transition: color 0.3s ease;
+
+      }
+
+
+
+      .breadcrumb a:hover {
+
+        color: #ff6b35;
+
+      }
+
+
+
+      .breadcrumb .separator {
+
+        margin: 0 8px;
+
+        color: #a0aec0;
+
+      }
+
+
+
+      .article-container {        max-width: 1400px;
+        margin: 0 auto;
+        padding: 100px 20px 60px;
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 60px;
+        position: relative;
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+      }
+
+      .toc {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .toc-title {
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .toc-list {
+        list-style: none;
+      }
+
+      .toc-list li {
+        margin-bottom: 8px;
+      }
+
+      .toc-list a {
+        color: #4a5568;
+        text-decoration: none;
+        font-size: 0.95em;
+        display: block;
+        padding: 8px 12px;
+        transition: all 0.3s ease;
+        position: relative;
+        border-radius: 8px;
+        border-left: 3px solid transparent;
+      }
+
+      .toc-list a.active {
+        color: #ff6b35;
+        background: rgba(255, 107, 53, 0.1);
+        border-left-color: #ff6b35;
+        font-weight: 600;
+      }
+
+      .toc-list a:hover {
+        color: #ff6b35;
+        background: rgba(255, 107, 53, 0.08);
+        border-left-color: #ff8f65;
+        transform: translateX(2px);
+      }
+      
+      .article-content {
+        background: white;
+        border-radius: 20px;
+        padding: 50px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .article-header {
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .article-hero {
+        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        border-radius: 20px;
+        padding: 60px;
+        margin-bottom: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .article-category {
+        display: inline-block;
+        background: white;
+        color: #16a34a;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        font-weight: 600;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .article-title {
+        font-size: 2.5em;
+        font-weight: 800;
+        color: #2d3748;
+        line-height: 1.3;
+        margin-bottom: 20px;
+      }
+
+      .article-subtitle {
+        font-size: 1.3em;
+        color: #4a5568;
+        line-height: 1.6;
+        max-width: 700px;
+        margin-bottom: 30px;
+      }
+
+      .article-meta {
+        display: flex;
+        gap: 30px;
+        color: #718096;
+        font-size: 0.95em;
+        flex-wrap: wrap;
+      }
+
+      .article-meta span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .article-body h2 {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin: 50px 0 30px;
+        padding-top: 20px;
+        position: relative;
+      }
+
+      .article-body h2::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 4px;
+        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
+        border-radius: 2px;
+      }
+
+      .article-body h3 {
+        font-size: 1.5em;
+        font-weight: 600;
+        color: #2d3748;
+        margin: 35px 0 20px;
+      }
+      
+      .article-body p {
+        margin-bottom: 20px;
+        color: #4a5568;
+      }
+      
+      .alert {
+        padding: 20px 25px;
+        border-radius: 15px;
+        margin: 30px 0;
+        position: relative;
+        overflow: hidden;
+        border-left: 5px solid;
+      }
+
+      .alert-tip { background: #f0fdf4; border-color: #22c55e; color: #15803d; }
+      .alert-nutritionist { background: #eff6ff; border-color: #3b82f6; color: #1e40af; }
+      .alert-doctor { background: #fef2f2; border-color: #ef4444; color: #b91c1c; }
+
+      .highlight-nutrient {
+        border-bottom: 2px solid #ff6b35;
+        padding-bottom: 1px;
+        font-weight: bold;
+      }
+      
+      .info-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+      }
+
+      .info-card {
+        background: white;
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s ease;
+      }
+      
+      .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border-color: #ff8f65;
+      }
+
+      .info-card-title {
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 10px;
+      }
+
+      .info-card-desc {
+        color: #718096;
+        font-size: 0.95em;
+        line-height: 1.6;
+      }
+      
+      .risk-group-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+      }
+
+      .risk-card {
+        background: #fffbeb;
+        border-left: 4px solid #f59e0b;
+        border-radius: 12px;
+        padding: 25px;
+        transition: all 0.3s ease;
+      }
+
+      .risk-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(245, 158, 11, 0.15);
+      }
+
+      .risk-card-title {
+        font-size: 1.1em;
+        font-weight: 700;
+        color: #b45309;
+        margin-bottom: 10px;
+      }
+      
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .data-table thead {
+        background: linear-gradient(135deg, #ff6b35 0%, #ff8f65 100%);
+        color: white;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 15px 20px;
+        text-align: left;
+        border-bottom: 1px solid #f1f5f9;
+      }
+      .data-table tbody tr:last-child td { border-bottom: none; }
+      .data-table tbody tr:nth-child(even) { background-color: #f8fafc; }
+      .data-table strong { color: #ff6b35; }
+
+      .comparison-table-container {
+        margin: 40px 0;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      }
+      .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .comparison-header-main { background-color: #f8fafc; text-align: left; padding: 20px; font-size: 1.1rem; font-weight: 700; }
+      .comparison-header-option { background-color: #fff; text-align: center; padding: 15px; border-bottom: 1px solid #e2e8f0; }
+      .comparison-header-option strong { font-size: 1.3rem; }
+      .comparison-recommended .option-badge { background-color: #ff6b35; }
+      .option-badge { background-color: #a0aec0; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; display: inline-block; margin-bottom: 8px; font-weight: 600; }
+      .comparison-label { background-color: #f8fafc; font-weight: 600; padding: 15px 20px; text-align: right; width: 20%; border-top: 1px solid #e2e8f0;}
+      .comparison-cell { text-align: center; padding: 15px; vertical-align: top; border-top: 1px solid #e2e8f0; }
+      .rating-badge { padding: 5px 15px; border-radius: 20px; font-weight: bold; color: white; display: inline-block; font-size: 0.9em; }
+      .rating-high { background-color: #22c55e; }
+      .rating-medium { background-color: #f59e0b; }
+      .rating-low { background-color: #ef4444; }
+      .pros-cons { text-align: left; max-width: 280px; margin: 0 auto; }
+      .pros-cons div { margin-bottom: 8px; }
+      .pros::before { content: '+ '; color: #22c55e; font-weight: bold; }
+      .cons::before { content: '- '; color: #ef4444; font-weight: bold; }
+
+      .faq-section {
+        margin-top: 60px;
+        padding-top: 40px;
+        border-top: 2px solid #e5e7eb;
+      }
+
+      .faq-item {
+        background: #f9fafb;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        border: 1px solid #e2e8f0;
+      }
+
+      .faq-question {
+        padding: 20px 25px;
+        font-weight: 600;
+        color: #2d3748;
+        cursor: pointer;
+        position: relative;
+      }
+      
+      .faq-question::after {
+        content: "+";
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5em;
+        color: #ff6b35;
+        transition: transform 0.3s ease;
+      }
+      
+      .faq-item.active .faq-question::after {
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      .faq-answer {
+        padding: 0 25px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.4s ease-in-out;
+      }
+      
+      .faq-item.active .faq-answer {
+        padding: 0 25px 20px;
+        max-height: 500px;
+      }
+      
+      .related-title {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .related-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .related-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .related-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .related-card-tag {
+        display: inline-block;
+        background: #fef3c7;
+        color: #b45309;
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 0.85em;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .related-card-title {
+        font-size: 1.3em;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 10px;
+      }
+
+      .related-card-desc {
+        color: #718096;
+        font-size: 0.95em;
+      }
+      
+      .disclaimer {
+        background: #f1f5f9;
+        padding: 60px 0;
+        text-align: center;
+        margin-top: 60px;
+      }
+      .disclaimer-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .disclaimer h3 {
+        color: #4b5563;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+      }
+      .disclaimer p {
+        color: #6b7280;
+        font-size: 0.95em;
+      }
+
+      @media (max-width: 1024px) {
+        .article-container {
+          grid-template-columns: 1fr;
+          gap: 0;
+          padding: 80px 15px 40px;
+        }
+        .sidebar {
+          display: none;
+        }
+        .article-content {
+            padding: 30px;
+        }
+        .article-hero {
+            padding: 40px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .article-title { font-size: 2em; }
+        .article-subtitle { font-size: 1.1em; }
+        .article-body h2 { font-size: 1.6em; }
+        .article-body h3 { font-size: 1.3em; }
+        .article-content { padding: 20px; }
+        .article-hero { padding: 30px; }
+      }
     </style>
 </head>
 <body>
-    <!-- Header Component Container -->
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Header Component -->
     <div id="header-component"></div>
 
-    <main>
-        <div class="article-hero">
-            <span class="article-category">健康生活指南</span>
+    <!-- Article Container -->
+    <div class="article-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="toc">
+          <h3 class="toc-title"><span>目錄</span></h3>
+          <ul class="toc-list">
+            <li><a href="#basics" class="toc-link">膳食纖維是什麼？</a></li>
+            <li><a href="#benefits" class="toc-link">核心功效</a></li>
+            <li><a href="#little-known-facts" class="toc-link">驚人冷知識</a></li>
+            <li><a href="#requirements" class="toc-link">每日建議攝取量</a></li>
+            <li><a href="#sources" class="toc-link">食物來源</a></li>
+            <li><a href="#who-needs-it" class="toc-link">誰最需要補充？</a></li>
+            <li><a href="#supplements" class="toc-link">如何挑選補充品？</a></li>
+            <li><a href="#side-effects" class="toc-link">副作用與注意事項</a></li>
+            <li><a href="#faq" class="toc-link">常見問題</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="article-content">
+        <!-- Article Header -->
+        <header class="article-header">
+          <div class="article-hero">
+            <nav class="breadcrumb">
+              <a href="../index.html">首頁</a>
+              <span class="separator">/</span>
+              <span>膳食纖維 - 不只通便！解鎖腸道健康、穩定血糖的終極指南</span>
+            </nav>
+            <span class="article-category">其他營養素</span>
             <h1 class="article-title">膳食纖維 - 不只通便！解鎖腸道健康、穩定血糖的終極指南</h1>
             <p class="article-subtitle">
-                市售纖維粉該怎麼選？營養師帶你5分鐘搞懂水溶性與非水溶性纖維的差別，解析洋車前子、菊苣纖維等4大關鍵補充品，從根本改善便秘與代謝問題。
+                市售纖維粉該怎麼選？營養師帶你5分鐘搞懂水溶性與非水溶性纖維的差別，解析洋車前子、菊苣纖維等關鍵補充品，從根本改善便秘與代謝問題。
             </p>
-        </div>
+            <div class="article-meta">
+              <span>營養百科團隊編寫</span>
+              <span>2025 年 10 月 04 日更新</span>
+              <span>閱讀時間：9 分鐘</span>
+            </div>
+          </div>
+        </header>
 
-        <h2>1. 膳食纖維是什麼？不只是「粗纖維」</h2>
-        <p>膳食纖維是一種人體小腸無法消化吸收的碳水化合物。傳統上，我們將它分為兩大類：</p>
-        <div class="info-cards">
-            <div class="info-card">
-                <h4 class="info-card-title">💧 水溶性纖維</h4>
-                <p class="info-card-desc">溶於水後會形成黏稠的凝膠狀物質，能減緩血糖上升、降低膽固醇。常見於燕麥、豆類、蘋果。</p>
-            </div>
-            <div class="info-card">
-                <h4 class="info-card-title">🌳 非水溶性纖維</h4>
-                <p class="info-card-desc">不溶於水，能增加糞便體積，促進腸道蠕動，預防便秘。常見於全穀物、堅果、蔬菜。</p>
-            </div>
-        </div>
-        <div class="alert alert-nutritionist">
-            <strong>營養師提醒：</strong>「水溶性」或「非水溶性」的分類太過簡化！一種纖維真正的健康效益，更多取決於它的<strong class="highlight-nutrient">「黏度」</strong>與<strong class="highlight-nutrient">「發酵性」</strong>。例如，洋車前子和菊苣纖維都是水溶性，但前者高黏度、低發酵，適合改善便秘；後者無黏度、高發酵，是優質的益生元，但容易產氣。
-        </div>
+        <!-- Article Body -->
+        <article class="article-body">
 
-        <h2>2. 核心功效：膳食纖維對人體有哪些好處？</h2>
-        <p>膳食纖維的好處遠不止改善便秘，它對全身健康都有深遠影響，主要體現在以下四個方面：</p>
-        <div class="info-cards">
-            <div class="info-card">
-                <h4 class="info-card-title">❤️ 調節膽固醇</h4>
-                <p class="info-card-desc">高黏度的水溶性纖維能結合膽汁酸，促使其排出體外，從而降低血液中的「壞膽固醇」(LDL-C)。</p>
+          <section id="basics">
+            <h2>膳食纖維是什麼？不只是「粗纖維」</h2>
+            <p>膳食纖維是一種人體小腸無法消化吸收的碳水化合物。傳統上，我們將它分為兩大類：</p>
+            <div class="info-cards" style="grid-template-columns: 1fr 1fr;">
+                <div class="info-card">
+                    <h4 class="info-card-title">水溶性纖維</h4>
+                    <p class="info-card-desc">溶於水後會形成黏稠的凝膠狀物質，能減緩血糖上升、降低膽固醇。常見於燕麥、豆類、蘋果。</p>
+                </div>
+                <div class="info-card">
+                    <h4 class="info-card-title">非水溶性纖維</h4>
+                    <p class="info-card-desc">不溶於水，能增加糞便體積，促進腸道蠕動，預防便秘。常見於全穀物、堅果、蔬菜。</p>
+                </div>
             </div>
-            <div class="info-card">
-                <h4 class="info-card-title">📈 穩定血糖</h4>
-                <p class="info-card-desc">延緩胃排空和糖分吸收，減緩餐後血糖的急劇上升，對糖尿病管理至關重要。</p>
+            <div class="alert alert-nutritionist">
+                <strong>營養師提醒：黏度與發酵性才是關鍵！</strong>
+                <p style="margin-bottom: 10px;">單純區分水溶性或非水溶性，並不足以完全解釋一種纖維的功效。真正決定其健康效益的是<strong class="highlight-nutrient">「黏度」</strong>與<strong class="highlight-nutrient">「發酵性」</strong>。</p>
+                <p style="margin-bottom: 5px;"><strong>案例分析：洋車前子 vs. 菊苣纖維</strong><br>這兩者同屬水溶性纖維，但功效天差地遠：</p>
+                <ul style="list-style-position: inside; padding-left: 15px;">
+                    <li><strong>洋車前子 (Psyllium)：</strong>高黏度、幾乎不發酵。是改善便秘和降低膽固醇的「物理性工具」，且不易產氣。</li>
+                    <li><strong>菊苣纖維 (Inulin)：</strong>無黏度、高發酵。是滋養腸道菌群的「生物性工具」，但容易引起脹氣。</li>
+                </ul>
             </div>
-            <div class="info-card">
-                <h4 class="info-card-title">⚖️ 體重管理</h4>
-                <p class="info-card-desc">增加飽足感、降低食物的能量密度，並透過腸道荷爾蒙調節食慾，有助於控制體重。</p>
-            </div>
-            <div class="info-card">
-                <h4 class="info-card-title">🌿 腸道健康</h4>
-                <p class="info-card-desc">作為腸道好菌（益生菌）的食物，促進其生長，維持腸道屏障完整性，改善腸躁症(IBS)症狀。</p>
-            </div>
-        </div>
+          </section>
 
-        <h2>3. 每日建議攝取量與最佳時間</h2>
-        <p>全球各大衛生組織都建議增加纖維攝取，但大多數人的攝取量都未達標，形成了「纖維鴻溝」。</p>
-        <table class="data-table">
-            <thead>
-                <tr><th>組織/權威機構</th><th>成人建議量 (克/天)</th><th>兒童建議量 (克/天)</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>世界衛生組織 (WHO)</td><td><strong>至少 25g</strong></td><td>2-5歲: 15g; 6-9歲: 21g; 10歲+: 25g</td></tr>
-                <tr><td>美國 FDA 每日參考值</td><td><strong>28g</strong></td><td>-</td></tr>
-                <tr><td>歐洲食品安全局 (EFSA)</td><td><strong>25g</strong></td><td>1歲以上: 約 10g/1000大卡</td></tr>
-                <tr><td>英國營養科學諮詢委員會</td><td><strong>30g</strong></td><td>2-5歲: 15g; 5-11歲: 20g; 11-16歲: 25g</td></tr>
-            </tbody>
-        </table>
-        <div class="alert alert-tip">
-            <strong>💡 攝取小撇步：</strong> 增加纖維攝取應<strong class="highlight-nutrient">循序漸進</strong>，並務必<strong class="highlight-nutrient">多喝水</strong>，以避免脹氣不適。將高纖食物平均分配到三餐中，是達成目標的最好方式。
-        </div>
+          <section id="benefits">
+            <h2>核心功效：膳食纖維對人體有哪些好處？</h2>
+            <p>膳食纖維的好處遠不止改善便秘，它對全身健康都有深遠影響，主要體現在以下四個方面：</p>
+            <div class="info-cards">
+                <div class="info-card">
+                    <h4 class="info-card-title">調節膽固醇</h4>
+                    <p class="info-card-desc">高黏度水溶性纖維能結合膽汁酸，迫使肝臟消耗血液中的膽固醇來製造新的膽汁酸，從而降低血液中的「壞膽固醇」。</p>
+                </div>
+                <div class="info-card">
+                    <h4 class="info-card-title">穩定血糖</h4>
+                    <p class="info-card-desc">延緩胃排空和糖分的吸收，減緩餐後血糖的急劇上升，對於糖尿病管理和維持能量穩定至關重要。</p>
+                </div>
+                <div class="info-card">
+                    <h4 class="info-card-title">體重管理</h4>
+                    <p class="info-card-desc">透過增加飽足感、降低食物的熱量密度，並刺激腸道分泌飽足感荷爾蒙（如GLP-1），從多方面幫助體重控制。</p>
+                </div>
+                <div class="info-card">
+                    <h4 class="info-card-title">腸道健康</h4>
+                    <p class="info-card-desc">作為益生元，為腸道好菌提供食物，產生的短鏈脂肪酸(SCFAs)能鞏固腸道屏障，預防「腸漏」。</p>
+                </div>
+            </div>
+          </section>
 
-        <h2>4. 食物來源：哪些天然食物富含膳食纖維？</h2>
-        <p>從天然食物中獲取纖維是首選，因為它們同時富含維生素、礦物質等營養素。</p>
-        <table class="data-table">
-            <thead>
-                <tr><th>食物類別</th><th>高纖維食物代表</th><th>每份纖維含量參考</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>🥇 豆類</td><td><strong>扁豆、鷹嘴豆、黑豆</strong></td><td><strong>~8g / 半杯熟豆</strong></td></tr>
-                <tr><td>🥈 全穀物</td><td>燕麥片、藜麥、全麥麵包</td><td>~6g / 1杯熟義大利麵</td></tr>
-                <tr><td>🥉 水果</td><td>覆盆子、梨、蘋果 (帶皮)</td><td>~4.5g / 1顆中蘋果</td></tr>
-                <tr><td>蔬菜</td><td>青豆、綠花椰菜、胡蘿蔔</td><td>~9g / 1杯熟青豆</td></tr>
-                <tr><td>堅果種子</td><td>奇亞籽、杏仁、葵花籽</td><td>~3.8g / 30克杏仁</td></tr>
-            </tbody>
-        </table>
-
-        <h2>5. 誰最需要補充？膳食纖維缺乏的警訊與高風險族群</h2>
-        <p>如果您有以下困擾，可能代表您的膳食纖維攝取不足：</p>
-        <div class="risk-group-cards">
-            <div class="risk-card">
-                <h4 class="risk-card-title">長期便秘者</h4>
-                <p class="risk-card-desc">排便不順、糞便乾硬是纖維不足最直接的警訊。增加纖維能軟化糞便、促進腸道蠕動。</p>
-            </div>
-            <div class="risk-card">
-                <h4 class="risk-card-title">血糖不穩或糖尿病患者</h4>
-                <p class="risk-card-desc">餐後血糖像雲霄飛車？水溶性纖維能有效減緩血糖波動，是穩定血糖的得力助手。</p>
-            </div>
-            <div class="risk-card">
-                <h4 class="risk-card-title">膽固醇過高者</h4>
-                <p class="risk-card-desc">健檢報告紅字？高黏度纖維是降低壞膽固醇 (LDL-C) 的天然武器。</p>
-            </div>
-            <div class="risk-card">
-                <h4 class="risk-card-title">腸躁症 (IBS) 患者</h4>
-                <p class="risk-card-desc">時常腹瀉、腹脹或腹痛？選擇「低發酵」的水溶性纖維，能有效改善整體症狀而不產氣。</p>
-            </div>
-        </div>
-
-        <h2>6. 如何挑選膳食纖維補充品？</h2>
-        <p>當飲食無法滿足需求時，補充劑是個好選擇。但不同纖維功能各異，必須「對症下藥」。以下是三種最常見功能性纖維的比較：</p>
-        <div class="comparison-table-container">
-            <table class="comparison-table">
+          <section id="requirements">
+            <h2>每日建議攝取量與最佳時間</h2>
+            <p>全球各大衛生組織都建議增加纖維攝取，但大多數人的攝取量都未達標，形成了「纖維鴻溝」。</p>
+            <table class="data-table">
                 <thead>
-                    <tr>
-                        <th class="comparison-header-main">比較項目</th>
-                        <th class="comparison-header-option comparison-recommended">
-                            <div class="option-badge">改善便秘首選</div>
-                            <strong>洋車前子殼 (Psyllium)</strong>
-                        </th>
-                        <th class="comparison-header-option">
-                            <strong>菊苣纖維 (Inulin)</strong>
-                        </th>
-                        <th class="comparison-header-option">
-                            <strong>抗性麥芽糊精</strong>
-                        </th>
-                    </tr>
+                    <tr><th>組織/權威機構</th><th>成人建議量 (克/天)</th><th>兒童建議量 (克/天)</th></tr>
                 </thead>
                 <tbody>
-                    <tr class="comparison-row">
-                        <td class="comparison-label">主要機制</td>
-                        <td class="comparison-cell comparison-recommended">物理性吸水膨脹，形成凝膠</td>
-                        <td class="comparison-cell">作為益生元，被腸道菌快速發酵</td>
-                        <td class="comparison-cell">發酵並刺激飽足感荷爾蒙</td>
-                    </tr>
-                    <tr class="comparison-row">
-                        <td class="comparison-label">黏度 / 發酵性</td>
-                        <td class="comparison-cell comparison-recommended">高黏度 / 極低發酵</td>
-                        <td class="comparison-cell">無黏度 / 高發酵</td>
-                        <td class="comparison-cell">無黏度 / 中度發酵</td>
-                    </tr>
-                    <tr class="comparison-row">
-                        <td class="comparison-label">改善便秘/IBS</td>
-                        <td class="comparison-cell comparison-recommended"><div class="rating-badge rating-high">極佳</div></td>
-                        <td class="comparison-cell"><div class="rating-badge rating-low">可能加劇脹氣</div></td>
-                        <td class="comparison-cell"><div class="rating-badge rating-medium">中等</div></td>
-                    </tr>
-                    <tr class="comparison-row">
-                        <td class="comparison-label">降低膽固醇</td>
-                        <td class="comparison-cell comparison-recommended"><div class="rating-badge rating-high">強</div></td>
-                        <td class="comparison-cell"><div class="rating-badge rating-low">弱</div></td>
-                        <td class="comparison-cell"><div class="rating-badge rating-medium">中等</div></td>
-                    </tr>
-                    <tr class="comparison-row">
-                        <td class="comparison-label">穩定血糖</td>
-                        <td class="comparison-cell comparison-recommended"><div class="rating-badge rating-high">強</div></td>
-                        <td class="comparison-cell"><div class="rating-badge rating-medium">中等</div></td>
-                        <td class="comparison-cell"><div class="rating-badge rating-high">強</div></td>
-                    </tr>
-                    <tr class="comparison-row">
-                        <td class="comparison-label">優缺點</td>
-                        <td class="comparison-cell comparison-recommended">
-                            <div class="pros-cons">
-                                <div class="pros">✓ 降膽固醇、通便效果顯著</div>
-                                <div class="pros">✓ 極少產氣，適合IBS患者</div>
-                                <div class="cons">✗ 必須搭配足夠水份</div>
-                            </div>
-                        </td>
-                        <td class="comparison-cell">
-                            <div class="pros-cons">
-                                <div class="pros">✓ 強效益生元，滋養好菌</div>
-                                <div class="cons">✗ 容易引起脹氣、腹脹</div>
-                                <div class="cons">✗ 降膽固醇效果不一致</div>
-                            </div>
-                        </td>
-                        <td class="comparison-cell">
-                            <div class="pros-cons">
-                                <div class="pros">✓ 增加飽足感，有助體重管理</div>
-                                <div class="pros">✓ 耐受性普遍良好</div>
-                                <div class="cons">✗ 益生元效果較弱</div>
-                            </div>
-                        </td>
-                    </tr>
+                    <tr><td>世界衛生組織 (WHO)</td><td><strong>至少 25g</strong></td><td>2-5歲: 15g; 6-9歲: 21g; 10歲+: 25g</td></tr>
+                    <tr><td>美國 FDA 每日參考值</td><td><strong>28g</strong></td><td>-</td></tr>
+                    <tr><td>歐洲食品安全局 (EFSA)</td><td><strong>25g</strong></td><td>1歲以上: 約 10g/1000大卡</td></tr>
+                    <tr><td>英國營養科學諮詢委員會</td><td><strong>30g</strong></td><td>2-5歲: 15g; 5-11歲: 20g; 11-16歲: 25g</td></tr>
                 </tbody>
             </table>
-        </div>
+            <div class="alert alert-tip">
+                <strong>攝取小撇步：</strong> 增加纖維攝取應<strong class="highlight-nutrient">循序漸進</strong>，並務必<strong class="highlight-nutrient">多喝水</strong>，以避免脹氣不適。將高纖食物平均分配到三餐中，是達成目標的最好方式。
+            </div>
+          </section>
 
-        <h2>7. 副作用與注意事項</h2>
-        <p>雖然膳食纖維非常安全，但仍需注意以下幾點：</p>
-        <div class="alert alert-doctor">
-            <strong>醫師警告：</strong>
-            <ul>
-                <li><strong>循序漸進：</strong>突然大量攝取纖維可能導致腹脹、脹氣或腹痛。請在數週內慢慢增加份量。</li>
-                <li><strong>補充足够水份：</strong>尤其在服用洋車前子等高黏度纖維補充劑時，必須飲用大量開水，以防止纖維在食道或腸道中堵塞。</li>
-                <li><strong>注意藥物交互作用：</strong>高纖維飲食或補充劑可能會影響某些藥物的吸收。建議在服用藥物和纖維補充劑之間間隔至少1-2小時。</li>
-            </ul>
-        </div>
+          <section id="sources">
+            <h2>食物來源：哪些天然食物富含膳食纖維？</h2>
+            <p>從天然食物中獲取纖維是首選，因為它們同時富含維生素、礦物質等營養素。</p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>食物類別</th><th>高纖維食物代表</th><th>每份纖維含量參考</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>豆類</td><td><strong>扁豆、鷹嘴豆、黑豆</strong></td><td><strong>~8g / 半杯熟豆</strong></td></tr>
+                    <tr><td>全穀物</td><td>燕麥片、藜麥、全麥麵包</td><td>~6g / 1杯熟義大利麵</td></tr>
+                    <tr><td>水果</td><td>覆盆子、梨、蘋果 (帶皮)</td><td>~4.5g / 1顆中蘋果</td></tr>
+                    <tr><td>蔬菜</td><td>青豆、綠花椰菜、胡蘿蔔</td><td>~9g / 1杯熟青豆</td></tr>
+                    <tr><td>堅果種子</td><td>奇亞籽、杏仁、葵花籽</td><td>~3.8g / 30克杏仁</td></tr>
+                </tbody>
+            </table>
+            <div class="alert alert-tip" style="margin-top: 30px;">
+                <strong>營養師提醒：</strong>應從多樣化的食物中攝取纖維，以滋養更多樣的腸道菌群，不要只依賴單一食物來源。
+            </div>
+          </section>
 
-        <h2>8. 常見問題 (FAQ)</h2>
-        <div class="faq-item">
-            <div class="faq-question">Q1: 補充膳食纖維會讓我一直脹氣嗎？</div>
-            <div class="faq-answer">
+          <section id="little-known-facts">
+            <h2>關於膳食纖維的驚人冷知識</h2>
+            <p>除了我們熟知的功效外，膳食纖維在體內還扮演著許多令人意想不到的關鍵角色。這些冷知識將徹底改變您對膳食纖維的看法。</p>
+            <div class="info-cards" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+              <div class="info-card">
+                <h4 class="info-card-title">第二餐效應 (The Second Meal Effect)</h4>
+                <p class="info-card-desc">您在早餐時攝取的膳食纖維，不僅能穩定當餐的血糖，其效益更能延伸到下一餐！研究發現，富含纖維的早餐有助於降低午餐後的血糖反應，這就是神奇的「第二餐效應」。</p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">纖維能影響您的情緒</h4>
+                <p class="info-card-desc">腸道被稱為「第二大腦」。可發酵纖維所產生的短鏈脂肪酸 (SCFAs)，可以透過「腸腦軸線」影響大腦功能，有助於穩定情緒、減輕焦慮。</p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">纖維的「多樣性」比總量更重要</h4>
+                <p class="info-card-desc">與其執著於單一來源，不如攝取多樣化的纖維。來自不同蔬菜、水果、全穀物的纖維能餵養更多樣的腸道菌群，建立一個更健康、更有韌性的腸道生態系。</p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">纖維是荷爾蒙的清道夫</h4>
+                <p class="info-card-desc">特別是水溶性纖維，能在腸道中與過多的荷爾蒙（如雌激素）結合，並幫助身體將其排出體外，有助於維持體內荷爾蒙的平衡。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="who-needs-it">
+            <h2>誰最需要補充？膳食纖維缺乏的警訊與高風險族群</h2>
+            <p>如果您有以下困擾，可能代表您的膳食纖維攝取不足：</p>
+            <div class="risk-group-cards">
+                <div class="risk-card">
+                    <h4 class="risk-card-title">長期便秘者</h4>
+                    <p class="risk-card-desc">排便不順、糞便乾硬是纖維不足最直接的警訊。增加纖維能軟化糞便、促進腸道蠕動。</p>
+                </div>
+                <div class="risk-card">
+                    <h4 class="risk-card-title">血糖不穩或糖尿病患者</h4>
+                    <p class="risk-card-desc">餐後血糖像雲霄飛車？水溶性纖維能有效減緩血糖波動，是穩定血糖的得力助手。</p>
+                </div>
+                <div class="risk-card">
+                    <h4 class="risk-card-title">膽固醇過高者</h4>
+                    <p class="risk-card-desc">健檢報告紅字？高黏度纖維是降低壞膽固醇 (LDL-C) 的天然武器。</p>
+                </div>
+                <div class="risk-card">
+                    <h4 class="risk-card-title">腸躁症 (IBS) 患者</h4>
+                    <p class="risk-card-desc">時常腹瀉、腹脹或腹痛？選擇「低發酵」的水溶性纖維，能有效改善整體症狀而不產氣。</p>
+                </div>
+                <div class="risk-card">
+                    <h4 class="risk-card-title">外食族／飲食不均者</h4>
+                    <p class="risk-card-desc">難以從日常飲食中攝取足夠的蔬菜水果和全穀物，是纖維攝取不足的最大宗族群。</p>
+                </div>
+            </div>
+          </section>
+
+          <section id="supplements">
+            <h2>如何挑選膳食纖維補充品？</h2>
+            <p>當飲食無法滿足需求時，補充劑是個好選擇。但不同纖維功能各異，必須「對症下藥」。以下是三種最常見功能性纖維的比較：</p>
+            <div class="comparison-table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="comparison-header-main">比較項目</th>
+                            <th class="comparison-header-option comparison-recommended">
+                                <div class="option-badge">改善便秘首選</div>
+                                <strong>洋車前子殼 (Psyllium)</strong>
+                            </th>
+                            <th class="comparison-header-option">
+                                <div class="option-badge">腸道好菌幫手</div>
+                                <strong>菊苣纖維 (Inulin)</strong>
+                            </th>
+                            <th class="comparison-header-option">
+                                <div class="option-badge">代謝管理幫手</div>
+                                <strong>抗性麥芽糊精</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="comparison-label">主要機制</td>
+                            <td class="comparison-cell">物理性吸水膨脹，形成凝膠</td>
+                            <td class="comparison-cell">作為益生元，被腸道菌快速發酵</td>
+                            <td class="comparison-cell">發酵並刺激飽足感荷爾蒙</td>
+                        </tr>
+                        <tr>
+                            <td class="comparison-label">黏度 / 發酵性</td>
+                            <td class="comparison-cell">高黏度 / 極低發酵</td>
+                            <td class="comparison-cell">無黏度 / 高發酵</td>
+                            <td class="comparison-cell">無黏度 / 中度發酵</td>
+                        </tr>
+                        <tr>
+                            <td class="comparison-label">改善便秘/IBS</td>
+                            <td class="comparison-cell"><div class="rating-badge rating-high">極佳</div></td>
+                            <td class="comparison-cell"><div class="rating-badge rating-low">可能加劇脹氣</div></td>
+                            <td class="comparison-cell"><div class="rating-badge rating-medium">中等</div></td>
+                        </tr>
+                        <tr>
+                            <td class="comparison-label">降低膽固醇</td>
+                            <td class="comparison-cell"><div class="rating-badge rating-high">強</div></td>
+                            <td class="comparison-cell"><div class="rating-badge rating-low">弱</div></td>
+                            <td class="comparison-cell"><div class="rating-badge rating-medium">中等</div></td>
+                        </tr>
+                        <tr>
+                            <td class="comparison-label">穩定血糖</td>
+                            <td class="comparison-cell"><div class="rating-badge rating-high">強</div></td>
+                            <td class="comparison-cell"><div class="rating-badge rating-medium">中等</div></td>
+                            <td class="comparison-cell"><div class="rating-badge rating-high">強</div></td>
+                        </tr>
+                        <tr>
+                            <td class="comparison-label">優缺點</td>
+                            <td class="comparison-cell">
+                                <div class="pros-cons">
+                                    <div class="pros">降膽固醇、通便效果顯著</div>
+                                    <div class="pros">極少產氣，適合IBS患者</div>
+                                    <div class="cons">必須搭配足夠水份</div>
+                                </div>
+                            </td>
+                            <td class="comparison-cell">
+                                <div class="pros-cons">
+                                    <div class="pros">強效益生元，滋養好菌</div>
+                                    <div class="cons">容易引起脹氣、腹脹</div>
+                                    <div class="cons">降膽固醇效果不一致</div>
+                                </div>
+                            </td>
+                            <td class="comparison-cell">
+                                <div class="pros-cons">
+                                    <div class="pros">增加飽足感，有助體重管理</div>
+                                    <div class="pros">耐受性普遍良好</div>
+                                    <div class="cons">益生元效果較弱</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="background-color: #fffbeb;">
+                            <td class="comparison-label" style="font-weight: 700; color: #b45309;">適合族群</td>
+                            <td class="comparison-cell" style="font-weight: 600;">便秘、IBS患者、降膽固醇需求者</td>
+                            <td class="comparison-cell" style="font-weight: 600;">希望改善腸道菌相者</td>
+                            <td class="comparison-cell" style="font-weight: 600;">有體重管理、穩定血糖需求者</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </section>
+
+          <section id="side-effects">
+            <h2>副作用與注意事項</h2>
+            <p>雖然膳食纖維非常安全，但仍需注意以下幾點：</p>
+            <div class="alert alert-doctor">
+                <strong>醫師警告：</strong>
+                <ul style="list-style-position: inside;">
+                    <li><strong>循序漸進：</strong>突然大量攝取纖維可能導致腹脹、脹氣或腹痛。請在數週內慢慢增加份量。</li>
+                    <li><strong>補充足够水份：</strong>尤其在服用洋車前子等高黏度纖維補充劑時，必須飲用大量開水，以防止纖維在食道或腸道中堵塞。</li>
+                    <li><strong>注意藥物交互作用：</strong>高纖維飲食或補充劑可能會影響某些藥物的吸收。建議在服用藥物和纖維補充劑之間間隔至少1-2小時。</li>
+                </ul>
+            </div>
+          </section>
+
+          <section id="faq" class="faq-section">
+            <h2>常見問題</h2>
+            <div class="faq-item">
+              <div class="faq-question">Q1: 補充膳食纖維會讓我一直脹氣嗎？</div>
+              <div class="faq-answer">
                 <p><strong>A: 不一定，取決於纖維種類。</strong> 高度可發酵的纖維（如菊苣纖維、FOS）確實容易產氣。如果想避免脹氣，可以選擇<strong class="highlight-nutrient">洋車前子殼</strong>這種低發酵性的纖維。同時，只要循序漸進地增加攝取量，讓腸道菌群有時間適應，多數人的脹氣情況會逐漸改善。</p>
+              </div>
             </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Q2: 我應該從食物還是補充品中獲取纖維？</div>
-            <div class="faq-answer">
+            <div class="faq-item">
+              <div class="faq-question">Q2: 我應該從食物還是補充品中獲取纖維？</div>
+              <div class="faq-answer">
                 <p><strong>A: 優先從食物中獲取。</strong> 天然食物（蔬菜、水果、全穀物、豆類）除了纖維，還提供維生素、礦物質和抗氧化物。當飲食攝取不足，或有特定健康目標（如積極降低膽固醇）時，纖維補充劑才是一個方便有效的輔助工具。</p>
+              </div>
             </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Q3: 腸躁症 (IBS) 患者到底該不該吃纖維？</div>
-            <div class="faq-answer">
+            <div class="faq-item">
+              <div class="faq-question">Q3: 腸躁症 (IBS) 患者到底該不該吃纖維？</div>
+              <div class="faq-answer">
                 <p><strong>A: 該吃，但要選對種類！</strong> 美國胃腸病學會建議IBS患者攝取<strong class="highlight-nutrient">水溶性、低發酵</strong>的纖維。洋車前子殼是最佳選擇之一，它能雙向調節，軟化硬便、使稀便成形，且不產氣，能改善IBS的整體症狀。</p>
+              </div>
             </div>
-        </div>
+            <div class="faq-item">
+              <div class="faq-question">Q4: 吃太多膳食纖維會怎麼樣？</div>
+              <div class="faq-answer">
+                <p><strong>A: 過量確實可能導致不適。</strong> 雖然沒有嚴格的「過量」定義，但單日攝取超過 70 克纖維，或短時間內突然大量增加攝取，可能導致腹脹、脹氣、腹痛甚至腹瀉。這也是為什麼建議要「循序漸進」增加纖維攝取量，並搭配足夠水份的原因。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q5: 膳食纖維不是能解便秘嗎？為什麼有時反而更嚴重？</div>
+              <div class="faq-answer">
+                <p><strong>A: 這是一個非常好的問題，關鍵在於「水份」和「纖維種類」。</strong> 如果您只吃大量的非水溶性纖維（增加糞便體積）卻沒有喝足夠的水，糞便會變得又大又硬，反而更難排出。這就是為什麼<strong class="highlight-nutrient">「多喝水」</strong>是高纖飲食最重要的搭配。此外，對於某些便秘類型，選擇能吸水軟化糞便的水溶性纖維（如洋車前子殼）會比單純增加體積的纖維更有效。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q6: 烹煮會破壞食物中的膳食纖維嗎？</div>
+              <div class="faq-answer">
+                <p><strong>A: 不會，甚至可能更好！</strong> 一般的家庭烹飪（如蒸、煮、炒）並不會破壞膳食纖維的總量。事實上，適度加熱有時能軟化植物細胞壁，讓部分纖維（如果膠）更容易釋放出來，或改變其物理特性，對身體可能更有益。真正會大量流失纖維的是「過度加工」，例如將水果打成果汁並濾掉果渣。</p>
+              </div>
+            </div>
+          </section>
+        </article>
 
-    </main>
+        <!-- Related Articles Section -->
+        <section id="related-articles">
+          <h2 class="related-title" id="related-title" style="margin-top: 60px; border-top: 2px solid #e5e7eb; padding-top: 40px;">相關營養素</h2>
+          <div class="related-grid">
+            <a href="probiotics.html" class="related-card">
+              <div class="related-card-content">
+                <span class="related-card-tag" style="background-color: #f0f9ff; color: #0c4a6e;">益生菌</span>
+                <h3 class="related-card-title">益生菌</h3>
+                <p class="related-card-desc">腸道中的健康盟友，與膳食纖維（益生元）協同作戰，共同維持消化系統的平衡與健康。</p>
+              </div>
+            </a>
+            <a href="magnesium.html" class="related-card">
+              <div class="related-card-content">
+                <span class="related-card-tag" style="background-color: #f5f3ff; color: #5b21b6;">礦物質</span>
+                <h3 class="related-card-title">鎂</h3>
+                <p class="related-card-desc">參與體內數百種酵素反應，有助於肌肉正常收縮、穩定神經，與纖維共同維持腸道規律性。</p>
+              </div>
+            </a>
+             <a href="vitamin-b.html" class="related-card">
+              <div class="related-card-content">
+                <span class="related-card-tag" style="background-color: #fffbeb; color: #b45309;">維生素</span>
+                <h3 class="related-card-title">維生素B群</h3>
+                <p class="related-card-desc">身體的能量轉換器，協助將食物（包含纖維）轉化為能量，維持身體正常代謝機能。</p>
+              </div>
+            </a>
+          </div>
+        </section>
 
-    <!-- Footer Component Container -->
+      </main>
+    </div>
+
+    <!-- Disclaimer Section -->
+    <section class="disclaimer">
+      <div class="disclaimer-content">
+        <h3>免責聲明</h3>
+        <p>
+          本資訊僅供教育目的，不能取代專業醫療建議。開始任何營養補充計劃前，請諮詢醫療專業人員。個人需求可能因健康狀況、藥物使用和生活方式而有所不同。
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer Component -->
     <div id="footer-component"></div>
 
     <!-- Load Components -->
     <script src="../assets/js/deus-analytics-component.js"></script>
-    <script src="../assets.js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
 
     <script>
+      // Progress Bar
+      window.addEventListener("scroll", () => {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollableHeight > 0) {
+            const scrollPercentage = (window.scrollY / scrollableHeight) * 100;
+            document.getElementById("progressBar").style.width = scrollPercentage + "%";
+        }
+      });
+
       document.addEventListener("DOMContentLoaded", function () {
-        // Initialize Analytics Component
-        if (window.DeusAnalyticsComponent) {
-          new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
-        }
+        // TOC Highlighting
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".toc-link");
+        const onScroll = () => {
+          let current = "";
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (pageYOffset >= sectionTop) {
+              current = section.getAttribute("id");
+            }
+          });
+          navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+              link.classList.add("active");
+            }
+          });
+        };
+        window.addEventListener("scroll", onScroll);
 
-        // Initialize Header Component
-        const headerContainer = document.getElementById("header-component");
-        if (headerContainer && window.DeusHeaderComponent) {
-          new window.DeusHeaderComponent(headerContainer).setDebug(false);
-        }
-
-        // Initialize Footer Component
-        const footerContainer = document.getElementById("footer-component");
-        if (footerContainer && window.DeusFooterComponent) {
-          new window.DeusFooterComponent(footerContainer).setDebug(false);
-        }
-        
         // FAQ Toggle
-        document.querySelectorAll('.faq-question').forEach(item => {
-            item.addEventListener('click', () => {
-                const answer = item.nextElementSibling;
-                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-            });
+        document.querySelectorAll(".faq-question").forEach(question => {
+          question.addEventListener("click", () => {
+            question.parentElement.classList.toggle("active");
+          });
         });
+        
+        // Smooth Scroll for TOC Links
+        document.querySelectorAll(".toc-link").forEach(link => {
+          link.addEventListener("click", function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              const headerOffset = document.getElementById('header-component')?.offsetHeight || 80;
+              const elementPosition = targetElement.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+              });
+            }
+          });
+        });
+
+        // Component Initialization
+        if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
+        if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
+        if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
       });
     </script>
+
 </body>
 </html>
