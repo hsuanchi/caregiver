@@ -303,6 +303,51 @@
    </div>
    ```
 
+### 提示框圖示使用規則 (例外條款)
+
+為了在不犧牲專業性的前提下，增強特定提示的視覺辨識度，我們針對以下三種提示框設立圖示使用例外。
+
+此規則**僅限於**透過 CSS `::before` 偽元素添加，**嚴禁**在文章內文中手動插入任何圖示或 Emoji。
+
+#### 實作方式
+
+在 CSS 樣式中，為對應的 class 添加 `::before` 偽元素，並使用 `content` 屬性插入 Unicode 圖示。
+
+**1. 醫師警告 (`.alert-doctor`)**
+   - **圖示：** ⚠️ (Warning Sign)
+   - **CSS 程式碼範例：**
+     ```css
+     .alert-doctor > strong::before {
+       content: '⚠️';
+       margin-right: 8px;
+     }
+     ```
+
+**2. 營養師提醒 (`.alert-nutritionist`)**
+   - **圖示：** 💡 (Light Bulb)
+   - **CSS 程式碼範例：**
+     ```css
+     .alert-nutritionist > strong::before {
+       content: '💡';
+       margin-right: 8px;
+     }
+     ```
+
+**3. 一般提示 (`.alert-tip`)**
+   - **圖示：** 💡 (Light Bulb)
+   - **CSS 程式碼範例：**
+     ```css
+     .alert-tip > strong::before {
+       content: '💡';
+       margin-right: 8px;
+     }
+     ```
+
+#### 注意事項
+*   此為**唯一**的圖示使用例外，其餘地方仍維持「原則禁止」的規定。
+*   圖示的目的是為了**功能性**（加強警告/提示），而非裝飾。
+*   我選擇將圖示附加在 `<strong>` 標籤前，這樣它會與「醫師警告：」這類標題文字緊鄰，視覺上更為整合。
+
 ### 2. **資訊卡片 (`.info-cards`)**
    - 用於並列呈現 3-4 個核心觀點或功效。
 

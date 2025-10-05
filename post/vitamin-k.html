@@ -347,11 +347,19 @@
           background: var(--primary-color-bg);
           color: var(--primary-color-text);
         }
-        .alert-danger {
-          background: #FEF2F2;
-          color: #991B1B;
-        }
-  
+              .alert-danger {
+                background: #FEF2F2;
+                color: #991B1B;
+              }
+        
+              .alert-doctor > strong::before, .alert-danger > strong::before {
+                content: '⚠️';
+                margin-right: 8px;
+              }
+              .alert-nutritionist > strong::before, .alert-tip > strong::before {
+                content: '💡';
+                margin-right: 8px;
+              }  
         .highlight-nutrient {
           border-bottom: 2px solid var(--primary-color);
           padding-bottom: 1px;

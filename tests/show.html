@@ -1,322 +1,314 @@
+<!-- Chosen Palette: Soothing & Natural (#F8F7F4 background, #333333 text, #4CAF50 primary accent, #FF9800 secondary accent) -->
+<!-- Application Structure Plan: The SPA is designed as a task-oriented interactive guide. It begins with a hero section to set the context. The core is an interactive "Fiber Dashboard" where users can select foods and visually track their progress toward a daily goal, turning abstract data into a tangible experience. This is followed by a "Smart Strategies" section, presented as a clear, step-by-step visual flow. Next, an interactive "Supplement Selector" tool helps users find personalized recommendations based on their health goals. The app concludes with "Key Takeaways" presented as digestible cards. This structure was chosen to transform passive reading into active, personalized learning and decision-making, which is more effective for a practical guide. -->
+<!-- Visualization & Content Choices: [Hero: Inform -> Large Typography -> N/A -> N/A]. [Fiber Dashboard: Inform/Compare/Organize -> Interactive Cards + Dynamic Donut Chart -> User clicks foods to add fiber, chart updates in real-time -> Engages users in building a virtual meal plan, making data tangible -> Chart.js (Canvas)]. [Smart Strategies: Organize -> Step-by-step diagram -> Hover effects -> Visually represents a process, more engaging than a list -> HTML/CSS]. [Supplement Selector: Inform/Organize -> Interactive Buttons/Cards -> User clicks goal to reveal recommendation -> Provides personalized, actionable advice -> Vanilla JS (show/hide)]. [Key Takeaways: Inform -> Icon + Text Cards -> N/A -> Summarizes content effectively -> HTML/CSS + Unicode Icons]. -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>膳食纖維：終極資訊圖表</title>
+    <title>膳食纖維互動指南</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', 'Noto Sans TC', sans-serif; background-color: #EFECCA; }
-        .chart-container { position: relative; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; height: 320px; max-height: 400px; }
-        @media (min-width: 768px) { .chart-container { height: 400px; } }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #F8F7F4; color: #333333; }
+        .chart-container { position: relative; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; height: 320px; max-height: 320px; }
+        .food-btn { transition: all 0.2s ease-in-out; }
+        .food-btn:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .food-btn.selected { background-color: #4CAF50; color: white; border-color: #4CAF50; }
+        .strategy-step::after {
+            content: '→';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #FF9800;
+        }
+        .strategy-step:last-child::after { content: ''; }
+         @media (max-width: 767px) {
+            .strategy-step { margin-bottom: 2rem; }
+            .strategy-step::after {
+                content: '↓';
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                right: auto;
+                margin-top: 1rem;
+            }
+        }
     </style>
 </head>
-<body class="text-gray-800">
+<body class="antialiased">
 
-    <div class="max-w-7xl mx-auto p-4 md:p-8">
+    <div class="container mx-auto p-4 md:p-8 max-w-6xl">
 
-        <header class="text-center py-12">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-[#00A0B0] mb-4">纖維的真相</h1>
-            <p class="text-lg md:text-xl text-[#6A4A3C] max-w-3xl mx-auto">一份視覺化指南，助您了解膳食纖維在健康中的關鍵角色，以及如何攝取足夠的份量。</p>
+        <header class="text-center my-8 md:my-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">膳食纖維互動實踐指南</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">歡迎來到您的個人化纖維指南。這裡不僅提供知識，更讓您透過互動，親手打造自己的高纖維健康計劃。</p>
         </header>
 
         <main class="space-y-16 md:space-y-24">
 
-            <section id="fiber-gap" class="bg-white rounded-2xl shadow-xl p-6 md:p-10">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div class="text-center md:text-left">
-                        <h2 class="text-3xl font-bold text-[#FF6B35] mb-4">全球纖維鴻溝</h2>
-                        <p class="text-lg text-[#6A4A3C] mb-2">衛生主管機關建議成人每日攝取至少28克纖維。然而，一般人平均僅攝取約15克。</p>
-                        <p class="text-base text-gray-500">這個顯著的差距被稱為「纖維鴻溝」，是一項與多種慢性病風險增加相關的公共衛生議題。這張圖表清楚地顯示了我們與每日目標的距離。</p>
+            <section id="dashboard" class="bg-white rounded-2xl shadow-lg p-6 md:p-10">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#4CAF50]">您的每日纖維儀表板</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">每日建議攝取量約為 28 克。點擊下方的食物，看看要達到目標有多容易！每次點擊都會將食物加入您的虛擬餐盤中。</p>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                    
+                    <div class="lg:col-span-2">
+                        <div id="food-selector">
+                            <div class="mb-6">
+                                <h3 class="font-bold text-xl mb-3 text-gray-700">🥬 蔬菜</h3>
+                                <div class="flex flex-wrap gap-3">
+                                    <button class="food-btn p-2 px-4 bg-gray-100 rounded-full border-2 border-transparent" data-fiber="9.0" data-name="青豆 (1杯)">青豆 (9g)</button>
+                                    <button class="food-btn p-2 px-4 bg-gray-100 rounded-full border-2 border-transparent" data-fiber="5.1" data-name="綠花椰菜 (1杯)">綠花椰菜 (5.1g)</button>
+                                    <button class="food-btn p-2 px-4 bg-gray-100 rounded-full border-2 border-transparent" data-fiber="4.1" data-name="抱子甘藍 (1杯)">抱子甘藍 (4.1g)</button>
+                                    <button class="food-btn p-2 px-4 bg-gray-100 rounded-full border-2 border-transparent" data-fiber="3.6" data-name="胡蘿蔔 (1杯)">胡蘿蔔 (3.6g)</button>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <h3 class="font-bold text-xl mb-3 text-gray-700">🍎 水果</h3>
+                                <div class="flex flex-wrap gap-3">
+                                    <button class="food-btn p-2 px-4 bg-gray-100 rounded-full border-2 border-transparent" data-fiber="8.0" data-name="覆盆子 (1杯)">覆盆子 (8g)</button>
+                                    <button class="food-btn p-2 px-4 bg-gray-100 rounded-full border-2 border-transparent" data-fiber="5.5" data-name="梨 (1個, 帶皮)">梨 (5.5g)</button>
+                                    <button class="food-btn p-2 px-4 bg-gray-100 rounded-full border-2 border-transparent" data-fiber="4.5" data-name="蘋果 (1個, 帶皮)">蘋果 (4.5g)</button>
+                                    <button class="food-btn p-2 px-4 bg-gray-100 rounded-full border-2 border-transparent" data-fiber="3.1" data-name="香蕉 (1根)">香蕉 (3.1g)</button>
+                                </div>
+                            </div>
+                             <div class="mb-6">
+                                <h3 class="font-bold text-xl mb-3 text-gray-700">🌾 全穀物 & 豆類</h3>
+                                <div class="flex flex-wrap gap-3">
+                                     <button class="food-btn p-2 px-4 bg-gray-100 rounded-full border-2 border-transparent" data-fiber="7.5" data-name="黑豆 (半杯)">黑豆 (7.5g)</button>
+                                     <button class="food-btn p-2 px-4 bg-gray-100 rounded-full border-2 border-transparent" data-fiber="6.0" data-name="全麥義大利麵 (1杯)">全麥義大利麵 (6g)</button>
+                                     <button class="food-btn p-2 px-4 bg-gray-100 rounded-full border-2 border-transparent" data-fiber="5.0" data-name="燕麥片 (1杯)">燕麥片 (5g)</button>
+                                     <button class="food-btn p-2 px-4 bg-gray-100 rounded-full border-2 border-transparent" data-fiber="3.8" data-name="杏仁 (30克)">杏仁 (3.8g)</button>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="text-center mt-6">
+                            <button id="reset-btn" class="px-6 py-2 bg-[#FF9800] text-white font-semibold rounded-lg shadow-md hover:bg-orange-600 transition">重設餐盤</button>
+                        </div>
                     </div>
-                    <div>
+
+                    <div class="relative text-center">
                         <div class="chart-container">
-                            <canvas id="fiberGapChart"></canvas>
+                            <canvas id="fiberChart"></canvas>
+                        </div>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                             <span class="text-4xl font-bold text-gray-800" id="current-fiber">0.0g</span>
+                             <span class="text-gray-500">/ 28g 目標</span>
+                        </div>
+                        <div id="plate-summary" class="mt-4 text-left text-sm text-gray-600 h-24 overflow-y-auto p-2 bg-gray-50 rounded-lg">
+                           <p class="font-semibold text-center">您的餐盤目前是空的。</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="recommendations">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl font-bold text-[#00A0B0]">各大機構的建議為何？</h2>
-                    <p class="text-lg text-[#6A4A3C] max-w-3xl mx-auto mt-2">全球不同的衛生組織建議略有差異，但都同意一件事：我們需要更多纖維。此處比較了針對成人的每日指南與我們平均攝取量的殘酷現實。</p>
-                </div>
-                <div class="bg-white rounded-2xl shadow-xl p-6 md:p-10">
-                    <div class="chart-container h-96 md:h-[500px] max-w-4xl">
-                        <canvas id="recommendationsChart"></canvas>
+            <section id="strategies">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#4CAF50]">系統性增纖策略</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">為了避免腸胃不適，增加纖維攝取應循序漸進。遵循以下四個簡單步驟，輕鬆彌合您的「纖維鴻溝」。</p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-16">
+                    <div class="strategy-step relative bg-white p-6 rounded-lg shadow-md text-center max-w-xs">
+                        <div class="text-3xl mb-2">🐢</div>
+                        <h3 class="font-bold text-lg">循序漸進</h3>
+                        <p class="text-sm text-gray-600">在幾週內逐步增加攝取量，讓消化系統有時間適應。</p>
                     </div>
-                </div>
-            </section>
-            
-            <section id="food-sources">
-                 <div class="text-center mb-10">
-                    <h2 class="text-3xl font-bold text-[#FF6B35]">高纖維食物主要來源</h2>
-                    <p class="text-lg text-[#6A4A3C] max-w-3xl mx-auto mt-2">當您知道從何處尋找時，達成纖維目標就更容易了。豆類、蔬菜和全穀物是纖維的能量庫。這張圖表突顯了常見份量中的纖維含量，助您做出更明智的選擇。</p>
-                </div>
-                <div class="bg-white rounded-2xl shadow-xl p-6 md:p-10">
-                     <div class="chart-container h-96 md:h-[500px] max-w-4xl">
-                        <canvas id="foodSourcesChart"></canvas>
+                     <div class="strategy-step relative bg-white p-6 rounded-lg shadow-md text-center max-w-xs">
+                        <div class="text-3xl mb-2">💧</div>
+                        <h3 class="font-bold text-lg">充足飲水</h3>
+                        <p class="text-sm text-gray-600">纖維需要水分才能發揮最佳效果。喝足夠的水有助於預防便秘。</p>
+                    </div>
+                     <div class="strategy-step relative bg-white p-6 rounded-lg shadow-md text-center max-w-xs">
+                        <div class="text-3xl mb-2">🔄</div>
+                        <h3 class="font-bold text-lg">聰明替換</h3>
+                        <p class="text-sm text-gray-600">用糙米代替白飯，用全麥麵包代替白麵包，輕鬆增加纖維。</p>
+                    </div>
+                     <div class="strategy-step relative bg-white p-6 rounded-lg shadow-md text-center max-w-xs">
+                        <div class="text-3xl mb-2">🥗</div>
+                        <h3 class="font-bold text-lg">融入三餐</h3>
+                        <p class="text-sm text-gray-600">早餐加水果，午餐沙拉加豆類，晚餐增加蔬菜份量。</p>
                     </div>
                 </div>
             </section>
 
-            <section id="strategies">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-[#00A0B0]">如何彌合您的纖維鴻溝</h2>
-                    <p class="text-lg text-[#6A4A3C] max-w-3xl mx-auto mt-2">增加纖維攝取量不必困難。遵循這些簡單、系統化的步驟，逐步且舒適地達成您的每日目標。</p>
+            <section id="supplements" class="bg-white rounded-2xl shadow-lg p-6 md:p-10">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#4CAF50]">纖維補充劑選擇器</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">雖然天然食物是首選，但在特定情況下，補充劑是個好幫手。根據您的主要健康目標，選擇最適合您的補充劑類型。</p>
+                <div class="flex justify-center flex-wrap gap-4 mb-8">
+                    <button class="supplement-goal-btn px-5 py-2 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-[#FF9800] hover:text-white transition" data-target="regularity">🎯 改善便秘</button>
+                    <button class="supplement-goal-btn px-5 py-2 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-[#FF9800] hover:text-white transition" data-target="gut-health">🌿 促進腸道益菌</button>
+                    <button class="supplement-goal-btn px-5 py-2 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-[#FF9800] hover:text-white transition" data-target="satiety">⚖️ 增加飽足感</button>
                 </div>
-                <div class="relative flex flex-col items-center md:flex-row md:justify-center gap-8 md:gap-4 px-4">
-                    <div class="absolute top-0 h-full w-1 bg-[#F7C59F] hidden md:block" style="left: calc(50% - 2px);"></div>
-                    
-                    <div class="w-full md:w-1/4 bg-white p-6 rounded-xl shadow-lg z-10 border-t-4 border-[#FF6B35]">
-                        <h3 class="text-xl font-bold text-[#FF6B35] mb-2">第一步：緩慢開始</h3>
-                        <p class="text-[#6A4A3C]">在數週內逐漸增加高纖維食物，讓您的消化系統有時間適應並避免不適。</p>
+                <div id="supplement-results" class="text-center p-6 bg-green-50 rounded-lg min-h-[150px] flex items-center justify-center">
+                    <p id="results-placeholder" class="text-gray-500">請點擊一個健康目標以查看建議。</p>
+                    <div id="regularity-result" class="hidden">
+                        <h3 class="font-bold text-xl text-green-800">建議：低發酵性纖維</h3>
+                        <p class="mt-2 text-green-700">如 <strong class="text-[#FF9800]">洋車前子殼</strong>，它能有效增加糞便體積和水分，促進規律排便，且產氣副作用較小，特別適合腸道敏感者。</p>
                     </div>
-                    <div class="w-full md:w-1/4 bg-white p-6 rounded-xl shadow-lg z-10 border-t-4 border-[#00A0B0]">
-                        <h3 class="text-xl font-bold text-[#00A0B0] mb-2">第二步：補充水分</h3>
-                        <p class="text-[#6A4A3C]">喝足夠的水。纖維在吸收水分後效果最好，有助於軟化糞便並幫助消化。</p>
+                     <div id="gut-health-result" class="hidden">
+                        <h3 class="font-bold text-xl text-green-800">建議：益生元 (Prebiotics)</h3>
+                        <p class="mt-2 text-green-700">如 <strong class="text-[#FF9800]">菊苣纖維（菊粉）</strong>，它是腸道益菌的絕佳食物，能有效促進其生長，但對於敏感者可能產氣較多。</p>
                     </div>
-                    <div class="w-full md:w-1/4 bg-white p-6 rounded-xl shadow-lg z-10 border-t-4 border-[#FF6B35]">
-                        <h3 class="text-xl font-bold text-[#FF6B35] mb-2">第三步：聰明替換</h3>
-                        <p class="text-[#6A4A3C]">選擇全麥麵包而非白麵包，糙米而非白米，並在沙拉和湯中加入豆類或扁豆。</p>
-                    </div>
-                     <div class="w-full md:w-1/4 bg-white p-6 rounded-xl shadow-lg z-10 border-t-4 border-[#00A0B0]">
-                        <h3 class="text-xl font-bold text-[#00A0B0] mb-2">第四步：優先選擇全食物</h3>
-                        <p class="text-[#6A4A3C]">選擇完整的水果和蔬菜，而非通常已去除天然纖維的果汁。</p>
+                     <div id="satiety-result" class="hidden">
+                        <h3 class="font-bold text-xl text-green-800">建議：高黏度水溶性纖維</h3>
+                        <p class="mt-2 text-green-700">如 <strong class="text-[#FF9800]">抗性麥芽糊精</strong> 或燕麥中的 <strong class="text-[#FF9800]">β-葡聚醣</strong>，能在胃中形成凝膠，延緩排空，從而增加飽足感並幫助穩定血糖。</p>
                     </div>
                 </div>
             </section>
             
-            <section id="supplements">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-[#FF6B35]">選擇纖維補充劑</h2>
-                    <p class="text-lg text-[#6A4A3C] max-w-3xl mx-auto mt-2">雖然食物應始終是您纖維的主要來源，但若您難以達成目標，補充劑會是個實用的工具。正確的選擇取決於您的具體健康需求。</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-center text-center">
-                        <div class="text-5xl mb-4">🎯</div>
-                        <h3 class="text-xl font-bold text-[#6A4A3C] mb-2">您的目標是：</h3>
-                        <p class="text-2xl font-semibold text-[#00A0B0]">改善腸道規律性</p>
-                        <hr class="w-1/4 my-4 border-t-2 border-[#F7C59F]">
-                        <h4 class="font-semibold text-[#6A4A3C] mb-2">考慮此類型：</h4>
-                        <p class="text-lg font-bold text-[#FF6B35]">低發酵性纖維</p>
-                        <p class="text-[#6A4A3C] mt-1">例如：洋車前子殼。它對便秘有效，且產氣和腹脹副作用極小。</p>
+            <section id="takeaways">
+                <h2 class="text-3xl font-bold text-center mb-10 text-[#4CAF50]">關鍵啟示</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <span class="text-3xl">🎯</span>
+                        <div>
+                            <h3 class="font-bold">目標明確，行動不足</h3>
+                            <p class="text-sm text-gray-600">全球建議每日攝取25-30克纖維，但多數人攝取量遠低於此，形成健康鴻溝。</p>
+                        </div>
                     </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-center text-center">
-                        <div class="text-5xl mb-4">🌿</div>
-                        <h3 class="text-xl font-bold text-[#6A4A3C] mb-2">您的目標是：</h3>
-                        <p class="text-2xl font-semibold text-[#00A0B0]">滋養腸道菌群</p>
-                         <hr class="w-1/4 my-4 border-t-2 border-[#F7C59F]">
-                        <h4 class="font-semibold text-[#6A4A3C] mb-2">考慮此類型：</h4>
-                        <p class="text-lg font-bold text-[#FF6B35]">高發酵性（益生元）</p>
-                        <p class="text-[#6A4A3C] mt-1">例如：菊苣纖維（菊粉）。它非常適合餵養有益的腸道微生物。</p>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <span class="text-3xl">🔬</span>
+                        <div>
+                            <h3 class="font-bold">菌群是核心</h3>
+                            <p class="text-sm text-gray-600">纖維作為腸道菌群的燃料，其許多健康益處是透過菌群的代謝產物間接實現的。</p>
+                        </div>
                     </div>
-                     <div class="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-center text-center md:col-span-2 lg:col-span-1">
-                        <div class="text-5xl mb-4">⚖️</div>
-                        <h3 class="text-xl font-bold text-[#6A4A3C] mb-2">您的目標是：</h3>
-                        <p class="text-2xl font-semibold text-[#00A0B0]">改善飽足感與血糖</p>
-                         <hr class="w-1/4 my-4 border-t-2 border-[#F7C59F]">
-                        <h4 class="font-semibold text-[#6A4A3C] mb-2">考慮此類型：</h4>
-                        <p class="text-lg font-bold text-[#FF6B35]">黏性水溶性纖維</p>
-                        <p class="text-[#6A4A3C] mt-1">例如：β-葡聚醣（來自燕麥）或抗性麥芽糊精。有助於您感到飽足並管理血糖。</p>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <span class="text-3xl">🧩</span>
+                        <div>
+                            <h3 class="font-bold">纖維非單一物質</h3>
+                            <p class="text-sm text-gray-600">黏度、發酵性等特性，比單純的水溶/非水溶分類更能決定其生理功能。</p>
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <span class="text-3xl">💡</span>
+                        <div>
+                            <h3 class="font-bold">精準應用是未來</h3>
+                            <p class="text-sm text-gray-600">應根據特定健康目標（如改善便秘或IBS）選擇合適特性的纖維。</p>
+                        </div>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 md:col-span-2 lg:col-span-1">
+                        <span class="text-3xl">🍎</span>
+                        <div>
+                            <h3 class="font-bold">食物優先，補充為輔</h3>
+                            <p class="text-sm text-gray-600">優先從多樣化的全食物中獲取纖維是最佳策略，必要時才考慮補充劑。</p>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
 
-        <footer class="text-center py-12 mt-16 md:mt-24 border-t-2 border-[#F7C59F]">
-            <p class="text-[#6A4A3C]">資料來源於「膳食纖維實踐指南」。</p>
-            <p class="text-sm text-gray-500 mt-2">本資訊圖表僅供參考，不構成醫療建議。</p>
+        <footer class="text-center mt-16 md:mt-24 pt-8 border-t border-gray-200">
+            <p class="text-sm text-gray-500">內容來源：《膳食纖維實踐指南》。此應用程式僅供教育與參考目的。</p>
         </footer>
+
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            
-            const tooltipTitleCallback = (tooltipItems) => {
-                const item = tooltipItems[0];
-                let label = item.chart.data.labels[item.dataIndex];
-                if (Array.isArray(label)) {
-                  return label.join(' ');
+            const GOAL = 28;
+            let currentFiber = 0;
+            let selectedFoods = [];
+            const currentFiberEl = document.getElementById('current-fiber');
+            const fiberChartCanvas = document.getElementById('fiberChart').getContext('2d');
+            const plateSummaryEl = document.getElementById('plate-summary');
+
+            const chart = new Chart(fiberChartCanvas, {
+                type: 'doughnut',
+                data: {
+                    labels: ['已攝取', '目標剩餘'],
+                    datasets: [{
+                        data: [0, GOAL],
+                        backgroundColor: ['#4CAF50', '#E0E0E0'],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 4,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '75%',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: false }
+                    }
                 }
-                return label;
+            });
+
+            function updateDashboard() {
+                currentFiber = selectedFoods.reduce((sum, food) => sum + food.fiber, 0);
+                
+                currentFiberEl.textContent = `${currentFiber.toFixed(1)}g`;
+                
+                chart.data.datasets[0].data[0] = currentFiber;
+                chart.data.datasets[0].data[1] = Math.max(0, GOAL - currentFiber);
+                chart.update();
+
+                if (selectedFoods.length === 0) {
+                    plateSummaryEl.innerHTML = `<p class="font-semibold text-center">您的餐盤目前是空的。</p>`;
+                } else {
+                    let summaryHtml = '<p class="font-semibold mb-1">餐盤內容：</p><ul>';
+                    selectedFoods.forEach(food => {
+                        summaryHtml += `<li class="text-xs list-disc ml-4">${food.name} (${food.fiber}g)</li>`;
+                    });
+                    summaryHtml += '</ul>';
+                    plateSummaryEl.innerHTML = summaryHtml;
+                }
+            }
+
+            document.querySelectorAll('.food-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const fiber = parseFloat(button.dataset.fiber);
+                    const name = button.dataset.name;
+                    
+                    selectedFoods.push({ name, fiber });
+                    button.classList.add('selected');
+                    button.disabled = true;
+
+                    updateDashboard();
+                });
+            });
+
+            document.getElementById('reset-btn').addEventListener('click', () => {
+                selectedFoods = [];
+                document.querySelectorAll('.food-btn').forEach(button => {
+                    button.classList.remove('selected');
+                    button.disabled = false;
+                });
+                updateDashboard();
+            });
+
+            const goalBtns = document.querySelectorAll('.supplement-goal-btn');
+            const resultDivs = {
+                'regularity': document.getElementById('regularity-result'),
+                'gut-health': document.getElementById('gut-health-result'),
+                'satiety': document.getElementById('satiety-result')
             };
+            const placeholder = document.getElementById('results-placeholder');
 
-            const wrapLabel = (label) => {
-                const maxLength = 16;
-                if (label.length <= maxLength) return label;
-                const words = label.split(' ');
-                let lines = [];
-                let currentLine = '';
-                words.forEach(word => {
-                    if ((currentLine + word).length > maxLength) {
-                        lines.push(currentLine.trim());
-                        currentLine = '';
-                    }
-                    currentLine += word + ' ';
-                });
-                lines.push(currentLine.trim());
-                return lines;
-            };
+            goalBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetId = btn.dataset.target;
 
-            const fiberGapCtx = document.getElementById('fiberGapChart')?.getContext('2d');
-            if (fiberGapCtx) {
-                new Chart(fiberGapCtx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['平均攝取量', '尚需補充'],
-                        datasets: [{
-                            label: '每日纖維攝取量 (公克)',
-                            data: [15, 13],
-                            backgroundColor: ['#FF6B35', '#F7C59F'],
-                            borderColor: '#ffffff',
-                            borderWidth: 4,
-                            hoverOffset: 4
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        cutout: '70%',
-                        plugins: {
-                            legend: {
-                                position: 'bottom',
-                                labels: {
-                                    font: { size: 14, family: "'Noto Sans TC', sans-serif" }
-                                }
-                            },
-                            title: {
-                                display: false,
-                            },
-                            tooltip: {
-                                callbacks: {
-                                    title: tooltipTitleCallback
-                                }
-                            }
-                        }
+                    goalBtns.forEach(b => b.classList.remove('bg-[#FF9800]', 'text-white'));
+                    btn.classList.add('bg-[#FF9800]', 'text-white');
+
+                    placeholder.classList.add('hidden');
+                    Object.values(resultDivs).forEach(div => div.classList.add('hidden'));
+
+                    if (resultDivs[targetId]) {
+                        resultDivs[targetId].classList.remove('hidden');
                     }
                 });
-            }
+            });
 
-            const recommendationsCtx = document.getElementById('recommendationsChart')?.getContext('2d');
-            if (recommendationsCtx) {
-                const recommendationLabels = ['世界衛生組織 (WHO)', '英國營養科學諮詢委員會 (UK SACN)', '美國食品藥物管理局 (US FDA DV)', '平均實際攝取量'];
-                new Chart(recommendationsCtx, {
-                    type: 'bar',
-                    data: {
-                        labels: recommendationLabels.map(l => wrapLabel(l)),
-                        datasets: [{
-                            label: '每日公克數',
-                            data: [25, 30, 28, 15],
-                             backgroundColor: [
-                                '#00A0B0',
-                                '#00A0B0',
-                                '#00A0B0',
-                                '#FF6B35'
-                            ],
-                            borderColor: [
-                                '#007E8C',
-                                '#007E8C',
-                                '#007E8C',
-                                '#D95A2B'
-                            ],
-                            borderWidth: 2,
-                            borderRadius: 5
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        indexAxis: 'y',
-                        scales: {
-                            x: {
-                                beginAtZero: true,
-                                title: { display: true, text: '每日公克數', font: { size: 14, family: "'Noto Sans TC', sans-serif" } }
-                            },
-                             y: {
-                                ticks: { font: { family: "'Noto Sans TC', sans-serif" } }
-                            }
-                        },
-                        plugins: {
-                            legend: { display: false },
-                            title: {
-                                display: true,
-                                text: '每日纖維建議量 vs. 實際攝取量',
-                                font: { size: 18, weight: 'bold', family: "'Noto Sans TC', sans-serif" }
-                            },
-                            tooltip: {
-                                callbacks: {
-                                    title: tooltipTitleCallback
-                                }
-                            }
-                        }
-                    }
-                });
-            }
-            
-            const foodSourcesCtx = document.getElementById('foodSourcesChart')?.getContext('2d');
-            if(foodSourcesCtx) {
-                const foodData = [
-                    { food: '青豆 (1杯, 熟)', fiber: 9.0 },
-                    { food: '扁豆 (1/2杯, 熟)', fiber: 8.0 },
-                    { food: '黑豆 (1/2杯, 熟)', fiber: 7.5 },
-                    { food: '全麥義大利麵 (1杯, 熟)', fiber: 6.0 },
-                    { food: '蘋果 (中等大小, 帶皮)', fiber: 4.5 },
-                    { food: '杏仁 (30克)', fiber: 3.8 },
-                ].sort((a, b) => a.fiber - b.fiber);
-
-                const foodLabels = foodData.map(item => wrapLabel(item.food));
-                const foodFiber = foodData.map(item => item.fiber);
-
-                new Chart(foodSourcesCtx, {
-                    type: 'bar',
-                    data: {
-                        labels: foodLabels,
-                        datasets: [{
-                            label: '每份纖維含量 (克)',
-                            data: foodFiber,
-                            backgroundColor: '#00A0B0',
-                            borderColor: '#007E8C',
-                            borderWidth: 1,
-                            borderRadius: 4,
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        indexAxis: 'y',
-                        scales: {
-                            x: {
-                                beginAtZero: true,
-                                title: { display: true, text: '纖維公克數', font: { size: 14, weight: '500', family: "'Noto Sans TC', sans-serif" } }
-                            },
-                            y: {
-                                ticks: { font: { size: 12, family: "'Noto Sans TC', sans-serif" } }
-                            }
-                        },
-                        plugins: {
-                            legend: { display: false },
-                            title: {
-                                display: true,
-                                text: '常見食物的纖維含量',
-                                font: { size: 18, weight: 'bold', family: "'Noto Sans TC', sans-serif" }
-                            },
-                            tooltip: {
-                                callbacks: {
-                                    title: tooltipTitleCallback
-                                }
-                            }
-                        }
-                    }
-                });
-            }
+            updateDashboard(); 
         });
     </script>
 </body>
 </html>
-

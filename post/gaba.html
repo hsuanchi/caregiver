@@ -118,6 +118,15 @@
       .alert { padding: 20px 25px; border-radius: 15px; margin: 30px 0; position: relative; overflow: hidden; border-left: 5px solid; }
       .alert-tip { background: var(--primary-color-bg); color: var(--primary-color-text); border-color: var(--primary-color); }
       .alert-doctor { background: #fef2f2; color: #991b1b; border-color: #ef4444; }
+
+      .alert-doctor > strong::before, .alert-danger > strong::before {
+        content: '⚠️';
+        margin-right: 8px;
+      }
+      .alert-nutritionist > strong::before, .alert-tip > strong::before {
+        content: '💡';
+        margin-right: 8px;
+      }
       .alert strong { font-weight: 700; display: block; margin-bottom: 8px; }
       .related-title { font-size: 2em; font-weight: 700; color: #2d3748; text-align: center; margin: 60px 0 40px; border-top: 2px solid #e5e7eb; padding-top: 40px; }
       .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }

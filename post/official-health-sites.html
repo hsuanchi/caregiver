@@ -116,6 +116,15 @@
       .alert { padding: 1rem; margin-bottom: 1.5rem; border-radius: 8px; border: 1px solid; }
       .alert-tip { background-color: #e6f7ff; border-color: #91d5ff; color: #0050b3; }
 
+      .alert-doctor > strong::before, .alert-danger > strong::before {
+        content: '⚠️';
+        margin-right: 8px;
+      }
+      .alert-nutritionist > strong::before, .alert-tip > strong::before {
+        content: '💡';
+        margin-right: 8px;
+      }
+
       @media (max-width: 1024px) {
         .page-container {
             grid-template-columns: 1fr;

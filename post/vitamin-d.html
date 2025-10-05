@@ -345,11 +345,55 @@
         background: #22c55e;
       }
 
+      .alert-doctor > strong::before, .alert-danger > strong::before {
+        content: '⚠️';
+        margin-right: 8px;
+      }
+      .alert-nutritionist > strong::before, .alert-tip > strong::before {
+        content: '💡';
+        margin-right: 8px;
+      }
+
       .alert strong {
         font-weight: 700;
         display: block;
         margin-bottom: 8px;
       }
+
+      /* Key Takeaways Box */
+      .takeaways-box {
+        background: #fff7ed;
+        border: 2px solid #fed7aa;
+        border-radius: 20px;
+        padding: 30px;
+        margin-bottom: 40px;
+        box-shadow: 0 8px 25px rgba(251, 146, 60, 0.1);
+      }
+      .takeaways-box h3 {
+        font-size: 1.5em;
+        font-weight: 700;
+        color: #9a3412;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .takeaways-box ul {
+        list-style: none;
+        padding: 0;
+      }
+      .takeaways-box li {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 15px;
+        color: #374151;
+      }
+      .takeaways-box li::before {
+        content: '✅';
+        font-size: 1.2em;
+        color: #fb923c;
+        flex-shrink: 0;
+      }
+
 
       /* Tables */
       .data-table {
@@ -994,6 +1038,18 @@
 
         <!-- Article Body -->
         <article class="article-body">
+             <section id="takeaways">
+            <div class="takeaways-box">
+              <h3>本文重點速覽</h3>
+              <ul>
+                <li><strong>不只是維生素：</strong>維生素D更像是一種荷爾蒙，能調控全身超過200個基因，影響免疫、大腦與情緒。</li>
+                <li><strong>D3 效果更好：</strong>補充時應優先選擇 D3 形式，研究證實其提升體內濃度的效率遠高於植物來源的 D2。</li>
+                <li><strong>K2 是最佳拍檔：</strong>單獨補充高劑量D3可能增加血管鈣化風險。搭配維生素K2這位「鈣質交通警察」，才能確保鈣質被有效利用於骨骼。</li>
+                <li><strong>多數人都缺乏：</strong>由於現代生活方式日曬不足，超過八成的國人有缺乏問題，透過保健品補充是最穩定可靠的方式。</li>
+              </ul>
+            </div>
+          </section>
+
              <section id="basic-info">
             <h2>維生素 D 是什麼？身體的「陽光荷爾蒙」</h2>
             <p>當我們談到維生素 D（也就是俗稱的維他命 D），腦中浮現的第一個念頭往往是「補鈣」和「骨骼健康」。這個印象沒有錯，但它只揭開了維生素 D 神秘面紗的一角。事實上，科學界對維生素 D 的認知正在經歷一場革命。它不僅僅是一種維生素，<strong class="highlight-nutrient">更像是一種強大的類固醇前驅荷爾蒙 (steroid prohormone)</strong>，其影響力遍及全身，從我們的<strong class="highlight-nutrient">免疫防線、情緒起伏到大腦功能</strong>，無所不包。</p>       
@@ -1028,6 +1084,36 @@
 
           <section id="deficiency-signs">
             <h2>你缺乏維生素 D 嗎？8 大身體警訊</h2>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>風險類別</th>
+                  <th>說明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>生活習慣</strong></td>
+                  <td>很少曬太陽的室內工作者、過度防曬者。</td>
+                </tr>
+                <tr>
+                  <td><strong>年齡因素</strong></td>
+                  <td>年齡超過50歲，皮膚合成維生素D的效率下降。</td>
+                </tr>
+                <tr>
+                  <td><strong>飲食習慣</strong></td>
+                  <td>飲食不均衡，很少攝取魚類、蛋黃或強化乳製品。</td>
+                </tr>
+                <tr>
+                  <td><strong>生理狀況</strong></td>
+                  <td>體重過重 (BMI > 24)，脂肪細胞會鎖住維生素D。</td>
+                </tr>
+                <tr>
+                  <td><strong>體質因素</strong></td>
+                  <td>膚色較深者，皮膚中的黑色素會阻礙維生素D合成。</td>
+                </tr>
+              </tbody>
+            </table>
             <div class="info-cards">
               <div class="info-card">
                 
@@ -1149,34 +1235,24 @@
 
           <section id="product-selection">
             <h2>如何挑選維生素 D 保健品？</h2>
-            <table class="selection-table">
-              <tbody>
-                <tr>
-                  <td>
-                    <h4 class="info-card-title">型態 (Type) - 優先選擇 <strong class="highlight-nutrient">D3</strong></h4>
-                    <p class="info-card-desc">研究顯示 <strong class="highlight-nutrient">D3</strong> 在提升及維持體內濃度方面，效率顯著優於 <strong class="highlight-nutrient">D2</strong>。素食者可選擇由地衣萃取的植物性 <strong class="highlight-nutrient">D3</strong>，兼顧效率與生活方式。</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h4 class="info-card-title">劑量 (Dosage) - 建議 <strong class="highlight-nutrient">400-2,000 IU</strong></h4>
-                    <p class="info-card-desc">嬰兒每日 <strong class="highlight-nutrient">400 IU</strong>；成人 <strong class="highlight-nutrient">600-800 IU</strong>；年長者 <strong class="highlight-nutrient">800 IU</strong> 以上。可依據日曬、飲食與健康狀況，在醫師或營養師指導下調整。</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h4 class="info-card-title">劑型 (Form) - 錠劑、滴劑、噴劑各有優勢</h4>
-                    <p class="info-card-desc"><strong class="highlight-nutrient">錠劑</strong>方便；<strong class="highlight-nutrient">滴劑</strong>適合嬰幼兒或需精準調整劑量者；<strong class="highlight-nutrient">噴劑</strong>吸收快速。可依個人偏好與需求選擇。</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h4 class="info-card-title">品質 (Quality) - 尋找信譽品牌 / 第三方檢驗</h4>
-                    <p class="info-card-desc">選擇原料來源透明（如瑞士 <strong class="highlight-nutrient">DSM</strong>），並通過 <strong class="highlight-nutrient">SGS</strong> 等第三方檢驗的產品，更能確保品質與安全，避免重金屬或塑化劑污染。</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="info-cards" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+              <div class="info-card">
+                <h4 class="info-card-title">1. 型態 (Type)</h4>
+                <p class="info-card-desc">優先選擇 <strong class="highlight-nutrient">D3</strong>，其提升體內濃度的效率顯著優於 D2。素食者可選擇由地衣萃取的植物性 D3。</p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">2. 劑量 (Dosage)</h4>
+                <p class="info-card-desc">日常保健建議 <strong class="highlight-nutrient">400-800 IU</strong>。若有特殊需求或經檢測確認缺乏，可在醫師指導下使用更高劑量。</p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">3. 劑型 (Form)</h4>
+                <p class="info-card-desc"><strong class="highlight-nutrient">油劑滴劑</strong>或<strong class="highlight-nutrient">軟膠囊</strong>是較佳選擇，因為維生素D是脂溶性，與油脂搭配能提高吸收率。</p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">4. 品質 (Quality)</h4>
+                <p class="info-card-desc">選擇原料來源透明（如瑞士 <strong class="highlight-nutrient">DSM</strong>），並附有 <strong class="highlight-nutrient">SGS</strong> 等第三方重金屬檢驗報告的產品，更有保障。</p>
+              </div>
+            </div>
           </section>
 
           <section id="advanced-science">
@@ -1408,6 +1484,7 @@
           });
         });
       });
+
 
       // Initialize Components
       document.addEventListener("DOMContentLoaded", function () {
