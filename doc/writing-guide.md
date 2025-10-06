@@ -30,6 +30,80 @@
 
 ---
 
+## 問題解決導向敘事（PSMA 流程）
+
+為提升閱讀完成率與轉化率，建議在不犧牲「8個標準章節」完整性的前提下，優先採用「PSMA：Pain → Solution → Mechanism → Action」的敘事順序，將資訊陳列調整為「問題解決導向」。
+
+- **Pain（痛點）**：用讀者語言點名困擾與族群，建立共鳴。
+- **Solution（解方）**：給出此營養素/干預作為核心解方與關鍵益處。
+- **Mechanism（原理）**：挑重點講科學（用 1-2 個關鍵機制詞彙），讓說服更有力。
+- **Action（行動）**：提供清晰計畫（食物餐盤與補充品挑選）、用具體步驟和工具讓讀者照做。
+
+### 章節骨架（對應 HTML id）
+```html
+<section id="problem">
+  <h2>您有這些困擾嗎？[痛點集合]</h2>
+  <!-- 使用 .risk-group-cards 命中族群與症狀 -->
+</section>
+
+<section id="solution">
+  <h2>[營養素]：問題的終極解答</h2>
+  <!-- 使用 .info-cards 呈現 3-6 個核心效益 -->
+</section>
+
+<section id="mechanism">
+  <h2>[營養素]如何運作？關鍵機制</h2>
+  <!-- 聚焦 1-2 個最關鍵機制詞（例：黏度、發酵性）與差異點 -->
+</section>
+
+<section id="how-much">
+  <h2>我該攝取多少？[權威建議]</h2>
+  <!-- 使用 .data-table 呈現 RDA/UL 或權威建議 -->
+</section>
+
+<section id="action-plan-food">
+  <h2>實踐指南(一)：打造您的高[營養素]餐盤</h2>
+  <!-- 互動餐盤/可視化，提供逐步增量與替換策略 -->
+</section>
+
+<section id="action-plan-supplements">
+  <h2>實踐指南(二)：精準挑選[營養素]補充品</h2>
+  <!-- 使用 .comparison-table 梳理類型、機制、族群適配與選購要點 -->
+</section>
+
+<section id="safety">
+  <h2>安全注意事項</h2>
+  <!-- .alert-doctor：藥物交互作用、過量風險、特殊族群 -->
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>常見問題</h2>
+  <!-- 3-5 題，聚焦行動落地與使用細節 -->
+</section>
+```
+
+### 與「8個標準章節」的對應與整合
+- Pain → 對應「誰最需要補充？缺乏警訊與高風險族群」。
+- Solution → 對應「核心功效」。
+- Mechanism → 對應「基本資訊：定義/分類/機制與型態差異」。
+- Action → 對應「每日建議攝取量與最佳時間」「食物來源」「如何挑選補充品」。
+- 安全注意事項、FAQ、結尾模組維持不變。
+
+> 建議：側邊 TOC 依上述 id 排序；Hero 區副標題以痛點+效益一句話總結，帶出 PSMA 的「先痛點、再解方」。
+
+### 撰寫提示（可直接複製當作小檢核）
+```
+□ 開頭 3 句內命中痛點（族群+情境+症狀/目標）
+□ Solution 區使用 3-6 張 .info-card，語句以動詞起手、可量化
+□ Mechanism 僅選 1-2 個關鍵機制詞，並用對比凸顯差異（如：高黏度/低發酵）
+□ Action-Food 提供「逐步增量」與「聰明替換」路徑
+□ Action-Supplements 以「機制×族群」配對給出首選與備選
+□ 安全注意加入藥物交互與飲水/用量等落地提醒
+□ FAQ 聚焦落地問題（脹氣怎麼辦？與藥間隔多久？何時吃？）
+```
+
+---
+
 ## 文章結構 (由上至下) 
 
 每篇文章都應遵循以下標準結構，以確保內容的連貫性與完整性。
@@ -554,7 +628,6 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "營養百科",
-        "alternateName": "營養百科",
         "url": "https://life.maxlist.xyz/"
       }
       </script>

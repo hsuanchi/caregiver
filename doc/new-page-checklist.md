@@ -30,6 +30,8 @@
 
 ### 內容品質
 - [ ] 檢查文章結構完整性（8個標準章節）
+- [ ] 啟用「PSMA 流程」：痛點 → 解方 → 原理 → 行動
+- [ ] TOC 順序符合 `#problem` → `#solution` → `#mechanism` → `#how-much` → `#action-plan-food` → `#action-plan-supplements` → `#safety` → `#faq`
 - [ ] 確認使用正確的 CSS 類別
 - [ ] 檢查視覺化元素（圖表、卡片等）
 - [ ] 驗證所有內部連結正常
@@ -50,110 +52,12 @@
 
 ### 1. **建立基本 HTML 結構**
 
-使用以下模板作為新頁面的起點：
+為了確保所有頁面都使用最新的、統一的結構與樣式，請**不要**手動撰寫新的 HTML 檔案。
 
-```html
-<!DOCTYPE html>
-<html lang="zh-TW">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>頁面標題 | 營養百科</title>
-    <meta name="description" content="頁面描述（建議 150-160 字元）" />
-    <meta name="keywords" content="關鍵字1, 關鍵字2, 關鍵字3" />
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
-    <link rel="shortcut icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
-    <!-- Open Graph for Social Media -->
-    <meta property="og:site_name" content="營養百科" />
-
-    <!-- JSON-LD for Structured Data (SEO) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://life.maxlist.xyz/post/your-new-page.html"
-      },
-      "headline": "文章主標題",
-      "description": "文章的詳細描述",
-      "image": "https://life.maxlist.xyz/assets/images/your-og-image.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "Caregiver 營養百科",
-        "url": "https://life.maxlist.xyz/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Caregiver 營養百科",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
-        }
-      },
-      "datePublished": "YYYY-MM-DD",
-      "dateModified": "YYYY-MM-DD"
-    }
-    </script>
-
-    <!-- JSON-LD for WebSite (Site Name in Search Results) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "營養百科",
-      "alternateName": "營養百科",
-      "url": "https://life.maxlist.xyz/"
-    }
-    </script>
-
-    <!-- JSON-LD for Breadcrumb -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "營養百科",
-        "item": "https://life.maxlist.xyz/"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "目前頁面的標題"
-      }]
-    }
-    </script>
-
-    <style>
-      /* 頁面樣式 */
-    </style>
-  </head>
-  <body>
-    <!-- Header Component Container -->
-    <div id="header-component"></div>
-
-    <!-- 主要內容區域 -->
-    <main>
-      <!-- 您的頁面內容 -->
-    </main>
-
-    <!-- Footer Component Container -->
-    <div id="footer-component"></div>
-
-    <!-- Load Components -->
-    <script src="../assets/js/deus-analytics-component.js"></script>
-    <script src="../assets/js/deus-header-component.js"></script>
-    <script src="../assets/js/deus-footer-component.js"></script>
-
-    <script>
-      // 初始化組件
-    </script>
-  </body>
-</html>
-```
+**標準作法：**
+1.  複製專案中的官方空白範本檔案：`/post/00empty.html`。
+2.  將複製的檔案重新命名為您的新頁面檔名（例如：`collagen.html`）。
+3.  基於此範本，開始修改標題、Meta 資訊與文章內容。
 
 ### 2. **加入 GA4 分析追蹤**
 
@@ -235,6 +139,9 @@ if (footerContainer && window.DeusFooterComponent) {
 #### 文章結構驗證
 - [ ] **標題策略**：確認標題符合 V.I.P. + B.R.A.V.E. 框架
 - [ ] **章節完整性**：檢查是否包含所有8個標準章節
+- [ ] **敘事順序**：採用 PSMA（痛點→解方→原理→行動）
+- [ ] **開場痛點**：Hero/首段明確點名 3-5 個典型困擾或族群
+- [ ] **行動計畫**：包含食物餐盤路徑與補充品選購要點
 - [ ] **內容深度**：確保每個章節內容充實且專業
 
 #### CSS 類別使用檢查
@@ -249,6 +156,15 @@ if (footerContainer && window.DeusFooterComponent) {
 - [ ] 使用比較卡片展示不同產品類型
 - [ ] 包含互動式 FAQ 設計
 - [ ] 檢查所有圖表在手機上的顯示效果
+
+#### PSMA 快速核對（建議）
+```
+□ Pain：有無 `.risk-group-cards` 命中族群/症狀？
+□ Solution：.info-cards 是否用動詞與可量化語句？
+□ Mechanism：是否聚焦 1-2 個關鍵機制詞並做對比？
+□ Action-Food：是否提供逐步增量/聰明替換？
+□ Action-Supplements：是否以「機制×族群」給出首選與備選？
+```
 
 > **詳細寫作指南和範例請參考** [`doc/writing-guide.md`](writing-guide.md)
 
@@ -285,6 +201,28 @@ if (footerContainer && window.DeusFooterComponent) {
 - [ ] 平板版（768px-1024px）顯示正常
 - [ ] 手機版（320px-767px）顯示正常
 - [ ] 所有文字在手機上可讀性良好
+- [ ] **（新增）寬表格/複雜組件處理**：
+  - 對於多欄位的寬表格（如 `.comparison-table`）或複雜圖表，必須採用特定策略以防破壞手機版面。
+  - **建議方案**：將該組件用一個 `div` 包裹，並添加 CSS 使其可橫向滑動。
+  - **範例程式碼**：
+    ```html
+    <!-- HTML 結構 -->
+    <div class="responsive-table-wrapper">
+      <div class="comparison-table-container">
+        <!-- ...您的寬表格 ... -->
+      </div>
+    </div>
+    ```
+    ```css
+    /* CSS 樣式 (加入 @media (max-width: 768px) 中) */
+    .responsive-table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; /* 增強在 iOS 上的滑動體驗 */
+      border: 1px solid #e2e8f0;
+      border-radius: 15px;
+      padding: 10px;
+    }
+    ```
 
 ### 11. **最終驗證**
 
