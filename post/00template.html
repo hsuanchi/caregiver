@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>【頁面標題】 | 營養百科</title>
-    <meta name="description" content="【請填寫頁面描述，建議 150-160 字元】" />
+    <!--
+      設計說明：
+      - <title> 與 <meta name="description"> 採 V.I.P. + B.R.A.V.E. 混合框架，提升點擊率與意圖匹配。
+      - 站名結尾固定 "| 營養百科" 維持品牌一致性。
+    -->
+    <title>【頁面標題（含價值/好奇/問題元素）】 | 營養百科</title>
+    <meta name="description" content="【請填寫 150-160 字的描述，濃縮 V.I.P.+B.R.A.V.E. 要素】" />
     <meta name="keywords" content="【關鍵字1】, 【關鍵字2】, 【關鍵字3】" />
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
     <link rel="shortcut icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
-    <!-- Open Graph for Social Media -->
+    <!-- Open Graph for Social Media（維持品牌名稱，避免繼承主網域） -->
     <meta property="og:site_name" content="營養百科" />
 
-    <!-- JSON-LD for WebSite (Site Name in Search Results) -->
+    <!--
+      JSON-LD for WebSite（關鍵）：
+      - 明確設定網站名稱為「營養百科」，以確保 Google 顯示正確的 Site Name。
+      - 僅一個 WebSite 結構即可；其餘頁面資料在 Article 中補充。
+    -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -24,7 +33,12 @@
     }
     </script>
 
-    <!-- JSON-LD for Structured Data -->
+    <!--
+      JSON-LD for Article：
+      - headline、description 與 <title>/<meta description> 對齊以維持一致。
+      - datePublished 與 dateModified 每次更新務必同步改寫。
+      - @id 請填寫完整絕對網址。
+    -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -54,7 +68,11 @@
     }
     </script>
 
-    <!-- JSON-LD for Breadcrumb -->
+    <!--
+      JSON-LD for Breadcrumb：
+      - 有助於搜尋引擎理解網站層級與品牌主體。
+      - 第二層 name 需與頁面 <h1> 完全相同（Breadcrumb 規則）。
+    -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -96,6 +114,7 @@
       .sidebar { position: sticky; top: 100px; height: fit-content; max-height: calc(100vh - 120px); overflow-y: auto; }
       .toc { background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
       .toc-title { font-size: 1.2em; font-weight: 700; color: #2d3748; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+      .toc-title a { color: inherit; text-decoration: none; }
       .toc-list { list-style: none; }
       .toc-list li { margin-bottom: 8px; }
       .toc-list a { color: #4a5568; text-decoration: none; font-size: 0.95em; display: block; padding: 8px 12px; transition: all 0.3s ease; position: relative; border-radius: 8px; border-left: 3px solid transparent; }
@@ -132,6 +151,8 @@
       .data-table tbody tr { border-bottom: 1px solid #e5e7eb; transition: background 0.3s ease; }
       .data-table tbody tr:hover { background: #f9fafb; }
       .data-table tbody tr:last-child { border-bottom: none; }
+      /* 寬表格在手機的橫向滑動容器：避免破版，必加於複雜表格外層 */
+      .responsive-table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid #e2e8f0; border-radius: 15px; padding: 10px; margin: 20px 0; }
       .info-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 40px 0; }
       .info-card { background: white; border-radius: 15px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; position: relative; overflow: hidden; text-decoration: none; color: inherit; display: block; }
       .info-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); }
@@ -176,13 +197,29 @@
     <div class="article-container">
       <aside class="sidebar" id="sidebar">
         <div class="toc">
-          <h3 class="toc-title"><span>本篇指南</span></h3>
+          <h3 class="toc-title"><a href="#page-title"><span>目錄</span></a></h3>
           <ul class="toc-list">
-            <li><a href="#section-1" class="toc-link">【第一章節】</a></li>
-            <li><a href="#section-2" class="toc-link">【第二章節】</a></li>
-            <li><a href="#section-3" class="toc-link">【第三章節】</a></li>
-            <li><a href="#section-4" class="toc-link">【第四章節】</a></li>
-            <li><a href="#section-5" class="toc-link">【第五章節】</a></li>
+            <!-- TOC 設計：順序遵循 PSMA + 8 章節，利於讀者導覽與 SEO 解析 -->
+            <li><a href="#problem" class="toc-link">您有這些困擾嗎？（Pain）</a></li>
+            <li><a href="#solution" class="toc-link">解方與核心效益（Solution）</a></li>
+            <li><a href="#mechanism" class="toc-link">關鍵原理與型態差異（Mechanism）</a></li>
+            <li><a href="#how-much" class="toc-link">每日建議量與最佳時間</a></li>
+            <li><a href="#action-plan-food" class="toc-link">實踐指南（一）餐盤路徑</a></li>
+            <li><a href="#action-plan-supplements" class="toc-link">實踐指南（二）補充品挑選</a></li>
+            <li><a href="#myth-busting" class="toc-link sub-item">迷思破解</a></li>
+            <li><a href="#comparison" class="toc-link sub-item">A vs. B 比較</a></li>
+            <li><a href="#forms-bioavailability" class="toc-link sub-item">型態與生物利用率</a></li>
+            <li><a href="#absorption" class="toc-link sub-item">吸收促進/抑制因子</a></li>
+            <li><a href="#timing-stacking" class="toc-link sub-item">時間與搭配（Stacking）</a></li>
+            <li><a href="#populations" class="toc-link sub-item">族群分眾指南</a></li>
+            <li><a href="#quality-regulatory" class="toc-link sub-item">品質與法規認證</a></li>
+            <li><a href="#evidence-summary" class="toc-link sub-item">研究證據摘要</a></li>
+            <li><a href="#dosage-titration" class="toc-link sub-item">劑量調整與逐步增量</a></li>
+            <li><a href="#markers-monitoring" class="toc-link sub-item">血液指標與自我監測</a></li>
+            <li><a href="#stability-storage" class="toc-link sub-item">保存與穩定性</a></li>
+            <li><a href="#cost-value" class="toc-link sub-item">成本效益與選購策略</a></li>
+            <li><a href="#safety" class="toc-link">安全注意事項</a></li>
+            <li><a href="#faq" class="toc-link">常見問題</a></li>
           </ul>
         </div>
       </aside>
@@ -193,75 +230,275 @@
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a>
               <span class="separator">/</span>
+              <!-- 麵包屑最後一節需與 <h1> 完全相同，維持導覽與 SEO 一致性 -->
               <span>【文章主標題】</span>
             </nav>
             <span class="article-category">【營養素分類】</span>
-            <h1 class="article-title">【文章主標題】</h1>
+            <h1 class="article-title" id="page-title">【文章主標題】</h1>
+            <!-- 副標題建議：用 1 句帶出痛點 + 核心效益，承接 PSMA 的 Pain→Solution -->
             <p class="article-subtitle">【請填寫引人入勝的副標題，簡述本文核心價值】</p>
             <div class="article-meta">
-              <span>✍️ 營養百科團隊編寫</span>
-              <span>📅 【YYYY-MM-DD】更新</span>
-              <span>⏱️ 閱讀時間：【X】分鐘</span>
+              <!-- 依指南原則：避免裝飾性圖示，保留純文字以維持專業調性 -->
+              <span>撰寫單位：營養百科團隊</span>
+              <span>最後更新：【YYYY-MM-DD】</span>
+              <span>預估閱讀時間：【X】分鐘</span>
             </div>
           </div>
         </header>
 
         <article class="article-body">
-          <section id="section-1">
-            <h2>【第一章節標題】</h2>
-            <p>【請填寫此章節的段落內容】</p>
-            
-            <div class="alert alert-tip">
-              <strong>💡 提示框標題</strong>
-              <p>【提示框內容】</p>
-            </div>
-          </section>
+          <!--
+            章節骨架：PSMA + 8 標準章節
+            - 每個 <h2> 後皆加入引言 <p>，改善承轉與閱讀流暢度。
+            - 關鍵章節放置對應的元件（alert/info-cards/data-table 等），提升掃讀效率。
+          -->
 
-          <section id="section-2">
-            <h2>【第二章節標題】</h2>
-            <p>【請填寫此章節的段落內容】</p>
+          <section id="problem">
+            <h2>您有這些困擾嗎？[痛點集合]</h2>
+            <p>【引言：以讀者語言點名 3-5 個典型族群與情境（如便秘、疲累、睡眠差），建立共鳴。】</p>
             <div class="info-cards">
+              <!-- 以卡片快速呈現常見痛點（可量化/動詞起手） -->
               <div class="info-card">
-                <h4 class="info-card-title">【卡片標題一】</h4>
-                <p class="info-card-desc">【卡片描述內容】</p>
+                <h4 class="info-card-title">【痛點一】</h4>
+                <p class="info-card-desc">【簡述情境與影響】</p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">【卡片標題二】</h4>
-                <p class="info-card-desc">【卡片描述內容】</p>
+                <h4 class="info-card-title">【痛點二】</h4>
+                <p class="info-card-desc">【簡述情境與影響】</p>
               </div>
             </div>
           </section>
 
-          <section id="section-3">
-            <h2>【第三章節標題】</h2>
-            <p>【請填寫此章節的段落內容】</p>
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>【欄位一】</th>
-                  <th>【欄位二】</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>【資料A1】</td>
-                  <td>【資料A2】</td>
-                </tr>
-                <tr>
-                  <td>【資料B1】</td>
-                  <td>【資料B2】</td>
-                </tr>
-              </tbody>
-            </table>
+          <section id="solution">
+            <h2>[營養素]：問題的終極解答</h2>
+            <p>【引言：用 1-2 句描繪本營養素能帶來的核心價值，承接 Pain。】</p>
+            <div class="info-cards">
+              <!-- 3-6 個核心效益，動詞起手、可量化表述，有助掃讀與轉化 -->
+              <div class="info-card">
+                <h4 class="info-card-title">【核心效益一】</h4>
+                <p class="info-card-desc">【機制關鍵詞 + 量化效益】</p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">【核心效益二】</h4>
+                <p class="info-card-desc">【機制關鍵詞 + 量化效益】</p>
+              </div>
+            </div>
           </section>
 
-          <section id="section-4">
-            <h2>【第四章節標題】</h2>
-            <p>【請填寫此章節的段落內容】</p>
+          <section id="mechanism">
+            <h2>[營養素]如何運作？關鍵機制</h2>
+            <p>【引言：僅挑 1-2 個最關鍵的機制詞，避免資訊過載，聚焦差異點。】</p>
+            <div class="alert alert-tip">
+              <strong>重點提示</strong>
+              <p>【用比喻快速說清複雜機制（例：像「火星塞」、「能量轉換器」）】</p>
+            </div>
+          </section>
+
+          <section id="how-much">
+            <h2>我該攝取多少？[權威建議]</h2>
+            <p>【引言：說明 RDA/UL 的來源與適用族群，並提醒個別差異。】</p>
+            <div class="responsive-table-wrapper">
+              <!-- 寬表格請置於 wrapper 內，避免手機破版（可橫向滑動） -->
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>年齡/族群</th>
+                    <th>建議攝取量 (RDA)</th>
+                    <th>上限攝取量 (UL)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>【成人】</td>
+                    <td>【1000 mg】</td>
+                    <td>【2000 mg】</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="action-plan-food">
+            <h2>實踐指南(一)：打造您的高[營養素]餐盤</h2>
+            <p>【引言：提供「逐步增量」與「聰明替換」策略，強調飲食優先。】</p>
+            <div class="alert alert-nutritionist">
+              <strong>營養師提醒</strong>
+              <p>【烹調/吸收小撇步，如與脂溶性/水溶性特性相關的搭配】</p>
+            </div>
+          </section>
+
+          <section id="action-plan-supplements">
+            <h2>實踐指南(二)：精準挑選[營養素]補充品</h2>
+            <p>【引言：以「機制×族群」配對，給出首選與備選，避免過度一般論。】</p>
+            <div class="responsive-table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>類型/來源</th>
+                    <th>優點</th>
+                    <th>缺點</th>
+                    <th>適合族群</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>【型態A】</td>
+                    <td>【優點 A】</td>
+                    <td>【缺點 A】</td>
+                    <td>【族群 A】</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="myth-busting">
+            <h2>破解迷思：多醣體 ≠ 有效的 β-葡聚醣</h2>
+            <p>【引言：主動釐清市場常見話術與資訊落差，建立專業權威與信任。】</p>
+            <div class="alert alert-tip">
+              <strong>為什麼要放在這裡？</strong>
+              <p>【讀者常在選購階段產生誤解；於挑選指南附近放置，可即時糾偏】</p>
+            </div>
+          </section>
+
+          <section id="comparison">
+            <h2>β-葡聚醣 vs. 益生菌：免疫戰隊該如何部署？</h2>
+            <p>【引言：滿足「A vs. B」搜尋意圖，避免讀者跳出去二次搜尋。】</p>
+            <div class="responsive-table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>比較面向</th>
+                    <th>β-葡聚醣</th>
+                    <th>益生菌</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>【機制】</td>
+                    <td>【機制說明】</td>
+                    <td>【機制說明】</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!--
+            以下為「可選擇加入」的延伸章節庫，供不同營養素情境取用。
+            每節皆提供撰寫意圖與問答導向，便於 AI 擴寫或重構內容。
+          -->
+
+          <section id="forms-bioavailability">
+            <h2>型態與生物利用率：哪一種更適合你？</h2>
+            <p>【用途：整理不同劑型/化學型態（例：D2 vs D3、TG vs rTG、游離型 vs 酯化型）之差異與實務影響。Q&A：何種情境選擇哪一型態、是否需要轉換或搭配。】</p>
+            <div class="responsive-table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>型態</th>
+                    <th>生物利用率</th>
+                    <th>優缺點</th>
+                    <th>適用情境/族群</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>【型態A】</td>
+                    <td>【中/高/低】</td>
+                    <td>【重點3-5字】</td>
+                    <td>【例：素食者、腸胃敏感等】</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="absorption">
+            <h2>吸收促進與抑制因子</h2>
+            <p>【用途：列出會提升/降低吸收的食物/營養素/藥物。Q&A：與哪些一起吃更好？哪些要錯開？】</p>
+            <div class="alert alert-tip">
+              <strong>撰寫指引</strong>
+              <p>【以清單或對照方式，提供「應搭配」與「應避開」的簡明規則；必要時註記時間間隔。】</p>
+            </div>
+          </section>
+
+          <section id="timing-stacking">
+            <h2>最佳時間與搭配方案（Stacking）</h2>
+            <p>【用途：整合「何時吃」與「與哪些一起吃」的計畫化建議。Q&A：早/晚/運動前後是否不同？循環使用或週期化策略。】</p>
+          </section>
+
+          <section id="populations">
+            <h2>族群分眾指南：不同人生階段與目標</h2>
+            <p>【用途：依情境分組（孕期/素食/銀髮/運動員/學生/高壓族等）提供差異化建議。Q&A：每組的劑量/型態/時機是否需調整。】</p>
+            <div class="responsive-table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>族群</th>
+                    <th>重點需求</th>
+                    <th>建議型態/時機</th>
+                    <th>注意事項</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>【孕期】</td>
+                    <td>【重點】</td>
+                    <td>【建議】</td>
+                    <td>【注意】</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="quality-regulatory">
+            <h2>品質、標章與法規認證</h2>
+            <p>【用途：解讀第三方認證（例：USP、NSF、Informed Choice 等）與成分標示，避免消費者被術語誤導。Q&A：哪些標章值得優先？沒有標章怎麼判斷。】</p>
+          </section>
+
+          <section id="evidence-summary">
+            <h2>研究證據摘要：我們目前知道什麼？</h2>
+            <p>【用途：以系統化方式彙整人類臨床/大型觀察/機制研究之證據強度與限制。Q&A：對哪些族群/終點最有幫助、爭議點在哪。】</p>
+            <div class="alert alert-tip">
+              <strong>撰寫指引</strong>
+              <p>【避免堆砌篇名；聚焦結論可操作性與限制，並標示證據等級（高/中/低）。】</p>
+            </div>
+          </section>
+
+          <section id="dosage-titration">
+            <h2>劑量調整與逐步增量（Titration）</h2>
+            <p>【用途：提供由低到高的安全遞增策略，降低副作用風險。Q&A：何時提高/降低劑量、與症狀/指標如何對應。】</p>
+          </section>
+
+          <section id="markers-monitoring">
+            <h2>血液指標與自我監測</h2>
+            <p>【用途：列出與本營養素相關的臨床指標/居家工具，與追蹤頻率。Q&A：何種數值範圍代表需要調整，何時諮詢醫師。】</p>
+          </section>
+
+          <section id="stability-storage">
+            <h2>保存、穩定性與有效期限</h2>
+            <p>【用途：說明光/熱/氧對成分的影響、保存建議與開封後期限。Q&A：旅行/高溫環境下如何處理。】</p>
+          </section>
+
+          <section id="cost-value">
+            <h2>成本效益與選購策略</h2>
+            <p>【用途：以每有效劑量成本（cost-per-effective-dose）比較不同型態/品牌；避免單看標價。Q&A：如何在預算內選到足夠品質。】</p>
+          </section>
+
+          <section id="safety">
+            <h2>安全注意事項</h2>
+            <p>【引言：列出藥物交互、過量風險、特殊族群提醒；避免過度恐嚇。】</p>
+            <div class="alert alert-doctor">
+              <strong>醫師警告</strong>
+              <p>【與特定藥物之間的間隔/禁忌、懷孕授乳族群注意等】</p>
+            </div>
           </section>
 
           <section id="faq" class="faq-section">
             <h2>常見問題</h2>
+            <!-- FAQ 設計：聚焦落地問題（何時吃、與藥間隔、脹氣怎麼辦等），提升可操作性 -->
             <div class="faq-item">
               <div class="faq-question">【問題一】</div>
               <div class="faq-answer">
@@ -299,6 +536,11 @@
 
     <div id="footer-component"></div>
 
+    <!--
+      注意路徑：
+      - 本檔位於 /post/ 下，資源路徑需使用 ../assets/...。
+      - 若位於更深層目錄，請依《new-page-checklist》之「路徑注意事項」調整層級。
+    -->
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
@@ -313,7 +555,7 @@
       }
       window.addEventListener("scroll", updateProgressBar);
 
-      // TOC Highlighting
+      // TOC Highlighting：依目前捲動位置套用 .active，協助定位章節
       const sections = document.querySelectorAll("section[id]");
       const navLinks = document.querySelectorAll(".toc-link");
       function highlightTOC() {
@@ -336,7 +578,7 @@
         });
       });
 
-      // Component Initialization
+      // Component Initialization：初始化 GA4、Header、Footer（正式環境建議關閉 debug）
       document.addEventListener("DOMContentLoaded", function () {
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
