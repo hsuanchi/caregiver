@@ -191,4 +191,11 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://life.maxlist.xyz/post/anthocyanins.html</loc>
+    <lastmod>2025-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
