@@ -21,7 +21,7 @@
         logoUrl: "/index.html",
         showMobileMenu: false,
         navLinks: [
-          { text: "營養素", href: "/post/archive.html" },
+          { text: "文章列表", href: "/post/archive.html" },
           { text: "互動式資料庫", href: "/post/tools/nutrient-dashboard.html" }
         ],
         actionButtons: {

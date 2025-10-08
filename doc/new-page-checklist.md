@@ -2,7 +2,7 @@
 
 當您要為網站新增頁面時，請按照以下步驟確保頁面完整且符合網站標準。
 
-> **文章寫作指南請參考** [`doc/writing-guide.md`](writing-guide.md) - 專注於內容結構、寫作風格、視覺化設計等內容層面
+> **文章寫作指引請參考** [`doc/writing-guide.md`](writing-guide.md) - 專注於內容結構、寫作風格、視覺化設計等內容層面
 
 ## 快速檢查清單
 
@@ -41,7 +41,7 @@
  - [ ] 提示框文字分段優化（如「營養師的選購箴言」拆分短段）
  - [ ] 每個 `<h2>` 後均有引言段落 `<p>` 鋪陳背景
 
-> **詳細寫作指南請參考** [`doc/writing-guide.md`](writing-guide.md)
+> **詳細寫作指引請參考** [`doc/writing-guide.md`](writing-guide.md)
 
 ### 網站整合
 - [ ] **更新文章彙整頁面**
@@ -52,7 +52,7 @@
 
 ---
 
-## 詳細步驟指南
+## 詳細步驟指引
 
 ### 1. **建立基本 HTML 結構**
 
@@ -172,7 +172,7 @@ if (footerContainer && window.DeusFooterComponent) {
 □ Action-Supplements：是否以「機制×族群」給出首選與備選？
 ```
 
-> **詳細寫作指南和範例請參考** [`doc/writing-guide.md`](writing-guide.md)
+> **詳細寫作指引和範例請參考** [`doc/writing-guide.md`](writing-guide.md)
 
 ### 9. **SEO 優化檢查**
 

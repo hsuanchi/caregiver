@@ -88,7 +88,7 @@
 ### 5) Action-Food — 打造您的高[營養素]餐盤
 ```html
 <section id="action-plan-food">
-  <h2>實踐指南(一)：打造您的高[營養素]餐盤</h2>
+  <h2>實踐指引(一)：打造您的高[營養素]餐盤</h2>
   <!-- 互動餐盤/清單/替換策略；提供逐步增量與聰明替換 -->
 </section>
 ```
@@ -96,7 +96,7 @@
 ### 6) Action-Supplements — 精準挑選補充品
 ```html
 <section id="action-plan-supplements">
-  <h2>實踐指南(二)：精準挑選[營養素]補充品</h2>
+  <h2>實踐指引(二)：精準挑選[營養素]補充品</h2>
   <div class="comparison-table-container">
     <table class="comparison-table">
       <thead>
