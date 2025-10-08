@@ -167,4 +167,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     searchInput.addEventListener('input', sortAndFilterArticles);
     sortSelect.addEventListener('change', sortAndFilterArticles);
+
+    // --- Initialize Deus Components ---
+    if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
+    if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
+    if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
 });

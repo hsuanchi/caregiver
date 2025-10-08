@@ -115,11 +115,21 @@
 
     <div id="footer-component"></div>
 
+    <script src="../../assets/js/deus-analytics-component.js"></script>
     <script src="../../assets/js/deus-header-component.js"></script>
     <script src="../../assets/js/deus-footer-component.js"></script>
     
     <!-- Refactored Scripts -->
-    <script src="../../assets/js/articles-data.js" defer></script>
-    <script src="../../assets/js/dashboard-logic.js" defer></script>
+    <script src="../../assets/js/articles-data.js"></script>
+    <script src="../../assets/js/dashboard-logic.js"></script>
+
+    <!-- Component Initializer -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
+        if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
+        if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+      });
+    </script>
 </body>
 </html>
