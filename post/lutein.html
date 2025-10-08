@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>葉黃素 - 3C世代的內建護眼藍光濾鏡 | 營養百科</title>
-    <meta name="description" content="葉黃素是過濾藍光、保護黃斑部的關鍵營養素。本篇將解析7大功效，比較游離型與酯化型的吸收差異，並說明黃金比例5:1的科學根據，助您為3C世代的雙眼挑選最適合的產品。" />
-    <meta name="keywords" content="葉黃素, 護眼, 黃斑部病變, 藍光, 玉米黃質, 眼部健康, 葉黃素功效, 葉黃素食物, 視力保護, 抗氧化" />
-
+    <title>葉黃素 - 3C世代的內建護眼藍光濾鏡：一篇看懂7大功效、黃金比例與副作用 | 營養百科</title>
+    <meta name="description" content="眼睛乾澀、視力模糊？葉黃素是過濾藍光、保護黃斑部的關鍵。本篇將用一篇文的篇幅，完整解析葉黃素的7大功效，比較游離型與酯化型的吸收差異，並破解黃金比例5:1的迷思，助您為3C世代的雙眼挑選最適合的產品。" />
+    <meta name="keywords" content="葉黃素, 護眼, 黃斑部病變, 藍光, 玉米黃質, 葉黃素功效, 葉黃素食物, 游離型葉黃素, 花青素, 大腦健康" />
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
     <link rel="shortcut icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
     <!-- Open Graph for Social Media -->
     <meta property="og:site_name" content="營養百科" />
 
-    <!-- JSON-LD for WebSite (Site Name in Search Results) -->
+    <!-- JSON-LD for WebSite -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "營養百科",
-      "alternateName": "營養百科",
       "url": "https://life.maxlist.xyz/"
     }
     </script>
 
-    <!-- JSON-LD for Structured Data -->
+    <!-- JSON-LD for Article -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -33,8 +32,8 @@
         "@type": "WebPage",
         "@id": "https://life.maxlist.xyz/post/lutein.html"
       },
-      "headline": "葉黃素 - 3C世代的內建護眼藍光濾鏡 | 營養百科",
-      "description": "游離型跟酯化型葉黃素哪個好？營養師教你搞懂黃金比例5:1的祕密，並從7大功效與食物排行中，為3C世代的眼睛疲勞、黃斑部問題找到最佳解方。",
+      "headline": "葉黃素 - 3C世代的內建護眼藍光濾鏡：一篇看懂7大功效、黃金比例與副作用 | 營養百科",
+      "description": "眼睛乾澀、視力模糊？葉黃素是過濾藍光、保護黃斑部的關鍵。本篇將用一篇文的篇幅，完整解析葉黃素的7大功效，比較游離型與酯化型的吸收差異，並破解黃金比例5:1的迷思，助您為3C世代的雙眼挑選最適合的產品。",
       "image": "https://life.maxlist.xyz/assets/images/lutein-og.jpg",
       "author": {
         "@type": "Organization",
@@ -50,7 +49,7 @@
         }
       },
       "datePublished": "2024-08-27",
-      "dateModified": "2025-08-27"
+      "dateModified": "2025-10-08"
     }
     </script>
 
@@ -73,742 +72,124 @@
     </script>
 
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
-        line-height: 1.8;
-        color: #2d3748;
-        background: #faf8f5;
-      }
-
-      /* Progress Bar */
-      .progress-bar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 3px;
-        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
-        z-index: 1001;
-        transition: width 0.3s ease;
-      }
-
-      /* Breadcrumb Navigation */
-      .breadcrumb {
-        margin-bottom: 20px;
-        font-size: 0.9em;
-        color: #718096;
-      }
-
-      .breadcrumb a {
-        color: #718096;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .breadcrumb a:hover {
-        color: #ff6b35;
-      }
-
-      .breadcrumb .separator {
-        margin: 0 8px;
-        color: #a0aec0;
-      }
-
-      /* Article Layout */
-      .article-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 100px 20px 60px;
-        display: grid;
-        grid-template-columns: 280px 1fr;
-        gap: 60px;
-        position: relative;
-      }
-
-      /* Sidebar Table of Contents */
-      .sidebar {
-        position: sticky;
-        top: 100px;
-        height: fit-content;
-        max-height: calc(100vh - 120px);
-        overflow-y: auto;
-      }
-
-      .toc {
-        background: white;
-        border-radius: 20px;
-        padding: 30px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      }
-
-      .toc-title {
-        font-size: 1.2em;
-        font-weight: 700;
-        color: #2d3748;
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .toc-list {
-        list-style: none;
-      }
-
-      .toc-list li {
-        margin-bottom: 8px;
-      }
-
-      .toc-list a {
-        color: #4a5568;
-        text-decoration: none;
-        font-size: 0.95em;
-        display: block;
-        padding: 8px 12px;
-        transition: all 0.3s ease;
-        position: relative;
-        border-radius: 8px;
-        border-left: 3px solid transparent;
-      }
-
-      .toc-list a.active {
-        color: #ff6b35;
-        background: rgba(255, 107, 53, 0.1);
-        border-left-color: #ff6b35;
-        font-weight: 600;
-      }
-
-      .toc-list a:hover {
-        color: #ff6b35;
-        background: rgba(255, 107, 53, 0.08);
-        border-left-color: #ff8f65;
-        transform: translateX(2px);
-      }
-
-      /* 第一階層樣式 */
-      .toc-list a:not(.sub-item) {
-        font-weight: 600;
-        background: rgba(255, 107, 53, 0.05);
-        margin-bottom: 4px;
-      }
-
-      /* 第二階層樣式 */
-      .toc-list a.sub-item {
-        margin-left: 16px;
-        font-size: 0.9em;
-        color: #718096;
-        background: rgba(113, 128, 150, 0.03);
-        border-left-color: #e2e8f0;
-        position: relative;
-      }
-
-      /* 第二階層前的連線效果 */
-      .toc-list a.sub-item::before {
-        content: "";
-        position: absolute;
-        left: -12px;
-        top: 50%;
-        width: 8px;
-        height: 1px;
-        background: #d1d5db;
-        transform: translateY(-50%);
-      }
-
-      .toc-list a.active.sub-item {
-        color: #ff6b35;
-        background: rgba(255, 107, 53, 0.08);
-        border-left-color: #ff8f65;
-      }
-
-      .toc-list a.active.sub-item::before {
-        background: #ff8f65;
-      }
-
-      /* Main Content Area */
-      .article-content {
-        background: white;
-        border-radius: 20px;
-        padding: 50px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      }
-
-      /* Article Header */
-      .article-header {
-        margin-bottom: 60px;
-        position: relative;
-      }
-
-      .article-hero {
-        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-        border-radius: 20px;
-        padding: 60px;
-        margin-bottom: 40px;
-        position: relative;
-        overflow: hidden;
-      }
-      
-      .article-category {
-        display: inline-block;
-        background: white;
-        color: #ff6b35;
-        padding: 8px 20px;
-        border-radius: 20px;
-        font-size: 0.9em;
-        font-weight: 600;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .article-title {
-        font-size: 2.5em;
-        font-weight: 800;
-        color: #2d3748;
-        line-height: 1.3;
-        margin-bottom: 20px;
-        max-width: 800px;
-      }
-
-      .article-subtitle {
-        font-size: 1.3em;
-        color: #4a5568;
-        line-height: 1.6;
-        max-width: 700px;
-        margin-bottom: 30px;
-      }
-
-      .article-meta {
-        display: flex;
-        gap: 30px;
-        color: #718096;
-        font-size: 0.95em;
-        flex-wrap: wrap;
-      }
-
-      .article-meta span {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      /* Alert Boxes */
-      .alert {
-        padding: 20px 25px;
-        border-radius: 15px;
-        margin: 30px 0;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .alert::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 5px;
-      }
-
-      .alert-doctor {
-        background: #fee2e2;
-        color: #991b1b;
-      }
-
-      .alert-doctor::before {
-        background: #dc2626;
-      }
-
-      .alert-nutritionist {
-        background: #dbeafe;
-        color: #1e3a8a;
-      }
-
-      .alert-nutritionist::before {
-        background: #2563eb;
-      }
-
-      .alert-doctor > strong::before, .alert-danger > strong::before {
-        content: '⚠️';
-        margin-right: 8px;
-      }
-      .alert-nutritionist > strong::before, .alert-tip > strong::before {
-        content: '💡';
-        margin-right: 8px;
-      }
-
-      .alert-tip {
-        background: #f0fdf4;
-        color: #14532d;
-      }
-
-      .alert-tip::before {
-        background: #22c55e;
-      }
-
-      .alert strong {
-        font-weight: 700;
-        display: block;
-        margin-bottom: 8px;
-      }
-
-      /* Tables */
-      .data-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 30px 0;
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      }
-
-      .data-table thead {
-        background: linear-gradient(135deg, #ff6b35 0%, #ff8f65 100%);
-        color: white;
-      }
-
-      .data-table th,
-      .data-table td {
-        padding: 15px 20px;
-        text-align: left;
-      }
-
-      .data-table th {
-        font-weight: 600;
-      }
-
-      .data-table tbody tr {
-        border-bottom: 1px solid #e5e7eb;
-        transition: background 0.3s ease;
-      }
-
-      .data-table tbody tr:hover {
-        background: #f9fafb;
-      }
-
-      .data-table tbody tr:last-child {
-        border-bottom: none;
-      }
-
-      /* Visual Info Cards */
-      .info-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        margin: 40px 0;
-      }
-
-      .info-card {
-        background: white;
-        border-radius: 15px;
-        padding: 30px;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        text-decoration: none;
-        color: inherit;
-        display: block;
-      }
-
-      .info-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-      }
-
-      .info-card-title {
-        font-size: 1.3em;
-        font-weight: 700;
-        color: #2d3748;
-        margin-bottom: 10px;
-      }
-
-      .info-card-desc {
-        color: #718096;
-        font-size: 0.95em;
-        line-height: 1.6;
-      }
-
-      .info-card-value {
-        font-size: 2em;
-        font-weight: 800;
-        color: #ff6b35;
-        margin: 10px 0;
-      }
-      
-      .highlight-nutrient {
-        border-bottom: 2px solid #ff6b35;
-        padding-bottom: 1px;
-      }
-
-      /* Story Section */
-      .story-intro {
-        background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
-        border-radius: 20px;
-        padding: 40px;
-        margin: 40px 0;
-        position: relative;
-      }
-
-      .story-intro h3 {
-        font-size: 1.8em;
-        color: #3730a3;
-        margin-bottom: 20px;
-      }
-
-      .story-intro p {
-        font-size: 1.1em;
-        line-height: 1.8;
-        color: #4c1d95;
-      }
-
-      /* Quick Test */
-      .quick-test {
-        background: #f0fdf4;
-        border-radius: 20px;
-        padding: 40px;
-        margin: 40px 0;
-        text-align: center;
-      }
-
-      .quick-test h3 {
-        font-size: 1.8em;
-        color: #14532d;
-        margin-bottom: 20px;
-      }
-
-      .test-options {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-        margin-top: 30px;
-      }
-
-      .test-option {
-        background: #f8fafc;
-        border: 2px solid #e2e8f0;
-        border-radius: 12px;
-        padding: 18px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .test-option:hover {
-        background: #fff7ed;
-        border-color: #fed7aa;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(251, 146, 60, 0.15);
-      }
-
-      .test-option input[type="checkbox"] {
-        display: none;
-      }
-
-      .test-option.selected {
-        background: linear-gradient(135deg, #ff6b35 0%, #fb923c 100%);
-        border-color: #ff6b35;
-        color: white;
-        box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-      }
-      .test-option.selected:hover {
-        background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
-        transform: translateY(-2px);
-        color: white;
-      }
-
-      /* Content Typography */
-      .article-body h2 {
-        font-size: 2em;
-        font-weight: 700;
-        color: #2d3748;
-        margin: 50px 0 30px;
-        padding-top: 20px;
-        position: relative;
-      }
-
-      .article-body h2::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 50px;
-        height: 4px;
-        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
-        border-radius: 2px;
-      }
-
-      .article-body h3 {
-        font-size: 1.5em;
-        font-weight: 600;
-        color: #2d3748;
-        margin: 35px 0 20px;
-      }
-
-      .article-body h4 {
-        font-size: 1.2em;
-        font-weight: 600;
-        color: #4a5568;
-        margin: 25px 0 15px;
-      }
-
-      .article-body p {
-        margin-bottom: 20px;
-        color: #4a5568;
-      }
-
-      .article-body ul,
-      .article-body ol {
-        margin: 20px 0;
-        padding-left: 30px;
-        color: #4a5568;
-      }
-
-      .article-body li {
-        margin-bottom: 10px;
-      }
-
-      .article-body blockquote {
-        border-left: 4px solid #ff6b35;
-        padding-left: 20px;
-        margin: 30px 0;
-        font-style: italic;
-        color: #718096;
-      }
-
-      .article-body strong {
-        color: #2d3748;
-        font-weight: 600;
-      }
-
-      /* FAQ Section */
-      .faq-section {
-        margin-top: 60px;
-        padding-top: 40px;
-        border-top: 2px solid #e5e7eb;
-      }
-
-      .faq-item {
-        background: #f9fafb;
-        border-radius: 15px;
-        margin-bottom: 20px;
-        overflow: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .faq-item:hover {
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .faq-question {
-        padding: 20px 25px;
-        font-weight: 600;
-        color: #2d3748;
-        cursor: pointer;
-        position: relative;
-        transition: all 0.3s ease;
-      }
-
-      .faq-question::after {
-        content: "+";
-        position: absolute;
-        right: 25px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 1.5em;
-        color: #ff6b35;
-        transition: transform 0.3s ease;
-      }
-
-      .faq-item.active .faq-question::after {
-        transform: translateY(-50%) rotate(45deg);
-      }
-
-      .faq-answer {
-        padding: 0 25px;
-        max-height: 0;
-        overflow: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .faq-item.active .faq-answer {
-        padding: 0 25px 20px;
-        max-height: 500px;
-      }
-
-      /* Related Articles */
-      .related-section {
-        margin-top: 80px;
-        padding: 60px 0;
-        background: #faf8f5;
-        border-radius: 20px;
-      }
-
-      .related-title {
-        font-size: 2em;
-        font-weight: 700;
-        color: #2d3748;
-        text-align: center;
-        margin-bottom: 40px;
-      }
-
-      .related-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-      }
-
-      .related-card {
-        background: white;
-        border-radius: 15px;
-        padding: 30px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
-        text-decoration: none;
-      }
-
-      .related-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-      }
-
-      .related-card-tag {
-        display: inline-block;
-        background: #e0e7ff;
-        color: #3730a3;
-        padding: 5px 15px;
-        border-radius: 15px;
-        font-size: 0.85em;
-        font-weight: 600;
-        margin-bottom: 15px;
-      }
-
-      .related-card-title {
-        font-size: 1.3em;
-        font-weight: 600;
-        color: #2d3748;
-        margin-bottom: 10px;
-        line-height: 1.4;
-      }
-
-      .related-card-desc {
-        color: #718096;
-        font-size: 0.95em;
-        line-height: 1.6;
-      }
-
-      /* Disclaimer */
-      .disclaimer {
-        background: #f9fafb;
-        padding: 60px 0;
-        text-align: center;
-      }
-      .disclaimer-content {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-      .disclaimer h3 {
-        color: #4b5563;
-        margin-bottom: 15px;
-        font-size: 1.5em;
-      }
-      .disclaimer p {
-        color: #6b7280;
-        font-size: 0.95em;
-        line-height: 1.8;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 1024px) {
-        .article-container {
-          grid-template-columns: 1fr;
-          gap: 0;
-        }
-
-        .sidebar {
-          display: none;
-        }
-
-        .article-content {
-          padding: 30px;
-        }
-
-        .article-title {
-          font-size: 2em;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .article-content {
-          padding: 20px;
-          border-radius: 15px;
-        }
-
-        .article-title {
-          font-size: 1.8em;
-        }
-
-        .article-meta {
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        .data-table {
-          font-size: 0.9em;
-        }
-
-        .data-table th,
-        .data-table td {
-          padding: 10px;
-        }
-
-        .related-grid {
-          grid-template-columns: 1fr;
-        }
-      }
+      :root {
+        --primary-color: #ff6b35; /* Orange-500 */
+        --primary-light: #ff8f65; /* Orange-400 */
+        --primary-dark: #c2410c; /* Orange-700 */
+        --primary-bg-light: #fff7ed; /* Orange-50 */
+        --primary-bg-gradient: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+      }
+       * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif; line-height: 1.8; color: #2d3748; background: #faf8f5; }
+      .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%); z-index: 1001; transition: width 0.3s ease; }
+      .breadcrumb { margin-bottom: 20px; font-size: 0.9em; color: #718096; }
+      .breadcrumb a { color: #718096; text-decoration: none; transition: color 0.3s ease; }
+      .breadcrumb a:hover { color: var(--primary-color); }
+      .breadcrumb .separator { margin: 0 8px; color: #a0aec0; }
+      .article-container { max-width: 1400px; margin: 0 auto; padding: 100px 20px 60px; display: grid; grid-template-columns: 280px 1fr; gap: 60px; position: relative; }
+      .sidebar { position: sticky; top: 100px; height: fit-content; max-height: calc(100vh - 120px); overflow-y: auto; }
+      .toc { background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
+      .toc-title { font-size: 1.2em; font-weight: 700; color: #2d3748; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+      .toc-title a { color: inherit; text-decoration: none; }
+      .toc-list { list-style: none; padding-left: 0; }
+      .toc-list li { margin-bottom: 8px; }
+      .toc-list a { color: #4a5568; text-decoration: none; font-size: 0.95em; display: block; padding: 8px 12px; transition: all 0.3s ease; position: relative; border-radius: 8px; border-left: 3px solid transparent; }
+      .toc-list a.active { color: var(--primary-color); background: var(--primary-bg-light); border-left-color: var(--primary-color); font-weight: 600; }
+      .toc-list a:hover { color: var(--primary-color); background: var(--primary-bg-light); border-left-color: var(--primary-light); transform: translateX(2px); }
+      .article-content { background: white; border-radius: 20px; padding: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
+      .article-header { margin-bottom: 60px; position: relative; }
+      .article-hero { background: var(--primary-bg-gradient); border-radius: 20px; padding: 60px; margin-bottom: 40px; position: relative; overflow: hidden; }
+      .article-category { display: inline-block; background: white; color: var(--primary-dark); padding: 8px 20px; border-radius: 20px; font-size: 0.9em; font-weight: 600; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+      .article-title { font-size: 2.5em; font-weight: 800; color: #2d3748; line-height: 1.3; margin-bottom: 20px; max-width: 800px; }
+      .article-subtitle { font-size: 1.3em; color: #4a5568; line-height: 1.6; max-width: 700px; margin-bottom: 30px; }
+      .article-meta { display: flex; gap: 30px; color: #718096; font-size: 0.95em; flex-wrap: wrap; }
+      .article-meta span { display: flex; align-items: center; gap: 8px; }
+      .article-body h2 { font-size: 2em; font-weight: 700; color: #2d3748; margin: 50px 0 30px; padding-top: 20px; position: relative; }
+      .article-body h2::before { content: ""; position: absolute; left: 0; top: 0; width: 50px; height: 4px; background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%); border-radius: 2px; }
+      .article-body h3 { font-size: 1.5em; font-weight: 600; color: #2d3748; margin: 35px 0 20px; }
+      .article-body p { margin-bottom: 20px; color: #4a5568; }
+      .article-body ul { padding-left: 20px; color: #4a5568;}
+      .article-body li { margin-bottom: 10px; }
+      .key-takeaways { background-color: var(--primary-bg-light); border: 2px solid #fdba74; border-radius: 15px; padding: 25px 30px; margin-bottom: 40px; }
+      .key-takeaways h3 { color: var(--primary-dark); font-size: 1.4em; margin-top:0; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+      .key-takeaways ul { list-style-type: none; padding-left: 5px; }
+      .key-takeaways li { padding-left: 25px; position: relative; margin-bottom: 10px; color: #4a5568; }
+      .key-takeaways li::before { content: '✓'; color: var(--primary-color); font-weight: bold; position: absolute; left: 0; top: 1px; }
+      .info-cards, .risk-group-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; }
+      .info-card, .risk-card { background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(194, 65, 12, 0.07); transition: all 0.3s ease; }
+      .info-card:hover, .risk-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(194, 65, 12, 0.1); }
+      .info-card-title, .risk-card-title { font-size: 1.2em; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px; }
+      .info-card-desc, .risk-card-desc { font-size: 0.95em; color: #4a5568; }
+      .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 15px rgba(194, 65, 12, 0.07); }
+      .data-table th, .data-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+      .data-table thead { background-color: var(--primary-bg-light); }
+      .data-table th { font-weight: 600; color: var(--primary-dark); }
+      .data-table tbody tr:hover { background-color: #f8fafc; }
+      .alert { padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-tip { background-color: var(--primary-bg-light); border-color: var(--primary-color); color: var(--primary-dark); }
+      .alert strong { font-weight: bold; display: block; margin-bottom: 5px; }
+      .svg-visualization-container { background-color: #f9fafb; border-radius: 15px; padding: 30px; margin: 40px 0; border: 1px solid #e2e8f0; text-align: center; }
+      .svg-visualization-container h3 { font-size: 1.4em; font-weight: 700; color: #2d3748; margin-bottom: 25px; }
+      .references-section ul { list-style-type: none; padding-left: 0; }
+      .references-section li { background-color: #f9fafb; border-radius: 8px; padding: 10px 15px; margin-bottom: 10px; border-left: 3px solid #ffedd5; }
+      .references-section a { color: var(--primary-color); text-decoration: none; word-break: break-all; }
+      .references-section a:hover { text-decoration: underline; }
+      .faq-section { margin-top: 60px; padding-top: 40px; border-top: 2px solid #e5e7eb; }
+      .faq-item { background: #f9fafb; border-radius: 15px; margin-bottom: 20px; overflow: hidden; transition: all 0.3s ease; }
+      .faq-question { padding: 20px 25px; font-weight: 600; color: #2d3748; cursor: pointer; position: relative; }
+      .faq-question::after { content: "+"; position: absolute; right: 25px; top: 50%; transform: translateY(-50%); font-size: 1.5em; color: var(--primary-color); transition: transform 0.3s ease; }
+      .faq-item.active .faq-question::after { transform: translateY(-50%) rotate(45deg); }
+      .faq-answer { padding: 0 25px; max-height: 0; overflow: hidden; transition: all 0.3s ease; }
+      .faq-item.active .faq-answer { padding: 0 25px 20px; max-height: 500px; }
+      .related-title { font-size: 2em; font-weight: 700; color: #2d3748; text-align: center; margin-bottom: 40px; }
+      .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+      .related-card { background: white; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; text-decoration: none; color: inherit; }
+      .related-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); }
+      .related-card-tag { display: inline-block; padding: 5px 15px; border-radius: 15px; font-size: 0.85em; font-weight: 600; margin-bottom: 15px; }
+      .disclaimer { background: #f9fafb; padding: 60px 0; text-align: center; }
+      .disclaimer-content { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+      .disclaimer h3 { color: #4b5563; margin-bottom: 15px; font-size: 1.5em; }
+      .disclaimer p { color: #6b7280; font-size: 0.95em; line-height: 1.8; }
+       .interactive-check { background-color: #fff; border-radius: 15px; padding: 30px; margin: 40px 0; box-shadow: 0 4px 15px rgba(194, 65, 12, 0.07); }
+      .interactive-check h3 { margin-top: 0; color: var(--primary-dark); }
+      .check-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
+      .check-option { display: block; background-color: #f9fafb; border: 1px solid #e2e8f0; padding: 15px; border-radius: 8px; cursor: pointer; transition: all 0.2s ease; }
+      .check-option:hover { border-color: var(--primary-light); }
+      .check-option input { display: none; }
+      .check-option.selected { background-color: var(--primary-bg-light); border-color: var(--primary-color); color: var(--primary-dark); font-weight: 500;}
+      #check-result { margin-top: 25px; padding: 15px; border-radius: 8px; text-align: center; font-weight: 600; transition: all 0.3s ease; display: none; }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } .article-content { padding: 30px; } .article-title { font-size: 2em; } }
+      @media (max-width: 768px) { .article-content { padding: 20px; border-radius: 15px; } .article-title { font-size: 1.8em; } .article-meta { flex-direction: column; gap: 10px; } .related-grid { grid-template-columns: 1fr; } }
+      .highlight-nutrient { border-bottom: 2px solid var(--primary-color); padding-bottom: 1px; }
     </style>
 </head>
 <body>
-    <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
-
-    <!-- Header Component Container -->
     <div id="header-component"></div>
 
-    <!-- Article Container -->
     <div class="article-container">
-      <!-- Sidebar -->
       <aside class="sidebar" id="sidebar">
         <div class="toc">
-          <h3 class="toc-title">
-            <span>目錄</span>
-          </h3>
+          <h3 class="toc-title"><a href="#page-title"><span>目錄</span></a></h3>
           <ul class="toc-list">
-            <li><a href="#summary" class="toc-link">30 秒速讀版</a></li>
-            <li><a href="#self-check" class="toc-link">你需要葉黃素嗎？</a></li>
-            <li><a href="#basics" class="toc-link">葉黃素基礎知識</a></li>
-            <li><a href="#benefits" class="toc-link sub-item">功效與作用機制</a></li>
-            <li><a href="#dosage" class="toc-link sub-item">建議攝取量與時間</a></li>
-            <li><a href="#food-sources" class="toc-link sub-item">天然食物來源</a></li>
-            <li><a href="#how-to-choose" class="toc-link">如何選擇葉黃素產品</a></li>
-            <li><a href="#safety" class="toc-link">安全資訊與副作用</a></li>
-            <li><a href="#faq" class="toc-link">常見問題</a></li>
+            <li><a href="#problem" class="toc-link">您是需要葉黃素的高風險族群嗎？</a></li>
+            <li><a href="#solution" class="toc-link">葉黃素：眼睛的內建藍光濾鏡</a></li>
+            <li><a href="#mechanism" class="toc-link">關鍵原理：葉黃素如何保護黃斑部？</a></li>
+            <li><a href="#how-much" class="toc-link">每日建議量與最佳攝取方式</a></li>
+            <li><a href="#action-plan-food" class="toc-link">實踐指南(一)：天然食物中的葉黃素寶庫</a></li>
+            <li><a href="#action-plan-supplements" class="toc-link">實踐指南(二)：如何精準挑選補充品</a></li>
+            <li><a href="#advanced-science" class="toc-link">進階科學：葉黃素與大腦健康的驚人連結</a></li>
+            <li><a href="#myth-busting" class="toc-link">破解迷思：「葉黃素對近視有效？」</a></li>
+            <li><a href="#comparison" class="toc-link">葉黃素 vs. 花青素：護眼雙雄的角色分工</a></li>
+            <li><a href="#safety" class="toc-link">安全攝取：注意事項與副作用</a></li>
+            <li><a href="#faq" class="toc-link">常見疑問 (FAQ)</a></li>
+            <li><a href="#references" class="toc-link">文獻參考</a></li>
           </ul>
         </div>
       </aside>
 
-      <!-- Main Content -->
       <main class="article-content">
-        <!-- Article Header -->
         <header class="article-header">
           <div class="article-hero">
             <nav class="breadcrumb">
@@ -816,228 +197,287 @@
               <span class="separator">/</span>
               <span>葉黃素 - 3C世代的內建護眼藍光濾鏡</span>
             </nav>
-            <span class="article-category">營養素指引</span>
-            <h1 class="article-title">葉黃素 - 3C世代的內建護眼藍光濾鏡</h1>
-            <p class="article-subtitle">
-              營養師專業提醒：葉黃素是守護靈魂之窗的關鍵營養素，但市面上產品眾多，您知道酯化型和游離型有何不同？黃金比例 5:1 又是什麼？本篇將帶您深入了解葉黃素，助您選對產品，清晰看世界。
-            </p>
+            <span class="article-category">植化素</span>
+            <h1 class="article-title" id="page-title">葉黃素 - 3C世代的內建護眼藍光濾鏡</h1>
+            <p class="article-subtitle">游離型跟酯化型葉黃素哪個好？營養師教你搞懂黃金比例5:1的祕密，並從7大功效與食物排行中，為3C世代的眼睛疲勞、黃斑部問題找到最佳解方。</p>
             <div class="article-meta">
-              <span>✍️ 營養百科團隊編寫</span>
-              <span>📅 2025 年 8 月 27 日更新</span>
-              <span>⏱️ 閱讀時間：13 分鐘</span>
+              <span>撰寫單位：營養百科團隊</span>
+              <span>最後更新：2025-10-08</span>
+              <span>預估閱讀時間：13 分鐘</span>
             </div>
           </div>
         </header>
 
-        <!-- Article Body -->
         <article class="article-body">
-          <div class="alert alert-doctor">
-              <strong>醫師警告：</strong>葉黃素補充劑並非藥物，無法治療眼疾。若有眼睛不適或視力問題，請務必尋求專業眼科醫師診斷與治療。
+          
+          <div class="key-takeaways">
+              <h3>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                  本篇重點速覽
+              </h3>
+              <ul>
+                  <li><strong>內建的藍光太陽眼鏡</strong>：葉黃素與玉米黃素是唯二能儲存在黃斑部的類胡蘿蔔素，能有效過濾有害藍光。</li>
+                  <li><strong>「游離型」優於「酯化型」</strong>：游離型葉黃素分子小、不需消化可直接吸收，生物利用率更高。</li>
+                  <li><strong>黃金比例 <span class="highlight-nutrient">10:2</span> (或5:1)</strong>：根據美國大型研究(AREDS2)，每日補充<span class="highlight-nutrient">10毫克</span>葉黃素搭配<span class="highlight-nutrient">2毫克</span>玉米黃素，是預防黃斑部病變的黃金比例。</li>
+                  <li><strong>持續補充是關鍵</strong>：葉黃素需要長期且穩定補充，至少<span class="highlight-nutrient">2-4個月</span>才能在黃斑部達到足夠濃度，發揮保護效果。</li>
+              </ul>
           </div>
-
-          <section id="summary">
-            <h2>30 秒速讀版</h2>
-            <div class="info-cards">
-              <div class="info-card">
-                <h4 class="info-card-title">有什麼好處？</h4>
-                <p class="info-card-desc">
-                  過濾藍光、保護黃斑部<br />抗氧化、維持視力健康
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">怎麼服用？</h4>
-                <p class="info-card-desc">
-                  每日 6-10 mg (保健)<br />隨餐或飯後搭配油脂
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">怎麼選購？</h4>
-                <p class="info-card-desc">
-                  選「游離型」、黃金比例 5:1<br />搭配玉米黃素效果加倍
-                </p>
-              </div>
+          
+          <section id="problem">
+            <h2>您是需要葉黃素的高風險族群嗎？ </h2>
+            <p>在數位時代，我們的眼睛正以前所未有的強度暴露在藍光之下。藍光能穿透水晶體直達視網膜黃斑部，長期下來會造成累積性傷害。您是否屬於以下高風險族群？</p>
+             <div class="interactive-check">
+                <h3>葉黃素需求自我檢測</h3>
+                <p>請根據您的生活習慣勾選，評估您的葉黃素需求程度：</p>
+                <div class="check-options">
+                    <label class="check-option">
+                        <input type="checkbox" name="lutein-check">
+                        <span>每日使用3C產品超過6小時</span>
+                    </label>
+                    <label class="check-option">
+                        <input type="checkbox" name="lutein-check">
+                        <span>眼睛容易感到乾澀、疲勞、視線模糊</span>
+                    </label>
+                    <label class="check-option">
+                        <input type="checkbox" name="lutein-check">
+                        <span>高度近視 (超過600度)</span>
+                    </label>
+                     <label class="check-option">
+                        <input type="checkbox" name="lutein-check">
+                        <span>經常在戶外或強光下工作/活動</span>
+                    </label>
+                     <label class="check-option">
+                        <input type="checkbox" name="lutein-check">
+                        <span>年齡超過50歲或有黃斑部病變家族史</span>
+                    </label>
+                </div>
+                <div id="check-result"></div>
             </div>
           </section>
 
-          <section id="self-check">
-            <h2>快來看看你是不是需要補充葉黃素的人？</h2>
-            <div class="quick-test">
-              <h3>葉黃素需求自我檢測</h3>
-              <p>以下情況，你中了幾個？</p>
-              <div class="test-options">
-                <label class="test-option">
-                  <input type="checkbox" name="need-test" />
-                  <span>長時間使用手機/電腦</span>
-                </label>
-                <label class="test-option">
-                  <input type="checkbox" name="need-test" />
-                  <span>眼睛容易乾澀、疲勞</span>
-                </label>
-                <label class="test-option">
-                  <input type="checkbox" name="need-test" />
-                  <span>年齡超過50歲</span>
-                </label>
-                <label class="test-option">
-                  <input type="checkbox" name="need-test" />
-                  <span>高度近視者 (超過 600 度)</span>
-                </label>
-                <label class="test-option">
-                  <input type="checkbox" name="need-test" />
-                  <span>經常在戶外或強光下工作</span>
-                </label>
-                <label class="test-option">
-                  <input type="checkbox" name="need-test" />
-                  <span>有黃斑部病變家族史</span>
-                </label>
-              </div>
-              <p style="margin-top: 20px; color: #14532d; font-weight: 600">
-                勾選 2 個以上？你可能真的需要補充葉黃素囉！
-              </p>
+          <section id="solution">
+            <h2>葉黃素：眼睛的內建藍光濾鏡 </h2>
+            <p>葉黃素(Lutein)是一種天然的類胡蘿蔔素，與它的好夥伴玉米黃素(Zeaxanthin)是唯二能夠儲存在視網膜黃斑部的營養素。它們就像眼睛內建的一副「太陽眼鏡」，能為我們帶來三大核心保護效益：</p>
+             <div class="info-cards">
+                <div class="info-card">
+                    <h4 class="info-card-title">1. 過濾有害藍光</h4>
+                    <p class="info-card-desc">吸收來自3C產品和陽光的高能量藍光，在光線抵達感光細胞前就先行攔截，大幅降低對視網膜的直接傷害。</p>
+                </div>
+                <div class="info-card">
+                    <h4 class="info-card-title">2. 強效抗氧化</h4>
+                    <p class="info-card-desc">中和光線照射後產生的有害自由基，減少視網膜的氧化壓力，延緩感光細胞的老化與凋亡。</p>
+                </div>
+                <div class="info-card">
+                    <h4 class="info-card-title">3. 提升視覺品質</h4>
+                    <p class="info-card-desc">增加黃斑色素密度，有助於提升視覺的對比敏感度、減少眩光帶來的不適感，讓你看得更清晰。</p>
+                </div>
             </div>
           </section>
-
-          <section id="basics">
-            <h2>葉黃素是什麼？游離型與酯化型有何不同？</h2>
-            <p>
-              葉黃素（Lutein）是一種類胡蘿蔔素，屬於葉黃素類家族的一員。它和它的好夥伴玉米黃素（Zeaxanthin）是構成我們視網膜黃斑部的核心色素。<span class="highlight-nutrient">人體無法自行合成葉黃素，必須完全依賴飲食攝取</span>，這也是為什麼它被稱為「必需營養素」。
-            </p>
-            <h3>葉黃素的兩種型態：游離型 vs. 酯化型</h3>
-            <p>市面上的葉黃素產品主要分為兩種型態，它們在吸收和利用上有所差異：</p>
-            <table class="data-table">
-              <thead>
-                <tr><th>型態</th><th>特點</th><th>優點</th><th>缺點</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>游離型葉黃素 (Free Lutein)</strong></td>
-                  <td>分子量小，不含脂肪酸</td>
-                  <td><span class="highlight-nutrient">可直接吸收，吸收率高</span></td>
-                  <td>穩定性稍差，成本較高</td>
-                </tr>
-                <tr>
-                  <td><strong>酯化型葉黃素 (Lutein Ester)</strong></td>
-                  <td>分子量大，含有脂肪酸</td>
-                  <td>穩定性高，不易氧化</td>
-                  <td>需經酵素分解，吸收率受影響</td>
-                </tr>
-              </tbody>
+          
+          <section id="mechanism">
+            <h2>關鍵原理：葉黃素如何保護黃斑部？ </h2>
+            <p>您可以將視網膜黃斑部想像成相機的「底片」，它負責我們最精細的中心視力。葉黃素與玉米黃素會集中儲存在這個區域，形成一道黃色的色素層，這就是「黃斑色素(Macular Pigment)」。</p>
+            <p>這道黃色防線，能精準地吸收光譜中能量最強、最具破壞力的「藍色」與「紫色」光線，這是一種物理性的過濾保護。同時，它們強大的抗氧化能力，能隨時清除因光線照射而產生的自由基，保護底片不受化學性損傷。雙管齊下，維持視覺的清晰與健康。</p>
+            <div class="svg-visualization-container">
+                <h3>藍光過濾機制：眼睛的內建太陽眼鏡</h3>
+                <svg viewBox="0 0 400 200" style="width:100%; max-width:500px; height:auto;">
+                    <title>葉黃素過濾藍光機制示意圖</title>
+                    <!-- Eye structure -->
+                    <path d="M 350 100 A 100 100 0 0 0 150 100 A 100 100 0 0 0 350 100" fill="#fff7ed" stroke="#fdb_a74" stroke-width="2" />
+                    <circle cx="300" cy="100" r="15" fill="#fde_68a" />
+                    <text x="290" y="140" font-size="12">黃斑部</text>
+                    <!-- Macular Pigment Shield -->
+                    <path d="M 285 80 A 70 70 0 0 1 285 120" fill="none" stroke="url(#shield-grad)" stroke-width="5"/>
+                    <defs>
+                        <linearGradient id="shield-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#fbbf24"/>
+                            <stop offset="100%" stop-color="#f59e0b"/>
+                        </linearGradient>
+                    </defs>
+                    <text x="240" y="55" font-size="10" fill="#c2410c">黃斑色素(葉黃素)</text>
+                    
+                    <!-- Light Rays -->
+                    <text x="30" y="40" font-size="12">光線</text>
+                    <!-- Blue light -->
+                    <path d="M 20 80 C 80 60, 150 100, 250 80" fill="none" stroke="#60a5fa" stroke-width="2"/>
+                    <text x="255" y="75" font-size="14" fill="#60a5fa">✗</text>
+                    <text x="130" y="60" font-size="10" fill="#3b82f6">藍光被過濾</text>
+                    <!-- Other light -->
+                     <path d="M 20 100 L 290 100" fill="none" stroke="#fcd34d" stroke-width="2" marker-end="url(#arrow-light)"/>
+                     <path d="M 20 120 C 80 140, 150 100, 295 115" fill="none" stroke="#a7f3d0" stroke-width="2" marker-end="url(#arrow-light)"/>
+                    <defs>
+                        <marker id="arrow-light" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#d1d5db"/></marker>
+                    </defs>
+                </svg>
+            </div>
+          </section>
+          
+          <section id="how-much">
+            <h2>我該攝取多少？每日建議量與最佳攝取方式</h2>
+            <p>葉黃素屬於植化素，雖然沒有官方的每日建議攝取量(RDA)，但根據大型臨床研究與專家共識，建議的保健劑量如下：</p>
+             <table class="data-table">
+                <thead><tr><th>族群/目的</th><th>每日建議劑量 (毫克)</th><th>注意事項</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>一般日常保健</strong></td><td>6 - 10 mg</td><td>適合學生、一般上班族維持基本眼部健康。</td></tr>
+                    <tr><td><strong>加強保養</strong></td><td>10 - 20 mg</td><td>適合長時間用眼、高度近視及中老年族群。</td></tr>
+                    <tr><td><strong>預防黃斑部病變 (AREDS2)</strong></td><td>10 mg 葉黃素 + 2 mg 玉米黃素</td><td>根據大型臨床研究的建議配方。</td></tr>
+                </tbody>
             </table>
-            <div class="alert alert-nutritionist">
-              <strong>營養師提醒：</strong>雖然兩種型態都能被利用，但考量到吸收效率，<span class="highlight-nutrient">建議優先選擇「游離型」葉黃素</span>，特別是對於消化功能不佳的族群。
-            </div>
-          </section>
-
-          <section id="benefits">
-            <h2>葉黃素的功效與作用機制</h2>
-            <p>葉黃素就像眼睛內建的太陽眼鏡和防護罩，透過多種方式保護我們的視力。</p>
-            <div class="info-cards">
-              <div class="info-card">
-                <h4 class="info-card-title">過濾有害藍光</h4>
-                <p class="info-card-desc">吸收來自3C產品和陽光的高能量藍光，減少對視網膜感光細胞的直接傷害。</p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">抗氧化保護</h4>
-                <p class="info-card-desc">中和光線產生的自由基，減少視網膜的氧化壓力，延緩細胞老化。</p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">強化黃斑部功能</h4>
-                <p class="info-card-desc">增加黃斑色素密度，提升視覺的清晰度與對比度，並減少眩光的不適感。</p>
-              </div>
-            </div>
-          </section>
-
-          <section id="dosage">
-            <h2>每日建議攝取量與最佳時間</h2>
-            <h3>每日建議攝取量</h3>
-            <table class="data-table">
-              <thead>
-                <tr><th>族群/目的</th><th>每日建議劑量 (毫克)</th><th>注意事項</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>一般日常保健</strong></td>
-                  <td>6 - 10 mg</td>
-                  <td>適合學生、一般上班族維持基本眼部健康。</td>
-                </tr>
-                <tr>
-                  <td><strong>加強保養</strong></td>
-                  <td>10 - 20 mg</td>
-                  <td>適合長時間用眼、高度近視及中老年族群。</td>
-                </tr>
-                <tr>
-                  <td><strong>預防黃斑部病變 (AREDS2)</strong></td>
-                  <td>10 mg 葉黃素 + 2 mg 玉米黃素</td>
-                  <td>根據大型臨床研究的建議配方。</td>
-                </tr>
-              </tbody>
-            </table>
-            <h3>最佳攝取時間與方式</h3>
-            <p><span class="highlight-nutrient">葉黃素是脂溶性營養素，隨餐或飯後服用，讓食物中的油脂幫助其吸收，效果最好。</span></p>
-            <ul>
-              <li><strong>最佳時間</strong>：隨餐或飯後 30 分鐘內。</li>
-              <li><strong>黃金搭檔</strong>：與魚油 (Omega-3) 一起服用，不僅能幫助葉黃素吸收，DHA 本身也是視網膜的重要成分，有加乘效果。</li>
-              <li><strong>持續是關鍵</strong>：葉黃素需要在體內累積，建議至少持續服用 2-4 個月才能看到效果。</li>
-            </ul>
-          </section>
-
-          <section id="food-sources">
-            <h2>富含葉黃素的食物來源排行</h2>
             <div class="alert alert-tip">
-              <strong>營養師小撇步：</strong>想從食物中高效補充葉黃素，記得「綠色蔬菜用油炒，搭配一顆好蛋黃」！
+              <strong>營養師提醒：持續補充比高劑量更重要</strong>
+              <p>葉黃素是脂溶性營養素，<span class="highlight-nutrient">隨餐或飯後服用</span>，讓食物中的油脂幫助其吸收，效果最好。它需要在體內累積，建議至少<span class="highlight-nutrient">持續服用2-4個月</span>才能看到效果。與其偶爾吃高劑量，不如每天穩定攝取來得有效。</p>
             </div>
-            <table class="data-table">
+          </section>
+
+          <section id="action-plan-food">
+            <h2>實踐指南(一)：天然食物中的葉黃素寶庫</h2>
+            <p>想從飲食中高效補充葉黃素，記得一句口訣：「綠色蔬菜用油炒，搭配一顆好蛋黃」！</p>
+             <table class="data-table">
               <thead>
-                <tr><th>食物名稱</th><th>每 100g 葉黃素含量 (毫克)</th><th>備註</th></tr>
+                <tr><th>食物名稱</th><th>每 100g 葉黃素/玉米黃素含量 (毫克)</th><th>備註</th></tr>
               </thead>
               <tbody>
-                <tr><td><strong>羽衣甘藍</strong></td><td><strong>39.5</strong></td><td>葉黃素之王，沙拉或清炒皆宜。</td></tr>
-                <tr><td><strong>菠菜</strong></td><td>20.4</td><td>建議搭配油脂烹調以利吸收。</td></tr>
-                <tr><td><strong>芥菜</strong></td><td>12.2</td><td>台灣常見的深綠色蔬菜。</td></tr>
-                <tr><td><strong>蛋黃</strong></td><td>0.5</td><td>含量雖不高，但生物利用率極佳。</td></tr>
-                <tr><td><strong>南瓜</strong></td><td>1.5</td><td>黃橙色蔬菜的代表。</td></tr>
-                <tr><td><strong>奇異果</strong></td><td>0.1</td><td>水果中葉黃素含量較豐富的選擇。</td></tr>
+                <tr><td><strong>羽衣甘藍 (熟)</strong></td><td><strong>約 18.2 mg</strong></td><td>葉黃素之王，清炒或烤過後風味更佳。</td></tr>
+                <tr><td><strong>菠菜 (熟)</strong></td><td>約 12.2 mg</td><td>建議搭配油脂烹調以利吸收。</td></tr>
+                <tr><td><strong>羅勒</strong></td><td>約 5.6 mg</td><td>製作青醬或入菜的好選擇。</td></tr>
+                <tr><td><strong>豌豆 (熟)</strong></td><td>約 2.5 mg</td><td>常見且容易取得的豆類。</td></tr>
+                <tr><td><strong>蘿蔓生菜</strong></td><td>約 2.3 mg</td><td>沙拉中的好選擇。</td></tr>
+                <tr><td><strong>開心果</strong></td><td>約 2.9 mg</td><td>堅果中的葉黃素冠軍。</td></tr>
+                <tr><td><strong>蛋黃</strong></td><td>約 0.3 mg</td><td>含量雖不高，但生物利用率是蔬菜的數倍。</td></tr>
+                <tr><td><strong>玉米</strong></td><td>約 1.4 mg</td><td>玉米黃素的良好來源。</td></tr>
+                <tr><td><strong>奇異果</strong></td><td>約 0.1 mg</td><td>水果中葉黃素含量較豐富的選擇。</td></tr>
               </tbody>
             </table>
           </section>
-
-          <section id="how-to-choose">
-            <h2>如何選擇葉黃素產品？</h2>
+          
+          <section id="action-plan-supplements">
+            <h2>實踐指南(二)：如何精準挑選補充品</h2>
             <p>面對琳瑯滿目的產品，掌握以下幾個關鍵，就能選到最適合你的葉黃素：</p>
+            <h3>游離型 vs. 酯化型：吸收路徑大不同</h3>
+            <p>市售葉黃素主要有兩種型態，它們在吸收效率上有所差異：</p>
+             <div class="svg-visualization-container">
+                 <h3>游離型 vs. 酯化型吸收路徑圖</h3>
+                <svg viewBox="0 0 400 250" style="width:100%; max-width:600px; height:auto;">
+                    <title>游離型與酯化型葉黃素吸收路徑比較</title>
+                    <!-- Left Panel: Free Lutein -->
+                    <g>
+                        <text x="100" y="30" text-anchor="middle" font-weight="bold">游離型葉黃素</text>
+                        <circle cx="100" cy="80" r="15" fill="#f59e0b" />
+                        <text x="100" y="115" text-anchor="middle" font-size="12">小分子</text>
+                        <path d="M100 130 V 180" stroke="#ff6b35" stroke-width="2" marker-end="url(#arrow-absorb)"/>
+                        <text x="100" y="200" text-anchor="middle" font-size="12" fill="#166534" font-weight="bold">直接吸收</text>
+                    </g>
+                    <!-- Right Panel: Ester Lutein -->
+                    <g>
+                        <text x="300" y="30" text-anchor="middle" font-weight="bold">酯化型葉黃素</text>
+                        <circle cx="300" cy="80" r="25" fill="#f_cd34d" />
+                        <path d="M300 80 L 325 100" stroke="#c2410c" stroke-width="1.5"/>
+                         <text x="300" y="115" text-anchor="middle" font-size="12">大分子 (含脂肪酸)</text>
+                        <!-- Enzyme Scissors -->
+                        <g transform="translate(250, 140)">
+                            <path d="M0 5 L10 15 M10 5 L0 15" stroke="#4b5569" stroke-width="2"/>
+                            <circle cx="2" cy="5" r="3" fill="white" stroke="#4b5569" stroke-width="1.5"/>
+                            <circle cx="8" cy="5" r="3" fill="white" stroke="#4b5569" stroke-width="1.5"/>
+                            <text x="25" y="15" font-size="10">需經酵素分解</text>
+                        </g>
+                        <path d="M300 150 V 180" stroke="#fbbf24" stroke-width="2" stroke-dasharray="3" marker-end="url(#arrow-absorb)"/>
+                        <text x="300" y="200" text-anchor="middle" font-size="12" fill="#c2410c">間接吸收</text>
+                    </g>
+                     <!-- Intestinal Wall -->
+                    <rect x="0" y="180" width="400" height="80" fill="#fffbeb" />
+                    <text x="200" y="220" text-anchor="middle" font-size="14" fill="#78350f">腸道壁</text>
+                    <defs>
+                        <marker id="arrow-absorb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16a34a"/></marker>
+                    </defs>
+                </svg>
+            </div>
+            <h3>選購的四大關鍵</h3>
             <ol>
-              <li><strong>看型態：優先選擇「游離型」</strong><br>游離型葉黃素分子小，不需經過身體消化，可直接被吸收，生物利用率較高。</li>
-              <li><strong>看比例：認明「黃金比例 5:1」</strong><br><span class="highlight-nutrient">葉黃素與玉米黃素的比例為 5:1 (例如: 10 mg 葉黃素搭配 2 mg 玉米黃素)</span>，是根據美國國家眼科研究所 (NEI) 大型研究 (AREDS2) 證實最有效的組合。</li>
-              <li><strong>看劑量：依需求選擇</strong><br>日常保健每日 6-10 mg 即可，若為高度用眼族群或中老年人，可選擇 10-20 mg 的劑量。</li>
-              <li><strong>看複方：尋找加分成分</strong><br>優質的產品常會搭配<span class="highlight-nutrient">魚油 (Omega-3)、花青素、維生素 C/E、鋅</span>等對眼睛有益的複方成分，達到全方位保護。特別是<a href="./vitamin-a.html">維生素A</a>，它對維持夜間視力至關重要，與葉黃素共同守護您的視力健康。</li>
-              <li><strong>看認證：選擇專利原料與第三方檢驗</strong><br>選擇使用如 FloraGLO® 等國際專利原料，並附有 SGS 等重金屬、塑化劑檢驗報告的品牌，品質更有保障。</li>
+              <li><strong>看型態：優先選擇「游離型」</strong><br>游離型葉黃素的生物利用率是酯化型的數倍，是目前市場公認較優的選擇。</li>
+              <li><strong>看比例：認明「黃金比例 10:2」</strong><br><span class="highlight-nutrient">葉黃素與玉米黃素的比例為 10:2 (或5:1)</span>，是根據美國國家眼科研究所 (NEI) 大型研究 (AREDS2) 證實最有效的組合。</li>
+              <li><strong>看複方：尋找加分成分</strong><br>優質的產品常會搭配<span class="highlight-nutrient">魚油 (Omega-3)、花青素、蝦紅素、維生素C/E、鋅</span>等對眼睛有益的複方成分，達到全方位保護。</li>
+              <li><strong>看認證：選擇專利原料與第三方檢驗</strong><br>選擇使用如 FloraGLO®、ZeaONE® 等國際專利原料，並附有SGS等重金屬、塑化劑檢驗報告的品牌，品質更有保障。</li>
             </ol>
+          </section>
+          
+          <section id="advanced-science">
+              <h2>進階科學：葉黃素與大腦健康的驚人連結</h2>
+              <p>您可能不知道，葉黃素不只是「護眼」營養素，它更是重要的「護腦」營養素！科學研究發現，眼睛黃斑部中的葉黃素濃度，與大腦中的葉黃素濃度有著高度的正相關。</p>
+              <ul>
+                  <li><strong>大腦中的葉黃素</strong>：葉黃素是大腦中含量最豐富的類胡蘿蔔素，特別集中在與學習、記憶和決策功能相關的腦區（如海馬迴、前額葉皮質）。</li>
+                  <li><strong>提升認知功能</strong>：多項研究指出，無論是年輕人還是長者，體內較高的葉黃素水平與更佳的認知功能、記憶力、處理速度和學業表現有關。</li>
+                  <li><strong>終身效益</strong>：從兒童時期的大腦發育，到成年後的認知維持，再到老年時期的認知退化預防，葉黃素都扮演著關鍵角色。因此，補充葉黃素不僅是為了保護視力，更可能是在為一生的大腦健康進行「長期投資」。</li>
+              </ul>
+          </section>
+
+          <section id="myth-busting">
+            <h2>破解迷思：「葉黃素對近視有效？」</h2>
+            <p>這是一個非常普遍的誤解。葉黃素的主要戰場在視網膜的「黃斑部」，負責的是過濾藍光與抗氧化，預防的是「黃斑部病變」這類因老化或光線傷害造成的眼疾。</p>
+            <p>而「近視」主要是因為眼軸過長，導致光線的聚焦點落在視網膜前方，屬於眼睛的「物理結構」問題。<strong>補充葉黃素無法改變眼軸長度，因此無法治療或改善近視、散光或老花眼。</strong>若有這些屈光問題，仍需尋求眼科醫師的專業診斷和配戴眼鏡矯正。</p>
+          </section>
+
+          <section id="comparison">
+            <h2>葉黃素 vs. 花青素：護眼雙雄的角色分工</h2>
+            <p>葉黃素與花青素都是知名的護眼營養素，但它們的作用機制與擅長的領域完全不同，是互補的隊友，而非競爭對手。</p>
+            <table class="data-table">
+                <thead><tr><th>比較面向</th><th><strong>葉黃素 (Lutein)</strong></th><th><strong>花青素 (Anthocyanin)</strong></th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td><strong>主要戰場</strong></td>
+                        <td><strong>視網膜黃斑部 (眼底後方)</strong></td>
+                        <td><strong>睫狀肌、微血管 (眼睛前方)</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>核心任務</strong></td>
+                        <td>過濾藍光、抗氧化、保護感光細胞</td>
+                        <td>促進血液循環、放鬆睫狀肌、改善眼睛疲勞</td>
+                    </tr>
+                     <tr>
+                        <td><strong>比喻</strong></td>
+                        <td><strong>防禦型盾牌兵</strong>：抵禦外來光線攻擊</td>
+                        <td><strong>後勤補給兵</strong>：負責運送氧氣養分、緩解疲勞</td>
+                    </tr>
+                     <tr>
+                        <td><strong>適合族群</strong></td>
+                        <td>長時間使用3C、戶外工作者、中老年人</td>
+                        <td>近距離用眼、眼睛易乾澀疲勞的上班族與學生</td>
+                    </tr>
+                </tbody>
+            </table>
           </section>
 
           <section id="safety">
-            <h2>葉黃素的副作用與安全資訊</h2>
-            <p>葉黃素是一種非常安全的營養素，在建議劑量下幾乎沒有副作用。但仍有幾點需注意：</p>
+            <h2>安全攝取：注意事項與副作用</h2>
+            <p>葉黃素被公認為是一種非常安全的營養素，在建議的每日劑量範圍內（6-20毫克），幾乎沒有已知的嚴重副作用。絕大多數人長期服用都不會感到任何不適。然而，了解一些罕見情況與注意事項，能幫助您更安心地補充：</p>
+      
             <ul>
-              <li><strong>皮膚變黃</strong>：長期每日攝取超過 20 mg 的高劑量葉黃素，極少數人可能因色素沉積導致手掌、腳掌皮膚暫時性變黃，此為無害現象，停用後即可恢復。</li>
-              <li><strong>適用對象</strong>：孕婦、哺乳期婦女雖然一般認為安全，但仍建議諮詢醫師後再補充。</li>
-              <li><strong>藥物交互作用</strong>：目前無已知的重大藥物交互作用，但若服用影響脂肪吸收的藥物，可能會降低葉黃素的吸收率。</li>
+                <li><strong>皮膚變黃 (胡蘿蔔素血症)</strong>：這是最常見的「無害」副作用。如果長期每日攝取非常高劑量（通常指超過 <strong>30毫克</strong>），葉黃素這種黃色色素可能暫時沉積在皮膚，特別是手掌和腳掌，使其看起來偏黃。這對健康沒有危害，只要降低劑量或暫停補充，膚色就會在幾週內恢復正常。</li>
+                <li><strong>輕微腸胃不適</strong>：極少數人剛開始補充或服用較高劑量時，可能會經歷輕微的腸胃不適，例如脹氣或噁心。通常將葉黃素與食物一同服用（隨餐或飯後）可以避免這種情況。</li>
+                <li><strong>眼睛水晶體沉積 (極罕見)</strong>：在極端罕見的個案報告中，有長期（數年）每日服用極高劑量（例如40毫克以上）葉黃素的案例，被發現在眼睛中形成微小的結晶沉積。需要強調的是，這在正常建議劑量下從未被觀察到，屬於極端案例，但這也提醒我們，任何營養素都並非越多越好。</li>
+            </ul>
+
+            <div class="alert alert-doctor">
+                <strong>醫師警告：吸菸者請注意β-胡蘿蔔素</strong>
+                <p>雖然葉黃素本身很安全，但許多複方產品會添加 β-胡蘿蔔素。高劑量的β-胡蘿蔔素補充劑已被證實會增加<strong>吸菸者</strong>罹患肺癌的風險。因此在挑選葉黃素產品時，吸菸或曾吸菸的族群應特別注意，<span class="highlight-nutrient">避免選擇含有高劑量β-胡蘿蔔素的配方</span>。</p>
+            </div>
+      
+            <h3>特定族群注意事項</h3>
+            <ul>
+                <li><strong>孕婦與哺乳期婦女</strong>：雖然來自食物的葉黃素是安全的，但高劑量補充品的安全性研究尚不完整。建議在此特殊時期，應先諮詢醫師或營養師的意見。</li>
+                <li><strong>藥物交互作用</strong>：目前尚無已知的葉黃素與常見藥物之間的嚴重交互作用。然而，如果您正在服用影響脂肪吸收的藥物（如Orlistat），可能會降低葉黃素的吸收率，建議錯開服用時間。</li>
             </ul>
           </section>
 
           <section id="faq" class="faq-section">
-            <h2>常見問題</h2>
+            <h2>常見疑問 (FAQ)</h2>
             <div class="faq-item">
-              <div class="faq-question">Q1：葉黃素和玉米黃素的「黃金比例5:1」是什麼意思？</div>
-              <div class="faq-answer">
-                <p><strong>A：這是指葉黃素與玉米黃素的最佳攝取比例。</strong> 根據 AREDS2 研究，黃斑部中葉黃素與玉米黃素的自然比例約為 5:1。因此，補充劑若能按照這個比例設計，被認為能更有效地在黃斑部累積，發揮最佳的保護作用。</p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Q2：葉黃素要吃多久才有效？需要長期服用嗎？</div>
+              <div class="faq-question">Q1：葉黃素要吃多久才有效？需要長期服用嗎？</div>
               <div class="faq-answer">
                 <p><strong>A：葉黃素需要時間累積，建議長期持續服用。</strong> 葉黃素在體內累積需要時間，通常需要持續補充 <strong>2-4 個月</strong> 才能達到黃斑部飽和濃度，進而發揮保護作用。由於葉黃素會隨著時間代謝，且眼睛持續暴露在光線和氧化壓力下，因此建議長期持續攝取以維持保護效果。</p>
               </div>
             </div>
             <div class="faq-item">
-              <div class="faq-question">Q3：游離型和酯化型葉黃素，哪種比較好？</div>
+              <div class="faq-question">Q2：游離型和酯化型葉黃素，哪種比較好？</div>
               <div class="faq-answer">
                 <p><strong>A：游離型吸收率較高，是目前的主流選擇。</strong></p>
                 <ul>
@@ -1047,17 +487,26 @@
                 <p>考量到吸收效率，多數專家會建議優先選擇游離型葉黃素。</p>
               </div>
             </div>
-            <div class="faq-item">
-              <div class="faq-question">Q4：葉黃素可以治療近視或散光嗎？</div>
+             <div class="faq-item">
+              <div class="faq-question">Q3：葉黃素可以晚上吃嗎？</div>
               <div class="faq-answer">
-                <p><strong>A：不能。</strong> 葉黃素主要作用是保護黃斑部，過濾藍光，預防黃斑部病變等眼部疾病。它無法改變眼睛的屈光度，因此不能治療近視、散光或老花眼。若有這些問題，仍需尋求眼科醫師的專業診斷和矯正。</p>
+                <p><strong>A：可以。</strong> 葉黃素沒有刺激性，不會影響睡眠。服用的關鍵在於「隨餐或飯後」，利用食物中的油脂幫助吸收，所以不管是午餐後或晚餐後吃，效果都是一樣好的。</p>
               </div>
             </div>
           </section>
+
+           <section id="references" class="references-section">
+              <h2>文獻參考</h2>
+               <ul>
+                <li>Age-Related Eye Disease Study 2 (AREDS2) Research Group. (2013). Lutein + zeaxanthin and omega-3 fatty acids for age-related macular degeneration: the Age-Related Eye Disease Study 2 (AREDS2) randomized clinical trial. JAMA.</li>
+                <li>National Institutes of Health (NIH) - <a href="https://ods.od.nih.gov/factsheets/LuteinZeaxanthin-HealthProfessional/" target="_blank" rel="noopener noreferrer">Lutein and Zeaxanthin – Fact Sheet for Health Professionals</a></li>
+                 <li>Johnson, E. J. (2014). Role of lutein and zeaxanthin in visual and cognitive function throughout the lifespan. Nutrition reviews.</li>
+              </ul>
+          </section>
+
         </article>
 
-        <!-- Related Articles -->
-        <h2 class="related-title">相關營養素</h2>
+        <h2 class="related-title">相關營養素解析</h2>
         <div class="related-grid">
           <a href="./fish-oil.html" class="related-card">
             <div class="related-card-content">
@@ -1066,19 +515,19 @@
               <p class="related-card-desc">DHA是視網膜的重要成分，與葉黃素搭配有加乘效果，是眼睛保健的黃金搭檔。</p>
             </div>
           </a>
-          <a href="./coenzyme-q10.html" class="related-card">
+          <a href="./anthocyanins.html" class="related-card">
             <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fffbeb; color: #b45309;">抗氧化物</span>
-              <h3 class="related-card-title">輔酶 Q10</h3>
-              <p class="related-card-desc">強效的抗氧化劑，能保護全身細胞，包含眼睛的微細血管，免於自由基傷害。</p>
+              <span class="related-card-tag" style="background-color: #f5f3ff; color: #5b21b6;">植化素</span>
+              <h3 class="related-card-title">花青素 (Anthocyanins)</h3>
+              <p class="related-card-desc">負責放鬆睫狀肌、改善眼睛疲勞，與葉黃素的功能完美互補。</p>
             </div>
           </a>
-                      <a href="./vitamin-b.html" class="related-card">
+          <a href="./vitamin-a.html" class="related-card">
               <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #eff6ff; color: #1e40af;">維生素</span>
-                <h3 class="related-card-title">維生素 B 群</h3>
+                <span class="related-card-tag" style="background-color: #fefce8; color: #a16207;">維生素</span>
+                <h3 class="related-card-title">維生素 A (Vitamin A)</h3>
                 <p class="related-card-desc">
-                  維持神經系統健康，包含視神經的正常運作，對於緩解眼睛疲勞也有幫助。
+                  構成視網膜感光細胞內視紫質的必要成分，是維持夜間視力的關鍵。
                 </p>
               </div>
             </a>
@@ -1086,134 +535,88 @@
       </main>
     </div>
 
-    <!-- Disclaimer Section -->
     <section class="disclaimer">
       <div class="disclaimer-content">
         <h3>免責聲明</h3>
-        <p>
-          本資訊僅供教育目的，不能取代專業醫療建議。開始任何營養補充計劃前，請諮詢醫療專業人員。個人需求可能因健康狀況、藥物使用和生活方式而有所不同。
-        </p>
+        <p>本站資訊僅供教育與參考目的，不能取代專業醫療建議、診斷或治療。在開始任何新的營養補充計劃或更改現有健康方案前，請務必諮詢您的醫師或合格的醫療專業人員。</p>
       </div>
     </section>
 
-    <!-- Footer Component Container -->
     <div id="footer-component"></div>
 
-    <!-- Load Components -->
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
 
     <script>
-      // Progress Bar
       function updateProgressBar() {
         const scrollPosition = window.scrollY;
-        const documentHeight =
-          document.documentElement.scrollHeight - window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercentage = (scrollPosition / documentHeight) * 100;
-        document.getElementById("progressBar").style.width =
-          scrollPercentage + "%";
+        document.getElementById("progressBar").style.width = scrollPercentage + "%";
       }
-
       window.addEventListener("scroll", updateProgressBar);
 
-      // Table of Contents Highlighting
       const sections = document.querySelectorAll("section[id]");
       const navLinks = document.querySelectorAll(".toc-link");
-
       function highlightTOC() {
         let current = "";
-
         sections.forEach((section) => {
           const sectionTop = section.offsetTop - 100;
-          const sectionHeight = section.offsetHeight;
-          const scrollPosition = window.scrollY;
-
-          if (
-            scrollPosition >= sectionTop &&
-            scrollPosition < sectionTop + sectionHeight
-          ) {
-            current = section.getAttribute("id");
-          }
+          if (window.scrollY >= sectionTop) { current = section.getAttribute("id"); }
         });
-
         navLinks.forEach((link) => {
           link.classList.remove("active");
-          if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-          }
+          if (link.getAttribute("href") === "#" + current) { link.classList.add("active"); }
         });
       }
-
       window.addEventListener("scroll", highlightTOC);
-      highlightTOC();
 
-      // Smooth Scroll for TOC Links
-      navLinks.forEach((link) => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute("href");
-          const targetSection = document.querySelector(targetId);
-
-          if (targetSection) {
-            const yOffset = -80;
-            const y =
-              targetSection.getBoundingClientRect().top +
-              window.pageYOffset +
-              yOffset;
-
-            window.scrollTo({ top: y, behavior: "smooth" });
-          }
-        });
-      });
-
-      // FAQ Toggle
       document.querySelectorAll(".faq-question").forEach((question) => {
         question.addEventListener("click", () => {
-          const item = question.parentElement;
-          item.classList.toggle("active");
-
-          // Close other FAQ items
-          document.querySelectorAll(".faq-item").forEach((otherItem) => {
-            if (otherItem !== item) {
-              otherItem.classList.remove("active");
-            }
-          });
+          question.parentElement.classList.toggle("active");
         });
       });
       
-      // Interactive test options
-      document.querySelectorAll(".test-option").forEach((option) => {
-        option.addEventListener("click", function () {
-          const checkbox = this.querySelector('input[type="checkbox"]');
-          checkbox.checked = !checkbox.checked;
-          if (checkbox.checked) {
-            this.classList.add("selected");
-          } else {
-            this.classList.remove("selected");
-          }
-        });
+      const checkOptions = document.querySelectorAll('.check-option');
+      const resultDiv = document.getElementById('check-result');
+
+      checkOptions.forEach(option => {
+          option.addEventListener('click', () => {
+              const checkbox = option.querySelector('input');
+              checkbox.checked = !checkbox.checked;
+              option.classList.toggle('selected', checkbox.checked);
+              updateResult();
+          });
       });
 
-      // Initialize Components
+      function updateResult() {
+          const checkedCount = document.querySelectorAll('input[name="lutein-check"]:checked').length;
+          if (resultDiv) {
+            resultDiv.style.display = 'block';
+            if (checkedCount === 0) {
+                resultDiv.innerHTML = '您的用眼習慣良好！';
+                resultDiv.style.backgroundColor = '#f0fdf4';
+                resultDiv.style.color = '#15803d';
+            } else if (checkedCount <= 2) {
+                resultDiv.innerHTML = `您勾選了 ${checkedCount} 項，建議開始注意葉黃素的日常補充。`;
+                resultDiv.style.backgroundColor = '#fffbeb';
+                resultDiv.style.color = '#b45309';
+            } else {
+                resultDiv.innerHTML = `您勾選了 ${checkedCount} 項，屬於需要積極補充葉黃素的高風險族群！`;
+                resultDiv.style.backgroundColor = '#fef2f2';
+                resultDiv.style.color = '#b91c1c';
+            }
+          }
+      }
+
       document.addEventListener("DOMContentLoaded", function () {
-        // Analytics
-        if (window.DeusAnalyticsComponent) {
-          new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
-        }
-        // Header
-        const headerContainer = document.getElementById("header-component");
-        if (headerContainer && window.DeusHeaderComponent) {
-          new window.DeusHeaderComponent(headerContainer)
-            .setDebug(false)
-            .setTheme("default");
-        }
-        // Footer
-        const footerContainer = document.getElementById("footer-component");
-        if (footerContainer && window.DeusFooterComponent) {
-          new window.DeusFooterComponent(footerContainer)
-            .setDebug(false)
-            .setTheme("default");
-        }
+        if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
+        if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
+        if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+        updateResult();
       });
     </script>
+</body>
+</html>
+
