@@ -103,9 +103,9 @@ if (footerContainer && window.DeusFooterComponent) {
 }
 ```
 
-### 5. **更新文章彙整頁面**
+### 5. **更新中央資料庫**
 
-若新增的是文章頁面，請打開 `/post/archive.html`，手動新增該篇文章的卡片資訊，以確保目錄同步更新。
+若新增的是文章頁面，請打開 `/assets/js/articles-data.js` 檔案，在 `articlesData` 陣列中新增一筆對應的文章物件資料。`archive.html` 和 `nutrient-dashboard.html` 將會自動讀取此資料並同步更新，無需再手動編輯。
 
 ### 6. **新增內部連結**
 

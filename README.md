@@ -218,10 +218,19 @@ const homepage = new CaregiverHomepage(
 ```
 caregiver-web/
 ├── index.html                   # 主頁面文件
-├── js/
-│   └── homepage-component.js    # 首頁組件（核心文件）
+├── post/
+│   ├── archive.html             # 文章總覽頁面 (動態載入)
+│   └── tools/
+│       └── nutrient-dashboard.html # 互動式儀表板 (動態載入)
+├── assets/
+│   └── js/
+│       ├── articles-data.js       # 文章與營養素的中央資料庫
+│       ├── archive-logic.js       # 文章總覽頁面的顯示邏輯
+│       ├── dashboard-logic.js     # 儀表板頁面的顯示邏輯
+│       └── ...
 ├── doc/
-│   └── homepage.md             # 首頁內容規格
+│   ├── writing-guide.md         # 文章風格指引
+│   └── new-page-checklist.md    # 新增頁面檢查清單
 ├── CLAUDE.md                   # 開發規範
 └── README.md                   # 本文件
 ```
