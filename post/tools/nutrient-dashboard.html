@@ -42,33 +42,19 @@
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
         body {
             font-family: 'Noto Sans TC', sans-serif;
         }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 300px;
-            height: 300px;
-            margin: auto;
-        }
         .main-container {
             padding-top: 120px;
         }
-
-      .alert-tip { background-color: #e6f7ff; border-color: #91d5ff; color: #0050b3; }
-
-      .alert-doctor > strong::before, .alert-danger > strong::before {
-        content: '⚠️';
-        margin-right: 8px;
-      }
-      .alert-nutritionist > strong::before, .alert-tip > strong::before {
-        content: '💡';
-        margin-right: 8px;
-      }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
@@ -83,41 +69,37 @@
         </header>
 
         <main>
+            <!-- Section 1: Status Bar -->
             <div class="bg-white rounded-xl shadow-sm p-4 md:p-6 mb-8">
-                <h2 class="text-xl font-bold mb-4 text-slate-800 border-b pb-2">資料總覽與篩選</h2>
-                <p class="text-slate-600 mb-6">此區塊提供您對整體內容狀態的快速了解。您可以依據**結構類型**（如維生素類）、**健康目標**（可多選）或關鍵字進行精準搜尋。</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-                    <!-- Donut Chart -->
-                    <div class="md:col-span-1">
-                        <div class="chart-container">
-                            <canvas id="statusChart"></canvas>
-                        </div>
+                <h2 class="text-xl font-bold mb-4 text-slate-800 border-b pb-2">資料總覽：內容涵蓋狀態</h2>
+                <p class="text-slate-600 mb-6">儀表板目前收錄的營養素文章完整度。</p>
+                <div id="statusBarContainer" class="w-full">
+                    <div class="w-full bg-amber-200 rounded-full h-6 shadow-inner">
+                        <div id="progressBar" class="bg-teal-500 h-6 rounded-full text-center text-white text-sm font-bold leading-6 transition-all duration-500" style="width: 0%;"></div>
                     </div>
-                    <!-- Filters -->
-                    <div class="md:col-span-2 space-y-6">
-                        <!-- Primary Type Filter (Single Select) -->
-                        <div>
-                            <label class="font-semibold text-slate-700 mb-2 block">依結構類型篩選 (Category)：</label>
-                            <div id="mainTypeFilters" class="flex flex-wrap gap-2">
-                            </div>
-                        </div>
+                    <div id="statusText" class="text-center text-sm text-slate-600 mt-2 font-medium"></div>
+                </div>
+            </div>
+            
+            <!-- Section 2: Goal Filter & Search (Combined) -->
+            <div class="bg-white rounded-xl shadow-sm p-4 md:p-6 mb-8">
+                <h2 class="text-xl font-bold mb-4 text-slate-800 border-b pb-2">篩選器：依健康目標與關鍵字搜尋</h2>
+                <p class="text-slate-600 mb-6">您可以直接輸入關鍵字，或點擊下方分類展開健康目標來縮小搜尋範圍。</p>
+                
+                <!-- Search Input (Moved up) -->
+                <div class="mb-6">
+                    <label for="searchInput" class="font-semibold text-slate-700 mb-2 block">搜尋營養素名稱：</label>
+                    <input type="text" id="searchInput" placeholder="例如：維生素C 或 魚油" class="w-full p-2 border border-slate-300 rounded-md shadow-sm focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition">
+                </div>
 
-                        <!-- Secondary Goal Filter (Multi Select Tags) -->
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <label class="font-semibold text-slate-700 block">依健康目標多選 (Subcategory)：</label>
-                                <button id="clearGoalsBtn" class="text-sm text-teal-600 font-medium hover:text-teal-800 transition hidden">清除所有目標</button>
-                            </div>
-                            <div id="healthGoalFiltersContainer" class="flex flex-wrap gap-2 p-2 bg-slate-100 rounded-lg max-h-40 overflow-y-auto border border-slate-200">
-                                <!-- Tags inserted here by JS -->
-                            </div>
-                        </div>
-
-                        <!-- Search Input -->
-                        <div>
-                            <label for="searchInput" class="font-semibold text-slate-700 mb-2 block">搜尋營養素名稱：</label>
-                            <input type="text" id="searchInput" placeholder="例如：維生素C 或 魚油" class="w-full p-2 border border-slate-300 rounded-md shadow-sm focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition">
-                        </div>
+                <!-- Accordion Goal Filter -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="font-semibold text-slate-700 block">依健康目標多選：</label>
+                        <button id="clearGoalsBtn" class="text-sm text-teal-600 font-medium hover:text-teal-800 transition hidden">清除所有目標</button>
+                    </div>
+                    <div id="healthGoalAccordionContainer" class="border border-slate-200 rounded-lg">
+                        <!-- Accordion items generated by JS -->
                     </div>
                 </div>
             </div>
@@ -134,129 +116,86 @@
     =========================================================================
     MAINTENANCE AND UPDATE GUIDE FOR nutrient-dashboard.html
     =========================================================================
-
-    This page functions as a dynamic, client-side dashboard. All content and
-    filtering logic is driven by the `nutrientData` JavaScript array below.
-    To add a new article or update an existing one, you only need to modify
-    this array. The rest of the page will update automatically.
-
-    -------------------------------------------------------------------------
-    HOW TO ADD OR UPDATE A NUTRIENT
-    -------------------------------------------------------------------------
-
-    1. Find the `nutrientData` array in the <script> tag below.
-    2. To add a new nutrient, copy an existing object and paste it as a new
-       element in the array.
-    3. To update an existing nutrient, find its corresponding object in the array.
-    4. Modify the keys of the object according to these rules:
-
-       - type: (String) The main structural category.
-         Current values: '維生素類', '礦物質類', '機能性成分'.
-         This is used for the "依結構類型篩選" filter.
-
-       - goals: (Array of Strings) The associated health goals or symptoms.
-         This is used for the "依健康目標多選" filter. You can add new
-         goals, and they will automatically appear as filter tags.
-
-       - name: (String) The primary name of the nutrient (e.g., '維生素C').
-
-       - en_name: (String) The English name of the nutrient (NEWLY ADDED).
-
-       - func: (String) A brief, one-sentence description of its main function.
-
-       - status: (String) Set to '已涵蓋' if the article exists, or '待補齊'
-         if it is a placeholder. This controls the card's color and the
-         donut chart.
-
-       - link: (String or null) The relative path to the article file from the
-         `post/` directory (e.g., '../vitamin-c.html'). If the article
-         doesn't exist, set this to `null`.
-
-       - title: (String or null) The exact title of the article. This is
-         currently not displayed on the card but is good practice to keep
-         in sync for future use. Set to `null` if no article exists.
-
-    -------------------------------------------------------------------------
-    EXAMPLE OF A NEW ENTRY
-    -------------------------------------------------------------------------
-
-    {
-        type: '礦物質類',
-        goals: ['免疫強化', '抗氧化與抗發炎'],
-        name: '硒',
-        en_name: 'Selenium',
-        func: '構成體內重要抗氧化酵素，保護細胞免於損傷',
-        status: '已涵蓋', // Assuming you just wrote the article
-        link: '../selenium.html', // The path to the new file
-        title: '硒 - 對抗癌症與病毒的隱形守護者'
-    }
-
-    =========================================================================
     -->
     <script>
         const nutrientData = [
             // type: 結構分類; goals: 健康目標/症狀
-            { type: '維生素類', goals: ['能量代謝', '神經與情緒健康', '皮膚與黏膜健康'], name: '維生素B群', en_name: 'Vitamin B Complex', func: '參與能量代謝、維持神經系統', status: '已涵蓋', link: '../vitamin-b.html', title: '啟動身體能量、告別疲勞的活力發電機' },
-            { type: '維生素類', goals: ['心血管健康', '新生與發育', '神經與情緒健康'], name: '葉酸（B9）', en_name: 'Folic Acid (B9)', func: '守護心血管與新生的秘密功臣', status: '已涵蓋', link: '../folic-acid.html', title: '不只孕婦必備！守護心血管與新生的秘密功臣' },
-            { type: '維生素類', goals: ['免疫強化', '抗氧化與抗發炎', '肌膚與膠原蛋白'], name: '維生素C（抗壞血酸）', en_name: 'Vitamin C (Ascorbic Acid)', func: '強力抗氧化、有助於膠原蛋白合成', status: '已涵蓋', link: '../vitamin-c.html', title: '打造透亮美肌與強效保護力的抗氧化之王' },
-            { type: '維生素類', goals: ['視力維護', '免疫強化', '皮膚與黏膜健康'], name: '維生素A', en_name: 'Vitamin A', func: '維持視力、免疫功能和上皮組織完整', status: '已涵蓋', link: '../vitamin-a.html', title: '不只顧眼睛！解鎖視覺、皮膚與免疫的3大關鍵' },
-            { type: '維生素類', goals: ['骨骼與牙齒健康', '免疫強化', '內分泌調節'], name: '維生素D', en_name: 'Vitamin D', func: '協助鈣質吸收、調節免疫功能', status: '已涵蓋', link: '../vitamin-d.html', title: '不只是維生素，更是身體的陽光總指揮' },
-            { type: '維生素類', goals: ['抗氧化與抗發炎', '心血管健康', '細胞保護'], name: '維生素E', en_name: 'Vitamin E', func: '具抗氧化作用，保護細胞膜', status: '已涵蓋', link: '../vitamin-e.html', title: '保護細胞、對抗歲月痕跡的抗老戰士' },
-            { type: '維生素類', goals: ['骨骼與牙齒健康', '心血管健康', '血液凝固'], name: '維生素K', en_name: 'Vitamin K', func: '參與血液凝固和骨骼代謝', status: '已涵蓋', link: '../vitamin-k.html', title: '補鈣、補D為何一定要有它？K2才是預防骨鬆與血管鈣化的關鍵' },
-            
-            { type: '礦物質類', goals: ['骨骼與牙齒健康', '神經與肌肉功能', '睡眠與放鬆'], name: '鈣', en_name: 'Calcium', func: '構成骨骼與牙齒，參與肌肉收縮', status: '已涵蓋', link: '../calcium.html', title: '不只補骨！終結抽筋、失眠的關鍵礦物質' },
-            { type: '礦物質類', goals: ['睡眠與放鬆', '神經與肌肉功能', '能量代謝'], name: '鎂', en_name: 'Magnesium', func: '參與能量代謝、神經與肌肉功能', status: '已涵蓋', link: '../magnesium.html', title: '終結失眠與抽筋的放鬆礦物質' },
-            { type: '礦物質類', goals: ['心血管健康', '體液平衡', '神經與肌肉功能'], name: '鉀', en_name: 'Potassium', func: '維持體液平衡、神經傳導與肌肉收縮', status: '已涵蓋', link: '../potassium.html', title: '終結水腫、抽筋的電解質之王' },
-            { type: '礦物質類', goals: ['體液平衡', '神經與肌肉功能'], name: '鈉', en_name: 'Sodium', func: '維持體液平衡', status: '已涵蓋', link: '../sodium.html', title: '鈉 - 致命的美味？一篇看懂高血壓元兇、外食族必學的減鈉飲食全攻略 | 營養百科' },
-            { type: '礦物質類', goals: ['骨骼與牙齒健康', '能量代謝'], name: '磷', en_name: 'Phosphorus', func: '構成骨骼與牙齒，參與能量代謝', status: '已涵蓋', link: '../phosphorus.html', title: '磷 - 不只傷腎！構成DNA、啟動能量的生命基石：一篇看懂高磷陷阱與鈣磷平衡的科學' },
-            { type: '礦物質類', goals: ['血紅素與氣色', '能量代謝', '新生與發育'], name: '鐵', en_name: 'Iron', func: '構成血紅素，負責氧氣運輸', status: '已涵蓋', link: '../iron.html', title: '告別疲勞、擁有紅潤氣色的活力元素' },
-            { type: '礦物質類', goals: ['免疫強化', '生長發育與修復', '皮膚與黏膜健康'], name: '鋅', en_name: 'Zinc', func: '參與免疫功能、生長發育與細胞修復', status: '已涵蓋', link: '../zinc.html', title: '點燃300種代謝反應的生命火星塞' },
-            { type: '礦物質類', goals: ['甲狀腺與代謝', '內分泌調節', '新生與發育'], name: '碘', en_name: 'Iodine', func: '構成甲狀腺素，調節新陳代謝', status: '已涵蓋', link: '../iodine.html', title: '碘 - 不只防大脖子！啟動新陳代謝、守護大腦發育的關鍵鑰匙' },
-            { type: '礦物質類', goals: ['抗氧化與抗發炎', '細胞保護'], name: '硒', en_name: 'Selenium', func: '具抗氧化作用，保護細胞', status: '已涵蓋', link: '../selenium.html', title: '硒 - 不只是最強抗氧化劑！一篇看懂「抗癌之王」如何保護甲狀腺、提升免疫力 | 營養百科' },
-            { type: '礦物質類', goals: ['能量代謝', '細胞保護', '血紅素與氣色', '肌膚與膠原蛋白'], name: '銅', en_name: 'Copper', func: '參與能量代謝、鐵質運輸與結締組織形成', status: '已涵蓋', link: '../copper.html', title: '銅 (Copper) 完整指南：功效、攝取量與3大關鍵搭配，激活您的青春能量' },
-            { type: '礦物質類', goals: ['骨骼與牙齒健康', '抗氧化與抗發炎', '能量代謝'], name: '錳', en_name: 'Manganese', func: '參與骨骼形成與能量代謝的輔酶', status: '已涵蓋', link: '../manganese.html', title: '錳 - 不只是工業原料！鞏固骨骼、啟動代謝的幕後功臣：一篇看懂錳與鐵鈣的平衡學' },
-            { type: '礦物質類', goals: ['骨骼與牙齒健康'], name: '氟', en_name: 'Fluoride', func: '強化牙齒琺瑯質，預防蛀牙', status: '已涵蓋', link: '../fluoride.html', title: '氟 - 終結蛀牙的隱形防護罩：一篇看懂安全劑量、氟斑牙與飲水迷思' },
-            { type: '機能性成分', goals: ['血糖穩定', '體重管理', '能量代謝'], name: '鉻', en_name: 'Chromium', func: '強化胰島素作用，穩定血糖、抑制對甜食的渴望', status: '已涵蓋', link: '../chromium.html', title: '鉻 - 穩定血糖、抑制嘴饞的代謝神隊友' },
-            
-            { type: '機能性成分', goals: ['關節與軟骨', '運動修復與支持'], name: '葡萄糖胺', en_name: 'Glucosamine', func: '構成關節軟骨與滑液的重要成分', status: '已涵蓋', link: '../glucosamine.html', title: '葡萄糖胺 - 關節卡卡、上下樓梯不適的救星？一篇看懂3大類型、功效與副作用迷思' },
-            { type: '機能性成分', goals: ['關節與軟骨', '運動修復與支持', '抗氧化與抗發炎'], name: '軟骨素', en_name: 'Chondroitin', func: '提供關節軟骨彈性與保水性，並抑制發炎反應，延緩磨損', status: '已涵蓋', link: '../chondroitin.html', title: '軟骨素 - 終結關節卡卡、找回靈活行動力的關鍵' },
-            { type: '機能性成分', goals: ['肌膚與膠原蛋白', '關節與軟骨', '骨骼與牙齒健康'], name: '膠原蛋白', en_name: 'Collagen', func: '提供結構支撐，存在於皮膚、骨骼', status: '已涵蓋', link: '../collagen.html', title: '吃出澎潤Q彈的青春實踐指南' },
-            { type: '機能性成分', goals: ['視力維護', '抗氧化與抗發炎'], name: '葉黃素', en_name: 'Lutein', func: '有助於保護眼睛免受藍光傷害', status: '已涵蓋', link: '../lutein.html', title: '3C世代的內建護眼藍光濾鏡' },
-            { type: '機能性成分', goals: ['抗氧化與抗發炎', '消化道健康', '細胞保護'], name: '薑黃素', en_name: 'Curcumin', func: '具有強大的抗發炎與抗氧化作用', status: '已涵蓋', link: '../curcumin.html', title: '身體的天然抗發炎超級滅火器' },
-            { type: '機能性成分', goals: ['抗氧化與抗發炎', '心血管健康', '細胞保護', '男性保健'], name: '茄紅素', en_name: 'Lycopene', func: '強效抗氧化劑，尤其對攝護腺健康有益', status: '已涵蓋', link: '../lycopene.html', title: '茄紅素 - 不只是番茄的紅色力量！一篇看懂超強抗氧化力、心血管與攝護腺保健的關鍵秘密' },
-            { type: '機能性成分', goals: ['抗氧化與抗發炎', '視力維護', '心血管健康'], name: '花青素', en_name: 'Anthocyanins', func: '強效抗氧化劑，有助於改善夜間視力與血管健康', status: '已涵蓋', link: '../anthocyanins.html', title: '花青素 - 終結3C眼疲勞、逆轉老化的超級抗氧化物' },
-            { type: '機能性成分', goals: ['心血管健康', '能量代謝', '抗氧化與抗發炎'], name: '輔酶Q10（CoQ10）', en_name: 'Coenzyme Q10 (CoQ10)', func: '參與細胞能量生成，具備抗氧化作用', status: '已涵蓋', link: '../coenzyme-q10.html', title: '點燃心臟活力的能量火星塞' },
-            { type: '機能性成分', goals: ['腸道菌群平衡', '免疫強化', '消化道健康'], name: '益生菌（Probiotics）', en_name: 'Probiotics', func: '有助於平衡腸道菌群', status: '已涵蓋', link: '../probiotics.html', title: '重建腸道好菌平衡的消化專家' },
-            { type: '機能性成分', goals: ['腸道菌群平衡', '消化道健康', '免疫強化'], name: '益生質（Prebiotics）', en_name: 'Prebiotics', func: '益生菌的食物，能促進益生菌生長', status: '已涵蓋', link: '../prebiotics.html', title: '益生質 - 你吃的益生菌有效嗎？餵飽腸道好菌的3大關鍵：一篇看懂益生菌的超級食物' },
-            { type: '機能性成分', goals: ['消化道健康', '體重管理', '腸道菌群平衡', '血糖穩定'], name: '膳食纖維', en_name: 'Dietary Fiber', func: '維護腸道蠕動、增加飽足感', status: '已涵蓋', link: '../dietary-fiber.html', title: '膳食纖維 - 不只通便！解鎖腸道健康、穩定血糖的終極指南' },
-            { type: '機能性成分', goals: ['心血管健康', '腦部認知', '抗氧化與抗發炎'], name: '魚油（Omega-3脂肪酸）', en_name: 'Fish Oil (Omega-3 Fatty Acids)', func: '包含DHA與EPA，有助於維持心血管健康與腦部功能', status: '已涵蓋', link: '../fish-oil.html', title: '暢通思緒、保護心血管的關鍵Omega-3' },
-            { type: '機能性成分', goals: ['睡眠與放鬆', '神經與情緒健康'], name: 'GABA', en_name: 'GABA (Gamma-Aminobutyric Acid)', func: '大腦的天然安定劑，幫助緩解焦慮與失眠', status: '已涵蓋', link: '../gaba.html', title: '告別焦慮與失眠，大腦的天然安定劑' },
-            { type: '機能性成分', goals: ['肝臟解毒與代謝', '肌膚與膠原蛋白', '抗氧化與抗發炎'], name: '穀胱甘肽 (GSH)', en_name: 'Glutathione (GSH)', func: '人體的抗氧化之母，參與肝臟解毒與美白', status: '已涵蓋', link: '../glutathione.html', title: '打造發光肌與強效肝臟解毒的抗氧化之母' },
-            { type: '機能性成分', goals: ['運動修復與支持', '肌肉與能量'], name: '胺基酸', en_name: 'Amino Acids', func: '蛋白質的基本組成單位，用於肌肉修復與合成（如BCAA）', status: '已涵蓋', link: '../amino-acids.html', title: '胺基酸功效全解析：解決疲勞、肌肉流失的9大必需胺基酸' },
-            { type: '機能性成分', goals: ['免疫強化', '心血管健康', '血糖穩定'], name: 'β-葡聚醣', en_name: 'Beta-Glucans', func: '有助於調節免疫、降低膽固醇與穩定血糖', status: '已涵蓋', link: '../beta-glucan.html', title: 'β-葡聚醣 - 啟動免疫力、擊退壞膽固醇的天然武器' },
+            { type: '維生素類', goals: ['能量代謝', '神經與情緒健康', '皮膚與黏膜健康', '血紅素與氣色'], name: '維生素B群', en_name: 'Vitamin B Complex', func: '參與能量代謝、維持神經系統', status: '完整', link: '../vitamin-b.html', title: '啟動身體能量、告別疲勞的活力發電機' },
+            { type: '維生素類', goals: ['心血管健康', '新生與發育', '神經與情緒健康', '血紅素與氣色'], name: '葉酸', en_name: 'Folic Acid (B9)', func: '守護心血管與新生的秘密功臣', status: '完整', link: '../folic-acid.html', title: '不只孕婦必備！守護心血管與新生的秘密功臣' },
+            { type: '維生素類', goals: ['免疫強化', '抗氧化與抗發炎', '肌膚與膠原蛋白'], name: '維生素C', en_name: 'Vitamin C (Ascorbic Acid)', func: '強力抗氧化、有助於膠原蛋白合成', status: '完整', link: '../vitamin-c.html', title: '打造透亮美肌與強效保護力的抗氧化之王' },
+            { type: '維生素類', goals: ['視力維護', '免疫強化', '皮膚與黏膜健康', '生長發育與修復'], name: '維生素A', en_name: 'Vitamin A', func: '維持視力、免疫功能和上皮組織完整', status: '完整', link: '../vitamin-a.html', title: '不只顧眼睛！解鎖視覺、皮膚與免疫的3大關鍵' },
+            { type: '維生素類', goals: ['骨骼與牙齒健康', '免疫強化', '內分泌調節', '神經與情緒健康'], name: '維生素D', en_name: 'Vitamin D', func: '協助鈣質吸收、調節免疫功能', status: '完整', link: '../vitamin-d.html', title: '不只是維生素，更是身體的陽光總指揮' },
+            { type: '維生素類', goals: ['抗氧化與抗發炎', '心血管健康', '細胞保護', '皮膚與黏膜健康'], name: '維生素E', en_name: 'Vitamin E', func: '具抗氧化作用，保護細胞膜', status: '完整', link: '../vitamin-e.html', title: '保護細胞、對抗歲月痕跡的抗老戰士' },
+            { type: '維生素類', goals: ['骨骼與牙齒健康', '心血管健康', '血液凝固'], name: '維生素K', en_name: 'Vitamin K', func: '參與血液凝固和骨骼代謝', status: '完整', link: '../vitamin-k.html', title: '補鈣、補D為何一定要有它？K2才是預防骨鬆與血管鈣化的關鍵' },
+            { type: '礦物質類', goals: ['骨骼與牙齒健康', '神經與肌肉功能', '睡眠與放鬆'], name: '鈣', en_name: 'Calcium', func: '構成骨骼與牙齒，參與肌肉收縮', status: '完整', link: '../calcium.html', title: '不只補骨！終結抽筋、失眠的關鍵礦物質' },
+            { type: '礦物質類', goals: ['睡眠與放鬆', '神經與肌肉功能', '能量代謝', '心血管健康', '血糖穩定'], name: '鎂', en_name: 'Magnesium', func: '參與能量代謝、神經與肌肉功能', status: '完整', link: '../magnesium.html', title: '終結失眠與抽筋的放鬆礦物質' },
+            { type: '礦物質類', goals: ['心血管健康', '體液平衡', '神經與肌肉功能'], name: '鉀', en_name: 'Potassium', func: '維持體液平衡、神經傳導與肌肉收縮', status: '完整', link: '../potassium.html', title: '終結水腫、抽筋的電解質之王' },
+            { type: '礦物質類', goals: ['體液平衡', '神經與肌肉功能'], name: '鈉', en_name: 'Sodium', func: '維持體液平衡', status: '完整', link: '../sodium.html', title: '鈉 - 致命的美味？一篇看懂高血壓元兇、外食族必學的減鈉飲食全攻略 | 營養百科' },
+            { type: '礦物質類', goals: ['骨骼與牙齒健康', '能量代謝'], name: '磷', en_name: 'Phosphorus', func: '構成骨骼與牙齒，參與能量代謝', status: '完整', link: '../phosphorus.html', title: '磷 - 不只傷腎！構成DNA、啟動能量的生命基石：一篇看懂高磷陷阱與鈣磷平衡的科學' },
+            { type: '礦物質類', goals: ['血紅素與氣色', '能量代謝', '新生與發育', '腦部認知'], name: '鐵', en_name: 'Iron', func: '構成血紅素，負責氧氣運輸', status: '完整', link: '../iron.html', title: '告別疲勞、擁有紅潤氣色的活力元素' },
+            { type: '礦物質類', goals: ['免疫強化', '生長發育與修復', '皮膚與黏膜健康', '男性保健', '內分泌調節'], name: '鋅', en_name: 'Zinc', func: '參與免疫功能、生長發育與細胞修復', status: '完整', link: '../zinc.html', title: '點燃300種代謝反應的生命火星塞' },
+            { type: '礦物質類', goals: ['甲狀腺與代謝', '內分泌調節', '新生與發育', '腦部認知'], name: '碘', en_name: 'Iodine', func: '構成甲狀腺素，調節新陳代謝', status: '完整', link: '../iodine.html', title: '碘 - 不只防大脖子！啟動新陳代謝、守護大腦發育的關鍵鑰匙' },
+            { type: '礦物質類', goals: ['抗氧化與抗發炎', '細胞保護', '甲狀腺與代謝', '免疫強化', '男性保健'], name: '硒', en_name: 'Selenium', func: '具抗氧化作用，保護細胞', status: '完整', link: '../selenium.html', title: '硒 - 不只是最強抗氧化劑！一篇看懂「抗癌之王」如何保護甲状腺、提升免疫力 | 營養百科' },
+            { type: '礦物質類', goals: ['能量代謝', '細胞保護', '血紅素與氣色', '肌膚與膠原蛋白', '神經與情緒健康'], name: '銅', en_name: 'Copper', func: '參與能量代謝、鐵質運輸與結締組織形成', status: '完整', link: '../copper.html', title: '銅 (Copper) 完整指南：功效、攝取量與3大關鍵搭配，激活您的青春能量' },
+            { type: '礦物質類', goals: ['骨骼與牙齒健康', '抗氧化與抗發炎', '能量代謝', '關節與軟骨'], name: '錳', en_name: 'Manganese', func: '參與骨骼形成與能量代謝的輔酶', status: '完整', link: '../manganese.html', title: '錳 - 不只是工業原料！鞏固骨骼、啟動代謝的幕後功臣：一篇看懂錳與鐵鈣的平衡學' },
+            { type: '礦物質類', goals: ['骨骼與牙齒健康'], name: '氟', en_name: 'Fluoride', func: '強化牙齒琺瑯質，預防蛀牙', status: '完整', link: '../fluoride.html', title: '氟 - 終結蛀牙的隱形防護罩：一篇看懂安全劑量、氟斑牙與飲水迷思' },
+            { type: '機能性成分', goals: ['血糖穩定', '體重管理', '能量代謝'], name: '鉻', en_name: 'Chromium', func: '強化胰島素作用，穩定血糖、抑制對甜食的渴望', status: '完整', link: '../chromium.html', title: '鉻 - 穩定血糖、抑制嘴饞的代謝神隊友' },
+            { type: '機能性成分', goals: ['關節與軟骨', '運動修復與支持'], name: '葡萄糖胺', en_name: 'Glucosamine', func: '構成關節軟骨與滑液的重要成分', status: '完整', link: '../glucosamine.html', title: '葡萄糖胺 - 關節卡卡、上下樓梯不適的救星？一篇看懂3大類型、功效與副作用迷思' },
+            { type: '機能性成分', goals: ['關節與軟骨', '運動修復與支持', '抗氧化與抗發炎'], name: '軟骨素', en_name: 'Chondroitin', func: '提供關節軟骨彈性與保水性，並抑制發炎反應，延緩磨損', status: '完整', link: '../chondroitin.html', title: '軟骨素 - 終結關節卡卡、找回靈活行動力的關鍵' },
+            { type: '機能性成分', goals: ['肌膚與膠原蛋白', '關節與軟骨', '骨骼與牙齒健康'], name: '膠原蛋白', en_name: 'Collagen', func: '提供結構支撐，存在於皮膚、骨骼', status: '完整', link: '../collagen.html', title: '吃出澎潤Q彈的青春實踐指南' },
+            { type: '機能性成分', goals: ['視力維護', '抗氧化與抗發炎', '腦部認知'], name: '葉黃素', en_name: 'Lutein', func: '有助於保護眼睛免受藍光傷害', status: '完整', link: '../lutein.html', title: '3C世代的內建護眼藍光濾鏡' },
+            { type: '機能性成分', goals: ['抗氧化與抗發炎', '消化道健康', '細胞保護', '關節與軟骨', '肝臟解毒與代謝'], name: '薑黃素', en_name: 'Curcumin', func: '具有強大的抗發炎與抗氧化作用', status: '完整', link: '../curcumin.html', title: '身體的天然抗發炎超級滅火器' },
+            { type: '機能性成分', goals: ['抗氧化與抗發炎', '心血管健康', '細胞保護', '男性保健'], name: '茄紅素', en_name: 'Lycopene', func: '強效抗氧化劑，尤其對攝護腺健康有益', status: '完整', link: '../lycopene.html', title: '茄紅素 - 不只是番茄的紅色力量！一篇看懂超強抗氧化力、心血管與攝護腺保健的關鍵秘密' },
+            { type: '機能性成分', goals: ['抗氧化與抗發炎', '視力維護', '心血管健康'], name: '花青素', en_name: 'Anthocyanins', func: '強效抗氧化劑，有助於改善夜間視力與血管健康', status: '完整', link: '../anthocyanins.html', title: '花青素 - 終結3C眼疲勞、逆轉老化的超級抗氧化物' },
+            { type: '機能性成分', goals: ['心血管健康', '能量代謝', '抗氧化與抗發炎', '皮膚與黏膜健康'], name: '輔酶Q10', en_name: 'Coenzyme Q10 (CoQ10)', func: '參與細胞能量生成，具備抗氧化作用', status: '完整', link: '../coenzyme-q10.html', title: '點燃心臟活力的能量火星塞' },
+            { type: '機能性成分', goals: ['腸道菌群平衡', '免疫強化', '消化道健康'], name: '益生菌', en_name: 'Probiotics', func: '有助於平衡腸道菌群', status: '完整', link: '../probiotics.html', title: '重建腸道好菌平衡的消化專家' },
+            { type: '機能性成分', goals: ['腸道菌群平衡', '消化道健康', '免疫強化'], name: '益生質', en_name: 'Prebiotics', func: '益生菌的食物，能促進益生菌生長', status: '完整', link: '../prebiotics.html', title: '益生質 - 你吃的益生菌有效嗎？餵飽腸道好菌的3大關鍵：一篇看懂益生菌的超級食物' },
+            { type: '機能性成分', goals: ['消化道健康', '體重管理', '腸道菌群平衡', '血糖穩定', '心血管健康'], name: '膳食纖維', en_name: 'Dietary Fiber', func: '維護腸道蠕動、增加飽足感', status: '完整', link: '../dietary-fiber.html', title: '膳食纖維 - 不只通便！解鎖腸道健康、穩定血糖的終極指南' },
+            { type: '機能性成分', goals: ['心血管健康', '腦部認知', '抗氧化與抗發炎', '視力維護', '神經與情緒健康'], name: '魚油', en_name: 'Fish Oil (Omega-3 Fatty Acids)', func: '包含DHA與EPA，有助於維持心血管健康與腦部功能', status: '完整', link: '../fish-oil.html', title: '暢通思緒、保護心血管的關鍵Omega-3' },
+            { type: '機能性成分', goals: ['睡眠與放鬆', '神經與情緒健康'], name: 'GABA', en_name: 'GABA (Gamma-Aminobutyric Acid)', func: '大腦的天然安定劑，幫助緩解焦慮與失眠', status: '完整', link: '../gaba.html', title: '告別焦慮與失眠，大腦的天然安定劑' },
+            { type: '機能性成分', goals: ['肝臟解毒與代謝', '肌膚與膠原蛋白', '抗氧化與抗發炎', '免疫強化'], name: '穀胱甘肽', en_name: 'Glutathione (GSH)', func: '人體的抗氧化之母，參與肝臟解毒與美白', status: '完整', link: '../glutathione.html', title: '打造發光肌與強效肝臟解毒的抗氧化之母' },
+            { type: '機能性成分', goals: ['運動修復與支持', '肌肉與能量', '肝臟解毒與代謝', '神經與情緒健康'], name: '胺基酸', en_name: 'Amino Acids', func: '蛋白質的基本組成單位，用於肌肉修復與合成（如BCAA）', status: '完整', link: '../amino-acids.html', title: '胺基酸功效全解析：解決疲勞、肌肉流失的9大必需胺基酸' },
+            { type: '機能性成分', goals: ['免疫強化', '心血管健康', '血糖穩定', '腸道菌群平衡'], name: 'β-葡聚醣', en_name: 'Beta-Glucans', func: '有助於調節免疫、降低膽固醇與穩定血糖', status: '完整', link: '../beta-glucan.html', title: 'β-葡聚醣 - 啟動免疫力、擊退壞膽固醇的天然武器' },
         ];
 
         // 核心修改：在數據載入後立即進行英文名稱排序 (A->Z)
         nutrientData.sort((a, b) => a.en_name.localeCompare(b.en_name));
         
-        // 將所有目標整理出來，用於生成多選標籤
-        const ALL_HEALTH_GOALS = [
-            ...new Set(nutrientData.flatMap(item => item.goals))
-        ].sort(); // 確保目標名稱按字母排序，方便查找
+        // 新的分類資料結構 (整合為5大類)
+        const healthGoalCategories = {
+          '核心代謝與內在調理': [
+            '免疫強化', '抗氧化與抗發炎', '細胞保護', '內分泌調節', 
+            '能量代謝', '甲狀腺與代謝', '血糖穩定', '體重管理', '肝臟解毒與代謝',
+            '新生與發育', '生長發育與修復', '體液平衡'
+          ],
+          '心血管與腦部功能': [
+            '心血管健康', '腦部認知', '血液凝固', '血紅素與氣色',
+            '神經與情緒健康', '睡眠與放鬆'
+          ],
+          '骨骼、肌肉與靈活行動': [
+            '骨骼與牙齒健康', '神經與肌肉功能', '關節與軟骨', 
+            '運動修復與支持', '肌肉與能量'
+          ],
+          '消化系統與腸道健康': [
+            '消化道健康', '腸道菌群平衡'
+          ],
+          '外觀保養與感官健康': [
+            '皮膚與黏膜健康', '肌膚與膠原蛋白', 
+            '視力維護', '男性保健'
+          ]
+        };
 
-        const mainTypeFiltersContainer = document.getElementById('mainTypeFilters');
-        const healthGoalFiltersContainer = document.getElementById('healthGoalFiltersContainer');
+        const healthGoalAccordionContainer = document.getElementById('healthGoalAccordionContainer');
         const searchInput = document.getElementById('searchInput');
         const nutrientGrid = document.getElementById('nutrientGrid');
         const resultsCount = document.getElementById('resultsCount');
-        const clearGoalsBtn = document.getElementById('clearGoalsBtn'); // 新增清空按鈕的引用
+        const clearGoalsBtn = document.getElementById('clearGoalsBtn');
 
-        let activeType = 'all';
         let activeGoals = new Set(); // 儲存所有選中的健康目標
         let searchTerm = '';
 
         function renderNutrientCard(nutrient) {
-            const statusColor = nutrient.status === '已涵蓋' ? 'teal' : 'amber';
+            const statusColor = nutrient.status === '完整' ? 'teal' : 'amber';
             const goalTags = nutrient.goals.map(goal => 
                 `<span class="text-xs font-medium text-slate-600 bg-slate-200 px-2 py-0.5 rounded-full">${goal}</span>`
             ).join(' ');
@@ -286,26 +225,20 @@
         function applyFilters() {
             let filteredData = nutrientData;
 
-            // 1. Filter by Structural Type (Category)
-            if (activeType !== 'all') {
-                filteredData = filteredData.filter(item => item.type === activeType);
-            }
-
-            // 2. Filter by Health Goals (Subcategory - Multi-select logic)
+            // Filter by Health Goals (Subcategory - Multi-select logic)
             if (activeGoals.size > 0) {
-                // 必須包含所有選中的 Goals
                 const requiredGoals = Array.from(activeGoals);
                 filteredData = filteredData.filter(item => 
                     requiredGoals.every(goal => item.goals.includes(goal))
                 );
             }
             
-            // 3. Filter by Search Term
+            // Filter by Search Term
             if (searchTerm) {
                 const lowerSearchTerm = searchTerm.toLowerCase();
                 filteredData = filteredData.filter(item => 
                     item.name.toLowerCase().includes(lowerSearchTerm) ||
-                    item.en_name.toLowerCase().includes(lowerSearchTerm) || // Allow searching by English name
+                    (item.en_name && item.en_name.toLowerCase().includes(lowerSearchTerm)) ||
                     item.func.toLowerCase().includes(lowerSearchTerm) ||
                     item.type.toLowerCase().includes(lowerSearchTerm) ||
                     item.goals.some(goal => goal.toLowerCase().includes(lowerSearchTerm))
@@ -316,34 +249,9 @@
             resultsCount.textContent = `找到 ${filteredData.length} 筆結果`;
         }
         
-        function setupTypeFilters() {
-            const mainTypes = ['all', ...new Set(nutrientData.map(item => item.type))];
-            mainTypeFiltersContainer.innerHTML = mainTypes.map(type => {
-                const text = type === 'all' ? '全部分類' : type;
-                const baseClasses = 'px-4 py-2 text-sm font-semibold rounded-full cursor-pointer transition';
-                const activeClasses = 'bg-teal-600 text-white shadow';
-                const inactiveClasses = 'bg-slate-200 text-slate-700 hover:bg-slate-300';
-                const isActive = type === activeType;
-                return `<button data-type="${type}" class="${baseClasses} ${isActive ? activeClasses : inactiveClasses}">${text}</button>`;
-            }).join('');
-
-            mainTypeFiltersContainer.addEventListener('click', e => {
-                if (e.target.tagName === 'BUTTON') {
-                    activeType = e.target.dataset.type;
-                    document.querySelectorAll('#mainTypeFilters button').forEach(btn => {
-                        btn.classList.remove('bg-teal-600', 'text-white', 'shadow');
-                        btn.classList.add('bg-slate-200', 'text-slate-700', 'hover:bg-slate-300');
-                    });
-                    e.target.classList.add('bg-teal-600', 'text-white', 'shadow');
-                    e.target.classList.remove('bg-slate-200', 'text-slate-700', 'hover:bg-slate-300');
-                    applyFilters();
-                }
-            });
-        }
-
         function clearGoals() {
             activeGoals.clear();
-            document.querySelectorAll('#healthGoalFiltersContainer button').forEach(btn => {
+            document.querySelectorAll('#healthGoalAccordionContainer button[data-goal]').forEach(btn => {
                 btn.classList.remove('bg-teal-500', 'text-white', 'border-teal-500', 'shadow-md');
                 btn.classList.add('bg-white', 'text-slate-600', 'border-slate-300', 'hover:bg-teal-50', 'hover:border-teal-400');
             });
@@ -360,15 +268,52 @@
         }
         
         function setupGoalFilters() {
-            healthGoalFiltersContainer.innerHTML = ALL_HEALTH_GOALS.map(goal => {
-                // RWD Enhancement: Increased padding for better mobile touch target (px-4 py-2)
-                const baseClasses = 'px-4 py-2 text-sm font-medium rounded-full cursor-pointer transition duration-150 ease-in-out border whitespace-nowrap';
-                const inactiveClasses = 'bg-white text-slate-600 border-slate-300 hover:bg-teal-50 hover:border-teal-400';
-                const activeClasses = 'bg-teal-500 text-white border-teal-500 shadow-md';
-                return `<button data-goal="${goal}" class="${baseClasses} ${inactiveClasses}">${goal}</button>`;
-            }).join('');
+            healthGoalAccordionContainer.innerHTML = ''; // Clear previous content
 
-            healthGoalFiltersContainer.addEventListener('click', e => {
+            Object.keys(healthGoalCategories).forEach(category => {
+                const goals = healthGoalCategories[category].sort(); // Sort goals alphabetically
+                
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'border-b border-slate-200 last:border-b-0';
+
+                const headerButton = document.createElement('button');
+                headerButton.className = 'w-full flex justify-between items-center text-left p-4 hover:bg-slate-50 transition duration-150';
+                headerButton.innerHTML = `
+                    <span class="font-semibold text-slate-800">${category}</span>
+                    <svg class="w-5 h-5 transition-transform transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                `;
+
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'accordion-content';
+                const tagsContainer = document.createElement('div');
+                tagsContainer.className = 'p-4 pt-0 flex flex-wrap gap-2';
+
+                tagsContainer.innerHTML = goals.map(goal => {
+                    const baseClasses = 'px-4 py-2 text-sm font-medium rounded-full cursor-pointer transition duration-150 ease-in-out border whitespace-nowrap';
+                    const inactiveClasses = 'bg-white text-slate-600 border-slate-300 hover:bg-teal-50 hover:border-teal-400';
+                    return `<button data-goal="${goal}" class="${baseClasses} ${inactiveClasses}">${goal}</button>`;
+                }).join('');
+                
+                contentDiv.appendChild(tagsContainer);
+                itemDiv.appendChild(headerButton);
+                itemDiv.appendChild(contentDiv);
+                healthGoalAccordionContainer.appendChild(itemDiv);
+
+                headerButton.addEventListener('click', () => {
+                    const icon = headerButton.querySelector('svg');
+                    const isActive = contentDiv.style.maxHeight;
+                    
+                    if (isActive) {
+                        contentDiv.style.maxHeight = null;
+                        icon.classList.remove('rotate-180');
+                    } else {
+                        contentDiv.style.maxHeight = contentDiv.scrollHeight + "px";
+                        icon.classList.add('rotate-180');
+                    }
+                });
+            });
+
+            healthGoalAccordionContainer.addEventListener('click', e => {
                 if (e.target.tagName === 'BUTTON' && e.target.dataset.goal) {
                     const goal = e.target.dataset.goal;
                     const isSelected = activeGoals.has(goal);
@@ -387,7 +332,7 @@
                 }
             });
             
-            clearGoalsBtn.addEventListener('click', clearGoals); // 綁定清空按鈕事件
+            clearGoalsBtn.addEventListener('click', clearGoals);
             updateClearButtonVisibility();
         }
 
@@ -396,60 +341,28 @@
             applyFilters();
         });
 
-        function createStatusChart() {
-            const ctx = document.getElementById('statusChart').getContext('2d');
-            const coveredCount = nutrientData.filter(item => item.status === '已涵蓋').length;
-            const pendingCount = nutrientData.length - coveredCount;
+        function updateStatusBar() {
+            const progressBar = document.getElementById('progressBar');
+            const statusText = document.getElementById('statusText');
 
-            new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['已涵蓋', '待補齊'],
-                    datasets: [{
-                        label: '文章狀態',
-                        data: [coveredCount, pendingCount],
-                        backgroundColor: [
-                            'rgba(13, 148, 136, 0.8)', // teal-600
-                            'rgba(245, 158, 11, 0.8)'  // amber-500
-                        ],
-                        borderColor: [
-                            'rgba(13, 148, 136, 1)',
-                            'rgba(245, 158, 11, 1)'
-                        ],
-                        borderWidth: 1,
-                        hoverOffset: 4
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                            labels: {
-                                font: {
-                                    size: 14,
-                                    family: "'Noto Sans TC', sans-serif"
-                                }
-                            }
-                        },
-                        title: {
-                            display: true,
-                            text: '內容涵蓋狀態',
-                            font: {
-                                size: 16,
-                                weight: 'bold',
-                                family: "'Noto Sans TC', sans-serif"
-                            }
-                        }
-                    }
-                }
-            });
+            const totalCount = nutrientData.length;
+            const completedCount = nutrientData.filter(item => item.status === '完整').length;
+            const pendingCount = totalCount - completedCount;
+
+            if (totalCount > 0) {
+                const percentage = Math.round((completedCount / totalCount) * 100);
+                progressBar.style.width = percentage + '%';
+                progressBar.textContent = percentage + '%';
+                statusText.textContent = `完整 ${completedCount} 篇 / 待補 ${pendingCount} 篇 (共 ${totalCount} 篇)`;
+            } else {
+                progressBar.style.width = '0%';
+                progressBar.textContent = '';
+                statusText.textContent = '尚無資料';
+            }
         }
         
         document.addEventListener('DOMContentLoaded', () => {
-            createStatusChart();
-            setupTypeFilters();
+            updateStatusBar();
             setupGoalFilters(); 
             applyFilters();
         });
@@ -457,7 +370,7 @@
     <div id="footer-component"></div>
 
     <script src="../../assets/js/deus-header-component.js"></script>
-    <script src="../../assets/js/deus-footer-component.js"></script>
+    <script src="../../assets.js/deus-footer-component.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         if (window.DeusHeaderComponent) {
@@ -470,3 +383,4 @@
     </script>
 </body>
 </html>
+
