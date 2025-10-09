@@ -112,6 +112,72 @@
         color: #718096;
         line-height: 1.6;
       }
+
+      .card-content-wrapper {
+        margin-top: 20px;
+      }
+      .carousel-title {
+        font-size: 0.9em;
+        font-weight: 600;
+        color: #475569;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .topic-article-card {
+        display: block;
+        padding: 16px;
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        height: 100%;
+        font-weight: 600;
+        color: #1e40af;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      .topic-article-card:hover {
+        background-color: #eef2ff;
+        border-color: #3b82f6;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      }
+
+      @media (max-width: 768px) {
+        .card-carousel-container {
+          overflow-x: auto;
+          padding-bottom: 15px; /* For scrollbar visibility */
+          margin-left: -32px; /* Extend to edge of card padding */
+          margin-right: -32px; /* Extend to edge of card padding */
+          -webkit-overflow-scrolling: touch;
+        }
+        .card-carousel {
+          display: flex;
+          flex-wrap: nowrap;
+          gap: 12px;
+          padding-left: 32px; /* Restore card padding */
+          padding-right: 32px; /* Restore card padding */
+        }
+        .carousel-item {
+          flex: 0 0 auto;
+          width: 60%; /* Each item takes 60% of the container width */
+        }
+        .carousel-item .nutrient-tag {
+            display: inline-block;
+            width: auto;
+            padding: 8px 16px;
+        }
+        .card-carousel::-webkit-scrollbar {
+            height: 8px;
+        }
+        .card-carousel::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .card-carousel::-webkit-scrollbar-track {
+            background: transparent;
+        }
+      }
     </style>
 </head>
 <body>
