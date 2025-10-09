@@ -420,5 +420,20 @@
     <!-- Refactored scripts -->
     <script src="../assets/js/articles-data.js"></script>
     <script src="../assets/js/archive-logic.js"></script>
+
+    <!-- Component Initializer -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
+        const headerContainer = document.getElementById("header-component");
+        if (headerContainer && window.DeusHeaderComponent) {
+          new window.DeusHeaderComponent(headerContainer).setDebug(false);
+        }
+        const footerContainer = document.getElementById("footer-component");
+        if (footerContainer && window.DeusFooterComponent) {
+          new window.DeusFooterComponent(footerContainer).setDebug(false);
+        }
+      });
+    </script>
 </body>
 </html>

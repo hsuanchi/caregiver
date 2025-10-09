@@ -22,7 +22,8 @@
         showMobileMenu: false,
         navLinks: [
           { text: "文章列表", href: "/post/archive.html" },
-          { text: "互動式資料庫", href: "/post/tools/nutrient-dashboard.html" }
+          { text: "互動式資料庫", href: "/post/tools/nutrient-dashboard.html" },
+          { text: "健康主題式", href: "/post/health-topics.html" }
         ],
         actionButtons: {
           login: { text: "登入", href: "#login", show: false },
