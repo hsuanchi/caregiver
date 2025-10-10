@@ -12,6 +12,19 @@
 
 ---
 
+## 檔案命名規範
+
+為了確保專案的組織性與可維護性，所有文章的 HTML 檔名都必須遵循以下規則：
+
+- **核心營養素文章**：檔名直接使用該營養素的英文名稱，並以連字號 (`-`) 分隔單字。所有字母均為小寫。
+  - **範例**：`fish-oil.html`、`vitamin-c.html`、`coenzyme-q10.html`
+
+- **主題式文章**：檔名必須以 `topic-` 作為前綴，後面跟隨主題的描述性名稱。同樣，單字間以連字號分隔，所有字母均為小寫。
+  - **範例**：`topic-stroke-prevention-nutrients.html`、`topic-immune-system-boost.html`
+
+---
+
+
 ## 使用說明與目錄 (How to Use This Guide)
 
 ### 使用說明

@@ -219,6 +219,8 @@ const homepage = new CaregiverHomepage(
 caregiver-web/
 ├── index.html                   # 主頁面文件
 ├── post/
+│   ├── [nutrient].html          # 核心營養素文章
+│   ├── topic-[topic-name].html  # 主題式文章
 │   ├── archive.html             # 文章總覽頁面 (動態載入)
 │   └── tools/
 │       └── nutrient-dashboard.html # 互動式儀表板 (動態載入)
