@@ -132,7 +132,19 @@
       .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
       .related-card { background: white; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; text-decoration: none; color: inherit; }
       .related-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); }
-      .related-card-tag { display: inline-block; padding: 5px 15px; border-radius: 15px; font-size: 0.85em; font-weight: 600; margin-bottom: 15px; }
+      .related-card-tag {
+        display: inline-block;
+        background: #e0e7ff;
+        color: #3730a3;
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 0.85em;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      .related-card-tag.vitamin { background: #eff6ff; color: #1d4ed8; }
+      .related-card-tag.mineral { background: #f5f3ff; color: #5b21b6; }
+      .related-card-tag.other { background: #f0fdf4; color: #14532d; }
       .related-card-title { font-size: 1.3em; font-weight: 600; color: #2d3748; margin-bottom: 10px; }
       .related-card-desc { color: #718096; font-size: 0.95em; }
       .disclaimer { background: #f9fafb; padding: 60px 0; text-align: center; }
@@ -302,30 +314,32 @@
             </div>
           </section>
 
-          <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-          <div class="related-grid">
-            <a href="magnesium.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #f5f3ff; color: #5b21b6;">礦物質</span>
-                <h3 class="related-card-title">鎂</h3>
-                <p class="related-card-desc">被稱為「放鬆礦物質」，能幫助穩定神經、放鬆肌肉，與GABA是改善睡眠的黃金搭檔。</p>
-              </div>
-            </a>
-            <a href="calcium.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #f1f5f9; color: #475569;">礦物質</span>
-                <h3 class="related-card-title">鈣</h3>
-                <p class="related-card-desc">鈣質不僅與骨骼有關，也參與神經傳導的穩定，足夠的鈣有助於減少半夜抽筋、安穩入睡。</p>
-              </div>
-            </a>
-            <a href="vitamin-b.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #eff6ff; color: #1d4ed8;">維生素</span>
-                <h3 class="related-card-title">維生素 B6</h3>
-                <p class="related-card-desc">維生素B6是身體合成GABA、血清素等神經傳導物質的重要輔酶，是維持情緒穩定的關鍵。</p>
-              </div>
-            </a>
-          </div>
+          <section id="related-nutrients">
+            <h2 class="related-title">相關營養素</h2>
+            <div class="related-grid">
+              <a href="magnesium.html" class="related-card">
+                <div class="related-card-content">
+                  <span class="related-card-tag mineral">礦物質</span>
+                  <h3 class="related-card-title">鎂</h3>
+                  <p class="related-card-desc">被稱為「放鬆礦物質」，能幫助穩定神經、放鬆肌肉，與GABA是改善睡眠的黃金搭檔。</p>
+                </div>
+              </a>
+              <a href="calcium.html" class="related-card">
+                <div class="related-card-content">
+                  <span class="related-card-tag mineral">礦物質</span>
+                  <h3 class="related-card-title">鈣</h3>
+                  <p class="related-card-desc">鈣質不僅與骨骼有關，也參與神經傳導的穩定，足夠的鈣有助於減少半夜抽筋、安穩入睡。</p>
+                </div>
+              </a>
+              <a href="vitamin-b.html" class="related-card">
+                <div class="related-card-content">
+                  <span class="related-card-tag vitamin">維生素</span>
+                  <h3 class="related-card-title">維生素 B6</h3>
+                  <p class="related-card-desc">維生素B6是身體合成GABA、血清素等神經傳導物質的重要輔酶，是維持情緒穩定的關鍵。</p>
+                </div>
+              </a>
+            </div>
+          </section>
         </article>
       </main>
     </div>

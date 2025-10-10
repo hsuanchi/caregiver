@@ -31,7 +31,7 @@
 ### 內容品質
 - [ ] 檢查文章結構完整性（8個標準章節）
 - [ ] 啟用「PSMA 流程」：痛點 → 解方 → 原理 → 行動
-- [ ] TOC 順序符合 `#problem` → `#solution` → `#mechanism` → `#how-much` → `#action-plan-food` → `#action-plan-supplements` → `#safety` → `#faq`
+- [ ] TOC 順序符合 `#problem` → `#solution` → `#mechanism` → `#how-much` → `#action-plan-food` → `#action-plan-supplements` → `#safety` → `#faq` → `#related-nutrients`
 - [ ] 確認使用正確的 CSS 類別
 - [ ] 檢查視覺化元素（圖表、卡片等）
 - [ ] 驗證所有內部連結正常
