@@ -41,159 +41,159 @@
     </script>
 
     <style>
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
-        line-height: 1.8;
-        color: #2d3748;
-        background: #f7fafc;
-      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif; line-height: 1.8; color: #2d3748; background: #f7fafc; }
+      .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%); z-index: 1001; transition: width 0.3s ease; }
 
-      .main-container {
-        padding-top: 120px;
-        padding-bottom: 60px;
-        max-width: 1024px;
-        margin: 0 auto;
-        padding-left: 20px;
-        padding-right: 20px;
-      }
+      .page-container { max-width: 1400px; margin: 0 auto; padding: 120px 20px 60px; display: grid; grid-template-columns: 280px 1fr; gap: 60px; }
+      .sidebar { position: sticky; top: 120px; height: fit-content; max-height: calc(100vh - 140px); overflow-y: auto; }
+      .tree-nav { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07); }
+      .tree-nav h3 { font-size: 1.3em; margin-bottom: 20px; color: #2d3748; }
+      .tree-view { list-style: none; }
+      .tree-node > .node-label { font-weight: 700; cursor: pointer; padding: 8px; display: flex; justify-content: space-between; align-items: center; border-radius: 8px; transition: background 0.3s ease; }
+      .tree-node > .node-label:hover { background: #f1f5f9; }
+      .tree-node > .node-label::after { content: '▸'; transition: transform 0.3s ease; }
+      .tree-node.open > .node-label::after { transform: rotate(90deg); }
+      .tree-children { list-style: none; padding-left: 15px; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-in-out; }
+      .tree-node.open > .tree-children { max-height: 1000px; }
+      .tree-leaf a { display: block; padding: 6px 8px; color: #4a5568; text-decoration: none; border-radius: 6px; font-size: 0.95em; }
+      .tree-leaf a:hover { background: #eef2ff; color: #4338ca; }
 
-      .page-header {
-        text-align: center;
-        margin-bottom: 40px;
-      }
+      .main-content { min-width: 0; }
+      .page-header { text-align: center; margin-bottom: 40px; }
+      h1 { font-size: 3em; font-weight: 800; margin-bottom: 15px; }
+      .subtitle { font-size: 1.2em; color: #718096; max-width: 600px; margin: 0 auto; }
 
-      h1 {
-        font-size: 2.5em;
-        font-weight: 800;
-        margin-bottom: 1rem;
-      }
-
-      p {
-        font-size: 1.2em;
-        color: #718096;
-      }
-
+      /* New Master Card Styles */
       .topic-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 24px;
+        grid-template-columns: 1fr;
+        gap: 32px;
         margin-top: 40px;
-        text-align: left;
       }
-
-      .topic-card {
+      
+      .topic-master-card {
         background: white;
         border-radius: 16px;
-        padding: 32px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
-        transition: all 0.3s ease;
-        text-decoration: none;
-        color: inherit;
-        display: block;
+        padding: 32px 40px;
+        margin-bottom: 16px; /* Space between master cards */
+        box-shadow: 0 8px 30px rgba(0,0,0,0.08);
         border: 1px solid #e2e8f0;
       }
 
-      .topic-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
-        border-color: #ff6b35;
-      }
-
-      .topic-card-title {
-        font-size: 1.5em;
+      .topic-master-card-header {
+        font-size: 2em;
         font-weight: 700;
         color: #2d3748;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 2px solid #f1f5f9;
+      }
+
+      .article-entry-list {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      .article-entry {
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 28px;
+      }
+
+      .article-entry-list .article-entry:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .article-entry-title {
+        font-size: 1.5em;
+        font-weight: 600;
         margin-bottom: 8px;
       }
 
-      .topic-card-desc {
-        font-size: 1em;
-        color: #718096;
-        line-height: 1.6;
-      }
-
-      .card-content-wrapper {
-        margin-top: 20px;
-      }
-      .carousel-title {
-        font-size: 0.9em;
-        font-weight: 600;
-        color: #475569;
-        margin-bottom: 12px;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-      .topic-article-card {
-        display: block;
-        padding: 16px;
-        background-color: #f8fafc;
-        border: 1px solid #e2e8f0;
-        border-radius: 12px;
-        height: 100%;
-        font-weight: 600;
-        color: #1e40af;
+      .article-entry-title a {
         text-decoration: none;
-        transition: all 0.3s ease;
-      }
-      .topic-article-card:hover {
-        background-color: #eef2ff;
-        border-color: #3b82f6;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        color: #1d4ed8;
+        transition: color 0.2s ease;
       }
 
+      .article-entry-title a:hover {
+        color: #3b82f6;
+        text-decoration: underline;
+      }
+
+      .article-entry-meta {
+        font-size: 0.9em;
+        color: #64748b;
+        margin-bottom: 12px;
+      }
+
+      .article-entry-description {
+        font-size: 1em;
+        color: #475569;
+        line-height: 1.7;
+        margin-bottom: 16px;
+      }
+
+      .article-entry-keywords {
+        font-size: 0.9em;
+        color: #64748b;
+      }
+
+      .article-entry-keywords strong {
+        color: #334155;
+        font-weight: 600;
+      }
+
+      .article-entry-keywords span {
+        display: inline-block;
+        background: #f1f5f9;
+        color: #475569;
+        padding: 3px 10px;
+        border-radius: 12px;
+        margin-right: 6px;
+        margin-top: 4px;
+        font-size: 0.95em;
+      }
+
+      /* Responsive Overrides */
+      @media (max-width: 1024px) {
+        .page-container { grid-template-columns: 1fr; }
+        .sidebar { display: none; }
+      }
       @media (max-width: 768px) {
-        .card-carousel-container {
-          overflow-x: auto;
-          padding-bottom: 15px; /* For scrollbar visibility */
-          margin-left: -32px; /* Extend to edge of card padding */
-          margin-right: -32px; /* Extend to edge of card padding */
-          -webkit-overflow-scrolling: touch;
-        }
-        .card-carousel {
-          display: flex;
-          flex-wrap: nowrap;
-          gap: 12px;
-          padding-left: 32px; /* Restore card padding */
-          padding-right: 32px; /* Restore card padding */
-        }
-        .carousel-item {
-          flex: 0 0 auto;
-          width: 60%; /* Each item takes 60% of the container width */
-        }
-        .carousel-item .nutrient-tag {
-            display: inline-block;
-            width: auto;
-            padding: 8px 16px;
-        }
-        .card-carousel::-webkit-scrollbar {
-            height: 8px;
-        }
-        .card-carousel::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-        .card-carousel::-webkit-scrollbar-track {
-            background: transparent;
-        }
+        h1 { font-size: 2.5em; }
+        .topic-master-card { padding: 24px; }
+        .topic-master-card-header { font-size: 1.7em; }
+        .article-entry-title { font-size: 1.3em; }
       }
     </style>
 </head>
 <body>
 
+    <div class="progress-bar" id="progressBar"></div>
     <div id="header-component"></div>
 
-    <main class="main-container">
-        <div class="page-header">
-            <h1>健康主題式</h1>
-            <p>探索依據不同健康目標分類的營養文章，找到您最關心的健康議題。</p>
-        </div>
+    <div class="page-container">
+        <aside class="sidebar">
+            <nav class="tree-nav" role="navigation" aria-label="主題目錄">
+                <h3><a href="#topics-title" style="text-decoration: none; color: inherit;">主題目錄</a></h3>
+                <ul class="tree-view" id="topicTree"></ul>
+            </nav>
+        </aside>
 
-        <div class="topic-grid">
-            <!-- 主題卡片將由 health-topics-logic.js 動態生成 -->
-        </div>
-    </main>
+        <main class="main-content">
+            <header class="page-header">
+                <h1 id="topics-title">健康主題式</h1>
+                <p class="subtitle">探索依據不同健康目標分類的營養文章，找到您最關心的健康議題。</p>
+            </header>
+
+            <div class="topic-grid">
+                <!-- 主題卡片將由 health-topics-logic.js 動態生成 -->
+            </div>
+        </main>
+    </div>
 
     <div id="footer-component"></div>
 
@@ -207,12 +207,10 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
-        
         const headerContainer = document.getElementById("header-component");
         if (headerContainer && window.DeusHeaderComponent) {
           new window.DeusHeaderComponent(headerContainer).setDebug(false);
         }
-        
         const footerContainer = document.getElementById("footer-component");
         if (footerContainer && window.DeusFooterComponent) {
           new window.DeusFooterComponent(footerContainer).setDebug(false);

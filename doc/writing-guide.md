@@ -562,7 +562,9 @@
 
 在您完成一篇文章的撰寫後，請務必完成以下兩個關鍵步驟：
 
-1. **更新中央資料庫**：手動打開 `/assets/js/articles-data.js` 檔案，將新文章的物件資訊新增至 `articlesData` 陣列中。
+1.  **更新中央資料庫**：手動打開 `/assets/js/articles-data.js` 檔案，並根據文章類型進行更新：
+    *   **核心營養素文章**：將新文章的物件資訊新增至 `articlesData` 陣列。
+    *   **主題式文章**：將新文章的物件資訊新增至 `topicArticles` 陣列。
 2. **更新 Sitemap**：手動打開 `/sitemap.xml` 檔案，加入新文章的 `<url>` 資訊。
 
 > **完整技術檢查清單請參考** [`doc/new-page-checklist.md`](new-page-checklist.md)

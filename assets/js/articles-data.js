@@ -430,6 +430,10 @@ const articlesData = [
         status: '完整', 
         link: 'lutein.html', 
         title: "葉黃素 - 3C世代的內建護眼藍光濾鏡：一篇看懂7大功效、黃金比例與副作用",
+        category: "other",
+        published: "2024-09-15",
+        modified: "2025-09-15",
+        tag: "植化素",
         description: "眼睛乾澀、視力模糊？葉黃素是過濾藍光、保護黃斑部的關鍵。本篇將用一篇文的篇幅，完整解析葉黃素的7大功效，比較游離型與酯化型的吸收差異，並破解黃金比例5:1的迷思，助您為3C世代的雙眼挑選最適合的產品。",
         keywords: "葉黃素, 護眼, 黃斑部病變, 藍光, 玉米黃質, 葉黃素功效, 葉黃素食物, 游離型葉黃素, 花青素, 大腦健康"
     },
@@ -612,7 +616,7 @@ const articlesData = [
         func: '蛋白質的基本組成單位，用於肌肉修復與合成（如BCAA）', 
         status: '完整', 
         link: 'amino-acids.html', 
-        title: '胺基酸功效全解析：解決疲勞、肌肉流失的9大必需胺基酸',
+        title: '胺基酸 - 解決疲勞、肌肉流失的9大必需胺基酸功效全解析',
         category: "protein",
         published: "2025-10-07",
         modified: "2025-10-07",
@@ -666,6 +670,39 @@ const articlesData = [
  * - link: 文章的 HTML 檔案連結。
  */
 const topicArticles = [
-    { goal: '心血管健康', title: '避免中風的5大關鍵營養素', link: 'stroke-prevention-nutrients.html' }
+    {
+        id: 'topic-card-stroke-prevention',
+        goal: '心血管健康', 
+        title: '避免中風的5大關鍵營養素', 
+        link: 'topic-stroke-prevention-nutrients.html',
+        description: "中風是國人健康頭號殺手之一，但您知道可以透過飲食主動預防嗎？本篇將深入解析鉀、鎂、Omega-3、葉酸和維生素D這5大關鍵營養素如何協同作用，從降血壓、抗發炎到保護血管彈性，建立堅實防線，教您如何從日常飲食著手，有效降低中風風險。",
+        keywords: "中風預防, 降血壓 營養素, 保護血管, 高血壓飲食, Omega-3, 鉀, 鎂, 葉酸, 維生素D",
+        type: '主題式文章',
+        name: '預防中風營養素',
+        en_name: 'Stroke Prevention Nutrients',
+        func: '解析關鍵營養素如何保護血管、降低中風風險',
+        status: '完整',
+        category: 'topic',
+        published: '2025-10-10',
+        modified: '2025-10-10',
+        tag: '主題文章'
+    },
+    {
+        id: 'topic-card-immune-boosting',
+        goal: '免疫強化',
+        title: '強化免疫力的9大關鍵營養素',
+        link: 'topic-immune-boosting-nutrients.html',
+        description: '經常感冒、過敏纏身？想提升抵抗力卻不知從何下手？本篇將用一篇文的篇幅，完整解析維生素C、D、鋅、硒、益生菌等9大關鍵營養素，教您如何打造自己的黃金免疫部隊，建立全方位的健康防線。',
+        keywords: '強化免疫力, 增加抵抗力, 免疫系統, 維生素C, 維生素D, 鋅, 硒, 益生菌, 益生質, β-葡聚醣, 穀胱甘肽, 維生素A',
+        type: '主題式文章',
+        name: '強化免疫力營養素',
+        en_name: 'Immune Boosting Nutrients',
+        func: '解析9大營養素如何打造黃金免疫部隊',
+        status: '完整',
+        category: 'topic',
+        published: '2025-10-11',
+        modified: '2025-10-11',
+        tag: '主題文章'
+    }
     // 您可以在此處新增更多主題性文章
 ];

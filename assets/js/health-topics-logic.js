@@ -1,133 +1,101 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const topicGrid = document.querySelector('.topic-grid');
+    /**
+     * =========================================================================
+     * health-topics-logic.js
+     * -------------------------------------------------------------------------
+     * DEV NOTE:
+     * 此腳本專門用於處理 `health-topics.html` 頁面的渲染。
+     * 其唯一的資料來源是 `articles-data.js` 中定義的 `topicArticles` 陣列。
+     * 
+     * 主要職責：
+     * 1. 讀取 `topicArticles` 陣列。
+     * 2. 根據文章的 `goal` 屬性進行分組。
+     * 3. 為每一個 `goal` (主題) 生成一個大的主題摘要看板。
+     * 4. 在看板中，列出所有屬於該主題的文章及其詳細資訊。
+     * 
+     * **重要**: 此腳本不應讀取或處理 `articlesData` 陣列中的單一營養素文章。
+     * 頁面已明確區分「主題式文章」與「營養素文章」。
+     * =========================================================================
+     */
 
-    if (typeof articlesData === 'undefined' || !topicGrid) {
+    const topicGrid = document.querySelector('.topic-grid');
+    const topicTree = document.getElementById('topicTree');
+
+    if (typeof topicArticles === 'undefined' || !topicGrid) {
         console.error("Data file (articles-data.js) is not loaded or the grid container is missing.");
-        if (topicGrid) topicGrid.innerHTML = '<p style="text-align: center; color: red;">錯誤：主題資料載入失敗。</p>';
+        if (topicGrid) topicGrid.innerHTML = '<p style="text-align: center; color: red;">錯誤：主題文章資料載入失敗。</p>';
         return;
     }
 
-    // 確保 topicArticles 存在，如果不存在則建立一個空陣列
-    if (typeof topicArticles === 'undefined') {
-        window.topicArticles = [];
-    }
-
-    // 建立一個從中文目標到英文 URL slug 的映射表
-    const goalToSlugMap = {
-        '心血管健康': 'cardiovascular-health',
-        '免疫強化': 'immune-support',
-        '骨骼與牙齒健康': 'bone-tooth-health',
-        '腦部認知': 'cognitive-function',
-        '抗氧化與抗發炎': 'antioxidant-anti-inflammatory',
-        '腸道菌群平衡': 'gut-flora-balance',
-        '能量代謝': 'energy-metabolism',
-        '神經與情緒健康': 'neuro-emotional-health',
-        '皮膚與黏膜健康': 'skin-mucous-health',
-        '血紅素與氣色': 'hemoglobin-complexion',
-        '新生與發育': 'growth-development',
-        '肌膚與膠原蛋白': 'skin-collagen',
-        '視力維護': 'vision-care',
-        '生長發育與修復': 'growth-repair',
-        '內分泌調節': 'endocrine-regulation',
-        '血液凝固': 'blood-coagulation',
-        '睡眠與放鬆': 'sleep-relaxation',
-        '神經與肌肉功能': 'neuro-muscular-function',
-        '血糖穩定': 'blood-sugar-stability',
-        '體液平衡': 'fluid-balance',
-        '男性保健': 'mens-health',
-        '甲狀腺與代謝': 'thyroid-metabolism',
-        '細胞保護': 'cell-protection',
-        '關節與軟骨': 'joint-cartilage',
-        '體重管理': 'weight-management',
-        '消化道健康': 'digestive-health',
-        '肝臟解毒與代謝': 'liver-detox-metabolism'
-    };
-
-    // 1. 建立一個物件來儲存每個健康目標的詳細資訊
-    const goalsData = {};
-    articlesData.forEach(article => {
-        if (article.goals && Array.isArray(article.goals)) {
-            article.goals.forEach(goal => {
-                if (!goalsData[goal]) {
-                    goalsData[goal] = {
-                        count: 0,
-                        articles: [],
-                        topicLinks: []
-                    };
-                }
-                goalsData[goal].count++;
-                goalsData[goal].articles.push(article.name);
-            });
+    // 1. Group articles by goal
+    const goalsData = topicArticles.reduce((acc, article) => {
+        const goal = article.goal;
+        if (!acc[goal]) {
+            acc[goal] = [];
         }
-    });
+        acc[goal].push(article);
+        return acc;
+    }, {});
 
-    // 2. 將主題性文章歸類到 goalsData 中
-    topicArticles.forEach(topicArticle => {
-        if (goalsData[topicArticle.goal]) {
-            goalsData[topicArticle.goal].topicLinks.push({
-                title: topicArticle.title,
-                link: topicArticle.link
-            });
-        }
-    });
-
-    // 3. 轉換為陣列並排序
     const sortedGoals = Object.keys(goalsData).sort((a, b) => a.localeCompare(b, 'zh-Hant'));
 
-    // 4. 動態生成主題卡片 (Redesigned for Mobile Carousels)
+    // 2. Generate master cards for each goal
     const cardsHTML = sortedGoals.map(goal => {
-        const goalInfo = goalsData[goal];
-        const slug = goalToSlugMap[goal] || goal.toLowerCase().replace(/\s+/g, '-');
-        const cardLink = `topic-${slug}.html`; // 卡片主連結
-        const description = `探索與「${goal}」相關的營養素與健康知識。`;
+        const articlesInGoal = goalsData[goal];
+        const slug = goal.toLowerCase().replace(/\s+/g, '-'); // Simple slug for ID
 
-        // 生成主題文章連結 (for carousel)
-        const topicLinksHTML = goalInfo.topicLinks.length > 0 ? `
-            <h4 class="carousel-title">主題文章</h4>
-            <div class="card-carousel-container">
-                <div class="card-carousel">
-                    ${goalInfo.topicLinks.map(link => `
-                        <div class="carousel-item">
-                            <a href="${link.link}" class="topic-article-card">
-                                ${link.title}
-                            </a>
-                        </div>
-                    `).join('')}
+        const articlesHTML = articlesInGoal.map(article => {
+            const keywordsHTML = article.keywords ? article.keywords.split(', ').map(k => `<span>${k}</span>`).join('') : '';
+            return `
+                <div class="article-entry">
+                    <h3 class="article-entry-title"><a href="${article.link}">${article.title}</a></h3>
+                    <div class="article-entry-meta">
+                        <span class="article-entry-published">發布日期: ${article.published || 'N/A'}</span>
+                    </div>
+                    <p class="article-entry-description">${article.description || ''}</p>
+                    <div class="article-entry-keywords">
+                        <strong>關鍵字:</strong> 
+                        ${keywordsHTML}
+                    </div>
                 </div>
-            </div>
-        ` : '';
-
-        // 生成營養素標籤 (for carousel)
-        const nutrientsHTML = goalInfo.articles.map(name => `
-            <div class="carousel-item">
-                <span class="nutrient-tag">${name}</span>
-            </div>
-        `).join('');
-
-        const nutrientsCarouselHTML = `
-            <h4 class="carousel-title">相關營養素</h4>
-            <div class="card-carousel-container">
-                <div class="card-carousel">
-                    ${nutrientsHTML}
-                </div>
-            </div>
-        `;
+            `;
+        }).join('');
 
         return `
-            <div class="topic-card">
-                <div class="topic-card-header">
-                    <a href="${cardLink}" class="topic-card-title-link">
-                        <h3 class="topic-card-title">${goal}</h3>
-                    </a>
-                </div>
-                <p class="topic-card-desc">${description}</p>
-                <div class="card-content-wrapper">
-                    ${topicLinksHTML}
-                    ${nutrientsCarouselHTML}
-                </div>
+            <div class="topic-master-card" id="topic-${slug}">
+              <h2 class="topic-master-card-header">${goal}</h2>
+              <div class="article-entry-list">
+                ${articlesHTML}
+              </div>
             </div>
         `;
     }).join('');
 
     topicGrid.innerHTML = cardsHTML;
+
+    // 3. Generate sidebar
+    if (topicTree) {
+        let treeHTML = '';
+        sortedGoals.forEach(goal => {
+            const slug = goal.toLowerCase().replace(/\s+/g, '-');
+            treeHTML += `<li class="tree-leaf"><a href="#topic-${slug}">${goal}</a></li>`;
+        });
+        topicTree.innerHTML = treeHTML;
+
+        // Event listener for smooth scroll
+        topicTree.addEventListener('click', function(e) {
+            const anchor = e.target.closest('a');
+            if (anchor && anchor.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = anchor.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 120;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                }
+            }
+        });
+    }
 });
