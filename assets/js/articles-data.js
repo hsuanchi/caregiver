@@ -672,8 +672,8 @@ const articlesData = [
 const topicArticles = [
     {
         id: 'topic-card-stroke-prevention',
-        goal: '心血管健康', 
-        title: '避免中風的5大關鍵營養素', 
+        goal: '心血管健康',
+        title: '避免中風的5大關鍵營養素 - 建立心血管防線的飲食全攻略',
         link: 'topic-stroke-prevention-nutrients.html',
         description: "中風是國人健康頭號殺手之一，但您知道可以透過飲食主動預防嗎？本篇將深入解析鉀、鎂、Omega-3、葉酸和維生素D這5大關鍵營養素如何協同作用，從降血壓、抗發炎到保護血管彈性，建立堅實防線，教您如何從日常飲食著手，有效降低中風風險。",
         keywords: "中風預防, 降血壓 營養素, 保護血管, 高血壓飲食, Omega-3, 鉀, 鎂, 葉酸, 維生素D",
@@ -690,7 +690,7 @@ const topicArticles = [
     {
         id: 'topic-card-immune-boosting',
         goal: '免疫強化',
-        title: '強化免疫力的9大關鍵營養素',
+        title: '強化免疫力的9大關鍵營養素 - 打造黃金免疫部隊的全方位指引',
         link: 'topic-immune-boosting-nutrients.html',
         description: '經常感冒、過敏纏身？想提升抵抗力卻不知從何下手？本篇將用一篇文的篇幅，完整解析維生素C、D、鋅、硒、益生菌等9大關鍵營養素，教您如何打造自己的黃金免疫部隊，建立全方位的健康防線。',
         keywords: '強化免疫力, 增加抵抗力, 免疫系統, 維生素C, 維生素D, 鋅, 硒, 益生菌, 益生質, β-葡聚醣, 穀胱甘肽, 維生素A',
@@ -698,6 +698,23 @@ const topicArticles = [
         name: '強化免疫力營養素',
         en_name: 'Immune Boosting Nutrients',
         func: '解析9大營養素如何打造黃金免疫部隊',
+        status: '完整',
+        category: 'topic',
+        published: '2025-10-11',
+        modified: '2025-10-11',
+        tag: '主題文章'
+    },
+    {
+        id: 'topic-card-vascular-health',
+        goal: '心血管健康',
+        title: '逆轉血管硬化：保養血管最好的5種超級食物與3大生活習慣',
+        link: 'topic-vascular-health-superfoods.html',
+        description: '「血管硬化有救嗎？」答案是肯定的！本篇將深入解析動脈粥狀硬化的成因，並提供科學實證有效的5大護血管超級食物（如富含Omega-3的魚、堅果），以及3個您今天就能開始的關鍵生活習慣，助您逆轉血管年齡，重拾心血管健康。',
+        keywords: '保養血管 食物, 血管硬化 改善, 清血管食物, 動脈粥狀硬化, 心血管健康, Omega-3, 抗氧化, LDL, HDL',
+        type: '主題式文章',
+        name: '血管保健超級食物',
+        en_name: 'Vascular Health Superfoods',
+        func: '解析5大超級食物與3大生活習慣如何逆轉血管硬化',
         status: '完整',
         category: 'topic',
         published: '2025-10-11',
