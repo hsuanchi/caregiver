@@ -187,7 +187,7 @@
       @media (max-width: 768px) { .article-content { padding: 25px; } .article-title { font-size: 2em; } .article-meta { flex-direction: column; gap: 10px; } .comparison-table, .comparison-table thead, .comparison-table tbody, .comparison-table th, .comparison-table td, .comparison-table tr { display: block; } .comparison-table thead { display: none; } .comparison-table tr { border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 15px; } .comparison-table td { display: flex; justify-content: space-between; padding: 10px 15px; text-align: right; border-bottom: 1px dashed #e2e8f0; } .comparison-table td:last-child { border-bottom: none; } .comparison-table td::before { content: attr(data-label); font-weight: 600; text-align: left; margin-right: 15px; } .comparison-label { display: none; } .comparison-cell { box-shadow: none; } .comparison-cell:last-child, .comparison-label { border-radius: 0; } }
     </style>
 </head>
-<body>
+<body data-article-id="card-amino-acids">
     <div class="progress-bar" id="progressBar"></div>
     <div id="header-component"></div>
 
@@ -205,7 +205,7 @@
             <li><a href="#advanced-science" class="toc-link">進階胺基酸科學</a></li>
             <li><a href="#safety" class="toc-link">安全注意事項</a></li>
             <li><a href="#faq" class="toc-link">常見問題</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -414,30 +414,7 @@
               <div class="faq-answer"><p><strong>A:</strong> BCAA（支鏈胺基酸）能快速提供運動中能量、啟動肌肉生長信號；EAA（必需胺基酸）則提供更全面的原料。一般來說，如果您的日常蛋白質攝取充足，運動中補充BCAA是不錯的選擇。但若想追求更全面的肌肉合成與恢復，或飲食中蛋白質可能不足，EAA會是更全面的選項。</p></div>
             </div>
           </section>
-                <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-        <div class="related-grid">
-          <a href="./protein.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fef2f2; color: #991b1b;">蛋白質</span>
-              <h3 class="related-card-title">蛋白質</h3>
-              <p class="related-card-desc">胺基酸是構成蛋白質的基礎，了解如何從飲食中攝取足量蛋白質，是支持胺基酸功能的根本。</p>
-            </div>
-          </a>
-          <a href="./vitamin-b.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #eff6ff; color: #1d4ed8;">維生素</span>
-              <h3 class="related-card-title">維生素B群</h3>
-              <p class="related-card-desc">B群在胺基酸的代謝與轉換過程中扮演關鍵輔酶角色，確保能量生成與神經系統健康。</p>
-            </div>
-          </a>
-          <a href="./magnesium.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f0f9ff; color: #0c4a6e;">礦物質</span>
-              <h3 class="related-card-title">鎂</h3>
-              <p class="related-card-desc">鎂參與體內數百種酵素反應，包括蛋白質的合成，是胺基酸發揮作用不可或缺的礦物質。</p>
-            </div>
-          </a>
-        </div>
+          <div id="related-articles-container"></div>
         </article>
       </main>
     </div>
@@ -454,6 +431,8 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       // Progress Bar
@@ -494,6 +473,13 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+
+        // Initialize Related Articles Component
+        const relatedArticlesContainer = document.getElementById("related-articles-container");
+        const currentArticleId = document.body.dataset.articleId;
+        if (relatedArticlesContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedArticlesContainer, currentArticleId, articlesData, topicArticles).initialize();
+        }
       });
     </script>
 </body>
