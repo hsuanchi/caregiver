@@ -118,11 +118,77 @@
       .sidebar { position: sticky; top: 100px; height: fit-content; max-height: calc(100vh - 120px); overflow-y: auto; }
       .toc { background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
       .toc-title { font-size: 1.2em; font-weight: 700; color: #2d3748; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-      .toc-list { list-style: none; }
-      .toc-list li { margin-bottom: 8px; }
-      .toc-list a { color: #4a5568; text-decoration: none; font-size: 0.95em; display: block; padding: 8px 12px; transition: all 0.3s ease; position: relative; border-radius: 8px; border-left: 3px solid transparent; }
-      .toc-list a.active { color: #38b2ac; background: rgba(56, 178, 172, 0.1); border-left-color: #38b2ac; font-weight: 600; }
-      .toc-list a:hover { color: #38b2ac; background: rgba(56, 178, 172, 0.08); border-left-color: #4fd1c5; transform: translateX(2px); }
+      .toc-list {
+        list-style: none;
+      }
+
+      .toc-list li {
+        margin-bottom: 8px;
+      }
+
+      .toc-list a {
+        color: #4a5568;
+        text-decoration: none;
+        font-size: 0.95em;
+        display: block;
+        padding: 8px 12px;
+        transition: all 0.3s ease;
+        position: relative;
+        border-radius: 8px;
+        border-left: 3px solid transparent;
+      }
+
+      .toc-list a.active {
+        color: #38b2ac; /* Theme color from amino-acids.html */
+        background: rgba(56, 178, 172, 0.1);
+        border-left-color: #38b2ac;
+        font-weight: 600;
+      }
+
+      .toc-list a:hover {
+        color: #38b2ac;
+        background: rgba(56, 178, 172, 0.08);
+        border-left-color: #4fd1c5;
+        transform: translateX(2px);
+      }
+
+      /* First-level style */
+      .toc-list a:not(.sub-item) {
+        font-weight: 600;
+        background: rgba(56, 178, 172, 0.05); /* Adapted theme color */
+        margin-bottom: 4px;
+      }
+
+      /* Sub-item style for TOC */
+      .toc-list a.sub-item {
+        margin-left: 16px;
+        font-size: 0.9em;
+        color: #718096;
+        background: rgba(113, 128, 150, 0.03);
+        border-left-color: #e2e8f0;
+        position: relative;
+      }
+
+      .toc-list a.sub-item::before {
+        content: "";
+        position: absolute;
+        left: -12px;
+        top: 50%;
+        width: 8px;
+        height: 1px;
+        background: #d1d5db;
+        transform: translateY(-50%);
+      }
+
+      .toc-list a.active.sub-item {
+        color: #38b2ac;
+        background: rgba(56, 178, 172, 0.08);
+        border-left-color: #4fd1c5;
+      }
+
+      .toc-list a.active.sub-item::before {
+        background: #4fd1c5;
+      }
       .article-content { background: white; border-radius: 20px; padding: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
       .article-header { margin-bottom: 60px; position: relative; }
       .article-hero { background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%); border-radius: 20px; padding: 60px; margin-bottom: 40px; position: relative; overflow: hidden; }
@@ -183,8 +249,55 @@
       .comparison-cell:last-child { border-radius: 0 10px 10px 0; }
       .safety-card { background: #fef2f2; border-left: 4px solid #ef4444; }
       .safety-card .info-card-title { color: #b91c1c; display: flex; align-items: center; gap: 10px; }
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } }
       @media (max-width: 768px) { .article-content { padding: 25px; } .article-title { font-size: 2em; } .article-meta { flex-direction: column; gap: 10px; } .comparison-table, .comparison-table thead, .comparison-table tbody, .comparison-table th, .comparison-table td, .comparison-table tr { display: block; } .comparison-table thead { display: none; } .comparison-table tr { border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 15px; } .comparison-table td { display: flex; justify-content: space-between; padding: 10px 15px; text-align: right; border-bottom: 1px dashed #e2e8f0; } .comparison-table td:last-child { border-bottom: none; } .comparison-table td::before { content: attr(data-label); font-weight: 600; text-align: left; margin-right: 15px; } .comparison-label { display: none; } .comparison-cell { box-shadow: none; } .comparison-cell:last-child, .comparison-label { border-radius: 0; } }
+      /* Styles for the TOC when it's in the mobile position */
+      #toc-mobile-target {
+          margin-bottom: 40px;
+      }
+
+      .toc.toc-is-mobile {
+          /* Override desktop styles */
+          box-shadow: none;
+          background: #f9fafb; /* A slightly off-white to blend in */
+          border: 1px solid #e5e7eb;
+          border-radius: 15px;
+          padding: 0;
+      }
+
+      .toc.toc-is-mobile .toc-title {
+          padding: 20px 25px;
+          margin-bottom: 0;
+          cursor: pointer;
+          position: relative;
+      }
+
+      /* Add an accordion arrow */
+      .toc.toc-is-mobile .toc-title::after {
+          content: '▼';
+          position: absolute;
+          right: 25px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 0.8em;
+          transition: transform 0.3s ease;
+      }
+
+      .toc.toc-is-mobile.open .toc-title::after {
+          transform: translateY(-50%) rotate(180deg);
+      }
+
+      .toc.toc-is-mobile .toc-list {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+          padding: 0 25px;
+      }
+
+      .toc.toc-is-mobile.open .toc-list {
+          max-height: 1000px; /* Large enough to fit content */
+          padding: 0 25px 20px;
+      }
     </style>
 </head>
 <body data-article-id="card-amino-acids">
@@ -223,6 +336,8 @@
         </header>
 
         <article class="article-body">
+
+          <div id="toc-mobile-target"></div>
 
           <section id="problem">
             <h2>您有這些困擾嗎？胺基酸缺乏的身體警訊</h2>
@@ -433,6 +548,7 @@
     <script src="../assets/js/deus-footer-component.js"></script>
     <script src="../assets/js/articles-data.js"></script>
     <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
       // Progress Bar
@@ -479,6 +595,11 @@
         const currentArticleId = document.body.dataset.articleId;
         if (relatedArticlesContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
           new window.RelatedArticlesComponent(relatedArticlesContainer, currentArticleId, articlesData, topicArticles).initialize();
+        }
+
+        // Initialize Responsive TOC Component
+        if (window.ResponsiveTocComponent) {
+          new window.ResponsiveTocComponent().initialize();
         }
       });
     </script>
