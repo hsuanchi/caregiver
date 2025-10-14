@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function generateArticleCards() {
         const cardsHTML = articlesData.map(article => {
-            const link = article.link.startsWith('tools/') ? `./${article.link}` : `../post/${article.link}`;
+            const link = article.link;
             const tagClass = article.category || 'other';
             return `
             <div class="article-card" id="${article.id}" data-category="${article.category}" data-published="${article.published}" data-modified="${article.modified}">

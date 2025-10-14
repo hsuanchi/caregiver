@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `<span class="text-xs font-medium text-slate-600 bg-slate-200 px-2 py-0.5 rounded-full">${goal}</span>`
         ).join(' ');
         const enNameDisplay = nutrient.en_name ? `<span class="text-base font-medium text-slate-500">(${nutrient.en_name})</span>` : '';
-        const link = nutrient.link ? `../${nutrient.link}` : '#';
+        const link = nutrient.link ? nutrient.link : '#';
 
         return `
             <div class="bg-white rounded-lg shadow-md p-5 flex flex-col h-full border-l-4 border-${statusColor}-500 transition hover:shadow-xl hover:transform hover:-translate-y-1">
