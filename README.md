@@ -216,25 +216,27 @@ const homepage = new CaregiverHomepage(
 ## 專案結構
 
 ```
-caregiver-web/
-├── index.html                   # 主頁面文件
+caregiver/
+├── index.html                     # 主頁面文件
+├── category/
+│   ├── archive.html               # 文章總覽頁面 (動態載入)
+│   ├── health-topics.html         # 健康主題頁面 (動態載入)
+│   └── nutrient-dashboard.html    # 互動式儀表板 (動態載入)
 ├── post/
-│   ├── [nutrient].html          # 核心營養素文章
-│   ├── topic-[topic-name].html  # 主題式文章
-│   ├── archive.html             # 文章總覽頁面 (動態載入)
-│   └── tools/
-│       └── nutrient-dashboard.html # 互動式儀表板 (動態載入)
+│   ├── [nutrient].html            # 核心營養素文章
+│   └── topic-[topic-name].html    # 主題式文章
 ├── assets/
 │   └── js/
-│       ├── articles-data.js       # 文章與營養素的中央資料庫
-│       ├── archive-logic.js       # 文章總覽頁面的顯示邏輯
-│       ├── dashboard-logic.js     # 儀表板頁面的顯示邏輯
+│       ├── articles-data.js         # 文章與營養素的中央資料庫
+│       ├── archive-logic.js         # 文章總覽頁面的顯示邏輯
+│       ├── health-topics-logic.js   # 健康主題頁面的顯示邏輯
+│       ├── dashboard-logic.js       # 儀表板頁面的顯示邏輯
 │       └── ...
 ├── doc/
-│   ├── writing-guide.md         # 文章風格指引
-│   └── new-page-checklist.md    # 新增頁面檢查清單
-├── CLAUDE.md                   # 開發規範
-└── README.md                   # 本文件
+│   ├── writing-guide.md           # 文章風格指引
+│   └── new-page-checklist.md      # 新增頁面檢查清單
+├── CLAUDE.md                     # 開發規範
+└── README.md                     # 本文件
 ```
 
 ## 重要注意事項
