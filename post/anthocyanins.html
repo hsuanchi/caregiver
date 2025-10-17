@@ -133,7 +133,16 @@
       .article-title { font-size: 2.5em; font-weight: 800; color: #2d3748; line-height: 1.3; margin-bottom: 20px; max-width: 800px; }
       .article-subtitle { font-size: 1.3em; color: #4a5568; line-height: 1.6; max-width: 700px; margin-bottom: 30px; }
       .article-body h2::before { background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%); }
-      .highlight-nutrient { border-bottom: 2px solid var(--primary-color); padding-bottom: 1px; }
+      .highlight-nutrient {
+        background-image: linear-gradient(to top, rgba(128, 90, 213, 0.5) 0%, rgba(128, 90, 213, 0.5) 100%);
+        background-position: 0 1.05em;
+        background-repeat: repeat-x;
+        background-size: 100% 2px;
+        text-decoration: none;
+        border-bottom: none;
+        padding-bottom: 1px;
+      }
+      section[id] { scroll-margin-top: 100px; }
       .data-table thead { background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); }
       .info-card-title, .risk-card-title { color: var(--primary-dark); }
       .faq-question::after { color: var(--primary-color); }
@@ -187,11 +196,11 @@
       .comparison-cell:last-child { border-radius: 0 10px 10px 0; }
       .safety-card { background: #fef2f2; border-left: 4px solid #ef4444; }
       .safety-card .info-card-title { color: #b91c1c; display: flex; align-items: center; gap: 10px; }
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } }
       @media (max-width: 768px) { .article-content { padding: 25px; } .article-title { font-size: 2em; } .article-meta { flex-direction: column; gap: 10px; } .comparison-table, .comparison-table thead, .comparison-table tbody, .comparison-table th, .comparison-table td, .comparison-table tr { display: block; } .comparison-table thead { display: none; } .comparison-table tr { border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 15px; } .comparison-table td { display: flex; justify-content: space-between; padding: 10px 15px; text-align: right; border-bottom: 1px dashed #e2e8f0; } .comparison-table td:last-child { border-bottom: none; } .comparison-table td::before { content: attr(data-label); font-weight: 600; text-align: left; margin-right: 15px; } .comparison-label { display: none; } .comparison-cell { box-shadow: none; } .comparison-cell:last-child, .comparison-label { border-radius: 0; } }
     </style>
 </head>
-<body>
+<body data-article-id="card-anthocyanins">
     <div class="progress-bar" id="progressBar"></div>
     <div id="header-component"></div>
 
@@ -201,21 +210,22 @@
           <h3 class="toc-title"><a href="#article-top" style="text-decoration: none; color: inherit;">目錄</a></h3>
           <ul class="toc-list">
             <li><a href="#problem" class="toc-link">您有這些困擾嗎？</a></li>
-            <li><a href="#solution" class="toc-link">花青素：終極解答</a></li>
+            <li><a href="#solution" class="toc-link">花青素：4大核心功效</a></li>
             <li><a href="#mechanism" class="toc-link">如何運作？關鍵機制</a></li>
             <li><a href="#how-much" class="toc-link">我該攝取多少？</a></li>
-            <li><a href="#action-food" class="toc-link">實踐指引(一)：飲食</a></li>
-            <li><a href="#action-supplements" class="toc-link">實踐指引(二)：補充品</a></li>
+            <li><a href="#action-plan-food" class="toc-link">實踐指引(一)：飲食</a></li>
+            <li><a href="#action-plan-supplements" class="toc-link">實踐指引(二)：補充品</a></li>
             <li><a href="#advanced-science" class="toc-link">進階花青素科學</a></li>
             <li><a href="#safety" class="toc-link">安全注意事項</a></li>
             <li><a href="#faq" class="toc-link">常見問題</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
 
       <main class="article-content">
         <header class="article-header" id="article-top">
+          <div id="toc-mobile-target"></div>
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a><span class="separator">/</span><span>花青素 - 終結3C眼疲勞、逆轉老化的超級抗氧化物</span>
@@ -240,7 +250,6 @@
               <div class="risk-card"><h4 class="risk-card-title">長時間用眼的3C族</h4><p class="risk-card-desc">螢幕前的每一分鐘，都在消耗眼部健康。感到眼睛乾澀、疲勞、視線模糊，甚至對光敏感。</p></div>
               <div class="risk-card"><h4 class="risk-card-title">注重保養的愛美族</h4><p class="risk-card-desc">害怕紫外線和歲月在臉上留下痕跡，希望維持肌膚的彈性、光澤與年輕狀態。</p></div>
               <div class="risk-card"><h4 class="risk-card-title">擔心循環不佳的久坐上班族</h4><p class="risk-card-desc">長時間維持相同姿勢，感覺循環變差、手腳冰冷，想維持血管健康與彈性。</p></div>
-              <div class="risk-card"><h4 class="risk-card-title">追求思緒清晰的熟齡族</h4><p class="risk-card-desc">希望在年歲增長時，依然能保持清晰的思緒、良好的記憶力與認知功能。</p></div>
             </div>
           </section>
 
@@ -250,6 +259,8 @@
             <div class="info-cards">
               <div class="info-card"><h4 class="info-card-title">強化視覺，舒緩疲勞</h4><p class="info-card-desc">促進眼部微血管循環，增加視網膜感光物質「視紫質」的生成，有助於舒緩眼睛疲勞、提升夜間視力。</p></div>
               <div class="info-card"><h4 class="info-card-title">極致抗氧化，對抗老化</h4><p class="info-card-desc">中和體內過多的自由基，保護細胞不受氧化損傷，從而延緩皮膚老化，維持青春光彩。</p></div>
+            </div>
+            <div class="info-cards">
               <div class="info-card"><h4 class="info-card-title">維持血管彈性，促進循環</h4><p class="info-card-desc">保護血管內皮細胞，增加血管彈性，有助於維持心血管系統的健康與正常運作。</p></div>
                <div class="info-card"><h4 class="info-card-title">穿越屏障，保護大腦</h4><p class="info-card-desc">是少數能穿越「血腦屏障」的抗氧化物，能直接保護腦細胞，有助於維持長期認知健康。</p></div>
             </div>
@@ -281,7 +292,7 @@
             <div class="alert alert-tip"><strong>關鍵洞察：</strong> 與其糾結於毫克數，不如專注於「彩虹飲食法」，確保每日餐盤中都有深藍、紫、紅色的食物。</div>
           </section>
           
-          <section id="action-food">
+          <section id="action-plan-food">
             <h2>實踐指引(一)：打造您的花青素彩虹餐盤</h2>
             <p>要從飲食中獲得足夠的花青素，關鍵在於選擇「顏色深邃」的蔬果。以下是您的最佳選擇：</p>
              <table class="data-table">
@@ -320,7 +331,7 @@
             </table>
           </section>
 
-          <section id="action-supplements">
+          <section id="action-plan-supplements">
             <h2>實踐指引(二)：3大花青素來源比較與挑選</h2>
             <p>當飲食攝取不足或有強化需求時，補充品是高效的選擇。市面上常見的三大來源各有千秋：</p>
             <div class="comparison-table-container">
@@ -354,6 +365,8 @@
                     <h4 class="info-card-title">2. 不只抗氧化，更是信號分子</h4>
                     <p class="info-card-desc">花青素不僅僅是被動地中和自由基。它能像鑰匙一樣，主動「開啟」體內重要的自我保護路徑，例如 <strong class="highlight-nutrient">Nrf2 通路，這個通路能喚醒細胞內建的抗氧化與排毒系統</strong>，達到更深層的防護。</p>
                 </div>
+            </div>
+            <div class="info-cards">
                 <div class="info-card">
                     <h4 class="info-card-title">3. 「C3G」：花青素界的特種部隊</h4>
                     <p class="info-card-desc">在眾多花青素中，「矢車菊素-3-葡萄糖苷 (C3G)」因其高穩定性和強活性而備受矚目。研究顯示，C3G在<strong class="highlight-nutrient">保護視網膜細胞、改善胰島素敏感性</strong>方面的效果特別顯著，是花青素家族中的明星分子。</p>
@@ -383,6 +396,8 @@
                     </h4>
                     <p class="info-card-desc">高劑量的花青素補充品，理論上可能增強<strong>抗凝血藥物</strong>（如華法林 Warfarin）的效果。若您正在服用此類藥物，請在使用前諮詢醫師。</p>
                 </div>
+            </div>
+            <div class="info-cards">
                 <div class="info-card safety-card">
                     <h4 class="info-card-title">
                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
@@ -415,30 +430,7 @@
               <div class="faq-answer"><p><strong>A:</strong> 是的，完全可能，而且是正常的現象。當攝取大量的花青素後，部分未被完全吸收的色素會透過尿液或糞便排出，使其呈現紅色或紫色，這對健康無害。</p></div>
             </div>
           </section>
-                <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-        <div class="related-grid">
-          <a href="./lutein.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f7f3ff; color: #553c9a;">其他營養素</span>
-              <h3 class="related-card-title">葉黃素</h3>
-              <p class="related-card-desc">葉黃素是保護視網膜黃斑部的關鍵營養素，與花青素搭配，提供更全面的眼部保護。</p>
-            </div>
-          </a>
-          <a href="./vitamin-c.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f7f3ff; color: #553c9a;">維生素</span>
-              <h3 class="related-card-title">維生素C</h3>
-              <p class="related-card-desc">強效的抗氧化劑，能促進膠原蛋白形成，並與花青素協同作用，對抗自由基。</p>
-            </div>
-          </a>
-          <a href="./vitamin-e.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f7f3ff; color: #553c9a;">維生素</span>
-              <h3 class="related-card-title">維生素E</h3>
-              <p class="related-card-desc">保護細胞膜免受氧化傷害的脂溶性抗氧化劑，與花青素共同構成身體的抗氧化防線。</p>
-            </div>
-          </a>
-        </div>
+          <div id="related-articles-container"></div>
         </article>
       </main>
     </div>
@@ -455,6 +447,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
       // Progress Bar
@@ -495,8 +490,19 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+
+        // Initialize Related Articles Component
+        const relatedArticlesContainer = document.getElementById("related-articles-container");
+        const currentArticleId = document.body.dataset.articleId;
+        if (relatedArticlesContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedArticlesContainer, currentArticleId, articlesData, topicArticles).initialize();
+        }
+
+        // Initialize Responsive TOC Component
+        if (window.ResponsiveTocComponent) {
+          new window.ResponsiveTocComponent().initialize();
+        }
       });
     </script>
 </body>
 </html>
-

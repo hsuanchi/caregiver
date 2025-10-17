@@ -220,7 +220,16 @@
       .info-card:hover, .risk-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); }
       .info-card-title, .risk-card-title { font-size: 1.2em; font-weight: 700; color: #2c7a7b; margin-bottom: 10px; }
       .info-card-desc, .risk-card-desc { color: #4a5568; font-size: 0.9em; line-height: 1.6; }
-      .highlight-nutrient { border-bottom: 2px solid #38b2ac; padding-bottom: 1px; }
+      .highlight-nutrient {
+        background-image: linear-gradient(to top, rgba(56, 178, 172, 0.5) 0%, rgba(56, 178, 172, 0.5) 100%);
+        background-position: 0 1.05em;
+        background-repeat: repeat-x;
+        background-size: 100% 2px;
+        text-decoration: none;
+        border-bottom: none;
+        padding-bottom: 1px;
+      }
+      section[id] { scroll-margin-top: 100px; }
       .article-body h2 { font-size: 2em; font-weight: 700; color: #2d3748; margin: 50px 0 30px; padding-top: 20px; position: relative; }
       .article-body h2::before { content: ""; position: absolute; left: 0; top: 0; width: 50px; height: 4px; background: linear-gradient(90deg, #38b2ac 0%, #4fd1c5 100%); border-radius: 2px; }
       .faq-section { margin-top: 60px; padding-top: 40px; border-top: 2px solid #e5e7eb; }
@@ -249,7 +258,7 @@
       .comparison-cell:last-child { border-radius: 0 10px 10px 0; }
       .safety-card { background: #fef2f2; border-left: 4px solid #ef4444; }
       .safety-card .info-card-title { color: #b91c1c; display: flex; align-items: center; gap: 10px; }
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } }
       @media (max-width: 768px) { .article-content { padding: 25px; } .article-title { font-size: 2em; } .article-meta { flex-direction: column; gap: 10px; } .comparison-table, .comparison-table thead, .comparison-table tbody, .comparison-table th, .comparison-table td, .comparison-table tr { display: block; } .comparison-table thead { display: none; } .comparison-table tr { border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 15px; } .comparison-table td { display: flex; justify-content: space-between; padding: 10px 15px; text-align: right; border-bottom: 1px dashed #e2e8f0; } .comparison-table td:last-child { border-bottom: none; } .comparison-table td::before { content: attr(data-label); font-weight: 600; text-align: left; margin-right: 15px; } .comparison-label { display: none; } .comparison-cell { box-shadow: none; } .comparison-cell:last-child, .comparison-label { border-radius: 0; } }
       /* Styles for the TOC when it's in the mobile position */
       #toc-mobile-target {
@@ -315,7 +324,7 @@
             <li><a href="#how-much" class="toc-link">我該攝取多少？</a></li>
             <li><a href="#action-food" class="toc-link">實踐指引(一)：飲食</a></li>
             <li><a href="#action-supplements" class="toc-link">實踐指引(二)：補充品</a></li>
-            <li><a href="#advanced-science" class="toc-link">進階胺基酸科學</a></li>
+            <li><a href="#advanced-science" class="toc-link sub-item">進階胺基酸科學</a></li>
             <li><a href="#safety" class="toc-link">安全注意事項</a></li>
             <li><a href="#faq" class="toc-link">常見問題</a></li>
             <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
@@ -346,7 +355,6 @@
               <div class="risk-card"><h4 class="risk-card-title">常感疲勞的上班族</h4><p class="risk-card-desc">明明睡飽了，卻還是精神不濟、專注力難以集中，影響工作效率。</p></div>
               <div class="risk-card"><h4 class="risk-card-title">體力下滑的熟齡族</h4><p class="risk-card-desc">感覺肌肉量逐年流失，肌力不如從前，甚至擔心肌少症的風險。</p></div>
               <div class="risk-card"><h4 class="risk-card-title">追求體態的健身者</h4><p class="risk-card-desc">運動後恢復緩慢，肌肉痠痛持續很久，感覺訓練效果停滯不前。</p></div>
-              <div class="risk-card"><h4 class="risk-card-title">季節變換就倒下的泡芙人</h4><p class="risk-card-desc">免疫力較差，容易感冒，或是傷口癒合速度比別人慢。</p></div>
             </div>
           </section>
 
@@ -356,6 +364,8 @@
             <div class="info-cards">
               <div class="info-card"><h4 class="info-card-title">重建肌肉，提升體力</h4><p class="info-card-desc">提供肌肉生長和修復的直接原料，有效減緩肌肉流失，提升運動表現與日常活力。</p></div>
               <div class="info-card"><h4 class="info-card-title">強化免疫，抵抗外敵</h4><p class="info-card-desc">製造抗體與免疫細胞的關鍵成分，建立穩固的免疫防線。</p></div>
+            </div>
+            <div class="info-cards">
               <div class="info-card"><h4 class="info-card-title">穩定情緒，改善睡眠</h4><p class="info-card-desc">作為大腦神經傳導物質的前體，幫助調節情緒、壓力，並生成褪黑激素以改善睡眠品質。</p></div>
                <div class="info-card"><h4 class="info-card-title">養顏美容，維持狀態</h4><p class="info-card-desc">是膠原蛋白與角蛋白的基礎，維持皮膚彈性、頭髮光澤與指甲強韌。</p></div>
             </div>
@@ -468,6 +478,8 @@
                     <h4 class="info-card-title">2. 腸道健康的隱形功臣</h4>
                     <p class="info-card-desc">您可能不知道，您的腸道細胞（黏膜細胞）最主要的能量來源並非葡萄糖，而是「谷氨醯胺」(Glutamine)這種胺基酸。當身體處於壓力、感染或手術後，谷氨醯胺會從「非必需」變為「條件必需」，足量補充有助於<strong class="highlight-nutrient">維持腸道屏障的完整性，是免疫系統的幕後英雄</strong>。</p>
                 </div>
+            </div>
+            <div class="info-cards">
                 <div class="info-card">
                     <h4 class="info-card-title">3. 時間營養學：平均分配比總量更重要</h4>
                     <p class="info-card-desc">最新觀念指出，尤其對熟齡族群，一天當中「如何分配」蛋白質攝取，可能比「總量」更關鍵。與其晚餐吃一塊大牛排，不如<strong class="highlight-nutrient">將蛋白質平均分配在三餐</strong>（例如每餐25-30克）。這樣能更有效地持續刺激肌肉蛋白質合成，對抗因年齡增長而產生的「合成阻力」(Anabolic Resistance)。</p>
@@ -497,6 +509,8 @@
                     </h4>
                     <p class="info-card-desc">部分胺基酸可能與特定藥物（如治療帕金森氏症的<strong>左旋多巴</strong>、<strong>糖尿病藥物</strong>）產生交互作用，建議使用前諮詢藥師。</p>
                 </div>
+            </div>
+            <div class="info-cards">
                 <div class="info-card safety-card">
                     <h4 class="info-card-title">
                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>

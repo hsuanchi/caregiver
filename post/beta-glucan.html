@@ -94,7 +94,16 @@
       .article-title { font-size: 2.5em; font-weight: 800; color: #2d3748; line-height: 1.3; margin-bottom: 20px; max-width: 800px; }
       .article-subtitle { font-size: 1.3em; color: #4a5568; line-height: 1.6; max-width: 700px; margin-bottom: 30px; }
       .article-body h2::before { background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%); }
-      .highlight-nutrient { border-bottom: 2px solid var(--primary-color); padding-bottom: 1px; }
+      .highlight-nutrient {
+        background-image: linear-gradient(to top, rgba(72, 187, 120, 0.5) 0%, rgba(72, 187, 120, 0.5) 100%);
+        background-position: 0 1.05em;
+        background-repeat: repeat-x;
+        background-size: 100% 2px;
+        text-decoration: none;
+        border-bottom: none;
+        padding-bottom: 1px;
+      }
+      section[id] { scroll-margin-top: 100px; }
       .data-table thead { background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); }
       .info-card-title, .risk-card-title { color: var(--primary-dark); }
       .faq-question::after { color: var(--primary-color); }
@@ -147,11 +156,11 @@
       .comparison-cell:last-child { border-radius: 0 10px 10px 0; }
       .safety-card { background: #fef2f2; border-left: 4px solid #ef4444; }
       .safety-card .info-card-title { color: #b91c1c; display: flex; align-items: center; gap: 10px; }
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } }
       @media (max-width: 768px) { .article-content { padding: 25px; } .article-title { font-size: 2em; } .article-meta { flex-direction: column; gap: 10px; } .comparison-table, .comparison-table thead, .comparison-table tbody, .comparison-table th, .comparison-table td, .comparison-table tr { display: block; } .comparison-table thead { display: none; } .comparison-table tr { border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 15px; } .comparison-table td { display: flex; justify-content: space-between; padding: 10px 15px; text-align: right; border-bottom: 1px dashed #e2e8f0; } .comparison-table td:last-child { border-bottom: none; } .comparison-table td::before { content: attr(data-label); font-weight: 600; text-align: left; margin-right: 15px; } .comparison-label { display: none; } .comparison-cell { box-shadow: none; } .comparison-cell:last-child, .comparison-label { border-radius: 0; } }
     </style>
 </head>
-<body>
+<body data-article-id="card-beta-glucan">
     <div class="progress-bar" id="progressBar"></div>
     <div id="header-component"></div>
 
@@ -162,22 +171,23 @@
           <ul class="toc-list">
             <li><a href="#problem" class="toc-link">您有這些困擾嗎？</a></li>
             <li><a href="#solution" class="toc-link">β-葡聚醣：終極解答</a></li>
-            <li><a href="#mechanism" class="toc-link">如何運作？關鍵機制</a></li>
-            <li><a href="#comparison" class="toc-link">β-葡聚醣 vs. 益生菌</a></li>
-            <li><a href="#myth-busting" class="toc-link">破解迷思：多醣體</a></li>
+            <li><a href="#mechanism" class="toc-link">如何運作？2大關鍵機制</a></li>
+            <li><a href="#comparison" class="toc-link sub-item">β-葡聚醣 vs. 益生菌比較</a></li>
+            <li><a href="#myth-busting" class="toc-link sub-item">破解迷思：多醣體≠有效成分</a></li>
             <li><a href="#how-much" class="toc-link">我該攝取多少？</a></li>
-            <li><a href="#action-food" class="toc-link">實踐指引(一)：飲食</a></li>
-            <li><a href="#action-supplements" class="toc-link">實踐指引(二)：補充品</a></li>
-            <li><a href="#advanced-science" class="toc-link">進階科學觀點</a></li>
+            <li><a href="#action-plan-food" class="toc-link">實踐指引(一)：飲食</a></li>
+            <li><a href="#action-plan-supplements" class="toc-link">實踐指引(二)：補充品</a></li>
+            <li><a href="#advanced-science" class="toc-link sub-item">進階科學觀點</a></li>
             <li><a href="#safety" class="toc-link">安全注意事項</a></li>
             <li><a href="#faq" class="toc-link">常見問題</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
 
       <main class="article-content">
         <header class="article-header" id="article-top">
+          <div id="toc-mobile-target"></div>
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a><span class="separator">/</span><span>β-葡聚醣 - 啟動免疫力、擊退壞膽固醇的天然武器</span>
@@ -212,13 +222,15 @@
             <div class="info-cards">
               <div class="info-card"><h4 class="info-card-title">精準啟動免疫反應</h4><p class="info-card-desc">如同免疫細胞的「教練」，能喚醒巨噬細胞、自然殺手細胞等第一線防禦部隊，提升身體對抗外來威脅的反應速度與效率。</p></div>
               <div class="info-card"><h4 class="info-card-title">降低膽固醇與血糖</h4><p class="info-card-desc">在腸道中形成凝膠狀物質，能有效包覆油脂、膽酸，並延緩醣類吸收，有助於維持心血管健康與血糖穩定。</p></div>
+            </div>
+            <div class="info-cards">
               <div class="info-card"><h4 class="info-card-title">化身超級益生元</h4><p class="info-card-desc">作為腸道好菌的頂級食物，能促進益菌生長，改善腸道環境，生成有益健康的短鏈脂肪酸(SCFA)。</p></div>
                <div class="info-card"><h4 class="info-card-title">強化天然屏障</h4><p class="info-card-desc">有助於維持腸道黏膜的完整性，鞏固身體的第一道防線，減少有害物質進入體內的機會。</p></div>
             </div>
           </section>
           
           <section id="mechanism">
-            <h2>β-葡聚醣如何運作？2大關鍵機制拆解</h2>
+            <h2>如何運作？2大關鍵機制拆解</h2>
             <p>β-葡聚醣的驚人功效，並非單一途徑，而是來自於其獨特的分子結構，讓它能在體內兵分二路，扮演兩種截然不同的關鍵角色，分別在免疫系統與消化系統中發揮作用。</p>
             <div class="info-cards" style="grid-template-columns: 1fr 1fr;">
               <div class="info-card"><h4 class="info-card-title">免疫細胞的「鑰匙」</h4><p class="info-card-desc">來自酵母、蕈菇的 β-1,3/1,6 結構，能精準地與免疫細胞表面的特殊受體(Dectin-1)結合，像鑰匙開鎖一樣，直接啟動防禦機制。</p></div>
@@ -278,7 +290,7 @@
             <div class="alert alert-tip"><strong>關鍵洞察：</strong> 想要透過飲食達到降膽固醇的3克目標，約等於食用一碗半（約75克）的傳統燕麥片。</div>
           </section>
           
-          <section id="action-food">
+          <section id="action-plan-food">
             <h2>實踐指引(一)：打造您的高β-葡聚醣餐盤</h2>
             <p>透過天然食物來攝取β-葡聚醣，不僅安全，更能同時獲得其他豐富的營養素。在日常飲食中增加β-葡聚醣的攝取比您想像的更簡單，就從您的早餐或家常菜色開始吧！</p>
              <table class="data-table">
@@ -291,7 +303,7 @@
             </table>
           </section>
 
-          <section id="action-supplements">
+          <section id="action-plan-supplements">
             <h2>實踐指引(二)：3大β-葡聚醣來源比較與挑選</h2>
             <p>當您的目標是精準調節免疫力，或是透過日常飲食難以達到目標劑量時，保健補充品便能提供更濃縮、更具特定分子結構的β-葡聚醣。正如前文所提，不同的分子結構（如β-1,3/1,6 vs. β-1,3/1,4）對應著不同的生理功能，因此了解來源是做出正確選擇的第一步。</p>
             <div class="comparison-table-container">
@@ -319,6 +331,8 @@
             <div class="info-cards">
                 <div class="info-card"><h4 class="info-card-title">1. 免疫訓練 (Trained Immunity)</h4><p class="info-card-desc">酵母β-葡聚醣不僅是當下的刺激，更能「訓練」我們的先天免疫細胞，使其在未來遇到威脅時，能更快、更強地做出反應，效果可持續數週甚至數月。</p></div>
                 <div class="info-card"><h4 class="info-card-title">2. 腸-肺軸線的秘密</h4><p class="info-card-desc">腸道健康，呼吸道就強壯！口服β-葡聚醣能透過改善腸道菌相，間接強化肺部的免疫防禦力，有助於降低上呼吸道感染的風險。</p></div>
+            </div>
+            <div class="info-cards">
                 <div class="info-card"><h4 class="info-card-title">3. 協同維生素C、D、鋅</h4><p class="info-card-desc">β-葡聚醣負責「喚醒」免疫軍隊，而維生素C、D和鋅則是製造武器和維持軍隊戰力的「後勤物資」。兩者結合，能發揮1+1>2的防禦效果。</p></div>
                 <div class="info-card"><h4 class="info-card-title">4. 對抗「發炎性老化」</h4><p class="info-card-desc">隨著年齡增長，體內會處於一種低度的慢性發炎狀態(Inflammaging)。β-葡聚醣的免疫調節能力，有助於平衡過度的發炎反應，被視為對抗發炎性老化的潛力新星。</p></div>
             </div>
@@ -330,6 +344,8 @@
             <div class="info-cards">
                 <div class="info-card safety-card"><h4 class="info-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 T 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>腸胃敏感者</h4><p class="info-card-desc">作為一種纖維，初次或大量攝取可能引起脹氣。建議從低劑量開始，並確保飲用足夠水分。</p></div>
                 <div class="info-card safety-card"><h4 class="info-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>自體免疫疾病者</h4><p class="info-card-desc">如紅斑性狼瘡、類風濕性關節炎患者，因其免疫調節特性，建議在使用高劑量補充品前諮詢醫師。</p></div>
+            </div>
+            <div class="info-cards">
                 <div class="info-card safety-card"><h4 class="info-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>器官移植者</h4><p class="info-card-desc">正在服用免疫抑制劑者，不建議使用β-葡聚醣補充品，以免干擾藥物效果。</p></div>
                 <div class="info-card safety-card"><h4 class="info-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>孕哺期請謹慎</h4><p class="info-card-desc">雖然從食物中攝取是安全的，但高劑量補充品的安全性尚未完全確立，建議此期間以天然飲食為主或諮詢醫師。</p></div>
             </div>
@@ -350,30 +366,7 @@
               <div class="faq-answer"><p><strong>A:</strong> 效果因人而異，並取決於您的健康目標。對於調節膽固醇和血糖，持續補充4-8週，並搭配健康飲食，通常可以看到較顯著的改善。對於免疫支持，效果可能是漸進的，您可能會感覺到體力變好、感冒次數減少。</p></div>
             </div>
           </section>
-        <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-        <div class="related-grid">
-          <a href="./dietary-fiber.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f0fff4; color: #2f855a;">膳食纖維</span>
-              <h3 class="related-card-title">膳食纖維</h3>
-              <p class="related-card-desc">β-葡聚醣是水溶性膳食纖維的一種，了解更多纖維種類，全面改善腸道健康。</p>
-            </div>
-          </a>
-          <a href="./probiotics.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f0fff4; color: #2f855a;">益生菌</span>
-              <h3 class="related-card-title">益生菌</h3>
-              <p class="related-card-desc">β-葡聚醣可作為益生元，是益生菌的食物，兩者搭配能更有效地建立健康的腸道菌相。</p>
-            </div>
-          </a>
-          <a href="./vitamin-d.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f0fff4; color: #2f855a;">維生素</span>
-              <h3 class="related-card-title">維生素 D</h3>
-              <p class="related-card-desc">維生素D是免疫系統的關鍵調節劑，與β-葡聚醣共同作用，建立更穩固的身體防線。</p>
-            </div>
-          </a>
-        </div>
+          <div id="related-articles-container"></div>
         </article>
       </main>
     </div>
@@ -390,6 +383,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
       // Progress Bar
@@ -430,8 +426,19 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+
+        // Initialize Related Articles Component
+        const relatedArticlesContainer = document.getElementById("related-articles-container");
+        const currentArticleId = document.body.dataset.articleId;
+        if (relatedArticlesContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedArticlesContainer, currentArticleId, articlesData, topicArticles).initialize();
+        }
+
+        // Initialize Responsive TOC Component
+        if (window.ResponsiveTocComponent) {
+          new window.ResponsiveTocComponent().initialize();
+        }
       });
     </script>
 </body>
 </html>
-
