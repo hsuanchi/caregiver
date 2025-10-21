@@ -77,6 +77,7 @@
       /* Base styles from previous template, adapted for the new color scheme */
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif; line-height: 1.8; color: #2d3748; background: #faf8f5; }
+      section[id] { scroll-margin-top: 100px; }
       .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%); z-index: 1001; transition: width 0.3s ease; }
       .breadcrumb a:hover { color: var(--primary-color); }
       .article-container { max-width: 1400px; margin: 0 auto; padding: 100px 20px 60px; display: grid; grid-template-columns: 280px 1fr; gap: 60px; position: relative; }
@@ -95,7 +96,7 @@
       .article-subtitle { font-size: 1.3em; color: #4a5568; line-height: 1.6; max-width: 700px; margin-bottom: 30px; }
       .article-body h2::before { background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%); }
       .article-body h3 { font-size: 1.5em; font-weight: 600; color: var(--primary-dark); margin: 35px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0; }
-      .highlight-nutrient { border-bottom: 2px solid var(--primary-color); padding-bottom: 1px; }
+      .highlight-nutrient { background-image: linear-gradient(to top, rgba(74, 85, 104, 0.5) 0%, rgba(74, 85, 104, 0.5) 100%); background-position: 0 1.05em; background-repeat: repeat-x; background-size: 100% 2px; text-decoration: none; border-bottom: none; padding-bottom: 1px; }
       .data-table thead { background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); }
       .info-card-title, .risk-card-title { color: var(--primary-dark); }
       .faq-question::after { color: var(--primary-color); }
@@ -151,7 +152,7 @@
       .strategy-card h4 { color: var(--primary-dark); font-size: 1.1em; }
       .strategy-card ul { list-style-position: inside; padding-left: 5px; }
 
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } }
       @media (max-width: 768px) { .article-content { padding: 25px; } .article-title { font-size: 2em; } .article-meta { flex-direction: column; gap: 10px; } .strategy-grid { grid-template-columns: 1fr; } }
 
       /* Related Articles */
@@ -209,7 +210,7 @@
       }
     </style>
 </head>
-<body>
+<body data-article-id="card-chromium">
     <div class="progress-bar" id="progressBar"></div>
     <div id="header-component"></div>
 
@@ -225,16 +226,20 @@
             <li><a href="#action-food" class="toc-link">實踐指引(一)：飲食</a></li>
             <li><a href="#action-supplements" class="toc-link">實踐指引(二)：補充品</a></li>
             <li><a href="#advanced-strategies" class="toc-link">最大化效益的進階策略</a></li>
+            <li><a href="#advanced-strategies-factors" class="toc-link sub-item">吸收促進／抑制因子</a></li>
+            <li><a href="#advanced-strategies-timing" class="toc-link sub-item">最佳補充時機與協同搭配</a></li>
+            <li><a href="#advanced-strategies-who" class="toc-link sub-item">特定族群補充指引</a></li>
             <li><a href="#advanced-science" class="toc-link">進階科學觀點</a></li>
             <li><a href="#safety" class="toc-link">安全注意事項</a></li>
             <li><a href="#faq" class="toc-link">常見問題</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
 
       <main class="article-content">
         <header class="article-header" id="article-top">
+          <div id="toc-mobile-target"></div>
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a><span class="separator">/</span><span>鉻 - 穩定血糖、抑制嘴饞的代謝神隊友</span>
@@ -254,10 +259,12 @@
 
           <section id="problem">
             <h2>您有這些困擾嗎？身體正在發出「血糖失衡」的警訊</h2>
-            <p>在充滿精緻澱粉與含糖飲料的現代飲食環境中，我們的身體正為了維持血糖穩定而疲於奔命。您是否也經常陷入以下這些惡性循環？</p>
+            <p>您是否常在午飯後感到一陣強烈的睡意，非得來杯含糖飲料或一塊蛋糕才能撐過去？或是明明不餓，卻克制不住想吃甜食的衝動？在充滿精緻澱粉與含糖飲料的現代飲食環境中，我們的身體正為了維持血糖穩定而疲於奔命，並發出警訊。您是否也經常陷入以下這些惡性循環？</p>
             <div class="risk-group-cards">
               <div class="risk-card"><h4 class="risk-card-title">嗜甜的手搖飲/甜點控</h4><p class="risk-card-desc">餐後或下午總克制不住想來點甜的，但滿足感過後，很快又感到疲倦、昏昏欲睡。</p></div>
               <div class="risk-card"><h4 class="risk-card-title">三餐在外的外食族</h4><p class="risk-card-desc">飲食選擇有限，常以麵包、麵食、便當為主，不知不覺攝取了過多精緻碳水化合物。</p></div>
+            </div>
+            <div class="risk-group-cards">
               <div class="risk-card"><h4 class="risk-card-title">努力奮鬥的體重管理者</h4><p class="risk-card-desc">明明努力控制飲食，卻時常被突如其來的強烈飢餓感與嘴饞打敗，導致計畫破功。</p></div>
               <div class="risk-card"><h4 class="risk-card-title">高壓力的上班族</h4><p class="risk-card-desc">壓力荷爾蒙（皮質醇）會擾亂血糖平衡，讓您在壓力大時，更渴望高熱量的垃圾食物。</p></div>
             </div>
@@ -265,10 +272,12 @@
 
           <section id="solution">
             <h2>鉻：4大核心功效，斬斷血糖失控的惡性循環</h2>
-            <p>鉻 (Chromium) 是一種必需微量礦物質，它在人體內扮演著「胰島素增敏劑」的關鍵角色，如同胰島素的神隊友，能精準地為您解決上述困擾：</p>
+            <p>鉻 (Chromium) 這種必需微量礦物質，正是斬斷此惡性循環的關鍵。它在人體內扮演著「胰島素增敏劑」的角色，如同胰島素的「神隊友」，能大幅提升胰島素的工作效率，從根本上解決上述困擾：</p>
             <div class="info-cards">
               <div class="info-card"><h4 class="info-card-title">強化胰島素作用</h4><p class="info-card-desc">協助胰島素與細胞受體結合，提高細胞對葡萄糖的利用效率，是維持血糖穩定的核心機制。</p></div>
               <div class="info-card"><h4 class="info-card-title">穩定餐後血糖</h4><p class="info-card-desc">減緩餐後血糖快速飆升與驟降的幅度，避免因血糖震盪引起的疲倦、昏沉與注意力不集中。</p></div>
+            </div>
+            <div class="info-cards">
               <div class="info-card"><h4 class="info-card-title">降低對甜食的渴望</h4><p class="info-card-desc">研究顯示，補充鉻能影響大腦中調節食慾與情緒的神經傳導物質，有助於抑制對碳水化合物的嘴饞。</p></div>
                <div class="info-card"><h4 class="info-card-title">促進三大營養素代謝</h4><p class="info-card-desc">不僅參與醣類代謝，在脂肪與蛋白質的正常代謝過程中，鉻同樣扮演著不可或缺的輔助角色。</p></div>
             </div>
@@ -276,7 +285,7 @@
           
           <section id="mechanism">
             <h2>鉻如何運作？化身為胰島素的「鑰匙放大器」</h2>
-            <p>鉻本身無法直接作用，它必須先在體內轉化為具有生物活性的形態——「鉻調蛋白 (Chromodulin)」。您可以將胰島素想像成一把鑰匙，而鉻調蛋白就是這把鑰匙的放大器，能讓開門（讓血糖進入細胞）的效率倍增。</p>
+            <p>鉻本身無法直接作用，它必須先在體內與其他分子結合，轉化為具有生物活性的「鉻調蛋白 (Chromodulin)」。您可以將胰島素想像成一把「鑰匙」，細胞上的受體是「鎖頭」。而鉻調蛋白就像一個「訊號放大器」，當鑰匙插入鎖頭時，它能將開鎖的訊號放大數倍，讓血糖（葡萄糖）能更快速、更有效率地進入細胞內被利用。</p>
             <div class="info-cards" style="grid-template-columns: 1fr;">
               <div class="info-card">
                   <h4 class="info-card-title">胰島素信號放大機制</h4>
@@ -287,7 +296,7 @@
 
           <section id="how-much">
             <h2>我該攝取多少？從日常保健到強化補充的劑量建議</h2>
-            <p>鉻的需求量會因年齡、性別與生活型態而異。台灣衛福部建議的每日足夠攝取量(AI)如下，但請注意，多數促進健康的臨床研究採用的是更高的劑量。</p>
+            <p>鉻的需求量會因年齡、性別與生活型態而異。台灣衛福部針對日常保健制定了「足夠攝取量(AI)」，但值得注意的是，多數旨在改善特定健康問題（如血糖控制）的臨床研究所採用的劑量，遠高於此基礎建議。</p>
             <table class="data-table">
               <thead><tr><th>族群</th><th>每日足夠攝取量 (AI)</th><th>臨床研究常用劑量</th></tr></thead>
               <tbody>
@@ -303,7 +312,7 @@
           
           <section id="action-food">
             <h2>實踐指引(一)：從全食物中補充天然鉻</h2>
-            <p>雖然要從飲食中獲得高劑量的鉻並不容易，但優先選擇未經加工的「原型食物」，是補充鉻、維持代謝健康的基本盤。</p>
+            <p>雖然要單從飲食中獲得高劑量的鉻並不容易，但優先選擇未經加工的「原型食物」，是補充鉻、維持代謝健康的基本盤。精緻加工過程（如將糙米變白米）會大量流失鉻，這也是現代人普遍攝取不足的原因之一。</p>
              <table class="data-table">
               <thead><tr><th>食物來源</th><th>特色／食用建議</th></tr></thead>
               <tbody>
@@ -318,7 +327,7 @@
 
           <section id="action-supplements">
             <h2>實踐指引(二)：2大主流鉻補充品比較與挑選</h2>
-            <p>當飲食攝取不足，或是有強化血糖管理的需求時，補充品是更高效、精準的選擇。市面上最主流的兩種有機鉻，在吸收率與研究支持上各有優勢：</p>
+            <p>當飲食攝取不足，或有強化血糖管理的需求時，補充品是更高效、精準的選擇。市面上最主流的兩種「有機鉻」，在吸收率與研究支持上各有優勢，了解其差異是做出明智選擇的第一步。</p>
             <div class="comparison-table-container">
               <table class="comparison-table">
                 <thead>
@@ -343,10 +352,10 @@
           
           <section id="advanced-strategies">
             <h2>最大化鉻效益的進階策略</h2>
-            <p>了解如何補充鉻只是第一步，真正的關鍵在於如何讓它在體內發揮最大作用。以下是頂尖營養師才會告訴你的實踐秘訣：</p>
+            <p>了解補充鉻只是第一步，真正的關鍵在於如何讓它在體內發揮最大作用。以下是頂尖營養師才會告訴你的實踐秘訣，讓你的每一分補充都更有效率。</p>
             
-            <h3>吸收促進／抑制因子</h3>
-            <p>鉻的吸收率天生就不高（約0.4-2.5%），因此避開抑制因子、搭配促進因子，就顯得格外重要。</p>
+            <h3 id="advanced-strategies-factors">吸收促進／抑制因子</h3>
+            <p>鉻的吸收率天生就不高（約0.4%-2.5%），因此避開抑制因子、搭配促進因子，就顯得格外重要。一個聰明的策略，能讓補充效果產生數倍的差異。</p>
             <div class="strategy-grid">
                 <div class="strategy-card" style="border-left: 4px solid #48bb78;">
                     <h4>🚀 吸收促進劑 (Boosters)</h4>
@@ -366,8 +375,8 @@
                 </div>
             </div>
 
-            <h3>最佳補充時機與協同搭配 (Stacking)</h3>
-            <p>在對的時間，搭配對的夥伴，能讓鉻的效益事半功倍。</p>
+            <h3 id="advanced-strategies-timing">最佳補充時機與協同搭配 (Stacking)</h3>
+            <p>在對的時間，搭配對的夥伴，能讓鉻的效益事半功倍。這不僅關乎吸收，更關乎它在體內能否與其他營養素協同作戰。</p>
             <div class="info-cards">
                 <div class="info-card">
                     <h4 class="info-card-title">最佳時機</h4>
@@ -379,8 +388,8 @@
                 </div>
             </div>
 
-            <h3>特定族群補充指引</h3>
-            <p>不同的生活型態與健康目標，需要更精準的補充策略：</p>
+            <h3 id="advanced-strategies-who">特定族群補充指引</h3>
+            <p>不同的生活型態與健康目標，需要更精準的補充策略。以下針對三種典型族群，提供具體的補充建議：</p>
              <div class="info-cards">
                 <div class="info-card">
                     <h4 class="info-card-title">體重管理者/嗜甜族</h4>
@@ -399,7 +408,7 @@
 
           <section id="advanced-science">
             <h2>進階科學觀點：您可能不知道的3大新知</h2>
-            <p>除了血糖管理，科學家們正持續發掘鉻在人體中更深層的影響力：</p>
+            <p>除了廣為人知的血糖管理功能，前沿科學研究正持續發掘鉻在人體中更深層的影響力，揭示了這個微量礦物質的全新潛力：</p>
             <div class="info-cards">
                 <div class="info-card"><h4 class="info-card-title">1. 影響大腦健康與情緒</h4><p class="info-card-desc">鉻能影響大腦中血清素、褪黑激素等神經傳導物質的活性。部分研究顯示，補充吡啶甲酸鉻有助於改善非典型憂鬱症患者的情緒與食慾困擾。</p></div>
                 <div class="info-card"><h4 class="info-card-title">2. 多囊性卵巢症候群(PCOS)的潛力</h4><p class="info-card-desc">PCOS常伴隨有「胰島素阻抗」的問題。臨床研究發現，補充鉻能顯著改善PCOS婦女的胰島素敏感性，是輔助調理此症狀的潛力營養素。</p></div>
@@ -409,7 +418,7 @@
 
           <section id="safety">
             <h2>安全注意事項與3大使用提醒</h2>
-            <p>三價鉻是一種安全性非常高的營養素，在建議劑量範圍內極少出現副作用。然而，特定情況下仍需留意：</p>
+            <p>作為保健食品使用的「三價鉻」是一種安全性非常高的營養素，在建議劑量範圍內極少出現副作用。然而，為了確保安全並避免不必要的風險，特定情況下仍需留意：</p>
             <div class="info-cards">
                 <div class="info-card safety-card"><h4 class="info-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>藥物交互作用</h4><p class="info-card-desc">若您正在服用<strong class="highlight-nutrient">糖尿病藥物</strong>（如Metformin）或<strong class="highlight-nutrient">甲狀腺藥物</strong>，補充鉻前請務必諮詢醫師，因為鉻可能會影響這些藥物的效果，需要監測與調整。</p></div>
                 <div class="info-card safety-card"><h4 class="info-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>腎功能不全者</h4><p class="info-card-desc">雖然罕見，但有零星個案報告指出極高劑量（>1200mcg/日）的吡啶甲酸鉻可能影響腎功能。若您本身有腎臟相關疾病，請在使用前諮詢醫師。</p></div>
@@ -434,32 +443,7 @@
           </section>
         </article>
 
-        <section class="related-section" id="related-nutrients">
-            <h2 class="related-title">相關營養素</h2>
-            <div class="related-grid">
-                <a href="vitamin-b.html" class="related-card">
-                    <div class="related-card-content">
-                        <span class="related-card-tag" style="background-color: #eff6ff; color: #1d4ed8;">維生素</span>
-                        <h3 class="related-card-title">維生素B群</h3>
-                        <p class="related-card-desc">作為能量代謝的關鍵輔酶，B群能協助身體有效利用碳水化合物，與鉻共同維持血糖穩定。</p>
-                    </div>
-                </a>
-                <a href="magnesium.html" class="related-card">
-                    <div class="related-card-content">
-                        <span class="related-card-tag" style="background-color: #f0f9ff; color: #0c4a6e;">礦物質</span>
-                        <h3 class="related-card-title">鎂</h3>
-                        <p class="related-card-desc">參與體內數百種酵素反應，鎂在胰島素訊號傳遞中扮演重要角色，是維持血糖平衡不可或缺的礦物質。</p>
-                    </div>
-                </a>
-                <a href="dietary-fiber.html" class="related-card">
-                    <div class="related-card-content">
-                        <span class="related-card-tag" style="background-color: #f5f3ff; color: #5b21b6;">其他營養素</span>
-                        <h3 class="related-card-title">膳食纖維</h3>
-                        <p class="related-card-desc">特別是水溶性纖維，能延緩飯後血糖上升速度，是搭配鉻元素控糖的絕佳天然策略。</p>
-                    </div>
-                </a>
-            </div>
-        </section>
+        <div id="related-articles-container"></div>
       </main>
     </div>
 
@@ -475,6 +459,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
       // Progress Bar
@@ -515,8 +502,19 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+
+        // Initialize Related Articles Component
+        const relatedContainer = document.getElementById("related-articles-container");
+        const articleId = document.body.dataset.articleId;
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
+
+        // Initialize Responsive TOC Component
+        if (window.ResponsiveTocComponent) {
+          new window.ResponsiveTocComponent().initialize();
+        }
       });
     </script>
 </body>
 </html>
-

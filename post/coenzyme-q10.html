@@ -55,6 +55,8 @@
         background: #faf8f5;
       }
 
+      section[id] { scroll-margin-top: 100px; }
+
       /* Progress Bar */
       .progress-bar {
         position: fixed;
@@ -412,7 +414,12 @@
       }
       
       .highlight-nutrient {
-        border-bottom: 2px solid #ff6b35;
+        background-image: linear-gradient(to top, rgba(255, 107, 53, 0.5) 0%, rgba(255, 107, 53, 0.5) 100%);
+        background-position: 0 1.05em;
+        background-repeat: repeat-x;
+        background-size: 100% 2px;
+        text-decoration: none;
+        border-bottom: none;
         padding-bottom: 1px;
       }
 
@@ -702,10 +709,6 @@
           gap: 0;
         }
 
-        .sidebar {
-          display: none;
-        }
-
         .article-content {
           padding: 30px;
         }
@@ -745,7 +748,7 @@
       }
     </style>
 </head>
-<body>
+<body data-article-id="card-coenzyme-q10">
     <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
 
@@ -764,13 +767,18 @@
             <li><a href="#summary" class="toc-link">30 秒速讀版</a></li>
             <li><a href="#self-check" class="toc-link">你需要 Q10 嗎？</a></li>
             <li><a href="#basics" class="toc-link">輔酶 Q10 基礎知識</a></li>
-            <li><a href="#benefits" class="toc-link sub-item">功效與作用機制</a></li>
-            <li><a href="#dosage" class="toc-link sub-item">建議攝取量與時間</a></li>
-            <li><a href="#food-sources" class="toc-link sub-item">天然食物來源</a></li>
+            <li><a href="#basics-types" class="toc-link sub-item">氧化型 vs 還原型</a></li>
+            <li><a href="#basics-where" class="toc-link sub-item">Q10 在哪裡最重要？</a></li>
+            <li><a href="#benefits" class="toc-link">功效與作用機制</a></li>
+            <li><a href="#dosage" class="toc-link">建議攝取量與時間</a></li>
+            <li><a href="#dosage-amount" class="toc-link sub-item">每日建議攝取量</a></li>
+            <li><a href="#dosage-timing" class="toc-link sub-item">最佳攝取時間與方式</a></li>
+            <li><a href="#food-sources" class="toc-link">天然食物來源</a></li>
             <li><a href="#how-to-choose" class="toc-link">如何選擇 Q10 產品</a></li>
+            <li><a href="#how-to-choose-tips" class="toc-link sub-item">選購要點總整理</a></li>
             <li><a href="#safety" class="toc-link">安全資訊與副作用</a></li>
             <li><a href="#faq" class="toc-link">常見問題</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -779,6 +787,7 @@
       <main class="article-content">
         <!-- Article Header -->
         <header class="article-header">
+          <div id="toc-mobile-target"></div>
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a>
@@ -802,7 +811,7 @@
         <article class="article-body">
           <!-- Story Introduction -->
           <div class="story-intro">
-            <h3>你的身體電池快沒電了嗎？</h3>
+            <h3 id="story-intro">你的身體電池快沒電了嗎？</h3>
             <p>
               常常覺得累、精神不濟，甚至感覺心臟有點「無力」嗎？這可能是身體的能量貨幣「輔酶 Q10」正在悄悄流失！特別是過了 40 歲，或是正在服用降血脂藥物的朋友，更要注意。
             </p>
@@ -839,7 +848,7 @@
           <section id="self-check">
             <h2>快來看看你是不是需要補充 Q10 的人？</h2>
             <div class="quick-test">
-              <h3>輔酶 Q10 需求自我檢測</h3>
+              <h3 id="self-check-title">輔酶 Q10 需求自我檢測</h3>
               <p>以下情況，你中了幾個？</p>
               <div class="test-options">
                 <label class="test-option">
@@ -878,13 +887,13 @@
             <p>
               輔酶 Q10 (Coenzyme Q10, CoQ10) 是一種存在於所有細胞中的脂溶性化合物，也稱為泛醌 (ubiquinone)。<span class="highlight-nutrient">它是細胞粒線體呼吸鏈的重要組成部分，對 ATP (身體的能量貨幣) 的產生至關重要</span>，可以說是人體細胞能量的火星塞。
             </p>
-            <h3>氧化型 vs 還原型：哪個適合你？</h3>
+            <h3 id="basics-types">氧化型 vs 還原型：哪個適合你？</h3>
             <p>輔酶 Q10 在體內以兩種形式存在，並可互相轉化：</p>
             <ul>
               <li><strong>氧化型 (Ubiquinone)</strong>：傳統、較便宜的形式，但需要身體自行轉化才能利用。年輕、健康的人轉換能力較好。</li>
               <li><strong>還原型 (Ubiquinol)</strong>：<span class="highlight-nutrient">是已活化的形式，生物利用率高，抗氧化能力更強。</span>特別適合 40 歲以上、吸收能力較差或尋求高效能補充的人。</li>
             </ul>
-            <h3>Q10 在哪裡最重要？</h3>
+            <h3 id="basics-where">Q10 在哪裡最重要？</h3>
             <p>Q10 存在於全身，但在能量需求越大的器官，濃度就越高。其中最重要的就是我們的心臟，它 24 小時不停地跳動，是體內 Q10 濃度最高的地方。肝臟、腎臟和肌肉也是 Q10 的主要儲存與作用場所。</p>
           </section>
 
@@ -913,7 +922,7 @@
           <section id="dosage">
             <h2>建議攝取量與時間：怎麼吃最有效？</h2>
             <p>攝取適當的劑量與在正確的時間服用，才能讓 Q10 發揮最大效益。</p>
-            <h3>每日建議攝取量</h3>
+            <h3 id="dosage-amount">每日建議攝取量</h3>
             <table class="data-table">
               <thead>
                 <tr>
@@ -945,7 +954,7 @@
                 </tr>
               </tbody>
             </table>
-            <h3>最佳攝取時間與方式</h3>
+            <h3 id="dosage-timing">最佳攝取時間與方式</h3>
             <p><span class="highlight-nutrient">Q10 是脂溶性的，這意味著它需要和油脂一起攝取才能被好好吸收。</span>因此，最佳的服用時間是「隨餐」或「飯後」。</p>
             <ul>
               <li><strong>最佳時間</strong>：隨餐或飯後立即服用，特別是含有油脂的餐點。</li>
@@ -987,7 +996,7 @@
                 <tr><td><strong>還原型 (Ubiquinol)</strong></td><td><strong>高 (約 3-8 倍)</strong></td><td>較高</td><td>無需轉化、直接利用、抗氧化力強</td><td>價格昂貴、穩定性要求高</td><td><strong>40 歲以上</strong>、吸收能力差者、追求高效能者</td></tr>
               </tbody>
             </table>
-            <h3>選購要點總整理</h3>
+            <h3 id="how-to-choose-tips">選購要點總整理</h3>
             <ol>
               <li><strong>看型態 (最重要)</strong>：根據您的年齡和需求選擇「氧化型」或「還原型」。<span class="highlight-nutrient">40 歲以上建議優先選擇<strong>還原型</strong></span>。</li>
               <li><strong>確認劑量</strong>：根據您的健康目標選擇適當的劑量，一般保健可從 30-100 毫克開始。</li>
@@ -1054,31 +1063,7 @@
           </section>
         </article>
 
-        <!-- Related Articles -->
-        <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-        <div class="related-grid">
-          <a href="./fish-oil.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fff7ed; color: #9a3412;">脂肪酸</span>
-              <h3 class="related-card-title">魚油 (Omega-3)</h3>
-              <p class="related-card-desc">心血管健康的守護神，了解 EPA 與 DHA 的黃金比例，以及如何挑選高品質魚油。</p>
-            </div>
-          </a>
-          <a href="./probiotics.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f0fdf4; color: #14532d;">微生物</span>
-              <h3 class="related-card-title">益生菌</h3>
-              <p class="related-card-desc">腸道健康的關鍵，探索不同菌株的功效，學習如何打造健康的腸道菌群。</p>
-            </div>
-          </a>
-          <a href="./magnesium.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f5f3ff; color: #6d28d9;">礦物質</span>
-              <h3 class="related-card-title">鎂</h3>
-              <p class="related-card-desc">放鬆身心的必要礦物質，對於肌肉功能、神經系統和睡眠品質至關重要。</p>
-            </div>
-          </a>
-        </div>
+        <div id="related-articles-container"></div>
       </main>
     </div>
 
@@ -1099,6 +1084,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
       // Progress Bar
@@ -1210,6 +1198,18 @@
           new window.DeusFooterComponent(footerContainer)
             .setDebug(false)
             .setTheme("default");
+        }
+
+        // Initialize Related Articles Component
+        const relatedContainer = document.getElementById("related-articles-container");
+        const articleId = document.body.dataset.articleId;
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
+
+        // Initialize Responsive TOC Component
+        if (window.ResponsiveTocComponent) {
+          new window.ResponsiveTocComponent().initialize();
         }
       });
     </script>

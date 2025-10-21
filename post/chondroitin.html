@@ -77,6 +77,7 @@
       /* Base styles from previous template, adapted for the new color scheme */
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif; line-height: 1.8; color: #2d3748; background: #faf8f5; }
+      section[id] { scroll-margin-top: 100px; }
       .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%); z-index: 1001; transition: width 0.3s ease; }
       .breadcrumb a:hover { color: var(--primary-color); }
       .article-container { max-width: 1400px; margin: 0 auto; padding: 100px 20px 60px; display: grid; grid-template-columns: 280px 1fr; gap: 60px; position: relative; }
@@ -94,7 +95,7 @@
       .article-title { font-size: 2.5em; font-weight: 800; color: #2d3748; line-height: 1.3; margin-bottom: 20px; max-width: 800px; }
       .article-subtitle { font-size: 1.3em; color: #4a5568; line-height: 1.6; max-width: 700px; margin-bottom: 30px; }
       .article-body h2::before { background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%); }
-      .highlight-nutrient { border-bottom: 2px solid var(--primary-color); padding-bottom: 1px; }
+      .highlight-nutrient { background-image: linear-gradient(to top, rgba(49, 130, 206, 0.5) 0%, rgba(49, 130, 206, 0.5) 100%); background-position: 0 1.05em; background-repeat: repeat-x; background-size: 100% 2px; text-decoration: none; border-bottom: none; padding-bottom: 1px; }
       .data-table thead { background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); }
       .info-card-title, .risk-card-title { color: var(--primary-dark); }
       .faq-question::after { color: var(--primary-color); }
@@ -153,7 +154,7 @@
       .pyramid-level-3 { background: linear-gradient(135deg, var(--primary-light), var(--primary-color)); color: white; }
       .pyramid-level-3 h4, .pyramid-level-3 p { color: white; }
 
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } }
       @media (max-width: 768px) { .article-content { padding: 25px; } .article-title { font-size: 2em; } .article-meta { flex-direction: column; gap: 10px; } }
 
       /* Related Articles */
@@ -211,7 +212,7 @@
       }
     </style>
 </head>
-<body>
+<body data-article-id="card-chondroitin">
     <div class="progress-bar" id="progressBar"></div>
     <div id="header-component"></div>
 
@@ -231,13 +232,14 @@
             <li><a href="#advanced-science" class="toc-link">進階科學觀點</a></li>
             <li><a href="#safety" class="toc-link">安全注意事項</a></li>
             <li><a href="#faq" class="toc-link">常見問題</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
 
       <main class="article-content">
         <header class="article-header" id="article-top">
+          <div id="toc-mobile-target"></div>
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a><span class="separator">/</span><span>軟骨素 - 終結關節卡卡、找回靈活行動力的關鍵</span>
@@ -257,10 +259,12 @@
 
           <section id="problem">
             <h2>您有這些困擾嗎？身體發出的關節磨損警訊</h2>
-            <p>我們的關節，就像是汽車的避震器，承受著每一次行動的衝擊。隨著時間、活動量與生活習慣的累積，這些珍貴的軟骨正逐漸磨損。您是否開始注意到以下這些警訊？</p>
+            <p>您是否曾在上下樓梯時感覺膝蓋隱隱作痛？或是在早晨起床時，關節特別僵硬，需要活動一下才能舒展開來？這些看似微不足道的小問題，其實都是身體發出的警訊，提醒我們關節這個精密的「避震器」正在磨損。隨著時間、活動量與生活習慣的累積，這些珍貴的軟骨正逐漸流失，您是否開始注意到以下這些警訊？</p>
             <div class="risk-group-cards">
               <div class="risk-card"><h4 class="risk-card-title">熟齡活躍族</h4><p class="risk-card-desc">年輕時熱愛運動、上山下海，現在卻感覺關節不如以往靈活，早晨起床時特別僵硬。</p></div>
               <div class="risk-card"><h4 class="risk-card-title">高強度運動愛好者</h4><p class="risk-card-desc">享受跑步、重訓、球類運動的快感，但關節時常在運動後感到痠痛不適，擔心長期勞損。</p></div>
+            </div>
+            <div class="risk-group-cards">
               <div class="risk-card"><h4 class="risk-card-title">久坐不動的上班族</h4><p class="risk-card-desc">長時間維持固定姿勢，肩頸、腰椎、膝蓋壓力大，偶爾活動就覺得卡卡作響。</p></div>
               <div class="risk-card"><h4 class="risk-card-title">體重超標的族群</h4><p class="risk-card-desc">身體的每一公斤，都為下肢關節帶來數倍的壓力，加速了軟骨的磨損速度。</p></div>
             </div>
@@ -268,10 +272,12 @@
 
           <section id="solution">
             <h2>軟骨素：4大核心功效，為您的關節穿上隱形護具</h2>
-            <p>軟骨素 (Chondroitin)，是構成關節軟骨基質的關鍵大分子，如同軟骨中的「保水磁鐵」與「避震凝膠」。它能精準地為您的關節提供支持，解決上述困擾：</p>
+            <p>面對關節磨損的挑戰，軟骨素 (Chondroitin) 提供了根本性的解決方案。它不僅是補充品，更是構成關節軟骨基質的關鍵大分子，如同軟骨中的「超級保水磁鐵」與「彈力避震凝膠」。透過補充軟骨素，我們能為關節穿上隱形的護具，精準地解決上述困擾：</p>
             <div class="info-cards">
               <div class="info-card"><h4 class="info-card-title">潤滑關節，延緩磨損</h4><p class="info-card-desc">能吸收大量水分，維持關節滑液的濃稠度與潤滑性，減少骨骼間的直接摩擦，扮演避震器的角色。</p></div>
               <div class="info-card"><h4 class="info-card-title">抑制發炎，舒緩不適</h4><p class="info-card-desc">能抑制促進發炎反應的酵素活性，從根源減輕關節的紅、腫、熱、痛等不適感。</p></div>
+            </div>
+            <div class="info-cards">
               <div class="info-card"><h4 class="info-card-title">提供原料，促進修復</h4><p class="info-card-desc">作為合成膠原蛋白與蛋白聚醣的基礎材料，為受損軟骨的自我修復提供關鍵養分。</p></div>
                <div class="info-card"><h4 class="info-card-title">強化骨骼，增加密度</h4><p class="info-card-desc">研究發現，軟骨素不僅作用於軟骨，也能刺激成骨細胞，有助於維持關節周邊骨骼的健康與密度。</p></div>
             </div>
@@ -279,7 +285,7 @@
           
           <section id="mechanism">
             <h2>軟骨素如何運作？2大關鍵機制拆解</h2>
-            <p>軟骨素之所以能成為關節守護者，主要來自於它在微觀層面上扮演的兩種核心角色：</p>
+            <p>軟骨素之所以能成為關節的守護者，並非單純提供原料，而是來自於它在微觀層面上扮演的兩種核心角色：既是維持結構的「保水工程師」，也是抑制破壞的「和平使者」。</p>
             <div class="svg-visualization-container">
               <div class="svg-item">
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -316,7 +322,7 @@
 
           <section id="myth-busting">
             <h2>破解迷思：「軟骨素和葡萄糖胺只是安慰劑嗎？」</h2>
-            <p>這是消費者在搜尋關節保健資訊時，最核心、也最具爭議的問題。許多人看過正反不一的新聞報導或研究，因此感到困惑。身為資訊的解決者，我們必須為您釐清真相：</p>
+            <p>這大概是所有關節保健資訊中，最讓消費者困惑的問題。網路上充斥著正反不一的新聞報導與研究，讓人無所適從。身為資訊的解決者，我們必須為您釐清這個爭議的核心真相：</p>
             <div class="alert alert-nutritionist">
                 <strong>真相只有一個：關鍵在於「等級」與「形式」！</strong>
                 <p>過去部分研究之所以顯示效果不彰，主因是研究設計混亂——使用了不同來源、不同形式（鹽酸鹽 vs. 硫酸鹽）、不同純度的「食品級」產品，導致結果分歧。</p>
@@ -326,7 +332,7 @@
 
           <section id="comparison">
             <h2>軟骨素 vs. 葡萄糖胺：關節保養雙雄，該如何搭配？</h2>
-            <p>在關節保健的領域，「軟骨素」和「葡萄糖胺」是最常被提及的兩大巨頭，許多消費者常在這兩者間猶豫不決。事實上，它們並非競爭關係，而是相輔相成的黃金搭檔。讓我們用蓋房子的比喻來理解：</p>
+            <p>在關節保健的領域，「軟骨素」和「葡萄糖胺」是最常被提及的兩大巨頭，許多人常在這兩者間猶豫不決。事實上，它們並非競爭關係，而是分工合作的黃金搭檔。讓我們用一個簡單的「蓋房子」比喻來徹底理解它們的關係：</p>
             <div class="comparison-svg-container">
                  <svg viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
                     <!-- Bricks -->
@@ -365,7 +371,7 @@
           
           <section id="how-much">
             <h2>我該攝取多少？來自國際關節炎研究學會的建議</h2>
-            <p>軟骨素的有效劑量已有相當廣泛的研究支持。根據歐洲關節炎與風濕病聯盟(EULAR)與國際骨關節炎研究學會(OARSI)等權威機構的臨床指引，建議劑量如下：</p>
+            <p>軟骨素的補充並非越多越好，而是需要達到一個有效的劑量並持之以恆。根據歐洲關節炎與風濕病聯盟(EULAR)與國際骨關節炎研究學會(OARSI)等權威機構的臨床指引，建議劑量如下：</p>
             <table class="data-table">
               <thead><tr><th>攝取目標</th><th>每日建議量</th><th>備註</th></tr></thead>
               <tbody>
@@ -382,7 +388,7 @@
           
           <section id="action-food">
             <h2>實踐指引(一)：從飲食中補充天然軟骨素</h2>
-            <p>軟骨素主要存在於動物的結締組織與軟骨中。雖然透過日常飲食來達到每日800-1200毫克的有效劑量有相當難度，但適量攝取這些食物仍有助益。</p>
+            <p>軟骨素主要存在於動物的結締組織與軟骨中。雖然要單純透過日常飲食達到每日800-1200毫克的治療劑量有相當難度，但適量攝取這些富含膠質的食物，仍能為關節健康提供基礎支持。</p>
              <table class="data-table">
               <thead><tr><th>食物來源</th><th>食用提醒</th></tr></thead>
               <tbody>
@@ -395,7 +401,7 @@
 
           <section id="action-supplements">
             <h2>實踐指引(二)：從「單方」到「複方」，關節保健的策略性佈局</h2>
-            <p>當您決定透過補充品來高效保養關節時，會發現市場上的產品遠不止軟骨素和葡萄糖胺。了解不同複方成分的戰略定位，能幫助您根據自身需求，做出最精準的投資。</p>
+            <p>當您決定透過補充品來高效保養關節時，會發現市面上的產品遠不止軟骨素和葡萄糖胺。了解不同複方成分的戰略定位，就像是為您的關節組建一支功能完備的「維修戰隊」，能幫助您根據自身需求，做出最精準的投資。</p>
             <div class="pyramid-container">
               <div class="pyramid-level pyramid-level-3">
                 <h4>頂規組合 (全效+免疫)</h4>
@@ -422,10 +428,12 @@
 
           <section id="advanced-science">
             <h2>進階科學觀點：您可能不知道的4大新知</h2>
-            <p>軟骨素的研究已經超越了單純的關節保養，科學家們正發現它對全身健康更廣泛的益處：</p>
+            <p>軟骨素的研究已經超越了單純的關節保養，科學家們正不斷發現它對全身健康更廣泛的益處，揭示了這個古老營養素的全新潛力：</p>
             <div class="info-cards">
                 <div class="info-card"><h4 class="info-card-title">1. 不只關節，也保護心血管</h4><p class="info-card-desc">動脈血管壁也含有軟骨素。研究發現，補充軟骨素有助於維持血管壁的彈性與健康，並可能對降低動脈粥狀硬化的風險有正面影響。</p></div>
                 <div class="info-card"><h4 class="info-card-title">2. 抑制軟骨分解酵素 (MMPs)</h4><p class="info-card-desc">軟骨素不僅是「防守」，更是「主動出擊」。它能直接抑制基質金屬蛋白酶 (MMPs) 的活性，這種酵素是造成軟骨不斷分解流失的主要元兇之一。</p></div>
+            </div>
+            <div class="info-cards">
                 <div class="info-card"><h4 class="info-card-title">3. 潛在的皮膚益處</h4><p class="info-card-desc">皮膚真皮層同樣富含黏多醣。作為玻尿酸的近親，軟骨素的強大保水能力，對於維持皮膚的含水量、彈性與光澤，也顯示出潛在的美容效益。</p></div>
                 <div class="info-card"><h4 class="info-card-title">4. 影響腸道菌相</h4><p class="info-card-desc">新興研究指出，部分口服的軟骨素能被腸道菌利用，進而影響腸道菌群的組成。這個「腸-關節軸線」的連結，為關節保健開闢了全新的研究方向。</p></div>
             </div>
@@ -433,10 +441,12 @@
 
           <section id="safety">
             <h2>安全注意事項與4大使用提醒</h2>
-            <p>軟骨素是一種安全性極高的營養補充品，在建議劑量下很少出現副作用。然而，特定族群在使用前仍應謹慎評估：</p>
+            <p>整體而言，軟骨素是一種安全性極高的營養補充品，在建議劑量下很少出現副作用。然而，為了確保安全並發揮最大效益，特定族群在使用前仍應謹慎評估：</p>
             <div class="info-cards">
                 <div class="info-card safety-card"><h4 class="info-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>過敏注意</h4><p class="info-card-desc">多數軟骨素與葡萄糖胺產品來自蝦蟹殼或海洋生物。對<strong class="highlight-nutrient">海鮮、甲殼類過敏者</strong>，請務必確認產品來源，或選擇植物/發酵來源的產品。</p></div>
                 <div class="info-card safety-card"><h4 class="info-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>藥物交互作用</h4><p class="info-card-desc">軟骨素結構類似抗凝血藥物肝素，理論上可能增強<strong class="highlight-nutrient">抗凝血劑 (如Warfarin)</strong> 的效果。若您正在服用此類藥物，請在使用前諮詢醫師或藥師。</p></div>
+            </div>
+            <div class="info-cards">
                 <div class="info-card safety-card"><h4 class="info-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>避免誇大療效</h4><p class="info-card-desc">軟骨素是「食品」，並非「藥品」，主要功能是營養補給與調節生理機能，無法取代正規醫療。若關節疼痛嚴重，應先就醫診斷。</p></div>
                 <div class="info-card safety-card"><h4 class="info-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>孕哺期請謹慎</h4><p class="info-card-desc">雖然目前無已知風險，但針對孕婦及哺乳期婦女的安全性研究仍有限，建議此期間暫停使用高劑量補充品或諮詢醫師。</p></div>
             </div>
@@ -459,32 +469,7 @@
           </section>
         </article>
 
-        <section class="related-section" id="related-nutrients">
-            <h2 class="related-title">相關營養素</h2>
-            <div class="related-grid">
-              <a href="glucosamine.html" class="related-card" style="opacity: 0.7; pointer-events: none; background: #f9fafb;">
-                <div class="related-card-content">
-                  <span class="related-card-tag" style="background-color: #f5f3ff; color: #5b21b6;">即將推出</span>
-                  <h3 class="related-card-title">葡萄糖胺</h3>
-                  <p class="related-card-desc">作為合成關節軟骨的關鍵「原料」，了解它如何與軟骨素協同作戰，為軟骨修復提供基礎。</p>
-                </div>
-              </a>
-              <a href="collagen.html" class="related-card">
-                <div class="related-card-content">
-                  <span class="related-card-tag" style="background-color: #fef2f2; color: #991b1b;">蛋白質</span>
-                  <h3 class="related-card-title">膠原蛋白</h3>
-                  <p class="related-card-desc">探索胜肽、UC-II的差別，學習如何選擇與補充，為關節與肌膚提供關鍵的結構支撐。</p>
-                </div>
-              </a>
-              <a href="curcumin.html" class="related-card">
-                <div class="related-card-content">
-                  <span class="related-card-tag" style="background-color: #f7fee7; color: #365314;">草本營養</span>
-                  <h3 class="related-card-title">薑黃素</h3>
-                  <p class="related-card-desc">了解如何透過高效吸收的薑黃素，強力對抗體內發炎反應，是關節保養的強力後盾。</p>
-                </div>
-              </a>
-            </div>
-        </section>
+        <div id="related-articles-container"></div>
       </main>
     </div>
 
@@ -500,6 +485,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
       // Progress Bar
@@ -540,8 +528,19 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+
+        // Initialize Related Articles Component
+        const relatedContainer = document.getElementById("related-articles-container");
+        const articleId = document.body.dataset.articleId;
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
+
+        // Initialize Responsive TOC Component
+        if (window.ResponsiveTocComponent) {
+          new window.ResponsiveTocComponent().initialize();
+        }
       });
     </script>
 </body>
 </html>
-

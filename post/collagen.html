@@ -93,6 +93,8 @@
         background: #faf8f5;
       }
 
+      section[id] { scroll-margin-top: 100px; }
+
       /* Progress Bar */
       .progress-bar {
         position: fixed;
@@ -382,7 +384,12 @@
       }
 
       .highlight-nutrient {
-        border-bottom: 2px solid #ff6b35;
+        background-image: linear-gradient(to top, rgba(255, 107, 53, 0.5) 0%, rgba(255, 107, 53, 0.5) 100%);
+        background-position: 0 1.05em;
+        background-repeat: repeat-x;
+        background-size: 100% 2px;
+        text-decoration: none;
+        border-bottom: none;
         padding-bottom: 1px;
       }
       
@@ -643,13 +650,10 @@
           grid-template-columns: 1fr;
           gap: 0;
         }
-        .sidebar {
-          display: none;
-        }
       }
     </style>
 </head>
-<body>
+<body data-article-id="card-collagen">
     <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
 
@@ -666,15 +670,16 @@
           </h3>
           <ul class="toc-list">
             <li><a href="#mechanism" class="toc-link">膠原蛋白是什麼？</a></li>
+            <li><a href="#mechanism-structure" class="toc-link sub-item">人體的「鋼筋水泥」</a></li>
             <li><a href="#solution" class="toc-link">膠原蛋白的四大功效</a></li>
             <li><a href="#loss-factors" class="toc-link">誰偷走了你的膠原蛋白？</a></li>
             <li><a href="#action-plan-supplements" class="toc-link">膠原蛋白補充品怎麼挑？</a></li>
             <li><a class="toc-link sub-item" href="#action-plan-supplements-comparison">常見膠原蛋白比較分析</a></li>
-            <li><a class="toc-link sub-item" href="#best-time">最佳補充時機</a></li>
+            <li><a class="toc-link sub-item" href="#best-time">最佳補充時機與神隊友</a></li>
             <li><a href="#dietary-sources" class="toc-link">如何從飲食中補充？</a></li>
             <li><a href="#myths" class="toc-link">常見迷思與風險</a></li>
             <li><a href="#faq" class="toc-link">常見問題</a></li>
-            <li><a href="#related-title" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -683,6 +688,7 @@
       <main class="article-content">
         <!-- Article Header -->
         <header class="article-header">
+          <div id="toc-mobile-target"></div>
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a>
@@ -709,7 +715,7 @@
             <h2>膠原蛋白是什麼？</h2>
             <p>膠原蛋白（Collagen）是人體內最豐富的蛋白質，約佔總蛋白質含量的30%。它的英文名字源自希臘語「kólla」，意為「膠水」。這個名字非常貼切，因為膠原蛋白就像是身體的強力膠水，將細胞、組織和器官緊密地連結在一起，提供結構支撐、強度和彈性。</p>
             
-            <h3>人體的「鋼筋水泥」</h3>
+            <h3 id="mechanism-structure">人體的「鋼筋水泥」</h3>
             <p>如果將我們的身體比喻為一棟建築，那膠原蛋白就扮演著「鋼筋」的角色。它構成了一個遍佈全身的纖維網絡，稱為<strong class="highlight-nutrient">細胞外基質 (Extracellular Matrix, ECM)</strong>。這個基質不僅支撐著皮膚、骨骼、肌腱和韌帶，更為細胞的生長、分化和修復提供了必要的環境。</p>
             
             <div class="info-cards" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
@@ -747,6 +753,8 @@
                 <h4 class="info-card-title">支持關節健康</h4>
                 <p class="info-card-desc">第二型膠原蛋白是關節軟骨的主要成分，能提供緩衝、減少摩擦，維持關節活動的順暢度。</p>
               </div>
+            </div>
+            <div class="info-cards">
               <div class="info-card">                
                 <h4 class="info-card-title">強化骨骼結構</h4>
                 <p class="info-card-desc">膠原蛋白提供了骨骼的「骨架」，讓鈣質等礦物質能附著其上，增加骨骼的韌性，預防骨折。</p>
@@ -775,6 +783,8 @@
                 <div class="risk-card-header"><h4 class="risk-card-title">高糖飲食</h4></div>
                 <p class="risk-card-desc">過多的糖分會引發「糖化反應(AGEs)」，使膠原蛋白變脆、失去彈性。</p>
               </div>
+            </div>
+            <div class="risk-group-cards">
               <div class="risk-card">
                 <div class="risk-card-header"><h4 class="risk-card-title">抽菸與空汙</h4></div>
                 <p class="risk-card-desc">香菸中的化學物質和空氣汙染物會大量產生自由基，加速膠原蛋白分解。</p>
@@ -897,6 +907,8 @@
                 <h4 class="info-card-title" style="color: #166534;">迷思二：植物性膠原蛋白（如木耳、秋葵）？</h4>
                 <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong><strong class="highlight-nutrient">植物不含膠原蛋白</strong>。木耳、秋葵等黏滑的物質是水溶性膳食纖維和多醣體，雖然對健康有益，但並非膠原蛋白。</p>
               </div>
+            </div>
+            <div class="info-cards" style="grid-template-columns: 1fr 1fr; gap: 25px;">
               <div class="info-card" style="background: #fee2e2; border-top: 5px solid #ef4444;">
                 <h4 class="info-card-title" style="color: #b91c1c;">迷思三：吃了會長子宮肌瘤？</h4>
                 <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>單純的膠原蛋白本身是蛋白質，不會導致肌瘤。問題可能出在部分產品為了速效而添加<strong class="highlight-nutrient">雌激素或胎盤素</strong>等成分。選擇信譽良好、成分單純的品牌非常重要。</p>
@@ -934,39 +946,7 @@
 
     
 
-        <!-- Related Articles Section -->
-        <section id="related-nutrients">
-          <h2 class="related-title" style="margin-top: 60px; border-top: 2px solid #e5e7eb; padding-top: 40px;">相關營養素</h2>
-          <div class="related-grid">
-            <a href="vitamin-c.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag">維生素</span>
-                <h3 class="related-card-title">維生素 C</h3>
-                <p class="related-card-desc">
-                  促進膠原蛋白合成的關鍵輔酶，同時具備強大抗氧化力，是對抗老化的重要夥伴。
-                </p>
-              </div>
-            </a>
-            <a href="hyaluronic-acid.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #f0f9ff; color: #0c4a6e;">美容營養素</span>
-                <h3 class="related-card-title">玻尿酸 (透明質酸)</h3>
-                <p class="related-card-desc">
-                  強效的保濕因子，能攜帶大量水分，與膠原蛋白協同作用，維持肌膚水潤澎彈。
-                </p>
-              </div>
-            </a>
-             <a href="protein.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #fef2f2; color: #991b1b;">基礎營養</span>
-                <h3 class="related-card-title">蛋白質</h3>
-                <p class="related-card-desc">
-                  構成身體所有組織的基礎，攝取足夠的優質蛋白質是合成膠原蛋白的根本。
-                </p>
-              </div>
-            </a>
-          </div>
-        </section>
+        <div id="related-articles-container"></div>
         </div>
       </main>
     </div>
@@ -988,6 +968,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
       // Progress Bar
@@ -1066,6 +1049,18 @@
           console.log("✅ Footer 組件初始化完成");
         } else {
           console.error("❌ Footer 組件初始化失敗");
+        }
+
+        // Initialize Related Articles Component
+        const relatedContainer = document.getElementById("related-articles-container");
+        const articleId = document.body.dataset.articleId;
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
+
+        // Initialize Responsive TOC Component
+        if (window.ResponsiveTocComponent) {
+          new window.ResponsiveTocComponent().initialize();
         }
       });
     </script>
