@@ -731,6 +731,10 @@
           gap: 0;
         }
 
+        .sidebar {
+          display: none;
+        }
+
         .article-content {
           padding: 30px;
         }
@@ -762,7 +766,7 @@
       }
     </style>
 </head>
-<body data-article-id="card-iron">
+<body>
     <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
 
@@ -794,7 +798,6 @@
       <main class="article-content">
         <!-- Article Header -->
         <header class="article-header" id="article-top">
-          <div id="toc-mobile-target"></div>
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a>
@@ -836,15 +839,14 @@
               </section>
 
              <section id="basic-info">
-                <h2>鐵是什麼？不只是補血，更是全身機能的引擎</h2>
-                <p>鐵（Iron）是人體中不可或缺的微量礦物質，其在生理運作中扮演著多重且至關重要的角色。將鐵的功用僅僅視為「補血」，是極大化地低估了其對整體健康的影響。</p>       
-                <p>鐵質是紅血球中<strong class="highlight-nutrient">血紅素（Hemoglobin）</strong>與<strong class="highlight-nutrient">肌紅素（Myoglobin）</strong>的主要構成元素。血紅素負責將氧氣從肺部運送至身體每一個細胞，而肌紅素則將氧氣儲存在肌肉細胞中。可以說，<strong class="highlight-nutrient">鐵是身體的「氧氣運輸大隊長」</strong>，直接影響到身體各部分的能量供應與代謝。</p>
-                <p>此外，鐵質也參與神經傳導物質的合成，例如血清素、多巴胺等，這些物質在<strong class="highlight-nutrient">情緒調節、睡眠、記憶與學習</strong>中扮演著關鍵角色。這解釋了為什麼許多人會感覺「腦霧」或注意力不集中，其背後可能並非單純的心理因素，而是鐵缺乏導致的大腦供氧不足。</p>
+                <h2>鐵是什麼？不只補血，更是全身的活力引擎</h2>
+                <p>提到「鐵」，多數人會立刻聯想到「補血」。這當然沒錯，但將鐵的功用僅僅視為補血，是極大地低估了這個關鍵礦物質的重要性。鐵（Iron）是人體內不可或缺的微量元素，您可以將它想像成身體的「氧氣運輸大隊長」與「能量發電機」，從身體的活力到大腦的思緒，都與它息息相關。</p>
+                <p>鐵質是構成紅血球中<strong class="highlight-nutrient">血紅素（Hemoglobin）</strong>的核心，負責將氧氣從肺部運送到全身每一個細胞。同時，它也參與了神經傳導物質（如血清素、多巴胺）的合成，直接影響我們的情緒、睡眠與專注力。因此，缺鐵不僅會讓你臉色蒼白，更會讓你感到疲憊、腦霧，甚至情緒低落。</p>
              </section>
 
              <section id="deficiency-signs">
                 <h2>身體的求救信號：缺鐵的6大警訊</h2>
-                <p>當身體的鐵存量不足時，會發出一系列警訊。這些症狀往往容易被忽略或歸因於其他問題，及早辨識是維持健康的關鍵。</p>
+                <p>身體缺鐵時，不會立刻就「貧血」，而是會先發出一系列容易被忽略的警訊。這些症狀往往被歸因於壓力大或睡眠不足，但其實是身體的鐵庫存正在拉警報。及早辨識這些信號，是避免問題惡化的關鍵第一步。</p>
                 <div class="info-cards">
                   <div class="info-card">
                     <h4 class="info-card-title">1. 極度疲勞與蒼白</h4>
@@ -875,7 +877,7 @@
 
              <section id="diagnosis">
                 <h2>如何診斷？別只看血紅素！</h2>
-                <p>許多人誤以為「不貧血」就等於「不缺鐵」。事實上，鐵質缺乏是一個漸進的過程。當身體的鐵儲存量下降時，血紅素（Hb）水平可能仍然正常，但疲勞、掉髮等症狀已經出現。</p>
+                <p>許多人拿到健檢報告，看到血紅素（Hb）數值正常就鬆了一口氣，以為自己不缺鐵。這是一個極大的迷思！事實上，當血紅素下降到「貧血」標準時，代表您體內的鐵存量已經被消耗殆盡，身體早已處於長期缺鐵的狀態。</p>
                 <div class="alert alert-tip">
                   <strong>💡 關鍵指標：鐵蛋白 (Ferritin)</strong> 
                   要精準判斷是否缺鐵，最關鍵的指標是抽血檢測「鐵蛋白」，它能反映體內的鐵儲存量。即使血紅素正常，若鐵蛋白水平已低於 30 ng/ml，就已是「潛伏性缺鐵」，需要及早處理。
@@ -885,10 +887,10 @@
              <section id="how-to-supplement">
                 <h2>如何聰明補充鐵質？</h2>
                 <h3>每日鐵質建議攝取量</h3>
-                <p>根據衛福部建議，鐵的每日攝取量因年齡、性別與生理狀況而異。成年女性因每月生理期，需求量（15mg）比男性（10mg）高；而懷孕中後期與哺乳期女性的需求量更是高達每日 45mg。</p>
+                <p>「我到底需要多少鐵？」這是補鐵的第一步。根據衛福部建議，鐵的每日攝取量因年齡、性別與生理狀況而異。特別是成年女性因每月生理期，需求量（15mg）比男性（10mg）高；而懷孕中後期與哺乳期女性的需求量更是高達每日 45mg。</p>
                 
                 <h3>飲食補鐵攻略：動物性 vs. 植物性</h3>
-                <p>食物中的鐵質分為兩種：吸收率高的<strong class="highlight-nutrient">血基質鐵</strong>（來自動物性食物）和吸收率較低的<strong class="highlight-nutrient">非血基質鐵</strong>（來自植物性食物）。</p>
+                <p>食物中的鐵質分為兩種，您可以把它們想像成「VIP快速通關」和「一般通道」。了解兩者的差異，是高效補鐵的關鍵。</p>
                 <table class="data-table">
                   <thead>
                     <tr><th>食物來源</th><th>代表食物</th><th>每100克鐵含量 (毫克)</th><th>吸收技巧</th></tr>
@@ -904,12 +906,12 @@
                 </table>
 
                 <h3>聰明搭配，提升吸收效率</h3>
-                <p>掌握正確的搭配策略是補鐵關鍵。在攝取植物性高鐵食物時，搭配富含<strong class="highlight-nutrient">維生素C</strong>的食物（如芭樂、奇異果、番茄）可將吸收率提升數倍。同時，應避免在餐後立即飲用<strong class="highlight-nutrient">茶或咖啡</strong>，並將<strong class="highlight-nutrient">高鈣食物</strong>（如牛奶、鈣片）與補鐵餐點錯開至少一小時食用。</p>
+                <p>吃對食物只是第一步，吃對「方法」才能讓吸收率最大化。在攝取植物性高鐵食物時，搭配富含<strong class="highlight-nutrient">維生素C</strong>的食物（如芭樂、奇異果、番茄）可將吸收率提升數倍。同時，應避免在餐後立即飲用<strong class="highlight-nutrient">茶或咖啡</strong>，並將<strong class="highlight-nutrient">高鈣食物</strong>（如牛奶、鈣片）與補鐵餐點錯開至少一小時食用。</p>
              </section>
 
              <section id="product-selection">
                 <h2>如何挑選鐵劑？</h2>
-                <p>對於飲食無法滿足需求，或已確診缺鐵的族群，補充鐵劑是必要的。市售鐵劑主要分為傳統的二價/三價鐵，以及吸收率更高、副作用更少的新型態鐵劑。</p>
+                <p>當飲食無法滿足需求，或已確診缺鐵時，補充鐵劑是最直接高效的方式。然而，市售鐵劑琳瑯滿目，從傳統的硫酸亞鐵到新型的甘胺酸亞鐵，其吸收率與副作用差異極大，選錯了可能補了個寂寞還惹來便秘。</p>
                 <table class="data-table">
                     <thead>
                         <tr>
@@ -947,6 +949,7 @@
 
              <section id="special-groups">
                 <h2>不同族群與安全警示</h2>
+                <p>雖然鐵對人體至關重要，但並非所有人都適合大量補充。了解不同族群的特殊需求與潛在風險，是安全補鐵的前提。</p>
                 <h3>高風險族群補鐵計畫</h3>
                 <div class="risk-group-cards">
                   <div class="risk-card">
@@ -978,6 +981,7 @@
 
              <section id="faq" class="faq-section">
                 <h2>常見問題</h2>
+                <p>關於補鐵，許多人心中仍有不少疑問。這裡我們整理了最常見的幾個問題，並提供科學、易懂的解答，幫助您建立正確的觀念。</p>
                 <div class="faq-item">
                   <div class="faq-question">Q1: 吃鐵劑會便秘怎麼辦？</div>
                   <div class="faq-answer">
@@ -1005,7 +1009,33 @@
              </section>
         </article>
 
-        <div id="related-articles-container"></div>
+        <!-- Related Articles -->
+        <section id="related-nutrients">
+          <h2 class="related-section-title">探索相關營養素</h2>
+          <div class="related-grid">
+            <a href="./vitamin-b.html" class="related-card">
+              <div class="related-card-content">
+                <span class="related-card-tag">維生素</span>
+                <h3 class="related-card-title">維生素 B 群</h3>
+                <p class="related-card-desc">B群（特別是B12與葉酸）是製造紅血球的關鍵夥伴，與鐵質共同對抗貧血。</p>
+              </div>
+            </a>
+            <a href="./magnesium.html" class="related-card">
+              <div class="related-card-content">
+                <span class="related-card-tag">礦物質</span>
+                <h3 class="related-card-title">鎂</h3>
+                <p class="related-card-desc">鎂參與能量代謝，缺乏時也會導致疲勞，與缺鐵症狀相似，兩者共同維持活力。</p>
+              </div>
+            </a>
+            <a href="./vitamin-d.html" class="related-card">
+              <div class="related-card-content">
+                <span class="related-card-tag">維生素</span>
+                <h3 class="related-card-title">維生素 D</h3>
+                <p class="related-card-desc">維生素D調節免疫功能，而鐵質是免疫細胞運作的基礎，兩者共同鞏固身體防線。</p>
+              </div>
+            </a>
+          </div>
+        </section>
 
       </main>
     </div>
@@ -1025,9 +1055,6 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
-    <script src="../assets/js/articles-data.js"></script>
-    <script src="../assets/js/related-articles-component.js"></script>
-    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
       // Progress Bar
@@ -1119,18 +1146,6 @@
           console.log("✅ Footer 組件初始化完成");
         } else {
           console.error("❌ Footer 組件初始化失敗");
-        }
-
-        // Initialize Related Articles Component
-        const relatedContainer = document.getElementById("related-articles-container");
-        const articleId = document.body.dataset.articleId;
-        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
-          new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
-        }
-
-        // Initialize Responsive TOC Component
-        if (window.ResponsiveTocComponent) {
-          new window.ResponsiveTocComponent().initialize();
         }
       });
     </script>

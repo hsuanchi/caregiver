@@ -159,7 +159,7 @@
       .check-option input { display: none; }
       .check-option.selected { background-color: var(--primary-bg-light); border-color: var(--primary-color); color: var(--primary-dark); font-weight: 500;}
       #check-result { margin-top: 25px; padding: 15px; border-radius: 8px; text-align: center; font-weight: 600; transition: all 0.3s ease; display: none; }
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } .article-content { padding: 30px; } .article-title { font-size: 2em; } }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .article-content { padding: 30px; } .article-title { font-size: 2em; } }
       @media (max-width: 768px) { .article-content { padding: 20px; border-radius: 15px; } .article-title { font-size: 1.8em; } .article-meta { flex-direction: column; gap: 10px; } .related-grid { grid-template-columns: 1fr; } }
       .highlight-nutrient { border-bottom: 2px solid var(--primary-color); padding-bottom: 1px; }
     </style>
@@ -173,25 +173,48 @@
         <div class="toc">
           <h3 class="toc-title"><a href="#page-title"><span>目錄</span></a></h3>
           <ul class="toc-list">
-            <li><a href="#problem" class="toc-link">您是需要葉黃素的高風險族群嗎？</a></li>
+            <li>
+              <a href="#problem" class="toc-link">您是需要葉黃素的高風險族群嗎？</a>
+              <ul class="toc-list">
+                <li><a href="#lutein-self-check" class="toc-link sub-item">葉黃素需求自我檢測</a></li>
+              </ul>
+            </li>
             <li><a href="#solution" class="toc-link">葉黃素：眼睛的內建藍光濾鏡</a></li>
-            <li><a href="#mechanism" class="toc-link">關鍵原理：葉黃素如何保護黃斑部？</a></li>
+            <li>
+              <a href="#mechanism" class="toc-link">關鍵原理：葉黃素如何保護黃斑部？</a>
+              <ul class="toc-list">
+                <li><a href="#blue-light-filter-mechanism" class="toc-link sub-item">藍光過濾機制：眼睛的內建太陽眼鏡</a></li>
+              </ul>
+            </li>
             <li><a href="#how-much" class="toc-link">每日建議量與最佳攝取方式</a></li>
             <li><a href="#action-plan-food" class="toc-link">實踐指南(一)：天然食物中的葉黃素寶庫</a></li>
-            <li><a href="#action-plan-supplements" class="toc-link">實踐指南(二)：如何精準挑選補充品</a></li>
+            <li>
+              <a href="#action-plan-supplements" class="toc-link">實踐指南(二)：如何精準挑選補充品</a>
+              <ul class="toc-list">
+                <li><a href="#free-vs-ester-absorption" class="toc-link sub-item">游離型 vs. 酯化型：吸收路徑大不同</a></li>
+                <li><a href="#free-vs-ester-absorption-chart" class="toc-link sub-item">游離型 vs. 酯化型吸收路徑圖</a></li>
+                <li><a href="#four-buying-keys" class="toc-link sub-item">選購的四大關鍵</a></li>
+              </ul>
+            </li>
             <li><a href="#advanced-science" class="toc-link">進階科學：葉黃素與大腦健康的驚人連結</a></li>
             <li><a href="#myth-busting" class="toc-link">破解迷思：「葉黃素對近視有效？」</a></li>
             <li><a href="#comparison" class="toc-link">葉黃素 vs. 花青素：護眼雙雄的角色分工</a></li>
-            <li><a href="#safety" class="toc-link">安全攝取：注意事項與副作用</a></li>
+            <li>
+              <a href="#safety" class="toc-link">安全攝取：注意事項與副作用</a>
+              <ul class="toc-list">
+                <li><a href="#special-group-notes" class="toc-link sub-item">特定族群注意事項</a></li>
+              </ul>
+            </li>
             <li><a href="#faq" class="toc-link">常見疑問 (FAQ)</a></li>
             <li><a href="#references" class="toc-link">文獻參考</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
 
       <main class="article-content">
         <header class="article-header">
+          <div id="toc-mobile-target"></div>
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a>
@@ -226,9 +249,9 @@
           
           <section id="problem">
             <h2>您是需要葉黃素的高風險族群嗎？ </h2>
-            <p>在數位時代，我們的眼睛正以前所未有的強度暴露在藍光之下。藍光能穿透水晶體直達視網膜黃斑部，長期下來會造成累積性傷害。您是否屬於以下高風險族群？</p>
+            <p>長時間盯著螢幕，總覺得眼睛乾澀、視線模糊，甚至對光線變得敏感？在數位時代，我們的眼睛正以前所未有的強度暴露在藍光之下。這種高能量光線能穿透水晶體直達視網膜黃斑部，長期下來會造成累積性傷害。您是否屬於以下高風險族群？</p>
              <div class="interactive-check">
-                <h3>葉黃素需求自我檢測</h3>
+                <h3 id="lutein-self-check">葉黃素需求自我檢測</h3>
                 <p>請根據您的生活習慣勾選，評估您的葉黃素需求程度：</p>
                 <div class="check-options">
                     <label class="check-option">
@@ -258,7 +281,7 @@
 
           <section id="solution">
             <h2>葉黃素：眼睛的內建藍光濾鏡 </h2>
-            <p>葉黃素(Lutein)是一種天然的類胡蘿蔔素，與它的好夥伴玉米黃素(Zeaxanthin)是唯二能夠儲存在視網膜黃斑部的營養素。它們就像眼睛內建的一副「太陽眼鏡」，能為我們帶來三大核心保護效益：</p>
+            <p>面對藍光的持續攻擊，葉黃素(Lutein)提供了最核心的防禦機制。它是一種天然的類胡蘿蔔素，與它的好夥伴玉米黃素(Zeaxanthin)是唯二能夠儲存在視網膜黃斑部的營養素。它們就像眼睛內建的一副「太陽眼鏡」，能為我們帶來三大核心保護效益：</p>
              <div class="info-cards">
                 <div class="info-card">
                     <h4 class="info-card-title">1. 過濾有害藍光</h4>
@@ -277,10 +300,9 @@
           
           <section id="mechanism">
             <h2>關鍵原理：葉黃素如何保護黃斑部？ </h2>
-            <p>您可以將視網膜黃斑部想像成相機的「底片」，它負責我們最精細的中心視力。葉黃素與玉米黃素會集中儲存在這個區域，形成一道黃色的色素層，這就是「黃斑色素(Macular Pigment)」。</p>
-            <p>這道黃色防線，能精準地吸收光譜中能量最強、最具破壞力的「藍色」與「紫色」光線，這是一種物理性的過濾保護。同時，它們強大的抗氧化能力，能隨時清除因光線照射而產生的自由基，保護底片不受化學性損傷。雙管齊下，維持視覺的清晰與健康。</p>
+            <p>您可以將視網膜黃斑部想像成相機的「底片」，它負責我們最精細的中心視力。葉黃素與玉米黃素會集中儲存在這個區域，形成一道黃色的色素層，這就是「黃斑色素(Macular Pigment)」。這道黃色防線能透過物理與化學兩種方式，雙管齊下地保護底片不受傷害，維持視覺的清晰與健康。</p>
             <div class="svg-visualization-container">
-                <h3>藍光過濾機制：眼睛的內建太陽眼鏡</h3>
+                <h3 id="blue-light-filter-mechanism">藍光過濾機制：眼睛的內建太陽眼鏡</h3>
                 <svg viewBox="0 0 400 200" style="width:100%; max-width:500px; height:auto;">
                     <title>葉黃素過濾藍光機制示意圖</title>
                     <!-- Eye structure -->
@@ -315,7 +337,7 @@
           
           <section id="how-much">
             <h2>我該攝取多少？每日建議量與最佳攝取方式</h2>
-            <p>葉黃素屬於植化素，雖然沒有官方的每日建議攝取量(RDA)，但根據大型臨床研究與專家共識，建議的保健劑量如下：</p>
+            <p>葉黃素屬於植化素，雖然沒有官方的每日建議攝取量(RDA)，但根據大型臨床研究與專家共識，針對不同保健目標，建議的劑量如下：</p>
              <table class="data-table">
                 <thead><tr><th>族群/目的</th><th>每日建議劑量 (毫克)</th><th>注意事項</th></tr></thead>
                 <tbody>
@@ -332,7 +354,7 @@
 
           <section id="action-plan-food">
             <h2>實踐指南(一)：天然食物中的葉黃素寶庫</h2>
-            <p>想從飲食中高效補充葉黃素，記得一句口訣：「綠色蔬菜用油炒，搭配一顆好蛋黃」！</p>
+            <p>想從飲食中高效補充葉黃素，記得一句口訣：「綠色蔬菜用油炒，搭配一顆好蛋黃」！因為葉黃素是脂溶性營養素，搭配油脂烹調能大幅提升吸收率，而蛋黃中的脂肪更是天然的吸收促進劑。</p>
              <table class="data-table">
               <thead>
                 <tr><th>食物名稱</th><th>每 100g 葉黃素/玉米黃素含量 (毫克)</th><th>備註</th></tr>
@@ -353,11 +375,11 @@
           
           <section id="action-plan-supplements">
             <h2>實踐指南(二)：如何精準挑選補充品</h2>
-            <p>面對琳瑯滿目的產品，掌握以下幾個關鍵，就能選到最適合你的葉黃素：</p>
-            <h3>游離型 vs. 酯化型：吸收路徑大不同</h3>
-            <p>市售葉黃素主要有兩種型態，它們在吸收效率上有所差異：</p>
+            <p>當日常飲食難以滿足需求，或希望更高效地補充時，保健食品便成為一個方便的選擇。面對琳瑯滿目的產品，掌握以下幾個關鍵，就能選到最適合你的葉黃素：</p>
+            <h3 id="free-vs-ester-absorption">游離型 vs. 酯化型：吸收路徑大不同</h3>
+            <p>市售葉黃素主要有兩種型態，您可以將它們想像成「已處理好的小分子」與「需要再加工的大分子」，它們在吸收效率上有所差異：</p>
              <div class="svg-visualization-container">
-                 <h3>游離型 vs. 酯化型吸收路徑圖</h3>
+                 <h3 id="free-vs-ester-absorption-chart">游離型 vs. 酯化型吸收路徑圖</h3>
                 <svg viewBox="0 0 400 250" style="width:100%; max-width:600px; height:auto;">
                     <title>游離型與酯化型葉黃素吸收路徑比較</title>
                     <!-- Left Panel: Free Lutein -->
@@ -392,7 +414,7 @@
                     </defs>
                 </svg>
             </div>
-            <h3>選購的四大關鍵</h3>
+            <h3 id="four-buying-keys">選購的四大關鍵</h3>
             <ol>
               <li><strong>看型態：優先選擇「游離型」</strong><br>游離型葉黃素的生物利用率是酯化型的數倍，是目前市場公認較優的選擇。</li>
               <li><strong>看比例：認明「黃金比例 10:2」</strong><br><span class="highlight-nutrient">葉黃素與玉米黃素的比例為 10:2 (或5:1)</span>，是根據美國國家眼科研究所 (NEI) 大型研究 (AREDS2) 證實最有效的組合。</li>
@@ -403,7 +425,7 @@
           
           <section id="advanced-science">
               <h2>進階科學：葉黃素與大腦健康的驚人連結</h2>
-              <p>您可能不知道，葉黃素不只是「護眼」營養素，它更是重要的「護腦」營養素！科學研究發現，眼睛黃斑部中的葉黃素濃度，與大腦中的葉黃素濃度有著高度的正相關。</p>
+              <p>您可能不知道，葉黃素不只是「護眼」營養素，它更是重要的「護腦」營養素！科學研究發現，眼睛黃斑部中的葉黃素濃度，與大腦中的葉黃素濃度有著高度的正相關，這暗示著葉黃素對整個神經系統都扮演著保護角色。</p>
               <ul>
                   <li><strong>大腦中的葉黃素</strong>：葉黃素是大腦中含量最豐富的類胡蘿蔔素，特別集中在與學習、記憶和決策功能相關的腦區（如海馬迴、前額葉皮質）。</li>
                   <li><strong>提升認知功能</strong>：多項研究指出，無論是年輕人還是長者，體內較高的葉黃素水平與更佳的認知功能、記憶力、處理速度和學業表現有關。</li>
@@ -413,13 +435,12 @@
 
           <section id="myth-busting">
             <h2>破解迷思：「葉黃素對近視有效？」</h2>
-            <p>這是一個非常普遍的誤解。葉黃素的主要戰場在視網膜的「黃斑部」，負責的是過濾藍光與抗氧化，預防的是「黃斑部病變」這類因老化或光線傷害造成的眼疾。</p>
-            <p>而「近視」主要是因為眼軸過長，導致光線的聚焦點落在視網膜前方，屬於眼睛的「物理結構」問題。<strong>補充葉黃素無法改變眼軸長度，因此無法治療或改善近視、散光或老花眼。</strong>若有這些屈光問題，仍需尋求眼科醫師的專業診斷和配戴眼鏡矯正。</p>
+            <p>這是一個非常普遍的誤解。葉黃素的主要戰場在視網膜的「黃斑部」，負責的是過濾藍光與抗氧化，預防的是「黃斑部病變」這類因老化或光線傷害造成的眼疾。而「近視」主要是因為眼軸過長，導致光線的聚焦點落在視網膜前方，屬於眼睛的「物理結構」問題。<strong>補充葉黃素無法改變眼軸長度，因此無法治療或改善近視、散光或老花眼。</strong>若有這些屈光問題，仍需尋求眼科醫師的專業診斷和配戴眼鏡矯正。</p>
           </section>
 
           <section id="comparison">
             <h2>葉黃素 vs. 花青素：護眼雙雄的角色分工</h2>
-            <p>葉黃素與花青素都是知名的護眼營養素，但它們的作用機制與擅長的領域完全不同，是互補的隊友，而非競爭對手。</p>
+            <p>葉黃素與花青素都是知名的護眼營養素，但它們的作用機制與擅長的領域完全不同。您可以將它們想像成守護眼睛的「防禦兵」與「補給兵」，是互補的隊友，而非競爭對手。</p>
             <table class="data-table">
                 <thead><tr><th>比較面向</th><th><strong>葉黃素 (Lutein)</strong></th><th><strong>花青素 (Anthocyanin)</strong></th></tr></thead>
                 <tbody>
@@ -449,7 +470,7 @@
 
           <section id="safety">
             <h2>安全攝取：注意事項與副作用</h2>
-            <p>葉黃素被公認為是一種非常安全的營養素，在建議的每日劑量範圍內（6-20毫克），幾乎沒有已知的嚴重副作用。絕大多數人長期服用都不會感到任何不適。然而，了解一些罕見情況與注意事項，能幫助您更安心地補充：</p>
+            <p>葉黃素被公認為是一種非常安全的營養素，在建議的每日劑量範圍內（6-20毫克），幾乎沒有已知的嚴重副作用。絕大多數人長期服用都不會感到任何不適。然而，了解一些罕見情況與注意事項，能幫助您更安心地補充。</p>
       
             <ul>
                 <li><strong>皮膚變黃 (胡蘿蔔素血症)</strong>：這是最常見的「無害」副作用。如果長期每日攝取非常高劑量（通常指超過 <strong>30毫克</strong>），葉黃素這種黃色色素可能暫時沉積在皮膚，特別是手掌和腳掌，使其看起來偏黃。這對健康沒有危害，只要降低劑量或暫停補充，膚色就會在幾週內恢復正常。</li>
@@ -462,7 +483,7 @@
                 <p>雖然葉黃素本身很安全，但許多複方產品會添加 β-胡蘿蔔素。高劑量的β-胡蘿蔔素補充劑已被證實會增加<strong>吸菸者</strong>罹患肺癌的風險。因此在挑選葉黃素產品時，吸菸或曾吸菸的族群應特別注意，<span class="highlight-nutrient">避免選擇含有高劑量β-胡蘿蔔素的配方</span>。</p>
             </div>
       
-            <h3>特定族群注意事項</h3>
+            <h3 id="special-group-notes">特定族群注意事項</h3>
             <ul>
                 <li><strong>孕婦與哺乳期婦女</strong>：雖然來自食物的葉黃素是安全的，但高劑量補充品的安全性研究尚不完整。建議在此特殊時期，應先諮詢醫師或營養師的意見。</li>
                 <li><strong>藥物交互作用</strong>：目前尚無已知的葉黃素與常見藥物之間的嚴重交互作用。然而，如果您正在服用影響脂肪吸收的藥物（如Orlistat），可能會降低葉黃素的吸收率，建議錯開服用時間。</li>
@@ -471,6 +492,7 @@
 
           <section id="faq" class="faq-section">
             <h2>常見疑問 (FAQ)</h2>
+            <p>關於葉黃素的補充，許多人心中仍有不少疑問。這裡我們整理了最常見的幾個問題，並提供科學、易懂的解答，幫助您建立正確的觀念。</p>
             <div class="faq-item">
               <div class="faq-question">Q1：葉黃素要吃多久才有效？需要長期服用嗎？</div>
               <div class="faq-answer">
@@ -507,32 +529,7 @@
 
         </article>
         
-        <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-        <div class="related-grid">
-          <a href="./fish-oil.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fff7ed; color: #9a3412;">脂肪酸</span>
-              <h3 class="related-card-title">魚油 (Omega-3)</h3>
-              <p class="related-card-desc">DHA是視網膜的重要成分，與葉黃素搭配有加乘效果，是眼睛保健的黃金搭檔。</p>
-            </div>
-          </a>
-          <a href="./anthocyanins.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f5f3ff; color: #5b21b6;">植化素</span>
-              <h3 class="related-card-title">花青素 (Anthocyanins)</h3>
-              <p class="related-card-desc">負責放鬆睫狀肌、改善眼睛疲勞，與葉黃素的功能完美互補。</p>
-            </div>
-          </a>
-          <a href="./vitamin-a.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #fefce8; color: #a16207;">維生素</span>
-                <h3 class="related-card-title">維生素 A (Vitamin A)</h3>
-                <p class="related-card-desc">
-                  構成視網膜感光細胞內視紫質的必要成分，是維持夜間視力的關鍵。
-                </p>
-              </div>
-            </a>
-        </div>
+        <div id="related-articles-container" data-article-id="card-lutein"></div>
       </main>
     </div>
 
@@ -548,6 +545,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
       function updateProgressBar() {
@@ -616,6 +616,18 @@
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
         updateResult();
+
+        // Initialize Related Articles Component
+        const relatedContainer = document.getElementById("related-articles-container");
+        const articleId = relatedContainer.getAttribute('data-article-id'); // Get articleId from relatedContainer
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
+
+        // Initialize Responsive TOC Component
+        if (window.ResponsiveTocComponent) {
+          new window.ResponsiveTocComponent().initialize();
+        }
       });
     </script>
 </body>
