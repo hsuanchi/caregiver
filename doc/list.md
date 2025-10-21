@@ -31,7 +31,52 @@
     - **CSS 規則**: 必須使用 `background-image: linear-gradient(...)` 的技巧來實現，禁止使用 `border-bottom`。
 - [ ] **禁止行內樣式**: 避免使用 `style="..."` 屬性，應將樣式移至 CSS class 中。
 
+### 2.3 提示框結構標準化 (Alert Box Structure Standardization)
+- [ ] **目標**: 檢查並修正所有文章頁面中的 `.alert` 提示框，確保其 HTML 結構符合 `writing-guide.md` 的最新規範 (`<strong>` 標題 + `<p>` 內文)。
+- [ ] **待處理檔案列表 (A-Z)**:
+    - [ ] `amino-acids.html`
+    - [ ] `anthocyanins.html`
+    - [ ] `beta-glucan.html`
+    - [ ] `calcium.html`
+    - [ ] `chondroitin.html`
+    - [ ] `chromium.html`
+    - [ ] `coenzyme-q10.html`
+    - [ ] `collagen.html`
+    - [ ] `copper.html`
+    - [ ] `curcumin.html`
+    - [ ] `dietary-fiber.html`
+    - [ ] `fish-oil.html`
+    - [ ] `fluoride.html`
+    - [ ] `folic-acid.html`
+    - [ ] `gaba.html`
+    - [ ] `glucosamine.html`
+    - [ ] `glutathione.html`
+    - [ ] `iodine.html`
+    - [ ] `iron.html`
+    - [ ] `lutein.html`
+    - [ ] `lycopene.html`
+    - [ ] `magnesium.html`
+    - [ ] `manganese.html`
+    - [ ] `official-health-sites.html`
+    - [ ] `phosphorus.html`
+    - [ ] `potassium.html`
+    - [ ] `prebiotics.html`
+    - [ ] `protein.html`
+    - [ ] `selenium.html`
+    - [ ] `sodium.html`
+    - [ ] `topic-immune-boosting-nutrients.html`
+    - [ ] `topic-stroke-prevention-nutrients.html`
+    - [ ] `topic-vascular-health-superfoods.html`
+    - [ ] `vitamin-a.html`
+    - [ ] `vitamin-b.html`
+    - [ ] `vitamin-c.html`
+    - [ ] `vitamin-d.html`
+    - [ ] `vitamin-e.html`
+    - [ ] `vitamin-k.html`
+    - [ ] `zinc.html`
+
 ---
+
 
 ## 第三部分：組件化與功能 (Components & Functionality)
 
