@@ -12,7 +12,7 @@ console.log("<<<<< related-articles-component.js HAS LOADED >>>>>");
       this.hostElement = hostElement;
       this.currentArticleId = currentArticleId;
       this.shadowRoot = this.hostElement.attachShadow({ mode: "open" });
-      this.topN = 3; // Number of related articles to show
+      this.topN = 4; // Number of related articles to show
 
       // Combine and normalize data sources
       this.allArticles = this._combineAndNormalizeData(articlesData, topicArticles);

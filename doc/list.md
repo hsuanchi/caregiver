@@ -1,22 +1,9 @@
 # 文章頁面檢查與重構計畫 (Master Checklist)
 
-本文件為建立新文章或重構現有文章的標準作業流程 (SOP)，旨在確保所有頁面功能統一、樣式一致且符合最新開發規範。
+本文件為修正現有文章的標準作業流程 (SOP)，旨在確保所有頁面功能統一、樣式一致且符合最新開發規範。
 
 ---
 
-## 第一部分：全域與結構 (Global & Structure)
-
-### 1.1 檔案結構
-- [ ] **分類頁面**: 功能性頁面 (如總覽、工具) 應存放於 `/category/` 目錄下。
-- [ ] **文章頁面**: 所有營養素和主題文章應存放於 `/post/` 目錄下。
-
-### 1.2 SEO 與 Metadata
-- [ ] **`<title>` 與 `<meta>`**: 遵循 `writing-guide.md` 的 V.I.P. + B.R.A.V.E. 框架撰寫。
-- [ ] **JSON-LD**: 確保 `Article`, `WebSite`, `BreadcrumbList`, `FAQPage` 的結構化資料完整且正確。
-- [ ] **`<body>` 標籤**: 必須包含 `data-article-id` 屬性，其值對應 `articles-data.js` 中的唯一 ID。
-    - **範例**: `<body data-article-id="card-zinc">`
-
----
 
 ## 第二部分：內容與樣式 (Content & Style)
 
@@ -61,8 +48,4 @@
 
 ---
 
-## 第四部分：發布與整合 (Deployment & Integration)
-
-- [ ] **中央資料庫**: 確認新文章已加入 `assets/js/articles-data.js`。
-- [ ] **Sitemap**: 確認 `sitemap.xml` 已更新。
 - [ ] **內部連結**: 確認至少在 1-2 個相關舊頁面中，加入了指向新頁面的連結。

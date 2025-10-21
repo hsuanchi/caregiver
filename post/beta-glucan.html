@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+相關營養素素<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8" />
@@ -400,18 +400,26 @@
       // TOC Highlighting
       const sections = document.querySelectorAll("section[id]");
       const navLinks = document.querySelectorAll(".toc-link");
+      const scrollOffset = 150; // 增加偏移量以提高觸發精準度
+
       function highlightTOC() {
         let current = "";
+        const scrollY = window.scrollY;
+
         sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 100;
-          if (window.scrollY >= sectionTop) { current = section.getAttribute("id"); }
+          const sectionTop = section.offsetTop - scrollOffset;
+          const sectionHeight = section.offsetHeight;
+          // 檢查當前捲動位置是否在該區塊範圍內
+          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+            current = section.getAttribute("id");
+          }
         });
+
         navLinks.forEach((link) => {
           link.classList.remove("active");
           if (link.getAttribute("href") === "#" + current) { link.classList.add("active"); }
         });
       }
-      window.addEventListener("scroll", highlightTOC);
       document.addEventListener("DOMContentLoaded", highlightTOC);
 
       // FAQ Toggle
@@ -438,6 +446,13 @@
         if (window.ResponsiveTocComponent) {
           new window.ResponsiveTocComponent().initialize();
         }
+
+        // 使用 throttle 優化捲動事件的觸發頻率
+        let throttleTimer;
+        window.addEventListener("scroll", () => {
+            if (throttleTimer) return;
+            throttleTimer = setTimeout(() => { highlightTOC(); throttleTimer = null; }, 100);
+        });
       });
     </script>
 </body>

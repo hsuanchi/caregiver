@@ -93,6 +93,10 @@
         background: #faf8f5;
       }
 
+      section[id] {
+        scroll-margin-top: 100px;
+      }
+
       /* Progress Bar */
       .progress-bar {
         position: fixed;
@@ -385,7 +389,12 @@
       }
 
       .highlight-nutrient {
-        border-bottom: 2px solid #ff6b35;
+        background-image: linear-gradient(to top, rgba(255, 107, 53, 0.5) 0%, rgba(255, 107, 53, 0.5) 100%);
+        background-position: 0 1.05em;
+        background-repeat: repeat-x;
+        background-size: 100% 2px;
+        text-decoration: none;
+        border-bottom: none;
         padding-bottom: 1px;
       }
       
@@ -1094,13 +1103,10 @@
           grid-template-columns: 1fr;
           gap: 0;
         }
-        .sidebar {
-          display: none;
-        }
       }
     </style>
 </head>
-<body>
+<body data-article-id="card-calcium">
     <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
 
@@ -1122,10 +1128,18 @@
             <li><a href="#mechanism-dual-role" class="toc-link sub-item">鈣的雙重角色</a></li>
             <li><a href="#mechanism-bone-bank" class="toc-link sub-item">骨骼：一個動態的銀行帳戶</a></li>
             <li><a href="#how-much" class="toc-link">我該攝取多少？</a></li>
+            <li><a href="#how-much-details" class="toc-link sub-item">各年齡層的鈣質建議攝取量</a></li>
+            <li><a href="#how-much-peak-time" class="toc-link sub-item">人生最需要鈣的時期</a></li>
+            <li><a href="#how-much-international" class="toc-link sub-item">攝取量-國際參考指標</a></li>
             <li><a href="#action-plan-food" class="toc-link">實踐指引(一)：飲食</a></li>
+            <li><a href="#action-plan-food-sources" class="toc-link sub-item">鈣質來源分類</a></li>
             <li><a href="#action-plan-food-list" class="toc-link sub-item">高鈣質食物清單</a></li>
+            <li><a href="#absorption-factors" class="toc-link sub-item">哪些因素阻礙鈣質吸收</a></li>
             <li><a href="#action-plan-food-thieves" class="toc-link sub-item">飲食中的「鈣質小偷」</a></li>
+            <li><a href="#synergy" class="toc-link">如何增強鈣吸收</a></li>
+            <li><a href="#synergy-nutrients" class="toc-link sub-item">提升鈣吸收的其他營養素</a></li>
             <li><a href="#action-plan-supplements" class="toc-link">實踐指引(二)：補充品</a></li>
+            <li><a href="#action-plan-supplements-who" class="toc-link sub-item">哪些族群應考慮使用鈣營養品？</a></li>
             <li><a href="#action-plan-supplements-comparison" class="toc-link sub-item">常見鈣營養品比較分析</a></li>
             <li><a href="#action-plan-supplements-best-use" class="toc-link sub-item">營養品的最佳使用方式</a></li>
             <li><a href="#safety" class="toc-link">安全注意事項</a></li>
@@ -1139,6 +1153,7 @@
       <main class="article-content">
         <!-- Article Header -->
         <header class="article-header">
+          <div id="toc-mobile-target"></div>
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a>
@@ -1211,7 +1226,7 @@
             <h2>你需要吃多少鈣？</h2>
             <p>為了維持骨骼健康和正常的生理功能，科學界已根據不同生命階段的特定需求，制定了鈣的膳食參考攝取量 (Dietary Reference Intakes, DRIs)。這些建議值是預防鈣缺乏相關疾病的基石。</p>
 
-            <h3>各年齡層的鈣質建議攝取量</h3>
+            <h3 id="how-much-details">各年齡層的鈣質建議攝取量</h3>
             <p>要評估鈣質攝取是否充足，首先需要一個明確的標準。衛生福利部國民健康署根據國人的營養需求，制定了各年齡層的膳食營養素參考攝取量（DRIs）。以下表格整理了不同生命階段的每日鈣質建議攝取量，此數值涵蓋了從飲食與補充劑獲得的總量。</p>
             
             <h4>表 1：台灣各年齡層每日鈣質建議攝取量</h4>
@@ -1232,7 +1247,7 @@
               </table>
             </div>
 
-            <h3>人生最需要鈣的時期</h3>
+            <h3 id="how-much-peak-time">人生最需要鈣的時期</h3>
             <p>鈣的需求量在人的一生中並非一成不變，而是在特定時期顯著增加，以應對生長、發育和生理變化的需求。其中，青少年期與懷孕哺乳期是兩個最關鍵的階段。</p>
             <ul style="list-style-type: disc; padding-left: 20px;">
               <li><strong>青少年期 (13-18 歲)：</strong> 此階段的鈣需求量達到峰值的 <strong class="highlight-nutrient">1200 毫克/日</strong>，以支持快速的骨骼生長，並為達成理想的巔峰骨量做最後衝刺。</li>
@@ -1273,7 +1288,7 @@
               </p>
             </div>
 
-            <h3>攝取量-國際參考指標</h3>
+            <h3 id="how-much-international">攝取量-國際參考指標</h3>
             <p>除了台灣的建議，美國國家科學院發布的膳食參考攝取量 (DRIs) 也是重要的國際參考標準，其定義了建議膳食攝取量 (RDA)、足夠攝取量 (AI) 與可耐受最高攝取量 (UL)。</p>
             <h4>表 2：美國各生命階段鈣質攝取量參考 (RDA/AI) 與安全上限 (UL)</h4>
             <div style="overflow-x: auto; padding-bottom: 10px;">
@@ -1313,7 +1328,7 @@
             <h2>鈣質怎麼吃？</h2>
             <p>獲取鈣質的最佳途徑是均衡的飲食，而非僅僅依賴補充劑。天然食物不僅提供鈣質，還附帶了多種對骨骼健康至關重要的協同營養素，如鎂、鉀、維生素 K 和蛋白質，這些營養素共同作用，效果遠勝於單一的鈣補充劑。</p>
             
-            <h3>鈣質來源分類</h3>
+            <h3 id="action-plan-food-sources">鈣質來源分類</h3>
             <div class="info-cards">
               <div class="info-card">
                 <h4 class="info-card-title">乳製品</h4>
@@ -1323,6 +1338,8 @@
                 <h4 class="info-card-title">植物性來源</h4>
                 <p class="info-card-desc">對於素食者或乳糖不耐症者，應優先選擇低草酸蔬菜（如芥蘭、羽衣甘藍）及傳統板豆腐。</p>
               </div>
+            </div>
+            <div class="info-cards">
               <div class="info-card">
                 <h4 class="info-card-title">海鮮類</h4>
                 <p class="info-card-desc">可連骨食用的小魚，如小魚乾、罐頭沙丁魚等，是鈣質的超級來源。</p>
@@ -1432,6 +1449,8 @@
                 <h4 class="info-card-title">植酸 (Phytates)</h4>
                 <p class="info-card-desc">存在於全穀類、豆類和種子中，同樣會降低鈣的吸收率。</p>
               </div>
+            </div>
+            <div class="info-cards">
               <div class="info-card">
                 <h4 class="info-card-title">過量的鈉</h4>
                 <p class="info-card-desc">高鹽飲食會增加鈣質從尿液中排泄的量，讓補進來的鈣白白流失。</p>
@@ -1449,7 +1468,7 @@
             <h2 id="enhance-absorption">如何增強鈣吸收</h2>
             <p>攝取鈣質的效益不僅取決於食物中的含量，更取決於其<strong class="highlight-nutrient">「生物利用率」（Bioavailability）</strong>，即被人體吸收並利用的比例。鈣的平均吸收率約為 <strong class="highlight-nutrient">30%</strong>，但會受到多種因素影響而有很大差異。年齡是主要因素之一：嬰兒的鈣吸收率高達 <strong class="highlight-nutrient">60%</strong>，而成年後則穩定下降至 <strong class="highlight-nutrient">25%</strong> 左右，並隨著年齡增長而持續緩慢降低。</p>
 
-            <h3>提升鈣吸收的其他營養素</h3>
+            <h3 id="synergy-nutrients">提升鈣吸收的其他營養素</h3>
             <p>想讓吃進去的鈣質真正被身體利用，光靠單打獨鬥是不夠的，它需要一個「神隊友」團隊的協助。以下是提升鈣吸收率的其他營養素：</p>
             <div class="synergy-diagram-container">
                 <div class="synergy-diagram">
@@ -1505,7 +1524,7 @@
             <h2>鈣營養品怎麼挑？</h2>
             <p>當僅透過飲食難以滿足每日鈣需求時，鈣營養品成為了一個重要的選擇。然而，市面上的營養品種類繁多，其吸收率和適用人群各不相同。</p>
             
-            <h3>哪些族群應考慮使用鈣營養品？</h3>
+            <h3 id="action-plan-supplements-who">哪些族群應考慮使用鈣營養品？</h3>
             <p>雖然飲食是首選，但某些族群因生理狀況或飲食限制，可能難以單從食物中獲取足夠的鈣質。在開始任何補充計畫前，諮詢醫師或營養師的專業意見至關重要。</p>
             <div class="risk-group-cards">
               <div class="risk-card">
@@ -1615,27 +1634,8 @@
               </div>
 
               <!-- Card 4: Chelate -->
-              <div class="supplement-card card-chelate">
-                <div class="card-header">
-                  <h4 class="card-title">胺基酸螯合鈣</h4>
-                  <p class="card-calcium-content">元素鈣含量: <span>~16%</span></p>
-                </div>
-                <div class="card-section">
-                  <p class="card-section-title">吸收率</p>
-                  <div class="absorption-bar"><div class="absorption-bar-fill" style="width: 80%;"></div></div>
-                </div>
-                <div class="card-section card-pros-cons">
-                  <ul>
-                    <li><svg class="icon" viewBox="0 0 20 20" fill="#34d399"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 吸收率極佳 (約 80%)</li>
-                    <li><svg class="icon" viewBox="0 0 20 20" fill="#34d399"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 對腸胃溫和不刺激</li>
-                    <li><svg class="icon" viewBox="0 0 20 20" fill="#f87171"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg> 元素鈣含量最低</li>
-                    <li><svg class="icon" viewBox="0 0 20 20" fill="#f87171"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg> 價格非常昂貴</li>
-                  </ul>
-                </div>
-                <div class="card-footer">
-                  <span class="card-audience-tag">吸收不良/腸胃敏感者</span>
-                </div>
-              </div>
+         
+              
             </div>
 
 
@@ -1814,38 +1814,7 @@
         </article>
 
         <!-- Related Articles Section -->
-        <section id="related-articles-container">
-          <h2 class="related-title" style="margin-top: 60px; border-top: 2px solid #e5e7eb; padding-top: 40px;">相關營養素</h2>
-          <div class="related-grid">
-            <a href="vitamin-d.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag">維生素</span>
-                <h3 class="related-card-title">維生素 D</h3>
-                <p class="related-card-desc">
-                  被稱為「陽光維生素」，是促進鈣質吸收的關鍵，與骨骼和免疫健康密不可分。
-                </p>
-              </div>
-            </a>
-            <a href="magnesium.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag">礦物質</span>
-                <h3 class="related-card-title">鎂</h3>
-                <p class="related-card-desc">
-                  鈣的好兄弟，共同維持骨骼健康、穩定神經，是放鬆身心的重要礦物質。
-                </p>
-              </div>
-            </a>
-             <a href="fish-oil.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #fff7ed; color: #9a3412;">其他營養素</span>
-                <h3 class="related-card-title">魚油</h3>
-                <p class="related-card-desc">
-                  富含 Omega-3，不僅保護心血管，其抗發炎特性也對關節健康有益。
-                </p>
-              </div>
-            </a>
-          </div>
-        </section>
+        <div id="related-articles-container"></div>
         </div>
       </main>
     </div>
@@ -1867,6 +1836,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
       // Progress Bar
@@ -1922,28 +1894,21 @@
 
       // Component Initialization
       document.addEventListener("DOMContentLoaded", function () {
-        const navLinks = document.querySelectorAll(".toc-link");
-        navLinks.forEach(link => {
-            link.addEventListener("click", function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute("href");
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const headerOffset = document.getElementById('header-component')?.offsetHeight || 80;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth"
-                    });
-                }
-            });
-        });
-
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+
+        // Initialize Related Articles Component
+        const relatedContainer = document.getElementById("related-articles-container");
+        const articleId = document.body.dataset.articleId;
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
+
+        // Initialize Responsive TOC Component
+        if (window.ResponsiveTocComponent) {
+          new window.ResponsiveTocComponent().initialize();
+        }
       });
     </script>
 
