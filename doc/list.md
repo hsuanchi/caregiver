@@ -15,13 +15,17 @@
 
 
 ### 2.2 CSS 元件使用規則
-- [ ] **資訊卡片 (`.info-cards`)**:
+- [x] **資訊卡片 (`.info-cards`)**:
     - **數量限制**: 一個 `.info-cards` 容器內，**最多只能放置 3 張** `.info-card`。
-- [ ] **風險卡片 (`.risk-group-cards`)**:
+    - **排版規則**: 容器預設使用 `display: inline-flex`，使其寬度能符合內容寬度。卡片應使用 `flex: 1` 來填滿容器。
+
+- [x] **風險卡片 (`.risk-group-cards`)**:
     - **數量限制**: 一個 `.risk-group-cards` 容器內，**最多只能放置 3 張** `.risk-card`。
-- [ ] **提示框 (`.alert`)**:
+    - **排版規則**: 容器預設使用 `display: inline-flex`，使其寬度能符合內容寬度。卡片應使用 `flex: 1` 來填滿容器。
+
+- [x] **提示框 (`.alert`)**:
     - **標題樣式**: `<strong>` 標題為行內元素 (`display: inline`)，會與後續文字在同一行。
-- [ ] **高亮底線 (`.highlight-nutrient`)**:
+- [x] **高亮底線 (`.highlight-nutrient`)**:
     - **CSS 規則**: 必須使用 `background-image: linear-gradient(...)` 的技巧來實現，禁止使用 `border-bottom`。
 - [ ] **禁止行內樣式**: 避免使用 `style="..."` 屬性，應將樣式移至 CSS class 中。
 
@@ -29,8 +33,8 @@
 
 ## 第三部分：組件化與功能 (Components & Functionality)
 
-### 3.1.1 響應式目錄 (Responsive TOC)
-- [ ] **HTML 容器**: 在 `<main>` 區塊的 `<header>` 標籤後，必須放置 `<div id="toc-mobile-target"></div>`。
+### 3.1 響應式目錄 (Responsive TOC)
+- [ ] **HTML 容器**: 在 `<main>` 區塊的 `<header>` 標籤後，必須放置 `<div id="toc-mobile-target"></div>`，且放置位置必須於<div class="article-hero">之後，  <article class="article-body">之前。
 - [ ] **CSS 規則**: 必須移除 `@media (max-width: 1024px)` 中 `display: none` 的 sidebar 規則。
 - [ ] **JS 初始化**:
     - **引入**: 頁尾需引入 `responsive-toc-component.js`。

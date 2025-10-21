@@ -200,14 +200,10 @@
       .toc-list a.active.sub-item::before {
         background: #ff8f65;
       }
+      .no-underline-inherit-color { text-decoration: none; color: inherit; }
 
       /* Main Content Area */
-      .article-content {
-        background: white;
-        border-radius: 20px;
-        padding: 50px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      }
+      .article-content { background: white; border-radius: 20px; padding: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
 
       /* Article Header */
       .article-header {
@@ -760,9 +756,7 @@
       <!-- Sidebar -->
       <aside class="sidebar" id="sidebar">
         <div class="toc">
-          <h3 class="toc-title">
-            <span>目錄</span>
-          </h3>
+          <h3 class="toc-title"><a href="#article-top" class="no-underline-inherit-color">目錄</a></h3>
           <ul class="toc-list">
             <li><a href="#summary" class="toc-link">30 秒速讀版</a></li>
             <li><a href="#self-check" class="toc-link">快來看看你是不是需要補充 Q10 的人？</a></li>
@@ -788,7 +782,6 @@
       <main class="article-content">
         <!-- Article Header -->
         <header class="article-header">
-          <div id="toc-mobile-target"></div>
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a>
@@ -808,6 +801,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <!-- Article Body -->
         <article class="article-body">
           <!-- Story Introduction -->

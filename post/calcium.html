@@ -257,14 +257,14 @@
       .toc-list a.active.sub-item::before {
         background: #ff8f65;
       }
-
-      /* Main Content Area */
-      .article-content {
-        background: white;
-        border-radius: 20px;
-        padding: 50px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      }
+      .min-width-500px { min-width: 500px; }
+      .alert-link { color: inherit; text-decoration: underline; }
+      .margin-top-2em { margin-top: 2em; }
+      .margin-top-40 { margin-top: 40px; }
+      .info-card-green { background: #f0fdf4; border-top: 5px solid #22c55e; }
+      .info-card-blue { background: #eff6ff; border-top: 5px solid #3b82f6; }
+      .info-card-orange { background: #fffbeb; border-top: 5px solid #f59e0b; }
+      .article-content { background: white; border-radius: 20px; padding: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
 
       /* Article Header */
       .article-header {
@@ -387,14 +387,15 @@
         content: '💡';
         margin-right: 8px;
       }
+      .alert strong { display: inline; }
 
       .highlight-nutrient {
+        background-image: linear-gradient(to top, rgba(255, 107, 53, 0.5) 0%, rgba(255, 107, 53, 0.5) 100%);
+        background-position: 0 1.05em;
+        background-repeat: repeat-x;
+        background-size: 100% 3px;
         text-decoration: none;
-        text-decoration-line: underline;
-        text-decoration-style: solid;
-        text-decoration-color: rgba(255, 107, 53, 0.5);
-        text-decoration-thickness: 3px;
-        text-underline-offset: 2px;
+        padding-bottom: 1px;
       }
       
       .info-cards {
@@ -1213,8 +1214,8 @@
 
             <div class="alert alert-tip" style="background: #fffbeb; color: #b45309;">
               <strong>鈣恆定的悖論：為何1%的「總司令」能犧牲99%的「銀行」？</strong>
-              <p>人體內存在一套精密而嚴格的調控系統，稱為<strong class="highlight-nutrient">「鈣恆定」</strong>，其首要任務是將血液中的鈣離子濃度維持在一個極其狹窄的範圍內。這個系統揭示了一個深刻的生理學原理：<strong>為了確保即時的生存，身體會優先滿足那1%調節性鈣的需求，即便這意味著要犧牲99%的骨骼儲備。</strong></p>
-              <p>當飲食中的鈣攝取不足，導致血鈣濃度有下降趨勢時，身體會立即啟動補償措施。副甲狀腺分泌的荷爾蒙會發出訊號，激活<strong class="highlight-nutrient">「蝕骨細胞」</strong>（如同拆除團隊），從骨骼這個巨大的「鈣銀行」中提取鈣質，釋放到血液中，以迅速恢復血鈣的正常水平。這個過程完美解釋了<strong class="highlight-nutrient">骨質疏鬆症為何是一種「沉默的疾病」</strong>——即使您的骨骼銀行已瀕臨破產，血液檢查中的鈣指數仍可能完全正常。</p>
+              人體內存在一套精密而嚴格的調控系統，稱為<strong class="highlight-nutrient">「鈣恆定」</strong>，其首要任務是將血液中的鈣離子濃度維持在一個極其狹窄的範圍內。這個系統揭示了一個深刻的生理學原理：<strong>為了確保即時的生存，身體會優先滿足那1%調節性鈣的需求，即便這意味著要犧牲99%的骨骼儲備。</strong>
+              當飲食中的鈣攝取不足，導致血鈣濃度有下降趨勢時，身體會立即啟動補償措施。副甲狀腺分泌的荷爾蒙會發出訊號，激活<strong class="highlight-nutrient">「蝕骨細胞」</strong>（如同拆除團隊），從骨骼這個巨大的「鈣銀行」中提取鈣質，釋放到血液中，以迅速恢復血鈣的正常水平。這個過程完美解釋了<strong class="highlight-nutrient">骨質疏鬆症為何是一種「沉默的疾病」</strong>——即使您的骨骼銀行已瀕臨破產，血液檢查中的鈣指數仍可能完全正常。
             </div>
             
            
@@ -1227,9 +1228,8 @@
             <h3 id="how-much-details">各年齡層的鈣質建議攝取量</h3>
             <p>要評估鈣質攝取是否充足，首先需要一個明確的標準。衛生福利部國民健康署根據國人的營養需求，制定了各年齡層的膳食營養素參考攝取量（DRIs）。下表整理了不同生命階段的每日鈣質建議攝取量，此數值涵蓋了從飲食與補充劑獲得的總量。</p>
             
-            <h4>表 1：台灣各年齡層每日鈣質建議攝取量</h4>
             <div style="overflow-x: auto; padding-bottom: 10px;">
-              <table class="data-table" style="min-width: 500px;">
+              <table class="data-table min-width-500px">
                 <thead>
                   <tr><th>年齡層</th><th>每日建議攝取量 (毫克)</th></tr>
                 </thead>
@@ -1315,7 +1315,7 @@
                 </tbody>
               </table>
             </div>
-            <div class="alert alert-tip" style="margin-top: 2em; background: #fffbeb; color: #b45309;">
+            <div class="alert alert-tip alert-tip-custom margin-top-2em">
               <strong>小提醒：無可避免的衰退——年齡與荷爾蒙的影響</strong>
               <p>隨著年齡增長，骨質流失會自然加速。對於女性而言，<strong class="highlight-nutrient">停經</strong>是一個重要的轉捩點。雌激素是一種能夠有效抑制骨質分解的荷爾蒙，停經後雌激素水平急劇下降，導致骨質在數年內快速流失，使其成為骨質疏鬆症的高風險族群。這也解釋了為何停經後婦女是鈣質與維生素 D 補充劑的主要建議對象。</p>
             </div>
@@ -1389,7 +1389,7 @@
             
             <h4>表 4：高鈣食物綜合指引 (台灣在地版)</h4>
             <div style="overflow-x: auto; padding-bottom: 10px;">
-              <table class="data-table" style="min-width: 500px;">
+              <table class="data-table min-width-500px">
                 <thead>
                   <tr>
                     <th>類別</th>
@@ -1410,9 +1410,9 @@
                 </tbody>
               </table>
             </div>
-            <div class="alert alert-tip" style="margin-top: 2em; background: #fffbeb; color: #b45309;">
+            <div class="alert alert-tip alert-tip-custom margin-top-2em">
               <strong>營養師小知識：高含量不等於高吸收</strong>
-              <p>從這些數據中可以發現一個關於植物性飲食的有趣現象。例如，一杯煮熟的菠菜含有 <strong class="highlight-nutrient">245 毫克鈣</strong>，看似是一個豐富的來源。然而，由於其極高的<strong class="highlight-nutrient">草酸</strong>含量，這些鈣的<strong class="highlight-nutrient">生物利用度</strong>非常低。相比之下，鈣含量較低但草酸含量也低的蔬菜，如羽衣甘藍和綠花椰菜，卻能提供更多可被身體吸收的鈣。這意味著，對於依賴植物性飲食的個體（如素食者或乳糖不耐症患者），確保鈣質充足不僅取決於攝取的總鈣量，更需要對哪些植物來源的鈣具有更高的生物利用度有深入的理解。因此，膳食規劃時，鈣質來源的<strong class="highlight-nutrient">「品質」與「數量」</strong>同等重要。</p>
+              從這些數據中可以發現一個關於植物性飲食的有趣現象。例如，一杯煮熟的菠菜含有 <strong class="highlight-nutrient">245 毫克鈣</strong>，看似是一個豐富的來源。然而，由於其極高的<strong class="highlight-nutrient">草酸</strong>含量，這些鈣的<strong class="highlight-nutrient">生物利用度</strong>非常低。相比之下，鈣含量較低但草酸含量也低的蔬菜，如羽衣甘藍和綠花椰菜，卻能提供更多可被身體吸收的鈣。這意味著，對於依賴植物性飲食的個體（如素食者或乳糖不耐症患者），確保鈣質充足不僅取決於攝取的總鈣量，更需要對哪些植物來源的鈣具有更高的生物利用度有深入的理解。因此，膳食規劃時，鈣質來源的<strong class="highlight-nutrient">「品質」與「數量」</strong>同等重要。
             </div>
 
            
@@ -1551,9 +1551,9 @@
               </div>
             </div>
 
-            <div class="alert alert-tip" style="margin-top: 40px; background: #fffbeb; color: #b45309;">
+            <div class="alert alert-tip alert-tip-custom margin-top-40">
               <strong>關鍵必看：解讀標示 — 元素鈣 vs. 化合物重量</strong>
-              <p style="margin-bottom: 0;">消費者在選購鈣營養品時，最容易混淆的一點是標示上的劑量。瓶身上顯著的數字（如 1250 毫克）通常指的是鈣化合物（如碳酸鈣）的總重量，而非身體能實際利用的<strong class="highlight-nutrient">「元素鈣」（Elemental Calcium）</strong>含量。真正的有效劑量必須查看產品背後的「營養標示」才能確定。</p>
+              消費者在選購鈣營養品時，最容易混淆的一點是標示上的劑量。瓶身上顯著的數字（如 1250 毫克）通常指的是鈣化合物（如碳酸鈣）的總重量，而非身體能實際利用的<strong class="highlight-nutrient">「元素鈣」（Elemental Calcium）</strong>含量。真正的有效劑量必須查看產品背後的「營養標示」才能確定。
             </div>
 
             <h3 id="action-plan-supplements-comparison">常見鈣營養品比較分析</h3>
@@ -1765,22 +1765,22 @@
             <h2>如何與父母溝通「補鈣」這件事？</h2>
             <p>關心父母的骨骼健康，是我們能給予的最好禮物之一。但直接說「你該補鈣了！」往往會遇到阻力。這裡提供一套溫和且有效的溝通策略，幫助您和家人一起建立健康的補鈣習慣。</p>
             <div class="info-cards" style="grid-template-columns: 1fr; gap: 25px;">
-              <div class="info-card" style="background: #f0fdf4; border-top: 5px solid #22c55e;">
+              <div class="info-card info-card-green">
                 <h4 class="info-card-title" style="color: #166534;">第一步：從「陪伴」開始</h4>
                 <p class="info-card-desc" style="text-align: left;">與其說教，不如邀請他們一起「預防」。可以說：「媽，我最近在研究骨質疏鬆，發現我們家好像都有風險耶，要不要一起多注意？」從「我」和「我們」出發，而不是「你」，讓關心聽起來更像團隊合作。</p>
               </div>
-              <div class="info-card" style="background: #eff6ff; border-top: 5px solid #3b82f6;">
+              <div class="info-card info-card-blue">
                 <h4 class="info-card-title" style="color: #1e40af;">第二步：從「飲食」著手</h4>
                 <p class="info-card-desc" style="text-align: left;">直接給鈣片可能被拒絕，但沒人會拒絕美食。可以從準備高鈣料理開始，例如「芥蘭炒牛肉」、「小魚乾豆腐湯」。讓他們在不知不覺中增加鈣質攝取，同時分享「原來這些食物這麼補鈣」的知識。</p>
               </div>
-              <div class="info-card" style="background: #fffbeb; border-top: 5px solid #f59e0b;">
+              <div class="info-card info-card-orange">
                 <h4 class="info-card-title" style="color: #b45309;">第三步：從「神隊友」切入</h4>
                 <p class="info-card-desc" style="text-align: left;">與其強調「缺鈣」，不如強調「吸收」。可以說：「光吃鈣不夠，還要曬太陽補充維生素D幫忙吸收喔！」邀請他們飯後一起去散步曬太陽，既能補充維生素D，又能增加活動量，一舉兩得。</p>
               </div>
             </div>
             <div class="alert alert-tip" style="margin-top: 40px;">
               <strong>💡 最終目標：聰明選擇營養品</strong>
-              <p style="margin-bottom: 0;">當父母建立起基本觀念後，再拿出這篇文章的「<a href="#supplement-comparison" style="color: inherit; text-decoration: underline;">常見鈣營養品比較表</a>」，和他們一起討論：「爸，你看，你的狀況好像比較適合這種檸檬酸鈣，比較不傷胃。」讓他們參與決策過程，而不是被動接受，這樣他們才更願意長期堅持下去。</p>
+              當父母建立起基本觀念後，再拿出這篇文章的「<a href="#supplement-comparison" class="alert-link">常見鈣營養品比較表</a>」，和他們一起討論：「爸，你看，你的狀況好像比較適合這種檸檬酸鈣，比較不傷胃。」讓他們參與決策過程，而不是被動接受，這樣他們才更願意長期堅持下去。
             </div>
           </section>
 

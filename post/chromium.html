@@ -89,6 +89,13 @@
       .toc-list a { color: #4a5568; text-decoration: none; font-size: 0.95em; display: block; padding: 8px 12px; transition: all 0.3s ease; position: relative; border-radius: 8px; border-left: 3px solid transparent; }
       .toc-list a.active { color: var(--primary-color); background: var(--primary-bg-light); border-left-color: var(--primary-color); font-weight: 600; }
       .toc-list a:hover { color: var(--primary-color); background: var(--primary-bg-light); border-left-color: var(--primary-light); transform: translateX(2px); }
+      .toc-list a.active.sub-item::before {
+        background: #4fd1c5;
+      }
+      .no-underline-inherit-color { text-decoration: none; color: inherit; }
+      .food-icon-style { font-size: 1.5em; margin-right: 10px; }
+      .strategy-card-booster { border-left: 4px solid #48bb78; }
+      .strategy-card-inhibitor { border-left: 4px solid #f56565; }
       .article-content { background: white; border-radius: 20px; padding: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
       .article-hero { background: var(--primary-bg-gradient); border-radius: 20px; padding: 60px; margin-bottom: 40px; position: relative; overflow: hidden; }
       .article-category { display: inline-block; background: white; color: var(--primary-dark); padding: 8px 20px; border-radius: 20px; font-size: 0.9em; font-weight: 600; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
@@ -96,7 +103,7 @@
       .article-subtitle { font-size: 1.3em; color: #4a5568; line-height: 1.6; max-width: 700px; margin-bottom: 30px; }
       .article-body h2::before { background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%); }
       .article-body h3 { font-size: 1.5em; font-weight: 600; color: var(--primary-dark); margin: 35px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0; }
-      .highlight-nutrient { background-image: linear-gradient(to top, rgba(74, 85, 104, 0.5) 0%, rgba(74, 85, 104, 0.5) 100%); background-position: 0 1.05em; background-repeat: repeat-x; background-size: 100% 2px; text-decoration: none; border-bottom: none; padding-bottom: 1px; }
+      .highlight-nutrient { background-image: linear-gradient(to top, rgba(74, 85, 104, 0.5) 0%, rgba(74, 85, 104, 0.5) 100%); background-position: 0 1.05em; background-repeat: repeat-x; background-size: 100% 3px; text-decoration: none; border-bottom: none; padding-bottom: 1px; }
       .data-table thead { background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); }
       .info-card-title, .risk-card-title { color: var(--primary-dark); }
       .faq-question::after { color: var(--primary-color); }
@@ -117,13 +124,21 @@
       .alert-tip::before { background: #48bb78; }
       .alert-doctor > strong::before { content: '⚠️'; margin-right: 8px; }
       .alert-nutritionist > strong::before, .alert-tip > strong::before { content: '💡'; margin-right: 8px; }
-      .alert strong { font-weight: 700; display: block; margin-bottom: 8px; }
+      .alert strong { font-weight: 700; display: inline; margin-bottom: 0; }
       .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); }
       .data-table th, .data-table td { padding: 15px 20px; text-align: left; vertical-align: middle; }
       .data-table th { font-weight: 600; color: white; }
       .data-table tbody tr { border-bottom: 1px solid #e5e7eb; transition: background 0.3s ease; }
-      .data-table tbody tr:hover { background: #f9fafb; }
-      .info-cards, .risk-group-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 40px 0; }
+      .data-table tbody tr:hover { background: #f9fafb; }      .risk-group-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 40px 0; }
+      .info-cards {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin: 40px 0;
+      }
+      .info-card { flex: 1; min-width: 250px; }
+      .info-cards.grid-2x2 { display: grid; grid-template-columns: repeat(2, 1fr); width: 100%; max-width: 700px; margin-left: auto; margin-right: auto; }
       .info-card, .risk-card { background: white; border-radius: 15px; padding: 25px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; }
       .info-card:hover, .risk-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); }
       .info-card-desc, .risk-card-desc { color: #4a5568; font-size: 0.9em; line-height: 1.6; }
@@ -217,7 +232,7 @@
     <div class="article-container">
       <aside class="sidebar" id="sidebar">
         <div class="toc">
-          <h3 class="toc-title"><a href="#article-top" style="text-decoration: none; color: inherit;">目錄</a></h3>
+          <h3 class="toc-title"><a href="#article-top" class="no-underline-inherit-color">目錄</a></h3>
           <ul class="toc-list">
             <li><a href="#problem" class="toc-link">您有這些困擾嗎？身體正在發出「血糖失衡」的警訊</a></li>
             <li><a href="#solution" class="toc-link">鉻：4大核心功效，斬斷血糖失控的惡性循環</a></li>
@@ -303,8 +318,7 @@
               </tbody>
             </table>
              <div class="alert alert-tip">
-                <strong>關鍵洞察：</strong>
-                <p>現代飲食過度精緻化，容易導致鉻的流失與攝取不足。研究估計，高達90%的美國成年人，其日常飲食中的鉻攝取量未達建議標準。如果您是外食族或甜食愛好者，很可能也屬於鉻的缺乏高風險族群。</p>
+                <strong>關鍵洞察：</strong>現代飲食過度精緻化，容易導致鉻的流失與攝取不足。研究估計，高達90%的美國成年人，其日常飲食中的鉻攝取量未達建議標準。如果您是外食族或甜食愛好者，很可能也屬於鉻的缺乏高風險族群。
             </div>
           </section>
           
@@ -314,11 +328,11 @@
              <table class="data-table">
               <thead><tr><th>食物來源</th><th>特色／食用建議</th></tr></thead>
               <tbody>
-                <tr><td><span style="font-size: 1.5em; margin-right: 10px;">🥦</span> 西蘭花 (綠花椰菜)</td><td>含量最豐富的蔬菜來源之一，一杯煮熟的西蘭花約可提供 22 微克的鉻。</td></tr>
-                <tr><td><span style="font-size: 1.5em; margin-right: 10px;">🍇</span> 葡萄 (汁)</td><td>是水果中鉻的良好來源，但建議選擇100%純汁並適量飲用，避免攝取過多糖分。</td></tr>
-                <tr><td><span style="font-size: 1.5em; margin-right: 10px;">🌾</span> 全穀類 (糙米/燕麥)</td><td>未精緻的穀物保留了富含礦物質的麩皮與胚芽，是鉻的穩定來源。</td></tr>
-                <tr><td><span style="font-size: 1.5em; margin-right: 10px;">🥩</span> 牛肉／火雞肉</td><td>動物性蛋白質是鉻的良好來源，特別是瘦肉部位。</td></tr>
-                <tr><td><span style="font-size: 1.5em; margin-right: 10px;">🧀</span> 啤酒酵母</td><td>傳統上被認為是鉻（特別是GTF形式）最豐富的天然來源。</td></tr>
+                <tr><td><span class="food-icon-style">🥦</span> 西蘭花 (綠花椰菜)</td><td>含量最豐富的蔬菜來源之一，一杯煮熟的西蘭花約可提供 22 微克的鉻。</td></tr>
+                <tr><td><span class="food-icon-style">🍇</span> 葡萄 (汁)</td><td>是水果中鉻的良好來源，但建議選擇100%純汁並適量飲用，避免攝取過多糖分。</td></tr>
+                <tr><td><span class="food-icon-style">🌾</span> 全穀類 (糙米/燕麥)</td><td>未精緻的穀物保留了富含礦物質的麩皮與胚芽，是鉻的穩定來源。</td></tr>
+                <tr><td><span class="food-icon-style">🥩</span> 牛肉／火雞肉</td><td>動物性蛋白質是鉻的良好來源，特別是瘦肉部位。</td></tr>
+                <tr><td><span class="food-icon-style">🧀</span> 啤酒酵母</td><td>傳統上被認為是鉻（特別是GTF形式）最豐富的天然來源。</td></tr>
               </tbody>
             </table>
           </section>
@@ -343,8 +357,7 @@
               </table>
             </div>
              <div class="alert alert-nutritionist">
-                <strong>營養師的選購箴言：</strong>
-                <p>無論選擇哪一種，關鍵都在於<strong class="highlight-nutrient">「有機鉻」而非「無機鉻」</strong>（如三氯化鉻，吸收率極差）。吡啶甲酸鉻的研究證據最為充分，是目前市場上的黃金標準。菸鹼酸鉻則是安全有效的優質替代方案。</p>
+                <strong>營養師的選購箴言：</strong>無論選擇哪一種，關鍵都在於<strong class="highlight-nutrient">「有機鉻」而非「無機鉻」</strong>（如三氯化鉻，吸收率極差）。吡啶甲酸鉻的研究證據最為充分，是目前市場上的黃金標準。菸鹼酸鉻則是安全有效的優質替代方案。
             </div>
           </section>
           
@@ -355,7 +368,7 @@
             <h3 id="advanced-strategies-factors">吸收促進／抑制因子</h3>
             <p>鉻的吸收率天生就不高（約0.4%-2.5%），因此避開抑制因子、搭配促進因子，就顯得格外重要。一個聰明的策略，能讓補充效果產生數倍的差異。</p>
             <div class="strategy-grid">
-                <div class="strategy-card" style="border-left: 4px solid #48bb78;">
+                <div class="strategy-card strategy-card-booster">
                     <h4>🚀 吸收促進劑 (Boosters)</h4>
                     <ul>
                         <li><strong>維生素C：</strong>能將鉻維持在容易被吸收的形態，是鉻的最佳拍檔。</li>
@@ -363,7 +376,7 @@
                         <li><strong>胺基酸：</strong>能與鉻形成螯合物，保護其順利通過腸道屏障。</li>
                     </ul>
                 </div>
-                <div class="strategy-card" style="border-left: 4px solid #f56565;">
+                <div class="strategy-card strategy-card-inhibitor">
                     <h4>🚧 吸收抑制劑 (Inhibitors)</h4>
                     <ul>
                         <li><strong>高糖飲食：</strong>攝取大量精緻糖分，會增加鉻從尿液中流失的速度。</li>
@@ -512,6 +525,15 @@
         if (window.ResponsiveTocComponent) {
           new window.ResponsiveTocComponent().initialize();
         }
+        
+        function applyCardGridStyle() {
+          const cardContainers = document.querySelectorAll('.info-cards, .risk-group-cards');
+          cardContainers.forEach(container => {
+            const cards = container.querySelectorAll(':scope > .info-card, :scope > .risk-card');
+            if (cards.length === 4) { container.classList.add('grid-2x2'); }
+          });
+        }
+        applyCardGridStyle();
       });
     </script>
 </body>

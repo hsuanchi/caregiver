@@ -189,6 +189,7 @@
       .toc-list a.active.sub-item::before {
         background: #4fd1c5;
       }
+      .margin-y-30 { margin: 30px 0; }
       .article-content { background: white; border-radius: 20px; padding: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
       .article-header { margin-bottom: 60px; position: relative; }
       .article-hero { background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%); border-radius: 20px; padding: 60px; margin-bottom: 40px; position: relative; overflow: hidden; }
@@ -207,7 +208,7 @@
       .alert-tip::before { background: #22c55e; }
       .alert-doctor > strong::before { content: '⚠️'; margin-right: 8px; }
       .alert-nutritionist > strong::before, .alert-tip > strong::before { content: '💡'; margin-right: 8px; }
-      .alert strong { font-weight: 700; display: block; margin-bottom: 8px; }
+      .alert strong { font-weight: 700; display: inline; }
       .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); }
       .data-table thead { background: linear-gradient(135deg, #38b2ac 0%, #4fd1c5 100%); color: white; }
       .data-table th, .data-table td { padding: 15px 20px; text-align: left; vertical-align: middle; }
@@ -215,18 +216,18 @@
       .data-table tbody tr { border-bottom: 1px solid #e5e7eb; transition: background 0.3s ease; }
       .data-table tbody tr:hover { background: #f9fafb; }
       .data-table .food-icon { font-size: 1.5em; margin-right: 10px; }
-      .info-cards, .risk-group-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 40px 0; }
-      .info-card, .risk-card { background: white; border-radius: 15px; padding: 25px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; }
+      .info-cards, .risk-group-cards { display: inline-flex; flex-wrap: wrap; align-items: stretch; justify-content: flex-start; gap: 20px; margin: 40px 0; }
+      .info-card, .risk-card { flex: 1; min-width: 280px; max-width: calc(33.333% - 14px); box-sizing: border-box; background: white; border-radius: 15px; padding: 25px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; }
       .info-card:hover, .risk-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); }
       .info-card-title, .risk-card-title { font-size: 1.2em; font-weight: 700; color: #2c7a7b; margin-bottom: 10px; }
       .info-card-desc, .risk-card-desc { color: #4a5568; font-size: 0.9em; line-height: 1.6; }
       .highlight-nutrient {
+        background-image: linear-gradient(to top, rgba(56, 178, 172, 0.5) 0%, rgba(56, 178, 172, 0.5) 100%);
+        background-position: 0 1.05em;
+        background-repeat: repeat-x;
+        background-size: 100% 3px;
         text-decoration: none;
-        text-decoration-line: underline;
-        text-decoration-style: solid;
-        text-decoration-color: rgba(56, 178, 172, 0.5);
-        text-decoration-thickness: 3px;
-        text-underline-offset: 2px;
+        padding-bottom: 1px;
       }
       section[id] { scroll-margin-top: 100px; }
       .article-body h2 { font-size: 2em; font-weight: 700; color: #2d3748; margin: 50px 0 30px; padding-top: 20px; position: relative; }
@@ -343,9 +344,11 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
+
         <article class="article-body">
 
-          <div id="toc-mobile-target"></div>
+        
 
           <section id="problem">
             <h2>您有這些困擾嗎？胺基酸缺乏的身體警訊</h2>
@@ -363,9 +366,9 @@
             <div class="info-cards">
               <div class="info-card"><h4 class="info-card-title">重建肌肉，提升體力</h4><p class="info-card-desc">提供肌肉生長和修復的直接原料，有效減緩肌肉流失，提升運動表現與日常活力。</p></div>
               <div class="info-card"><h4 class="info-card-title">強化免疫，抵抗外敵</h4><p class="info-card-desc">製造抗體與免疫細胞的關鍵成分，建立穩固的免疫防線。</p></div>
-              <div class="info-card"><h4 class="info-card-title">穩定情緒，改善睡眠</h4><p class="info-card-desc">作為大腦神經傳導物質的前體，幫助調節情緒、壓力，並生成褪黑激素以改善睡眠品質。</p></div>
             </div><div class="info-cards">
-               <div class="info-card"><h4 class="info-card-title">養顏美容，維持狀態</h4><p class="info-card-desc">是膠原蛋白與角蛋白的基礎，維持皮膚彈性、頭髮光澤與指甲強韌。</p></div>
+              <div class="info-card"><h4 class="info-card-title">穩定情緒，改善睡眠</h4><p class="info-card-desc">作為大腦神經傳導物質的前體，幫助調節情緒、壓力，並生成褪黑激素以改善睡眠品質。</p></div>
+              <div class="info-card"><h4 class="info-card-title">養顏美容，維持狀態</h4><p class="info-card-desc">是膠原蛋白與角蛋白的基礎，維持皮膚彈性、頭髮光澤與指甲強韌。</p></div>
             </div>
           </section>
           
@@ -377,16 +380,14 @@
               <div class="info-card"><h4 class="info-card-title">信差 (信號功能)</h4><p class="info-card-desc">特定的胺基酸，如BCAA中的白胺酸，能像信差一樣傳遞「開始蓋房子！」的信號，直接啟動肌肉蛋白質的合成開關。</p></div>
             </div>
             <div class="alert alert-nutritionist">
-              <strong>營養師提醒：</strong>
-              <p>正因為胺基酸同時扮演「原料」和「信號」兩種角色，所以「補足所有種類(EAA)」跟「補充關鍵信號(BCAA)」同等重要，兩者相輔相成。</p>
+              <strong>營養師提醒：</strong>正因為胺基酸同時扮演「原料」和「信號」兩種角色，所以「補足所有種類(EAA)」跟「補充關鍵信號(BCAA)」同等重要，兩者相輔相成。
             </div>
           </section>
 
           <section id="how-much">
             <h2>我該攝取多少？從每日蛋白質建議量回推</h2>
             <p>與維生素或礦物質不同，胺基酸並沒有單獨的每日建議攝取量(RDA)。這是因為在正常情況下，我們是透過攝取「蛋白質」來獲得完整的胺基酸。因此，最實際的做法是計算每日所需的蛋白質總量，來確保胺基酸供應充足。以下是根據衛福部國健署對不同族群的建議：</p>
-            <table class="data-table">
-              <thead><tr><th>族群</th><th>每日蛋白質建議量 (每公斤體重)</th><th>一位60公斤成人的參考量</th></tr></thead>
+            <table class="data-table margin-y-30">
               <tbody>
                 <tr><td>一般健康成人</td><td><strong>1.0 - 1.2 克</strong></td><td>60 - 72 克</td></tr>
                 <tr><td>肌力訓練/運動員</td><td><strong>1.5 - 2.0 克</strong></td><td>90 - 120 克</td></tr>
@@ -445,7 +446,7 @@
           <section id="action-supplements">
             <h2>實踐指引(二)：精準挑選胺基酸補充品</h2>
             <p>當飲食無法滿足需求，或您有特定目標（如強化運動表現、加速術後恢復）時，胺基酸補充品便能提供更快速、更精準的支援。市面上的產品主要分為三大類型，了解它們的差異，才能幫助您依據自身需求做出最明智的選擇。</p>
-            <div class="comparison-table-container">
+            <div class="comparison-table-container margin-y-30">
               <table class="comparison-table">
                 <thead>
                   <tr>
@@ -472,11 +473,11 @@
                     <h4 class="info-card-title">1. 平衡的藝術：BCAA的潛在陷阱</h4>
                     <p class="info-card-desc">許多人認為BCAA是萬靈丹，但新研究提醒我們「平衡」的重要性。高劑量、長期單獨補充BCAA，可能會在體內與其他必需胺基酸（如色胺酸）競爭相同的吸收通道，反而可能影響情緒穩定與睡眠。這也是為何<strong class="highlight-nutrient">補充完整的EAA，往往是比單獨BCAA更全面的策略</strong>。</p>
                 </div>
-            </div><div class="info-cards">
                 <div class="info-card">
                     <h4 class="info-card-title">2. 腸道健康的隱形功臣</h4>
                     <p class="info-card-desc">您可能不知道，您的腸道細胞（黏膜細胞）最主要的能量來源並非葡萄糖，而是「谷氨醯胺」(Glutamine)這種胺基酸。當身體處於壓力、感染或手術後，谷氨醯胺會從「非必需」變為「條件必需」，足量補充有助於<strong class="highlight-nutrient">維持腸道屏障的完整性，是免疫系統的幕後英雄</strong>。</p>
                 </div>
+            </div><div class="info-cards">
                 <div class="info-card">
                     <h4 class="info-card-title">3. 時間營養學：平均分配比總量更重要</h4>
                     <p class="info-card-desc">最新觀念指出，尤其對熟齡族群，一天當中「如何分配」蛋白質攝取，可能比「總量」更關鍵。與其晚餐吃一塊大牛排，不如<strong class="highlight-nutrient">將蛋白質平均分配在三餐</strong>（例如每餐25-30克）。這樣能更有效地持續刺激肌肉蛋白質合成，對抗因年齡增長而產生的「合成阻力」(Anabolic Resistance)。</p>

@@ -116,57 +116,8 @@
       .data-table tbody tr:hover { background: #f9fafb; }
       .data-table tbody tr:last-child { border-bottom: none; }
       .responsive-table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid #e2e8f0; border-radius: 15px; padding: 10px; margin: 20px 0; }
-      .info-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 40px 0; }
-      .info-card { background: white; border-radius: 15px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; position: relative; overflow: hidden; text-decoration: none; color: inherit; display: block; }
-      .info-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); }
-      .info-card-title { font-size: 1.3em; font-weight: 700; color: #2d3748; margin-bottom: 10px; }
-      .info-card-desc { color: #718096; font-size: 0.95em; line-height: 1.6; }
-      .highlight-nutrient { 
-        background-image: linear-gradient(to top, rgba(255, 107, 53, 0.5) 0%, rgba(255, 107, 53, 0.5) 100%);
-        background-position: 0 1.05em;
-        background-repeat: repeat-x;
-        background-size: 100% 2px;
-        text-decoration: none;
-        border-bottom: none;
-        padding-bottom: 1px;
-      }
-      .article-body h2 { font-size: 2em; font-weight: 700; color: #2d3748; margin: 50px 0 30px; padding-top: 20px; position: relative; }
-      .article-body section[id] { scroll-margin-top: 100px; }
-      .article-body h2::before { content: ""; position: absolute; left: 0; top: 0; width: 50px; height: 4px; background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%); border-radius: 2px; }
-      .article-body h3 { font-size: 1.5em; font-weight: 600; color: #2d3748; margin: 35px 0 20px; }
-      .article-body h4 { font-size: 1.2em; font-weight: 600; color: #4a5568; margin: 25px 0 15px; }
-      .article-body p { margin-bottom: 20px; color: #4a5568; }
-      .article-body ul, .article-body ol { margin: 20px 0; padding-left: 30px; color: #4a5568; }
-      .article-body li { margin-bottom: 10px; }
-      .article-body strong { color: #2d3748; font-weight: 600; }
-      .faq-section { margin-top: 60px; padding-top: 40px; border-top: 2px solid #e5e7eb; }
-      .faq-item { background: #f9fafb; border-radius: 15px; margin-bottom: 20px; overflow: hidden; transition: all 0.3s ease; }
-      .faq-item:hover { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
-      .faq-question { padding: 20px 25px; font-weight: 600; color: #2d3748; cursor: pointer; position: relative; transition: all 0.3s ease; }
-      .faq-question::after { content: "+"; position: absolute; right: 25px; top: 50%; transform: translateY(-50%); font-size: 1.5em; color: #ff6b35; transition: transform 0.3s ease; }
-      .faq-item.active .faq-question::after { transform: translateY(-50%) rotate(45deg); }
-      .faq-answer { padding: 0 25px; max-height: 0; overflow: hidden; transition: all 0.3s ease; }
-      .faq-item.active .faq-answer { padding: 0 25px 20px; max-height: 500px; }
-      .disclaimer { background: #f9fafb; padding: 60px 0; text-align: center; }
-      .disclaimer-content { max-width: 800px; margin: 0 auto; padding: 0 20px; }
-      .disclaimer h3 { color: #4b5563; margin-bottom: 15px; font-size: 1.5em; }
-      .disclaimer p { color: #6b7280; font-size: 0.95em; line-height: 1.8; }
-      
-      #toc-mobile-target { margin-bottom: 40px; }
-      .toc.toc-is-mobile { box-shadow: none; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 15px; padding: 0; }
-      .toc.toc-is-mobile .toc-title { padding: 20px 25px; margin-bottom: 0; cursor: pointer; position: relative; }
-      .toc.toc-is-mobile .toc-title::after { content: '▼'; position: absolute; right: 25px; top: 50%; transform: translateY(-50%); font-size: 0.8em; transition: transform 0.3s ease; }
-      .toc.toc-is-mobile.open .toc-title::after { transform: translateY(-50%) rotate(180deg); }
-      .toc.toc-is-mobile .toc-list { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out; padding: 0 25px; }
-      .toc.toc-is-mobile.open .toc-list { max-height: 1000px; padding: 0 25px 20px; }
-
-      @media (max-width: 1024px) {
-        .article-container { grid-template-columns: 1fr; gap: 0; }
-        /* .sidebar { display: none; }  <-- SOP: 此規則已由 responsive-toc-component.js 取代，請勿啟用 */
-        .article-content { padding: 30px; }
-        .article-title { font-size: 2em; }
-      }
-      @media (max-width: 768px) { .nav-breadcrumb { display: none; } .article-content { padding: 20px; border-radius: 15px; } .article-title { font-size: 1.8em; } .article-meta { flex-direction: column; gap: 10px; } .data-table { font-size: 0.9em; } .data-table th, .data-table td { padding: 10px; } .related-grid { grid-template-columns: 1fr; } }
+      .risk-group-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 20px; margin: 30px 0; }
+      .quick-test-message { text-align: center; margin-top: 20px; color: #14532d; font-weight: 600; }
     </style>
 </head>
 <body data-article-id="card-zinc">

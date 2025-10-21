@@ -253,14 +253,19 @@
       .toc-list a.active.sub-item::before {
         background: #ff8f65;
       }
-
-      /* Main Content Area */
-      .article-content {
-        background: white;
-        border-radius: 20px;
-        padding: 50px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      }
+      .alert-tip-custom { background: #fffbeb; color: #b45309; }
+      .info-card-padding-20 { padding: 20px; }
+      .margin-bottom-0 { margin-bottom: 0; }
+      .overflow-x-auto-pb-10 { overflow-x: auto; padding-bottom: 10px; }
+      .data-table-span-skin-beauty { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.9em; font-weight: 600; background-color: #fffbeb; color: #b45309; }
+      .data-table-span-skin-comprehensive { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.9em; font-weight: 600; background-color: #f0f9ff; color: #0c4a6e; }
+      .data-table-span-joint-care { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.9em; font-weight: 600; background-color: #f7fee7; color: #365314; }
+      .list-disc-pl-20-mt-10 { list-style-type: disc; padding-left: 20px; margin-top: 10px; }
+      .text-align-left { text-align: left; }
+      .info-card-myth-one { background: #fefce8; border-top: 5px solid #facc15; }
+      .info-card-myth-two { background: #f0fdf4; border-top: 5px solid #4ade80; }
+      .info-card-myth-three { background: #fee2e2; border-top: 5px solid #ef4444; grid-column: 1 / -1; }
+      .article-content { background: white; border-radius: 20px; padding: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
 
       /* Article Header */
       .article-header {
@@ -382,24 +387,30 @@
         content: '💡';
         margin-right: 8px;
       }
+      .alert strong { display: inline; }
 
       .highlight-nutrient {
+        background-image: linear-gradient(to top, rgba(255, 107, 53, 0.5) 0%, rgba(255, 107, 53, 0.5) 100%);
+        background-position: 0 1.05em;
+        background-repeat: repeat-x;
+        background-size: 100% 3px;
         text-decoration: none;
-        text-decoration-line: underline;
-        text-decoration-style: solid;
-        text-decoration-color: rgba(255, 107, 53, 0.5);
-        text-decoration-thickness: 3px;
-        text-underline-offset: 2px;
+        padding-bottom: 1px;
       }
       
-      .info-cards {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+      .info-cards,
+      .risk-group-cards {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 20px;
         margin: 40px 0;
       }
-
-      .info-card {
+      .info-card,
+      .risk-card { flex: 1; min-width: 250px; }
+      .info-cards.grid-2x2,
+      .risk-group-cards.grid-2x2 { display: grid; grid-template-columns: repeat(2, 1fr); width: 100%; max-width: 700px; margin-left: auto; margin-right: auto; }
+      .info-card, .risk-card {
         background: white;
         border-radius: 15px;
         padding: 30px;
@@ -426,21 +437,6 @@
         line-height: 1.6;
       }
       
-      .risk-group-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        margin: 30px 0;
-      }
-
-      .risk-card {
-        background: #fefce8;
-        border-left: 4px solid #f59e0b;
-        border-radius: 12px;
-        padding: 25px;
-        transition: all 0.3s ease;
-      }
-
       .risk-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 25px rgba(245, 158, 11, 0.15);
@@ -732,10 +728,8 @@
                 </div>
             </div>
 
-            <div class="alert alert-tip" style="background: #fffbeb; color: #b45309;">
-              <strong>關鍵迷思破解：吃膠原蛋白，補的不是膠原蛋白本身！</strong>
-              <p>許多人誤以為吃進去的膠原蛋白會直接跑到皮膚上。事實上，任何蛋白質吃下肚後，都會在消化道被分解成最小的單位——<strong class="highlight-nutrient">胺基酸和短胜肽</strong>。我們的身體會吸收這些「原料」，然後根據各部位的需求，重新組合成所需的蛋白質。</p>
-              <p>那麼，補充膠原蛋白的意義何在？關鍵在於它提供了特定且豐富的「原料」，尤其是<strong class="highlight-nutrient">甘胺酸、脯胺酸和羥脯胺酸</strong>。這些是合成膠原蛋白最重要的胺基酸。更重要的是，特定的膠原蛋白胜肽（如Pro-Hyp, Hyp-Gly）被證實能像「信號兵」一樣，刺激纖維母細胞，喚醒其「開工」合成更多膠原蛋白和玻尿酸的能力。所以，補充膠原蛋白更像是在<strong class="highlight-nutrient">提供原料並同時發送開工信號</strong>。</p>
+            <div class="alert alert-tip alert-tip-custom">
+              <strong>關鍵迷思破解：吃膠原蛋白，補的不是膠原蛋白本身！</strong> 許多人誤以為吃進去的膠原蛋白會直接跑到皮膚上。事實上，任何蛋白質吃下肚後，都會在消化道被分解成最小的單位——<strong class="highlight-nutrient">胺基酸和短胜肽</strong>。我們的身體會吸收這些「原料」，然後根據各部位的需求，重新組合成所需的蛋白質。那麼，補充膠原蛋白的意義何在？關鍵在於它提供了特定且豐富的「原料」，尤其是<strong class="highlight-nutrient">甘胺酸、脯胺酸和羥脯胺酸</strong>。這些是合成膠原蛋白最重要的胺基酸。更重要的是，特定的膠原蛋白胜肽（如Pro-Hyp, Hyp-Gly）被證實能像「信號兵」一樣，刺激纖維母細胞，喚醒其「開工」合成更多膠原蛋白和玻尿酸的能力。所以，補充膠原蛋白更像是在<strong class="highlight-nutrient">提供原料並同時發送開工信號</strong>。
             </div>
           </section>
 
@@ -752,6 +746,8 @@
                 <h4 class="info-card-title">支持關節健康</h4>
                 <p class="info-card-desc">第二型膠原蛋白是關節軟骨的主要成分，能提供緩衝、減少摩擦，維持關節活動的順暢度。</p>
               </div>
+            </div>
+            <div class="info-cards">
               <div class="info-card">                
                 <h4 class="info-card-title">強化骨骼結構</h4>
                 <p class="info-card-desc">膠原蛋白提供了骨骼的「骨架」，讓鈣質等礦物質能附著其上，增加骨骼的韌性，預防骨折。</p>
@@ -776,6 +772,8 @@
                 <div class="risk-card-header"><h4 class="risk-card-title">紫外線曝曬</h4></div>
                 <p class="risk-card-desc">UVA和UVB會產生自由基，破壞膠原蛋白結構，是造成「光老化」的元兇。</p>
               </div>
+            </div>
+             <div class="risk-group-cards">
               <div class="risk-card">
                 <div class="risk-card-header"><h4 class="risk-card-title">高糖飲食</h4></div>
                 <p class="risk-card-desc">過多的糖分會引發「糖化反應(AGEs)」，使膠原蛋白變脆、失去彈性。</p>
@@ -784,6 +782,8 @@
                 <div class="risk-card-header"><h4 class="risk-card-title">抽菸與空汙</h4></div>
                 <p class="risk-card-desc">香菸中的化學物質和空氣汙染物會大量產生自由基，加速膠原蛋白分解。</p>
               </div>
+            </div>
+             <div class="risk-group-cards">
               <div class="risk-card">
                 <div class="risk-card-header"><h4 class="risk-card-title">睡眠不足</h4></div>
                 <p class="risk-card-desc">睡眠是身體修復的黃金時間，長期熬夜會影響膠原蛋白的再生。</p>
@@ -802,13 +802,11 @@
             <div class="quick-test">
               <h3>一張圖搞懂你該怎麼選</h3>
               <div class="info-cards">
-                <div class="info-card" style="padding: 20px;">
-                  <h4 class="info-card-title">愛美保養族</h4>
+                <div class="info-card info-card-padding-20">
                   <p class="info-card-desc">選擇<strong class="highlight-nutrient">第一型</strong>膠原蛋白，以<strong class="highlight-nutrient">魚來源</strong>的胜肽為主，並搭配<strong class="highlight-nutrient">維生素C、玻尿酸</strong>等複方。
                   </p>
                 </div>
-                <div class="info-card" style="padding: 20px;">
-                  <h4 class="info-card-title">靈活行動族</h4>
+                <div class="info-card info-card-padding-20">
                   <p class="info-card-desc">尋找<strong class="highlight-nutrient">非變性第二型膠原蛋白(UC-II)</strong>，每日劑量40mg即可，可搭配軟骨素、葡萄糖胺。
                   </p>
                 </div>
@@ -821,25 +819,24 @@
             </div>
 
             <div class="alert alert-tip">
-              <strong>關鍵必看：胜肽級小分子是基本門檻</strong>
-              <p style="margin-bottom: 0;">未經處理的膠原蛋白分子量高達30萬道爾頓(Dalton)，人體難以吸收。現今的技術透過<strong class="highlight-nutrient">「水解技術」</strong>將大分子膠原蛋白切成小分子的<strong class="highlight-nutrient">「膠原蛋白胜肽」</strong>，分子量通常介於1000-5000道爾頓之間，這大大提高了生物利用率。因此，選擇標明為「水解膠原蛋白」或「膠原蛋白胜肽」的產品是基本要求。</p>
+              <strong>關鍵必看：胜肽級小分子是基本門檻</strong> 未經處理的膠原蛋白分子量高達30萬道爾頓(Dalton)，人體難以吸收。現今的技術透過<strong class="highlight-nutrient">「水解技術」</strong>將大分子膠原蛋白切成小分子的<strong class="highlight-nutrient">「膠原蛋白胜肽」</strong>，分子量通常介於1000-5000道爾頓之間，這大大提高了生物利用率。因此，選擇標明為「水解膠原蛋白」或「膠原蛋白胜肽」的產品是基本要求。
             </div>
 
             <h3 id="action-plan-supplements-comparison">常見膠原蛋白比較分析</h3>
             <p>不同來源和類型的膠原蛋白，其胺基酸組成和適用性略有不同。了解其差異，能幫助您針對自身需求（如皮膚美容、關節保養）做出更精準的選擇。</p>
             <h4>表 1：常見膠原蛋白補充品比較分析</h4>
-            <div style="overflow-x: auto; padding-bottom: 10px;">
-              <table class="data-table">
-              <thead>
-                  <tr><th>主要訴求</th><th>膠原蛋白來源/類型</th><th>主要類型</th><th>優點</th><th>注意事項</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td><span style="display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.9em; font-weight: 600; background-color: #fffbeb; color: #b45309;">肌膚美容</span></td><td><strong>魚來源膠原蛋白</strong></td><td><strong class="highlight-nutrient">第一型</strong></td><td>分子量較小，被認為吸收率較佳，腥味相對較淡。</td><td>需注意是否來自純淨水域，對海鮮過敏者不適用。</td></tr>
-                  <tr><td><span style="display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.9em; font-weight: 600; background-color: #f0f9ff; color: #0c4a6e;">肌膚美容/綜合</span></td><td><strong>豬/牛來源膠原蛋白</strong></td><td>第一、三型</td><td>胺基酸組成與人體最接近，價格相對實惠。</td><td>需注意是否有藥物殘留、來源是否安全，味道可能較重。</td></tr>
-                  <tr><td><span style="display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.9em; font-weight: 600; background-color: #f7fee7; color: #365314;">關節保養</span></td><td><strong>非變性第二型膠原蛋白 (UC-II/UC2)</strong></td><td><strong class="highlight-nutrient">第二型</strong></td><td>透過特殊低溫技術萃取，保留完整三股螺旋結構，能透過「口服耐受性」機制調節關節舒適度。</td><td>每日建議劑量僅40mg，與一般膠原蛋白胜肽不同。</td></tr>
-                </tbody>
-              </table>
-            </div>
+                        <div class="overflow-x-auto-pb-10">
+                          <table class="data-table">
+                          <thead>
+                              <tr><th>主要訴求</th><th>膠原蛋白來源/類型</th><th>主要類型</th><th>優點</th><th>注意事項</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td><span class="data-table-span-skin-beauty">肌膚美容</span></td><td><strong>魚來源膠原蛋白</strong></td><td><strong class="highlight-nutrient">第一型</strong></td><td>分子量較小，被認為吸收率較佳，腥味相對較淡。</td><td>需注意是否來自純淨水域，對海鮮過敏者不適用。</td></tr>
+                              <tr><td><span class="data-table-span-skin-comprehensive">肌膚美容/綜合</span></td><td><strong>豬/牛來源膠原蛋白</strong></td><td>第一、三型</td><td>胺基酸組成與人體最接近，價格相對實惠。</td><td>需注意是否有藥物殘留、來源是否安全，味道可能較重。</td></tr>
+                                                <tr><td><span class="data-table-span-joint-care">關節保養</span></td><td><strong>非變性第二型膠原蛋白 (UC-II/UC2)</strong></td><td><strong class="highlight-nutrient">第二型</strong></td><td>透過特殊低溫技術萃取，保留完整三股螺旋結構，能透過「口服耐受性」機制調節關節舒適度。</td><td>每日建議劑量僅40mg，與一般膠原蛋白胜肽不同。</td></tr>
+                            </tbody>
+                          </table>
+                        </div>
 
             <h3 id="best-time">最佳補充時機與神隊友</h3>
             <div class="info-cards">
@@ -862,7 +859,8 @@
             <p>除了補充品，我們也可以從天然食物中攝取膠原蛋白。富含膠質的食物通常存在於動物的結締組織中。雖然透過飲食攝取到的膠原蛋白分子較大、吸收率有限，但仍是日常保養的基礎。</p>
             
             <h4>表 2：富含膠原蛋白的食物</h4>
-            <table class="data-table">
+            <div class="overflow-x-auto-pb-10">
+              <table class="data-table">
               <thead>
                 <tr>
                   <th>食物類別</th>
@@ -877,10 +875,10 @@
                 <tr><td><strong>海鮮</strong></td><td>魚鱗、海參</td><td>魚鱗是魚膠原蛋白的主要來源；海參則是優質的膠原蛋白來源。</td></tr>
               </tbody>
             </table>
-            <div class="alert alert-tip" style="margin-top: 2em; background: #fffbeb; color: #b45309;">
+            </div>
+            <div class="alert alert-tip alert-tip-custom">
               <strong>營養師小提醒：別忘了「協同作戰」的營養素</strong>
-              <p>與其瘋狂吃豬腳，不如採取更聰明的策略。人體合成膠原蛋白是一個複雜的工廠，需要各種原料和工具。除了補充膠原蛋白胜肽外，確保飲食中富含以下營養素，才能讓合成工廠高效運轉：</p>
-              <ul style="list-style-type: disc; padding-left: 20px; margin-top: 10px;">
+              與其瘋狂吃豬腳，不如採取更聰明的策略。人體合成膠原蛋白是一個複雜的工廠，需要各種原料和工具。除了補充膠原蛋白胜肽外，確保飲食中富含以下營養素，才能讓合成工廠高效運轉：<ul class="list-disc-pl-20-mt-10">
                   <li><strong class="highlight-nutrient">優質蛋白質：</strong>豆類、魚、蛋、肉類是基礎原料。</li>
                   <li><strong class="highlight-nutrient">維生素C：</strong>芭樂、奇異果、柑橘類水果是最佳催化劑。</li>
                   <li><strong class="highlight-nutrient">鋅、銅等礦物質：</strong>牡蠣、堅果等有助於穩定膠原蛋白結構。</li>
@@ -895,19 +893,21 @@
             <div class="info-cards">
               <div class="info-card">
                 <h4 class="info-card-title">迷思一：擦的膠原蛋白也有效？</h4>
-                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>膠原蛋白是大分子，無法穿透皮膚表層進入真皮層作用。外用保養品中的膠原蛋白主要功能是<strong class="highlight-nutrient">保濕</strong>，無法補充流失的膠原蛋白。</p>
+                <p class="info-card-desc text-align-left"><strong>事實：</strong>膠原蛋白是大分子，無法穿透皮膚表層進入真皮層作用。外用保養品中的膠原蛋白主要功能是<strong class="highlight-nutrient">保濕</strong>，無法補充流失的膠原蛋白。</p>
               </div>
               <div class="info-card">
                 <h4 class="info-card-title">迷思二：植物性膠原蛋白（如木耳、秋葵）？</h4>
-                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong><strong class="highlight-nutrient">植物不含膠原蛋白</strong>。木耳、秋葵等黏滑的物質是水溶性膳食纖維和多醣體，雖然對健康有益，但並非膠原蛋白。</p>
+                <p class="info-card-desc text-align-left"><strong>事實：</strong><strong class="highlight-nutrient">植物不含膠原蛋白</strong>。木耳、秋葵等黏滑的物質是水溶性膳食纖維和多醣體，雖然對健康有益，但並非膠原蛋白。</p>
               </div>
+            </div>
+            <div class="info-cards">
               <div class="info-card">
                 <h4 class="info-card-title">迷思三：吃了會長子宮肌瘤？</h4>
-                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>單純的膠原蛋白本身是蛋白質，不會導致肌瘤。問題可能出在部分產品為了速效而添加<strong class="highlight-nutrient">雌激素或胎盤素</strong>等成分。選擇信譽良好、成分單純的品牌非常重要。</p>
+                <p class="info-card-desc text-align-left"><strong>事實：</strong>單純的膠原蛋白本身是蛋白質，不會導致肌瘤。問題可能出在部分產品為了速效而添加<strong class="highlight-nutrient">雌激素或胎盤素</strong>等成分。選擇信譽良好、成分單純的品牌非常重要。</p>
               </div>
               <div class="info-card">
                 <h4 class="info-card-title">迷思四：吃膠原蛋白會變胖？</h4>
-                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>純的膠原蛋白粉熱量很低。會導致發胖的原因，通常是產品中添加了過多的<strong class="highlight-nutrient">糖、奶精、香料</strong>來改善風味。選擇成分單純、無過多添加物的產品是關鍵。</p>
+                <p class="info-card-desc text-align-left"><strong>事實：</strong>純的膠原蛋白粉熱量很低。會導致發胖的原因，通常是產品中添加了過多的<strong class="highlight-nutrient">糖、奶精、香料</strong>來改善風味。選擇成分單純、無過多添加物的產品是關鍵。</p>
               </div>
             </div>
 
@@ -1054,6 +1054,15 @@
         if (window.ResponsiveTocComponent) {
           new window.ResponsiveTocComponent().initialize();
         }
+        
+        function applyCardGridStyle() {
+          const cardContainers = document.querySelectorAll('.info-cards, .risk-group-cards');
+          cardContainers.forEach(container => {
+            const cards = container.querySelectorAll(':scope > .info-card, :scope > .risk-card');
+            if (cards.length === 4) { container.classList.add('grid-2x2'); }
+          });
+        }
+        applyCardGridStyle();
       });
     </script>
 

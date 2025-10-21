@@ -364,7 +364,10 @@
 
 ### 2. **資訊卡片 (`.info-cards`)**
    - 用於並列呈現核心觀點或功效。
-   - **排版規則**：為了維持在所有裝置上的最佳閱讀體驗與排版，一個 `.info-cards` 區塊中，**不應放置超過 3 張**資訊卡片 (`.info-card`)。
+   - **排版規則**：
+     - 容器預設使用 `display: inline-flex`，使其寬度能符合內容寬度，並允許卡片換行。
+     - 卡片 (`.info-card`) 應使用 `flex: 1` 來填滿容器，並設定 `min-width: 280px` 和 `max-width: calc(33.333% - 14px)` (考慮到 20px 的 `gap`)，以確保每行最多顯示 3 張卡片。
+     - **重要**：一個 `.info-cards` 區塊中，**不應放置超過 3 張**資訊卡片 (`.info-card`)。若超過，請手動移除多餘的卡片。
 
    ```html
    <div class="info-cards">
@@ -372,12 +375,20 @@
        <h4 class="info-card-title">核心功效一</h4>
        <p class="info-card-desc">說明此功效的詳細內容...</p>
      </div>
-     <!-- more cards... -->
+     <div class="info-card">
+       <h4 class="info-card-title">核心功效二</h4>
+       <p class="info-card-desc">說明此功效的詳細內容...</p>
+     </div>
+     <div class="info-card">
+       <h4 class="info-card-title">核心功效三</h4>
+       <p class="info-card-desc">說明此功效的詳細內容...</p>
+     </div>
    </div>
    ```
 
-### 3. **風險族群卡片 (`.risk-card`)**
+### 3. **風險族群卡片 (`.risk-group-cards`)**
    - 用於強調哪些族群需要特別注意。
+   - **排版規則**：為了維持在所有裝置上的最佳閱讀體驗與排版，一個 `.risk-group-cards` 區塊中，**不應放置超過 3 張**風險卡片 (`.risk-card`)。若超過，請手動移除多餘的卡片。
 
    ```html
     <div class="risk-group-cards">
@@ -387,7 +398,18 @@
         </div>
         <p class="risk-card-desc">香菸會產生大量自由基...</p>
       </div>
-      <!-- more cards... -->
+      <div class="risk-card">
+        <div class="risk-card-header">
+          <h4 class="risk-card-title">高壓上班族</h4>
+        </div>
+        <p class="risk-card-desc">長期壓力會消耗體內營養素...</p>
+      </div>
+      <div class="risk-card">
+        <div class="risk-card-header">
+          <h4 class="risk-card-title">素食者</h4>
+        </div>
+        <p class="risk-card-desc">部分營養素在植物性食物中含量較低...</p>
+      </div>
     </div>
    ```
 
@@ -779,12 +801,12 @@
 .alert-doctor { background: #fef2f2; color: #b91c1c; }
 
 /* 資訊卡片 */
-.info-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.info-card { background: white; border-radius: 15px; padding: 30px; }
+.info-cards { display: inline-flex; flex-wrap: wrap; align-items: stretch; justify-content: flex-start; gap: 20px; }
+.info-card { flex: 1; min-width: 280px; max-width: calc(33.333% - 14px); box-sizing: border-box; background: white; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); }
 
 /* 風險族群卡片 */
-.risk-group-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-.risk-card { background: #fffbeb; border-left: 4px solid #f59e0b; }
+.risk-group-cards { display: inline-flex; flex-wrap: wrap; align-items: stretch; justify-content: flex-start; gap: 20px; }
+.risk-card { flex: 1; min-width: 250px; max-width: calc(33.333% - 14px); box-sizing: border-box; background: #fffbeb; border-left: 4px solid #f59e0b; }
 
 /* 數據表格 */
 .data-table { width: 100%; border-collapse: collapse; background: white; border-radius: 15px; }

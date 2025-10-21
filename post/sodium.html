@@ -103,7 +103,7 @@
       .alert-tip::before { background: #22c55e; }
       .alert-doctor > strong::before, .alert-danger > strong::before { content: '⚠️'; margin-right: 8px; }
       .alert-nutritionist > strong::before, .alert-tip > strong::before { content: '💡'; margin-right: 8px; }
-      .alert strong { font-weight: 700; display: block; margin-bottom: 8px; }
+      .alert strong { font-weight: 700; display: inline; }
       .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); }
       .data-table thead { background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); color: white; }
       .data-table th, .data-table td { padding: 15px 20px; text-align: left; }
@@ -111,13 +111,28 @@
       .data-table tbody tr { border-bottom: 1px solid #e5e7eb; transition: background 0.3s ease; }
       .data-table tbody tr:hover { background: #f9fafb; }
       .data-table tbody tr:last-child { border-bottom: none; }
-      .responsive-table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid #e2e8f0; border-radius: 15px; padding: 10px; margin: 20px 0; }
-      .info-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 40px 0; }
+      .responsive-table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid #e2e8f0; border-radius: 15px; padding: 10px; margin: 20px 0; }      
+      .info-cards {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin: 40px 0;
+      }
+      .info-card { flex: 1; min-width: 250px; }
+      .info-cards.grid-2x2 { display: grid; grid-template-columns: repeat(2, 1fr); width: 100%; max-width: 700px; margin-left: auto; margin-right: auto; }
       .info-card { background: white; border-radius: 15px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; position: relative; overflow: hidden; text-decoration: none; color: inherit; display: block; }
       .info-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); }
       .info-card-title { font-size: 1.3em; font-weight: 700; color: #2d3748; margin-bottom: 10px; }
       .info-card-desc { color: #718096; font-size: 0.95em; line-height: 1.6; }
-      .highlight-nutrient { border-bottom: 2px solid var(--primary-color); padding-bottom: 1px; }
+      .highlight-nutrient {
+        background-image: linear-gradient(to top, rgba(59, 130, 246, 0.5) 0%, rgba(59, 130, 246, 0.5) 100%);
+        background-position: 0 1.05em;
+        background-repeat: repeat-x;
+        background-size: 100% 3px;
+        text-decoration: none;
+        padding-bottom: 1px;
+      }
       .article-body h2 { font-size: 2em; font-weight: 700; color: #2d3748; margin: 50px 0 30px; padding-top: 20px; position: relative; }
       .article-body h2::before { content: ""; position: absolute; left: 0; top: 0; width: 50px; height: 4px; background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%); border-radius: 2px; }
       .article-body h3 { font-size: 1.5em; font-weight: 600; color: #2d3748; margin: 35px 0 20px; }
@@ -258,6 +273,7 @@
                     <h4 class="risk-card-title">血壓數字居高不下</h4>
                     <p class="risk-card-desc">高鈉是造成高血壓最主要、也最可以改變的飲食風險因子。</p>
                 </div>
+              </div><div class="risk-group-cards">
                 <div class="risk-card">
                     <h4 class="risk-card-title">經常感到口乾舌燥</h4>
                     <p class="risk-card-desc">身體為了平衡過高的鈉濃度，會不斷發出口渴的訊號，希望能稀釋體內的鈉。</p>
@@ -312,8 +328,7 @@
                 </tbody>
             </table>
              <div class="alert alert-tip">
-                <strong>營養師提醒：請以 <span class="highlight-nutrient">2300毫克</span> 為目標</strong>
-                <p>考量到台灣飲食習慣與國際趨勢，多數專家建議一般健康成人每日鈉攝取量應控制在 <span class="highlight-nutrient">2300 毫克</span> 以下。這是一個較為實際且能顯著帶來健康效益的目標。</p>
+                <strong>營養師提醒：請以 <span class="highlight-nutrient">2300毫克</span> 為目標</strong> 考量到台灣飲食習慣與國際趨勢，多數專家建議一般健康成人每日鈉攝取量應控制在 <span class="highlight-nutrient">2300 毫克</span> 以下。這是一個較為實際且能顯著帶來健康效益的目標。
             </div>
           </section>
 
@@ -523,8 +538,7 @@
                 </tbody>
             </table>
             <div class="alert alert-tip">
-              <strong>健康策略：「加鉀」比「減鈉」同樣重要！</strong>
-              <p>與其辛苦地計算鈉含量，一個更積極、美味的策略是「增加鉀的攝取」。多吃深綠色蔬菜（如菠菜、空心菜）、水果（如香蕉、奇異果、番茄）等地天然食物，自然就能幫助身體平衡過多的鈉，達到保護心血管的效果。</p>
+              <strong>健康策略：「加鉀」比「減鈉」同樣重要！</strong> 與其辛苦地計算鈉含量，一個更積極、美味的策略是「增加鉀的攝取」。多吃深綠色蔬菜（如菠菜、空心菜）、水果（如香蕉、奇異果、番茄）等地天然食物，自然就能幫助身體平衡過多的鈉，達到保護心血管的效果。
             </div>
           </section>
 
@@ -747,6 +761,15 @@
         if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
             new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
         }
+
+        function applyInfoCardGridStyle() {
+          const infoCardContainers = document.querySelectorAll('.info-cards');
+          infoCardContainers.forEach(container => {
+            const cards = container.querySelectorAll('.info-card');
+            if (cards.length === 4) { container.classList.add('grid-2x2'); }
+          });
+        }
+        applyInfoCardGridStyle();
         updateSodiumTotal();
       });
     </script>

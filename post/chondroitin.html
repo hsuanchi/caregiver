@@ -88,7 +88,10 @@
       .toc-list li { margin-bottom: 8px; }
       .toc-list a { color: #4a5568; text-decoration: none; font-size: 0.95em; display: block; padding: 8px 12px; transition: all 0.3s ease; position: relative; border-radius: 8px; border-left: 3px solid transparent; }
       .toc-list a.active { color: var(--primary-color); background: var(--primary-bg-light); border-left-color: var(--primary-color); font-weight: 600; }
-      .toc-list a:hover { color: var(--primary-color); background: var(--primary-bg-light); border-left-color: var(--primary-light); transform: translateX(2px); }
+      .toc-list a.active.sub-item::before {
+        background: #4fd1c5;
+      }
+      .no-underline-inherit-color { text-decoration: none; color: inherit; }
       .article-content { background: white; border-radius: 20px; padding: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
       .article-hero { background: var(--primary-bg-gradient); border-radius: 20px; padding: 60px; margin-bottom: 40px; position: relative; overflow: hidden; }
       .article-category { display: inline-block; background: white; color: var(--primary-dark); padding: 8px 20px; border-radius: 20px; font-size: 0.9em; font-weight: 600; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
@@ -219,7 +222,7 @@
     <div class="article-container">
       <aside class="sidebar" id="sidebar">
         <div class="toc">
-          <h3 class="toc-title"><a href="#article-top" style="text-decoration: none; color: inherit;">目錄</a></h3>
+          <h3 class="toc-title"><a href="#article-top" class="no-underline-inherit-color">目錄</a></h3>
           <ul class="toc-list">
             <li><a href="#problem" class="toc-link">您有這些困擾嗎？身體發出的關節磨損警訊</a></li>
             <li><a href="#solution" class="toc-link">軟骨素：4大核心功效，為您的關節穿上隱形護具</a></li>
@@ -239,7 +242,6 @@
 
       <main class="article-content">
         <header class="article-header" id="article-top">
-          <div id="toc-mobile-target"></div>
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a><span class="separator">/</span><span>軟骨素 - 終結關節卡卡、找回靈活行動力的關鍵</span>
@@ -255,6 +257,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <article class="article-body">
 
           <section id="problem">

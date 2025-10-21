@@ -201,14 +201,29 @@
       .toc-list a.active.sub-item::before {
         background: #fcd34d;
       }
-
-      /* Main Content Area */
-      .article-content {
-        background: white;
-        border-radius: 20px;
-        padding: 50px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      }
+      .info-cards-3-col { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .alert-tip-fef3c7 { background: #fef3c7; }
+      .quick-test-fffbeb { background: #fffbeb; }
+      .text-align-left-padding-40 { text-align: left; padding: 40px; }
+      .color-78350f-text-center-mb-25 { color: #78350f; text-align: center; margin-bottom: 25px; }
+      .selection-guide-flex-wrap-gap-20-justify-center { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+      .guide-card-white-br-15-ps-25-bs-0415-bt-5-fcd34d-flex-1-mw-250 { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); border-top: 5px solid #fcd34d; flex: 1; min-width: 250px; }
+      .font-size-1-2em { font-size: 1.2em; }
+      .color-4a5568 { color: #4a5568; }
+      .guide-card-white-br-15-ps-25-bs-0415-bt-5-fbbf24-flex-1-mw-250 { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); border-top: 5px solid #fbbf24; flex: 1; min-width: 250px; }
+      .guide-card-white-br-15-ps-25-bs-0415-bt-5-f59e0b-flex-1-mw-250 { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); border-top: 5px solid #f59e0b; flex: 1; min-width: 250px; }
+      .overflow-x-auto-pb-10 { overflow-x: auto; padding-bottom: 10px; }
+      .risk-group-cards-3-col { grid-template-columns: repeat(3, 1fr); }
+      .info-cards-2-col-gap-25 { grid-template-columns: 1fr 1fr; gap: 25px; }
+      .info-card-fefce8-bt-5-facc15 { background: #fefce8; border-top: 5px solid #facc15; }
+      .color-a16207 { color: #a16207; }
+      .text-align-left { text-align: left; }
+      .info-card-f0fdf4-bt-5-4ade80 { background: #f0fdf4; border-top: 5px solid #4ade80; }
+      .color-166534 { color: #166534; }
+      .info-card-fee2e2-bt-5-ef4444-gc-1-n1 { background: #fee2e2; border-top: 5px solid #ef4444; grid-column: 1 / -1; }
+      .color-b91c1c { color: #b91c1c; }
+      .list-disc-pl-20-mt-10-text-align-left { list-style-type: disc; padding-left: 20px; margin-top: 10px; text-align: left; }
+      .article-content { background: white; border-radius: 20px; padding: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
 
       /* Article Header */
       .article-header {
@@ -330,23 +345,26 @@
         content: '💡';
         margin-right: 8px;
       }
+      .alert strong { display: inline; }
 
       .highlight-nutrient {
+        background-image: linear-gradient(to top, rgba(245, 158, 11, 0.6) 0%, rgba(245, 158, 11, 0.6) 100%);
+        background-position: 0 1.05em;
+        background-repeat: repeat-x;
+        background-size: 100% 3px;
         text-decoration: none;
-        text-decoration-line: underline;
-        text-decoration-style: solid;
-        text-decoration-color: rgba(245, 158, 11, 0.6);
-        text-decoration-thickness: 3px;
-        text-underline-offset: 2px;
+        padding-bottom: 1px;
       }
       
-      .info-cards {
+      .risk-group-cards {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px;
         margin: 40px 0;
       }
-
+      .info-cards { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 40px 0; }
+      .info-card { flex: 1; min-width: 250px; }
+      .info-cards.grid-2x2 { display: grid; grid-template-columns: repeat(2, 1fr); width: 100%; max-width: 700px; margin-left: auto; margin-right: auto; }
       .info-card {
         background: white;
         border-radius: 15px;
@@ -374,13 +392,6 @@
         line-height: 1.6;
       }
       
-      .risk-group-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        margin: 30px 0;
-      }
-
       .risk-card {
         background: #f0f9ff;
         border-left: 4px solid #3b82f6;
@@ -609,7 +620,6 @@
       <main class="article-content">
         <!-- Article Header -->
         <header class="article-header">
-          <div id="toc-mobile-target"></div>
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a>
@@ -629,6 +639,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <!-- Article Body -->
         <article class="article-body">
 
@@ -637,9 +648,7 @@
             <p>薑黃素（Curcumin）是從草本植物「薑黃」（Turmeric）的根莖中提取的主要活性成分，它不僅賦予了薑黃獨特的金黃色澤，更是其強大保健功效的核心來源。數千年來，無論是在印度阿育吠陀醫學或傳統中醫裡，薑黃素一直被視為對抗多種健康問題的珍貴草藥，其價值遠遠超越了單純的香料或色素。</p>
             
             <h3 id="turmeric-vs-curcumin">薑黃 vs 薑黃素：黃金中的含金量</h3>
-            <p>許多人會將「薑黃」與「薑黃素」混為一談，但兩者之間存在著巨大的濃度差異。我們可以將薑黃想像成一個「金礦」，而薑黃素則是其中真正有價值的「黃金」。理解這個差異，是您做出有效健康投資的第一步。</p>
-            
-            <div class="info-cards" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
+            <div class="info-cards info-cards-3-col">
               <div class="info-card">
                 <h4 class="info-card-title">薑黃 (Turmeric)</h4>
                 <p class="info-card-desc">指整株植物的根莖，或將其乾燥後磨成的香料粉末，是天然的食材。</p>
@@ -655,8 +664,7 @@
             </div>
 
             <div class="alert alert-tip">
-              <strong>💡 關鍵觀念：為何不能只靠吃咖哩？</strong>
-              <p>正是因為薑黃素在天然薑黃中的含量極低，所以若想達到研究中所證實的保健功效，單靠日常飲食（如吃薑黃粉或咖哩）是遠遠不夠的。這也是為什麼市面上會出現<strong class="highlight-nutrient">高濃度萃取的薑黃素保健食品</strong>。這些產品透過特殊技術，將薑黃素的濃度標準化至95%以上，確保你能攝取到足夠的有效劑量。</p>
+              <strong>💡 關鍵觀念：為何不能只靠吃咖哩？</strong> 正是因為薑黃素在天然薑黃中的含量極低，所以若想達到研究中所證實的保健功效，單靠日常飲食（如吃薑黃粉或咖哩）是遠遠不夠的。這也是為什麼市面上會出現<strong class="highlight-nutrient">高濃度萃取的薑黃素保健食品</strong>。這些產品透過特殊技術，將薑黃素的濃度標準化至95%以上，確保你能攝取到足夠的有效劑量。
             </div>
           </section>
 
@@ -667,9 +675,8 @@
             <h3 id="anti-inflammatory">撲滅體內的慢性火災：強效抗發炎</h3>
             <p>薑黃素最核心的價值，在於其強大的抗發炎能力。它不像一般消炎藥那樣被動地止痛，而是能深入到分子層面，直接關閉身體發炎反應的「總開關」——一種名為 <strong class="highlight-nutrient">NF-κB</strong> 的分子。當這個開關被關閉，許多誘發發炎的基因就會停止作用，從源頭阻斷了火勢的蔓延。這也是為什麼薑黃素對於<strong class="highlight-nutrient">維持關節靈活、舒緩運動後不適</strong>有顯著幫助的原因。</p>
             
-            <div class="alert alert-tip" style="background: #fef3c7;">
-              <strong>💡 雙重防護：不只滅火，更能清理戰場</strong>
-              <p style="margin-bottom:0;">薑黃素的聰明之處在於它不只會「滅火」（抗發炎），還會「清理現場」（抗氧化）。發炎過程會產生大量有害的<strong class="highlight-nutrient">自由基</strong>，如同火災後留下的有毒煙霧。薑黃素不僅能親自中和這些自由基，更能啟動並增強我們身體內建的抗氧化酵素系統，建立一道堅固的防護網，幫助我們<strong class="highlight-nutrient">延緩老化，維持細胞健康</strong>。</p>
+            <div class="alert alert-tip alert-tip-fef3c7">
+              <strong>💡 雙重防護：不只滅火，更能清理戰場</strong> 薑黃素的聰明之處在於它不只會「滅火」（抗發炎），還會「清理現場」（抗氧化）。發炎過程會產生大量有害的<strong class="highlight-nutrient">自由基</strong>，如同火災後留下的有毒煙霧。薑黃素不僅能親自中和這些自由基，更能啟動並增強我們身體內建的抗氧化酵素系統，建立一道堅固的防護網，幫助我們<strong class="highlight-nutrient">延緩老化，維持細胞健康</strong>。
             </div>
 
             <h3 id="liver-protection">守護核心器官：肝臟的得力保鑣</h3>
@@ -733,7 +740,7 @@
             <h2>薑黃素的吸收率挑戰</h2>
             <p>儘管薑黃素功效強大，但它有一個致命的缺點：<strong class="highlight-nutrient">人體吸收率（生物利用率）極低</strong>。如果沒有經過特殊處理，吃進去的薑黃素絕大部分還沒來得及被吸收，就已經被身體快速代謝並排出體外。這就是為什麼「如何有效吸收」成為挑選薑黃素產品的最大關鍵。</p>
             
-            <div class="info-cards" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
+            <div class="info-cards info-cards-3-col">
               <div class="info-card">
                 <h4 class="info-card-title">水溶性差</h4>
                 <p class="info-card-desc">薑黃素是脂溶性分子，很難溶解在水性的腸道環境中被吸收。</p>
@@ -753,23 +760,23 @@
             <h2>薑黃素補充品怎麼挑？</h2>
             <p>為了解決吸收率低的問題，現代營養科學開發出多種劑型和配方。一個聰明的選擇策略，應該將<strong class="highlight-nutrient">「生物利用率」</strong>作為最重要的評估指標，確保您花的每一分錢都物有所值。</p>
             
-            <div class="quick-test" style="background: #fffbeb; text-align: left; padding: 40px;">
-              <h3 style="color: #78350f; text-align: center; margin-bottom: 25px;">一張圖搞懂你該怎麼選</h3>
-              <div class="selection-guide" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            <div class="quick-test quick-test-fffbeb text-align-left-padding-40">
+              <h3 class="color-78350f-text-center-mb-25">一張圖搞懂你該怎麼選</h3>
+              <div class="selection-guide selection-guide-flex-wrap-gap-20-justify-center">
                 
-                <div class="guide-card" style="background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); border-top: 5px solid #fcd34d; flex: 1; min-width: 250px;">
-                  <h4 class="info-card-title" style="font-size: 1.2em;">👉 如果你是<strong class="highlight-nutrient">入門者</strong>，追求CP值</h4>
-                  <p class="info-card-desc" style="color: #4a5568;">優先選擇<strong class="highlight-nutrient">添加黑胡椒萃取（胡椒鹼）</strong>的配方。這是最經典、經過驗證的組合，能用最經濟的方式，顯著提升薑黃素的基礎吸收率。</p>
+                <div class="guide-card guide-card-white-br-15-ps-25-bs-0415-bt-5-fcd34d-flex-1-mw-250">
+                  <h4 class="info-card-title font-size-1-2em">👉 如果你是<strong class="highlight-nutrient">入門者</strong>，追求CP值</h4>
+                  <p class="info-card-desc color-4a5568">優先選擇<strong class="highlight-nutrient">添加黑胡椒萃取（胡椒鹼）</strong>的配方。這是最經典、經過驗證的組合，能用最經濟的方式，顯著提升薑黃素的基礎吸收率。</p>
                 </div>
                 
-                <div class="guide-card" style="background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); border-top: 5px solid #fbbf24; flex: 1; min-width: 250px;">
-                  <h4 class="info-card-title" style="font-size: 1.2em;">👉 如果你<strong class="highlight-nutrient">尋求高效</strong>，想快速看到效果</h4>
-                  <p class="info-card-desc" style="color: #4a5568;">尋找採用<strong class="highlight-nutrient">微脂體、磷脂質複合物</strong>等專利技術的產品。這些劑型能大幅提高生物利用率，讓更多有效成分進入你的身體循環。</p>
+                <div class="guide-card guide-card-white-br-15-ps-25-bs-0415-bt-5-fbbf24-flex-1-mw-250">
+                  <h4 class="info-card-title font-size-1-2em">👉 如果你<strong class="highlight-nutrient">尋求高效</strong>，想快速看到效果</h4>
+                  <p class="info-card-desc color-4a5568">尋找採用<strong class="highlight-nutrient">微脂體、磷脂質複合物</strong>等專利技術的產品。這些劑型能大幅提高生物利用率，讓更多有效成分進入你的身體循環。</p>
                 </div>
                 
-                <div class="guide-card" style="background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); border-top: 5px solid #f59e0b; flex: 1; min-width: 250px;">
-                  <h4 class="info-card-title" style="font-size: 1.2em;">👉 如果你特別<strong class="highlight-nutrient">關注關節</strong>健康</h4>
-                  <p class="info-card-desc" style="color: #4a5568;">可以考慮結合<strong class="highlight-nutrient">薑黃素</strong>與<strong class="highlight-nutrient">非變性第二型膠原蛋白(UC-II)</strong>或<strong class="highlight-nutrient">MSM</strong>的複方產品，提供更全面、具加乘效果的支持。</p>
+                <div class="guide-card guide-card-white-br-15-ps-25-bs-0415-bt-5-f59e0b-flex-1-mw-250">
+                  <h4 class="info-card-title font-size-1-2em">👉 如果你特別<strong class="highlight-nutrient">關注關節</strong>健康</h4>
+                  <p class="info-card-desc color-4a5568">可以考慮結合<strong class="highlight-nutrient">薑黃素</strong>與<strong class="highlight-nutrient">非變性第二型膠原蛋白(UC-II)</strong>或<strong class="highlight-nutrient">MSM</strong>的複方產品，提供更全面、具加乘效果的支持。</p>
                 </div>
               </div>
             </div>
@@ -777,7 +784,7 @@
             <h3 id="supplement-comparison">常見薑黃素比較分析</h3>
             <p>不同劑型和配方的薑黃素產品，其吸收率和價格差異巨大。了解其背後的科學原理，能幫助您做出最明智的投資。</p>
             <h4>表 1：常見薑黃素劑型比較分析</h4>
-            <div style="overflow-x: auto; padding-bottom: 10px;">
+            <div class="overflow-x-auto-pb-10">
               <table class="data-table">
                 <thead>
                   <tr><th>劑型/配方</th><th>吸收率提升原理</th><th>優點</th><th>缺點</th></tr>
@@ -792,7 +799,7 @@
             </div>
 
             <h3 id="supplement-timing-tips">最佳補充時機與技巧</h3>
-            <div class="info-cards" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="info-cards info-cards-3-col">
               <div class="info-card">
                 <h4 class="info-card-title">隨餐或飯後吃</h4>
                 <p class="info-card-desc">薑黃素為脂溶性，<strong class="highlight-nutrient">隨餐或飯後</strong>補充，利用餐點中的油脂可以顯著提高其吸收率。</p>
@@ -811,7 +818,7 @@
           <section id="who-needs-it">
             <h2>誰適合補充薑黃素？</h2>
             <p>由於其強大的抗發炎和抗氧化特性，薑黃素適合多種族群作為日常保健的一部分，特別是以下幾類希望積極維持健康的人士：</p>
-             <div class="risk-group-cards" style="grid-template-columns: repeat(3, 1fr);">
+             <div class="risk-group-cards risk-group-cards-3-col">
               <div class="risk-card">
                 <div class="risk-card-header"><h4 class="risk-card-title">應酬頻繁/熬夜族</h4></div>
                 <p class="risk-card-desc">經常需要飲酒、作息不規律者，薑黃素有助於支持肝臟功能，促進新陳代謝。</p>
@@ -831,19 +838,19 @@
             <h2>常見迷思與副作用</h2>
             <p>雖然薑黃素是相對安全的天然成分，但在使用上仍有一些需要注意的地方和常見的誤解，了解這些能幫助您更安全、有效地補充。</p>
             
-            <div class="info-cards" style="grid-template-columns: 1fr 1fr; gap: 25px;">
-              <div class="info-card" style="background: #fefce8; border-top: 5px solid #facc15;">
-                <h4 class="info-card-title" style="color: #a16207;">迷思一：薑黃和生薑一樣？</h4>
-                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>完全不同。雖然外觀相似，但它們是不同科屬的植物。生薑的主要活性成分是<strong class="highlight-nutrient">薑辣素</strong>，而薑黃是<strong class="highlight-nutrient">薑黃素</strong>，兩者功效不同。</p>
+            <div class="info-cards info-cards-2-col-gap-25">
+              <div class="info-card info-card-fefce8-bt-5-facc15">
+                <h4 class="info-card-title color-a16207">迷思一：薑黃和生薑一樣？</h4>
+                <p class="info-card-desc text-align-left"><strong>事實：</strong>完全不同。雖然外觀相似，但它們是不同科屬的植物。生薑的主要活性成分是<strong class="highlight-nutrient">薑辣素</strong>，而薑黃是<strong class="highlight-nutrient">薑黃素</strong>，兩者功效不同。</p>
               </div>
-              <div class="info-card" style="background: #f0fdf4; border-top: 5px solid #4ade80;">
-                <h4 class="info-card-title" style="color: #166534;">迷思二：吃越多效果越好？</h4>
-                <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>並非如此。攝取過高劑量的薑黃素可能引起腸胃不適。關鍵在於<strong class="highlight-nutrient">「吸收率」而非「劑量」</strong>。選擇高生物利用率的產品，比盲目追求高劑量更有效。</p>
+              <div class="info-card info-card-f0fdf4-bt-5-4ade80">
+                <h4 class="info-card-title color-166534">迷思二：吃越多效果越好？</h4>
+                <p class="info-card-desc text-align-left"><strong>事實：</strong>並非如此。攝取過高劑量的薑黃素可能引起腸胃不適。關鍵在於<strong class="highlight-nutrient">「吸收率」而非「劑量」</strong>。選擇高生物利用率的產品，比盲目追求高劑量更有效。</p>
               </div>
-              <div class="info-card" style="background: #fee2e2; border-top: 5px solid #ef4444; grid-column: 1 / -1;">
-                <h4 class="info-card-title" style="color: #b91c1c;">重要提醒：哪些人不適合吃？</h4>
-                <p class="info-card-desc" style="text-align: left;">雖然薑黃素大致安全，但以下族群在使用前<strong class="highlight-nutrient">務必諮詢醫師</strong>：
-                  <ul style="list-style-type: disc; padding-left: 20px; margin-top: 10px; text-align: left;">
+              <div class="info-card info-card-fee2e2-bt-5-ef4444-gc-1-n1">
+                <h4 class="info-card-title color-b91c1c">重要提醒：哪些人不適合吃？</h4>
+                <p class="info-card-desc text-align-left">雖然薑黃素大致安全，但以下族群在使用前<strong class="highlight-nutrient">務必諮詢醫師</strong>：
+                  <ul class="list-disc-pl-20-mt-10-text-align-left">
                     <li><strong>孕婦與哺乳期婦女：</strong>安全性未知，不建議補充。</li>
                     <li><strong>服用抗凝血藥物者：</strong>薑黃素有抗凝血效果，可能增加出血風險。</li>
                     <li><strong>膽結石或膽道異常患者：</strong>薑黃素會促進膽汁分泌，可能引發不適。</li>
@@ -1026,6 +1033,15 @@
         if (window.ResponsiveTocComponent) {
           new window.ResponsiveTocComponent().initialize();
         }
+
+        function applyInfoCardGridStyle() {
+          const infoCardContainers = document.querySelectorAll('.info-cards');
+          infoCardContainers.forEach(container => {
+            const cards = container.querySelectorAll('.info-card');
+            if (cards.length === 4) { container.classList.add('grid-2x2'); }
+          });
+        }
+        applyInfoCardGridStyle();
       });
     </script>
 
