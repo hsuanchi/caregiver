@@ -1250,7 +1250,7 @@
       }
     </style>
   </head>
-  <body>
+  <body data-article-id="card-fish-oil">
     <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
 
@@ -1894,34 +1894,8 @@
               </div>
             </div>
           </section>
+          <div id="related-articles-container"></div>
         </article>
-
-        <!-- Related Articles -->
-        <section id="related-nutrients">
-          <h2 class="related-title">相關營養素</h2>
-        <div class="related-grid">
-          <a href="./vitamin-d.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fefce8; color: #854d0e;">維生素</span>
-              <h3 class="related-card-title">維生素 D</h3>
-              <p class="related-card-desc">陽光維生素對骨骼健康、免疫功能的重要性，以及如何選擇適合的補充品。</p>
-            </div>
-          </a>
-          <a href="./calcium.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f1f5f9; color: #475569;">礦物質</span>
-              <h3 class="related-card-title">鈣質</h3>
-              <p class="related-card-desc">了解鈣質對骨骼、肌肉和神經系統的關鍵作用，以及最佳補充方式。</p>
-            </div>
-          </a>
-          <a href="./coenzyme-q10.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fff7ed; color: #9a3412;">其他營養素</span>
-              <h3 class="related-card-title">輔酶 Q10</h3>
-              <p class="related-card-desc">探索細胞能量的關鍵營養素，對心血管健康和抗氧化的重要功能。</p>
-            </div>
-          </a>
-        </div>
       </main>
     </div>
 
@@ -1942,6 +1916,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
       // Progress Bar
@@ -2021,96 +1998,7 @@
         });
       });
 
-      // Mobile TOC Toggle
-      const mobileTocToggle = document.getElementById("mobileTocToggle");
-      const sidebar = document.getElementById("sidebar");
-      let isTocOpen = false;
 
-      if (mobileTocToggle && sidebar) {
-        mobileTocToggle.addEventListener("click", () => {
-          if (!isTocOpen) {
-            // Create mobile TOC overlay
-            const overlay = document.createElement("div");
-            overlay.className = "mobile-toc-overlay";
-            overlay.style.cssText = `
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background: rgba(0,0,0,0.5);
-                    z-index: 998;
-                    animation: fadeIn 0.3s ease;
-                `;
-
-            const mobileToC = sidebar.cloneNode(true);
-            mobileToC.id = "mobileToc";
-            mobileToC.style.cssText = `
-                    display: block !important;
-                    position: fixed;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    z-index: 999;
-                    max-width: 90%;
-                    max-height: 80vh;
-                    overflow-y: auto;
-                    background: white;
-                    padding: 20px;
-                    border-radius: 15px;
-                    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-                    animation: slideIn 0.3s ease;
-                `;
-
-            overlay.appendChild(mobileToC);
-            document.body.appendChild(overlay);
-
-            // Close on overlay click
-            overlay.addEventListener("click", (e) => {
-              if (e.target === overlay) {
-                overlay.remove();
-                isTocOpen = false;
-              }
-            });
-
-            // Close on link click
-            mobileToC.querySelectorAll(".toc-link").forEach((link) => {
-              link.addEventListener("click", () => {
-                overlay.remove();
-                isTocOpen = false;
-              });
-            });
-
-            isTocOpen = true;
-          }
-        });
-      } else {
-        console.log("Mobile TOC Toggle not found:", mobileTocToggle, sidebar);
-      }
-
-      // Share Button (檢查是否存在)
-      const shareBtn = document.getElementById("shareBtn");
-      if (shareBtn) {
-        shareBtn.addEventListener("click", async (e) => {
-          e.preventDefault();
-
-          if (navigator.share) {
-            try {
-              await navigator.share({
-                title: document.title,
-                text: "來看看這篇關於魚油的完整指引！",
-                url: window.location.href,
-              });
-            } catch (err) {
-              console.log("Share cancelled");
-            }
-          } else {
-            // Fallback - copy to clipboard
-            navigator.clipboard.writeText(window.location.href);
-            alert("連結已複製到剪貼簿！");
-          }
-        });
-      }
 
       // Add animations
       const style = document.createElement("style");
@@ -2150,6 +2038,18 @@
         const footerContainer = document.getElementById("footer-component");
         if (footerContainer && window.DeusFooterComponent) {
           new window.DeusFooterComponent(footerContainer).setDebug(false);
+        }
+
+        // Initialize Related Articles Component
+        const relatedContainer = document.getElementById("related-articles-container");
+        const articleId = document.body.dataset.articleId;
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
+
+        // Initialize Responsive TOC Component
+        if (window.ResponsiveTocComponent) {
+          new window.ResponsiveTocComponent().initialize();
         }
       });
 

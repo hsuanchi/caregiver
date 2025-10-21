@@ -58,10 +58,9 @@
 
 在文章的 HTML 中，您需要在指定位置放置兩個空的 `<div>` 容器，作為新組件的「錨點」。
 
-1.  **響應式目錄容器**：
-    *   **位置**：放在 `<header class="article-header">` 標籤的正下方。
-    *   **程式碼**：`<div id="toc-mobile-target"></div>`
-
+    1.  **響應式目錄容器**：
+        *   **位置**：必須放置在 `<main>` 區塊的 `<header>` 標籤後，且位於 `<div class="article-hero">` 之後、`<article class="article-body">` 之前。
+        *   **程式碼**：`<div id="toc-mobile-target"></div>`
 2.  **智慧推薦文章容器**：
     *   **位置**：放在 `</article>` 標籤的正上方，取代舊有的靜態推薦連結區塊。
     *   **程式碼**：`<div id="related-articles-container"></div>`
