@@ -144,7 +144,8 @@
       .check-option input { display: none; }
       .check-option.selected { background-color: var(--primary-bg-light); border-color: var(--primary-color); color: var(--primary-dark); font-weight: 500;}
       #check-result { margin-top: 25px; padding: 15px; border-radius: 8px; text-align: center; font-weight: 600; transition: all 0.3s ease; }
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } .article-content { padding: 30px; } .article-title { font-size: 2em; } }
+      section[id] { scroll-margin-top: 100px; }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } /* .sidebar { display: none; } */ .article-content { padding: 30px; } .article-title { font-size: 2em; } }
       @media (max-width: 768px) { .article-content { padding: 20px; border-radius: 15px; } .article-title { font-size: 1.8em; } .article-meta { flex-direction: column; gap: 10px; } .related-grid { grid-template-columns: 1fr; } }
       .highlight-nutrient { border-bottom: 2px solid var(--primary-color); padding-bottom: 1px; }
     </style>
@@ -169,7 +170,7 @@
             <li><a href="#safety" class="toc-link">溫和的入門：注意事項與初期反應</a></li>
             <li><a href="#faq" class="toc-link">常見疑問 (FAQ)</a></li>
             <li><a href="#references" class="toc-link">文獻參考</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -193,6 +194,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <article class="article-body">
           
           <div class="key-takeaways">
@@ -486,33 +488,10 @@
               </ul>
           </section>
 
+          <div id="related-articles-container"></div>
         </article>
 
-        <!-- 相關文章區塊 -->
-        <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-        <div class="related-grid">
-          <a href="./probiotics.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #e0e7ff; color: #3730a3;">微生物</span>
-              <h3 class="related-card-title">益生菌 (Probiotics)</h3>
-              <p class="related-card-desc">駐紮在腸道的益菌軍隊，了解如何挑選適合自己的菌株，與益生質共同作戰。</p>
-            </div>
-          </a>
-           <a href="./fiber.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fefce8; color: #a16207;">其他營養素</span>
-              <h3 class="related-card-title">膳食纖維 (Dietary Fiber)</h3>
-              <p class="related-card-desc">益生質是膳食纖維的一種，但膳食纖維家族還有更多功能，全面了解水溶性與非水溶性纖維的差異。</p>
-            </div>
-          </a>
-           <a href="./butyrate.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f3e8ff; color: #581c87;">代謝物</span>
-              <h3 class="related-card-title">丁酸 (Butyrate)</h3>
-              <p class="related-card-desc">益生質經好菌發酵後產生的最重要的短鏈脂肪酸，深入了解這個維持腸道黏膜健康、抗發炎的關鍵分子。</p>
-            </div>
-          </a>
-        </div>
+
       </main>
     </div>
 
@@ -528,6 +507,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       function updateProgressBar() {
@@ -596,6 +578,14 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
+        
+        const articleId = 'card-prebiotics';
+        const relatedContainer = document.getElementById('related-articles-container');
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
+
         updateResult(); 
       });
     </script>

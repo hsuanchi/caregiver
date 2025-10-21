@@ -136,7 +136,8 @@
       .disclaimer h3 { color: #4b5563; margin-bottom: 15px; font-size: 1.5em; }
       .disclaimer p { color: #6b7280; font-size: 0.95em; line-height: 1.8; }
       
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } .article-content { padding: 30px; } .article-title { font-size: 2em; } }
+      section[id] { scroll-margin-top: 100px; }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } /* .sidebar { display: none; } */ .article-content { padding: 30px; } .article-title { font-size: 2em; } }
       @media (max-width: 768px) { .article-content { padding: 20px; border-radius: 15px; } .article-title { font-size: 1.8em; } .article-meta { flex-direction: column; gap: 10px; } .related-grid { grid-template-columns: 1fr; } }
       .highlight-nutrient { border-bottom: 2px solid var(--primary-color); padding-bottom: 1px; }
     </style>
@@ -161,7 +162,7 @@
             <li><a href="#safety" class="toc-link">平衡的藝術：錳、鐵、鈣的蹺蹺板效應</a></li>
             <li><a href="#faq" class="toc-link">常見疑問 (FAQ)</a></li>
             <li><a href="#references" class="toc-link">文獻參考</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -185,6 +186,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <article class="article-body">
           
           <div class="key-takeaways">
@@ -475,33 +477,11 @@
               </ul>
           </section>
 
+          <div id="related-articles-container"></div>
+
         </article>
 
-        <!-- 相關文章區塊 -->
-        <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-        <div class="related-grid">
-          <a href="./calcium.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f1f5f9; color: #475569;">礦物質</span>
-              <h3 class="related-card-title">鈣 (Calcium)</h3>
-              <p class="related-card-desc">骨骼健康最重要的礦物質，了解鈣如何與錳協同作用，共同打造堅硬的骨骼結構。</p>
-            </div>
-          </a>
-           <a href="./iron.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fef2f2; color: #991b1b;">礦物質</span>
-              <h3 class="related-card-title">鐵 (Iron)</h3>
-              <p class="related-card-desc">維持身體氧氣運輸的關鍵，但過量的鐵補充可能影響錳的吸收，了解兩者間的平衡至關重要。</p>
-            </div>
-          </a>
-           <a href="./zinc.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f0f9ff; color: #0c4a6e;">礦物質</span>
-              <h3 class="related-card-title">鋅 (Zinc)</h3>
-              <p class="related-card-desc">另一種重要的酵素輔因子，與錳在體內各自扮演不同但都不可或缺的角色。</p>
-            </div>
-          </a>
-        </div>
+
       </main>
     </div>
 
@@ -517,6 +497,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       function updateProgressBar() {
@@ -549,9 +532,18 @@
       });
 
       document.addEventListener("DOMContentLoaded", function () {
+        // Initialize components
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
+        
+        // Initialize Related Articles
+        const articleId = 'card-manganese';
+        const relatedContainer = document.getElementById('related-articles-container');
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
       });
     </script>
 </body>

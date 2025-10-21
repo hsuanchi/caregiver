@@ -115,7 +115,8 @@
       .faq-item.active .faq-question::after { transform: translateY(-50%) rotate(45deg); }
       .faq-answer { padding: 0 25px; max-height: 0; overflow: hidden; transition: all 0.3s ease; }
       .faq-item.active .faq-answer { padding: 0 25px 20px; max-height: 500px; }
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } }
+      section[id] { scroll-margin-top: 100px; }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } /* .sidebar { display: none; } */ }
     </style>
 </head>
 <body>
@@ -135,7 +136,7 @@
             <li><a href="#food-sources" class="toc-link">高鉀食物排行榜</a></li>
             <li><a href="#safety" class="toc-link">高血鉀與低血鉀</a></li>
             <li><a href="#faq" class="toc-link">常見問題 FAQ</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -159,6 +160,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <article class="article-body">
           
           <section id="summary">
@@ -308,30 +310,8 @@
             </div>
           </section>
 
-          <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-          <div class="related-grid">
-            <a href="magnesium.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #f5f3ff; color: #6d28d9;">礦物質</span>
-                <h3 class="related-card-title">鎂</h3>
-                <p class="related-card-desc">鎂與鉀在維持細胞電位平衡和心臟功能上具有協同作用，兩者共同維護心血管健康。</p>
-              </div>
-            </a>
-            <a href="calcium.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #f1f5f9; color: #475569;">礦物質</span>
-                <h3 class="related-card-title">鈣</h3>
-                <p class="related-card-desc">鈣與鉀共同參與肌肉收縮與神經傳導，維持兩者的平衡對預防抽筋至關重要。</p>
-              </div>
-            </a>
-            <a href="vitamin-d.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #fefce8; color: #854d0e;">維生素</span>
-                <h3 class="related-card-title">維生素 D</h3>
-                <p class="related-card-desc">維生素D參與調節腎素-血管張力素系統，與鉀共同對血壓調節產生影響。</p>
-              </div>
-            </a>
-          </div>
+
+          <div id="related-articles-container"></div>
         </article>
 
         <section class="disclaimer">
@@ -348,6 +328,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -403,6 +386,14 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
+        
+        // Initialize Related Articles
+        const articleId = 'card-potassium';
+        const relatedContainer = document.getElementById('related-articles-container');
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
       });
     </script>
 </body>

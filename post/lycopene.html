@@ -135,7 +135,8 @@
       .disclaimer-content { max-width: 800px; margin: 0 auto; padding: 0 20px; }
       .disclaimer h3 { color: #4b5563; margin-bottom: 15px; font-size: 1.5em; }
       .disclaimer p { color: #6b7280; font-size: 0.95em; line-height: 1.8; }
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } .article-content { padding: 30px; } .article-title { font-size: 2em; } }
+      section[id] { scroll-margin-top: 100px; }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } /* .sidebar { display: none; } */ .article-content { padding: 30px; } .article-title { font-size: 2em; } }
       @media (max-width: 768px) { .article-content { padding: 20px; border-radius: 15px; } .article-title { font-size: 1.8em; } .article-meta { flex-direction: column; gap: 10px; } .related-grid { grid-template-columns: 1fr; } }
       .highlight-nutrient { border-bottom: 2px solid var(--primary-color); padding-bottom: 1px; }
     </style>
@@ -160,7 +161,7 @@
             <li><a href="#safety" class="toc-link">安全攝取：注意事項與副作用</a></li>
             <li><a href="#faq" class="toc-link">常見疑問 (FAQ)</a></li>
             <li><a href="#references" class="toc-link">文獻參考</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -184,6 +185,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <article class="article-body">
           
           <div class="key-takeaways">
@@ -476,33 +478,10 @@
               </ul>
           </section>
 
+          <div id="related-articles-container"></div>
         </article>
 
-        <!-- 相關文章區塊 -->
-        <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-        <div class="related-grid">
-          <a href="./vitamin-e.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fefce8; color: #a16207;">維生素</span>
-              <h3 class="related-card-title">維生素 E (Vitamin E)</h3>
-              <p class="related-card-desc">作為另一種強效的脂溶性抗氧化劑，維生素E與茄紅素能共同保護細胞膜免於氧化傷害。</p>
-            </div>
-          </a>
-           <a href="./beta-carotene.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fff7ed; color: #9a3412;">植化素</span>
-              <h3 class="related-card-title">β-胡蘿蔔素 (Beta-carotene)</h3>
-              <p class="related-card-desc">同屬類胡蘿蔔素家族，β-胡蘿蔔素不僅是抗氧化劑，更是維生素A的前驅物，對視力與皮膚健康至關重要。</p>
-            </div>
-          </a>
-           <a href="./selenium.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f0f9ff; color: #0c4a6e;">礦物質</span>
-              <h3 class="related-card-title">硒 (Selenium)</h3>
-              <p class="related-card-desc">作為人體內建抗氧化系統「穀胱甘肽過氧化酶」的關鍵輔因子，硒與茄紅素能發揮協同作用，共同對抗氧化壓力。</p>
-            </div>
-          </a>
-        </div>
+
       </main>
     </div>
 
@@ -518,6 +497,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       function updateProgressBar() {
@@ -550,9 +532,18 @@
       });
 
       document.addEventListener("DOMContentLoaded", function () {
+        // Initialize components
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
+        
+        // Initialize Related Articles
+        const articleId = 'card-lycopene';
+        const relatedContainer = document.getElementById('related-articles-container');
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
       });
     </script>
 </body>
