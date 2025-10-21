@@ -332,8 +332,12 @@
       }
 
       .highlight-nutrient {
-        border-bottom: 2px solid #f59e0b;
-        padding-bottom: 1px;
+        text-decoration: none;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-color: rgba(245, 158, 11, 0.6);
+        text-decoration-thickness: 3px;
+        text-underline-offset: 2px;
       }
       
       .info-cards {
@@ -562,13 +566,10 @@
           grid-template-columns: 1fr;
           gap: 0;
         }
-        .sidebar {
-          display: none;
-        }
       }
     </style>
 </head>
-<body>
+<body data-article-id="card-curcumin">
     <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
 
@@ -602,6 +603,7 @@
       <main class="article-content">
         <!-- Article Header -->
         <header class="article-header">
+          <div id="toc-mobile-target"></div>
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a>
@@ -902,39 +904,7 @@
           </section>
         </article>
 
-        <!-- Related Articles Section -->
-        <section id="related-nutrients" style="margin-top: 60px;">
-          <h2 class="related-title" style="border-top: 2px solid #e5e7eb; padding-top: 40px;">相關營養素</h2>
-          <div class="related-grid">
-            <a href="fish-oil.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #f0f9ff; color: #0c4a6e;">心血管保健</span>
-                <h3 class="related-card-title">魚油 (Omega-3)</h3>
-                <p class="related-card-desc">
-                  與薑黃素是抗發炎的黃金搭檔，能從不同途徑保護心血管與關節健康。
-                </p>
-              </div>
-            </a>
-            <a href="glucosamine.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #f1f5f9; color: #334155;">關節保健</span>
-                <h3 class="related-card-title">葡萄糖胺</h3>
-                <p class="related-card-desc">
-                  構成關節軟骨的基礎材料之一，常與薑黃素搭配，提供更全面的關節支持。
-                </p>
-              </div>
-            </a>
-             <a href="vitamin-d.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag">維生素</span>
-                <h3 class="related-card-title">維生素 D</h3>
-                <p class="related-card-desc">
-                  不僅與骨骼健康相關，也參與免疫調節，與薑黃素共同維持身體的保護力。
-                </p>
-              </div>
-            </a>
-          </div>
-        </section>
+        <div id="related-articles-container"></div>
         </div>
       </main>
     </div>
@@ -956,6 +926,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
       // Progress Bar
@@ -1034,6 +1007,18 @@
           console.log("✅ Footer 組件初始化完成");
         } else {
           console.error("❌ Footer 組件初始化失敗");
+        }
+
+        // Initialize Related Articles Component
+        const relatedContainer = document.getElementById("related-articles-container");
+        const articleId = document.body.dataset.articleId;
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
+
+        // Initialize Responsive TOC Component
+        if (window.ResponsiveTocComponent) {
+          new window.ResponsiveTocComponent().initialize();
         }
       });
     </script>

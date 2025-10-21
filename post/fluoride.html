@@ -156,11 +156,11 @@
       .disclaimer-content { max-width: 800px; margin: 0 auto; padding: 0 20px; }
       .disclaimer h3 { color: #4b5563; margin-bottom: 15px; font-size: 1.5em; }
       .disclaimer p { color: #6b7280; font-size: 0.95em; line-height: 1.8; }
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } .article-content { padding: 30px; } .article-title { font-size: 2em; } }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .article-content { padding: 30px; } .article-title { font-size: 2em; } }
       @media (max-width: 768px) { .article-content { padding: 20px; border-radius: 15px; } .article-title { font-size: 1.8em; } .article-meta { flex-direction: column; gap: 10px; } .related-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
-<body>
+<body data-article-id="card-fluoride">
     <div class="progress-bar" id="progressBar"></div>
     <div id="header-component"></div>
 
@@ -188,6 +188,7 @@
 
       <main class="article-content">
         <header class="article-header">
+          <div id="toc-mobile-target"></div>
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a>
@@ -524,31 +525,7 @@
 
         </article>
 
-        <!-- 相關文章區塊 -->
-        <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-        <div class="related-grid">
-          <a href="./calcium.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f1f5f9; color: #475569;">礦物質</span>
-              <h3 class="related-card-title">鈣 (Calcium)</h3>
-              <p class="related-card-desc">鈣是構成牙齒與骨骼的主要原料，了解如何有效補充鈣質，與氟共同打造堅固的健康基礎。</p>
-            </div>
-          </a>
-           <a href="./vitamin-d.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fefce8; color: #a16207;">維生素</span>
-              <h3 class="related-card-title">維生素 D (Vitamin D)</h3>
-              <p class="related-card-desc">維生素D能促進鈣質吸收，對於牙齒和骨骼的鈣化過程至關重要，是氟化物發揮作用的關鍵夥伴。</p>
-            </div>
-          </a>
-           <a href="./phosphorus.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f5f3ff; color: #5b21b6;">礦物質</span>
-              <h3 class="related-card-title">磷 (Phosphorus)</h3>
-              <p class="related-card-desc">作為構成磷灰石的另一核心礦物，充足的磷是牙齒再礦化過程不可或缺的元素。</p>
-            </div>
-          </a>
-        </div>
+        <div id="related-articles-container"></div>
       </main>
     </div>
 
@@ -564,6 +541,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
       function updateProgressBar() {
@@ -599,6 +579,18 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+
+        // Initialize Related Articles Component
+        const relatedContainer = document.getElementById("related-articles-container");
+        const articleId = document.body.dataset.articleId;
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
+
+        // Initialize Responsive TOC Component
+        if (window.ResponsiveTocComponent) {
+          new window.ResponsiveTocComponent().initialize();
+        }
       });
     </script>
 </body>

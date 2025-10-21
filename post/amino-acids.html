@@ -221,13 +221,12 @@
       .info-card-title, .risk-card-title { font-size: 1.2em; font-weight: 700; color: #2c7a7b; margin-bottom: 10px; }
       .info-card-desc, .risk-card-desc { color: #4a5568; font-size: 0.9em; line-height: 1.6; }
       .highlight-nutrient {
-        background-image: linear-gradient(to top, rgba(56, 178, 172, 0.5) 0%, rgba(56, 178, 172, 0.5) 100%);
-        background-position: 0 1.05em;
-        background-repeat: repeat-x;
-        background-size: 100% 2px;
         text-decoration: none;
-        border-bottom: none;
-        padding-bottom: 1px;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-color: rgba(56, 178, 172, 0.5);
+        text-decoration-thickness: 3px;
+        text-underline-offset: 2px;
       }
       section[id] { scroll-margin-top: 100px; }
       .article-body h2 { font-size: 2em; font-weight: 700; color: #2d3748; margin: 50px 0 30px; padding-top: 20px; position: relative; }
@@ -364,9 +363,8 @@
             <div class="info-cards">
               <div class="info-card"><h4 class="info-card-title">重建肌肉，提升體力</h4><p class="info-card-desc">提供肌肉生長和修復的直接原料，有效減緩肌肉流失，提升運動表現與日常活力。</p></div>
               <div class="info-card"><h4 class="info-card-title">強化免疫，抵抗外敵</h4><p class="info-card-desc">製造抗體與免疫細胞的關鍵成分，建立穩固的免疫防線。</p></div>
-            </div>
-            <div class="info-cards">
               <div class="info-card"><h4 class="info-card-title">穩定情緒，改善睡眠</h4><p class="info-card-desc">作為大腦神經傳導物質的前體，幫助調節情緒、壓力，並生成褪黑激素以改善睡眠品質。</p></div>
+            </div><div class="info-cards">
                <div class="info-card"><h4 class="info-card-title">養顏美容，維持狀態</h4><p class="info-card-desc">是膠原蛋白與角蛋白的基礎，維持皮膚彈性、頭髮光澤與指甲強韌。</p></div>
             </div>
           </section>
@@ -374,7 +372,7 @@
           <section id="mechanism">
             <h2>胺基酸如何運作？體內的建築師與信差</h2>
             <p>要了解胺基酸為何如此重要，我們可以將身體想像成一座繁忙的城市。在這座城市中，胺基酸扮演著兩種不可或缺的角色：勤奮的「建築師」與高效的「信差」。理解這兩種功能，有助於我們更聰明地運用它來維護健康。</p>
-            <div class="info-cards" style="grid-template-columns: 1fr 1fr;">
+            <div class="info-cards">
               <div class="info-card"><h4 class="info-card-title">建築師 (結構功能)</h4><p class="info-card-desc">如同磚瓦，胺基酸被用來「建造」身體的一切，從肌肉、骨骼到皮膚。缺乏任何一種必需胺基酸，就像少了關鍵的建材，工程就會停擺。</p></div>
               <div class="info-card"><h4 class="info-card-title">信差 (信號功能)</h4><p class="info-card-desc">特定的胺基酸，如BCAA中的白胺酸，能像信差一樣傳遞「開始蓋房子！」的信號，直接啟動肌肉蛋白質的合成開關。</p></div>
             </div>
@@ -474,12 +472,11 @@
                     <h4 class="info-card-title">1. 平衡的藝術：BCAA的潛在陷阱</h4>
                     <p class="info-card-desc">許多人認為BCAA是萬靈丹，但新研究提醒我們「平衡」的重要性。高劑量、長期單獨補充BCAA，可能會在體內與其他必需胺基酸（如色胺酸）競爭相同的吸收通道，反而可能影響情緒穩定與睡眠。這也是為何<strong class="highlight-nutrient">補充完整的EAA，往往是比單獨BCAA更全面的策略</strong>。</p>
                 </div>
+            </div><div class="info-cards">
                 <div class="info-card">
                     <h4 class="info-card-title">2. 腸道健康的隱形功臣</h4>
                     <p class="info-card-desc">您可能不知道，您的腸道細胞（黏膜細胞）最主要的能量來源並非葡萄糖，而是「谷氨醯胺」(Glutamine)這種胺基酸。當身體處於壓力、感染或手術後，谷氨醯胺會從「非必需」變為「條件必需」，足量補充有助於<strong class="highlight-nutrient">維持腸道屏障的完整性，是免疫系統的幕後英雄</strong>。</p>
                 </div>
-            </div>
-            <div class="info-cards">
                 <div class="info-card">
                     <h4 class="info-card-title">3. 時間營養學：平均分配比總量更重要</h4>
                     <p class="info-card-desc">最新觀念指出，尤其對熟齡族群，一天當中「如何分配」蛋白質攝取，可能比「總量」更關鍵。與其晚餐吃一塊大牛排，不如<strong class="highlight-nutrient">將蛋白質平均分配在三餐</strong>（例如每餐25-30克）。這樣能更有效地持續刺激肌肉蛋白質合成，對抗因年齡增長而產生的「合成阻力」(Anabolic Resistance)。</p>
@@ -509,8 +506,7 @@
                     </h4>
                     <p class="info-card-desc">部分胺基酸可能與特定藥物（如治療帕金森氏症的<strong>左旋多巴</strong>、<strong>糖尿病藥物</strong>）產生交互作用，建議使用前諮詢藥師。</p>
                 </div>
-            </div>
-            <div class="info-cards">
+            </div><div class="info-cards">
                 <div class="info-card safety-card">
                     <h4 class="info-card-title">
                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>

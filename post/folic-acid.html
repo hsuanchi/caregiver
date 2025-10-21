@@ -604,9 +604,6 @@
           grid-template-columns: 1fr;
           gap: 0;
         }
-        .sidebar {
-          display: none;
-        }
       }
        @media (max-width: 768px) {
         .comparison-container {
@@ -615,7 +612,7 @@
       }
     </style>
   </head>
-<body>
+<body data-article-id="card-folic-acid">
     <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
 
@@ -648,6 +645,7 @@
       <main class="article-content">
         <!-- Article Header -->
         <header class="article-header">
+          <div id="toc-mobile-target"></div>
           <nav class="breadcrumb">
             <a href="../index.html">首頁</a>
             <span class="separator">/</span>
@@ -836,27 +834,7 @@
           </section>
         </article>
 
-        <!-- Related Articles Section -->
-        <section id="related-nutrients" style="margin-top: 60px;">
-          <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-          <div class="related-grid">
-            <a href="vitamin-b.html" class="related-card">
-              <span class="related-card-tag vitamin">維生素</span>
-              <h3 class="related-card-title">維生素 B12</h3>
-              <p class="related-card-desc">與葉酸共同參與紅血球生成和同半胱胺酸代謝，是維持神經系統健康的關鍵搭檔。</p>
-            </a>
-            <a href="vitamin-b.html" class="related-card">
-              <span class="related-card-tag vitamin">維生素</span>
-              <h3 class="related-card-title">維生素 B6</h3>
-              <p class="related-card-desc">葉酸、B12、B6是心血管保護的鐵三角，共同維持同半胱胺酸的正常水平。</p>
-            </a>
-             <a href="iron.html" class="related-card">
-              <span class="related-card-tag mineral">礦物質</span>
-              <h3 class="related-card-title">鐵</h3>
-              <p class="related-card-desc">在懷孕期間，鐵和葉酸都是預防貧血、支持母體與胎兒健康的核心營養素。</p>
-            </a>
-          </div>
-        </section>
+        <div id="related-articles-container"></div>
       </main>
     </div>
 
@@ -877,6 +855,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
       // Progress Bar
@@ -972,6 +953,18 @@
           console.log("✅ Footer 組件初始化完成");
         } else {
           console.error("❌ Footer 組件初始化失敗");
+        }
+
+        // Initialize Related Articles Component
+        const relatedContainer = document.getElementById("related-articles-container");
+        const articleId = document.body.dataset.articleId;
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
+
+        // Initialize Responsive TOC Component
+        if (window.ResponsiveTocComponent) {
+          new window.ResponsiveTocComponent().initialize();
         }
       });
     </script>

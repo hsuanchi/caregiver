@@ -95,13 +95,12 @@
       .article-subtitle { font-size: 1.3em; color: #4a5568; line-height: 1.6; max-width: 700px; margin-bottom: 30px; }
       .article-body h2::before { background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%); }
       .highlight-nutrient {
-        background-image: linear-gradient(to top, rgba(72, 187, 120, 0.5) 0%, rgba(72, 187, 120, 0.5) 100%);
-        background-position: 0 1.05em;
-        background-repeat: repeat-x;
-        background-size: 100% 2px;
         text-decoration: none;
-        border-bottom: none;
-        padding-bottom: 1px;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-color: rgba(72, 187, 120, 0.5);
+        text-decoration-thickness: 3px;
+        text-underline-offset: 2px;
       }
       section[id] { scroll-margin-top: 100px; }
       .data-table thead { background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); }
@@ -212,6 +211,7 @@
               <div class="risk-card"><h4 class="risk-card-title">免疫力失調的「泡芙族」</h4><p class="risk-card-desc">工作壓力大、經常外食，導致季節變換時容易感冒，或是感覺身體有慢性的發炎狀態。</p></div>
               <div class="risk-card"><h4 class="risk-card-title">健檢報告滿江紅的「中年族」</h4><p class="risk-card-desc">膽固醇、三酸甘油酯數字超標，擔心心血管健康，正尋找飲食控制的有效方法。</p></div>
               <div class="risk-card"><h4 class="risk-card-title">血糖波動大的「飲食族」</h4><p class="risk-card-desc">飯後容易昏昏欲睡，對甜食難以抗拒，需要更穩定的能量供給與血糖控制策略。</p></div>
+            </div><div class="risk-group-cards">
               <div class="risk-card"><h4 class="risk-card-title">追求腸道健康的「順暢族」</h4><p class="risk-card-desc">希望改善腸道菌相，提升消化機能，讓身體由內而外感覺輕盈、健康。</p></div>
             </div>
           </section>
@@ -222,9 +222,8 @@
             <div class="info-cards">
               <div class="info-card"><h4 class="info-card-title">精準啟動免疫反應</h4><p class="info-card-desc">如同免疫細胞的「教練」，能喚醒巨噬細胞、自然殺手細胞等第一線防禦部隊，提升身體對抗外來威脅的反應速度與效率。</p></div>
               <div class="info-card"><h4 class="info-card-title">降低膽固醇與血糖</h4><p class="info-card-desc">在腸道中形成凝膠狀物質，能有效包覆油脂、膽酸，並延緩醣類吸收，有助於維持心血管健康與血糖穩定。</p></div>
-            </div>
-            <div class="info-cards">
               <div class="info-card"><h4 class="info-card-title">化身超級益生元</h4><p class="info-card-desc">作為腸道好菌的頂級食物，能促進益菌生長，改善腸道環境，生成有益健康的短鏈脂肪酸(SCFA)。</p></div>
+            </div><div class="info-cards">
                <div class="info-card"><h4 class="info-card-title">強化天然屏障</h4><p class="info-card-desc">有助於維持腸道黏膜的完整性，鞏固身體的第一道防線，減少有害物質進入體內的機會。</p></div>
             </div>
           </section>
@@ -232,7 +231,7 @@
           <section id="mechanism">
             <h2>如何運作？2大關鍵機制拆解</h2>
             <p>β-葡聚醣的驚人功效，並非來自單一途徑，而是源於其獨特的分子結構，使其能在體內「兵分二路」，扮演兩種截然不同的關鍵角色。就像一位擁有雙重身份的特務，它既能在免疫系統中擔任「情報官」，又能在消化道裡扮演「清道夫」。</p>
-            <div class="info-cards" style="grid-template-columns: 1fr 1fr;">
+            <div class="info-cards">
               <div class="info-card"><h4 class="info-card-title">免疫細胞的「鑰匙」</h4><p class="info-card-desc">來自酵母、蕈菇的 β-1,3/1,6 結構，能精準地與免疫細胞表面的特殊受體(Dectin-1)結合，像鑰匙開鎖一樣，直接啟動防禦機制。</p></div>
               <div class="info-card"><h4 class="info-card-title">腸道中的「吸油海綿」</h4><p class="info-card-desc">來自燕麥、大麥的 β-1,3/1,4 結構，具有高黏性，能在腸道中形成凝膠，物理性地干擾膽固醇和糖分的吸收，將其排出體外。</p></div>
             </div>
@@ -240,8 +239,7 @@
 
           <section id="comparison">
             <h2>β-葡聚醣 vs. 益生菌：免疫戰隊該如何部署？</h2>
-            <p>在保健品的貨架上，「β-葡聚醣」和「益生菌」都是提升保護力的明星，但多數人並不清楚兩者的差別。它們並非競爭關係，而更像是軍隊中的不同兵種。了解其根本差異，才能根據您的需求做出最聰明的戰略部署。讓我們用一個軍隊的比喻來徹底理解：</p>
-            <div class="info-cards" style="grid-template-columns: 1fr 1fr;">
+            <p>在保健品的貨架上，「β-葡聚醣」和「益生菌」都是提升保護力的明星，但多數人並不清楚兩者的差別。它們並非競爭關係，而更像是軍隊中的不同兵種。了解其根本差異，才能根據您的需求做出最聰明的戰略部署。讓我們用一個軍隊的比喻來徹底理解：</p><div class="info-cards">
               <div class="info-card">
                   <h4 class="info-card-title">β-葡聚醣：免疫軍隊的「特級教官」</h4>
                   <p class="info-card-desc"><strong>直接作用：</strong>它直接與免疫細胞結合，像教官一樣「訓練」並「喚醒」這些第一線的士兵（巨噬細胞、自然殺手細胞），讓它們保持警覺，隨時準備作戰。<br><strong>適合對象：</strong>希望快速、直接地提升免疫反應力，為特定挑戰（如季節變換、壓力時期）做好準備的人。</p>
@@ -260,7 +258,7 @@
           <section id="myth-busting">
             <h2>破解迷思：多醣體 ≠ 有效的 β-葡聚醣</h2>
             <p>您是否曾看著靈芝、牛樟芝產品上標示的「總多醣體含量」，誤以為數字越高就越好？這正是市場上最常見的知識陷阱。為了不花冤枉錢，我們必須建立一個關鍵觀念：並非所有多醣體都具有調節生理機能的活性，只有特定結構的 β-葡聚醣才是真正的有效成分。</p>
-            <div class="info-cards" style="grid-template-columns: 1fr 1fr;">
+            <div class="info-cards">
               <div class="info-card">
                   <h4 class="info-card-title">總多醣體 (Polysaccharides)</h4>
                   <p class="info-card-desc">這是一個非常廣泛的總稱，就像「水果」一樣。它包含了<strong class="highlight-nutrient">真正有效的β-葡聚醣</strong>，但也可能混雜了大量無效的 α-葡聚醣（澱粉）、幾丁質，甚至是廠商為了美化數字而添加的賦形劑。</p>
@@ -331,9 +329,8 @@
             <div class="info-cards">
                 <div class="info-card"><h4 class="info-card-title">1. 免疫訓練 (Trained Immunity)</h4><p class="info-card-desc">酵母β-葡聚醣不僅是當下的刺激，更能「訓練」我們的先天免疫細胞，使其在未來遇到威脅時，能更快、更強地做出反應，效果可持續數週甚至數月。</p></div>
                 <div class="info-card"><h4 class="info-card-title">2. 腸-肺軸線的秘密</h4><p class="info-card-desc">腸道健康，呼吸道就強壯！口服β-葡聚醣能透過改善腸道菌相，間接強化肺部的免疫防禦力，有助於降低上呼吸道感染的風險。</p></div>
-            </div>
-            <div class="info-cards">
                 <div class="info-card"><h4 class="info-card-title">3. 協同維生素C、D、鋅</h4><p class="info-card-desc">β-葡聚醣負責「喚醒」免疫軍隊，而維生素C、D和鋅則是製造武器和維持軍隊戰力的「後勤物資」。兩者結合，能發揮1+1>2的防禦效果。</p></div>
+            </div><div class="info-cards">
                 <div class="info-card"><h4 class="info-card-title">4. 對抗「發炎性老化」</h4><p class="info-card-desc">隨著年齡增長，體內會處於一種低度的慢性發炎狀態(Inflammaging)。β-葡聚醣的免疫調節能力，有助於平衡過度的發炎反應，被視為對抗發炎性老化的潛力新星。</p></div>
             </div>
           </section>
@@ -344,9 +341,8 @@
             <div class="info-cards">
                 <div class="info-card safety-card"><h4 class="info-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 T 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>腸胃敏感者</h4><p class="info-card-desc">作為一種纖維，初次或大量攝取可能引起脹氣。建議從低劑量開始，並確保飲用足夠水分。</p></div>
                 <div class="info-card safety-card"><h4 class="info-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>自體免疫疾病者</h4><p class="info-card-desc">如紅斑性狼瘡、類風濕性關節炎患者，因其免疫調節特性，建議在使用高劑量補充品前諮詢醫師。</p></div>
-            </div>
-            <div class="info-cards">
                 <div class="info-card safety-card"><h4 class="info-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>器官移植者</h4><p class="info-card-desc">正在服用免疫抑制劑者，不建議使用β-葡聚醣補充品，以免干擾藥物效果。</p></div>
+            </div><div class="info-cards">
                 <div class="info-card safety-card"><h4 class="info-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>孕哺期請謹慎</h4><p class="info-card-desc">雖然從食物中攝取是安全的，但高劑量補充品的安全性尚未完全確立，建議此期間以天然飲食為主或諮詢醫師。</p></div>
             </div>
           </section>
