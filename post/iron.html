@@ -731,10 +731,6 @@
           gap: 0;
         }
 
-        .sidebar {
-          display: none;
-        }
-
         .article-content {
           padding: 30px;
         }
@@ -766,7 +762,7 @@
       }
     </style>
 </head>
-<body>
+<body data-article-id="card-iron">
     <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
 
@@ -798,6 +794,7 @@
       <main class="article-content">
         <!-- Article Header -->
         <header class="article-header" id="article-top">
+          <div id="toc-mobile-target"></div>
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a>
@@ -1008,33 +1005,7 @@
              </section>
         </article>
 
-        <!-- Related Articles -->
-        <section id="related-nutrients">
-          <h2 class="related-section-title">探索相關營養素</h2>
-          <div class="related-grid">
-            <a href="./vitamin-b.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag">維生素</span>
-                <h3 class="related-card-title">維生素 B 群</h3>
-                <p class="related-card-desc">B群（特別是B12與葉酸）是製造紅血球的關鍵夥伴，與鐵質共同對抗貧血。</p>
-              </div>
-            </a>
-            <a href="./magnesium.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag">礦物質</span>
-                <h3 class="related-card-title">鎂</h3>
-                <p class="related-card-desc">鎂參與能量代謝，缺乏時也會導致疲勞，與缺鐵症狀相似，兩者共同維持活力。</p>
-              </div>
-            </a>
-            <a href="./vitamin-d.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag">維生素</span>
-                <h3 class="related-card-title">維生素 D</h3>
-                <p class="related-card-desc">維生素D調節免疫功能，而鐵質是免疫細胞運作的基礎，兩者共同鞏固身體防線。</p>
-              </div>
-            </a>
-          </div>
-        </section>
+        <div id="related-articles-container"></div>
 
       </main>
     </div>
@@ -1054,6 +1025,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
       // Progress Bar
@@ -1145,6 +1119,18 @@
           console.log("✅ Footer 組件初始化完成");
         } else {
           console.error("❌ Footer 組件初始化失敗");
+        }
+
+        // Initialize Related Articles Component
+        const relatedContainer = document.getElementById("related-articles-container");
+        const articleId = document.body.dataset.articleId;
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
+
+        // Initialize Responsive TOC Component
+        if (window.ResponsiveTocComponent) {
+          new window.ResponsiveTocComponent().initialize();
         }
       });
     </script>

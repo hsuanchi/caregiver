@@ -135,12 +135,12 @@
       .disclaimer-content { max-width: 800px; margin: 0 auto; padding: 0 20px; }
       .disclaimer h3 { color: #4b5563; margin-bottom: 15px; font-size: 1.5em; }
       .disclaimer p { color: #6b7280; font-size: 0.95em; line-height: 1.8; }
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } .article-content { padding: 30px; } .article-title { font-size: 2em; } }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } }
       @media (max-width: 768px) { .article-content { padding: 20px; border-radius: 15px; } .article-title { font-size: 1.8em; } .article-meta { flex-direction: column; gap: 10px; } .related-grid { grid-template-columns: 1fr; } }
       .highlight-nutrient { border-bottom: 2px solid var(--primary-color); padding-bottom: 1px; }
     </style>
 </head>
-<body>
+<body data-article-id="card-glucosamine">
     <div class="progress-bar" id="progressBar"></div>
     <div id="header-component"></div>
 
@@ -168,6 +168,7 @@
 
       <main class="article-content">
         <header class="article-header">
+          <div id="toc-mobile-target"></div>
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a>
@@ -475,33 +476,7 @@
 
         </article>
 
-        <!-- 相關文章區塊 -->
-        <section id="related-nutrients">
-          <h2 class="related-title">相關營養素</h2>
-        <div class="related-grid">
-          <a href="./collagen.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fef2f2; color: #991b1b;">蛋白質</span>
-              <h3 class="related-card-title">膠原蛋白 (Collagen)</h3>
-              <p class="related-card-desc">作為軟骨的鋼筋骨架，膠原蛋白提供結構支撐，與葡萄糖胺共同維持關節的完整性。</p>
-            </div>
-          </a>
-           <a href="./msm.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f0f9ff; color: #0c4a6e;">有機硫化物</span>
-              <h3 class="related-card-title">MSM (有機硫)</h3>
-              <p class="related-card-desc">提供關節結締組織所需的硫，並具有強大的抗發炎效果，是關節保健的黃金搭檔。</p>
-            </div>
-          </a>
-           <a href="./vitamin-c.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fefce8; color: #a16207;">維生素</span>
-              <h3 class="related-card-title">維生素 C (Vitamin C)</h3>
-              <p class="related-card-desc">促進膠原蛋白合成的關鍵輔因子，若缺乏維生素C，補充再多葡萄糖胺與膠原蛋白也無法有效利用。</p>
-            </div>
-          </a>
-        </div>
-      </main>
+        <div id="related-articles-container"></div>
     </div>
 
     <section class="disclaimer">
@@ -516,6 +491,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
       function updateProgressBar() {
@@ -551,6 +529,18 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+
+        // Initialize Related Articles Component
+        const relatedContainer = document.getElementById("related-articles-container");
+        const articleId = document.body.dataset.articleId;
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
+
+        // Initialize Responsive TOC Component
+        if (window.ResponsiveTocComponent) {
+          new window.ResponsiveTocComponent().initialize();
+        }
       });
     </script>
 </body>

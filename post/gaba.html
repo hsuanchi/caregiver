@@ -159,10 +159,10 @@
       .faq-item.active .faq-question::after { transform: translateY(-50%) rotate(45deg); }
       .faq-answer { padding: 0 25px; max-height: 0; overflow: hidden; transition: all 0.3s ease; }
       .faq-item.active .faq-answer { padding: 0 25px 20px; max-height: 500px; }
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } }
     </style>
 </head>
-<body data-article-id="card-gaba">
+<body>
     <div class="progress-bar" id="progressBar"></div>
     <div id="header-component"></div>
 
@@ -185,7 +185,6 @@
 
       <main class="article-content">
         <header class="article-header">
-          <div id="toc-mobile-target"></div>
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a>
@@ -233,7 +232,7 @@
 
           <section id="who-needs-it">
             <h2>誰需要GABA的幫助？</h2>
-            <p>在現代高壓的生活節奏下，許多人的大腦「煞車系統」長期處於過度磨損的狀態。以下族群可能特別需要GABA的支援：</p>
+            <p>在現代高壓的生活節奏下，許多人的大腦「煞車系統」長期處於過度磨損的狀態，導致油門與煞車失衡。如果您屬於以下族群，可能特別需要GABA的支援：</p>
             <div class="info-cards" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
               <div class="info-card"><h4 class="info-card-title">高壓上班族</h4></div>
               <div class="info-card"><h4 class="info-card-title">入睡困難者</h4></div>
@@ -244,9 +243,9 @@
 
           <section id="how-to-get">
             <h2>如何獲取 GABA？天然食物 vs. 營養補充劑</h2>
-            <p>您可以透過兩種主要途徑來增加體內的 GABA 水平：</p>
+            <p>您可以透過兩種主要途徑來增加體內的 GABA 水平：從天然食物中攝取，或是使用更高效的營養補充劑。</p>
             <h3>天然食物來源</h3>
-            <p>GABA 天然存在於多種食物中，特別是經過發酵或發芽的食品，其含量會大幅提升。</p>
+            <p>GABA 天然存在於多種食物中，特別是經過發酵或發芽的食品，其含量會大幅提升。在日常飲食中加入這些食物，是維持基本GABA水平的好方法。</p>
             <ul style="list-style-type: '🌿'; padding-left: 20px;">
               <li><strong>發酵食品：</strong>泡菜、優格、起司、天貝（發酵黃豆）等，其中的乳酸菌在發酵過程中會產生大量 GABA。</li>
               <li><strong>發芽穀物：</strong><strong class="highlight-nutrient">發芽糙米</strong>是 GABA 的極佳來源，其含量可達一般白米的十倍之多。</li>
@@ -254,12 +253,12 @@
             </ul>
             <h3>營養補充劑</h3>
             <p>雖然可以從食物中攝取 GABA，但含量相對有限且不易量化。對於有特定需求（如改善睡眠、管理壓力）的使用者而言，營養補充劑提供了一個更直接、高效且劑量標準化的選擇。</p>
-            <p>市面上的 GABA 補充劑通常是透過微生物發酵製成，能提供精準且濃縮的劑量，方便使用者根據自身需求進行補充。</p>
+            <p>市面上的 GABA 補充劑通常是透過微生物（如乳酸菌）發酵製成，能提供精準且濃縮的劑量，方便使用者根據自身需求進行補充。</p>
           </section>
 
           <section id="supplements">
             <h2>如何挑選GABA補充品？</h2>
-            <p>市面上的GABA產品，主要來源是透過微生物發酵製成，例如使用乳酸菌（Lactobacillus hilgardii）發酵麩胺酸而來。挑選時，應注意以下幾點：</p>
+            <p>市面上的GABA產品，主要來源是透過微生物發酵製成，例如使用乳酸菌（Lactobacillus hilgardii）發酵麩胺酸而來。要挑選到優質有效的產品，您可以依循以下幾個關鍵標準：</p>
             <ol>
               <li><strong>確認GABA來源與純度：</strong>選擇由信譽良好的大廠（如日本PharmaGABA®）生產的發酵來源GABA，其純度與安全性更有保障。</li>
               <li><strong>檢查有效劑量：</strong>確認每一份量是否含有至少100mg以上的GABA，才能達到有效的保健功能。台灣衛福部食藥署(TFDA)規定，每日食用上限為500毫克。</li>
@@ -275,7 +274,7 @@
 
           <section id="safety">
             <h2>安全使用 GABA：劑量與注意事項</h2>
-            <p>GABA 補充劑普遍被認為是安全的，在多數臨床研究中未報告嚴重的副作用。然而，為了達到最佳效果並確保安全，請遵循以下建議：</p>
+            <p>GABA 補充劑普遍被認為是安全的，在多數臨床研究中未報告嚴重的副作用。然而，為了達到最佳效果並確保安全，了解建議劑量與潛在的交互作用非常重要。</p>
             <h3>建議劑量</h3>
             <p>GABA 的有效劑量因個人需求和目標而異，並沒有統一的標準。台灣衛福部食藥署(TFDA)規定，每日食用上限為500毫克。</p>
             <ul style="list-style-type: '💊'; padding-left: 20px;">
@@ -285,7 +284,7 @@
             </ul>
             <h3>副作用與安全須知</h3>
             <p>副作用並不常見且通常很輕微，可能包括嗜睡、輕微腸胃不適或頭痛。極高劑量（5克以上）可能導致短暫的喉嚨灼熱感或呼吸急促。</p>
-            <h3>潛在交互作用與注意事項</h3>
+            <h3>潛在交互作用與高風險族群</h3>
             <ul style="list-style-type: '⚠️'; padding-left: 20px;">
               <li><strong>降血壓藥物：</strong>GABA 可能有輕微的降壓效果，若與降血壓藥物同時服用，理論上可能<strong class="highlight-nutrient">增加低血壓風險</strong>。</li>
               <li><strong>鎮靜安眠藥物：</strong>若您正在服用苯二氮䓬類藥物（BZD）、抗憂鬱藥物或其他鎮靜安眠藥物，請<strong class="highlight-nutrient">務必在諮詢醫師後再考慮使用 GABA</strong>，以避免產生疊加效應。</li>
@@ -295,6 +294,7 @@
 
           <section id="faq" class="faq-section">
             <h2>常見問題 (FAQ)</h2>
+            <p>關於GABA的補充，許多人心中仍有不少疑問。這裡我們整理了最常見的幾個問題，並提供科學、易懂的解答，幫助您建立正確的觀念。</p>
             <div class="faq-item">
               <div class="faq-question">Q1：服用 GABA 補充劑後多久能感覺到效果？</div>
               <div class="faq-answer">
@@ -315,7 +315,32 @@
             </div>
           </section>
 
-        <div id="related-articles-container"></div>
+          <section id="related-nutrients">
+            <h2 class="related-title">相關營養素</h2>
+            <div class="related-grid">
+              <a href="magnesium.html" class="related-card">
+                <div class="related-card-content">
+                  <span class="related-card-tag mineral">礦物質</span>
+                  <h3 class="related-card-title">鎂</h3>
+                  <p class="related-card-desc">被稱為「放鬆礦物質」，能幫助穩定神經、放鬆肌肉，與GABA是改善睡眠的黃金搭檔。</p>
+                </div>
+              </a>
+              <a href="calcium.html" class="related-card">
+                <div class="related-card-content">
+                  <span class="related-card-tag mineral">礦物質</span>
+                  <h3 class="related-card-title">鈣</h3>
+                  <p class="related-card-desc">鈣質不僅與骨骼有關，也參與神經傳導的穩定，足夠的鈣有助於減少半夜抽筋、安穩入睡。</p>
+                </div>
+              </a>
+              <a href="vitamin-b.html" class="related-card">
+                <div class="related-card-content">
+                  <span class="related-card-tag vitamin">維生素</span>
+                  <h3 class="related-card-title">維生素 B6</h3>
+                  <p class="related-card-desc">維生素B6是身體合成GABA、血清素等神經傳導物質的重要輔酶，是維持情緒穩定的關鍵。</p>
+                </div>
+              </a>
+            </div>
+          </section>
         </article>
       </main>
     </div>
@@ -325,9 +350,6 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
-    <script src="../assets/js/articles-data.js"></script>
-    <script src="../assets/js/related-articles-component.js"></script>
-    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -383,18 +405,6 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
-
-        // Initialize Related Articles Component
-        const relatedContainer = document.getElementById("related-articles-container");
-        const articleId = document.body.dataset.articleId;
-        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
-          new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
-        }
-
-        // Initialize Responsive TOC Component
-        if (window.ResponsiveTocComponent) {
-          new window.ResponsiveTocComponent().initialize();
-        }
       });
     </script>
 </body>
