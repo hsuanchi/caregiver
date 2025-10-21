@@ -922,6 +922,7 @@
       }
 
       /* Responsive Design */
+      section[id] { scroll-margin-top: 100px; }
       @media (max-width: 1024px) {
         .article-container {
           grid-template-columns: 1fr;
@@ -929,7 +930,7 @@
         }
 
         .sidebar {
-          display: none;
+          /* display: none; */
         }
 
         .article-content {
@@ -1001,16 +1002,20 @@
             </h3>
           </a>
           <ul class="toc-list">
-            <li><a href="#basic-info" class="toc-link">維生素 D 是什麼？身體的「陽光荷爾蒙」</a></li>
+            <li><a href="#takeaways" class="toc-link">本文重點速覽</a></li>
+            <li><a href="#basic-info" class="toc-link">為什麼我們需要重新認識維生素D？</a></li>
             <li><a href="#function-and-effect" class="toc-link">維生素 D 的四大核心功效</a></li>
             <li><a href="#deficiency-signs" class="toc-link">你缺乏維生素 D 嗎？8 大身體警訊</a></li>
             <li><a href="#high-risk-groups" class="toc-link sub-item">6 類缺少維生素 D 的人</a></li>
             <li><a href="#how-to-supplement" class="toc-link">如何聰明補充維生素 D？</a></li>
+            <li><a href="#sunlight" class="toc-link sub-item">1. 陽光</a></li>
+            <li><a href="#diet" class="toc-link sub-item">2. 飲食</a></li>
+            <li><a href="#supplements-reliable" class="toc-link sub-item">3. 保健品：最穩定可靠的選擇</a></li>
             <li><a href="#product-selection" class="toc-link">如何挑選維生素 D 保健品？</a></li>
             <li><a href="#advanced-science" class="toc-link">維生素 D 的進階科學</a></li>
             <li><a href="#safety-info" class="toc-link">重要注意事項</a></li>
             <li><a href="#faq" class="toc-link">常見問題</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -1036,6 +1041,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <!-- Article Body -->
         <article class="article-body">
              <section id="takeaways">
@@ -1212,8 +1218,8 @@
           <section id="how-to-supplement">
             <h2>如何聰明補充維生素 D？</h2>
             <p>獲取維生素D主要有三種途徑：陽光、飲食與補充品。了解這三者的優劣，才能為自己制定最有效率的補充策略。</p>
-            <h3>1. 陽光</h3><p>建議在不塗抹防曬的情況下，於上午 10 點至下午 3 點間，曝曬臉部、手臂和腿部 10 至 15 分鐘，每週 2-3 次。但考量到皮膚癌風險與生活限制，更安全的策略是做好日常防曬，並從飲食和保健品中獲取穩定、足量的維生素 D。</p>
-            <h3>2. 飲食</h3>
+            <h3 id="sunlight">1. 陽光</h3><p>建議在不塗抹防曬的情況下，於上午 10 點至下午 3 點間，曝曬臉部、手臂和腿部 10 至 15 分鐘，每週 2-3 次。但考量到皮膚癌風險與生活限制，更安全的策略是做好日常防曬，並從飲食和保健品中獲取穩定、足量的維生素 D。</p>
+            <h3 id="diet">2. 飲食</h3>
             <p>雖然能從食物中獲取的維生素 D 有限，但仍是重要的來源。以下是一些富含維生素 D 的食物，您可以將它們納入日常飲食中：</p>
             <table class="data-table">
               <thead>
@@ -1227,7 +1233,7 @@
                 <tr><td><strong>雞蛋</strong></td><td>2 顆 (約 100 克)</td><td>~128</td><td>D3</td></tr>
               </tbody>
             </table>
-            <h3>3. 保健品：最穩定可靠的選擇</h3>
+            <h3 id="supplements-reliable">3. 保健品：最穩定可靠的選擇</h3>
             <p>雖然陽光和飲食是天然的來源，但現實生活中，要單靠這兩者來滿足維生素 D 的需求其實充滿挑戰。陽光的效果受季節、緯度、空污和防曬習慣影響，難以量化；而富含維生素 D 的食物種類不多，要每天都吃到足量並不容易。</p>
             <p>這就是為什麼對於多數人，特別是高風險族群，服用保健品成為了最有效、最可靠的策略。它能提供精準、穩定的劑量，讓我們能輕鬆掌握自己的健康，確保身體獲得足夠的「陽光能量」，不受外在環境限制。</p>
             <div class="alert alert-nutritionist">
@@ -1373,6 +1379,7 @@
               </div>
             </div>
           </section>
+        <div id="related-articles-container"></div>
         </article>
 
         <div class="alert alert-tip">
@@ -1380,33 +1387,7 @@
           <p>維生素D是免疫系統的關鍵調節者。想了解更多關於維生素C、鋅、益生菌等如何協同作戰，建立全方位免疫防線嗎？<a href="./topic-immune-boosting-nutrients.html">點此閱讀我們的免疫力強化完整指南</a>。</p>
         </div>
 
-        <!-- Related Articles -->
-        <section id="related-nutrients">
-          <h2 class="related-title" id="related-title">相關營養素</h2>
-          <div class="related-grid">
-            <a href="./fish-oil.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #fff7ed; color: #9a3412;">其他營養素</span>
-                <h3 class="related-card-title">魚油 (Omega-3)</h3>
-                <p class="related-card-desc">了解 Omega-3 如何與維生素 D 協同作用，支持心血管與大腦健康。</p>
-              </div>
-            </a>
-            <a href="./magnesium.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag">礦物質</span>
-                <h3 class="related-card-title">鎂</h3>
-                <p class="related-card-desc">鎂參與體內維生素 D 的活化過程，是不可或缺的輔助因子。</p>
-              </div>
-            </a>
-            <a href="./vitamin-b.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag">維生素</span>
-                <h3 class="related-card-title">維生素 B 群</h3>
-                <p class="related-card-desc">B 群是能量代謝的基礎，與維生素 D 共同維持身體的正常生理機能。</p>
-              </div>
-            </a>
-          </div>
-        </section>
+
       </main>
     </div>
 
@@ -1425,6 +1406,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       // Progress Bar
@@ -1500,7 +1484,7 @@
 
       // Initialize Components
       document.addEventListener("DOMContentLoaded", function () {
-        highlightTOC(); // Initial call on page load
+        // highlightTOC(); // Initial call on page load - Removed as it's redundant with scroll listener
 
         if (window.DeusAnalyticsComponent) {
           new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
@@ -1521,6 +1505,13 @@
           console.log("✅ Footer 組件初始化完成");
         } else {
           console.error("❌ Footer 組件初始化失敗");
+        }
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
+        
+        const articleId = 'card-vitamin-d';
+        const relatedContainer = document.getElementById('related-articles-container');
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
         }
       });
     </script>

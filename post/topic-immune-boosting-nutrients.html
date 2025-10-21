@@ -165,7 +165,8 @@
       .check-option.selected { background-color: var(--primary-bg-light); border-color: var(--primary-color); color: var(--primary-dark); font-weight: 500;}
       #check-result { margin-top: 25px; padding: 15px; border-radius: 8px; text-align: center; font-weight: 600; transition: all 0.3s ease; display: none;}
       
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } .article-content { padding: 30px; } .article-title { font-size: 2em; } }
+      section[id] { scroll-margin-top: 100px; }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } /* .sidebar { display: none; } */ .article-content { padding: 30px; } .article-title { font-size: 2em; } }
       @media (max-width: 768px) { .article-content { padding: 20px; border-radius: 15px; } .article-title { font-size: 1.8em; } .article-meta { flex-direction: column; gap: 10px; } .related-grid { grid-template-columns: 1fr; } }
       .highlight-nutrient { border-bottom: 2px solid var(--primary-color); padding-bottom: 1px; }
     </style>
@@ -179,16 +180,16 @@
         <div class="toc">
           <h3 class="toc-title"><a href="#page-title"><span>目錄</span></a></h3>
           <ul class="toc-list">
-            <li><a href="#problem" class="toc-link">您也常被感冒、過敏糾纏不清嗎？</a></li>
-            <li><a href="#solution" class="toc-link">打造你的黃金免疫部隊</a></li>
+            <li><a href="#problem" class="toc-link">您也常被感冒、過敏糾纏不清嗎？ (Pain)</a></li>
+            <li><a href="#solution" class="toc-link">打造你的黃金免疫部隊 (Solution)</a></li>
             <li><a href="#nutrients" class="toc-link">9大關鍵營養兵種深度解析</a></li>
             <li><a href="#symptom-guide" class="toc-link">症狀對策：免疫問題速查表</a></li>
-            <li><a href="#lifestyle" class="toc-link">非營養素的3大免疫基石</a></li>
+            <li><a href="#lifestyle" class="toc-link">非營養素的3大免疫基石：睡好、減壓、多活動</a></li>
             <li><a href="#action-plan" class="toc-link">實踐指南：打造你的免疫力餐盤</a></li>
-            <li><a href="#safety" class="toc-link">平衡的藝術：補充注意事項</a></li>
+            <li><a href="#safety" class="toc-link">平衡的藝術：補充免疫營養素的注意事項</a></li>
             <li><a href="#faq" class="toc-link">常見疑問 (FAQ)</a></li>
             <li><a href="#references" class="toc-link">文獻參考</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -212,6 +213,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <article class="article-body">
           
           <div class="key-takeaways">
@@ -457,33 +459,10 @@
               </ul>
           </section>
 
+          <div id="related-articles-container"></div>
         </article>
 
-        <!-- 相關文章區塊 -->
-        <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-        <div class="related-grid">
-          <a href="./vitamin-d.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag vitamin">維生素</span>
-              <h3 class="related-card-title">維生素 D</h3>
-              <p class="related-card-desc">免疫系統的總指揮官，深入了解它如何調節免疫反應，預防感冒與自體免疫問題。</p>
-            </div>
-          </a>
-           <a href="./zinc.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag mineral">礦物質</span>
-              <h3 class="related-card-title">鋅 (Zinc)</h3>
-              <p class="related-card-desc">維持免疫細胞正常發育與作戰能力的基礎，了解缺鋅對抵抗力的全面影響。</p>
-            </div>
-          </a>
-           <a href="./probiotics.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag other">微生物</span>
-              <h3 class="related-card-title">益生菌 (Probiotics)</h3>
-              <p class="related-card-desc">腸道是最大的免疫器官，深入了解如何挑選益生菌，從腸道開始鞏固您的免疫防線。</p>
-            </div>
-          </a>
-        </div>
+
       </main>
     </div>
 
@@ -499,6 +478,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       function updateProgressBar() {
@@ -569,6 +551,13 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
+        
+        const articleId = 'topic-card-immune-boosting';
+        const relatedContainer = document.getElementById('related-articles-container');
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
       });
     </script>
 </body>

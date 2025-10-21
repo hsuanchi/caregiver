@@ -139,7 +139,8 @@
       .disclaimer p { color: #6b7280; font-size: 0.95em; line-height: 1.8; }
       .recipe-card { background: var(--primary-bg-gradient); border: 2px solid #fecdd3; border-radius: 15px; padding: 30px; margin: 40px 0; }
       .recipe-card h4 { margin-top:0; color: var(--primary-dark); font-size: 1.3em; }
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } .article-content { padding: 30px; } .article-title { font-size: 2em; } }
+      section[id] { scroll-margin-top: 100px; }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } /* .sidebar { display: none; } */ .article-content { padding: 30px; } .article-title { font-size: 2em; } }
       @media (max-width: 768px) { .article-content { padding: 20px; border-radius: 15px; } .article-title { font-size: 1.8em; } .article-meta { flex-direction: column; gap: 10px; } .related-grid { grid-template-columns: 1fr; } }
       .highlight-nutrient { border-bottom: 2px solid var(--primary-color); padding-bottom: 1px; }
     </style>
@@ -156,13 +157,18 @@
             <li><a href="#problem" class="toc-link">您有「血管未老先衰」的危機嗎？</a></li>
             <li><a href="#solution" class="toc-link">逆轉血管硬化，從今天的餐盤開始</a></li>
             <li><a href="#mechanism" class="toc-link">關鍵原理：血管為何會硬化阻塞？</a></li>
+            <li><a href="#ldl-hdl-oxidation" class="toc-link sub-item">真正的罪魁禍首：了解LDL、HDL與氧化</a></li>
             <li><a href="#action-plan-food" class="toc-link">實踐指南(一)：保養血管的5大超級食物</a></li>
+            <li><a href="#superfoods-nutrition" class="toc-link sub-item">5大超級食物營養解析</a></li>
+            <li><a href="#synergistic-nutrition" class="toc-link sub-item">營養素協同作戰：1+1>2的護心組合</a></li>
             <li><a href="#action-plan-lifestyle" class="toc-link">實踐指南(二)：鞏固血管健康的3大生活基石</a></li>
+            <li><a href="#lifestyle-habits" class="toc-link sub-item">鞏固血管健康的生活習慣：正負向對比</a></li>
             <li><a href="#action-plan-avoid" class="toc-link">實踐指南(三)：加速血管硬化的3大食物地雷</a></li>
             <li><a href="#comparison" class="toc-link">補充品 vs. 全食物：哪個對血管更好？</a></li>
             <li><a href="#safety" class="toc-link">安全第一：保養血管的注意事項</a></li>
             <li><a href="#faq" class="toc-link">常見疑問 (FAQ)</a></li>
             <li><a href="#references" class="toc-link">文獻參考</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -186,6 +192,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <article class="article-body">
           
           <div class="key-takeaways">
@@ -241,7 +248,7 @@
           
           <section id="mechanism">
             <h2>關鍵原理：血管為何會硬化阻塞？</h2>
-            <p>血管硬化的醫學名稱是「動脈粥狀硬化」，它並非一夕之間發生，而是一個長達數十年的慢性發炎過程。您可以將它想像成血管內壁長出了「青春痘」，而且這顆痘痘還不斷發炎、長大，最終堵塞了血管。</p><h3>真正的罪魁禍首：了解LDL、HDL與氧化</h3>
+            <p>血管硬化的醫學名稱是「動脈粥狀硬化」，它並非一夕之間發生，而是一個長達數十年的慢性發炎過程。您可以將它想像成血管內壁長出了「青春痘」，而且這顆痘痘還不斷發炎、長大，最終堵塞了血管。            <h3 id="ldl-hdl-oxidation">真正的罪魁禍首：了解LDL、HDL與氧化</h3>
             <p>許多人聽過膽固醇有「好壞」之分，但真正的關鍵在於「氧化」。<strong class="highlight-nutrient">低密度脂蛋白(LDL)</strong> 本身是運輸脂肪的必要工具，但當它被體內過多的自由基「氧化」後，就變成了極具破壞性的 <strong class="highlight-nutrient">「氧化型LDL」(ox-LDL)</strong>。這才是啟動血管硬化的真正元兇。</p>
             <p>整個過程始於血管最內層的「<span class="highlight-nutrient">內皮細胞</span>」受損。高血壓、高血糖、吸菸等因素都會刮傷這層內壁，讓氧化的LDL更容易鑽進血管壁底下。接著，免疫系統會派出「巨噬細胞」前往清理，但當巨噬細胞吞噬了過多的氧化LDL後，自己也會變成充滿油滴的「<span class="highlight-nutrient">泡沫細胞</span>」，堆積在血管壁中，形成最初的脂肪斑塊。久而久之，斑塊越積越大，並可能鈣化，使血管失去彈性、變得狹窄。若斑塊不幸破裂，就會形成血栓，引發心肌梗塞或腦中風。</p>
              <div class="svg-visualization-container">
@@ -285,7 +292,7 @@
           <section id="action-plan-food">
             <h2>實踐指南(一)：保養血管的5大超級食物</h2>
             <p>許多天然食物中的植化素與營養素，正是對抗血管發炎、氧化與硬化的最佳武器。將以下五種食物納入您的日常飲食，就是最美味的血管保健方案。</p>
-            <h3>5大超級食物營養解析</h3>
+            <h3 id="superfoods-nutrition">5大超級食物營養解析</h3>
             <table class="data-table">
                 <thead><tr><th>超級食物</th><th>關鍵營養素</th><th>護血管機制</th><th>建議攝取頻率</th></tr></thead>
                 <tbody>
@@ -321,7 +328,7 @@
                     </tr>
                 </tbody>
             </table>
-            <h3>營養素協同作戰：1+1>2的護心組合</h3>
+            <h3 id="synergistic-nutrition">營養素協同作戰：1+1>2的護心組合</h3>
              <table class="data-table">
                 <thead><tr><th>營養組合</th><th>協同作用</th></tr></thead>
                 <tbody>
@@ -349,7 +356,7 @@
           <section id="action-plan-lifestyle">
             <h2>實踐指南(二)：鞏固血管健康的3大生活基石</h2>
             <p>飲食是基礎，但若沒有搭配正確的生活習慣，效果將大打折扣。以下三個生活基石，其重要性完全不亞於飲食調整，是鞏固血管健康的必要條件。</p>
-            <h3>鞏固血管健康的生活習慣：正負向對比</h3>
+            <h3 id="lifestyle-habits">鞏固血管健康的生活習慣：正負向對比</h3>
             <table class="data-table">
                 <thead><tr><th>面向</th><th>✅ 保護血管的習慣</th><th>❌ 傷害血管的習慣</th></tr></thead>
                 <tbody>
@@ -444,33 +451,10 @@
               </ul>
           </section>
 
+          <div id="related-articles-container"></div>
         </article>
 
-        <!-- 相關文章區塊 -->
-        <h2 class="related-title">相關營養素解析</h2>
-        <div class="related-grid">
-          <a href="./sodium.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #eff6ff; color: #1e40af;">礦物質</span>
-              <h3 class="related-card-title">鈉 (Sodium)</h3>
-              <p class="related-card-desc">了解高鈉飲食如何成為高血壓的元兇，以及如何在生活中實踐有效的減鈉策略。</p>
-            </div>
-          </a>
-           <a href="./fish-oil.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fff7ed; color: #9a3412;">脂肪酸</span>
-              <h3 class="related-card-title">魚油 (Omega-3)</h3>
-              <p class="related-card-desc">深入解析EPA與DHA如何降低三酸甘油酯、抗發炎，是保護心血管不可或缺的營養素。</p>
-            </div>
-          </a>
-          <a href="./q10.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fdf2f8; color: #831843;">機能性成分</span>
-              <h3 class="related-card-title">輔酶 Q10</h3>
-              <p class="related-card-desc">心臟的能量火星塞，了解Q10如何為心肌細胞提供能量，維持心臟的健康搏動。</p>
-            </div>
-          </a>
-        </div>
+
       </main>
     </div>
 
@@ -486,6 +470,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       function updateProgressBar() {
@@ -521,6 +508,13 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
+        
+        const articleId = 'topic-card-vascular-health';
+        const relatedContainer = document.getElementById('related-articles-container');
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
       });
     </script>
 </body>

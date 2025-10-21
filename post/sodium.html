@@ -145,7 +145,8 @@
       .disclaimer-content { max-width: 800px; margin: 0 auto; padding: 0 20px; }
       .disclaimer h3 { color: #4b5563; margin-bottom: 15px; font-size: 1.5em; }
       .disclaimer p { color: #6b7280; font-size: 0.95em; line-height: 1.8; }
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } .article-content { padding: 30px; } .article-title { font-size: 2em; } }
+      section[id] { scroll-margin-top: 100px; }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } /* .sidebar { display: none; } */ .article-content { padding: 30px; } .article-title { font-size: 2em; } }
       @media (max-width: 768px) { .nav-breadcrumb { display: none; } .article-content { padding: 20px; border-radius: 15px; } .article-title { font-size: 1.8em; } .article-meta { flex-direction: column; gap: 10px; } .data-table { font-size: 0.9em; } .data-table th, .data-table td { padding: 10px; } .related-grid { grid-template-columns: 1fr; } }
 
       /* Custom styles from original file to be preserved */
@@ -194,15 +195,18 @@
             <li><a href="#mechanism" class="toc-link">關鍵原理：鈉如何掌管體內的水分與電力？</a></li>
             <li><a href="#how-much" class="toc-link">鈉的每日建議量：我們到底該吃多少？</a></li>
             <li><a href="#action-plan-food" class="toc-link">實踐指引(一)：揪出生活中的高鈉陷阱</a></li>
+            <li><a href="#food-rankings" class="toc-link sub-item">常見外食鈉含量排行榜</a></li>
+            <li><a href="#processed-food-sodium" class="toc-link sub-item">常見加工食品鈉含量</a></li>
             <li><a href="#action-plan-supplements" class="toc-link">實踐指引(二)：減鈉飲食的5大技巧</a></li>
+            <li><a href="#diet-replacement" class="toc-link sub-item">聰明飲食替換指引</a></li>
             <li><a href="#remedy" class="toc-link">實踐指引(三)：吃了太鹹怎麼辦？快速緩解的4大絕招</a></li>
             <li><a href="#skill-up" class="toc-link">實踐指引(四)：3步驟學會看懂營養標示</a></li>
             <li><a href="#myth-busting" class="toc-link">破解迷思：「流汗多就要多吃鹹？」</a></li>
             <li><a href="#comparison" class="toc-link">鈉 vs. 鉀：體內平衡的黃金搭檔</a></li>
             <li><a href="#safety" class="toc-link">高鈉的代價：沉默的健康殺手</a></li>
-            <li><a href="#faq" class="toc-link">常見疑問 (FAQ)</a></li>
+            <li><a href="#faq" class="toc-link">關於鈉的常見疑問 (FAQ)</a></li>
             <li><a href="#references" class="toc-link">文獻參考</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -226,6 +230,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <article class="article-body">
           
           <div class="key-takeaways">
@@ -315,7 +320,7 @@
           <section id="action-plan-food">
             <h2>實踐指引(一)：揪出生活中的高鈉陷阱</h2>
             <p>要有效減鈉，首先要辨識出那些「隱形鈉」的來源。研究指出，超過70%的鈉攝取來自加工食品與外食，而非您親手在廚房添加的鹽。它們是健康餐盤中最大的破壞者。</p>
-            <h3>常見外食鈉含量排行榜</h3>
+            <h3 id="food-rankings">常見外食鈉含量排行榜</h3>
             <table class="data-table">
                 <thead><tr><th>品項</th><th>鈉含量 (約 mg)</th><th>佔每日建議量百分比</th></tr></thead>
                 <tbody>
@@ -366,7 +371,7 @@
                 </div>
             </div>
 
-            <h3>常見加工食品鈉含量</h3>
+            <h3 id="processed-food-sodium">常見加工食品鈉含量</h3>
             <table class="data-table">
                 <thead><tr><th>高鈉陷阱</th><th>常見例子</th><th>為何鈉含量高？</th></tr></thead>
                 <tbody>
@@ -405,7 +410,7 @@
                 <li><strong>醬料另外放</strong>：吃沙拉、水餃或火鍋時，請店家將醬料另外盛裝，自己酌量使用，而不是讓食物浸泡在醬汁裡。</li>
             </ol>
 
-            <h3>聰明飲食替換指引</h3>
+            <h3 id="diet-replacement">聰明飲食替換指引</h3>
             <table class="data-table">
                 <thead><tr><th>高鈉選擇</th><th>低鈉替代方案</th></tr></thead>
                 <tbody>
@@ -626,33 +631,10 @@
               <strong>延伸閱讀：</strong>想了解除了減鈉之外，還有哪些積極的飲食方式能逆轉血管硬化嗎？歡迎閱讀我們的專題文章：<a href="./topic-vascular-health-superfoods.html">《保養血管最好的5種超級食物與3大生活習慣》</a>。
             </div>
 
+          <div id="related-articles-container"></div>
         </article>
 
-        <!-- 相關文章區塊 -->
-        <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-        <div class="related-grid">
-          <a href="./potassium.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f0fdf4; color: #15803d;">礦物質</span>
-              <h3 class="related-card-title">鉀 (Potassium)</h3>
-              <p class="related-card-desc">作為鈉的黃金搭檔，充足的鉀是平衡鈉、維持血壓穩定的關鍵。了解如何從天然食物中攝取足夠的鉀。</p>
-            </div>
-          </a>
-           <a href="./calcium.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f1f5f9; color: #475569;">礦物質</span>
-              <h3 class="related-card-title">鈣 (Calcium)</h3>
-              <p class="related-card-desc">高鈉飲食會增加鈣的流失，影響骨骼健康。深入了解鈣質的補充與重要性。</p>
-            </div>
-          </a>
-           <a href="./magnesium.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f5f3ff; color: #5b21b6;">礦物質</span>
-              <h3 class="related-card-title">鎂 (Magnesium)</h3>
-              <p class="related-card-desc">鎂有助於放鬆血管、穩定血壓，與鈉、鉀共同維持心血管系統的健康運作。</p>
-            </div>
-          </a>
-        </div>
+
       </main>
     </div>
 
@@ -668,6 +650,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       function updateProgressBar() {
@@ -755,6 +740,13 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
+        
+        const articleId = 'card-sodium';
+        const relatedContainer = document.getElementById('related-articles-container');
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
         updateSodiumTotal();
       });
     </script>

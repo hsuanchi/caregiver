@@ -29,13 +29,13 @@
 
 ## 第三部分：組件化與功能 (Components & Functionality)
 
-### 3.1 響應式目錄 (Responsive TOC)
+### 3.1.1 響應式目錄 (Responsive TOC)
 - [ ] **HTML 容器**: 在 `<main>` 區塊的 `<header>` 標籤後，必須放置 `<div id="toc-mobile-target"></div>`。
 - [ ] **CSS 規則**: 必須移除 `@media (max-width: 1024px)` 中 `display: none` 的 sidebar 規則。
 - [ ] **JS 初始化**:
     - **引入**: 頁尾需引入 `responsive-toc-component.js`。
     - **執行**: `DOMContentLoaded` 事件中需包含 `new ResponsiveTocComponent().initialize();`。
-目錄 (TOC)
+3.1.2目錄 (TOC)
 - [ ] **階層式結構**: 對於次要章節，在 `<a>` 標籤上使用 `.sub-item` class 來建立兩層式目錄。
 - [ ] **`<h3>` 標籤存在性**: 根據 `writing-guide.md` 規範，內文應使用 `<h3>` 劃分次級章節。
 - [ ] **`<h3>` 標籤納入**: 為了讓目錄更詳盡，應將文章中的 `<h3>` 標籤也納入目錄結構中，並應用為第二階層的 `.sub-item` 樣式。

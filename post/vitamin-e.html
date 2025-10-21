@@ -579,15 +579,27 @@
         font-size: 0.95em;
       }
 
-      @media (max-width: 1024px) {
-        .article-container {
-          grid-template-columns: 1fr;
-          gap: 0;
-        }
-        .sidebar {
-          display: none;
-        }
-      }
+            section[id] { scroll-margin-top: 100px; }
+
+            @media (max-width: 1024px) {
+
+              .article-container {
+
+                grid-template-columns: 1fr;
+
+                gap: 0;
+
+              }
+
+      
+
+              .sidebar {
+
+                /* display: none; */
+
+              }
+
+            }
     </style>
 </head>
 <body>
@@ -606,16 +618,22 @@
             <span>目錄</span>
           </h3>
           <ul class="toc-list">
-            <li><a href="#basics" class="toc-link">認識細胞的首席保鑣</a></li>
+            <li><a href="#basics" class="toc-link">認識細胞的首席保鑣：維生素E</a></li>
             <li><a href="#functions" class="toc-link">維生素E的三大使命</a></li>
+            <li><a href="#mission-one" class="toc-link sub-item">使命一：對抗老化、守護肌膚</a></li>
+            <li><a href="#mission-two" class="toc-link sub-item">使命二：維持心血管健康</a></li>
+            <li><a href="#mission-three" class="toc-link sub-item">使命三：增進生殖健康</a></li>
             <li><a href="#how-much" class="toc-link">我需要多少維生素E？</a></li>
-             <li><a class="toc-link sub-item" href="#who-needs-more">哪些人更需要補充？</a></li>
-            <li><a href="#food-sources" class="toc-link">從哪裡吃到天然E？</a></li>
+            <li><a href="#who-needs-more" class="toc-link sub-item">哪些人更需要補充？</a></li>
+            <li><a href="#food-sources" class="toc-link">從哪裡吃到天然E？堅果、種子、好油脂</a></li>
             <li><a href="#supplements" class="toc-link">維生素E補充品怎麼挑？</a></li>
-            <li><a class="toc-link sub-item" href="#expert-secret">專家的秘密：單一 vs. 家族</a></li>
+            <li><a href="#expert-secret" class="toc-link sub-item">專家的秘密：單一成員 vs. 完整家族的戰爭</a></li>
             <li><a href="#myths" class="toc-link">常見迷思與風險</a></li>
+            <li><a href="#myth-skin-application" class="toc-link sub-item">迷思：維生素E可以直接塗抹在皮膚上？</a></li>
+            <li><a href="#myth-overdose" class="toc-link sub-item">迷思：吃越多越抗老？</a></li>
+            <li><a href="#risk-overdose" class="toc-link sub-item">重要：過量的風險與注意事項</a></li>
             <li><a href="#faq" class="toc-link">其他相關問題</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -643,6 +661,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <!-- Article Body -->
         <article class="article-body">
 
@@ -657,15 +676,15 @@
             
             <div class="info-cards" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
               <div class="info-card">
-                <h4 class="info-card-title">使命一：對抗老化、守護肌膚</h4>
+                <h4 class="info-card-title" id="mission-one">使命一：對抗老化、守護肌膚</h4>
                 <p class="info-card-desc">維生素E能中斷自由基的連鎖反應，<strong class="highlight-nutrient">減少紫外線、壓力、污染對皮膚細胞的傷害</strong>，維持肌膚彈性與光澤，是名副其實的「吃的美容聖品」。</p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">使命二：維持心血管健康</h4>
+                <h4 class="info-card-title" id="mission-two">使命二：維持心血管健康</h4>
                 <p class="info-card-desc">它能保護血管壁上的脂質不被氧化，特別是<strong class="highlight-nutrient">防止壞膽固醇（LDL）氧化</strong>，這是維持血管暢通、預防心血管問題的關鍵第一步。</p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">使命三：增進生殖健康</h4>
+                <h4 class="info-card-title" id="mission-three">使命三：增進生殖健康</h4>
                 <p class="info-card-desc">維生素E的學名「生育醇」正揭示了它對生殖系統的重要性，它有助於<strong class="highlight-nutrient">維持荷爾蒙平衡</strong>，對於準備懷孕的男女雙方都是重要的營養素。</p>
               </div>
             </div>
@@ -778,15 +797,15 @@
             <p>雖然維生素E對健康至關重要，但不當的補充方式也可能帶來風險。了解這些迷思與注意事項，能幫助您更安全地補充。</p>
             <div class="info-cards" style="grid-template-columns: 1fr 1fr; gap: 25px;">
               <div class="info-card" style="background: #f7fee7; border-top: 5px solid #a3e635;">
-                <h4 class="info-card-title" style="color: #3f6212;">迷思：維生素E可以直接塗抹在皮膚上？</h4>
+                <h4 class="info-card-title" id="myth-skin-application">迷思：維生素E可以直接塗抹在皮膚上？</h4>
                 <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>不建議。直接將油性的維生素E膠囊塗抹在臉上，不僅黏膩、吸收率差，還可能<strong class="highlight-nutrient">堵塞毛孔，引發粉刺或皮膚炎</strong>。選擇含有維生素E成分的合格保養品才是正確做法。</p>
               </div>
               <div class="info-card" style="background: #f1f5f9; border-top: 5px solid #64748b;">
-                <h4 class="info-card-title" style="color: #334155;">迷思：吃越多越抗老？</h4>
+                <h4 class="info-card-title" id="myth-overdose">迷思：吃越多越抗老？</h4>
                 <p class="info-card-desc" style="text-align: left;"><strong>事實：</strong>錯！維生素E是脂溶性的，<strong class="highlight-nutrient">過量會累積在體內</strong>，不易排出。長期超量攝取不僅無益，反而可能干擾其他營養素的吸收，甚至增加健康風險。</p>
               </div>
                <div class="info-card" style="background: #fee2e2; border-top: 5px solid #ef4444; grid-column: 1 / -1;">
-                <h4 class="info-card-title" style="color: #b91c1c;">重要：過量的風險與注意事項</h4>
+                <h4 class="info-card-title" id="risk-overdose">重要：過量的風險與注意事項</h4>
                 <p class="info-card-desc" style="text-align: left;">長期每日攝取超過 1000 mg 的維生素E，最主要的風險是<strong class="highlight-nutrient">增加出血的可能性</strong>。因为它有抗凝血的作用，正在服用抗凝血藥物（如華法林 Warfarin）或即將進行手術的人，補充前<strong class="highlight-nutrient">務必諮詢醫師</strong>，絕對不可自行決定。</p>
               </div>
             </div>
@@ -814,42 +833,10 @@
               </div>
             </div>
           </section>
+        <div id="related-articles-container"></div>
         </article>
 
-        <!-- Related Articles Section -->
-        <section id="related-articles" style="margin-top: 60px;">
-          <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-          <div class="related-grid">
-            <a href="vitamin-c.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #ffedd5; color: #9a3412;">抗氧化</span>
-                <h3 class="related-card-title">維生素 C</h3>
-                <p class="related-card-desc">
-                  水溶性抗氧化大師，能與脂溶性的維生素E協同作戰，提供更全面的細胞保護。
-                </p>
-              </div>
-            </a>
-            <a href="selenium.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #f1f5f9; color: #475569;">礦物質</span>
-                <h3 class="related-card-title">硒 (Selenium)</h3>
-                <p class="related-card-desc">
-                  構成體內重要抗氧化酵素的關鍵成分，是維生素E發揮最大功效不可或缺的夥伴。
-                </p>
-              </div>
-            </a>
-             <a href="fish-oil.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #dbeafe; color: #1e40af;">健康脂肪</span>
-                <h3 class="related-card-title">Omega-3 (魚油)</h3>
-                <p class="related-card-desc">
-                  保護細胞膜健康的多元不飽和脂肪酸，維生素E能保護它們不被氧化，維持其功效。
-                </p>
-              </div>
-            </a>
-          </div>
-        </section>
-        </div>
+
       </main>
     </div>
 
@@ -870,6 +857,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       // Progress Bar
@@ -944,6 +934,13 @@
           console.log("✅ Footer 組件初始化完成");
         } else {
           console.error("❌ Footer 組件初始化失敗");
+        }
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
+        
+        const articleId = 'card-vitamin-e';
+        const relatedContainer = document.getElementById('related-articles-container');
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
         }
       });
     </script>

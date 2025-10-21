@@ -851,6 +851,7 @@
       }
 
       /* Responsive Design */
+      section[id] { scroll-margin-top: 100px; }
       @media (max-width: 1024px) {
         .article-container {
           grid-template-columns: 1fr;
@@ -858,7 +859,7 @@
         }
 
         .sidebar {
-          display: none;
+          /* display: none; */
         }
 
         .article-content {
@@ -940,20 +941,25 @@
           </h3>
           <ul class="toc-list">
             <li><a href="#summary" class="toc-link">30 秒速讀版</a></li>
-            <li><a href="#self-check" class="toc-link">你需要 B 群嗎？</a></li>
-            <li><a href="#basics" class="toc-link">B群基礎知識</a></li>
-            <li>
-              <a href="#benefits" class="toc-link sub-item">B 群的神奇功效</a>
-            </li>
-            <li>
-              <a href="#how-to-take" class="toc-link sub-item">怎麼吃最有效</a>
-            </li>
-            <li>
-              <a href="#food-sources" class="toc-link sub-item">天然食物來源</a>
-            </li>
-            <li><a href="#how-to-choose" class="toc-link">如何選擇 B 群</a></li>
+            <li><a href="#self-check" class="toc-link">快來看看你是不是需要補充 B 群的人？</a></li>
+            <li><a href="#self-check-b-group" class="toc-link sub-item">B 群需求自我檢測</a></li>
+            <li><a href="#basics" class="toc-link">維生素 B 群到底是什麼？讓我們從頭說起</a></li>
+            <li><a href="#why-b-group" class="toc-link sub-item">為什麼叫「B群」？</a></li>
+            <li><a href="#b-group-members" class="toc-link sub-item">維生素 B 群的 8 位成員：各司其職，缺一不可</a></li>
+            <li><a href="#benefits" class="toc-link">B 群的神奇功效 - 為什麼這麼多人在吃？</a></li>
+            <li><a href="#how-to-take" class="toc-link">怎麼吃最有效？維生素 B 群服用完全攻略</a></li>
+            <li><a href="#dosage-by-group" class="toc-link sub-item">依族群的 B 群劑量建議</a></li>
+            <li><a href="#best-time-to-take" class="toc-link">什麼時候吃最好？</a></li>
+            <li><a href="#breakfast-after" class="toc-link sub-item">早餐後服用！科學原理告訴你</a></li>
+            <li><a href="#special-cases" class="toc-link sub-item">特殊情況的服用建議</a></li>
+            <li><a href="#food-sources" class="toc-link">天然食物也能補充維生素 B 群！</a></li>
+            <li><a href="#food-champions" class="toc-link sub-item">B 群食物冠軍榜</a></li>
+            <li><a href="#how-to-choose" class="toc-link">維生素 B 群選購攻略 - 不被騙的完整指引！</a></li>
+            <li><a href="#why-choose-b-group" class="toc-link sub-item">為什麼選對 B 群這麼重要？</a></li>
+            <li><a href="#six-keys" class="toc-link sub-item">B 群選購的 6 大關鍵指標</a></li>
+            <li><a href="#supplement-types" class="toc-link sub-item">B 群補充劑類型比較</a></li>
             <li><a href="#faq" class="toc-link">常見問題</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -981,6 +987,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <!-- Article Body -->
         <article class="article-body">
           <!-- Story Introduction -->
@@ -1038,7 +1045,7 @@
             <h2>快來看看你是不是需要補充 B 群的人？</h2>
 
             <div class="quick-test">
-              <h3>B 群需求自我檢測</h3>
+              <h3 id="self-check-b-group">B 群需求自我檢測</h3>
               <p>以下情況，你中了幾個？</p>
               <div class="test-options">
                 <label class="test-option">
@@ -1079,7 +1086,7 @@
               想像一下，如果我們的身體是一座工廠，那維生素 B 群就像是工廠裡的「電力系統」！它們是一組 8 種水溶性維生素的統稱，每一種都扮演著不同但互相合作的角色，負責將我們吃進去的食物轉化為身體可用的能量。
             </p>
 
-            <h3>為什麼叫「B群」？</h3>
+            <h3 id="why-b-group">為什麼叫「B群」？</h3>
             <p>
               最初科學家以為維生素 B 只有一種，後來發現其實是 8 個不同的維生素在協同工作，就像一個團隊一樣，所以稱為「B 群」。<span
                 class="highlight-nutrient"
@@ -1091,7 +1098,7 @@
               <strong>有趣的是</strong>，B群都是水溶性維生素，這意味著：1) 身體無法大量儲存，需要每天補充；2) 多餘的會隨尿液排出，相對安全；3) 但也容易在烹調和處理過程中流失。
             </p>
 
-            <h3>維生素 B 群的 8 位成員：各司其職，缺一不可</h3>
+            <h3 id="b-group-members">維生素 B 群的 8 位成員：各司其職，缺一不可</h3>
             <p>
               讓我們來認識這 8 位「能量工廠」的工作夥伴，每一位都有自己的專業領域，但他們通力合作，確保你的身體機器順利運轉！
             </p>
@@ -1223,7 +1230,7 @@
           <section id="how-to-take">
             <h2>怎麼吃最有效？維生素 B 群服用完全攻略</h2>
 
-            <h3>依族群的 B 群劑量建議</h3>
+            <h3 id="dosage-by-group">依族群的 B 群劑量建議</h3>
 
             <p>
               每個人的生活型態和健康需求不同，B 群的補充策略也要跟著調整。以下是營養師根據不同族群特性的專業建議：
@@ -1282,7 +1289,7 @@
             </div>
 
             <h2>什麼時候吃最好？</h2>
-            <h3>早餐後服用！科學原理告訴你</h3>
+            <h3 id="breakfast-after">早餐後服用！科學原理告訴你</h3>
             <p>
               B 群維生素有助於能量轉換，就像身體的「咖啡因」一樣能提振精神。<strong>早餐後服用是最理想的時機</strong>，因為：1) 能為一整天提供活力；2) 隨餐服用減少胃部不適；3) 避免晚上服用影響睡眠。<span
                 class="highlight-nutrient"
@@ -1290,7 +1297,7 @@
               >
             </p>
 
-            <h3>特殊情況的服用建議</h3>
+            <h3 id="special-cases">特殊情況的服用建議</h3>
             <p>
               不同的生活型態和健康目標，服用方式也要調整。<span
                 class="highlight-nutrient"
@@ -1347,7 +1354,7 @@
           <section id="food-sources">
             <h2>天然食物也能補充維生素 B 群！</h2>
 
-            <h3>B 群食物冠軍榜</h3>
+            <h3 id="food-champions">B 群食物冠軍榜</h3>
 
             <p>
               雖然營養補充品很方便，但天然食物永遠是最好的營養來源！不同食物含有不同的 B 群維生素，多樣化攝取能確保營養均衡。更重要的是，天然食物還含有其他協同營養素，讓身體更容易吸收利用。
@@ -1445,13 +1452,13 @@
               市面上的 B 群產品五花八門，從幾十塊到上千塊都有。到底該怎麼選？讓營養師告訴你不踩雷的秘訣，花對錢買到真正有效的 B 群！
             </p>
 
-            <h3>為什麼選對 B 群這麼重要？</h3>
+            <h3 id="why-choose-b-group">為什麼選對 B 群這麼重要？</h3>
             <p>
               很多人以為「B 群就是 B 群」，隨便買一罐就好。<strong>大錯特錯！</strong>
               <span class="highlight-nutrient">品質差的 B 群不僅效果有限</span>，<span class="highlight-nutrient">甚至可能有添加物過多的問題</span>。就像買手機一樣，外表看起來差不多，但處理器、記憶體差很多！學會這些選購要點，讓你花的每一分錢都值得！
             </p>
 
-            <h3>B 群選購的 6 大關鍵指標</h3>
+            <h3 id="six-keys">B 群選購的 6 大關鍵指標</h3>
             <p>
               專業營養師建議，選 B 群要按照這個優先順序來評估，這樣才不會被行銷話術牽著鼻子走：
             </p>
@@ -1501,7 +1508,7 @@
               </div>
             </div>
 
-            <h3>B 群補充劑類型比較</h3>
+            <h3 id="supplement-types">B 群補充劑類型比較</h3>
 
             <table class="data-table" style="margin: 30px 0">
               <thead>
@@ -1649,33 +1656,10 @@
               </div>
             </div>
           </section>
+        <div id="related-articles-container"></div>
         </article>
 
-        <!-- Related Articles -->
-        <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-        <div class="related-grid">
-          <a href="./vitamin-c.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fff7ed; color: #9a3412;">維生素</span>
-              <h3 class="related-card-title">維生素C</h3>
-              <p class="related-card-desc">了解維生素C對免疫系統、膠原蛋白合成的重要性，以及如何選擇適合的補充品。</p>
-            </div>
-          </a>
-          <a href="./magnesium.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f5f3ff; color: #6d28d9;">礦物質</span>
-              <h3 class="related-card-title">鎂</h3>
-              <p class="related-card-desc">探索鎂對肌肉放鬆、神經傳導的關鍵作用，以及現代人缺鎂的常見問題。</p>
-            </div>
-          </a>
-          <a href="./coenzyme-q10.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fffbeb; color: #b45309;">其他營養素</span>
-              <h3 class="related-card-title">輔酶Q10</h3>
-              <p class="related-card-desc">細胞能量生產的重要輔酶，對心血管健康和抗氧化的重要功能解析。</p>
-            </div>
-          </a>
-        </div>
+
       </main>
     </div>
 
@@ -1696,6 +1680,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       // Progress Bar
@@ -1956,6 +1943,16 @@
           console.log("✅ Footer 組件初始化完成");
         } else {
           console.error("❌ Footer 組件初始化失敗");
+        }
+
+        // Initialize ResponsiveTocComponent
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
+        
+        // Initialize Related Articles
+        const articleId = 'card-vitamin-b';
+        const relatedContainer = document.getElementById('related-articles-container');
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
         }
       }
 

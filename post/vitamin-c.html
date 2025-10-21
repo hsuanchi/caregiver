@@ -580,15 +580,8 @@
         font-size: 0.95em;
       }
 
-      @media (max-width: 1024px) {
-        .article-container {
-          grid-template-columns: 1fr;
-          gap: 0;
-        }
-        .sidebar {
-          display: none;
-        }
-      }
+      section[id] { scroll-margin-top: 100px; }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } /* .sidebar { display: none; } */ .article-content { padding: 30px; } .article-title { font-size: 2em; } }
     </style>
   </head>
   <body>
@@ -610,14 +603,14 @@
             <li><a href="#basics" class="toc-link">解鎖維生素C的驚人超能力</a></li>
             <li><a href="#myth-busting" class="toc-link">感冒了才吃C？破解最大迷思</a></li>
             <li><a href="#how-much" class="toc-link">我需要多少維生素C？</a></li>
-            <li><a class="toc-link sub-item" href="#who-needs-more">哪些人更需要補充？</a></li>
-            <li><a class="toc-link sub-item" href="#interactive-quiz">你的維生素C夠嗎？一分鐘快篩</a></li>
-            <li><a href="#food-sources" class="toc-link">先別急著買！天然C冠軍是它</a></li>
+            <li><a href="#who-needs-more" class="toc-link sub-item">哪些人更需要補充？</a></li>
+            <li><a href="#interactive-quiz" class="toc-link sub-item">你的維生素C夠嗎？一分鐘快速檢測</a></li>
+            <li><a href="#food-sources" class="toc-link">先別急著買！天然維生素C冠軍是它</a></li>
             <li><a href="#supplements" class="toc-link">維生素C補充品怎麼挑？</a></li>
-            <li><a class="toc-link sub-item" href="#supplement-comparison">常見劑型比較分析</a></li>
+            <li><a href="#supplement-comparison" class="toc-link sub-item">常見維生素C劑型比較分析</a></li>
             <li><a href="#myths" class="toc-link">常見迷思與風險</a></li>
             <li><a href="#faq" class="toc-link">其他相關問題</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -645,6 +638,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <!-- Article Body -->
         <article class="article-body">
 
@@ -910,41 +904,10 @@
               </div>
             </div>
           </section>
+        <div id="related-articles-container"></div>
         </article>
 
-        <!-- Related Articles Section -->
-        <section id="related-articles" style="margin-top: 60px;">
-          <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-          <div class="related-grid">
-            <a href="collagen.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #fce7f3; color: #9d174d;">美容保健</span>
-                <h3 class="related-card-title">膠原蛋白</h3>
-                <p class="related-card-desc">
-                  維持肌膚Q彈的關鍵，與維生素C是密不可分的最佳拍檔，共同打造青春基底。
-                </p>
-              </div>
-            </a>
-            <a href="vitamin-e.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #fefce8; color: #854d0e;">抗氧化</span>
-                <h3 class="related-card-title">維生素 E</h3>
-                <p class="related-card-desc">
-                  脂溶性的抗氧化大師，能與水溶性的維生素C協同作戰，提供更全面的細胞保護。
-                </p>
-              </div>
-            </a>
-             <a href="iron.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #fee2e2; color: #991b1b;">礦物質</span>
-                <h3 class="related-card-title">鐵</h3>
-                <p class="related-card-desc">
-                  構成血紅素的重要元素，維生素C能大幅提升植物性鐵的吸收率，是素食者的補鐵神器。
-                </p>
-              </div>
-            </a>
-          </div>
-        </section>
+
         </div>
       </main>
     </div>
@@ -952,117 +915,56 @@
     <!-- Footer Component -->
     <div id="footer-component"></div>
 
-    <!-- Load Components -->
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
+      function updateProgressBar() {
+        const scrollPosition = window.scrollY;
+        const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (scrollPosition / documentHeight) * 100;
+        document.getElementById("progressBar").style.width = scrollPercentage + "%";
+      }
+      window.addEventListener("scroll", updateProgressBar);
+
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".toc-link");
+      function highlightTOC() {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100;
+          if (window.scrollY >= sectionTop) { current = section.getAttribute("id"); }
+        });
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) { link.classList.add("active"); }
+        });
+      }
+      window.addEventListener("scroll", highlightTOC);
+
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          question.parentElement.classList.toggle("active");
+        });
+      });
+
       document.addEventListener("DOMContentLoaded", function () {
-        // Progress Bar
-        function updateProgressBar() {
-          const scrollPosition = window.scrollY;
-          const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
-          const scrollPercentage = (scrollPosition / documentHeight) * 100;
-          document.getElementById("progressBar").style.width = scrollPercentage + "%";
-        }
-        window.addEventListener("scroll", updateProgressBar);
-
-        // TOC Highlighting
-        const sections = document.querySelectorAll("section[id]");
-        const navLinks = document.querySelectorAll(".toc-link");
-        function highlightTOC() {
-          let current = "";
-          sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            if (window.pageYOffset >= sectionTop) {
-              current = section.getAttribute("id");
-            }
-          });
-          navLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.getAttribute("href") === "#" + current) {
-              link.classList.add("active");
-            }
-          });
-        }
-        window.addEventListener("scroll", highlightTOC);
-        highlightTOC();
-
-        // FAQ Toggle
-        document.querySelectorAll(".faq-question").forEach(question => {
-          question.addEventListener("click", () => {
-            question.parentElement.classList.toggle("active");
-          });
-        });
-
-        // Smooth Scroll for TOC Links
-        document.querySelectorAll(".toc-link").forEach(link => {
-          link.addEventListener("click", function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute("href");
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-              const headerOffset = document.getElementById('header-component')?.offsetHeight || 80;
-              const elementPosition = targetElement.getBoundingClientRect().top;
-              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-              window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-            }
-          });
-        });
-
-        // Component Initialization
-        if (window.DeusAnalyticsComponent) {
-          new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
-        }
-        const headerContainer = document.getElementById("header-component");
-        if (headerContainer && window.DeusHeaderComponent) {
-          new window.DeusHeaderComponent(headerContainer).setDebug(false).setTheme("default");
-        }
-        const footerContainer = document.getElementById("footer-component");
-        if (footerContainer && window.DeusFooterComponent) {
-          new window.DeusFooterComponent(footerContainer).setDebug(false).setTheme("default");
-        }
-
-        // Chart.js Initialization
-        const ctx = document.getElementById('vitaminCChart');
-        if (ctx) {
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['19-30歲', '31-50歲', '51歲以上'],
-                    datasets: [{
-                        label: '男性缺乏率 (%)',
-                        data: [35.2, 40.5, 45.8],
-                        backgroundColor: 'rgba(249, 115, 22, 0.6)',
-                        borderColor: 'rgba(249, 115, 22, 1)',
-                        borderWidth: 1
-                    }, {
-                        label: '女性缺乏率 (%)',
-                        data: [38.9, 42.1, 48.3],
-                        backgroundColor: 'rgba(251, 146, 60, 0.6)',
-                        borderColor: 'rgba(251, 146, 60, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { position: 'top' },
-                        title: { display: false }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: { display: true, text: '缺乏率 (%)' }
-                        }
-                    }
-                }
-            });
+        if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
+        if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
+        if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
+        
+        const articleId = 'card-vitamin-c';
+        const relatedContainer = document.getElementById('related-articles-container');
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
         }
       });
     </script>
-
 </body>
 </html>     });
         }

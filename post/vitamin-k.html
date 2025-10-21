@@ -632,16 +632,16 @@
           font-size: 0.95em;
         }
   
-        @media (max-width: 1024px) {
-          .article-container {
-            grid-template-columns: 1fr;
-            gap: 0;
-          }
-          .sidebar {
-            display: none;
-          }
-        }
-         @media (max-width: 768px) {
+              section[id] { scroll-margin-top: 100px; }
+              @media (max-width: 1024px) {
+                .article-container {
+                  grid-template-columns: 1fr;
+                  gap: 0;
+                }
+                .sidebar {
+                  /* display: none; */
+                }
+              }         @media (max-width: 768px) {
           .comparison-container {
             grid-template-columns: 1fr;
           }
@@ -665,16 +665,21 @@
           </h3>
           <ul class="toc-list">
             <li><a href="#takeaways" class="toc-link">本文重點速覽</a></li>
-            <li><a href="#expert-secret" class="toc-link">專家的秘密：K1 vs K2</a></li>
+            <li><a href="#expert-secret" class="toc-link">專家的秘密：你聽過的維生素K，可能不是你需要的那個</a></li>
+            <li><a href="#k1-phylloquinone" class="toc-link sub-item">🥬 維生素 K1 (Phylloquinone)</a></li>
+            <li><a href="#k2-menaquinone" class="toc-link sub-item">🧀 維生素 K2 (Menaquinone)</a></li>
             <li><a href="#k2-functions" class="toc-link">K2：鈣質的交通警察</a></li>
-            <li><a href="#d3-k2-synergy" class="toc-link">補D為何必備K2？</a></li>
-            <li><a href="#who-needs-it" class="toc-link">哪些人更需要K2？</a></li>
-            <li><a href="#how-much" class="toc-link sub-item">我需要多少維生素K？</a></li>
+            <li><a href="#osteocalcin" class="toc-link sub-item">骨鈣素 (Osteocalcin)</a></li>
+            <li><a href="#mgp" class="toc-link sub-item">基質Gla蛋白 (MGP)</a></li>
+            <li><a href="#d3-k2-synergy" class="toc-link">補D為何必備K2？超級搭檔的協同作用</a></li>
+            <li><a href="#who-needs-it" class="toc-link">哪些人更需要維生素K2？</a></li>
+            <li><a href="#k2-self-check" class="toc-link sub-item">維生素K2潛在需求檢測</a></li>
+            <li><a href="#how-much" class="toc-link">我需要多少維生素K？</a></li>
             <li><a href="#supplements" class="toc-link">維生素K補充品怎麼挑？</a></li>
-            <li><a href="#natural-sources" class="toc-link sub-item">天然食物中的K1與K2</a></li>
+            <li><a href="#natural-sources" class="toc-link">天然食物中的K1與K2</a></li>
             <li><a href="#faq" class="toc-link">其他相關問題</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
-          <ul class="toc-list"><li><a href="#related-nutrients" class="toc-link">相關營養素</a></li></ul>
         </div>
       </aside>
 
@@ -698,6 +703,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <!-- Article Body -->
         <article class="article-body">
 
@@ -718,11 +724,11 @@
             
             <div class="comparison-container">
                 <div class="comparison-card k1">
-                    <h4>🥬 維生素 K1 (Phylloquinone)</h4>
+                    <h4 id="k1-phylloquinone">🥬 維生素 K1 (Phylloquinone)</h4>
                     <p><strong>角色：凝血專家。</strong> 主要存在於深綠色葉菜中，負責活化肝臟中的凝血蛋白。當你受傷時，K1確保你的血液能正常凝固，防止失血過多。它的功能非常專一，也相對單純。</p>
                 </div>
                 <div class="comparison-card k2">
-                    <h4>🧀 維生素 K2 (Menaquinone)</h4>
+                    <h4 id="k2-menaquinone">🧀 維生素 K2 (Menaquinone)</h4>
                     <p><strong>角色：鈣質的交通警察。</strong> 主要由腸道細菌製造或存在於發酵食品、動物性食品中。它的任務是<strong class="highlight-nutrient">指揮鈣質去到該去的地方（骨骼和牙齒）</strong>，並<strong class="highlight-nutrient">防止鈣質跑到不該去的地方（血管和軟組織）</strong>。</p>
                 </div>
             </div>
@@ -738,11 +744,11 @@
             <p>維生素K2的核心工作，是透過「活化」兩種關鍵蛋白質，來精準調控鈣質在體內的流向。</p>
             <div class="info-cards" style="grid-template-columns: repeat(2, 1fr); gap: 20px;">
               <div class="info-card">                
-                <h4 class="info-card-title">骨鈣素 (Osteocalcin)</h4>
+                <h4 class="info-card-title" id="osteocalcin">骨鈣素 (Osteocalcin)</h4>
                 <p class="info-card-desc">這是由骨骼細胞製造的蛋白質，被K2活化後，它就像一隻<strong class="highlight-nutrient">強力膠</strong>，能將血液中的鈣質牢牢地「黏」到骨骼基質上，促進骨質礦化，增加骨密度。沒有K2，骨鈣素就處於「未開機」狀態，無法有效工作。</p>
               </div>
               <div class="info-card">                
-                <h4 class="info-card-title">基質Gla蛋白 (MGP)</h4>
+                <h4 class="info-card-title" id="mgp">基質Gla蛋白 (MGP)</h4>
                 <p class="info-card-desc">這是一種存在於血管壁的蛋白質，被K2活化後，它會變成一個強效的<strong class="highlight-nutrient">鈣質清道夫</strong>，主動清除沉積在血管壁上的鈣，防止血管鈣化、硬化，維持血管的彈性與健康。</p>
               </div>
             </div>
@@ -774,7 +780,7 @@
             <h2>哪些人更需要維生素K2？</h2>
             <p>由於現代飲食習慣的改變（例如發酵食物攝取減少），K2缺乏的情況比想像中更為普遍。如果您屬於以下族群，就應特別注意K2的補充：</p>
             <div class="quick-test">
-              <h3>維生素K2潛在需求檢測</h3>
+              <h3 id="k2-self-check">維生素K2潛在需求檢測</h3>
               <p>以下情況，符合你的生活習慣嗎？</p>
               <div class="test-options">
                   <label class="test-option"><input type="checkbox"><span>正在補充維生素D3或鈣片</span></label>
@@ -876,49 +882,10 @@
               </div>
             </div>
           </section>
+        <div id="related-articles-container"></div>
         </article>
         
-        <section id="related-articles" style="margin-top: 60px;">
-          <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-          <div class="related-grid">
-            <a href="./vitamin-d.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #FEFCE8; color: #A16207;">維生素</span>
-                <h3 class="related-card-title">維生素 D</h3>
-                <p class="related-card-desc">
-                  負責增加血鈣濃度，是K2的最佳拍檔，共同確保鈣質能被有效利用。
-                </p>
-              </div>
-            </a>
-            <a href="./calcium.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #EFF6FF; color: #1E40AF;">礦物質</span>
-                <h3 class="related-card-title">鈣</h3>
-                <p class="related-card-desc">
-                  骨骼的主要建材，需要K2的引導才能被精準地運用到骨骼中。
-                </p>
-              </div>
-            </a>
-             <a href="./magnesium.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #FDF2F8; color: #9D174D;">礦物質</span>
-                <h3 class="related-card-title">鎂</h3>
-                <p class="related-card-desc">
-                  參與體內數百種酵素反應，包括維生素D的活化，是維持骨骼健康不可或缺的輔助角色。
-                </p>
-              </div>
-            </a>
-            <a href="./fish-oil.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag" style="background-color: #fefce8; color: #a16207;">其他營養素</span>
-                <h3 class="related-card-title">魚油 (Omega-3)</h3>
-                <p class="related-card-desc">
-                  其抗發炎特性有助於維持心血管健康，與維生素K2的血管保護功能相輔相成。
-                </p>
-              </div>
-            </a>
-          </div>
-        </section>
+
       </main>
     </div>
 
@@ -939,6 +906,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -1024,6 +994,13 @@
         const footerContainer = document.getElementById("footer-component");
         if (footerContainer && window.DeusFooterComponent) {
           new window.DeusFooterComponent(footerContainer).setDebug(false);
+        }
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
+        
+        const articleId = 'card-vitamin-k';
+        const relatedContainer = document.getElementById('related-articles-container');
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
         }
   
         // Chart.js Initialization

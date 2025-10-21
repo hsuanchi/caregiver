@@ -157,7 +157,8 @@
       .disclaimer-content { max-width: 800px; margin: 0 auto; padding: 0 20px; }
       .disclaimer h3 { color: #4b5563; margin-bottom: 15px; font-size: 1.5em; }
       .disclaimer p { color: #6b7280; font-size: 0.95em; line-height: 1.8; }
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } .article-content { padding: 30px; } .article-title { font-size: 2em; } }
+      section[id] { scroll-margin-top: 100px; }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } /* .sidebar { display: none; } */ .article-content { padding: 30px; } .article-title { font-size: 2em; } }
       @media (max-width: 768px) { .nav-breadcrumb { display: none; } .article-content { padding: 20px; border-radius: 15px; } .article-title { font-size: 1.8em; } .article-meta { flex-direction: column; gap: 10px; } .data-table { font-size: 0.9em; } .data-table th, .data-table td { padding: 10px; } .related-grid { grid-template-columns: 1fr; } }
       
       /* Custom styles from original file to be preserved */
@@ -188,18 +189,18 @@
         <div class="toc">
           <h3 class="toc-title"><a href="#page-title"><span>目錄</span></a></h3>
           <ul class="toc-list">
-            <li><a href="#problem" class="toc-link">您有這些「抗氧化力不足」的警訊嗎？</a></li>
-            <li><a href="#solution" class="toc-link">硒：人體最強大的內建抗氧化劑</a></li>
-            <li><a href="#mechanism" class="toc-link">關鍵原理：硒如何啟動「穀胱甘肽過氧化酶」？</a></li>
-            <li><a href="#how-much" class="toc-link">每日建議量：我們需要多少硒？</a></li>
+            <li><a href="#problem" class="toc-link">您有這些「抗氧化力不足」的警訊嗎？ (Pain)</a></li>
+            <li><a href="#solution" class="toc-link">硒：人體最強大的內建抗氧化劑 (Solution)</a></li>
+            <li><a href="#mechanism" class="toc-link">關鍵原理：硒如何啟動「穀胱甘肽過氧化酶」？ (Mechanism)</a></li>
+            <li><a href="#how-much" class="toc-link">我該攝取多少？每日建議量：我們需要多少硒？</a></li>
             <li><a href="#action-plan-food" class="toc-link">實踐指引(一)：天然食物中的硒之王</a></li>
             <li><a href="#action-plan-supplements" class="toc-link">實踐指引(二)：如何挑選硒補充品？</a></li>
             <li><a href="#myth-busting" class="toc-link">破解迷思：「硒可以治療癌症？」</a></li>
             <li><a href="#comparison" class="toc-link">硒 vs. 碘：甲狀腺健康的黃金搭檔</a></li>
             <li><a href="#safety" class="toc-link">過猶不及：硒中毒(Selenosis)的風險</a></li>
-            <li><a href="#faq" class="toc-link">常見疑問 (FAQ)</a></li>
+            <li><a href="#faq" class="toc-link">關於硒的常見疑問 (FAQ)</a></li>
             <li><a href="#references" class="toc-link">文獻參考</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -223,6 +224,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <article class="article-body">
           
           <div class="key-takeaways">
@@ -484,33 +486,10 @@
               </ul>
           </section>
 
+          <div id="related-articles-container"></div>
         </article>
 
-        <!-- 相關文章區塊 -->
-        <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-        <div class="related-grid">
-          <a href="./iodine.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f5f3ff; color: #5b21b6;">礦物質</span>
-              <h3 class="related-card-title">碘 (Iodine)</h3>
-              <p class="related-card-desc">甲狀腺素的關鍵原料，了解碘如何與硒搭配，共同維持新陳代謝的穩定。</p>
-            </div>
-          </a>
-           <a href="./vitamin-e.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #fffbeb; color: #b45309;">維生素</span>
-              <h3 class="related-card-title">維生素 E (Vitamin E)</h3>
-              <p class="related-card-desc">另一種強大的抗氧化劑，與硒共同作戰，保護細胞膜免受自由基的傷害。</p>
-            </div>
-          </a>
-           <a href="./zinc.html" class="related-card">
-            <div class="related-card-content">
-              <span class="related-card-tag" style="background-color: #f1f5f9; color: #475569;">礦物質</span>
-              <h3 class="related-card-title">鋅 (Zinc)</h3>
-              <p class="related-card-desc">維持免疫系統正常運作的關鍵礦物質，與硒在免疫調節上扮演著不同的重要角色。</p>
-            </div>
-          </a>
-        </div>
+
       </main>
     </div>
 
@@ -526,6 +505,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       function updateProgressBar() {
@@ -561,6 +543,13 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
+        
+        const articleId = 'card-selenium';
+        const relatedContainer = document.getElementById('related-articles-container');
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
       });
     </script>
 </body>

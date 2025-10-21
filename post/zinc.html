@@ -617,13 +617,14 @@
         font-size: 0.95em;
       }
 
+      section[id] { scroll-margin-top: 100px; }
       @media (max-width: 1024px) {
         .article-container {
           grid-template-columns: 1fr;
           gap: 0;
         }
         .sidebar {
-          display: none;
+          /* display: none; */
         }
       }
     </style>
@@ -638,15 +639,24 @@
           <h3 class="toc-title"><span>目錄</span></h3>
           <ul class="toc-list">
             <li><a href="#takeaways" class="toc-link">本文重點速覽</a></li>
-            <li><a href="#basics" class="toc-link">鋅是什麼？</a></li>
-            <li><a href="#functions" class="toc-link">鋅的驚人功效</a></li>
-            <li><a href="#who-needs-it" class="toc-link">你是否缺鋅？</a></li>
-            <li><a href="#how-much" class="toc-link">該補充多少？</a></li>
-            <li><a href="#supplements" class="toc-link">如何選擇補充品</a></li>
-            <li><a href="#natural-sources" class="toc-link">天然食物來源</a></li>
-            <li><a href="#latest-research" class="toc-link">鋅的進階科學</a></li>
+            <li><a href="#basics" class="toc-link">鋅是什麼？不只是男性所需</a></li>
+            <li><a href="#functions" class="toc-link">鋅對人體有哪些驚人功效？</a></li>
+            <li><a href="#immune-defense" class="toc-link sub-item">免疫系統的堅實防線</a></li>
+            <li><a href="#skin-hair-nails" class="toc-link sub-item">皮膚、頭髮與指甲的建築師</a></li>
+            <li><a href="#growth-fertility" class="toc-link sub-item">生長與生育的關鍵燃料</a></li>
+            <li><a href="#who-needs-it" class="toc-link">我怎麼知道自己是否缺鋅？常見的8個警訊</a></li>
+            <li><a href="#deficiency-self-check" class="toc-link sub-item">缺鋅風險自我檢測</a></li>
+            <li><a href="#how-much" class="toc-link">我該補充多少鋅？</a></li>
+            <li><a href="#supplements" class="toc-link">如何選擇鋅補充品：一個簡單的決策框架</a></li>
+            <li><a href="#natural-sources" class="toc-link">哪些食物富含鋅？</a></li>
+            <li><a href="#seafood" class="toc-link sub-item">海鮮類</a></li>
+            <li><a href="#red-meat-poultry" class="toc-link sub-item">紅肉與禽肉</a></li>
+            <li><a href="#plant-sources" class="toc-link sub-item">植物性來源</a></li>
+            <li><a href="#latest-research" class="toc-link">鋅的進階科學：大腦與腸道</a></li>
+            <li><a href="#brain-health" class="toc-link sub-item">鋅與大腦健康：情緒和認知的穩定劑</a></li>
+            <li><a href="#gut-barrier" class="toc-link sub-item">鋅與腸道屏障：對抗「腸漏症」的守門員</a></li>
             <li><a href="#faq" class="toc-link">常見問題 (FAQ)</a></li>
-            <li><a href="#related-articles" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -671,6 +681,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <article class="article-body">
 
           <section id="takeaways">
@@ -698,15 +709,15 @@
             <p>鋅在體內扮演著三個超酷的關鍵角色，直接影響您每天的感受。它不僅是免疫系統的堅實防線，更是皮膚、頭髮的建築師，以及生長與生育的關鍵燃料。</p>
             <div class="info-cards">
               <div class="info-card">
-                <h4 class="info-card-title">免疫系統的堅實防線</h4>
+                <h4 class="info-card-title" id="immune-defense">免疫系統的堅實防線</h4>
                 <p class="info-card-desc">老是覺得自己比別人容易感冒？可能是你的免疫軍隊缺少了「鋅」這個指揮官。鋅是免疫細胞成長與作戰的必需品，缺鋅會讓你的抵抗力變差，更容易被病菌打倒。</p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">皮膚、頭髮與指甲的建築師</h4>
+                <h4 class="info-card-title" id="skin-hair-nails">皮膚、頭髮與指甲的建築師</h4>
                 <p class="info-card-desc">鋅在<strong class="highlight-nutrient">蛋白質合成與膠原蛋白形成</strong>中扮演核心角色。想要有彈潤的皮膚、強韌的頭髮和健康的指甲，鋅就是那個默默工作的頂級建築師。它還能幫助傷口癒合、改善痘痘問題。</p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">生長與生育的關鍵燃料</h4>
+                <h4 class="info-card-title" id="growth-fertility">生長與生育的關鍵燃料</h4>
                 <p class="info-card-desc">從小朋友的成長發育，到成年男性的<strong class="highlight-nutrient">睪固酮正常分泌</strong>與精子活力，鋅都扮演著不可或缺的推手。它確保了生命的能量能順利傳承與發展。</p>
               </div>
             </div>
@@ -716,7 +727,7 @@
             <h2>我怎麼知道自己是否缺鋅？常見的8個警訊</h2>
             <p>缺鋅的症狀往往很細微且容易被忽略。如果您發現自己有以下幾個狀況，可能就是身體在發出「缺鋅」的警訊了。別以為缺鋅離您很遠，在現代快節奏的生活和飲食習慣下，許多人正不知不覺地走向「缺鋅邊緣人」的行列。</p>
             <div class="quick-test">
-              <h3>缺鋅風險自我檢測</h3>
+              <h3 id="zinc-risk-self-test">缺鋅風險自我檢測</h3>
               <p>以下情況，符合你的生活習慣嗎？</p>
               <div class="test-options">
                   <label class="test-option"><input type="checkbox"><span>我是素食或蔬食者</span></label>
@@ -789,15 +800,15 @@
             <p>想補充鋅，從餐盤裡下手絕對是最好的起點！通常，動物性食物中的鋅，我們的身體會更容易吸收。素食者則需要特別注意植物性來源的攝取與搭配，以克服植酸的影響。</p>
             <div class="info-cards">
               <div class="info-card">
-                <h4 class="info-card-title">海鮮類</h4>
+                <h4 class="info-card-title" id="seafood">海鮮類</h4>
                 <p class="info-card-desc"><strong class="highlight-nutrient">牡蠣（生蠔）</strong>是自然界中的含鋅之王，其次是螃蟹、龍蝦等。</p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">紅肉與禽肉</h4>
+                <h4 class="info-card-title" id="red-meat-poultry">紅肉與禽肉</h4>
                 <p class="info-card-desc">牛肉、豬肉、羊肉和雞肉都是鋅的良好來源。</p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">植物性來源</h4>
+                <h4 class="info-card-title" id="plant-sources">植物性來源</h4>
                 <p class="info-card-desc">南瓜籽、腰果、鷹嘴豆、扁豆、全穀類。但植物中的<strong class="highlight-nutrient">植酸</strong>會稍微影響鋅的吸收。</p>
               </div>
             </div>
@@ -813,11 +824,11 @@
             <h2>鋅的進階科學：大腦與腸道</h2>
             <p>近五年來，科學界對鋅的研究已從基礎的免疫功能，擴展到更精密的領域。發表於頂尖期刊的研究指出，鋅在以下兩個領域扮演著過去被低估的關鍵角色：</p>
             
-            <h3>鋅與大腦健康：情緒和認知的穩定劑</h3>
+            <h3 id="zinc-brain-health">鋅與大腦健康：情緒和認知的穩定劑</h3>
             <p>最新研究發現，大腦中海馬迴（負責學習與記憶的區域）的鋅濃度特別高。研究顯示，血液中鋅的水平與情緒穩定呈現正相關。<strong class="highlight-nutrient">部分研究指出，補充鋅對於輔助改善憂鬱症狀、提升注意力不足過動症(ADHD)兒童的專注力，具有正面潛力</strong>。科學家認為，這與鋅能調節神經傳導物質（如血清素和多巴胺）的活性有關。</p>
             
 
-            <h3>鋅與腸道屏障：對抗「腸漏症」的守門員</h3>
+            <h3 id="gut-barrier">鋅與腸道屏障：對抗「腸漏症」的守門員</h3>
             <p>「腸漏症」是指腸道黏膜細胞的緊密連接出現縫隙，導致未消化完全的食物分子或毒素滲入血液，引發全身性的發炎反應。2024年一篇發表於《腸道微生物》期刊的研究證實，<strong class="highlight-nutrient">鋅是維持腸道上皮細胞「緊密連接」完整性的必需元素</strong>。充足的鋅有助於強化腸道屏障，減少腸道通透性，對於改善過敏、自體免疫相關問題提供了新的營養支持策略。</p>
             
           </section>
@@ -860,38 +871,8 @@
             <p>鋅是維持免疫細胞正常發育的基礎戰力。想了解更多關於維生素C、D、益生菌等如何協同作戰，建立全方位免疫防線嗎？<a href="./topic-immune-boosting-nutrients.html">點此閱讀我們的免疫力強化完整指南</a>。</p>
           </div>
 
-          <section id="related-articles">
-            <h2 class="related-title">相關營養素</h2>
-            <div class="related-grid">
-              <a href="vitamin-c.html" class="related-card">
-                <div class="related-card-content">
-                  <span class="related-card-tag" style="background-color: #FEF9C3; color: #713F12;">維生素</span>
-                  <h3 class="related-card-title">維生素 C</h3>
-                  <p class="related-card-desc">
-                    與鋅同為支持免疫系統的關鍵營養素，兩者協同作用，能建立更強的保護力。
-                  </p>
-                </div>
-              </a>
-              <a href="copper.html" class="related-card">
-                <div class="related-card-content">
-                  <span class="related-card-tag" style="background-color: #FFE4E6; color: #881337;">礦物質</span>
-                  <h3 class="related-card-title">銅</h3>
-                  <p class="related-card-desc">
-                    在體內與鋅互相平衡，是維持生理機能正常的夥伴。補充高劑量鋅時需注意銅的平衡。
-                  </p>
-                </div>
-              </a>
-               <a href="biotin.html" class="related-card">
-                <div class="related-card-content">
-                  <span class="related-card-tag" style="background-color: #F3E8FF; color: #581C87;">維生素</span>
-                  <h3 class="related-card-title">生物素 (維生素B7)</h3>
-                  <p class="related-card-desc">
-                    與鋅同樣對維持頭髮、皮膚與指甲的健康至關重要，是養顏美容的絕佳組合。
-                  </p>
-                </div>
-              </a>
-            </div>
-          </section>
+
+          <div id="related-articles-container"></div>
         </article>
       </main>
     </div>
@@ -913,6 +894,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       // Progress Bar
@@ -1079,6 +1063,13 @@
           console.log("✅ Footer 組件初始化完成");
         } else {
           console.error("❌ Footer 組件初始化失敗");
+        }
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
+        
+        const articleId = 'card-zinc';
+        const relatedContainer = document.getElementById('related-articles-container');
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
         }
       });
     </script>

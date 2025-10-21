@@ -148,12 +148,16 @@
           <h1>權威營養資訊 - 營養師常用官方網站與期刊資料庫</h1>
           <p class="subtitle">全球官方健康網站與專業期刊資料庫，跟網路謠言與錯誤資訊說再見！</p>
         </header>
+        <div id="toc-mobile-target"></div>
 
         <aside class="sidebar">
-            <nav class="tree-nav">
-                <h3>目錄</h3>
-                <ul class="tree-view" id="treeView"></ul>
-            </nav>
+        <div class="toc">
+          <h3 class="toc-title"><span>目錄</span></h3>
+          <ul class="toc-list">
+            <li><a href="#official-sites" class="toc-link">權威營養資訊網站清單</a></li>
+            <li><a href="#research-databases" class="toc-link">專業研究與期刊資料庫</a></li>
+          </ul>
+        </div>
         </aside>
 
         <main>
@@ -226,6 +230,7 @@
           <div class="disclaimer">
             <strong>免責聲明：</strong>本頁面提供的網站連結均為外部官方網站，其內容由該機構負責。本站僅為資訊整理與推薦，不對其網站內容的準確性或完整性提供任何保證。在做出任何健康決策前，請務必諮詢您的醫師或合格的醫療專業人員。
           </div>
+          <div id="related-articles-container"></div>
         </main>
     </div>
 
@@ -236,82 +241,42 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
-      // Initialize Components
-      document.addEventListener("DOMContentLoaded", function () {
-        // Initialize Analytics Component
-        if (window.DeusAnalyticsComponent) {
-          new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
-        }
-
-        // Initialize Header Component
-        const headerContainer = document.getElementById("header-component");
-        if (headerContainer && window.DeusHeaderComponent) {
-          new window.DeusHeaderComponent(headerContainer).setDebug(false);
-        }
-
-        // Initialize Footer Component
-        const footerContainer = document.getElementById("footer-component");
-        if (footerContainer && window.DeusFooterComponent) {
-          new window.DeusFooterComponent(footerContainer).setDebug(false);
-        }
-
-        // TOC Generation
-        const tocContainer = document.getElementById('treeView');
-        const mainContent = document.querySelector('main');
-        const headers = mainContent.querySelectorAll('h2');
-        const tocLinks = [];
-
-        if (tocContainer && headers.length > 0) {
-            let tocHTML = '';
-            headers.forEach((header, index) => {
-                const id = header.id || 'section-' + index;
-                if (!header.id) {
-                    header.id = id;
-                }
-                tocHTML += `<li class="tree-leaf"><a href="#${id}">${header.textContent}</a></li>`;
+            // Initialize Components
+            document.addEventListener("DOMContentLoaded", function () {
+              // Initialize Analytics Component
+              if (window.DeusAnalyticsComponent) {
+                new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
+              }
+      
+              // Initialize Header Component
+              const headerContainer = document.getElementById("header-component");
+              if (headerContainer && window.DeusHeaderComponent) {
+                new window.DeusHeaderComponent(headerContainer).setDebug(false);
+              }
+      
+              // Initialize Footer Component
+              const footerContainer = document.getElementById("footer-component");
+              if (footerContainer && window.DeusFooterComponent) {
+                new window.DeusFooterComponent(footerContainer).setDebug(false);
+              }
+      
+              // Initialize Related Articles Component
+              const relatedContainer = document.getElementById("related-articles-container");
+              const articleId = document.body.dataset.articleId;
+              if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+                new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+              }
+      
+              // Initialize Responsive TOC Component
+              if (window.ResponsiveTocComponent) {
+                new window.ResponsiveTocComponent().initialize();
+              }
             });
-            tocContainer.innerHTML = tocHTML;
-
-            const links = tocContainer.querySelectorAll('a');
-            links.forEach(link => tocLinks.push(link));
-
-            tocContainer.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    e.preventDefault();
-                    const targetElement = document.querySelector(e.target.getAttribute('href'));
-                    if (targetElement) {
-                        const headerOffset = 100; // Header height
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-
-            // Highlight TOC link on scroll
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        tocLinks.forEach(link => {
-                            if (link.getAttribute('href').substring(1) === entry.target.id) {
-                                link.classList.add('active');
-                            } else {
-                                link.classList.remove('active');
-                            }
-                        });
-                    }
-                });
-            }, { rootMargin: '-50% 0px -50% 0px' });
-
-            headers.forEach(header => observer.observe(header));
-        }
-      });
     </script>
   </body>
 </html>

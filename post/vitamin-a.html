@@ -357,10 +357,9 @@
         font-size: 0.95em;
       }
 
-      @media (max-width: 1024px) {
-        .article-container { grid-template-columns: 1fr; gap: 0; }
-        .sidebar { display: none; }
-      }
+            section[id] { scroll-margin-top: 100px; }
+
+            @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } /* .sidebar { display: none; } */ }
     </style>
 </head>
 <body>
@@ -372,13 +371,24 @@
         <div class="toc">
           <h3 class="toc-title"><span>目錄</span></h3>
           <ul class="toc-list">
-            <li><a href="#basics" class="toc-link">維生素A是什麼？</a></li>
+            <li><a href="#basics" class="toc-link">維生素A是什麼？兩種形式，兩種來源</a></li>
+            <li><a href="#retinoids" class="toc-link sub-item">已成形維生素A (Retinoids)</a></li>
+            <li><a href="#carotenoids" class="toc-link sub-item">維生素A原 (Carotenoids)</a></li>
             <li><a href="#functions" class="toc-link">維生素A的核心功效</a></li>
-            <li><a href="#biochemistry" class="toc-link">維生素A的生化之旅</a></li>
+            <li><a href="#vision" class="toc-link sub-item">視覺：超越夜盲症</a></li>
+            <li><a href="#skin-cell-health" class="toc-link sub-item">皮膚與細胞健康</a></li>
+            <li><a href="#immune-system" class="toc-link sub-item">免疫系統的守護者</a></li>
+            <li><a href="#growth-development" class="toc-link sub-item">生長與發育</a></li>
+            <li><a href="#biochemistry" class="toc-link">維生素A的生化之旅：從吸收到作用</a></li>
+            <li><a href="#absorption-metabolism-storage" class="toc-link sub-item">吸收、代謝與儲存：從腸道到肝臟的旅程</a></li>
+            <li><a href="#visual-cycle" class="toc-link sub-item">視覺循環：光轉導的分子傑作</a></li>
+            <li><a href="#retinoic-acid" class="toc-link sub-item">視黃酸：基因表現的類激素調節劑</a></li>
             <li><a href="#how-much" class="toc-link">我需要多少維生素A？</a></li>
             <li><a href="#food-sources" class="toc-link">天然食物來源</a></li>
             <li><a href="#supplements" class="toc-link">補充品怎麼挑？</a></li>
+            <li><a href="#retinoids-difference" class="toc-link sub-item">進階知識：A醇、A醛、A酸，到底差在哪？</a></li>
             <li><a href="#safety" class="toc-link">安全與風險</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -402,6 +412,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <article class="article-body">
           <section id="basics">
             <h2>維生素A是什麼？兩種形式，兩種來源</h2>
@@ -409,11 +420,11 @@
             <p>維生素A家族的成員可根據其膳食來源和化學形式，主要分為兩大類：</p>
             <div class="info-cards" style="grid-template-columns: 1fr 1fr; gap: 20px;">
               <div class="info-card">
-                <h4 class="info-card-title">已成形維生素A (Retinoids)</h4>
+            <h3 id="retinoids">已成形維生素A (Retinoids)</h3>
                 <p class="info-card-desc">來自動物性食物，是身體可直接利用的「活性」形式，生物利用率高。</p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">維生素A原 (Carotenoids)</h4>
+            <h3 id="carotenoids">維生素A原 (Carotenoids)</h3>
                 <p class="info-card-desc">來自植物性食物，是維生素A的「前驅物」，需經身體轉化才能利用。</p>
               </div>
             </div>
@@ -428,19 +439,19 @@
             <p>基於其深刻的生物化學機制，維生素A對人體健康的影響是廣泛而多層面的。從維持敏銳的視覺到構建堅固的免疫防線，再到引導生命的生長與發育，維生素A在各個生理系統中都扮演著不可或缺的角色。</p>
             <div class="info-cards">
               <div class="info-card">
-                <h4 class="info-card-title">視覺：超越夜盲症</h4>
+                <h4 class="info-card-title" id="vision">視覺：超越夜盲症</h4>
                 <p class="info-card-desc">除了預防夜盲症，維生素A對於維持眼結膜與角膜的健康至關重要。嚴重缺乏會導致乾眼症，最終可能造成永久性失明。</p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">皮膚與細胞健康</h4>
+                <h4 class="info-card-title" id="skin-cell-health">皮膚與細胞健康</h4>
                 <p class="info-card-desc">維生素A對於上皮細胞的正常分化和更新至關重要，有助於維持皮膚的光滑與健康，這也是類視黃醇被廣泛應用於皮膚科學的基礎。</p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">免疫系統的守護者</h4>
+                <h4 class="info-card-title" id="immune-system">免疫系統的守護者</h4>
                 <p class="info-card-desc">維生素A素有「抗感染維他命」之稱，它能維持呼吸道、消化道黏膜的完整性，並直接參與免疫細胞的發育與分化，構建身體的縱深防禦。</p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">生長與發育</h4>
+                <h4 class="info-card-title" id="growth-development">生長與發育</h4>
                 <p class="info-card-desc">透過調控基因，視黃酸在胚胎發育過程中不可或缺，精準引導心臟、四肢等器官的形成，並對兒童的骨骼和牙齒生長至關重要。</p>
               </div>
             </div>
@@ -449,14 +460,14 @@
           <section id="biochemistry">
             <h2>維生素A的生化之旅：從吸收到作用</h2>
             <p>維生素A在體內的旅程與其功能的多樣性，根植於其複雜的生物化學代謝途徑。從消化道吸收，到肝臟儲存，再到轉化為功能各異的活性分子，每一步都受到精密的調控。</p>
-            <h3>吸收、代謝與儲存：從腸道到肝臟的旅程</h3>
+            <h3 id="absorption-metabolism-storage">吸收、代謝與儲存：從腸道到肝臟的旅程</h3>
             <p>作為一種脂溶性維生素，維生素A的吸收過程高度依賴膳食脂肪的存在。在小腸中，食物中的脂肪與膽汁酸鹽作用，形成微膠粒（micelles），將脂溶性的維生素A分子包裹其中，以便於吸收。</p>
             <ul>
                 <li><strong>吸收與轉化：</strong>在腸道黏膜細胞內，來自動物性食物的視黃酯被水解為視黃醇。而來自植物性食物的維生素A原類胡蘿蔔素，則在特定酵素的催化下，被裂解成視黃醛，隨後再被還原為視黃醇。</li>
                 <li><strong>包裝與運輸：</strong>吸收後的視黃醇在腸道細胞內會再次被酯化，並與其他脂質一同被組裝進乳糜微粒（chylomicrons）中，進入淋巴系統，最終匯入血液循環。</li>
                 <li><strong>肝臟儲存：</strong>肝臟是維生素A最主要的儲存器官，約有80-90%的總儲備量都集中於此。當身體需要時，肝臟會將儲存的維生素A釋放至血液，運輸至目標細胞。</li>
             </ul>
-            <h3>視覺循環：光轉導的分子傑作</h3>
+            <h3 id="visual-cycle">視覺循環：光轉導的分子傑作</h3>
             <p>維生素A在視覺中的核心作用，是透過一個被稱為「沃爾德視覺循環」（Wald's Visual Cycle）的精妙生化過程來實現的。此循環確保了視網膜感光細胞在接收光子後能夠產生神經信號，並在極短時間內恢復感光能力。</p>
             <ol>
                 <li><strong>視紫質形成：</strong>血液中的視黃醇被運輸至眼部，轉化為11-順式-視黃醛。</li>
@@ -465,7 +476,7 @@
                 <li><strong>信號轉導：</strong>構型的轉變啟動一系列信號傳遞，最終產生神經衝動傳至大腦。</li>
                 <li><strong>再生：</strong>全反式-視黃醛從視蛋白上脫離，再被轉化回11-順式-視黃醛，完成循環。維生素A缺乏會阻礙此過程，導致夜盲症。</li>
             </ol>
-            <h3>視黃酸：基因表現的類激素調節劑</h3>
+            <h3 id="retinoic-acid">視黃酸：基因表現的類激素調節劑</h3>
             <p>雖然視黃醛在視覺中至關重要，但維生素A在視覺以外的大多數全身性效應，是由其不可逆的氧化產物——<strong class="highlight-nutrient">視黃酸（Retinoic Acid, RA）</strong>所介導的。視黃酸的功能機制類似於類固醇激素，它作為一個強效的信號分子，直接調控基因的轉錄。</p>
             <div class="alert alert-tip">
               <strong>💡 雙重身份的奧秘：開關 vs. 編程師</strong>
@@ -518,7 +529,7 @@
               <li><strong>β-胡蘿蔔素 vs. 視黃醇：</strong>對於一般保健，選擇β-胡蘿蔔素補充品相對安全，因為身體會視需求轉換，較不易過量。</li>
               <li><strong>魚肝油：</strong>是維生素A和D的豐富來源，但需注意劑量，避免兩者同時過量。</li>
             </ul>
-            <h3>進階知識：A醇、A醛、A酸，到底差在哪？</h3>
+            <h3 id="retinoids-difference">進階知識：A醇、A醛、A酸，到底差在哪？</h3>
             <p>在保養品領域，你可能常聽到A醇、A醛、A酸，它們都是維生素A的衍生物（統稱類維A，Retinoids），在皮膚上扮演著「基因編程器」的角色，能促進膠原蛋白增生、加速角質代謝。但它們的活性與刺激性大不相同。</p>
             <table class="data-table">
               <thead>
@@ -544,39 +555,8 @@
             </div>
           </section>
 
-          <h2 class="related-title">相關營養素</h2>
-          <div class="related-grid">
-            <a href="zinc.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag">礦物質</span>
-                <h3 class="related-card-title">鋅</h3>
-                <p class="related-card-desc">鋅是將維生素A從肝臟運輸至全身所需的關鍵礦物質，兩者協同作用，維持視覺健康。</p>
-              </div>
-            </a>
-            <a href="vitamin-e.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag">維生素</span>
-                <h3 class="related-card-title">維生素 E</h3>
-                <p class="related-card-desc">作為抗氧化劑，維生素E可以保護維生素A不被氧化，維持其活性。</p>
-              </div>
-            </a>
-            <a href="lutein.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag">其他營養素</span>
-                <h3 class="related-card-title">葉黃素</h3>
-                <p class="related-card-desc">與維生素A同為保護眼睛的重要營養素，葉黃素主要負責過濾藍光，保護黃斑部。</p>
-              </div>
-            </a>
-            <a href="vitamin-d.html" class="related-card">
-              <div class="related-card-content">
-                <span class="related-card-tag">維生素</span>
-                <h3 class="related-card-title">維生素 D</h3>
-                <p class="related-card-desc">
-                  同為脂溶性維生素，維生素D與維生素A在免疫調節與細胞分化上扮演協同角色，共同維持身體健康。
-                </p>
-              </div>
-            </a>
-          </div>
+
+        <div id="related-articles-container"></div>
         </article>
 
         <section class="disclaimer">
@@ -593,6 +573,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -640,6 +623,13 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
+        
+        const articleId = 'card-vitamin-a';
+        const relatedContainer = document.getElementById('related-articles-container');
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
       });
     </script>
 </body>

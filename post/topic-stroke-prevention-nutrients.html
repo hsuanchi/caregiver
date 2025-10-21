@@ -149,7 +149,8 @@
       .disclaimer-content { max-width: 800px; margin: 0 auto; padding: 0 20px; }
       .disclaimer h3 { color: #4b5563; margin-bottom: 15px; font-size: 1.5em; }
       .disclaimer p { color: #6b7280; font-size: 0.95em; line-height: 1.8; }
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } .article-content { padding: 30px; } .article-title { font-size: 2em; } }
+      section[id] { scroll-margin-top: 100px; }
+      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } /* .sidebar { display: none; } */ .article-content { padding: 30px; } .article-title { font-size: 2em; } }
       @media (max-width: 768px) { .article-content { padding: 20px; border-radius: 15px; } .article-title { font-size: 1.8em; } .article-meta { flex-direction: column; gap: 10px; } .related-grid { grid-template-columns: 1fr; } }
       .highlight-nutrient { border-bottom: 2px solid var(--primary-color); padding-bottom: 1px; }
     </style>
@@ -163,14 +164,19 @@
         <div class="toc">
           <h3 class="toc-title"><a href="#page-title"><span>目錄</span></a></h3>
           <ul class="toc-list">
-            <li><a href="#problem" class="toc-link">中風，離你我並不遠</a></li>
-            <li><a href="#solution" class="toc-link">打造「抗中風體質」的5大營養素戰將</a></li>
+            <li><a href="#problem" class="toc-link">中風，離你我並不遠 (Pain)</a></li>
+            <li><a href="#solution" class="toc-link">打造「抗中風體質」的5大營養素戰將 (Solution)</a></li>
             <li><a href="#nutrients" class="toc-link">5大關鍵營養素深度解析</a></li>
+            <li><a href="#potassium" class="toc-link sub-item">1. 鉀 (Potassium) - 天然的降壓藥</a></li>
+            <li><a href="#magnesium" class="toc-link sub-item">2. 鎂 (Magnesium) - 血管的鬆弛劑</a></li>
+            <li><a href="#omega-3" class="toc-link sub-item">3. Omega-3 脂肪酸 - 血液的清道夫</a></li>
+            <li><a href="#folic-acid" class="toc-link sub-item">4. 葉酸 (維生素B9) - 血管的修復工</a></li>
+            <li><a href="#vitamin-d" class="toc-link sub-item">5. 維生素 D - 全方位的守護者</a></li>
             <li><a href="#action-plan" class="toc-link">實踐指南：打造你的抗中風餐盤</a></li>
             <li><a href="#safety" class="toc-link">安全攝取：補充關鍵營養素的注意事項</a></li>
             <li><a href="#faq" class="toc-link">常見疑問 (FAQ)</a></li>
             <li><a href="#references" class="toc-link">文獻參考</a></li>
-            <li><a href="#related-nutrients" class="toc-link">相關營養素</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -194,6 +200,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <article class="article-body">
           
           <div class="key-takeaways">
@@ -299,19 +306,19 @@
                     </defs>
                 </svg>
             </div>
-            <h3>1. 鉀 (Potassium) - 天然的降壓藥</h3>
+            <h3 id="potassium">1. 鉀 (Potassium) - 天然的降壓藥</h3>
             <p>鉀與鈉是一對相互拮抗的礦物質。攝取足夠的鉀，可以幫助腎臟排出體內多餘的鈉和水分，直接降低血容量，從而降低血壓。此外，鉀還能幫助放鬆血管壁，減少血管阻力。<strong>高鉀低鈉飲食</strong>是預防高血壓與中風最核心的飲食策略。</p>
             
-            <h3>2. 鎂 (Magnesium) - 血管的鬆弛劑</h3>
+            <h3 id="magnesium">2. 鎂 (Magnesium) - 血管的鬆弛劑</h3>
             <p>鎂在體內扮演著「天然鈣離子阻斷劑」的角色，能阻止過多的鈣進入血管平滑肌細胞，從而幫助血管擴張、降低血壓。它同時也參與體內數百種酵素反應，對於維持正常心律、減少發炎反應都至關重要。長期缺鎂與高血壓、動脈硬化和心律不整都有關聯。</p>
 
-            <h3>3. Omega-3 脂肪酸 - 血液的清道夫</h3>
+            <h3 id="omega-3">3. Omega-3 脂肪酸 - 血液的清道夫</h3>
             <p>來自深海魚油的Omega-3 (EPA與DHA) 是強效的抗發炎物質。它能降低血液中的三酸甘油酯、減少血小板的凝集（預防血栓）、改善血管內皮功能，並使血管更具彈性。多項大型研究都證實，規律攝取魚油有助於降低心血管事件的風險。</p>
 
-            <h3>4. 葉酸 (維生素B9) - 血管的修復工</h3>
+            <h3 id="folic-acid">4. 葉酸 (維生素B9) - 血管的修復工</h3>
             <p>葉酸最關鍵的作用，是幫助代謝體內一種名為「同半胱胺酸(Homocysteine)」的有害物質。過高的同半胱胺酸會直接損傷血管內皮，促進動脈粥狀硬化的形成。充足的葉酸（通常需協同維生素B6、B12）能有效降低其濃度，保護血管壁的完整性。</p>
 
-            <h3>5. 維生素 D - 全方位的守護者</h3>
+            <h3 id="vitamin-d">5. 維生素 D - 全方位的守護者</h3>
             <p>維生素D過去多被認為只與骨骼健康有關，但近年研究發現，它幾乎影響全身所有系統。維生素D能幫助調節腎素-血管張力素系統（一個控制血壓的關鍵系統）、減少血管發炎、改善胰島素阻抗。體內維生素D濃度不足，已被發現與較高的心血管疾病及中風風險有關。</p>
           </section>
 
@@ -394,37 +401,10 @@
               </ul>
           </section>
 
+          <div id="related-articles-container"></div>
         </article>
 
-        <!-- 相關文章區塊 -->
-        <h2 class="related-title" id="related-nutrients">相關營養素</h2>
-        <div class="related-grid">
-          <a href="./sodium.html" class="related-card">
-            <span class="related-card-tag mineral">礦物質</span>
-            <h3 class="related-card-title">鈉 (Sodium)</h3>
-            <p class="related-card-desc">了解高鈉飲食如何成為高血壓的元兇，以及如何在生活中實踐有效的減鈉策略。</p>
-          </a>
-           <a href="./potassium.html" class="related-card">
-            <span class="related-card-tag mineral">礦物質</span>
-            <h3 class="related-card-title">鉀 (Potassium)</h3>
-            <p class="related-card-desc">作為鈉的黃金搭檔，充足的鉀是平衡鈉、維持血壓穩定的關鍵。了解如何從天然食物中攝取足夠的鉀。</p>
-          </a>
-           <a href="./fish-oil.html" class="related-card">
-            <span class="related-card-tag other">脂肪酸</span>
-            <h3 class="related-card-title">魚油 (Omega-3)</h3>
-            <p class="related-card-desc">深入解析EPA與DHA如何降低三酸甘油酯、抗發炎，是保護心血管不可或缺的營養素。</p>
-          </a>
-          <a href="./magnesium.html" class="related-card">
-            <span class="related-card-tag mineral">礦物質</span>
-            <h3 class="related-card-title">鎂 (Magnesium)</h3>
-            <p class="related-card-desc">作為「血管的鬆弛劑」，鎂能幫助血管擴張、對抗鈣化，對於維持血壓與血管彈性至關重要。</p>
-          </a>
-          <a href="./vitamin-d.html" class="related-card">
-            <span class="related-card-tag vitamin">維生素</span>
-            <h3 class="related-card-title">維生素 D</h3>
-            <p class="related-card-desc">不只是陽光荷爾蒙，維生素D也參與調節血壓與發炎反應，是全方位的血管守護者。</p>
-          </a>
-        </div>
+
       </main>
     </div>
 
@@ -440,6 +420,9 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       function updateProgressBar() {
@@ -475,6 +458,13 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
+        
+        const articleId = 'topic-card-stroke-prevention';
+        const relatedContainer = document.getElementById('related-articles-container');
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
       });
     </script>
 </body>
