@@ -1103,7 +1103,22 @@
           grid-template-columns: 1fr;
           gap: 0;
         }
+        .sidebar {
+          display: none;
+        }
       }
+          /* === START RWD STANDARDIZATION === */
+      img, svg { max-width: 100%; height: auto; }
+      p, td, th, li, a { word-break: break-word; }
+      .responsive-table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 20px 0; border: 1px solid #e2e8f0; border-radius: 15px; }
+      .info-cards, .risk-group-cards { display: flex; flex-direction: column; gap: 20px; }
+      .info-card, .risk-card { flex: 1; min-width: 250px; }
+      @media (min-width: 768px) {
+          .md-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); }
+          .md-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); }
+          .md-flex-row { flex-direction: row; }
+      }
+      /* === END RWD STANDARDIZATION === */
     </style>
 </head>
 <body data-article-id="card-calcium">
@@ -1152,7 +1167,7 @@
       <main class="article-content">
         <!-- Article Header -->
         <header class="article-header">
-          <div id="toc-mobile-target"></div>
+        
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a>
@@ -1172,6 +1187,7 @@
           </div>
         </header>
 
+        <div id="toc-mobile-target"></div>
         <!-- Article Body -->
         <article class="article-body">
 
@@ -1201,7 +1217,7 @@
 
             <h3 id="mechanism-bone-bank">骨骼：一個動態的「健康銀行帳戶」</h3>
             <p>許多人誤以為骨骼是靜態不變的支架，但真相是，骨骼是一個極其活躍的動態組織，就像一個資金不斷流動的「健康銀行帳戶」。這個帳戶無時無刻不在進行著「重塑」（Remodeling）的過程，主要由兩種功能相反的細胞共同管理：</p>
-            <div class="info-cards">
+            <div class="info-cards md-grid-2">
               <div class="info-card">
                 <h4 class="info-card-title">造骨細胞 (Osteoblasts)</h4>
                 <p class="info-card-desc">如同「建築工人」，負責合成新的骨骼基質，並調控鈣、磷等礦物質沉積其上，形成新的骨質。</p>
@@ -1227,11 +1243,7 @@
             <h3 id="how-much-details">各年齡層的鈣質建議攝取量</h3>
             <p>要評估鈣質攝取是否充足，首先需要一個明確的標準。衛生福利部國民健康署根據國人的營養需求，制定了各年齡層的膳食營養素參考攝取量（DRIs）。下表整理了不同生命階段的每日鈣質建議攝取量，此數值涵蓋了從飲食與補充劑獲得的總量。</p>
             
-            <div style="overflow-x: auto; padding-bottom: 10px;">
-              <table class="data-table min-width-500px">
-                <thead>
-                  <tr><th>年齡層</th><th>每日建議攝取量 (毫克)</th></tr>
-                </thead>
+            <div class="responsive-table-wrapper">
                 <tbody>
                   <tr><td>嬰幼兒 (0-6 個月)</td><td>300 mg</td></tr>
                   <tr><td>嬰幼兒 (7-12 個月)</td><td>400 mg</td></tr>
@@ -1326,7 +1338,7 @@
             <p>獲取鈣質的最佳途徑永遠是均衡的飲食。天然食物不僅提供鈣，還附帶了多種對骨骼健康至關重要的「神隊友」，如鎂、鉀、維生素K和蛋白質。這些營養素共同作用，效果遠勝於單一的鈣補充劑。</p>
             
             <h3 id="action-plan-food-sources">鈣質來源分類</h3>
-            <div class="info-cards">
+            <div class="info-cards md-grid-2">
               <div class="info-card">
                 <h4 class="info-card-title">乳製品</h4>
                 <p class="info-card-desc">牛奶、起司和優格是鈣質的極佳來源，不僅含量豐富，其生物利用率也相對較高。</p>
@@ -1335,7 +1347,7 @@
                 <h4 class="info-card-title">植物性來源</h4>
                 <p class="info-card-desc">對於素食者或乳糖不耐症者，應優先選擇低草酸蔬菜（如芥蘭、羽衣甘藍）及傳統板豆腐。</p>
               </div>
-            </div><div class="info-cards">
+            </div><div class="info-cards md-grid-2">
               <div class="info-card">
                 <h4 class="info-card-title">海鮮類</h4>
                 <p class="info-card-desc">可連骨食用的小魚，如小魚乾、罐頭沙丁魚等，是鈣質的超級來源。</p>
@@ -1386,8 +1398,7 @@
               </table>
             </div>
             
-            <h4>表 4：高鈣食物綜合指引 (台灣在地版)</h4>
-            <div style="overflow-x: auto; padding-bottom: 10px;">
+            <div class="responsive-table-wrapper">
               <table class="data-table min-width-500px">
                 <thead>
                   <tr>
@@ -1418,7 +1429,7 @@
             <h3 id="absorption-factors">哪些因素阻礙鈣質吸收</h3>
             <p>達到每日建議的鈣攝取量是第一步，但更重要的是身體實際能吸收和利用多少。這個比例稱為「生物利用度」。食物標示上的鈣含量不完全等於您能吸收的量，多種因素都會影響鈣的吸收效率。</p>
 
-            <div class="info-cards">
+            <div class="info-cards md-grid-3">
               <!-- This p tag was removed as it was redundant with the one above -->
               <div class="info-card">
                 <h4 class="info-card-title">攝取量</h4>
@@ -1436,7 +1447,7 @@
 
             <h3 id="action-plan-food-thieves">飲食中的「鈣質小偷」</h3>
             <p>除了促進吸收的因素，我們的飲食中也潛藏著一些會阻礙鈣質吸收的「小偷」，學會辨識並避開它們，才能讓補鈣事半功倍。</p>
-            <div class="info-cards">
+            <div class="info-cards md-grid-2">
               <div class="info-card">
                 <h4 class="info-card-title">草酸 (Oxalates)</h4>
                 <p class="info-card-desc">最強效的抑制劑，常見於菠菜、甜菜根。它會與鈣結合，使其無法被吸收。</p>
@@ -1445,7 +1456,7 @@
                 <h4 class="info-card-title">植酸 (Phytates)</h4>
                 <p class="info-card-desc">存在於全穀類、豆類和種子中，同樣會降低鈣的吸收率。</p>
               </div>
-            </div><div class="info-cards">
+            </div><div class="info-cards md-grid-2">
               <div class="info-card">
                 <h4 class="info-card-title">過量的鈉</h4>
                 <p class="info-card-desc">高鹽飲食會增加鈣質從尿液中排泄的量，讓補進來的鈣白白流失。</p>
@@ -1521,7 +1532,7 @@
             
             <h3 id="action-plan-supplements-who">哪些族群應考慮使用鈣營養品？</h3>
             <p>雖然飲食是首選，但某些族群因生理狀況或飲食限制，確實難以單從食物中獲取足夠的鈣質。若您屬於以下族群，便可考慮在專業人士指導下使用補充品。</p>
-            <div class="risk-group-cards">
+            <div class="risk-group-cards md-grid-3">
               <div class="risk-card">
                 <div class="risk-card-header"><h4 class="risk-card-title">停經後婦女</h4></div>
                 <p class="risk-card-desc">雌激素下降會加速骨質流失，使骨質疏鬆的風險顯著增高。</p>
@@ -1535,7 +1546,7 @@
                 <p class="risk-card-desc">無法從牛奶等主要乳製品中獲取鈣質，是攝取不足的常見族群。</p>
               </div>
             </div>
-            <div class="risk-group-cards">
+            <div class="risk-group-cards md-grid-3">
               <div class="risk-card">
                 <div class="risk-card-header"><h4 class="risk-card-title">吸收不良疾病患者</h4></div>
                 <p class="risk-card-desc">如克隆氏症、乳糜瀉等腸道疾病，會直接影響身體對鈣質的吸收能力。</p>
@@ -1635,7 +1646,7 @@
 
 
             <h3 id="action-plan-supplements-best-use">營養品的最佳使用方式</h3>
-            <p>選對了產品，還需要用對方法。遵循以下三個簡單原則，可以讓您的鈣補充品發揮最大效益，同時避免不必要的浪費。</p><div class="info-cards">
+            <p>選對了產品，還需要用對方法。遵循以下三個簡單原則，可以讓您的鈣補充品發揮最大效益，同時避免不必要的浪費。</p><div class="info-cards md-grid-3">
               <div class="info-card">
                 <h4 class="info-card-title">分次服用，提高效率</h4>
                 <p class="info-card-desc">人體單次吸收鈣的上限約為 <strong class="highlight-nutrient">500 毫克</strong>。若需補充 1000 毫克，應分為早晚兩次，而非一次吞服，這樣吸收率更高。</p>
@@ -1763,7 +1774,7 @@
           <section id="communication">
             <h2>如何與父母溝通「補鈣」這件事？</h2>
             <p>關心父母的骨骼健康，是我們能給予的最好禮物之一。但直接說「你該補鈣了！」往往會遇到阻力。這裡提供一套溫和且有效的溝通策略，幫助您和家人一起建立健康的補鈣習慣。</p>
-            <div class="info-cards" style="grid-template-columns: 1fr; gap: 25px;">
+            <div class="info-cards md-grid-3">
               <div class="info-card info-card-green">
                 <h4 class="info-card-title" style="color: #166534;">第一步：從「陪伴」開始</h4>
                 <p class="info-card-desc" style="text-align: left;">與其說教，不如邀請他們一起「預防」。可以說：「媽，我最近在研究骨質疏鬆，發現我們家好像都有風險耶，要不要一起多注意？」從「我」和「我們」出發，而不是「你」，讓關心聽起來更像團隊合作。</p>
@@ -1904,6 +1915,9 @@
         if (window.ResponsiveTocComponent) {
           new window.ResponsiveTocComponent().initialize();
         }
+
+        // Force a re-evaluation of RWD rules after initial load
+        window.dispatchEvent(new Event('resize'));
       });
     </script>
 

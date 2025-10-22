@@ -115,9 +115,39 @@
       .data-table tbody tr { border-bottom: 1px solid #e5e7eb; transition: background 0.3s ease; }
       .data-table tbody tr:hover { background: #f9fafb; }
       .data-table tbody tr:last-child { border-bottom: none; }
-      .responsive-table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid #e2e8f0; border-radius: 15px; padding: 10px; margin: 20px 0; }
-      .risk-group-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 20px; margin: 30px 0; }
+      .info-cards, .risk-group-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin: 40px 0;
+      }
+      .info-card, .risk-card {
+        flex: 1;
+        min-width: 250px;
+      }
       .quick-test-message { text-align: center; margin-top: 20px; color: #14532d; font-weight: 600; }
+
+      @media (max-width: 1024px) {
+        .article-container {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+        /* .sidebar { display: none; } -- This is now handled by responsive-toc-component.js */
+      }
+
+      @media (min-width: 768px) {
+        .md-grid-2 { 
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+        }
+        .md-grid-3 { 
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+        }
+        .md-flex-row { 
+            flex-direction: row; 
+        }
+      }
     </style>
 </head>
 <body data-article-id="card-zinc">
@@ -168,7 +198,7 @@
           <section id="problem">
             <h2>您有這些困擾嗎？缺鋅的隱形警訊</h2>
             <p>鋅參與了體內超過300種酵素反應，從免疫防禦到細胞生長都少不了它。當這個關鍵的「火星塞」不足時，身體的許多引擎就會開始運轉不順，並發出一系列您可能意想不到的警訊。</p>
-            <div class="info-cards">
+            <div class="info-cards md-grid-3">
               <div class="info-card">
                 <h4 class="info-card-title">免疫力下降，容易感冒</h4>
                 <p class="info-card-desc">鋅是構成免疫細胞與胸腺素的關鍵，缺乏時會導致防禦力下降。</p>
@@ -208,7 +238,7 @@
           <section id="solution">
             <h2>鋅：點燃生命活力的全方位解答</h2>
             <p>補充足量的鋅，就像是為身體的各個系統重新上緊發條。它不僅是男性保健的代名詞，更是維持全方位健康的基礎。以下是鋅能為您帶來的三大核心效益：</p>
-            <div class="info-cards">
+            <div class="info-cards md-grid-3">
               <div class="info-card">
                 <h4 class="info-card-title">鞏固免疫防線</h4>
                 <p class="info-card-desc">激活T細胞與自然殺手細胞，有效抵禦外來病原體，縮短病程。</p>

@@ -472,6 +472,57 @@
    ```
    > **注意**: 此表格的完整 CSS 樣式較為複雜，已內建於各文章頁面的 `<style>` 區塊中。您可以在 `tests/comparison-table-demo.html` 中找到完整的實作範例。
 
+### 6. 全局響應式設計 (Global RWD)
+
+為了確保所有頁面在各種裝置上都有一致且流暢的瀏覽體驗，我們採用一套全局的響應式設計規則。
+
+#### **核心 CSS 規則**
+
+```css
+/* 1. 通用盒模型與文字換行 */
+* { box-sizing: border-box; }
+p, td, th, li, a { word-break: break-word; }
+
+/* 2. 響應式媒體 */
+img, svg { max-width: 100%; height: auto; }
+
+/* 3. 響應式表格容器 */
+.responsive-table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* 4. 行動版優先的卡片容器 */
+.info-cards, .risk-group-cards {
+    display: flex;
+    flex-direction: column; /* 手機上預設為單欄 */
+    gap: 20px;
+}
+
+/* 5. 桌面版佈局的 Utility Classes */
+@media (min-width: 768px) {
+    .md-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); }
+    .md-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .md-flex-row { flex-direction: row; }
+}
+```
+
+#### **HTML 實作範例**
+
+- **卡片佈局**:
+  ```html
+  <!-- 在桌面版為三欄，手機版為單欄 -->
+  <div class="info-cards md-grid-3">
+    ...
+  </div>
+  ```
+
+- **表格**:
+  ```html
+  <div class="responsive-table-wrapper">
+    <table class="data-table">
+      ...
+    </table>
+  </div>
+  ```
+
 ## 整合 SVG 視覺化圖表
 
 ### 目的
