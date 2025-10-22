@@ -15,65 +15,13 @@
 
 
 ### 2.2 CSS 元件使用規則
-- [x] **資訊卡片 (`.info-cards`)**:
-    - **數量限制**: 一個 `.info-cards` 容器內，**最多只能放置 3 張** `.info-card`。
-    - **排版規則**: 容器預設使用 `display: inline-flex`，使其寬度能符合內容寬度。卡片應使用 `flex: 1` 來填滿容器。
+-
 
-- [x] **風險卡片 (`.risk-group-cards`)**:
-    - **數量限制**: 一個 `.risk-group-cards` 容器內，**最多只能放置 3 張** `.risk-card`。
-    - **排版規則**: 容器預設使用 `display: inline-flex`，使其寬度能符合內容寬度。卡片應使用 `flex: 1` 來填滿容器。
 
-- [x] **提示框 (`.alert`)**:
-    - **HTML 結構**: 必須使用標準結構：`<strong>` 標籤僅用於標題，其後緊跟 `<p>` 標籤用於內文，以確保版面正確。
-    - **禁止手動添加圖示**: 警示圖示 (⚠️, 💡) 由 CSS 自動添加，嚴禁在 HTML 中手動插入任何 Emoji 或圖示。
-    - **內容分段**: 較長的內容應放入 `<p>` 標籤，或使用 `<ul>` 條列式，以增強可讀性。
-- [x] **高亮底線 (`.highlight-nutrient`)**:
-    - **CSS 規則**: 必須使用 `background-image: linear-gradient(...)` 的技巧來實現，禁止使用 `border-bottom`。
 - [ ] **禁止行內樣式**: 避免使用 `style="..."` 屬性，應將樣式移至 CSS class 中。
-
 ### 2.3 提示框結構標準化 (Alert Box Structure Standardization)
-- [ ] **目標**: 檢查並修正所有文章頁面中的 `.alert` 提示框，確保其 HTML 結構符合 `writing-guide.md` 的最新規範 (`<strong>` 標題 + `<p>` 內文)。
-- [ ] **待處理檔案列表 (A-Z)**:
-    - [ ] `amino-acids.html`
-    - [ ] `anthocyanins.html`
-    - [ ] `beta-glucan.html`
-    - [ ] `calcium.html`
-    - [ ] `chondroitin.html`
-    - [ ] `chromium.html`
-    - [ ] `coenzyme-q10.html`
-    - [ ] `collagen.html`
-    - [ ] `copper.html`
-    - [ ] `curcumin.html`
-    - [ ] `dietary-fiber.html`
-    - [ ] `fish-oil.html`
-    - [ ] `fluoride.html`
-    - [ ] `folic-acid.html`
-    - [ ] `gaba.html`
-    - [ ] `glucosamine.html`
-    - [ ] `glutathione.html`
-    - [ ] `iodine.html`
-    - [ ] `iron.html`
-    - [ ] `lutein.html`
-    - [ ] `lycopene.html`
-    - [ ] `magnesium.html`
-    - [ ] `manganese.html`
-    - [ ] `official-health-sites.html`
-    - [ ] `phosphorus.html`
-    - [ ] `potassium.html`
-    - [ ] `prebiotics.html`
-    - [ ] `protein.html`
-    - [ ] `selenium.html`
-    - [ ] `sodium.html`
-    - [ ] `topic-immune-boosting-nutrients.html`
-    - [ ] `topic-stroke-prevention-nutrients.html`
-    - [ ] `topic-vascular-health-superfoods.html`
-    - [ ] `vitamin-a.html`
-    - [ ] `vitamin-b.html`
-    - [ ] `vitamin-c.html`
-    - [ ] `vitamin-d.html`
-    - [ ] `vitamin-e.html`
-    - [ ] `vitamin-k.html`
-    - [ ] `zinc.html`
+
+    
 
 ### 2.4 全局響應式設計 (Global RWD)
 
