@@ -321,64 +321,16 @@
       }
 
       /* Alert Boxes */
-      .alert {
-        padding: 20px 25px;
-        border-radius: 15px;
-        margin: 30px 0;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .alert::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 5px;
-      }
-
-      .alert-doctor {
-        background: #fee2e2;
-        color: #991b1b;
-      }
-
-      .alert-doctor::before {
-        background: #dc2626;
-      }
-
-      .alert-nutritionist {
-        background: #dbeafe;
-        color: #1e3a8a;
-      }
-
-      .alert-nutritionist::before {
-        background: #2563eb;
-      }
-
-      .alert-tip {
-        background: #f0fdf4;
-        color: #14532d;
-      }
-
-      .alert-tip::before {
-        background: #22c55e;
-      }
-
-      .alert-doctor > strong::before, .alert-danger > strong::before {
-        content: '⚠️';
-        margin-right: 8px;
-      }
-      .alert-nutritionist > strong::before, .alert-tip > strong::before {
-        content: '💡';
-        margin-right: 8px;
-      }
-
-      .alert strong {
-        font-weight: 700;
-        display: block;
-        margin-bottom: 8px;
-      }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
+      .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
+      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
 
       /* Tables */
       .data-table {
@@ -1287,8 +1239,10 @@
             </table>
 
             <div class="alert alert-doctor">
-              <strong>重要提醒：</strong>
-              <p>以上建議僅供參考，實際劑量請依個人健康狀況調整。如有慢性疾病或正在服用藥物，請先諮詢醫師或營養師。有些 B 群維生素（如 B3、B6）有安全上限，過量可能有副作用。</p>
+              <div>
+                <strong>重要提醒：</strong>
+                <p>以上建議僅供參考，實際劑量請依個人健康狀況調整。如有慢性疾病或正在服用藥物，請先諮詢醫師或營養師。有些 B 群維生素（如 B3、B6）有安全上限，過量可能有副作用。</p>
+              </div>
             </div>
 
             <h2>什麼時候吃最好？</h2>
@@ -1364,8 +1318,10 @@
             </p>
 
             <div class="alert alert-nutritionist">
-              <strong>營養師小撇步：</strong>
-              <p>B 群維生素對光、熱、氧氣敏感，容易在烹調過程中流失。建議採用蒸、煮、快炒等方式，並保留烹調水，以減少營養素的流失。水煮蔬菜的湯汁也很營養，不要倒掉！</p>
+              <div>
+                <strong>營養師小撇步：</strong>
+                <p>B 群維生素對光、熱、氧氣敏感，容易在烹調過程中流失。建議採用蒸、煮、快炒等方式，並保留烹調水，以減少營養素的流失。水煮蔬菜的湯汁也很營養，不要倒掉！</p>
+              </div>
             </div>
 
             <table class="data-table" style="margin: 30px 0">
@@ -1556,8 +1512,10 @@
             </table>
 
             <div class="alert alert-tip">
-              <strong>營養師選購提醒：</strong>
-              <p>不要被「天然」、「高劑量」等字眼迷惑！最重要的是選擇有完整 8 種 B 群、劑量合理、品牌可信的產品。記住，補充品是「補充」，不是「取代」均衡飲食！</p>
+              <div>
+                <strong>營養師選購提醒：</strong>
+                <p>不要被「天然」、「高劑量」等字眼迷惑！最重要的是選擇有完整 8 種 B 群、劑量合理、品牌可信的產品。記住，補充品是「補充」，不是「取代」均衡飲食！</p>
+              </div>
             </div>
 
             <p

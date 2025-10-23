@@ -109,10 +109,16 @@
       .data-table thead { background-color: var(--primary-bg-light); }
       .data-table th { font-weight: 600; color: var(--primary-dark); }
       .data-table tbody tr:hover { background-color: #f8fafc; }
-      .alert { padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
       .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
       .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
-      .alert strong { font-weight: bold; display: block; margin-bottom: 5px; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .svg-visualization-container { background-color: #f9fafb; border-radius: 15px; padding: 30px; margin: 40px 0; border: 1px solid #e2e8f0; text-align: center; }
       .svg-visualization-container h3 { font-size: 1.4em; font-weight: 700; color: #2d3748; margin-bottom: 25px; }
       .references-section ul { list-style-type: none; padding-left: 0; }
@@ -350,8 +356,10 @@
                 </tbody>
             </table>
              <div class="alert alert-tip">
-                <strong>營養師提醒：最重要的「碘鹽」策略</strong>
-                <p>對於不常食用海藻或海產的人來說，最簡單、穩定的補碘方式就是將家中的鹽換成<strong>「含碘鹽」</strong>或稱「加碘鹽」。選購時請注意看包裝上的成分標示，確認含有「碘酸鉀」或「碘化鉀」。</p>
+                <div>
+                    <strong>營養師提醒：最重要的「碘鹽」策略</strong>
+                    <p>對於不常食用海藻或海產的人來說，最簡單、穩定的補碘方式就是將家中的鹽換成<strong>「含碘鹽」</strong>或稱「加碘鹽」。選購時請注意看包裝上的成分標示，確認含有「碘酸鉀」或「碘化鉀」。</p>
+                </div>
             </div>
           </section>
           
@@ -426,8 +434,10 @@
                 </svg>
             </div>
             <div class="alert alert-doctor">
-                <strong>醫師警告：甲狀腺疾病患者請注意</strong>
-                <p>若您已被診斷患有<strong>甲狀腺亢進、甲狀腺自體免疫疾病（如橋本氏甲狀腺炎、葛瑞夫茲氏病）</strong>，或是正在接受放射性碘治療，您的碘攝取量需要嚴格控管。在這種情況下，醫師通常會建議使用「無碘鹽」，並避免食用高碘食物。<strong>請務必遵循您的醫師或內分泌科專家的個人化建議。</strong></p>
+                <div>
+                    <strong>醫師警告：甲狀腺疾病患者請注意</strong>
+                    <p>若您已被診斷患有<strong>甲狀腺亢進、甲狀腺自體免疫疾病（如橋本氏甲狀腺炎、葛瑞夫茲氏病）</strong>，或是正在接受放射性碘治療，您的碘攝取量需要嚴格控管。在這種情況下，醫師通常會建議使用「無碘鹽」，並避免食用高碘食物。<strong>請務必遵循您的醫師或內分泌科專家的個人化建議。</strong></p>
+                </div>
             </div>
           </section>
 

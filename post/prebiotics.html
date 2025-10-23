@@ -109,10 +109,16 @@
       .data-table thead { background-color: var(--primary-bg-light); }
       .data-table th { font-weight: 600; color: var(--primary-dark); }
       .data-table tbody tr:hover { background-color: #f8fafc; }
-      .alert { padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
       .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
       .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
-      .alert strong { font-weight: bold; display: block; margin-bottom: 5px; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .svg-visualization-container { background-color: #f9fafb; border-radius: 15px; padding: 30px; margin: 40px 0; border: 1px solid #e2e8f0; text-align: center; }
       .svg-visualization-container h3 { font-size: 1.4em; font-weight: 700; color: #2d3748; margin-bottom: 25px; }
       .references-section ul { list-style-type: none; padding-left: 0; }
@@ -397,9 +403,11 @@
                 <li><strong>抗性澱粉 (Resistant Starch)</strong>：常見於綠香蕉、冷卻的米飯或馬鈴薯中，是一種無法被小腸消化的澱粉。</li>
             </ul>
             <div class="alert alert-tip">
-                <strong>營養師的選購箴言：</strong>
-                <p><strong>選擇「益生菌 + 益生質」的共生質(Synbiotics)產品。</strong><br>
-                一個聰明的配方，會將特定的益生菌菌株與其偏好的益生質搭配在一起，如同為軍隊配備專屬的乾糧，能確保益生菌抵達腸道後，能立即獲得能量、快速定殖，發揮最大效益。</p>
+                <div>
+                    <strong>營養師的選購箴言：</strong>
+                    <p><strong>選擇「益生菌 + 益生質」的共生質(Synbiotics)產品。</strong><br>
+                    一個聰明的配方，會將特定的益生菌菌株與其偏好的益生質搭配在一起，如同為軍隊配備專屬的乾糧，能確保益生菌抵達腸道後，能立即獲得能量、快速定殖，發揮最大效益。</p>
+                </div>
             </div>
           </section>
 
@@ -452,9 +460,11 @@
             <h2>溫和的入門：注意事項與初期反應</h2>
             <p>益生質是相當安全的營養素，但對於平常纖維攝取不足的人來說，突然大量補充，可能會出現一些暫時性的腸胃反應：</p>
             <div class="alert alert-tip">
-                <strong>初期反應請勿驚慌</strong>
-                <p>在剛開始補充益生質的前幾天，您可能會感到<strong>輕微的脹氣、排氣變多或腸道咕嚕作響</strong>。這其實是個「好現象」，代表腸道中的好菌正在開心地享用大餐並活躍地工作！這些症狀通常在幾天到一週內，隨著腸道菌相的調整而逐漸緩解。</p>
-                <p><strong>建議：</strong>從較低的劑量開始（例如每日2-3克），讓腸道有時間適應，再逐步增加到目標劑量。同時，務必搭配<strong>足夠的水分</strong>，才能讓膳食纖維發揮最佳效果。</p>
+                <div>
+                    <strong>初期反應請勿驚慌</strong>
+                    <p>在剛開始補充益生質的前幾天，您可能會感到<strong>輕微的脹氣、排氣變多或腸道咕嚕作響</strong>。這其實是個「好現象」，代表腸道中的好菌正在開心地享用大餐並活躍地工作！這些症狀通常在幾天到一週內，隨著腸道菌相的調整而逐漸緩解。</p>
+                    <p><strong>建議：</strong>從較低的劑量開始（例如每日2-3克），讓腸道有時間適應，再逐步增加到目標劑量。同時，務必搭配<strong>足夠的水分</strong>，才能讓膳食纖維發揮最佳效果。</p>
+                </div>
             </div>
           </section>
 

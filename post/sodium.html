@@ -93,17 +93,16 @@
       .article-subtitle { font-size: 1.3em; color: #4a5568; line-height: 1.6; max-width: 700px; margin-bottom: 30px; }
       .article-meta { display: flex; gap: 30px; color: #718096; font-size: 0.95em; flex-wrap: wrap; }
       .article-meta span { display: flex; align-items: center; gap: 8px; }
-      .alert { padding: 20px 25px; border-radius: 15px; margin: 30px 0; position: relative; overflow: hidden; }
-      .alert::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; }
-      .alert-doctor { background: #fee2e2; color: #991b1b; }
-      .alert-doctor::before { background: #dc2626; }
-      .alert-nutritionist { background: #dbeafe; color: #1e3a8a; }
-      .alert-nutritionist::before { background: #2563eb; }
-      .alert-tip { background: #f0fdf4; color: #14532d; }
-      .alert-tip::before { background: #22c55e; }
-      .alert-doctor > strong::before, .alert-danger > strong::before { content: '⚠️'; margin-right: 8px; }
-      .alert-nutritionist > strong::before, .alert-tip > strong::before { content: '💡'; margin-right: 8px; }
-      .alert strong { font-weight: 700; display: inline; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
+      .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
+      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); }
       .data-table thead { background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); color: white; }
       .data-table th, .data-table td { padding: 15px 20px; text-align: left; }
@@ -328,8 +327,10 @@
                 </tbody>
             </table>
              <div class="alert alert-tip">
-                <strong>營養師提醒：請以 <span class="highlight-nutrient">2300毫克</span> 為目標</strong> 
-                <p>考量到台灣飲食習慣與國際趨勢，多數專家建議一般健康成人每日鈉攝取量應控制在 <span class="highlight-nutrient">2300 毫克</span> 以下。這是一個較為實際且能顯著帶來健康效益的目標。</p>
+                <div>
+                    <strong>營養師提醒：請以 <span class="highlight-nutrient">2300毫克</span> 為目標</strong> 
+                    <p>考量到台灣飲食習慣與國際趨勢，多數專家建議一般健康成人每日鈉攝取量應控制在 <span class="highlight-nutrient">2300 毫克</span> 以下。這是一個較為實際且能顯著帶來健康效益的目標。</p>
+                </div>
             </div>
           </section>
 
@@ -539,8 +540,10 @@
                 </tbody>
             </table>
             <div class="alert alert-tip">
-              <strong>健康策略：「加鉀」比「減鈉」同樣重要！</strong> 
-              <p>與其辛苦地計算鈉含量，一個更積極、美味的策略是「增加鉀的攝取」。多吃深綠色蔬菜（如菠菜、空心菜）、水果（如香蕉、奇異果、番茄）等地天然食物，自然就能幫助身體平衡過多的鈉，達到保護心血管的效果。</p>
+              <div>
+                <strong>健康策略：「加鉀」比「減鈉」同樣重要！</strong> 
+                <p>與其辛苦地計算鈉含量，一個更積極、美味的策略是「增加鉀的攝取」。多吃深綠色蔬菜（如菠菜、空心菜）、水果（如香蕉、奇異果、番茄）等地天然食物，自然就能幫助身體平衡過多的鈉，達到保護心血管的效果。</p>
+              </div>
             </div>
           </section>
 
@@ -644,7 +647,9 @@
           </section>
 
           <div class="alert alert-tip">
-              <strong>延伸閱讀：</strong>想了解除了減鈉之外，還有哪些積極的飲食方式能逆轉血管硬化嗎？歡迎閱讀我們的專題文章：<a href="./topic-vascular-health-superfoods.html">《保養血管最好的5種超級食物與3大生活習慣》</a>。
+              <div>
+                  <strong>延伸閱讀：</strong>想了解除了減鈉之外，還有哪些積極的飲食方式能逆轉血管硬化嗎？歡迎閱讀我們的專題文章：<a href="./topic-vascular-health-superfoods.html">《保養血管最好的5種超級食物與3大生活習慣》</a>。
+              </div>
             </div>
 
           <div id="related-articles-container"></div>

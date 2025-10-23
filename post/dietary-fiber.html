@@ -152,20 +152,16 @@
         font-size: 1.5em; font-weight: 600; color: var(--text-color-dark); margin: 35px 0 20px;
       }
       .article-body p { margin-bottom: 20px; color: var(--text-color-medium); }
-      .alert {
-        padding: 20px 25px; border-radius: 15px; margin: 30px 0;
-        position: relative; overflow: hidden;
-      }
-      .alert::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; }
-      .alert-doctor { background: #fee2e2; color: #991b1b; }
-      .alert-doctor::before { background: #dc2626; }
-      .alert-nutritionist { background: #dbeafe; color: #1e3a8a; }
-      .alert-nutritionist::before { background: #2563eb; }
-      .alert-tip { background: #f0fdf4; color: #14532d; }
-      .alert-tip::before { background: #22c55e; }
-      .alert-doctor > strong::before, .alert-danger > strong::before { content: '⚠️'; margin-right: 8px; }
-      .alert-nutritionist > strong::before, .alert-tip > strong::before { content: '💡'; margin-right: 8px; }
-      .alert strong { font-weight: 700; display: block; margin-bottom: 8px; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
+      .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
+      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .highlight-nutrient {
         border-bottom: 2px solid var(--theme-color-primary); padding-bottom: 1px; font-weight: bold;
       }
@@ -354,8 +350,10 @@
             </div>
             
              <div class="alert alert-nutritionist">
-                <strong>營養師提醒：黏度與發酵性才是關鍵！</strong>
-                <p>同屬水溶性纖維的<strong class="highlight-nutrient">洋車前子</strong>與<strong class="highlight-nutrient">菊苣纖維</strong>，功效天差地遠：洋車前子「高黏度、低發酵」，是改善便秘的物理工具；菊苣纖維「無黏度、高發酵」，是滋養好菌的生物工具，但易產氣。</p>
+                <div>
+                    <strong>營養師提醒：黏度與發酵性才是關鍵！</strong>
+                    <p>同屬水溶性纖維的<strong class="highlight-nutrient">洋車前子</strong>與<strong class="highlight-nutrient">菊苣纖維</strong>，功效天差地遠：洋車前子「高黏度、低發酵」，是改善便秘的物理工具；菊苣纖維「無黏度、高發酵」，是滋養好菌的生物工具，但易產氣。</p>
+                </div>
             </div>
           </section>
 
@@ -386,8 +384,10 @@
                 </tbody>
             </table>
              <div class="alert alert-tip">
-                <strong>關鍵洞察：</strong>
-                <p>在美國，成年人的平均每日纖維攝取量<strong class="highlight-nutrient">僅約15克</strong>，大約是建議量的一半。這已成為一個值得關注的公共衛生問題。</p>
+                <div>
+                    <strong>關鍵洞察：</strong>
+                    <p>在美國，成年人的平均每日纖維攝取量<strong class="highlight-nutrient">僅約15克</strong>，大約是建議量的一半。這已成為一個值得關注的公共衛生問題。</p>
+                </div>
             </div>
             
             <h3 id="how-to-take-plate">打造您的高纖維餐盤</h3>
@@ -497,12 +497,14 @@
             <h2>安全注意事項</h2>
             <p>雖然膳食纖維對健康至關重要，但不當的補充方式也可能帶來不適。遵循以下原則，可以讓您安全地享受纖維帶來的好處。</p>
             <div class="alert alert-doctor">
-                <strong>醫師警告：</strong>
-                <ul style="list-style-position: inside; margin-top: 10px;">
-                    <li><strong>循序漸進：</strong>突然大量攝取纖維可能導致腹脹、脹氣或腹痛。請在數週內慢慢增加份量。</li>
-                    <li><strong>補充足够水份：</strong>尤其在服用洋車前子等高黏度纖維補充劑時，必須飲用大量開水，以防止纖維在食道或腸道中堵塞。</li>
-                    <li><strong>注意藥物交互作用：</strong>高纖維飲食或補充劑可能會影響某些藥物的吸收。建議在服用藥物和纖維補充劑之間間隔至少1-2小時。</li>
-                </ul>
+                <div>
+                    <strong>醫師警告：</strong>
+                    <ul style="list-style-position: inside; margin-top: 10px;">
+                        <li><strong>循序漸進：</strong>突然大量攝取纖維可能導致腹脹、脹氣或腹痛。請在數週內慢慢增加份量。</li>
+                        <li><strong>補充足够水份：</strong>尤其在服用洋車前子等高黏度纖維補充劑時，必須飲用大量開水，以防止纖維在食道或腸道中堵塞。</li>
+                        <li><strong>注意藥物交互作用：</strong>高纖維飲食或補充劑可能會影響某些藥物的吸收。建議在服用藥物和纖維補充劑之間間隔至少1-2小時。</li>
+                    </ul>
+                </div>
             </div>
           </section>
 

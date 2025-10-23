@@ -83,19 +83,16 @@
       .data-table thead th { background-color: #f8fafc; font-weight: 600; color: #475569; border-bottom: 2px solid var(--primary-color); }
       .data-table tbody tr:nth-child(even) { background-color: #f8fafc; }
       .data-table tbody tr:hover { background-color: #f0fdf4; }
-      .alert { padding: 20px 25px; border-radius: 15px; margin: 30px 0; position: relative; overflow: hidden; border-left: 5px solid; }
-      .alert-tip { background: var(--primary-color-bg); color: var(--primary-color-text); border-color: var(--primary-color); }
-      .alert-nutritionist { background: #eff6ff; color: #1e40af; border-color: #3b82f6; }
-      .alert-doctor { background: #fef2f2; color: #991b1b; border-color: #ef4444; }
-      .alert-doctor > strong::before, .alert-danger > strong::before {
-        content: '⚠️';
-        margin-right: 8px;
-      }
-      .alert-nutritionist > strong::before, .alert-tip > strong::before {
-        content: '💡';
-        margin-right: 8px;
-      }
-      .alert strong { font-weight: 700; display: block; margin-bottom: 8px; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
+      .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
+      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .related-title { font-size: 2em; font-weight: 700; color: #2d3748; text-align: center; margin: 60px 0 40px; border-top: 2px solid #e5e7eb; padding-top: 40px; }
       .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
       .related-card { background: white; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; text-decoration: none; color: inherit; }
@@ -187,8 +184,10 @@
             <h2>你需要補鉀嗎？快速自我檢測</h2>
             <p>總覺得下午昏昏欲睡、水腫不消？或是運動時特別容易抽筋？這些都可能是身體在發出「鈉鉀失衡」的警訊。來看看你是否也需要多補充一點鉀？</p>
             <div class="alert alert-nutritionist">
-              <strong>你是不是也有這些困擾？</strong>
-              <p>外食重鹹，隔天臉就腫一圈？運動時容易抽筋？常常覺得心悸、無力？這些都可能是身體在提醒你：「該補鉀了！」</p>
+              <div>
+                <strong>你是不是也有這些困擾？</strong>
+                <p>外食重鹹，隔天臉就腫一圈？運動時容易抽筋？常常覺得心悸、無力？這些都可能是身體在提醒你：「該補鉀了！」</p>
+              </div>
             </div>
           </section>
 
@@ -250,8 +249,10 @@
               </tbody>
             </table>
             <div class="alert alert-tip">
-              <strong>關鍵指標：鈉鉀比例</strong>
-              <p>除了關心鉀的總攝取量，更重要的是維持理想的「鈉鉀比例」。世界衛生組織(WHO)建議，每日鈉攝取量應低於2000毫克，而鉀則應高於3510毫克。維持<strong class="highlight-nutrient">「低鈉高鉀」</strong>的飲食模式，是預防高血壓和心血管疾病的核心策略。</p>
+              <div>
+                <strong>關鍵指標：鈉鉀比例</strong>
+                <p>除了關心鉀的總攝取量，更重要的是維持理想的「鈉鉀比例」。世界衛生組織(WHO)建議，每日鈉攝取量應低於2000毫克，而鉀則應高於3510毫克。維持<strong class="highlight-nutrient">「低鈉高鉀」</strong>的飲食模式，是預防高血壓和心血管疾病的核心策略。</p>
+              </div>
             </div>
           </section>
 
@@ -273,8 +274,10 @@
               </tbody>
             </table>
              <div class="alert alert-nutritionist">
-              <strong>營養師小撇步：</strong>
-              <p>烹煮蔬菜時，鉀容易流失到水中。建議<strong class="highlight-nutrient">「先洗後切」</strong>、縮短烹煮時間，或連同湯汁一起食用，才能保留最多的鉀！</p>
+              <div>
+                <strong>營養師小撇步：</strong>
+                <p>烹煮蔬菜時，鉀容易流失到水中。建議<strong class="highlight-nutrient">「先洗後切」</strong>、縮短烹煮時間，或連同湯汁一起食用，才能保留最多的鉀！</p>
+              </div>
             </div>
           </section>
 
@@ -283,8 +286,10 @@
             <p>鉀雖然重要，但過多或過少都可能對身體造成危害。了解缺乏與過量的警訊，是維持電解質平衡的必修課。</p>
             <h3 id="hyperkalemia">高血鉀 (Hyperkalemia)</h3>
             <div class="alert alert-doctor">
-              <strong>醫師警告：腎臟病患者請務必注意！</strong>
-              <p>對於腎功能正常的人來說，從食物中攝取過多的鉀，身體會自然將其排出，不易中毒。然而，對於<strong class="highlight-nutrient">腎臟功能不全</strong>的患者，由於排鉀能力下降，若攝取過多高鉀食物或使用鉀補充劑，極易引發「高血鉀症」，可能導致心律不整甚至心跳停止，有致命風險。因此，腎臟病患者必須嚴格遵循醫師和營養師的飲食建議。</p>
+              <div>
+                <strong>醫師警告：腎臟病患者請務必注意！</strong>
+                <p>對於腎功能正常的人來說，從食物中攝取過多的鉀，身體會自然將其排出，不易中毒。然而，對於<strong class="highlight-nutrient">腎臟功能不全</strong>的患者，由於排鉀能力下降，若攝取過多高鉀食物或使用鉀補充劑，極易引發「高血鉀症」，可能導致心律不整甚至心跳停止，有致命風險。因此，腎臟病患者必須嚴格遵循醫師和營養師的飲食建議。</p>
+              </div>
             </div>
             <h3 id="hypokalemia">低血鉀 (Hypokalemia)</h3>
             <p>長期鉀攝取不足，或因腹瀉、嘔吐、大量流汗、服用利尿劑等原因導致鉀流失過多，可能引發低血鉀。輕微症狀包括肌肉無力、疲勞、便秘；嚴重時則可能導致心律不整、肌肉麻痺等危險情況。</p>

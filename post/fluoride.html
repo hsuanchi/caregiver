@@ -124,10 +124,16 @@
       .data-table thead { background-color: var(--primary-bg-light); }
       .data-table th { font-weight: 600; color: var(--primary-dark); }
       .data-table tbody tr:hover { background-color: #f8fafc; }
-      .alert { padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
       .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
-      .alert-tip { background-color: var(--primary-bg-light); border-color: var(--primary-color); color: var(--primary-dark); }
-      .alert strong { font-weight: bold; display: block; margin-bottom: 5px; }
+      .alert-doctor::before { content: "⚠️"; }
+      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .svg-visualization-container { background-color: #f9fafb; border-radius: 15px; padding: 30px; margin: 40px 0; border: 1px solid #e2e8f0; text-align: center; }
       .svg-visualization-container h3 { font-size: 1.4em; font-weight: 700; color: #2d3748; margin-bottom: 25px; }
       .dual-panel-container { display: grid; grid-template-columns: 1fr; gap: 20px; margin: 30px 0; }
@@ -391,9 +397,11 @@
                 <li><strong>兒童牙膏的選擇</strong>：對於3歲以下的幼兒，建議使用「米粒大小」的含氟牙膏；3至6歲的兒童，則使用「豌豆大小」。關鍵在於教導孩子「吐出泡沫」，避免吞食。</li>
             </ul>
             <div class="alert alert-tip">
-                <strong>營養師的選購箴言：</strong>
-                <p><strong>別只看品牌，要看「ppm濃度」。</strong><br>
-                無論包裝多精美、宣稱多少附加功效，防蛀的核心永遠是氟濃度。請務必翻到背面成分表，確認數字落在 1000-1500 ppm 之間，這才是您為牙齒健康付費的真正價值所在。</p>
+                <div>
+                    <strong>營養師的選購箴言：</strong>
+                    <p><strong>別只看品牌，要看「ppm濃度」。</strong><br>
+                    無論包裝多精美、宣稱多少附加功效，防蛀的核心永遠是氟濃度。請務必翻到背面成分表，確認數字落在 1000-1500 ppm 之間，這才是您為牙齒健康付費的真正價值所在。</p>
+                </div>
             </div>
           </section>
 
@@ -458,9 +466,11 @@
             <h2>雙面刃的另一面：如何預防氟過量的最大風險「氟斑牙」？</h2>
             <p>氟像一把雙面刃，適量是保護，過量則可能造成傷害。最常見的副作用就是「氟斑牙 (Dental Fluorosis)」。</p>
             <div class="alert alert-doctor">
-                <strong>醫師警告：兒童的過量風險</strong>
-                <p>氟斑牙的發生，是在<strong>牙齒發育期間（尤其是8歲以前）</strong>，長期攝取「過量」的氟所導致。這會干擾琺瑯質的正常鈣化，使牙齒表面出現不透明的白色斑點、線條，嚴重時可能呈現棕色凹陷。</p>
-                <p><strong>最常見的原因是學齡前兒童因還不太會漱口，而吞食了過多的含氟牙膏。</strong></p>
+                <div>
+                    <strong>醫師警告：兒童的過量風險</strong>
+                    <p>氟斑牙的發生，是在<strong>牙齒發育期間（尤其是8歲以前）</strong>，長期攝取「過量」的氟所導致。這會干擾琺瑯質的正常鈣化，使牙齒表面出現不透明的白色斑點、線條，嚴重時可能呈現棕色凹陷。</p>
+                    <p><strong>最常見的原因是學齡前兒童因還不太會漱口，而吞食了過多的含氟牙膏。</strong></p>
+                </div>
             </div>
              <div class="svg-visualization-container">
               <h3>氟斑牙嚴重程度示意圖</h3>

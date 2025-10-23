@@ -135,10 +135,16 @@
       .data-table thead { background-color: #fff7ed; }
       .data-table th { font-weight: 600; color: #9a3412; }
       .data-table tbody tr:hover { background-color: #fdfaf6; }
-      .alert { padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
       .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
       .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
-      .alert strong { font-weight: bold; display: inline; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .svg-visualization-container { background-color: #f9fafb; border-radius: 15px; padding: 30px; margin: 40px 0; border: 1px solid #e2e8f0; text-align: center; }
       .svg-visualization-container h3 { font-size: 1.4em; font-weight: 700; color: #2d3748; margin-bottom: 25px; }
       .svg-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif; font-size: 14px; fill: #4a5568; }
@@ -409,8 +415,10 @@
                 </tbody>
             </table>
             <div class="alert alert-tip">
-                <strong>營養師的吸收小撇步：</strong>
-                <p>維生素C可以幫助銅維持在易於吸收的狀態。在享用富含銅的餐點時，搭配一顆芭樂或一杯柳橙汁，可以有效提升銅的吸收率。</p>
+                <div>
+                    <strong>營養師的吸收小撇步：</strong>
+                    <p>維生素C可以幫助銅維持在易於吸收的狀態。在享用富含銅的餐點時，搭配一顆芭樂或一杯柳橙汁，可以有效提升銅的吸收率。</p>
+                </div>
             </div>
           </section>
 
@@ -504,8 +512,10 @@
             <h2>副作用與注意事項</h2>
             <p>在補充礦物質時，「平衡」遠比「高劑量」更為重要。銅與鋅在人體內會共用相同的腸道吸收通道，兩者之間存在著微妙的拮抗關係，就像蹺蹺板一樣。</p>
             <div class="alert alert-doctor">
-                <strong>醫師警告：鋅銅失衡風險</strong>
-                <p>長期、高劑量地補充單一礦物質，會抑制另一種礦物質的吸收。特別是<strong>長期每日補充超過50毫克的鋅而未同時補充銅</strong>，是臨床上造成醫源性銅缺乏的主因，可能導致頑固性貧血與神經系統問題。反之，每日攝取超過<strong>10毫克的銅</strong>，也可能干擾鋅的吸收。<strong>專家建議，鋅與銅的理想補充比例約在 8:1 到 15:1 之間。</strong></p>
+                <div>
+                    <strong>醫師警告：鋅銅失衡風險</strong>
+                    <p>長期、高劑量地補充單一礦物質，會抑制另一種礦物質的吸收。特別是<strong>長期每日補充超過50毫克的鋅而未同時補充銅</strong>，是臨床上造成醫源性銅缺乏的主因，可能導致頑固性貧血與神經系統問題。反之，每日攝取超過<strong>10毫克的銅</strong>，也可能干擾鋅的吸收。<strong>專家建議，鋅與銅的理想補充比例約在 8:1 到 15:1 之間。</strong></p>
+                </div>
             </div>
             <div class="svg-visualization-container">
               <h3>鋅銅平衡的蹺蹺板效應</h3>

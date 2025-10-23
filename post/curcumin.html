@@ -315,37 +315,16 @@
         color: #4a5568;
       }
       
-      .alert {
-        padding: 20px 25px;
-        border-radius: 15px;
-        margin: 30px 0;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .alert::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 5px;
-      }
-
-      .alert-tip {
-        background: #fffbeb;
-        color: #78350f;
-      }
-
-      .alert-doctor > strong::before, .alert-danger > strong::before {
-        content: '⚠️';
-        margin-right: 8px;
-      }
-      .alert-nutritionist > strong::before, .alert-tip > strong::before {
-        content: '💡';
-        margin-right: 8px;
-      }
-      .alert strong { display: inline; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
+      .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
+      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
 
       .highlight-nutrient {
         background-image: linear-gradient(to top, rgba(245, 158, 11, 0.6) 0%, rgba(245, 158, 11, 0.6) 100%);
@@ -664,8 +643,10 @@
             </div>
 
             <div class="alert alert-tip">
-              <strong>關鍵觀念：為何不能只靠吃咖哩？</strong>
-              <p>正是因為薑黃素在天然薑黃中的含量極低，所以若想達到研究中所證實的保健功效，單靠日常飲食（如吃薑黃粉或咖哩）是遠遠不夠的。這也是為什麼市面上會出現<strong class="highlight-nutrient">高濃度萃取的薑黃素保健食品</strong>。這些產品透過特殊技術，將薑黃素的濃度標準化至95%以上，確保你能攝取到足夠的有效劑量。</p>
+              <div>
+                <strong>關鍵觀念：為何不能只靠吃咖哩？</strong>
+                <p>正是因為薑黃素在天然薑黃中的含量極低，所以若想達到研究中所證實的保健功效，單靠日常飲食（如吃薑黃粉或咖哩）是遠遠不夠的。這也是為什麼市面上會出現<strong class="highlight-nutrient">高濃度萃取的薑黃素保健食品</strong>。這些產品透過特殊技術，將薑黃素的濃度標準化至95%以上，確保你能攝取到足夠的有效劑量。</p>
+              </div>
             </div>
           </section>
 
@@ -677,8 +658,10 @@
             <p>薑黃素最核心的價值，在於其強大的抗發炎能力。它不像一般消炎藥那樣被動地止痛，而是能深入到分子層面，直接關閉身體發炎反應的「總開關」——一種名為 <strong class="highlight-nutrient">NF-κB</strong> 的分子。當這個開關被關閉，許多誘發發炎的基因就會停止作用，從源頭阻斷了火勢的蔓延。這也是為什麼薑黃素對於<strong class="highlight-nutrient">維持關節靈活、舒緩運動後不適</strong>有顯著幫助的原因。</p>
             
             <div class="alert alert-tip">
-              <strong>雙重防護：不只滅火，更能清理戰場</strong>
-              <p>薑黃素的聰明之處在於它不只會「滅火」（抗發炎），還會「清理現場」（抗氧化）。發炎過程會產生大量有害的<strong class="highlight-nutrient">自由基</strong>，如同火災後留下的有毒煙霧。薑黃素不僅能親自中和這些自由基，更能啟動並增強我們身體內建的抗氧化酵素系統，建立一道堅固的防護網，幫助我們<strong class="highlight-nutrient">延緩老化，維持細胞健康</strong>。</p>
+              <div>
+                <strong>雙重防護：不只滅火，更能清理戰場</strong>
+                <p>薑黃素的聰明之處在於它不只會「滅火」（抗發炎），還會「清理現場」（抗氧化）。發炎過程會產生大量有害的<strong class="highlight-nutrient">自由基</strong>，如同火災後留下的有毒煙霧。薑黃素不僅能親自中和這些自由基，更能啟動並增強我們身體內建的抗氧化酵素系統，建立一道堅固的防護網，幫助我們<strong class="highlight-nutrient">延緩老化，維持細胞健康</strong>。</p>
+              </div>
             </div>
 
             <h3 id="liver-protection">守護核心器官：肝臟的得力保鑣</h3>

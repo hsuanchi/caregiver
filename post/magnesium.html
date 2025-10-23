@@ -119,10 +119,16 @@
       .data-table thead { background-color: var(--primary-color-bg); }
       .data-table th { font-weight: 600; color: var(--primary-color-dark); }
       .data-table tbody tr:hover { background-color: #f8fafc; }
-      .alert { padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
       .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
       .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
-      .alert strong { font-weight: bold; display: block; margin-bottom: 5px; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .references-section ul { list-style-type: none; padding-left: 0; }
       .references-section li { background-color: #f9fafb; border-radius: 8px; padding: 10px 15px; margin-bottom: 10px; border-left: 3px solid #ede9fe; }
       .references-section a { color: var(--primary-color); text-decoration: none; word-break: break-all; }
@@ -276,8 +282,10 @@
                 </tbody>
             </table>
             <div class="alert alert-tip">
-                <strong>最佳補充時機：晚餐後或睡前</strong>
-                <p>由於鎂具有幫助神經與肌肉放鬆的特性，在<span class="highlight-nutrient">晚餐飯後或睡前1小時</span>補充，最能發揮其幫助入睡、提升睡眠品質的效益。若單次補充劑量較高（超過200mg）且腸胃較敏感，可分為午、晚餐後兩次補充。</p>
+                <div>
+                    <strong>最佳補充時機：晚餐後或睡前</strong>
+                    <p>由於鎂具有幫助神經與肌肉放鬆的特性，在<span class="highlight-nutrient">晚餐飯後或睡前1小時</span>補充，最能發揮其幫助入睡、提升睡眠品質的效益。若單次補充劑量較高（超過200mg）且腸胃較敏感，可分為午、晚餐後兩次補充。</p>
+                </div>
             </div>
           </section>
 
@@ -369,8 +377,10 @@
             <h2>安全注意事項</h2>
             <p>在建議劑量下，鎂是相當安全的營養素。但過量攝取（特別是從補充劑）或特定族群仍需特別注意。</p>
             <div class="alert alert-doctor">
-              <strong>醫師警告：腎功能不全者請注意！</strong>
-              <p>腎臟是排除體內多餘鎂的主要器官。若您患有慢性腎臟病，請<span class="highlight-nutrient">絕對不要</span>自行補充任何形式的鎂劑，以免體內鎂離子過高，引發高血鎂症，可能導致噁心、嘔吐、心律不整等嚴重問題。補充前務必諮詢您的腎臟科醫師。</p>
+              <div>
+                <strong>醫師警告：腎功能不全者請注意！</strong>
+                <p>腎臟是排除體內多餘鎂的主要器官。若您患有慢性腎臟病，請<span class="highlight-nutrient">絕對不要</span>自行補充任何形式的鎂劑，以免體內鎂離子過高，引發高血鎂症，可能導致噁心、嘔吐、心律不整等嚴重問題。補充前務必諮詢您的腎臟科醫師。</p>
+              </div>
             </div>
             <ul>
               <li><strong>常見副作用：</strong>最常見的副作用是腹瀉，特別是使用吸收率較低的氧化鎂時。若出現此情況，可嘗試降低劑量、分次服用，或更換為對腸胃更溫和的甘胺酸鎂。</li>

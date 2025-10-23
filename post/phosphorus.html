@@ -109,10 +109,16 @@
       .data-table thead { background-color: var(--primary-bg-light); }
       .data-table th { font-weight: 600; color: var(--primary-dark); }
       .data-table tbody tr:hover { background-color: #f8fafc; }
-      .alert { padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
       .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
       .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
-      .alert strong { font-weight: bold; display: block; margin-bottom: 5px; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .svg-visualization-container { background-color: #f9fafb; border-radius: 15px; padding: 30px; margin: 40px 0; border: 1px solid #e2e8f0; text-align: center; }
       .svg-visualization-container h3 { font-size: 1.4em; font-weight: 700; color: #2d3748; margin-bottom: 25px; }
       .references-section ul { list-style-type: none; padding-left: 0; }
@@ -337,8 +343,10 @@
                 </tbody>
             </table>
              <div class="alert alert-tip">
-                <strong>營養師提醒：學會看成分標示</strong>
-                <p>想避開高磷陷阱，就要學會看食品背後的成分標示。如果看到成分中含有「磷酸鹽」、「多磷酸鈉」、「焦磷酸鈉」等字眼，就代表它含有高吸收率的無機磷，應盡量減少攝取。</p>
+                <div>
+                    <strong>營養師提醒：學會看成分標示</strong>
+                    <p>想避開高磷陷阱，就要學會看食品背後的成分標示。如果看到成分中含有「磷酸鹽」、「多磷酸鈉」、「焦磷酸鈉」等字眼，就代表它含有高吸收率的無機磷，應盡量減少攝取。</p>
+                </div>
             </div>
           </section>
           
@@ -391,8 +399,10 @@
                 </svg>
             </div>
             <div class="alert alert-doctor">
-                <strong>醫師警告：腎臟病患者的頭號敵人</strong>
-                <p>對於腎功能不全的患者，「控制血磷」是延緩病情惡化、預防併發症最重要的課題。因為腎臟是排除磷的主要管道，一旦功能衰退，磷就容易在體內堆積，引發嚴重的副甲狀腺功能亢進、血管鈣化與骨骼病變。<strong>腎友務必遵循醫師與營養師的「低磷飲食」指導。</strong></p>
+                <div>
+                    <strong>醫師警告：腎臟病患者的頭號敵人</strong>
+                    <p>對於腎功能不全的患者，「控制血磷」是延緩病情惡化、預防併發症最重要的課題。因為腎臟是排除磷的主要管道，一旦功能衰退，磷就容易在體內堆積，引發嚴重的副甲狀腺功能亢進、血管鈣化與骨骼病變。<strong>腎友務必遵循醫師與營養師的「低磷飲食」指導。</strong></p>
+                </div>
             </div>
           </section>
 

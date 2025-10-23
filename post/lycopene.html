@@ -109,10 +109,16 @@
       .data-table thead { background-color: var(--primary-bg-light); }
       .data-table th { font-weight: 600; color: var(--primary-dark); }
       .data-table tbody tr:hover { background-color: #f8fafc; }
-      .alert { padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
       .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
       .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
-      .alert strong { font-weight: bold; display: block; margin-bottom: 5px; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .svg-visualization-container { background-color: #f9fafb; border-radius: 15px; padding: 30px; margin: 40px 0; border: 1px solid #e2e8f0; text-align: center; }
       .svg-visualization-container h3 { font-size: 1.4em; font-weight: 700; color: #2d3748; margin-bottom: 25px; }
       .references-section ul { list-style-type: none; padding-left: 0; }
@@ -387,8 +393,10 @@
                 </svg>
             </div>
              <div class="alert alert-tip">
-                <strong>營養師提醒：地中海飲食的智慧</strong>
-                <p>這就是為什麼義大利麵的番茄紅醬、地中海料理中的烤番茄會搭配橄欖油。這不僅是為了美味，更是最大化營養吸收率的古老智慧。下次，不妨試試看番茄炒蛋，或是用橄欖油製作番茄濃湯吧！</p>
+                <div>
+                    <strong>營養師提醒：地中海飲食的智慧</strong>
+                    <p>這就是為什麼義大利麵的番茄紅醬、地中海料理中的烤番茄會搭配橄欖油。這不僅是為了美味，更是最大化營養吸收率的古老智慧。下次，不妨試試看番茄炒蛋，或是用橄欖油製作番茄濃湯吧！</p>
+                </div>
             </div>
           </section>
 
@@ -437,12 +445,14 @@
             <h2>安全攝取：注意事項與副作用</h2>
             <p>茄紅素是相當安全的營養素，從天然食物中攝取，幾乎不可能過量。即使是透過補充品，也很少出現毒性反應。不過仍有幾點需要留意：</p>
              <div class="alert alert-doctor">
-                <strong>醫師警告：請注意以下情況</strong>
-                <ul>
-                    <li><strong>皮膚變黃</strong>：極少數情況下，長期攝取非常高劑量的茄紅素（或β-胡蘿蔔素），可能導致色素沉積，使手掌、腳掌皮膚暫時性變黃，稱為「胡蘿蔔素血症」，對健康無害，只要減少攝取量即會恢復。</li>
-                    <li><strong>與抗凝血劑的交互作用</strong>：理論上，高劑量的茄紅素可能具有輕微的抗凝血效果。若您正在服用抗凝血藥物(如<span class="highlight-nutrient">Warfarin</span>)，在使用高劑量補充品前請諮詢醫師。</li>
-                    <li><strong>葡萄柚的交互作用</strong>：若您的主要來源是葡萄柚，請注意它可能與多種藥物（如降血壓藥、降血脂藥）產生交互作用，應間隔服用。</li>
-                </ul>
+                <div>
+                    <strong>醫師警告：請注意以下情況</strong>
+                    <ul>
+                        <li><strong>皮膚變黃</strong>：極少數情況下，長期攝取非常高劑量的茄紅素（或β-胡蘿蔔素），可能導致色素沉積，使手掌、腳掌皮膚暫時性變黃，稱為「胡蘿蔔素血症」，對健康無害，只要減少攝取量即會恢復。</li>
+                        <li><strong>與抗凝血劑的交互作用</strong>：理論上，高劑量的茄紅素可能具有輕微的抗凝血效果。若您正在服用抗凝血藥物(如<span class="highlight-nutrient">Warfarin</span>)，在使用高劑量補充品前請諮詢醫師。</li>
+                        <li><strong>葡萄柚的交互作用</strong>：若您的主要來源是葡萄柚，請注意它可能與多種藥物（如降血壓藥、降血脂藥）產生交互作用，應間隔服用。</li>
+                    </ul>
+                </div>
             </div>
           </section>
 

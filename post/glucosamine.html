@@ -109,10 +109,16 @@
       .data-table thead { background-color: var(--primary-bg-light); }
       .data-table th { font-weight: 600; color: var(--primary-dark); }
       .data-table tbody tr:hover { background-color: #f8fafc; }
-      .alert { padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
       .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
-      .alert-tip { background-color: var(--primary-bg-light); border-color: var(--primary-color); color: var(--primary-dark); }
-      .alert strong { font-weight: bold; display: block; margin-bottom: 5px; }
+      .alert-doctor::before { content: "⚠️"; }
+      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .svg-visualization-container { background-color: #f9fafb; border-radius: 15px; padding: 30px; margin: 40px 0; border: 1px solid #e2e8f0; text-align: center; }
       .svg-visualization-container h3 { font-size: 1.4em; font-weight: 700; color: #2d3748; margin-bottom: 25px; }
       .references-section ul { list-style-type: none; padding-left: 0; }
@@ -381,9 +387,11 @@
                 </svg>
             </div>
             <div class="alert alert-tip">
-                <strong>營養師的選購箴言：</strong>
-                <p><strong>優先選擇「硫酸鹽葡萄糖胺」。</strong><br>
-                儘管鹽酸鹽的純度較高，但絕大多數證實葡萄糖胺有效的臨床研究，都是使用「硫酸鹽」形式。科學界推測，其中的<strong>「硫」</strong>對於軟骨合成也扮演著重要角色。因此，若您的目標是改善退化性關節炎，硫酸鹽葡萄糖胺是<strong>證據最充分、最值得信賴的選擇</strong>。</p>
+                <div>
+                    <strong>營養師的選購箴言：</strong>
+                    <p><strong>優先選擇「硫酸鹽葡萄糖胺」。</strong><br>
+                    儘管鹽酸鹽的純度較高，但絕大多數證實葡萄糖胺有效的臨床研究，都是使用「硫酸鹽」形式。科學界推測，其中的<strong>「硫」</strong>對於軟骨合成也扮演著重要角色。因此，若您的目標是改善退化性關節炎，硫酸鹽葡萄糖胺是<strong>證據最充分、最值得信賴的選擇</strong>。</p>
+                </div>
             </div>
           </section>
 
@@ -433,13 +441,15 @@
             <h2>安全第一：服用葡萄糖胺的禁忌與注意事項</h2>
             <p>葡萄糖胺是相對安全的營養補充品，但特定族群仍需謹慎使用：</p>
             <div class="alert alert-doctor">
-                <strong>醫師警告：請注意以下情況</strong>
-                <ul>
-                    <li><strong>海鮮過敏者</strong>：市售葡萄糖胺多從蝦蟹殼萃取，若您對甲殼類嚴重過敏，請選擇由玉米發酵來源的素食葡萄糖胺，或避免使用。</li>
-                    <li><strong>糖尿病患者</strong>：雖然多數研究認為葡萄糖胺不影響血糖，但理論上它是一種胺基糖。若您是糖尿病患者，建議在補充初期加強血糖監測，並諮詢醫師。</li>
-                    <li><strong>正在服用抗凝血劑者</strong>：高劑量的葡萄糖胺可能與抗凝血藥物(如Warfarin)產生交互作用，增加出血風險。併用前請務必諮詢醫師。</li>
-                     <li><strong>懷孕、哺乳期與幼童</strong>：此族群的安全性研究尚不充分，不建議自行補充。</li>
-                </ul>
+                <div>
+                    <strong>醫師警告：請注意以下情況</strong>
+                    <ul>
+                        <li><strong>海鮮過敏者</strong>：市售葡萄糖胺多從蝦蟹殼萃取，若您對甲殼類嚴重過敏，請選擇由玉米發酵來源的素食葡萄糖胺，或避免使用。</li>
+                        <li><strong>糖尿病患者</strong>：雖然多數研究認為葡萄糖胺不影響血糖，但理論上它是一種胺基糖。若您是糖尿病患者，建議在補充初期加強血糖監測，並諮詢醫師。</li>
+                        <li><strong>正在服用抗凝血劑者</strong>：高劑量的葡萄糖胺可能與抗凝血藥物(如Warfarin)產生交互作用，增加出血風險。併用前請務必諮詢醫師。</li>
+                         <li><strong>懷孕、哺乳期與幼童</strong>：此族群的安全性研究尚不充分，不建議自行補充。</li>
+                    </ul>
+                </div>
             </div>
           </section>
 

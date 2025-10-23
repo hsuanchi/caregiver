@@ -264,64 +264,16 @@
       }
 
       /* Alert Boxes */
-      .alert {
-        padding: 20px 25px;
-        border-radius: 15px;
-        margin: 30px 0;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .alert::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 5px;
-      }
-
-      .alert-doctor {
-        background: #fee2e2;
-        color: #991b1b;
-      }
-
-      .alert-doctor::before {
-        background: #dc2626;
-      }
-
-      .alert-nutritionist {
-        background: #dbeafe;
-        color: #1e3a8a;
-      }
-
-      .alert-nutritionist::before {
-        background: #2563eb;
-      }
-
-      .alert-doctor > strong::before, .alert-danger > strong::before {
-        content: '⚠️';
-        margin-right: 8px;
-      }
-      .alert-nutritionist > strong::before, .alert-tip > strong::before {
-        content: '💡';
-        margin-right: 8px;
-      }
-
-      .alert-tip {
-        background: #f0fdf4;
-        color: #14532d;
-      }
-
-      .alert-tip::before {
-        background: #22c55e;
-      }
-
-      .alert strong {
-        font-weight: 700;
-        display: block;
-        margin-bottom: 8px;
-      }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
+      .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
+      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
 
       /* Tables */
       .data-table {
@@ -908,8 +860,10 @@
               </div>
             </div>
             <div class="alert alert-nutritionist">
-              <strong>營養師提醒：</strong>
-              <p>人體合成 Q10 的能力在 20 歲達到高峰，40 歲後會顯著下降。這也是為什麼中年以後，補充 Q10 對維持活力與心血管健康特別重要。</p>
+              <div>
+                <strong>營養師提醒：</strong>
+                <p>人體合成 Q10 的能力在 20 歲達到高峰，40 歲後會顯著下降。這也是為什麼中年以後，補充 Q10 對維持活力與心血管健康特別重要。</p>
+              </div>
             </div>
           </section>
 
@@ -961,8 +915,10 @@
             <h2>富含輔酶 Q10 的天然食物來源</h2>
             <p>雖然人體能自行合成一部分Q10，我們也可以從飲食中獲取。Q10主要存在於活動量大、能量需求高的動物部位，特別是內臟。</p>
             <div class="alert alert-tip">
-              <strong>營養師小撇步：</strong>
-              <p>食物中的 Q10 含量有限，且在烹調過程中容易流失。若想達到保健效果，特別是針對心血管保護，依賴保健食品的補充會是更有效率的選擇。</p>
+              <div>
+                <strong>營養師小撇步：</strong>
+                <p>食物中的 Q10 含量有限，且在烹調過程中容易流失。若想達到保健效果，特別是針對心血管保護，依賴保健食品的補充會是更有效率的選擇。</p>
+              </div>
             </div>
             <table class="data-table">
               <thead>
@@ -1015,8 +971,10 @@
               </li>
             </ul>
             <div class="alert alert-doctor">
-              <strong>醫師警告：</strong>
-              <p>正在服用慢性病藥物（特別是抗凝血劑、降血壓藥）的患者，在補充 Q10 前請務必諮詢您的醫師或藥師。孕婦、哺乳期婦女及兒童也不建議常規補充。</p>
+              <div>
+                <strong>醫師警告：</strong>
+                <p>正在服用慢性病藥物（特別是抗凝血劑、降血壓藥）的患者，在補充 Q10 前請務必諮詢您的醫師或藥師。孕婦、哺乳期婦女及兒童也不建議常規補充。</p>
+              </div>
             </div>
           </section>
 

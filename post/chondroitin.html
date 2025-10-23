@@ -107,17 +107,16 @@
       .breadcrumb .separator { margin: 0 8px; color: #a0aec0; }
       .article-meta { display: flex; gap: 30px; color: #718096; font-size: 0.95em; flex-wrap: wrap; }
       .article-meta span { display: flex; align-items: center; gap: 8px; }
-      .alert { padding: 20px 25px; border-radius: 15px; margin: 30px 0; position: relative; overflow: hidden; }
-      .alert::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; }
-      .alert-doctor { background: #fee2e2; color: #991b1b; }
-      .alert-doctor::before { background: #dc2626; }
-      .alert-nutritionist { background: #e6f6ff; color: #1e3a8a; }
-      .alert-nutritionist::before { background: var(--primary-color); }
-      .alert-tip { background: #f0fff4; color: #14532d; }
-      .alert-tip::before { background: #48bb78; }
-      .alert-doctor > strong::before { content: '⚠️'; margin-right: 8px; }
-      .alert-nutritionist > strong::before, .alert-tip > strong::before { content: '💡'; margin-right: 8px; }
-      .alert strong { font-weight: 700; display: block; margin-bottom: 8px; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
+      .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
+      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); }
       .data-table th, .data-table td { padding: 15px 20px; text-align: left; vertical-align: middle; }
       .data-table th { font-weight: 600; color: white; }
@@ -325,9 +324,11 @@
             <h2>破解迷思：「軟骨素和葡萄糖胺只是安慰劑嗎？」</h2>
             <p>這大概是所有關節保健資訊中，最讓消費者困惑的問題。網路上充斥著正反不一的新聞報導與研究，讓人無所適從。身為資訊的解決者，我們必須為您釐清這個爭議的核心真相：</p>
             <div class="alert alert-nutritionist">
-                <strong>真相只有一個：關鍵在於「等級」與「形式」！</strong>
-                <p>過去部分研究之所以顯示效果不彰，主因是研究設計混亂——使用了不同來源、不同形式（鹽酸鹽 vs. 硫酸鹽）、不同純度的「食品級」產品，導致結果分歧。</p>
-                <p style="margin-bottom: 0;">然而，國際上最具權威的歐洲關節炎與風濕病聯盟(EULAR)與國際骨關節炎研究學會(OARSI)，在其最新的臨床指引中，基於對海量高品質研究的統合分析，<strong class="highlight-nutrient">依然明確推薦使用「處方級」的硫酸軟骨素與硫酸鹽葡萄糖胺</strong>，作為處理關節不適的第一線營養療法。這證明了，選擇「對的等級與形式」，效果是備受醫學界肯定的。</p>
+                <div>
+                    <strong>真相只有一個：關鍵在於「等級」與「形式」！</strong>
+                    <p>過去部分研究之所以顯示效果不彰，主因是研究設計混亂——使用了不同來源、不同形式（鹽酸鹽 vs. 硫酸鹽）、不同純度的「食品級」產品，導致結果分歧。</p>
+                    <p style="margin-bottom: 0;">然而，國際上最具權威的歐洲關節炎與風濕病聯盟(EULAR)與國際骨關節炎研究學會(OARSI)，在其最新的臨床指引中，基於對海量高品質研究的統合分析，<strong class="highlight-nutrient">依然明確推薦使用「處方級」的硫酸軟骨素與硫酸鹽葡萄糖胺</strong>，作為處理關節不適的第一線營養療法。這證明了，選擇「對的等級與形式」，效果是備受醫學界肯定的。</p>
+                </div>
             </div>
           </section>
 
@@ -365,8 +366,10 @@
                 </svg>
             </div>
             <div class="alert alert-nutritionist">
-                <strong>營養師的黃金準則：</strong>
-                <p>就像蓋房子不能只有磚塊或只有水泥，<strong class="highlight-nutrient">兩者並用，才能達到「原料供給」與「結構穩固」的雙重效益</strong>。這也是為什麼多數國際大型研究與臨床指引，都採用「軟骨素 + 葡萄糖胺」的複方組合來進行試驗，並證實其效果優於單方補充。</p>
+                <div>
+                    <strong>營養師的黃金準則：</strong>
+                    <p>就像蓋房子不能只有磚塊或只有水泥，<strong class="highlight-nutrient">兩者並用，才能達到「原料供給」與「結構穩固」的雙重效益</strong>。這也是為什麼多數國際大型研究與臨床指引，都採用「軟骨素 + 葡萄糖胺」的複方組合來進行試驗，並證實其效果優於單方補充。</p>
+                </div>
             </div>
           </section>
           
@@ -381,9 +384,11 @@
               </tbody>
             </table>
              <div class="alert alert-nutritionist">
-                <strong>營養師的補充時機與搭配建議</strong>
-                <p><strong>最佳時間：</strong> 建議<strong class="highlight-nutrient">隨餐或飯後</strong>食用。這不僅可以減少潛在的腸胃不適，也能讓營養素與食物一起被更完整地消化吸收。</p>
-                <p style="margin-bottom: 0;"><strong>協同搭配 (Stacking)：</strong> 除了葡萄糖胺，與富含<strong class="highlight-nutrient">維生素C</strong>的食物（如芭樂、柑橘、奇異果）或補充品一起攝取，能促進體內膠原蛋白的合成，為關節軟骨的結構提供更全面的支持。</p>
+                <div>
+                    <strong>營養師的補充時機與搭配建議</strong>
+                    <p><strong>最佳時間：</strong> 建議<strong class="highlight-nutrient">隨餐或飯後</strong>食用。這不僅可以減少潛在的腸胃不適，也能讓營養素與食物一起被更完整地消化吸收。</p>
+                    <p style="margin-bottom: 0;"><strong>協同搭配 (Stacking)：</strong> 除了葡萄糖胺，與富含<strong class="highlight-nutrient">維生素C</strong>的食物（如芭樂、柑橘、奇異果）或補充品一起攝取，能促進體內膠原蛋白的合成，為關節軟骨的結構提供更全面的支持。</p>
+                </div>
             </div>
           </section>
           

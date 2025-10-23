@@ -115,19 +115,16 @@
       .data-table thead th { background-color: #f8fafc; font-weight: 600; color: #475569; border-bottom: 2px solid var(--primary-color); }
       .data-table tbody tr:nth-child(even) { background-color: #f8fafc; }
       .data-table tbody tr:hover { background-color: #f5f3ff; }
-      .alert { padding: 20px 25px; border-radius: 15px; margin: 30px 0; position: relative; overflow: hidden; border-left: 5px solid; }
-      .alert-tip { background: var(--primary-color-bg); color: var(--primary-color-text); border-color: var(--primary-color); }
-      .alert-doctor { background: #fef2f2; color: #991b1b; border-color: #ef4444; }
-
-      .alert-doctor > strong::before, .alert-danger > strong::before {
-        content: '⚠️';
-        margin-right: 8px;
-      }
-      .alert-nutritionist > strong::before, .alert-tip > strong::before {
-        content: '💡';
-        margin-right: 8px;
-      }
-      .alert strong { font-weight: 700; display: block; margin-bottom: 8px; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
+      .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
+      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .related-title { font-size: 2em; font-weight: 700; color: #2d3748; text-align: center; margin: 60px 0 40px; border-top: 2px solid #e5e7eb; padding-top: 40px; }
       .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
       .related-card { background: white; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; text-decoration: none; color: inherit; }

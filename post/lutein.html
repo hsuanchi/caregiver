@@ -125,10 +125,16 @@
       .data-table thead { background-color: var(--primary-bg-light); }
       .data-table th { font-weight: 600; color: var(--primary-dark); }
       .data-table tbody tr:hover { background-color: #f8fafc; }
-      .alert { padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
       .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
-      .alert-tip { background-color: var(--primary-bg-light); border-color: var(--primary-color); color: var(--primary-dark); }
-      .alert strong { font-weight: bold; display: block; margin-bottom: 5px; }
+      .alert-doctor::before { content: "⚠️"; }
+      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .svg-visualization-container { background-color: #f9fafb; border-radius: 15px; padding: 30px; margin: 40px 0; border: 1px solid #e2e8f0; text-align: center; }
       .svg-visualization-container h3 { font-size: 1.4em; font-weight: 700; color: #2d3748; margin-bottom: 25px; }
       .references-section ul { list-style-type: none; padding-left: 0; }
@@ -344,8 +350,10 @@
                 </tbody>
             </table>
             <div class="alert alert-tip">
-              <strong>營養師提醒：持續補充比高劑量更重要</strong>
-              <p>葉黃素是脂溶性營養素，<span class="highlight-nutrient">隨餐或飯後服用</span>，讓食物中的油脂幫助其吸收，效果最好。它需要在體內累積，建議至少<span class="highlight-nutrient">持續服用2-4個月</span>才能看到效果。與其偶爾吃高劑量，不如每天穩定攝取來得有效。</p>
+              <div>
+                <strong>營養師提醒：持續補充比高劑量更重要</strong>
+                <p>葉黃素是脂溶性營養素，<span class="highlight-nutrient">隨餐或飯後服用</span>，讓食物中的油脂幫助其吸收，效果最好。它需要在體內累積，建議至少<span class="highlight-nutrient">持續服用2-4個月</span>才能看到效果。與其偶爾吃高劑量，不如每天穩定攝取來得有效。</p>
+              </div>
             </div>
           </section>
 
@@ -476,8 +484,10 @@
             </ul>
 
             <div class="alert alert-doctor">
-                <strong>醫師警告：吸菸者請注意β-胡蘿蔔素</strong>
-                <p>雖然葉黃素本身很安全，但許多複方產品會添加 β-胡蘿蔔素。高劑量的β-胡蘿蔔素補充劑已被證實會增加<strong>吸菸者</strong>罹患肺癌的風險。因此在挑選葉黃素產品時，吸菸或曾吸菸的族群應特別注意，<span class="highlight-nutrient">避免選擇含有高劑量β-胡蘿蔔素的配方</span>。</p>
+                <div>
+                    <strong>醫師警告：吸菸者請注意β-胡蘿蔔素</strong>
+                    <p>雖然葉黃素本身很安全，但許多複方產品會添加 β-胡蘿蔔素。高劑量的β-胡蘿蔔素補充劑已被證實會增加<strong>吸菸者</strong>罹患肺癌的風險。因此在挑選葉黃素產品時，吸菸或曾吸菸的族群應特別注意，<span class="highlight-nutrient">避免選擇含有高劑量β-胡蘿蔔素的配方</span>。</p>
+                </div>
             </div>
       
             <h3 id="special-group-notes">特定族群注意事項</h3>

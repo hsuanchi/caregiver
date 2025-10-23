@@ -198,17 +198,16 @@
       .article-subtitle { font-size: 1.3em; color: #4a5568; line-height: 1.6; max-width: 700px; margin-bottom: 30px; }
       .article-meta { display: flex; gap: 30px; color: #718096; font-size: 0.95em; flex-wrap: wrap; }
       .article-meta span { display: flex; align-items: center; gap: 8px; }
-      .alert { padding: 20px 25px; border-radius: 15px; margin: 30px 0; position: relative; overflow: hidden; }
-      .alert::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; }
-      .alert-doctor { background: #fee2e2; color: #991b1b; }
-      .alert-doctor::before { background: #dc2626; }
-      .alert-nutritionist { background: #dbeafe; color: #1e3a8a; }
-      .alert-nutritionist::before { background: #2563eb; }
-      .alert-tip { background: #f0fdf4; color: #14532d; }
-      .alert-tip::before { background: #22c55e; }
-      .alert-doctor > strong::before { content: '⚠️'; margin-right: 8px; }
-      .alert-nutritionist > strong::before, .alert-tip > strong::before { content: '💡'; margin-right: 8px; }
-      .alert strong { font-weight: 700; display: inline; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
+      .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
+      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); }
       .data-table thead { background: linear-gradient(135deg, #38b2ac 0%, #4fd1c5 100%); color: white; }
       .data-table th, .data-table td { padding: 15px 20px; text-align: left; vertical-align: middle; }
@@ -380,8 +379,10 @@
               <div class="info-card"><h4 class="info-card-title">信差 (信號功能)</h4><p class="info-card-desc">特定的胺基酸，如BCAA中的白胺酸，能像信差一樣傳遞「開始蓋房子！」的信號，直接啟動肌肉蛋白質的合成開關。</p></div>
             </div>
             <div class="alert alert-nutritionist">
-              <strong>營養師提醒：</strong>
-              <p>正因為胺基酸同時扮演「原料」和「信號」兩種角色，所以「補足所有種類(EAA)」跟「補充關鍵信號(BCAA)」同等重要，兩者相輔相成。</p>
+              <div>
+                <strong>營養師提醒：</strong>
+                <p>正因為胺基酸同時扮演「原料」和「信號」兩種角色，所以「補足所有種類(EAA)」跟「補充關鍵信號(BCAA)」同等重要，兩者相輔相成。</p>
+              </div>
             </div>
           </section>
 
@@ -396,8 +397,10 @@
               </tbody>
             </table>
                         <div class="alert alert-tip">
-              <strong>關鍵洞察：</strong>
-              <p>一顆雞蛋約含7克蛋白質，一塊手掌大的雞胸肉約25-30克。您可以藉此估算自己一天是否達標。</p>
+              <div>
+                <strong>關鍵洞察：</strong>
+                <p>一顆雞蛋約含7克蛋白質，一塊手掌大的雞胸肉約25-30克。您可以藉此估算自己一天是否達標。</p>
+              </div>
             </div>
           </section>
           

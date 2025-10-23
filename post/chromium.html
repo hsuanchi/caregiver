@@ -114,17 +114,16 @@
       .breadcrumb .separator { margin: 0 8px; color: #a0aec0; }
       .article-meta { display: flex; gap: 30px; color: #718096; font-size: 0.95em; flex-wrap: wrap; }
       .article-meta span { display: flex; align-items: center; gap: 8px; }
-      .alert { padding: 20px 25px; border-radius: 15px; margin: 30px 0; position: relative; overflow: hidden; }
-      .alert::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; }
-      .alert-doctor { background: #fee2e2; color: #991b1b; }
-      .alert-doctor::before { background: #dc2626; }
-      .alert-nutritionist { background: #f0f4f8; color: #1e3a8a; }
-      .alert-nutritionist::before { background: var(--primary-color); }
-      .alert-tip { background: #f0fff4; color: #14532d; }
-      .alert-tip::before { background: #48bb78; }
-      .alert-doctor > strong::before { content: '⚠️'; margin-right: 8px; }
-      .alert-nutritionist > strong::before, .alert-tip > strong::before { content: '💡'; margin-right: 8px; }
-      .alert strong { font-weight: 700; display: inline; margin-bottom: 0; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
+      .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
+      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); }
       .data-table th, .data-table td { padding: 15px 20px; text-align: left; vertical-align: middle; }
       .data-table th { font-weight: 600; color: white; }
@@ -318,8 +317,10 @@
               </tbody>
             </table>
              <div class="alert alert-tip">
-                <strong>關鍵洞察：</strong>
-                <p>現代飲食過度精緻化，容易導致鉻的流失與攝取不足。研究估計，高達90%的美國成年人，其日常飲食中的鉻攝取量未達建議標準。如果您是外食族或甜食愛好者，很可能也屬於鉻的缺乏高風險族群。</p>
+                <div>
+                    <strong>關鍵洞察：</strong>
+                    <p>現代飲食過度精緻化，容易導致鉻的流失與攝取不足。研究估計，高達90%的美國成年人，其日常飲食中的鉻攝取量未達建議標準。如果您是外食族或甜食愛好者，很可能也屬於鉻的缺乏高風險族群。</p>
+                </div>
             </div>
           </section>
           
@@ -358,8 +359,10 @@
               </table>
             </div>
              <div class="alert alert-nutritionist">
-                <strong>營養師的選購箴言：</strong>
-                <p>無論選擇哪一種，關鍵都在於<strong class="highlight-nutrient">「有機鉻」而非「無機鉻」</strong>（如三氯化鉻，吸收率極差）。吡啶甲酸鉻的研究證據最為充分，是目前市場上的黃金標準。菸鹼酸鉻則是安全有效的優質替代方案。</p>
+                <div>
+                    <strong>營養師的選購箴言：</strong>
+                    <p>無論選擇哪一種，關鍵都在於<strong class="highlight-nutrient">「有機鉻」而非「無機鉻」</strong>（如三氯化鉻，吸收率極差）。吡啶甲酸鉻的研究證據最為充分，是目前市場上的黃金標準。菸鹼酸鉻則是安全有效的優質替代方案。</p>
+                </div>
             </div>
           </section>
           

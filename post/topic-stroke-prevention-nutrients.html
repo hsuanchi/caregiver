@@ -111,10 +111,16 @@
       .data-table thead { background-color: var(--primary-bg-light); }
       .data-table th { font-weight: 600; color: var(--primary-dark); }
       .data-table tbody tr:hover { background-color: #f8fafc; }
-      .alert { padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
       .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
-      .alert-tip { background-color: var(--primary-bg-light); border-color: var(--primary-color); color: var(--primary-dark); }
-      .alert strong { font-weight: bold; display: block; margin-bottom: 5px; }
+      .alert-doctor::before { content: "⚠️"; }
+      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .svg-visualization-container { background-color: #f9fafb; border-radius: 15px; padding: 30px; margin: 40px 0; border: 1px solid #e2e8f0; text-align: center; }
       .svg-visualization-container h3 { font-size: 1.4em; font-weight: 700; color: #2d3748; margin-bottom: 25px; }
       .references-section ul { list-style-type: none; padding-left: 0; }
@@ -353,8 +359,10 @@
                 </tbody>
             </table>
             <div class="alert alert-tip">
-              <strong>營養師提醒：「得舒飲食(DASH)」就是最佳實踐</strong>
-              <p>上述的飲食原則，其實與全球公認最強效的降血壓飲食法——「得舒飲食」不謀而合。其核心精神就是：<strong>高鉀、高鎂、高鈣、高纖維、低飽和脂肪、低膽固醇</strong>。簡單來說，就是多吃蔬菜、水果、全穀類，選擇低脂乳品與白肉，並減少紅肉、甜食與含糖飲料的攝取。</p>
+              <div>
+                <strong>營養師提醒：「得舒飲食(DASH)」就是最佳實踐</strong>
+                <p>上述的飲食原則，其實與全球公認最強效的降血壓飲食法——「得舒飲食」不謀而合。其核心精神就是：<strong>高鉀、高鎂、高鈣、高纖維、低飽和脂肪、低膽固醇</strong>。簡單來說，就是多吃蔬菜、水果、全穀類，選擇低脂乳品與白肉，並減少紅肉、甜食與含糖飲料的攝取。</p>
+              </div>
             </div>
           </section>
           
@@ -362,12 +370,14 @@
             <h2>安全攝取：補充關鍵營養素的注意事項</h2>
             <p>雖然從天然食物中攝取這些營養素非常安全，但若考慮使用補充劑，則需特別注意劑量與自身健康狀況。</p>
             <div class="alert alert-doctor">
-                <strong>醫師警告：特定族群請務必諮詢專業意見</strong>
-                <ul>
-                    <li><strong>腎臟病患者</strong>：絕對不可自行補充高劑量的「鉀」或「鎂」，因為腎臟是排除這些礦物質的主要器官，補充過量可能導致致命的高血鉀/鎂症。</li>
-                    <li><strong>正在服用抗凝血劑者</strong>：若您正在服用Warfarin等抗凝血藥物，補充高劑量的「Omega-3」或「維生素D/K」都可能影響藥效，增加出血風險。</li>
-                    <li><strong>補充劑非萬靈丹</strong>：任何營養補充品都不能取代健康的生活方式與必要的醫療。若您有高血壓等慢性病，務必規律服藥並定期回診追蹤。</li>
-                </ul>
+                <div>
+                    <strong>醫師警告：特定族群請務必諮詢專業意見</strong>
+                    <ul>
+                        <li><strong>腎臟病患者</strong>：絕對不可自行補充高劑量的「鉀」或「鎂」，因為腎臟是排除這些礦物質的主要器官，補充過量可能導致致命的高血鉀/鎂症。</li>
+                        <li><strong>正在服用抗凝血劑者</strong>：若您正在服用Warfarin等抗凝血藥物，補充高劑量的「Omega-3」或「維生素D/K」都可能影響藥效，增加出血風險。</li>
+                        <li><strong>補充劑非萬靈丹</strong>：任何營養補充品都不能取代健康的生活方式與必要的醫療。若您有高血壓等慢性病，務必規律服藥並定期回診追蹤。</li>
+                    </ul>
+                </div>
             </div>
           </section>
 

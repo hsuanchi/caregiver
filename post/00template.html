@@ -97,17 +97,16 @@
       .article-subtitle { font-size: 1.3em; color: #4a5568; line-height: 1.6; max-width: 700px; margin-bottom: 30px; }
       .article-meta { display: flex; gap: 30px; color: #718096; font-size: 0.95em; flex-wrap: wrap; }
       .article-meta span { display: flex; align-items: center; gap: 8px; }
-      .alert { padding: 20px 25px; border-radius: 15px; margin: 30px 0; position: relative; overflow: hidden; }
-      .alert::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; }
-      .alert-doctor { background: #fee2e2; color: #991b1b; }
-      .alert-doctor::before { background: #dc2626; }
-      .alert-nutritionist { background: #dbeafe; color: #1e3a8a; }
-      .alert-nutritionist::before { background: #2563eb; }
-      .alert-tip { background: #f0fdf4; color: #14532d; }
-      .alert-tip::before { background: #22c55e; }
-      .alert-doctor > strong::before { content: '⚠️'; margin-right: 8px; }
-      .alert-nutritionist > strong::before, .alert-tip > strong::before { content: '💡'; margin-right: 8px; }
-      .alert strong { font-weight: 700; display: inline; margin-right: 0.5em; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
+      .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
+      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); }
       .data-table thead { background: linear-gradient(135deg, #ff6b35 0%, #ff8f65 100%); color: white; }
       .data-table th, .data-table td { padding: 15px 20px; text-align: left; }
@@ -220,18 +219,24 @@
             <p>以下為三種提示框的標準實作範例，請依照新版 `writing-guide.md` 的規範使用。</p>
 
             <div class="alert alert-tip">
-              <strong>一般提示：</strong>
-              <p>這是一般性的提示或技巧，用於補充說明。例如，建議將魚油與含有脂肪的正餐一同服用，以提升吸收率。</p>
+              <div>
+                <strong>一般提示：</strong>
+                <p>這是一般性的提示或技巧，用於補充說明。例如，建議將魚油與含有脂肪的正餐一同服用，以提升吸收率。</p>
+              </div>
             </div>
 
             <div class="alert alert-nutritionist">
-              <strong>營養師提醒：</strong>
-              <p>這用於提供專業的營養建議或選購箴言。例如，挑選鋅補充品時，應優先選擇「甘胺酸鋅」等高吸收率的螯合形式。</p>
+              <div>
+                <strong>營養師提醒：</strong>
+                <p>這用於提供專業的營養建議或選購箴言。例如，挑選鋅補充品時，應優先選擇「甘胺酸鋅」等高吸收率的螯合形式。</p>
+              </div>
             </div>
 
             <div class="alert alert-doctor">
-              <strong>醫師警告：</strong>
-              <p>這用於提供專業的健康風險、副作用或藥物交互作用。例如，長期每日攝取超過40mg的鋅，可能會干擾銅的吸收。</p>
+              <div>
+                <strong>醫師警告：</strong>
+                <p>這用於提供專業的健康風險、副作用或藥物交互作用。例如，長期每日攝取超過40mg的鋅，可能會干擾銅的吸收。</p>
+              </div>
             </div>
           </section>
 
@@ -258,8 +263,10 @@
             <h2>鋅如何運作？體內的萬能鑰匙</h2>
             <p>如果說酵素是執行各種生化反應的工人，那麼<strong class="highlight-nutrient">鋅就是啟動這些工人的「萬能鑰匙」</strong>。它作為輔因子，能與超過300種酵素結合，解鎖它們的活性，讓代謝、免疫、生長等無數生命活動得以順利進行。沒有這把鑰匙，許多工廠都將停擺。</p>
             <div class="alert alert-tip">
-              <strong>重點提示</strong>
-              <p>鋅的另一個關鍵角色是「DNA穩定劑」。它能保護遺傳物質的結構完整，確保細胞在分裂時能被正確複製，這也是為何它對生長發育與組織修復如此重要的原因。</p>
+              <div>
+                <strong>重點提示</strong>
+                <p>鋅的另一個關鍵角色是「DNA穩定劑」。它能保護遺傳物質的結構完整，確保細胞在分裂時能被正確複製，這也是為何它對生長發育與組織修復如此重要的原因。</p>
+              </div>
             </div>
           </section>
 
@@ -338,8 +345,10 @@
             <h2>實踐指引(二)：如何挑選鋅補充品？</h2>
             <p>市面上的鋅補充品琳瑯滿目，吸收率是關鍵的考量點。「螯合鋅」是透過技術將礦物質與胺基酸結合，能大幅提升人體的吸收利用率，並減少腸胃不適的副作用。</p>
             <div class="alert alert-nutritionist">
-              <strong>營養師的選購箴言</strong>
-              <p>挑選時，請優先選擇<strong class="highlight-nutrient">「甘胺酸鋅」(Zinc Glycinate)</strong> 或 <strong class="highlight-nutrient">「葡萄糖酸鋅」(Zinc Gluconate)</strong> 等高吸收率的螯合形式，並確認產品有清楚標示鋅的「元素含量」，才能確保您補充足夠的劑量。</p>
+              <div>
+                <strong>營養師的選購箴言</strong>
+                <p>挑選時，請優先選擇<strong class="highlight-nutrient">「甘胺酸鋅」(Zinc Glycinate)</strong> 或 <strong class="highlight-nutrient">「葡萄糖酸鋅」(Zinc Gluconate)</strong> 等高吸收率的螯合形式，並確認產品有清楚標示鋅的「元素含量」，才能確保您補充足夠的劑量。</p>
+              </div>
             </div>
           </section>
 
@@ -347,8 +356,10 @@
             <h2>安全注意事項</h2>
             <p>鋅雖然重要，但過量補充也會帶來風險。請注意以下事項：</p>
             <div class="alert alert-doctor">
-              <strong>醫師警告</strong>
-              <p>長期每日攝取超過 40mg 的鋅，可能會干擾體內另一種重要礦物質「銅」的吸收，導致貧血等問題。此外，高劑量的鋅也可能引起噁心、嘔吐等腸胃不適。若您正在服用特定藥物，補充前請務必諮詢醫師或藥師。</p>
+              <div>
+                <strong>醫師警告</strong>
+                <p>長期每日攝取超過 40mg 的鋅，可能會干擾體內另一種重要礦物質「銅」的吸收，導致貧血等問題。此外，高劑量的鋅也可能引起噁心、嘔吐等腸胃不適。若您正在服用特定藥物，補充前請務必諮詢醫師或藥師。</p>
+              </div>
             </div>
           </section>
 

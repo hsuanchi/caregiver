@@ -300,65 +300,16 @@
         gap: 8px;
       }
 
-      /* Alert Boxes */
-      .alert {
-        padding: 20px 25px;
-        border-radius: 15px;
-        margin: 30px 0;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .alert::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 5px;
-      }
-
-      .alert-doctor {
-        background: #fee2e2;
-        color: #991b1b;
-      }
-
-      .alert-doctor::before {
-        background: #dc2626;
-      }
-
-      .alert-nutritionist {
-        background: #dbeafe;
-        color: #1e3a8a;
-      }
-
-      .alert-nutritionist::before {
-        background: #2563eb;
-      }
-
-      .alert-tip {
-        background: #f0fdf4;
-        color: #14532d;
-      }
-
-      .alert-tip::before {
-        background: #22c55e;
-      }
-
-      .alert-doctor > strong::before, .alert-danger > strong::before {
-        content: '⚠️';
-        margin-right: 8px;
-      }
-      .alert-nutritionist > strong::before, .alert-tip > strong::before {
-        content: '💡';
-        margin-right: 8px;
-      }
-
-      .alert strong {
-        font-weight: 700;
-        display: inline;
-        margin-bottom: 0;
-      }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
+      .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
+      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
 
       /* Key Takeaways Box */
       .takeaways-box {
@@ -1216,7 +1167,9 @@
               </div>
             </div>
             <div class="alert alert-tip">
-              <strong>如何確定？</strong> <p>最準確的方式是透過抽血檢測血液中「25-羥基維生素 D」的濃度。若數值低於 30 ng/mL，建議諮詢醫師或營養師。</p>
+              <div>
+                <strong>如何確定？</strong> <p>最準確的方式是透過抽血檢測血液中「25-羥基維生素 D」的濃度。若數值低於 30 ng/mL，建議諮詢醫師或營養師。</p>
+              </div>
             </div>
           </section>
 
@@ -1242,7 +1195,9 @@
             <p>雖然陽光和飲食是天然的來源，但現實生活中，要單靠這兩者來滿足維生素 D 的需求其實充滿挑戰。陽光的效果受季節、緯度、空污和防曬習慣影響，難以量化；而富含維生素 D 的食物種類不多，要每天都吃到足量並不容易。</p>
             <p>這就是為什麼對於多數人，特別是高風險族群，服用保健品成為了最有效、最可靠的策略。它能提供精準、穩定的劑量，讓我們能輕鬆掌握自己的健康，確保身體獲得足夠的「陽光能量」，不受外在環境限制。</p>
             <div class="alert alert-nutritionist">
-              <strong>營養師觀點：</strong> <p>將保健品視為您健康保險的一部分。它彌補了現代生活方式所造成的營養缺口，是確保您每日維生素 D 達標最簡單、最聰明的方法。</p>
+              <div>
+                <strong>營養師觀點：</strong> <p>將保健品視為您健康保險的一部分。它彌補了現代生活方式所造成的營養缺口，是確保您每日維生素 D 達標最簡單、最聰明的方法。</p>
+              </div>
             </div>
            
           </section>
@@ -1388,8 +1343,10 @@
         </article>
 
         <div class="alert alert-tip">
-          <strong>延伸閱讀：打造您的黃金免疫部隊</strong>
-          <p>維生素D是免疫系統的關鍵調節者。想了解更多關於維生素C、鋅、益生菌等如何協同作戰，建立全方位免疫防線嗎？<a href="./topic-immune-boosting-nutrients.html">點此閱讀我們的免疫力強化完整指南</a>。</p>
+          <div>
+            <strong>延伸閱讀：打造您的黃金免疫部隊</strong>
+            <p>維生素D是免疫系統的關鍵調節者。想了解更多關於維生素C、鋅、益生菌等如何協同作戰，建立全方位免疫防線嗎？<a href="./topic-immune-boosting-nutrients.html">點此閱讀我們的免疫力強化完整指南</a>。</p>
+          </div>
         </div>
 
 

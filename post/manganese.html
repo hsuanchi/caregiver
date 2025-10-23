@@ -109,10 +109,16 @@
       .data-table thead { background-color: var(--primary-bg-light); }
       .data-table th { font-weight: 600; color: var(--primary-dark); }
       .data-table tbody tr:hover { background-color: #f8fafc; }
-      .alert { padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
       .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
       .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
-      .alert strong { font-weight: bold; display: block; margin-bottom: 5px; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .svg-visualization-container { background-color: #f9fafb; border-radius: 15px; padding: 30px; margin: 40px 0; border: 1px solid #e2e8f0; text-align: center; }
       .svg-visualization-container h3 { font-size: 1.4em; font-weight: 700; color: #2d3748; margin-bottom: 25px; }
       .references-section ul { list-style-type: none; padding-left: 0; }
@@ -439,9 +445,11 @@
                 </svg>
             </div>
             <div class="alert alert-doctor">
-                <strong>醫師警告：補充劑的潛在風險</strong>
-                <p>這意味著，<strong>長期單獨補充高劑量的鐵（例如治療貧血）或鈣（治療骨鬆），可能會抑制錳的吸收，反過來導致錳缺乏</strong>。反之，長期補充高劑量的錳，也可能影響鐵的吸收，對於本來就容易缺鐵的女性而言更需注意。</p>
-                <p><strong>結論：除非有特定醫療需求，否則透過均衡飲食來獲取礦物質，是維持體內平衡最安全的方式。</strong></p>
+                <div>
+                    <strong>醫師警告：補充劑的潛在風險</strong>
+                    <p>這意味著，<strong>長期單獨補充高劑量的鐵（例如治療貧血）或鈣（治療骨鬆），可能會抑制錳的吸收，反過來導致錳缺乏</strong>。反之，長期補充高劑量的錳，也可能影響鐵的吸收，對於本來就容易缺鐵的女性而言更需注意。</p>
+                    <p><strong>結論：除非有特定醫療需求，否則透過均衡飲食來獲取礦物質，是維持體內平衡最安全的方式。</strong></p>
+                </div>
             </div>
           </section>
 

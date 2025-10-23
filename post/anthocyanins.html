@@ -157,17 +157,16 @@
       .breadcrumb .separator { margin: 0 8px; color: #a0aec0; }
       .article-meta { display: flex; gap: 30px; color: #718096; font-size: 0.95em; flex-wrap: wrap; }
       .article-meta span { display: flex; align-items: center; gap: 8px; }
-      .alert { padding: 20px 25px; border-radius: 15px; margin: 30px 0; position: relative; overflow: hidden; }
-      .alert::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; }
-      .alert-doctor { background: #fee2e2; color: #991b1b; }
-      .alert-doctor::before { background: #dc2626; }
-      .alert-nutritionist { background: #dbeafe; color: #1e3a8a; }
-      .alert-nutritionist::before { background: #2563eb; }
-      .alert-tip { background: #f0fdf4; color: #14532d; }
-      .alert-tip::before { background: #22c55e; }
-      .alert-doctor > strong::before { content: '⚠️'; margin-right: 8px; }
-      .alert-nutritionist > strong::before, .alert-tip > strong::before { content: '💡'; margin-right: 8px; }
-      .alert strong { font-weight: 700; display: inline; }
+      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
+      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
+      .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
+      .alert-doctor::before { content: "⚠️"; }
+      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip::before { content: "💡"; }
+      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-nutritionist::before { content: "💡"; }
+      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
+      .alert p:last-child { margin-bottom: 0; }
       .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); }
       .data-table th, .data-table td { padding: 15px 20px; text-align: left; vertical-align: middle; }
       .data-table th { font-weight: 600; color: white; }
@@ -279,8 +278,10 @@
               <div class="info-card"><h4 class="info-card-title">血管保護者</h4><p class="info-card-desc">能抑制膠原蛋白酶的活性，保護血管結構中的膠原蛋白不被破壞，維持血管的強韌與彈性，確保血液順暢流通。</p></div>
             </div>
             <div class="alert alert-nutritionist">
-              <strong>營養師提醒：</strong>
-              <p>花青素的獨特之處在於它能作用於全身，特別是能到達葉黃素難以觸及的眼部前端睫狀肌，這也是它能有效舒緩3C眼疲勞的關鍵。</p>
+              <div>
+                <strong>營養師提醒：</strong>
+                <p>花青素的獨特之處在於它能作用於全身，特別是能到達葉黃素難以觸及的眼部前端睫狀肌，這也是它能有效舒緩3C眼疲勞的關鍵。</p>
+              </div>
             </div>
           </section>
 
@@ -295,8 +296,10 @@
               </tbody>
             </table>
                         <div class="alert alert-tip">
-              <strong>關鍵洞察：</strong>
-              <p>與其糾結於毫克數，不如專注於「彩虹飲食法」，確保每日餐盤中都有深藍、紫、紅色的食物。</p>
+              <div>
+                <strong>關鍵洞察：</strong>
+                <p>與其糾結於毫克數，不如專注於「彩虹飲食法」，確保每日餐盤中都有深藍、紫、紅色的食物。</p>
+              </div>
             </div>
           </section>
           
