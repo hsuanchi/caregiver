@@ -15,11 +15,9 @@
 
 
 ### 2.2 CSS 元件使用規則
--
-
 
 - [ ] **禁止行內樣式**: 避免使用 `style="..."` 屬性，應將樣式移至 CSS class 中。
-### 2.3 提示框結構標準化 (Alert Box Structure Standardization)
+
 
     
 

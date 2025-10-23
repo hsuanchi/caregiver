@@ -256,7 +256,7 @@
 - **子項目**：會向內縮排，並以短橫線作為列點，清晰地區分出層次。
 
 ### 3. **固定的結尾模組**
-   - **智慧推薦文章 (自動生成)**：文章結尾的推薦區塊已由 `related-articles-component.js` 全自動生成。它會根據當前文章的 `goals`，從 `articles-data.js` 和 `topicArticles` 中動態尋找最相關的文章來推薦。**您不再需要手動編寫此區塊**，只需確保新文章已正確加入 `articles-data.js` 即可。
+   - **相關營養素 智慧推薦文章 (自動生成)**：文章結尾的推薦區塊已由 `related-articles-component.js` 全自動生成。它會根據當前文章的 `goals`，從 `articles-data.js` 和 `topicArticles` 中動態尋找最相關的文章來推薦。**您不再需要手動編寫此區塊**，只需確保新文章已正確加入 `articles-data.js` 即可。
    - **免責聲明**：在頁尾組件前，必須加上標準的免責聲明區塊。
 
 ## 內容與語氣
