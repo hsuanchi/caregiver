@@ -267,7 +267,7 @@
                             <h3>營養素</h3>
                             <ul class="footer-links">
                                 <li><a href="/post/fish-oil.html">魚油</a></li>
-                                <li><a href="/post/probiotics.html">益生菌</a></li>
+                                <li><a href="/post/prebiotics.html">益生質</a></li>
                                 <li><a href="/post/vitamin-c.html">維生素C</a></li>
                                 <li><a href="/post/calcium.html">鈣</a></li>
                                 <li><a href="/post/zinc.html">鋅</a></li>

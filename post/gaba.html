@@ -159,7 +159,7 @@
       @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } .sidebar { display: none; } }
     </style>
 </head>
-<body>
+<body data-article-id="card-gaba">
     <div class="progress-bar" id="progressBar"></div>
     <div id="header-component"></div>
 
@@ -319,32 +319,7 @@
             </div>
           </section>
 
-          <section id="related-nutrients">
-            <h2 class="related-title">相關營養素</h2>
-            <div class="related-grid">
-              <a href="magnesium.html" class="related-card">
-                <div class="related-card-content">
-                  <span class="related-card-tag mineral">礦物質</span>
-                  <h3 class="related-card-title">鎂</h3>
-                  <p class="related-card-desc">被稱為「放鬆礦物質」，能幫助穩定神經、放鬆肌肉，與GABA是改善睡眠的黃金搭檔。</p>
-                </div>
-              </a>
-              <a href="calcium.html" class="related-card">
-                <div class="related-card-content">
-                  <span class="related-card-tag mineral">礦物質</span>
-                  <h3 class="related-card-title">鈣</h3>
-                  <p class="related-card-desc">鈣質不僅與骨骼有關，也參與神經傳導的穩定，足夠的鈣有助於減少半夜抽筋、安穩入睡。</p>
-                </div>
-              </a>
-              <a href="vitamin-b.html" class="related-card">
-                <div class="related-card-content">
-                  <span class="related-card-tag vitamin">維生素</span>
-                  <h3 class="related-card-title">維生素 B6</h3>
-                  <p class="related-card-desc">維生素B6是身體合成GABA、血清素等神經傳導物質的重要輔酶，是維持情緒穩定的關鍵。</p>
-                </div>
-              </a>
-            </div>
-          </section>
+          <div id="related-articles-container"></div>
         </article>
       </main>
     </div>
@@ -354,6 +329,8 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -409,6 +386,13 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+
+        // Initialize Related Articles Component
+        const relatedContainer = document.getElementById("related-articles-container");
+        const articleId = document.body.dataset.articleId;
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
       });
     </script>
 </body>
