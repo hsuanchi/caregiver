@@ -3,80 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>維生素B群 - 提神抗疲勞你吃對了嗎？營養師詳解8種B群功效，破解晚上吃會失眠、尿黃才有效等5大迷思 | 營養百科</title>
+    <title>魚油完整指南：功效、副作用、EPA 與 DHA 怎麼選？ | 營養百科</title>
     <meta
       name="description"
-      content="專業營養師詳細解析維生素 B 群的 8 種成分、能量代謝功能、神經系統作用、建議劑量和天然食物來源。教您如何挑選最適合的 B 群產品，告別疲勞，找回活力。"
+      content="專業營養師詳細解析魚油的功效、副作用、EPA 與 DHA 的黃金比例，並教您如何挑選最適合的魚油產品，守護心血管與大腦健康。"
     />
     <meta
       name="keywords"
-      content="維生素 B 群, B 群功效, B 群副作用, B 群怎麼選, 能量代謝, 提神, 抗疲勞, 神經健康, 素食 B12, B 群推薦"
+      content="魚油, 魚油功效, 魚油推薦, Omega-3, EPA, DHA, 魚油怎麼選, 三酸甘油酯, 心血管保健, 大腦健康"
     />
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
-    <link rel="shortcut icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
-    <!-- Open Graph for Social Media -->
-    <meta property="og:site_name" content="營養百科" />
-
-    <!-- JSON-LD for WebSite (Site Name in Search Results) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "營養百科",
-      "alternateName": "營養百科",
-      "url": "https://life.maxlist.xyz/"
-    }
-    </script>
-
-    <!-- JSON-LD for Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://life.maxlist.xyz/post/vitamin-b.html"
-      },
-      "headline": "維生素B群 - 提神抗疲勞你吃對了嗎？營養師詳解8種B群功效，破解晚上吃會失眠、尿黃才有效等5大迷思 | 營養百科",
-      "description": "提神抗疲勞你吃對B群了嗎？營養師詳解8種B群功效，一次破解「晚上吃會失眠、尿黃才有效」等5大迷思，教你為壓力、熬夜、素食等不同需求找到最佳B群。",
-      "image": "https://life.maxlist.xyz/assets/images/vitamin-b-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "Caregiver 營養百科",
-        "url": "https://life.maxlist.xyz/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Caregiver 營養百科",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
-        }
-      },
-      "datePublished": "2024-08-20",
-      "dateModified": "2025-08-20"
-    }
-    </script>
-
-    <!-- JSON-LD for Breadcrumb -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "營養百科",
-        "item": "https://life.maxlist.xyz/"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "維生素B群 - 提神抗疲勞你吃對了嗎？"
-      }]
-    }
-    </script>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="../favicon.svg">
 
     <style>
       * {
@@ -103,28 +42,6 @@
         background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
         z-index: 1001;
         transition: width 0.3s ease;
-      }
-
-      /* Breadcrumb Navigation */
-      .breadcrumb {
-        margin-bottom: 20px;
-        font-size: 0.9em;
-        color: #718096;
-      }
-
-      .breadcrumb a {
-        color: #718096;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .breadcrumb a:hover {
-        color: #ff6b35;
-      }
-
-      .breadcrumb .separator {
-        margin: 0 8px;
-        color: #a0aec0;
       }
 
       .share-btn {
@@ -277,6 +194,26 @@
         overflow: hidden;
       }
 
+      .article-hero::before {
+        content: "🐟";
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        font-size: 150px;
+        opacity: 0.1;
+        transform: rotate(-15deg);
+      }
+
+      .article-hero::after {
+        content: "💊";
+        position: absolute;
+        left: -10px;
+        bottom: -10px;
+        font-size: 100px;
+        opacity: 0.1;
+        transform: rotate(15deg);
+      }
+
       .article-category {
         display: inline-block;
         background: white;
@@ -321,16 +258,55 @@
       }
 
       /* Alert Boxes */
-      .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
-      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
-      .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
-      .alert-doctor::before { content: "⚠️"; }
-      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
-      .alert-tip::before { content: "💡"; }
-      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
-      .alert-nutritionist::before { content: "💡"; }
-      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
-      .alert p:last-child { margin-bottom: 0; }
+      .alert {
+        padding: 20px 25px;
+        border-radius: 15px;
+        margin: 30px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .alert::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+      }
+
+      .alert-doctor {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+
+      .alert-doctor::before {
+        background: #dc2626;
+      }
+
+      .alert-nutritionist {
+        background: #dbeafe;
+        color: #1e3a8a;
+      }
+
+      .alert-nutritionist::before {
+        background: #2563eb;
+      }
+
+      .alert-tip {
+        background: #f0fdf4;
+        color: #14532d;
+      }
+
+      .alert-tip::before {
+        background: #22c55e;
+      }
+
+      .alert strong {
+        font-weight: 700;
+        display: block;
+        margin-bottom: 8px;
+      }
 
       /* Tables */
       .data-table {
@@ -803,7 +779,6 @@
       }
 
       /* Responsive Design */
-      section[id] { scroll-margin-top: 100px; }
       @media (max-width: 1024px) {
         .article-container {
           grid-template-columns: 1fr;
@@ -811,7 +786,7 @@
         }
 
         .sidebar {
-          /* display: none; */
+          display: none;
         }
 
         .article-content {
@@ -893,25 +868,19 @@
           </h3>
           <ul class="toc-list">
             <li><a href="#summary" class="toc-link">30 秒速讀版</a></li>
-            <li><a href="#self-check" class="toc-link">快來看看你是不是需要補充 B 群的人？</a></li>
-            <li><a href="#self-check-b-group" class="toc-link sub-item">B 群需求自我檢測</a></li>
-            <li><a href="#basics" class="toc-link">維生素 B 群到底是什麼？讓我們從頭說起</a></li>
-            <li><a href="#why-b-group" class="toc-link sub-item">為什麼叫「B群」？</a></li>
-            <li><a href="#b-group-members" class="toc-link sub-item">維生素 B 群的 8 位成員：各司其職，缺一不可</a></li>
-            <li><a href="#benefits" class="toc-link">B 群的神奇功效 - 為什麼這麼多人在吃？</a></li>
-            <li><a href="#how-to-take" class="toc-link">怎麼吃最有效？維生素 B 群服用完全攻略</a></li>
-            <li><a href="#dosage-by-group" class="toc-link sub-item">依族群的 B 群劑量建議</a></li>
-            <li><a href="#best-time-to-take" class="toc-link">什麼時候吃最好？</a></li>
-            <li><a href="#breakfast-after" class="toc-link sub-item">早餐後服用！科學原理告訴你</a></li>
-            <li><a href="#special-cases" class="toc-link sub-item">特殊情況的服用建議</a></li>
-            <li><a href="#food-sources" class="toc-link">天然食物也能補充維生素 B 群！</a></li>
-            <li><a href="#food-champions" class="toc-link sub-item">B 群食物冠軍榜</a></li>
-            <li><a href="#how-to-choose" class="toc-link">維生素 B 群選購攻略 - 不被騙的完整指引！</a></li>
-            <li><a href="#why-choose-b-group" class="toc-link sub-item">為什麼選對 B 群這麼重要？</a></li>
-            <li><a href="#six-keys" class="toc-link sub-item">B 群選購的 6 大關鍵指標</a></li>
-            <li><a href="#supplement-types" class="toc-link sub-item">B 群補充劑類型比較</a></li>
+            <li><a href="#self-check" class="toc-link">你需要魚油嗎？</a></li>
+            <li><a href="#basics" class="toc-link">魚油基礎知識</a></li>
+            <li>
+              <a href="#benefits" class="toc-link sub-item">魚油的神奇功效</a>
+            </li>
+            <li>
+              <a href="#how-to-take" class="toc-link sub-item">怎麼吃最有效</a>
+            </li>
+            <li>
+              <a href="#food-sources" class="toc-link sub-item">天然食物來源</a>
+            </li>
+            <li><a href="#how-to-choose" class="toc-link">如何選擇魚油</a></li>
             <li><a href="#faq" class="toc-link">常見問題</a></li>
-            <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
       </aside>
@@ -921,36 +890,35 @@
         <!-- Article Header -->
         <header class="article-header">
           <div class="article-hero">
-            <nav class="breadcrumb">
-              <a href="../index.html">首頁</a>
-              <span class="separator">/</span>
-              <span>維生素B群 - 啟動身體能量、告別疲勞的活力發電機</span>
-            </nav>
-            <span class="article-category">營養師審核</span>
-            <h1 class="article-title">維生素B群 - 啟動身體能量、告別疲勞的活力發電機</h1>
+            <span class="article-category">營養素指南</span>
+            <h1 class="article-title">
+              還在煩惱魚油怎麼選？讓專業營養師幫你一次搞懂！
+            </h1>
             <p class="article-subtitle">
-              維生素 B 群是身體的「能量轉換器」，8 種成員各司其職。現代人生活壓力大、飲食不均，B 群缺乏很常見。讓營養師帶你一次搞懂 B 群的秘密！
+              從 EPA、DHA 到
+              TG、rTG，那些讓人頭痛的專有名詞，今天讓我們用最簡單的方式說給你聽。
             </p>
             <div class="article-meta">
-              <span>✍️ 營養百科團隊編寫</span>
-              <span>📅 2025 年 8 月 20 日更新</span>
-              <span>⏱️ 閱讀時間：18 分鐘</span>
+              <span>✍️ 專業營養師審核</span>
+              <span>📅 2025 年 7 月 16 日更新</span>
+              <span>⏱️ 閱讀時間：15 分鐘</span>
             </div>
           </div>
         </header>
 
-        <div id="toc-mobile-target"></div>
         <!-- Article Body -->
         <article class="article-body">
           <!-- Story Introduction -->
           <div class="story-intro">
             <h3>🤔 你是不是也有這些困擾？</h3>
             <p>
-              「營養師，我最近老是覺得累，朋友說吃 B 群有用？」走進營養諮詢室，這是我最常聽到的問題之一。市面上的 B 群產品琳瑯滿目，B1、B2、B12...這些數字是不是讓你頭很大？別擔心，今天就讓營養師用最簡單的方式，帶你一次搞懂 B 群的秘密！
+              「老闆，我要買魚油！」走進藥局，架上琳瑯滿目的魚油產品讓人眼花撩亂。EPA、DHA、TG
+              型、rTG
+              型...這些專有名詞是不是讓你頭很大？別擔心，今天就讓營養師用最簡單的方式，帶你一次搞懂魚油的秘密！
             </p>
             <p>
-              <strong>💡 這篇文章會告訴你：</strong>
-              你是否需要 B 群？8 種 B 群各有什麼功能？如何挑選？怎麼吃最有效？看完保證不再迷茫！
+              <strong>💡 這篇文章會告訴你：</strong
+              >你是否需要魚油？如何挑選？怎麼吃最有效？看完保證不再迷茫！
             </p>
           </div>
 
@@ -959,23 +927,26 @@
 
             <div class="info-cards">
               <a href="#benefits" class="info-card quick-read-card">
+                <span class="info-card-icon">🐟</span>
                 <h4 class="info-card-title">有什麼好處？</h4>
                 <p class="info-card-desc">
-                  能量代謝、提神抗疲勞<br />神經健康、穩定情緒
+                  降血脂、護心臟、增記憶<br />抗發炎、護眼睛
                 </p>
                 <div class="card-click-hint">點擊了解詳情</div>
               </a>
               <a href="#how-to-take" class="info-card quick-read-card">
+                <span class="info-card-icon">💊</span>
                 <h4 class="info-card-title">怎麼服用？</h4>
                 <p class="info-card-desc">
-                  早餐後服用最佳<br />綜合B群效果好
+                  每日 1000-2000mg<br />隨餐吃吸收最好
                 </p>
                 <div class="card-click-hint">點擊了解詳情</div>
               </a>
               <a href="#how-to-choose" class="info-card quick-read-card">
+                <span class="info-card-icon">🛒</span>
                 <h4 class="info-card-title">怎麼選購？</h4>
                 <p class="info-card-desc">
-                  選綜合B群、活性型<br />信譽品牌最安心
+                  濃度 85% 以上、rTG 型態<br />有 IFOS 認證最安心
                 </p>
                 <div class="card-click-hint">點擊了解詳情</div>
               </a>
@@ -989,129 +960,128 @@
                 font-size: 1.1em;
               "
             >
-              還不確定自己需不需要 B 群？先來做個快速檢測吧！
+              還不確定自己需不需要魚油？先來做個快速檢測吧！
             </p>
           </section>
 
           <section id="self-check">
-            <h2>快來看看你是不是需要補充 B 群的人？</h2>
+            <h2>快來看看你是不是需要補充魚油的人？</h2>
 
             <div class="quick-test">
-              <h3 id="self-check-b-group">B 群需求自我檢測</h3>
+              <h3>魚油需求自我檢測</h3>
               <p>以下情況，你中了幾個？</p>
               <div class="test-options">
                 <label class="test-option">
                   <input type="checkbox" name="need-test" />
-                  <span>工作壓力大，容易疲勞</span>
+                  <span>三餐老是在外，炸雞排是好朋友</span>
                 </label>
                 <label class="test-option">
                   <input type="checkbox" name="need-test" />
-                  <span>經常熬夜，作息不規律</span>
+                  <span>健檢報告出現紅字（尤其是三酸甘油酯）</span>
                 </label>
                 <label class="test-option">
                   <input type="checkbox" name="need-test" />
-                  <span>注意力不集中，記憶力變差</span>
+                  <span>常常忘東忘西，感覺腦霧很嚴重</span>
                 </label>
                 <label class="test-option">
                   <input type="checkbox" name="need-test" />
-                  <span>情緒不穩定，容易焦慮</span>
+                  <span>整天盯著電腦/手機，眼睛超級累</span>
                 </label>
                 <label class="test-option">
                   <input type="checkbox" name="need-test" />
-                  <span>是素食者（尤其是純素）</span>
+                  <span>關節卡卡不舒服</span>
                 </label>
                 <label class="test-option">
                   <input type="checkbox" name="need-test" />
-                  <span>經常喝酒或服用藥物</span>
+                  <span>正在懷孕或哺乳中</span>
                 </label>
               </div>
               <p style="margin-top: 20px; color: #14532d; font-weight: 600">
-                勾選 2 個以上？你可能真的需要補充 B 群囉！
+                勾選 2 個以上？你可能真的需要補充魚油囉！
               </p>
             </div>
           </section>
 
           <section id="basics">
-            <h2>維生素 B 群到底是什麼？讓我們從頭說起</h2>
+            <h2>魚油到底是什麼？讓我們從頭說起</h2>
 
             <p>
-              想像一下，如果我們的身體是一座工廠，那維生素 B 群就像是工廠裡的「電力系統」！它們是一組 8 種水溶性維生素的統稱，每一種都扮演著不同但互相合作的角色，負責將我們吃進去的食物轉化為身體可用的能量。
+              想像一下，如果我們的身體是一台精密的機器，那魚油就像是高級潤滑油！它是從鮭魚、鯖魚、沙丁魚這些「油脂豐富」的深海魚類身上萃取出來的珍貴營養素。
             </p>
 
-            <h3 id="why-b-group">為什麼叫「B群」？</h3>
+            <h3>魚油的科學小秘密</h3>
             <p>
-              最初科學家以為維生素 B 只有一種，後來發現其實是 8 個不同的維生素在協同工作，就像一個團隊一樣，所以稱為「B 群」。<span
+              魚油的神奇之處在於它含有「Omega-3 脂肪酸」這個特殊家族。<span
                 class="highlight-nutrient"
-                >這 8 個成員各有專長，但必須一起工作才能發揮最大效果</span
-              >，這就是為什麼營養師總是建議選擇「綜合 B 群」而不是單一 B 維生素的原因。
+                >這種脂肪酸是人體「必需」但「無法自製」的營養素</span
+              >，就像維生素一樣，一定要從外界補充。
             </p>
 
             <p style="margin-bottom: 30px">
-              <strong>有趣的是</strong>，B群都是水溶性維生素，這意味著：1) 身體無法大量儲存，需要每天補充；2) 多餘的會隨尿液排出，相對安全；3) 但也容易在烹調和處理過程中流失。
+              <strong>有趣的是</strong>，魚類本身也不會製造
+              Omega-3！它們是透過吃海藻才獲得這些營養素的。所以當我們吃魚油時，其實是在「借用」魚類幫我們濃縮好的海洋精華。這也就是為什麼有些素食者會選擇直接吃藻油的原因。
             </p>
 
-            <h3 id="b-group-members">維生素 B 群的 8 位成員：各司其職，缺一不可</h3>
+            <h3>為什麼是「深海魚」才有效？</h3>
             <p>
-              讓我們來認識這 8 位「能量工廠」的工作夥伴，每一位都有自己的專業領域，但他們通力合作，確保你的身體機器順利運轉！
+              你可能會好奇，為什麼一定要是深海魚？答案很簡單：<strong
+                >環境越惡劣，營養素越豐富！</strong
+              >
+              深海的低溫高壓環境，<span class="highlight-nutrient"
+                >深海魚必須製造更多的 Omega-3 來維持細胞膜的流動性</span
+              >，<span class="highlight-nutrient"
+                >就像在極地生存需要更厚的脂肪層一樣</span
+              >。
+            </p>
+
+            <p>
+              而且深海魚類通常壽命較長、體型較大，Omega-3
+              的含量也更加濃縮。這就是為什麼鮭魚、鯖魚、沙丁魚會成為魚油的主要來源，而不是養殖的淡水魚。
+            </p>
+
+            <p style="margin-bottom: 25px">
+              魚油之所以這麼神奇，主要是因為裡面含有兩種超重要的營養素：<strong
+                class="highlight-nutrient"
+                >EPA</strong
+              >
+              和 <strong class="highlight-nutrient">DHA</strong>。<span
+                class="highlight-nutrient"
+                >這兩個就是魚油發揮功效的秘密武器！</span
+              >
+            </p>
+
+            <h3>EPA 和 DHA：魚油的黃金雙人組</h3>
+            <p>
+              很多人都聽過 EPA 和
+              DHA，但你知道它們其實是「各司其職」的兩兄弟嗎？簡單來說，EPA
+              比較像是身體的「消防員」，專門滅火（抗發炎）；DHA
+              則像是「建築工人」，負責建造和維護身體結構。
+            </p>
+
+            <p style="margin-bottom: 30px">
+              <strong>為什麼要分這麼細？</strong>
+              因為不同的健康需求，需要不同的比例！想要保護心血管？EPA
+              要多一點。想要增強腦力？DHA
+              要多一點。了解這個差別，選魚油時就不會霧煞煞了！
             </p>
 
             <div class="info-cards">
               <div class="info-card">
-                <h4 class="info-card-title">B1 (硫胺素)</h4>
+                <span class="info-card-icon">🛡️</span>
+                <h4 class="info-card-title">EPA (護心專家)</h4>
                 <p class="info-card-desc">
-                  能量代謝的<span class="highlight-nutrient">啟動者</span><br />
-                  將碳水化合物轉化為能量，維持神經系統正常運作
+                  全名叫「二十碳五烯酸」，<span class="highlight-nutrient"
+                    >是身體的抗發炎戰士</span
+                  ><br />專門對付血管裡的壞東西，降低三酸甘油酯，保護你的心臟
                 </p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">B2 (核黃素)</h4>
+                <span class="info-card-icon">🧠</span>
+                <h4 class="info-card-title">DHA (護腦專家)</h4>
                 <p class="info-card-desc">
-                  身體的<span class="highlight-nutrient">抗氧化助手</span><br />
-                  參與能量代謝，維持皮膚、視力健康
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">B3 (菸鹼酸)</h4>
-                <p class="info-card-desc">
-                  細胞呼吸的<span class="highlight-nutrient">關鍵角色</span><br />
-                  能量產生、DNA修復、大腦功能維護
-                </p>
-              </div>
-            </div><div class="info-cards">
-              <div class="info-card">
-                <h4 class="info-card-title">B5 (泛酸)</h4>
-                <p class="info-card-desc">
-                  壓力的<span class="highlight-nutrient">天然緩解劑</span><br />
-                  支持腎上腺功能，幫助身體應對壓力
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">B6 (吡哆醇)</h4>
-                <p class="info-card-desc">
-                  蛋白質代謝的<span class="highlight-nutrient">專家</span><br />
-                  神經傳導物質合成，免疫功能支持
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">B7 (生物素)</h4>
-                <p class="info-card-desc">
-                  美麗的<span class="highlight-nutrient">守護天使</span><br />
-                  維持皮膚、頭髮、指甲健康
-                </p>
-              </div>
-            </div><div class="info-cards">
-              <div class="info-card">
-                <h4 class="info-card-title">B9 (葉酸)</h4>
-                <p class="info-card-desc">
-                  生命的<span class="highlight-nutrient">建築師</span><br />
-                  DNA合成、細胞分裂，孕期必需
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">B12 (鈷胺素)</h4>
-                <p class="info-card-desc">
-                  紅血球的<span class="highlight-nutrient">製造者</span><br />
-                  神經系統維護，素食者最需要
+                  全名叫「二十二碳六烯酸」，<span class="highlight-nutrient"
+                    >是大腦的建築材料</span
+                  ><br />構成大腦和眼睛的重要成分，讓你思路清晰、視力清楚
                 </p>
               </div>
             </div>
@@ -1124,175 +1094,230 @@
                 font-size: 1.1em;
               "
             >
-              了解了B群的基本原理，接下來看看它們能為我們做什麼！
+              了解了魚油的基本原理，接下來看看它到底能為我們做什麼！
             </p>
           </section>
 
           <section id="benefits">
-            <h2>B 群的神奇功效 - 為什麼這麼多人在吃？</h2>
+            <h2>魚油的神奇功效 - 為什麼這麼多人在吃？</h2>
 
             <p>
-              維生素 B 群就像身體的「全能維修師」，從能量製造到神經修護，從情緒穩定到美容養顏，幾乎所有重要的生理功能都需要它們參與。不同族群都有自己的 B 群需求，來看看你屬於哪一種：
+              魚油就像身體的「全能保養師」，從頭到腳都能照顧到！不同族群都有自己的魚油需求，來看看你屬於哪一種：
             </p>
 
             <div class="info-cards">
               <div class="info-card">
-                <h4 class="info-card-title">壓力大上班族的救星</h4>
+                <h4 class="info-card-title">外食族的心血管救星</h4>
                 <p class="info-card-desc">
-                  工作壓力、會議開不完？<strong>                  B 群幫你對抗疲勞</strong><br />
-                  B5 支持腎上腺功能，B6 穩定情緒，找回工作活力！
+                  炸雞排、鹽酥雞是好朋友？<strong>EPA 降三酸甘油酯</strong
+                  ><br />幫你平衡外食的油膩，健檢紅字說掰掰！
                 </p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">熬夜族的活力補給站</h4>
+                <h4 class="info-card-title">考生的大腦營養師</h4>
                 <p class="info-card-desc">
-                  追劇、加班到深夜？<strong>                  B 群修復疲憊身心</strong><br />
-                  B1、B2、B3 參與能量代謝，幫你恢復元氣！
+                  需要清晰思考、提升記憶力？<strong>DHA 是大腦建築師</strong
+                  ><br />讓你思路清晰、專注力滿滿，考試更順利！
                 </p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">學生的大腦加油站</h4>
+                <h4 class="info-card-title">媽媽寶寶的腦力加油站</h4>
                 <p class="info-card-desc">
-                  考試、讀書注意力不集中？<strong>                  B 群提升腦力</strong><br />
-                  B6、B12 支持神經功能，讓思緒更清晰！
-                </p>
-              </div>
-            </div><div class="info-cards">
-              <div class="info-card">
-                <h4 class="info-card-title">準媽媽的必備營養</h4>
-                <p class="info-card-desc">
-                  懷孕期營養需求增加？<strong>葉酸守護寶寶發育</strong><br />
-                  預防胎兒神經管缺陷，媽媽寶寶都健康！
+                  寶寶的大腦發育關鍵期？<strong>DHA 助攻智力發展</strong
+                  ><br />WHO 建議孕期每日 200mg，為寶寶打好基礎！
                 </p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">素食者的健康守護</h4>
+                <h4 class="info-card-title">銀髮族的青春守護者</h4>
                 <p class="info-card-desc">
-                  植物性飲食缺乏B12？<strong>                  B 群補充很重要</strong><br />
-                  預防貧血和神經損傷，素食也能很健康！
+                  擔心記憶力衰退、心血管問題？<strong>魚油延緩老化</strong
+                  ><br />保護心臟、維持腦力，讓老後生活更有品質！
                 </p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">銀髮族的活力泉源</h4>
+                <h4 class="info-card-title">3C 族的眼睛保護罩</h4>
                 <p class="info-card-desc">
-                  年紀增長吸收力下降？<strong>                  B 群維持認知功能</strong><br />
-                  預防記憶力衰退，保持頭腦清晰！
+                  整天盯螢幕眼睛乾澀疲勞？<strong>DHA 構成視網膜</strong
+                  ><br />守護你的靈魂之窗，減少乾眼困擾！
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">運動者的關節潤滑油</h4>
+                <p class="info-card-desc">
+                  關節痠痛、運動恢復慢？<strong>EPA 抗發炎超讚</strong
+                  ><br />減少運動傷害，讓你行走如風、活力滿分！
                 </p>
               </div>
             </div>
           </section>
 
           <section id="how-to-take">
-            <h2>怎麼吃最有效？維生素 B 群服用完全攻略</h2>
+            <h2>怎麼吃最有效？魚油服用完全攻略</h2>
 
-            <h3 id="dosage-by-group">依族群的 B 群劑量建議</h3>
+            <h3>依族群的魚油劑量建議</h3>
 
             <p>
-              每個人的生活型態和健康需求不同，B 群的補充策略也要跟著調整。以下是營養師根據不同族群特性的專業建議：
+              每個人的需求不同，魚油的劑量也要跟著調整。以下是營養師根據不同健康目標的專業建議：
             </p>
 
             <table class="data-table" style="margin: 30px 0">
               <thead>
                 <tr>
                   <th style="width: 30%">族群</th>
-                  <th style="width: 35%">建議劑量範圍</th>
-                  <th style="width: 35%">重點關注</th>
+                  <th style="width: 35%">每日建議劑量</th>
+                  <th style="width: 35%">主要功效</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>一般成人</strong><br />日常保養</td>
-                  <td>接近<strong>建議攝取量</strong><br />綜合 B 群即可</td>
-                  <td>維持基本健康<br />預防缺乏症</td>
+                  <td><strong>日常保養</strong><br />健康成人</td>
+                  <td><strong>1000mg</strong><br />建議 EPA+DHA 1比1</td>
+                  <td>維持基本健康<br />預防慢性疾病</td>
                 </tr>
                 <tr>
-                  <td><strong>高壓上班族</strong><br />工作繁重</td>
-                  <td><strong>建議量的 1.5-2 倍</strong><br />特別注意 B5、B6</td>
-                  <td>抗壓、抗疲勞<br />穩定神經系統</td>
+                  <td><strong>心血管保健</strong><br />三高族群</td>
+                  <td><strong>1000-2000mg</strong><br />建議 EPA+DHA 2比1</td>
+                  <td>降低三酸甘油酯<br />改善血管彈性</td>
                 </tr>
                 <tr>
-                  <td><strong>學生族群</strong><br />腦力工作者</td>
-                  <td><strong>建議量的 1.2-1.5 倍</strong><br />B6、B12 為重點</td>
-                  <td>提升專注力<br />增強記憶力</td>
+                  <td><strong>大腦保養</strong><br />學生、上班族</td>
+                  <td><strong>800-1200mg</strong><br />建議 EPA+DHA 1比2</td>
+                  <td>提升記憶力<br />增強專注力</td>
                 </tr>
                 <tr>
-                  <td><strong>孕婦</strong><br />懷孕哺乳期</td>
-                  <td><strong>葉酸 600 微克</strong><br />B12 需求增加</td>
-                  <td>胎兒神經發育<br />預防貧血</td>
+                  <td><strong>孕婦哺乳</strong><br />懷孕及哺乳期</td>
+                  <td><strong>200-300mg</strong><br />建議 EPA+DHA 1比3</td>
+                  <td>胎兒腦部發育<br />降低早產風險</td>
                 </tr>
                 <tr>
-                  <td><strong>素食者</strong><br />植物性飲食</td>
-                  <td><strong>B12 額外補充</strong><br />綜合 B 群+單獨 B12</td>
-                  <td>預防B12缺乏<br />神經系統保護</td>
+                  <td><strong>兒童發育</strong><br />3-12 歲</td>
+                  <td><strong>200-500mg</strong><br />建議 EPA+DHA 1比2</td>
+                  <td>大腦發育<br />學習能力提升</td>
                 </tr>
                 <tr>
-                  <td><strong>銀髮族</strong><br />65歲以上</td>
-                  <td><strong>建議量的 1.2-1.8 倍</strong><br />B12 特別重要</td>
-                  <td>認知功能維護<br />預防神經退化</td>
+                  <td><strong>銀髮保健</strong><br />65 歲以上</td>
+                  <td><strong>1000-1500mg</strong><br />建議 EPA+DHA 1.5比1</td>
+                  <td>預防失智<br />關節保養</td>
                 </tr>
                 <tr>
-                  <td><strong>飲酒者</strong><br />經常喝酒</td>
-                  <td><strong>建議量的 2 倍</strong><br />B1、B6、葉酸</td>
-                  <td>修復酒精傷害<br />支持肝功能</td>
+                  <td><strong>運動族群</strong><br />高強度訓練</td>
+                  <td><strong>1500-2500mg</strong><br />建議 EPA+DHA 2比1</td>
+                  <td>抗發炎<br />加速恢復</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3>依年齡的魚油劑量建議</h3>
+
+            <p>
+              除了依據健康需求選擇劑量，年齡也是重要的考量因素。不同年齡層的代謝能力和營養需求都不同，以下是依年齡的詳細建議：
+            </p>
+
+            <table class="data-table" style="margin: 30px 0">
+              <thead>
+                <tr>
+                  <th style="width: 30%">年齡層</th>
+                  <th style="width: 35%">每日建議劑量</th>
+                  <th style="width: 35%">注意事項</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>0-6 個月</strong><br />嬰兒期</td>
+                  <td><strong>不建議</strong><br />母乳優先</td>
+                  <td>透過母親補充 DHA<br />母乳是最佳來源</td>
+                </tr>
+                <tr>
+                  <td><strong>6個月-2歲</strong><br />幼兒期</td>
+                  <td><strong>100-200mg</strong><br />（DHA 為主）</td>
+                  <td>選擇液體或粉狀<br />務必諮詢小兒科醫師</td>
+                </tr>
+                <tr>
+                  <td><strong>3-12 歲</strong><br />兒童期</td>
+                  <td><strong>250-500mg</strong><br />（EPA+DHA 總量）</td>
+                  <td>支持腦部發育<br />改善學習專注力</td>
+                </tr>
+                <tr>
+                  <td><strong>13-18 歲</strong><br />青少年期</td>
+                  <td><strong>500-800mg</strong><br />（EPA+DHA 總量）</td>
+                  <td>課業壓力大時可增量<br />注意情緒穩定</td>
+                </tr>
+                <tr>
+                  <td><strong>19-30 歲</strong><br />青年期</td>
+                  <td><strong>1000-1500mg</strong><br />（EPA+DHA 總量）</td>
+                  <td>工作壓力適應期<br />建立良好保養習慣</td>
+                </tr>
+                <tr>
+                  <td><strong>31-50 歲</strong><br />中年期</td>
+                  <td><strong>1000-1500mg</strong><br />（EPA+DHA 總量）</td>
+                  <td>預防慢性疾病<br />維持代謝健康</td>
+                </tr>
+                <tr>
+                  <td><strong>51-65 歲</strong><br />熟年期</td>
+                  <td><strong>1200-1800mg</strong><br />（EPA+DHA 總量）</td>
+                  <td>關注心血管健康<br />預防認知退化</td>
+                </tr>
+                <tr>
+                  <td><strong>65 歲以上</strong><br />銀髮期</td>
+                  <td><strong>1500-2000mg</strong><br />（EPA+DHA 總量）</td>
+                  <td>預防失智症<br />維持關節靈活</td>
                 </tr>
               </tbody>
             </table>
 
             <div class="alert alert-doctor">
-              <div>
-                <strong>重要提醒：</strong>
-                <p>以上建議僅供參考，實際劑量請依個人健康狀況調整。如有慢性疾病或正在服用藥物，請先諮詢醫師或營養師。有些 B 群維生素（如 B3、B6）有安全上限，過量可能有副作用。</p>
-              </div>
+              <strong>重要提醒：</strong>
+              以上建議僅供參考，實際劑量請依個人健康狀況調整。如有慢性疾病或正在服用藥物，請先諮詢醫師或營養師。
             </div>
 
             <h2>什麼時候吃最好？</h2>
-            <h3 id="breakfast-after">早餐後服用！科學原理告訴你</h3>
+            <h3>隨餐吃！科學原理告訴你</h3>
             <p>
-              B 群維生素有助於能量轉換，就像身體的「咖啡因」一樣能提振精神。<strong>早餐後服用是最理想的時機</strong>，因為：1) 能為一整天提供活力；2) 隨餐服用減少胃部不適；3) 避免晚上服用影響睡眠。<span
+              魚油是脂溶性營養素，需要其他油脂幫助乳化才能被腸道吸收。<strong>空腹吃魚油就像把油倒在水上，根本無法混合吸收</strong>。<span
                 class="highlight-nutrient"
-                >記住一個原則：什麼時候最需要精神，就什麼時候吃 B 群！</span
-              >
+                >建議在一天中最豐盛的那餐（通常是午餐或晚餐）服用</span
+              >，因為這時候胃裡有足夠的食物和油脂，能讓魚油充分乳化，提高吸收率。
             </p>
 
-            <h3 id="special-cases">特殊情況的服用建議</h3>
+            <h3>特殊情況的服用建議</h3>
             <p>
-              不同的生活型態和健康目標，服用方式也要調整。<span
+              不同的健康目標，服用時間也要跟著調整。如果你的目標是<span
                 class="highlight-nutrient"
-                ><strong>壓力大的人</strong></span
-              >可以在壓力來臨前 1 小時服用，讓身體有時間準備；<span
+                ><strong>降血脂</strong></span
+              >，建議晚餐後服用，因為夜間是膽固醇合成的高峰期，此時補充魚油效果最好。想要<span
                 class="highlight-nutrient"
-                ><strong>熬夜族</strong></span
-              >建議分次服用，晚餐後可再補充一次，但不要太晚以免影響睡眠；<span
+                ><strong>改善記憶力</strong></span
+              >的人，則建議早餐後服用，讓大腦一整天都有充足的 DHA 支持。<span
                 class="highlight-nutrient"
-                ><strong>運動者</strong></span
-              >可在運動前 1-2 小時服用，幫助能量代謝；<span
+                ><strong>運動族群</strong></span
+              >可以在運動後 30 分鐘內服用，幫助消炎和肌肉恢復。<span
                 class="highlight-nutrient"
-                ><strong>孕婦</strong></span
-              >最好依醫師指示，通常建議早餐後固定時間服用；<span
+                ><strong>腸胃敏感</strong></span
+              >的人建議選擇腸溶膠囊，避免胃部不適。而有<span
                 class="highlight-nutrient"
-                ><strong>銀髮族</strong></span
-              >建議選擇好吞嚥的劑型，並在精神最好的時段服用。
+                ><strong>睡眠問題</strong></span
+              >的人，最好避免睡前服用，以免影響消化和睡眠品質。
             </p>
 
             <div class="info-cards" style="margin: 30px 0">
               <div class="info-card">
                 <h4 class="info-card-title">最佳時機</h4>
-                <div class="info-card-value">早餐後</div>
+                <div class="info-card-value">隨餐服用</div>
                 <p class="info-card-desc">
-                  提供一天所需活力<br />避免晚上影響睡眠
+                  與含油脂的餐點一起吃<br />吸收率可提升 2-3 倍
                 </p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">服用方式</h4>
-                <div class="info-card-value">隨餐服用</div>
+                <h4 class="info-card-title">建議頻率</h4>
+                <div class="info-card-value">分次服用</div>
                 <p class="info-card-desc">
-                  減少胃部不適<br />提高吸收效果
+                  每日分 2-3 次服用<br />減少腸胃不適感
                 </p>
               </div>
               <div class="info-card">
                 <h4 class="info-card-title">小技巧</h4>
-                <div class="info-card-value">溫水送服</div>
-                <p class="info-card-desc">避免過熱破壞活性<br />幫助膠囊溶解</p>
+                <div class="info-card-value">冷凍保存</div>
+                <p class="info-card-desc">冷凍後服用無魚腥味<br />更容易吞服</p>
               </div>
             </div>
 
@@ -1304,220 +1329,264 @@
                 font-size: 1.1em;
               "
             >
-              不想吃營養補充品？也可以從天然食物攝取 B 群喔！
+              不想吃魚油？也可以從天然食物攝取 Omega-3 喔！
             </p>
           </section>
 
           <section id="food-sources">
-            <h2>天然食物也能補充維生素 B 群！</h2>
+            <h2>天然食物也能補充 Omega-3！</h2>
 
-            <h3 id="food-champions">B 群食物冠軍榜</h3>
+            <h3>Omega-3 食物冠軍榜</h3>
 
             <p>
-              雖然營養補充品很方便，但天然食物永遠是最好的營養來源！不同食物含有不同的 B 群維生素，多樣化攝取能確保營養均衡。更重要的是，天然食物還含有其他協同營養素，讓身體更容易吸收利用。
+              雖然魚油補充劑很方便，但天然食物永遠是最好的營養來源！新鮮的深海魚類不僅含有豐富的
+              Omega-3，還有其他協同營養素，讓身體更容易吸收利用。最重要的是，這些食物吃起來還很美味！
             </p>
 
-            <div class="alert alert-nutritionist">
-              <div>
-                <strong>營養師小撇步：</strong>
-                <p>B 群維生素對光、熱、氧氣敏感，容易在烹調過程中流失。建議採用蒸、煮、快炒等方式，並保留烹調水，以減少營養素的流失。水煮蔬菜的湯汁也很營養，不要倒掉！</p>
-              </div>
-            </div>
-
-            <table class="data-table" style="margin: 30px 0">
-              <thead>
-                <tr>
-                  <th style="width: 25%">食物類別</th>
-                  <th style="width: 35%">主要B群維生素</th>
-                  <th style="width: 40%">代表食物</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>全穀類</strong></td>
-                  <td>B1, B2, B3, B6</td>
-                  <td>糙米、燕麥、全麥麵包、藜麥</td>
-                </tr>
-                <tr>
-                  <td><strong>肉類</strong></td>
-                  <td>B1, B3, B6, B12</td>
-                  <td>豬肉、牛肉、雞肉、<strong>肝臟(含量最豐富)</strong></td>
-                </tr>
-                <tr>
-                  <td><strong>蛋和乳製品</strong></td>
-                  <td>B2, B12, 生物素</td>
-                  <td>雞蛋、牛奶、優格、起司</td>
-                </tr>
-                <tr>
-                  <td><strong>豆類和堅果</strong></td>
-                  <td>B1, B3, B6, 葉酸</td>
-                  <td>豆腐、豆漿、花生、芝麻、核桃</td>
-                </tr>
-                <tr>
-                  <td><strong>深綠色蔬菜</strong></td>
-                  <td>葉酸, B6</td>
-                  <td>菠菜、青花菜、蘆筍、羽衣甘藍</td>
-                </tr>
-                <tr>
-                  <td><strong>水果類</strong></td>
-                  <td>B6, 葉酸</td>
-                  <td>香蕉、酪梨、柑橘類、草莓</td>
-                </tr>
-                <tr>
-                  <td><strong>發酵食品</strong></td>
-                  <td>B2, B12</td>
-                  <td>紫菜、海苔、味噌、天然酵母</td>
-                </tr>
-              </tbody>
-            </table>
+            <p style="margin-bottom: 30px">
+              <strong>聰明選魚小撇步：</strong>選擇小型深海魚類，不僅 Omega-3
+              含量高，重金屬污染風險也較低。記住「<span
+                class="highlight-nutrient"
+                >SMASH 原則</span
+              >」：<strong>S</strong>almon（鮭魚）、<strong>M</strong>ackerel（鯖魚）、<strong>A</strong>nchovies（鯷魚）、<strong>S</strong>ardines（沙丁魚）、<strong>H</strong>erring（鯡魚），這些都是營養師推薦的優質選擇！
+            </p>
 
             <div class="info-cards">
               <div class="info-card">
-                <span class="info-card-icon">🥩</span>
-                <h4 class="info-card-title">肝臟</h4>
-                <div class="info-card-value">B 群之王</div>
+                <span class="info-card-icon">🐟</span>
+                <h4 class="info-card-title">鯖魚</h4>
+                <div class="info-card-value">2300mg</div>
                 <p class="info-card-desc">
-                  含有最豐富的 B 群<br /><strong>但要適量攝取！</strong>
+                  每 100g 含量<br /><strong>CP 值最高的選擇！</strong>
                 </p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">🥚</span>
-                <h4 class="info-card-title">雞蛋</h4>
-                <div class="info-card-value">完美蛋白</div>
+                <span class="info-card-icon">🍣</span>
+                <h4 class="info-card-title">沙丁魚</h4>
+                <div class="info-card-value">1900mg</div>
                 <p class="info-card-desc">
-                  B2、B12、生物素豐富<br /><strong>CP 值超高選擇！</strong>
+                  連骨頭一起吃<br /><strong>還能補充鈣質！</strong>
                 </p>
               </div>
               <div class="info-card">
-                <span class="info-card-icon">🥬</span>
-                <h4 class="info-card-title">深綠蔬菜</h4>
-                <div class="info-card-value">葉酸寶庫</div>
+                <span class="info-card-icon">🌿</span>
+                <h4 class="info-card-title">藻油</h4>
+                <div class="info-card-value">素食專用</div>
                 <p class="info-card-desc">
-                  孕婦最需要的營養<br /><strong>素食者也能補 B 群！</strong>
+                  純素來源 DHA<br /><strong>素食者首選！</strong>
                 </p>
               </div>
             </div>
 
             <div class="alert alert-tip">
-              <strong>營養師建議：</strong>
-              <p>每餐都要有不同顏色的食物，這樣比較能確保 B 群攝取均衡。特別是素食者，要特別注意 B12 的補充，可選擇強化 B12 的植物奶或營養酵母！</p>
+              <strong>🐟 營養師建議：</strong>
+              每週吃 2 次深海魚類（大約一個巴掌大），就能攝取到基本的 Omega-3
+              需求！
             </div>
           </section>
 
           <section id="how-to-choose">
-            <h2>維生素 B 群選購攻略 - 不被騙的完整指引！</h2>
+            <h2>魚油選購攻略 - 不被騙的完整指南！</h2>
 
             <p>
-              市面上的 B 群產品五花八門，從幾十塊到上千塊都有。到底該怎麼選？讓營養師告訴你不踩雷的秘訣，花對錢買到真正有效的 B 群！
+              市面上的魚油產品五花八門，價格從幾百到幾千都有。到底該怎麼選？讓營養師告訴你不踩雷的秘訣！
             </p>
 
-            <h3 id="why-choose-b-group">為什麼選對 B 群這麼重要？</h3>
+            <h3>為什麼選對魚油這麼重要？</h3>
             <p>
-              很多人以為「B 群就是 B 群」，隨便買一罐就好。<strong>大錯特錯！</strong>
-              <span class="highlight-nutrient">品質差的 B 群不僅效果有限</span>，<span class="highlight-nutrient">甚至可能有添加物過多的問題</span>。就像買手機一樣，外表看起來差不多，但處理器、記憶體差很多！學會這些選購要點，讓你花的每一分錢都值得！
+              很多人以為「魚油就是魚油」，隨便買一罐就好。<strong
+                >大錯特錯！</strong
+              >
+              <span class="highlight-nutrient">品質差的魚油不僅效果有限</span
+              >，<span class="highlight-nutrient"
+                >甚至可能有重金屬污染的風險</span
+              >。就像買車一樣，外表看起來差不多，但引擎、性能差很大！學會這 6
+              個選購要點，讓你花的每一分錢都值得！
             </p>
 
-            <h3 id="six-keys">B 群選購的 6 大關鍵指標</h3>
+            <h3>魚油選購的 6 大關鍵指</h3>
             <p>
-              專業營養師建議，選 B 群要按照這個優先順序來評估，這樣才不會被行銷話術牽著鼻子走：
+              很多人買魚油時會被價格牽著鼻子走，但這樣很容易踩雷！<strong>專業營養師建議，選魚油要按照這個優先順序來評估</strong>：
+            </p>
+
+            <p>
+              <strong>1. 濃度優先</strong> - 這是最重要的！濃度低於 85%
+              的魚油就像稀釋過的果汁，要吃很多顆才有效果，最後反而更貴更麻煩。
+            </p>
+
+            <p>
+              <strong>2. 新鮮度必看</strong> -
+              再好的魚油如果已經氧化變質，不僅沒效果還可能有害。TOTOX 值低於 10
+              是基本要求。
+            </p>
+            <p>
+              <strong>3. 型態重要</strong> -
+              有了高濃度還要能被身體吸收才有用。rTG 型態比 EE 型態好吸收 3
+              倍，吃下去才不會浪費。
+            </p>
+
+            <p>
+              <strong>4. 比例搭配</strong> - 不同需求要選不同的 EPA:DHA
+              比例。想護心選 EPA 多的，想補腦選 DHA 多的，均衡保養選 1:1 比例。
+            </p>
+
+            <p>
+              <strong>5. 認證加分</strong> - IFOS
+              等第三方認證能確保品質穩定，但前面四項更重要。有認證是加分，沒有也不一定是壞產品。
+            </p>
+
+            <p>
+              <strong>6. 價格最後看</strong> -
+              便宜的通常有問題，但貴的也不一定就好。在前面五項都合格的基礎上，再來比價格才有意義。
+            </p>
+
+            <p style="margin-bottom: 30px">
+              <strong>簡單說：</strong
+              ><span class="highlight-nutrient"
+                >先確保「有效」，再考慮「划算」</span
+              >。<span class="highlight-nutrient"
+                >記住這個順序：濃度 > 新鮮度 > 型態 > 認證 > 價格</span
+              >，買到無效的魚油，再便宜都是浪費錢！
             </p>
 
             <div class="info-cards">
               <div class="info-card">
-                <h4 class="info-card-title">1. 選綜合 B 群</h4>
-                <div class="info-card-value">最重要！</div>
+                <h4 class="info-card-title">1. 看濃度</h4>
+                <div class="info-card-value">85%+</div>
                 <p class="info-card-desc">
-                  8 種 B 群協同作用<br />單一 B 群效果有限
+                  Omega-3 濃度要超過 85%<br />濃度越高，雜質越少
                 </p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">2. 看活性型成分</h4>
-                <div class="info-card-value">加分項</div>
+                <h4 class="info-card-title">2. 看新鮮度</h4>
+                <div class="info-card-value">TOTOX < 10</div>
                 <p class="info-card-desc">
-                  P-5-P、5-MTHF、甲基 B12<br />身體直接利用
+                  數值越低越新鮮<br />新鮮的魚油不會腥
                 </p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">3. 劑量要合理</h4>
+                <h4 class="info-card-title">3. 看型態</h4>
+                <div class="info-card-value">rTG 最佳</div>
+                <p class="info-card-desc">
+                  吸收率最好的型態<br />雖然貴但物超所值
+                </p>
+              </div>
+              <div class="info-card">
+                <h4 class="info-card-title">4. 看比例</h4>
                 <div class="info-card-value">看需求</div>
+                <p class="info-card-desc">EPA 護心血管<br />DHA 護大腦眼睛</p>
+              </div>
+
+              <div class="info-card">
+                <h4 class="info-card-title">5. 看萃取法</h4>
+                <div class="info-card-value">超臨界 CO2</div>
                 <p class="info-card-desc">
-                  不是越多越好<br />注意 B3、B6 上限
+                  最純淨的萃取方式<br />無溶劑殘留風險
                 </p>
               </div>
               <div class="info-card">
-                <h4 class="info-card-title">4. 選信譽品牌</h4>
-                <div class="info-card-value">安全至上</div>
-                <p class="info-card-desc">
-                  第三方檢驗認證<br />品質有保障
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">5. 注意劑型</h4>
-                <div class="info-card-value">膠囊最佳</div>
-                <p class="info-card-desc">
-                  保護B群活性<br />避免光照破壞
-                </p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">6. 性價比考量</h4>
-                <div class="info-card-value">最後看</div>
-                <p class="info-card-desc">
-                  前面都合格再比價<br />便宜未必划算
-                </p>
+                <h4 class="info-card-title">6. 看認證</h4>
+                <div class="info-card-value">IFOS 認證</div>
+                <p class="info-card-desc">國際權威認證<br />品質安全有保障</p>
               </div>
             </div>
 
-            <h3 id="supplement-types">B 群補充劑類型比較</h3>
+            <h3>進階選購技巧：如何避開地雷產品</h3>
+            <p>
+              除了上面 6
+              個基本指標，還有一些「內行人才知道」的小撇步。這些技巧能幫你避開包裝漂亮但品質有問題的產品！
+            </p>
 
             <table class="data-table" style="margin: 30px 0">
               <thead>
                 <tr>
-                  <th>類型</th>
-                  <th>特點</th>
-                  <th>優點</th>
-                  <th>缺點</th>
-                  <th>適用對象</th>
+                  <th style="background: #fee2e2; color: #991b1b; width: 50%">
+                    這些產品要小心
+                  </th>
+                  <th style="background: #dcfce7; color: #166534; width: 50%">
+                    優質產品特徵
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>綜合B群</strong></td>
-                  <td>包含 8 種 B 群，比例均衡</td>
-                  <td>全面補充、協同作用</td>
-                  <td>劑量固定，無法個別調整</td>
-                  <td>一般日常保健</td>
+                  <td
+                    style="background: #fef2f2; border-left: 4px solid #ef4444"
+                  >
+                    <strong>只標示「魚油 1000mg」</strong><br />
+                    沒說 EPA+DHA 含量的都有鬼
+                  </td>
+                  <td
+                    style="background: #f0fdf4; border-left: 4px solid #22c55e"
+                  >
+                    <strong>清楚標示 EPA+DHA 含量</strong><br />
+                    透明度高，有信心
+                  </td>
                 </tr>
                 <tr>
-                  <td><strong>高效B群</strong></td>
-                  <td>劑量較高，快速補充</td>
-                  <td>適合高需求族群</td>
-                  <td>需注意安全上限</td>
-                  <td>壓力大、熬夜族</td>
+                  <td
+                    style="background: #fef2f2; border-left: 4px solid #ef4444"
+                  >
+                    <strong>價格異常便宜</strong><br />
+                    一分錢一分貨，太便宜通常有問題
+                  </td>
+                  <td
+                    style="background: #f0fdf4; border-left: 4px solid #22c55e"
+                  >
+                    <strong>有完整溯源資訊</strong><br />
+                    從哪片海域、什麼魚種都寫得清清楚楚
+                  </td>
                 </tr>
                 <tr>
-                  <td><strong>緩釋型B群</strong></td>
-                  <td>緩慢釋放，維持血中濃度</td>
-                  <td>吸收更穩定</td>
-                  <td>價格較高</td>
-                  <td>追求高效吸收者</td>
+                  <td
+                    style="background: #fef2f2; border-left: 4px solid #ef4444"
+                  >
+                    <strong>沒有第三方檢驗</strong><br />
+                    重金屬、塑化劑風險高
+                  </td>
+                  <td
+                    style="background: #f0fdf4; border-left: 4px solid #22c55e"
+                  >
+                    <strong>膠囊顏色深</strong><br />
+                    通常會添加維生素 E 防氧化
+                  </td>
                 </tr>
                 <tr>
-                  <td><strong>天然來源B群</strong></td>
-                  <td>從酵母等食物萃取</td>
-                  <td>含協同營養素</td>
-                  <td>價格高、含量不穩定</td>
-                  <td>注重天然成分者</td>
+                  <td
+                    style="background: #fef2f2; border-left: 4px solid #ef4444"
+                  >
+                    <strong>包裝透明</strong><br />
+                    光線會讓魚油氧化變質
+                  </td>
+                  <td
+                    style="background: #f0fdf4; border-left: 4px solid #22c55e"
+                  >
+                    <strong>包裝密封性好</strong><br />
+                    獨立分裝或真空包裝
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style="background: #fef2f2; border-left: 4px solid #ef4444"
+                  >
+                    <strong>來源不明</strong><br />
+                    不知道魚從哪裡來，安全堪憂
+                  </td>
+                  <td
+                    style="background: #f0fdf4; border-left: 4px solid #22c55e"
+                  >
+                    <strong>有客服專線</strong><br />
+                    負責任的廠商不怕你問問題
+                  </td>
                 </tr>
               </tbody>
             </table>
 
-            <div class="alert alert-tip">
-              <div>
-                <strong>營養師選購提醒：</strong>
-                <p>不要被「天然」、「高劑量」等字眼迷惑！最重要的是選擇有完整 8 種 B 群、劑量合理、品牌可信的產品。記住，補充品是「補充」，不是「取代」均衡飲食！</p>
-              </div>
-            </div>
-
+            <p>
+              看完上面的對比表格，記住三個快速判斷原則：<strong>看標示是否透明</strong>（好產品會清楚標示
+              EPA+DHA 含量、魚種來源、TOTOX
+              值）、<strong>看價格是否合理</strong>（太便宜通常有問題，性價比才是關鍵）、<strong>看售後服務是否完善</strong>（有客服專線且願意解答疑問的品牌更值得信賴）。
+            </p>
             <p
               style="
                 text-align: center;
@@ -1535,92 +1604,104 @@
             <h2>常見問題</h2>
 
             <div class="faq-item">
-              <div class="faq-question">維生素 B 群可以晚上吃嗎？</div>
+              <div class="faq-question">魚油跟魚肝油不是一樣的東西嗎？</div>
               <div class="faq-answer">
-                <p><strong>不建議晚上吃，尤其是有睡眠困擾的人！</strong></p>
-                <p>B 群維生素有助於能量轉換，就像天然的「咖啡因」：</p>
+                <p><strong>大錯特錯！這兩個完全不一樣喔！</strong></p>
+                <p>簡單記法：</p>
                 <ul>
-                  <li><strong>白天服用</strong>：提供整天活力，工作更有精神</li>
-                  <li><strong>晚上服用</strong>：可能讓精神太好，影響入睡</li>
-                  <li><strong>最佳時機</strong>：早餐或午餐後，給身體充足時間利用</li>
+                  <li>
+                    <strong>魚油</strong> = 魚的「脂肪」萃取 = 補充
+                    Omega-3（EPA、DHA）
+                  </li>
+                  <li>
+                    <strong>魚肝油</strong> = 魚的「肝臟」萃取 = 補充維生素 A、D
+                  </li>
                 </ul>
-                <p>記住：什麼時候最需要精神，就什麼時候吃 B 群！</p>
+                <p>小心！維生素 A、D 吃太多會中毒，千萬別搞混囉！</p>
               </div>
             </div>
 
             <div class="faq-item">
-              <div class="faq-question">為什麼吃了 B 群尿液會變黃？</div>
+              <div class="faq-question">魚油要空腹吃還是飯後吃？</div>
               <div class="faq-answer">
-                <p><strong>這是正常現象，主要是 B2（核黃素）的顏色！</strong></p>
-                <p>簡單說明：</p>
-                <ul>
-                  <li><strong>水溶性特性</strong>：B群無法在體內大量儲存</li>
-                  <li><strong>多餘排出</strong>：身體吸收所需後，剩餘隨尿液排出</li>
-                  <li><strong>B2本色</strong>：維生素B2本身就是亮黃色</li>
-                  <li><strong>安全無害</strong>：代表身體正常代謝，無需擔心</li>
-                </ul>
-                <p>💡 如果尿液沒變黃，可能是劑量太低或品質不佳喔！</p>
+                <p><strong>當然是配飯吃最好！</strong></p>
+                <p>
+                  為什麼呢？因為魚油是「油」，需要其他油脂幫忙才好吸收。建議在一天中最豐盛的那餐（通常是午餐或晚餐）一起吃，吸收效果最讚！
+                </p>
+                <p>
+                  Pro
+                  tip：如果怕魚腥味，可以把魚油放冰箱冷凍，吃起來就像小糖果一樣！
+                </p>
               </div>
             </div>
 
             <div class="faq-item">
-              <div class="faq-question">素食者一定要補充維生素 B12 嗎？</div>
+              <div class="faq-question">我吃素耶，有素食的魚油嗎？</div>
               <div class="faq-answer">
-                <p><strong>是的，純素食者幾乎必須補充 B12！</strong></p>
-                <p><strong>為什麼素食者容易缺 B12：</strong></p>
-                <ul>
-                  <li><strong>主要來源</strong>：B12 幾乎只存在於動物性食物</li>
-                  <li><strong>植物含量極少</strong>：且多為非活性形式，身體難利用</li>
-                  <li><strong>缺乏風險</strong>：長期缺乏可能導致貧血和神經損傷</li>
-                </ul>
-                <p><strong>素食者的 B12 補充方案：</strong></p>
-                <ul>
-                  <li>選擇 B12 強化的植物奶、營養酵母</li>
-                  <li>服用 B12 補充劑或綜合 B 群</li>
-                  <li>定期檢測血中 B12 濃度</li>
-                </ul>
+                <p><strong>有的！答案是「藻油」！</strong></p>
+                <p>
+                  其實魚的 Omega-3
+                  也是從吃藻類來的，所以直接吃藻油等於是「跳過中間商」！藻油富含
+                  DHA，完全植物來源，素食者的最佳選擇。
+                </p>
+                <p>
+                  別傻傻地狂吃亞麻籽油，轉換率超低的（不到
+                  10%），不如直接吃藻油！
+                </p>
               </div>
             </div>
 
             <div class="faq-item">
-              <div class="faq-question">壓力大、熬夜，B 群要怎麼補？</div>
+              <div class="faq-question">吃了魚油一直打魚腥嗝，救命啊！</div>
               <div class="faq-answer">
-                <p><strong>這些情況會加速 B 群消耗，需要增加攝取！</strong></p>
-                <p><strong>不同情況的補充策略：</strong></p>
-                <ul>
-                  <li><strong>壓力大</strong>：重點補充 B5（抗壓）、B6（穩定情緒）</li>
-                  <li><strong>熬夜族</strong>：B1、B2、B3 參與能量代謝，幫助恢復</li>
-                  <li><strong>飲酒者</strong>：B1、B6、葉酸流失快，需特別補充</li>
-                  <li><strong>考試期</strong>：B6、B12 支持神經功能，增強專注力</li>
-                </ul>
-                <p><strong>建議作法：</strong>選擇綜合 B 群，劑量提高到建議量的 1.5-2 倍，但不要超過安全上限。</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">B 群需要一起攝取嗎？單獨補充可以嗎？</div>
-              <div class="faq-answer">
-                <p><strong>建議一起攝取綜合 B 群！</strong></p>
-                <p><strong>為什麼要「團體作戰」：</strong></p>
-                <ul>
-                  <li><strong>協同作用</strong>：8 種 B 群在體內互相合作，缺一不可</li>
-                  <li><strong>平衡重要</strong>：單獨補充可能影響其他 B 群吸收</li>
-                  <li><strong>效果更佳</strong>：綜合 B 群發揮 1+1>2 的效果</li>
-                </ul>
-                <p><strong>例外情況：</strong></p>
-                <ul>
-                  <li>醫師診斷特定 B 群嚴重缺乏</li>
-                  <li>素食者額外補充 B12</li>
-                  <li>孕婦額外補充葉酸</li>
-                </ul>
-                <p>💡 一般保健建議選擇綜合 B 群，特殊需求再加強特定 B 群！</p>
+                <p><strong>別擔心，這裡有解方！</strong></p>
+                <p>試試這些小撇步：</p>
+                <ol>
+                  <li>
+                    <strong>冷凍大法</strong>：把魚油放冷凍庫，凍成小冰塊再吞
+                  </li>
+                  <li>
+                    <strong>配餐吃</strong
+                    >：跟著食物一起下肚，混在一起就沒味道了
+                  </li>
+                  <li>
+                    <strong>選腸溶錠</strong>：在腸子才溶解，胃裡不會有味道
+                  </li>
+                  <li>
+                    <strong>挑新鮮的</strong>：TOTOX 值越低越新鮮，腥味自然少
+                  </li>
+                </ol>
+                <p>💡 如果以上都沒用，可能是魚油品質有問題，考慮換個牌子吧！</p>
               </div>
             </div>
           </section>
-        <div id="related-articles-container"></div>
         </article>
 
-
+        <!-- Related Articles -->
+        <h2 class="related-title">相關營養素</h2>
+        <div class="related-grid">
+          <a href="#" class="related-card">
+            <span class="related-card-tag">維生素</span>
+            <h3 class="related-card-title">維生素 D</h3>
+            <p class="related-card-desc">
+              陽光維生素對骨骼健康、免疫功能的重要性，以及如何選擇適合的補充品。
+            </p>
+          </a>
+          <a href="#" class="related-card">
+            <span class="related-card-tag">礦物質</span>
+            <h3 class="related-card-title">鈣質</h3>
+            <p class="related-card-desc">
+              了解鈣質對骨骼、肌肉和神經系統的關鍵作用，以及最佳補充方式。
+            </p>
+          </a>
+          <a href="#" class="related-card">
+            <span class="related-card-tag">其他營養素</span>
+            <h3 class="related-card-title">輔酶 Q10</h3>
+            <p class="related-card-desc">
+              探索細胞能量的關鍵營養素，對心血管健康和抗氧化的重要功能。
+            </p>
+          </a>
+        </div>
       </main>
     </div>
 
@@ -1641,9 +1722,6 @@
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
-    <script src="../assets/js/responsive-toc-component.js"></script>
-    <script src="../assets/js/articles-data.js"></script>
-    <script src="../assets/js/related-articles-component.js"></script>
 
     <script>
       // Progress Bar
@@ -1689,7 +1767,24 @@
       window.addEventListener("scroll", highlightTOC);
       highlightTOC();
 
+      // Smooth Scroll for TOC Links
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          const targetSection = document.querySelector(targetId);
 
+          if (targetSection) {
+            const yOffset = -80;
+            const y =
+              targetSection.getBoundingClientRect().top +
+              window.pageYOffset +
+              yOffset;
+
+            window.scrollTo({ top: y, behavior: "smooth" });
+          }
+        });
+      });
 
       // FAQ Toggle
       document.querySelectorAll(".faq-question").forEach((question) => {
@@ -1769,6 +1864,8 @@
             isTocOpen = true;
           }
         });
+      } else {
+        console.log("Mobile TOC Toggle not found:", mobileTocToggle, sidebar);
       }
 
       // Share Button (檢查是否存在)
@@ -1781,7 +1878,7 @@
             try {
               await navigator.share({
                 title: document.title,
-                text: "來看看這篇關於維生素B群的完整指引！",
+                text: "來看看這篇關於魚油的完整指南！",
                 url: window.location.href,
               });
             } catch (err) {
@@ -1854,7 +1951,7 @@
                     try {
                       await navigator.share({
                         title: document.title,
-                        text: "來看看這篇關於維生素B群的完整指引！",
+                        text: "來看看這篇關於魚油的完整指南！",
                         url: window.location.href,
                       });
                     } catch (err) {
@@ -1888,16 +1985,6 @@
         } else {
           console.error("❌ Footer 組件初始化失敗");
         }
-
-        // Initialize ResponsiveTocComponent
-        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
-        
-        // Initialize Related Articles
-        const articleId = 'card-vitamin-b';
-        const relatedContainer = document.getElementById('related-articles-container');
-        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
-            new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
-        }
       }
 
       // 確保在所有腳本載入後再初始化
@@ -1913,6 +2000,18 @@
           checkbox.checked = !checkbox.checked;
           this.classList.toggle("selected", checkbox.checked);
 
+          // For fish oil type test (single selection)
+          if (checkbox.name === "fish-oil-type") {
+            document
+              .querySelectorAll('input[name="fish-oil-type"]')
+              .forEach((cb) => {
+                if (cb !== checkbox) {
+                  cb.checked = false;
+                  cb.parentElement.classList.remove("selected");
+                }
+              });
+          }
+
           // Count checked items for need test
           if (checkbox.name === "need-test") {
             const checkedCount = document.querySelectorAll(
@@ -1923,10 +2022,7 @@
             );
             if (checkedCount >= 2) {
               resultText.style.color = "#dc2626";
-              resultText.innerHTML = `你勾選了 ${checkedCount} 個！看來你真的需要補充 B 群了！`;
-            } else {
-              resultText.style.color = "#14532d";
-              resultText.innerHTML = "勾選 2 個以上？你可能真的需要補充 B 群囉！";
+              resultText.innerHTML = `你勾選了 ${checkedCount} 個！看來你真的需要補充魚油了！`;
             }
           }
         });

@@ -82,20 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         topicTree.innerHTML = treeHTML;
 
-        // Event listener for smooth scroll
-        topicTree.addEventListener('click', function(e) {
-            const anchor = e.target.closest('a');
-            if (anchor && anchor.getAttribute('href').startsWith('#')) {
-                e.preventDefault();
-                const targetId = anchor.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const headerOffset = 120;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-                }
-            }
-        });
+
     }
 });

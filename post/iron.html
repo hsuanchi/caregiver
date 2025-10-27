@@ -1052,24 +1052,7 @@
       }
       window.addEventListener("scroll", highlightTOC);
 
-      // Smooth Scroll for TOC Links
-      navLinks.forEach((link) => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute("href");
-          const targetSection = document.querySelector(targetId);
 
-          if (targetSection) {
-            const yOffset = -80;
-            const y =
-              targetSection.getBoundingClientRect().top +
-              window.pageYOffset +
-              yOffset;
-
-            window.scrollTo({ top: y, behavior: "smooth" });
-          }
-        });
-      });
 
       // FAQ Toggle
       document.querySelectorAll(".faq-question").forEach((question) => {
