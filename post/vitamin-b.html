@@ -1705,137 +1705,20 @@
         });
       });
 
-      // Mobile TOC Toggle
-      const mobileTocToggle = document.getElementById("mobileTocToggle");
-      const sidebar = document.getElementById("sidebar");
-      let isTocOpen = false;
 
-      if (mobileTocToggle && sidebar) {
-        mobileTocToggle.addEventListener("click", () => {
-          if (!isTocOpen) {
-            // Create mobile TOC overlay
-            const overlay = document.createElement("div");
-            overlay.className = "mobile-toc-overlay";
-            overlay.style.cssText = `
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background: rgba(0,0,0,0.5);
-                    z-index: 998;
-                    animation: fadeIn 0.3s ease;
-                `;
-
-            const mobileToC = sidebar.cloneNode(true);
-            mobileToC.id = "mobileToc";
-            mobileToC.style.cssText = `
-                    display: block !important;
-                    position: fixed;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    z-index: 999;
-                    max-width: 90%;
-                    max-height: 80vh;
-                    overflow-y: auto;
-                    background: white;
-                    padding: 20px;
-                    border-radius: 15px;
-                    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-                    animation: slideIn 0.3s ease;
-                `;
-
-            overlay.appendChild(mobileToC);
-            document.body.appendChild(overlay);
-
-            // Close on overlay click
-            overlay.addEventListener("click", (e) => {
-              if (e.target === overlay) {
-                overlay.remove();
-                isTocOpen = false;
-              }
-            });
-
-            // Close on link click
-            mobileToC.querySelectorAll(".toc-link").forEach((link) => {
-              link.addEventListener("click", () => {
-                overlay.remove();
-                isTocOpen = false;
-              });
-            });
-
-            isTocOpen = true;
-          }
-        });
-      }
-
-      // Share Button (檢查是否存在)
-      const shareBtn = document.getElementById("shareBtn");
-      if (shareBtn) {
-        shareBtn.addEventListener("click", async (e) => {
-          e.preventDefault();
-
-          if (navigator.share) {
-            try {
-              await navigator.share({
-                title: document.title,
-                text: "來看看這篇關於維生素B群的完整指引！",
-                url: window.location.href,
-              });
-            } catch (err) {
-              console.log("Share cancelled");
-            }
-          } else {
-            // Fallback - copy to clipboard
-            navigator.clipboard.writeText(window.location.href);
-            alert("連結已複製到剪貼簿！");
-          }
-        });
-      }
-
-      // Add animations
-      const style = document.createElement("style");
-      style.textContent = `
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-            
-            @keyframes slideIn {
-                from {
-                    opacity: 0;
-                    transform: translate(-50%, -45%);
-                }
-                to {
-                    opacity: 1;
-                    transform: translate(-50%, -50%);
-                }
-            }
-        `;
-      document.head.appendChild(style);
 
       // Initialize Components
       function initializeComponents() {
-        console.log("🚀 開始初始化組件");
-
         // Initialize Analytics Component
         if (window.DeusAnalyticsComponent) {
           const analytics = new window.DeusAnalyticsComponent()
             .setDebug(false) // 正式環境設為 false
             .setEnvironment('production');
-          console.log("✅ Analytics 組件初始化完成");
         } else {
-          console.error("❌ Analytics 組件初始化失敗");
         }
 
         // Initialize Header Component
         const headerContainer = document.getElementById("header-component");
-        console.log("📋 Header container:", headerContainer);
-        console.log(
-          "📋 DeusHeaderComponent available:",
-          !!window.DeusHeaderComponent
-        );
 
         if (headerContainer && window.DeusHeaderComponent) {
           const header = new window.DeusHeaderComponent(headerContainer)
@@ -1857,7 +1740,6 @@
                         url: window.location.href,
                       });
                     } catch (err) {
-                      console.log("Share cancelled");
                     }
                   } else {
                     navigator.clipboard.writeText(window.location.href);
@@ -1866,26 +1748,17 @@
                 },
               },
             });
-          console.log("✅ Header 組件初始化完成");
         } else {
-          console.error("❌ Header 組件初始化失敗");
         }
 
         // Initialize Footer Component
         const footerContainer = document.getElementById("footer-component");
-        console.log("📋 Footer container:", footerContainer);
-        console.log(
-          "📋 DeusFooterComponent available:",
-          !!window.DeusFooterComponent
-        );
 
         if (footerContainer && window.DeusFooterComponent) {
           const footer = new window.DeusFooterComponent(footerContainer)
             .setDebug(false)
             .setTheme("default");
-          console.log("✅ Footer 組件初始化完成");
         } else {
-          console.error("❌ Footer 組件初始化失敗");
         }
 
         // Initialize ResponsiveTocComponent
