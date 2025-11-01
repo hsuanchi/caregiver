@@ -20,29 +20,29 @@
 ---
 
 ### 執行進度
-- [x] `amino-acids.html`
-- [x] `anthocyanins.html`
-- [x] `beta-glucan.html`
-- [x] `calcium.html`
-- [x] `chondroitin.html`
-- [x] `chromium.html`
-- [x] `coenzyme-q10.html`
-- [x] `collagen.html`
-- [x] `copper.html`
-- [x] `curcumin.html`
-- [x] `dietary-fiber.html`
-- [x] `fish-oil.html`
-- [x] `fluoride.html`
-- [x] `folic-acid.html`
-- [x] `gaba.html`
-- [x] `glucosamine.html`
-- [x] `glutathione.html`
-- [x] `iodine.html`
-- [x] `iron.html`
-- [x] `lutein.html`
-- [x] `lycopene.html`
-- [x] `magnesium.html`
-- [x] `manganese.html`
+- [ ] `amino-acids.html`
+- [ ] `anthocyanins.html`
+- [ ] `beta-glucan.html`
+- [ ] `calcium.html`
+- [ ] `chondroitin.html`
+- [ ] `chromium.html`
+- [ ] `coenzyme-q10.html`
+- [ ] `collagen.html`
+- [ ] `copper.html`
+- [ ] `curcumin.html`
+- [ ] `dietary-fiber.html`
+- [ ] `fish-oil.html`
+- [ ] `fluoride.html`
+- [ ] `folic-acid.html`
+- [ ] `gaba.html`
+- [ ] `glucosamine.html`
+- [ ] `glutathione.html`
+- [ ] `iodine.html`
+- [ ] `iron.html`
+- [ ] `lutein.html`
+- [ ] `lycopene.html`
+- [ ] `magnesium.html`
+- [ ] `manganese.html`
 - `official-health-sites.html` (非營養素，跳過)
 - [ ] `phosphorus.html`
 - [ ] `potassium.html`
