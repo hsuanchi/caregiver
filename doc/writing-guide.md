@@ -1407,7 +1407,7 @@ console.log('當前 debug 模式:', service.getDebug());  // 關鍵方法
                             <li><strong><code>&lt;h2&gt;</code> 食物來源：哪些天然食物富含[營養素]？</strong> (使用 <code>.data-table</code>)</li>
                             <li><strong><code>&lt;h2&gt;</code> 誰最需要補充？[營養素]缺乏的警訊與高風險族群</strong> (使用 <code>.risk-group-cards</code>)</li>
                             <li><strong><code>&lt;h2&gt;</code> 如何挑選[營養素]補充品？</strong> (使用 <code>.comparison-table</code>)</li>
-                            <li><strong><code>&lt;h2&gt;</code> 副作用與注意事項</strong> (使用 <code>.alert-doctor</code>)</li>
+                            <li><strong><code>&lt;h2&gt;</code> [營養素]的風險與安全注意事項</strong> (<code>&lt;h3&gt;</code> 常見副作用, <code>&lt;h3&gt;</code> 藥物交互作用)</li>
                             <li><strong><code>&lt;h2&gt;</code> 常見問題 (FAQ)</strong></li>
                             <li><strong><code>&lt;h2&gt;</code> 相關營養素 (自動化)</strong> (指向 <code>#related-articles-container</code>)</li>
                         </ol>
