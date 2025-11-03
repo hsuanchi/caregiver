@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>優惠券 - 營養百科</title>
+    <meta name="description" content="營養百科優惠券頁面" />
+    <meta name="keywords" content="優惠券, coupon, 營養百科" />
+    
+    <link rel="icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
+    <link rel="shortcut icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
+    <meta property="og:site_name" content="營養百科" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "營養百科",
+      "url": "https://life.maxlist.xyz/"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://life.maxlist.xyz/category/coupon.html"
+      },
+      "headline": "優惠券 - 營養百科",
+      "description": "營養百科優惠券頁面",
+      "image": "https://life.maxlist.xyz/assets/images/homepage_banner.jpeg",
+      "author": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "url": "https://life.maxlist.xyz/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Caregiver 營養百科",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
+        }
+      },
+      "datePublished": "2025-11-03",
+      "dateModified": "2025-11-03"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "營養百科",
+        "item": "https://life.maxlist.xyz/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "優惠券"
+      }]
+    }
+    </script>
+
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif; line-height: 1.8; color: #2d3748; background: #faf8f5; }
+
+      [id] { scroll-margin-top: 100px; }
+      .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%); z-index: 1001; transition: width 0.3s ease; }
+      .breadcrumb { margin-bottom: 20px; font-size: 0.9em; color: #718096; }
+      .breadcrumb a { color: #718096; text-decoration: none; transition: color 0.3s ease; }
+      .breadcrumb a:hover { color: #ff6b35; }
+      .breadcrumb .separator { margin: 0 8px; color: #a0aec0; }
+      .article-container { max-width: 1400px; margin: 0 auto; padding: 100px 20px 60px; display: grid; grid-template-columns: 280px 1fr; gap: 60px; position: relative; }
+      .sidebar { position: sticky; top: 100px; height: fit-content; max-height: calc(100vh - 120px); overflow-y: auto; }
+      .toc { background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
+      .toc-title { font-size: 1.2em; font-weight: 700; color: #2d3748; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+      .toc-title a { color: inherit; text-decoration: none; }
+      .toc-list { list-style: none; padding-left: 0; }
+      .toc-list li { margin-bottom: 8px; }
+      .toc-list a { color: #4a5568; text-decoration: none; font-size: 0.95em; display: block; padding: 8px 12px; transition: all 0.3s ease; position: relative; border-radius: 8px; border-left: 3px solid transparent; }
+      .toc-list a.active { color: #ff6b35; background: rgba(255, 107, 53, 0.1); border-left-color: #ff6b35; font-weight: 600; }
+      .toc-list a:hover { color: #ff6b35; background: rgba(255, 107, 53, 0.08); border-left-color: #ff8f65; transform: translateX(2px); }
+      .toc-list a:not(.sub-item) { font-weight: 600; background: rgba(255, 107, 53, 0.05); margin-bottom: 4px; }
+      .toc-list a.sub-item { margin-left: 16px; font-size: 0.9em; color: #718096; background: rgba(113, 128, 150, 0.03); border-left-color: #e2e8f0; position: relative; }
+      .toc-list a.sub-item::before { content: ""; position: absolute; left: -12px; top: 50%; width: 8px; height: 1px; background: #d1d5db; transform: translateY(-50%); }
+      .toc-list a.active.sub-item { color: #ff6b35; background: rgba(255, 107, 53, 0.08); border-left-color: #ff8f65; }
+      .toc-list a.active.sub-item::before { background: #ff8f65; }
+      .article-content { background: white; border-radius: 20px; padding: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
+      .article-header { margin-bottom: 60px; position: relative; }
+      .article-hero { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 20px; padding: 60px; margin-bottom: 40px; position: relative; overflow: hidden; }
+      .article-category { display: inline-block; background: white; color: #0369a1; padding: 8px 20px; border-radius: 20px; font-size: 0.9em; font-weight: 600; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+      .article-title { font-size: 2.5em; font-weight: 800; color: #2d3748; line-height: 1.3; margin-bottom: 20px; max-width: 800px; }
+      .article-subtitle { font-size: 1.3em; color: #4a5568; line-height: 1.6; max-width: 700px; margin-bottom: 30px; }
+      .article-meta { display: flex; gap: 30px; color: #718096; font-size: 0.95em; flex-wrap: wrap; }
+      .article-meta span { display: flex; align-items: center; gap: 8px; }
+      
+      .coupon-code {
+            border: 2px dashed #e0e0e0;
+            padding: 8px 12px;
+            background-color: #f9f9f9;
+            font-weight: bold;
+            color: #d9534f; /* 模擬折扣碼的紅色 */
+      }
+      .copy-btn {
+            padding: 4px 8px;
+            font-size: 0.875rem; /* 14px */
+      }
+
+      @media (max-width: 1024px) {
+        .article-container {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+        /* .sidebar { display: none; } -- This is now handled by responsive-toc-component.js */
+      }
+
+      @media (min-width: 768px) {
+        .md-grid-2 { 
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+        }
+        .md-grid-3 { 
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+        }
+        .md-flex-row { 
+            flex-direction: row; 
+        }
+      }
+    </style>
+</head>
+<body data-article-id="coupon-page">
+    <div class="progress-bar" id="progressBar"></div>
+    <div id="header-component"></div>
+
+    <div class="article-container">
+      <aside class="sidebar" id="sidebar">
+        <!-- Related Stores Widget -->
+        <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+            <h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4">相關商店</h3>
+            <ul class="space-y-4">
+                <li class="flex items-center space-x-3">
+                    <img src="https://placehold.co/40x40/e2e8f0/333?text=Agoda" 
+                         alt="Agoda Logo" 
+                         class="w-10 h-10 rounded-md object-cover bg-gray-200"
+                         onerror="this.src='https://placehold.co/40x40/e2e8f0/9ca3af?text=Logo'; this.onerror=null;">
+                    <div>
+                        <a href="#" class="font-semibold text-blue-600 hover:underline">Agoda</a>
+                        <p class="text-sm text-gray-500">30 則優惠</p>
+                    </div>
+                </li>
+                <li class="flex items-center space-x-3">
+                    <img src="https://placehold.co/40x40/e2e8f0/333?text=AirAsia" 
+                         alt="AirAsia Logo" 
+                         class="w-10 h-10 rounded-md object-cover bg-gray-200"
+                         onerror="this.src='https://placehold.co/40x40/e2e8f0/9ca3af?text=Logo'; this.onerror=null;">
+                    <div>
+                        <a href="#" class="font-semibold text-blue-600 hover:underline">AirAsia</a>
+                        <p class="text-sm text-gray-500">6 則優惠</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Hints & Tips Widget -->
+        <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+            <h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4">省錢提示 💡</h3>
+            <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm">
+                <li>下載 Klook app 可享新用戶優惠。</li>
+                <li>分享你的推薦碼給朋友，雙方都能獲得獎勵。</li>
+                <li>預訂並完成活動後，留下評論可賺取 Klook 積分。</li>
+            </ul>
+        </div>
+
+        <!-- Offer Summary Widget -->
+        <div class="bg-white rounded-lg shadow-md p-4">
+            <h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4">今日有效優惠</h3>
+            <ul class="space-y-2 text-sm">
+                <li class="flex justify-between">
+                    <span class="text-gray-600">優惠券代碼</span> 
+                    <span class="font-medium">48</span>
+                </li>
+                <li class="flex justify-between">
+                    <span class="text-gray-600">折扣</span> 
+                    <span class="font-medium">12</span>
+                </li>
+                <li class="flex justify-between">
+                    <span class="text-gray-600">回饋</span> 
+                    <span class="font-medium">1</span>
+                </li>
+                <li class="flex justify-between font-bold text-base mt-2 pt-2 border-t">
+                    <span class="text-gray-800">全部</span> 
+                    <span>63</span>
+                </li>
+            </ul>
+        </div>
+      </aside>
+
+      <main class="article-content">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">合作品牌折扣碼與優惠</h1>
+
+            <!-- Search Bar -->
+            <div class="mb-6">
+                <input type="search" id="search-input" placeholder="搜尋品牌或優惠關鍵字..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <div id="filter-tabs" class="flex space-x-2 border-b-2 border-gray-200 mb-6 overflow-x-auto pb-2">
+                <button data-filter="全部" class="filter-btn py-2 px-4 text-sm md:text-base font-semibold text-blue-600 border-b-4 border-blue-600 whitespace-nowrap">全部</button>
+                <button data-filter="保健食品" class="filter-btn py-2 px-4 text-sm md:text-base font-semibold text-gray-500 hover:text-gray-800 whitespace-nowrap">保健食品</button>
+                <button data-filter="旅遊票券" class="filter-btn py-2 px-4 text-sm md:text-base font-semibold text-gray-500 hover:text-gray-800 whitespace-nowrap">旅遊票券</button>
+                <button data-filter="其他" class="filter-btn py-2 px-4 text-sm md:text-base font-semibold text-gray-500 hover:text-gray-800 whitespace-nowrap">其他</button>
+            </div>
+
+            <div id="coupon-container" class="space-y-4">
+
+                <!-- iHerb Section -->
+                <div class="brand-section" data-category="保健食品">
+                    <h2 class="text-2xl font-bold text-gray-700 mt-8 mb-4 border-b pb-2">iHerb</h2>
+                    <div class="space-y-4">
+                        <div class="coupon-card bg-white rounded-lg shadow-md overflow-hidden">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="w-full md:w-1/3 p-4 bg-gray-50 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-gray-100">
+                                    <span class="text-3xl font-bold text-red-600">5% OFF</span>
+                                    <span class="text-sm font-medium text-gray-600 mt-1">優惠券代碼</span>
+                                </div>
+                                <div class="w-full md:w-2/3 p-4 md:p-6">
+                                    <h3 class="text-lg font-semibold text-gray-800">全站商品 95 折</h3>
+                                    <p class="text-sm text-gray-600 mt-2">全球最大保健食品電商，超過三萬種商品，直寄台灣快速方便。</p>
+                                    <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                                        <button onclick="showCode('iherb-1')" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300 w-full sm:w-auto">顯示折扣碼</button>
+                                        <span class="text-xs text-gray-500 mt-2 sm:mt-0">無到期日</span>
+                                    </div>
+                                    <div id="code-iherb-1" class="hidden mt-4 p-4 bg-gray-50 rounded-lg">
+                                        <p class="text-sm text-gray-700 mb-2">複製折扣碼並在結帳時使用：</p>
+                                        <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                                            <span id="text-iherb-1" class="coupon-code">NEW20</span>
+                                            <button id="btn-iherb-1" onclick="copyCode('text-iherb-1', 'btn-iherb-1')" class="copy-btn bg-gray-200 text-gray-800 font-semibold rounded-md hover:bg-gray-300 transition">複製</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Myprotein Section -->
+                <div class="brand-section" data-category="保健食品">
+                    <h2 class="text-2xl font-bold text-gray-700 mt-8 mb-4 border-b pb-2">Myprotein</h2>
+                    <div class="space-y-4">
+                        <div class="coupon-card bg-white rounded-lg shadow-md overflow-hidden">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="w-full md:w-1/3 p-4 bg-gray-50 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-gray-100">
+                                    <span class="text-3xl font-bold text-red-600">45 折</span>
+                                    <span class="text-sm font-medium text-gray-600 mt-1">折扣</span>
+                                </div>
+                                <div class="w-full md:w-2/3 p-4 md:p-6">
+                                    <h3 class="text-lg font-semibold text-gray-800">精選商品最低 45 折</h3>
+                                    <p class="text-sm text-gray-600 mt-2">英國第一健身營養品牌，無需折扣碼，點擊連結即可享受優惠。</p>
+                                    <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                                        <a href="#" target="_blank" class="inline-block bg-green-600 text-white text-center font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition duration-300 w-full sm:w-auto">立即前往</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Klook Section -->
+                <div class="brand-section" data-category="旅遊票券">
+                    <h2 class="text-2xl font-bold text-gray-700 mt-8 mb-4 border-b pb-2">Klook</h2>
+                    <div class="space-y-4">
+                        <div class="coupon-card bg-white rounded-lg shadow-md overflow-hidden">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="w-full md:w-1/3 p-4 bg-gray-50 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-gray-100">
+                                    <span class="text-3xl font-bold text-red-600">9 折</span>
+                                    <span class="text-sm font-medium text-gray-600 mt-1">優惠券代碼</span>
+                                </div>
+                                <div class="w-full md:w-2/3 p-4 md:p-6">
+                                    <h3 class="text-lg font-semibold text-gray-800">新用戶 9 折優惠</h3>
+                                    <p class="text-sm text-gray-600 mt-2">下載 Klook App 並註冊，首筆訂單享 9 折優惠，最高折抵 NT$100。</p>
+                                    <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                                        <button onclick="showCode('klook-1')" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300 w-full sm:w-auto">顯示折扣碼</button>
+                                        <span class="text-xs text-gray-500 mt-2 sm:mt-0">到期日: 2025-12-31</span>
+                                    </div>
+                                    <div id="code-klook-1" class="hidden mt-4 p-4 bg-gray-50 rounded-lg">
+                                        <p class="text-sm text-gray-700 mb-2">複製折扣碼並在結帳時使用：</p>
+                                        <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                                            <span id="text-klook-1" class="coupon-code">NEWKLOOK90</span>
+                                            <button id="btn-klook-1" onclick="copyCode('text-klook-1', 'btn-klook-1')" class="copy-btn bg-gray-200 text-gray-800 font-semibold rounded-md hover:bg-gray-300 transition">複製</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+      </main>
+    </div>
+
+    <section class="disclaimer py-8 px-4 bg-gray-50 text-gray-700 text-center border-t border-gray-200">
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-lg font-semibold mb-2">免責聲明</h3>
+        <p class="text-sm leading-relaxed">本站資訊僅供教育與參考目的，不能取代專業醫療建議、診斷或治療。在開始任何新的營養補充計劃或更改現有健康方案前，請務必諮詢您的醫師或合格的醫療專業人員。</p>
+      </div>
+    </section>
+
+    <div id="footer-component"></div>
+
+    <script src="../assets/js/deus-analytics-component.js"></script>
+    <script src="../assets/js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
+
+    <script>
+      function updateProgressBar() { 
+        const scrollPosition = window.scrollY;
+        const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (scrollPosition / documentHeight) * 100;
+        document.getElementById("progressBar").style.width = scrollPercentage + "%";
+      }
+      window.addEventListener("scroll", updateProgressBar);
+
+      function highlightTOC() {
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".toc-link");
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100;
+          if (window.scrollY >= sectionTop) { current = section.getAttribute("id"); }
+        });
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) { link.classList.add("active"); }
+        });
+      }
+      window.addEventListener("scroll", highlightTOC);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
+        if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
+        if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+
+        const relatedContainer = document.getElementById("related-articles-container");
+        const articleId = document.body.dataset.articleId;
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
+
+        if (window.ResponsiveTocComponent) {
+          new window.ResponsiveTocComponent().initialize();
+        }
+
+        // Combined filtering and search logic
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const searchInput = document.getElementById('search-input');
+        const couponContainer = document.getElementById('coupon-container');
+        const brandSections = document.querySelectorAll('.brand-section');
+
+        function updateView() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const activeFilter = document.querySelector('.filter-btn.text-blue-600').dataset.filter;
+
+            brandSections.forEach(section => {
+                const category = section.dataset.category;
+                let sectionHasVisibleCards = false;
+
+                // 1. Filter by category
+                const isCategoryVisible = (activeFilter === '全部' || category === activeFilter);
+                if (!isCategoryVisible) {
+                    section.style.display = 'none';
+                    return; // Skip to next section if category doesn't match
+                }
+
+                section.style.display = 'block';
+
+                // 2. Filter by search term within the section
+                const cards = section.querySelectorAll('.coupon-card');
+                cards.forEach(card => {
+                    const title = card.querySelector('h3').innerText.toLowerCase();
+                    const description = card.querySelector('p').innerText.toLowerCase();
+                    const cardMatchesSearch = (title.includes(searchTerm) || description.includes(searchTerm));
+
+                    if (cardMatchesSearch) {
+                        card.style.display = 'block';
+                        sectionHasVisibleCards = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // 3. Hide brand title if no cards in it are visible
+                const brandTitle = section.querySelector('h2');
+                if (brandTitle) {
+                    brandTitle.style.display = sectionHasVisibleCards ? 'block' : 'none';
+                }
+            });
+        }
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('text-blue-600', 'border-blue-600');
+                    btn.classList.add('text-gray-500');
+                });
+                button.classList.add('text-blue-600', 'border-blue-600');
+                button.classList.remove('text-gray-500');
+                updateView();
+            });
+        });
+
+        searchInput.addEventListener('input', updateView);
+
+        // Initial view update
+        updateView();
+      });
+
+      function showCode(cardId) {
+            const codeElementId = 'code-' + cardId;
+            const codeElement = document.getElementById(codeElementId);
+            
+            if (codeElement.classList.contains('hidden')) {
+                codeElement.classList.remove('hidden');
+            }
+        }
+
+        function copyCode(textElementId, buttonElementId) {
+            const textToCopy = document.getElementById(textElementId).innerText;
+            const buttonElement = document.getElementById(buttonElementId);
+            
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    buttonElement.innerText = '已複製!';
+                    setTimeout(() => {
+                        buttonElement.innerText = '複製';
+                    }, 2000);
+                }).catch(err => {
+                    console.warn('Clipboard API failed, falling back to execCommand.', err);
+                    fallbackCopyTextToClipboard(textToCopy, buttonElement);
+                });
+            } else {
+                console.warn('Clipboard API not available, falling back to execCommand.');
+                fallbackCopyTextToClipboard(textToCopy, buttonElement);
+            }
+        }
+
+        function fallbackCopyTextToClipboard(text, buttonElement) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            
+            textArea.style.position = 'fixed';
+            textArea.style.top = 0;
+            textArea.style.left = 0;
+            textArea.style.opacity = 0;
+
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    buttonElement.innerText = '已複製!';
+                } else {
+                    buttonElement.innerText = '複製失敗';
+                }
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+                buttonElement.innerText = '複製失敗';
+            }
+
+            document.body.removeChild(textArea);
+
+            if (buttonElement.innerText === '已複製!') {
+                setTimeout(() => {
+                    buttonElement.innerText = '複製';
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+</html>

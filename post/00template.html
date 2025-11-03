@@ -70,7 +70,7 @@
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif; line-height: 1.8; color: #2d3748; background: #faf8f5; }
 
-      section[id] { scroll-margin-top: 100px; }
+      [id] { scroll-margin-top: 100px; }
       .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%); z-index: 1001; transition: width 0.3s ease; }
       .breadcrumb { margin-bottom: 20px; font-size: 0.9em; color: #718096; }
       .breadcrumb a { color: #718096; text-decoration: none; transition: color 0.3s ease; }
@@ -103,7 +103,7 @@
       .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
       .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
       .alert-doctor::before { content: "⚠️"; }
-      .alert-tip { background-color: #f0fdf4; border-color: #22c55e; color: #14532d; }
+      .alert-tip { background: #fffbeb; color: #b45309; border-color: #fde68a; }
       .alert-tip::before { content: "💡"; }
       .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
       .alert-nutritionist::before { content: "💡"; }
@@ -199,7 +199,7 @@
           <section id="problem">
             <h2>您有這些困擾嗎？缺鋅的隱形警訊</h2>
             <p>鋅參與了體內超過300種酵素反應，從免疫防禦到細胞生長都少不了它。當這個關鍵的「火星塞」不足時，身體的許多引擎就會開始運轉不順，並發出一系列您可能意想不到的警訊。</p>
-            <div class="info-cards md-grid-3">
+            <div class="info-cards md-grid-2">
               <div class="info-card">
                 <h4 class="info-card-title">免疫力下降，容易感冒</h4>
                 <p class="info-card-desc">鋅是構成免疫細胞與胸腺素的關鍵，缺乏時會導致防禦力下降。</p>
@@ -207,10 +207,6 @@
               <div class="info-card">
                 <h4 class="info-card-title">掉髮增加，指甲脆弱</h4>
                 <p class="info-card-desc">鋅參與角蛋白的合成，是維持頭髮與指甲健康生長的必需原料。</p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">皮膚變差，傷口難癒合</h4>
-                <p class="info-card-desc">鋅在皮膚細胞的分裂與膠原蛋白合成中扮演要角，缺乏會影響皮膚健康與修復能力。</p>
               </div>
             </div>
           </section>
@@ -245,7 +241,7 @@
           <section id="solution">
             <h2>鋅：點燃生命活力的全方位解答</h2>
             <p>補充足量的鋅，就像是為身體的各個系統重新上緊發條。它不僅是男性保健的代名詞，更是維持全方位健康的基礎。以下是鋅能為您帶來的三大核心效益：</p>
-            <div class="info-cards md-grid-3">
+            <div class="info-cards md-grid-2">
               <div class="info-card">
                 <h4 class="info-card-title">鞏固免疫防線</h4>
                 <p class="info-card-desc">激活T細胞與自然殺手細胞，有效抵禦外來病原體，縮短病程。</p>
@@ -253,10 +249,6 @@
               <div class="info-card">
                 <h4 class="info-card-title">加速組織修復</h4>
                 <p class="info-card-desc">促進蛋白質合成與細胞分裂，對於維持皮膚、毛髮健康與傷口癒合至關重要。</p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">維持生殖機能</h4>
-                <p class="info-card-desc">鋅是合成睪固酮與精子的關鍵元素，同時也參與女性荷爾蒙的調節。</p>
               </div>
             </div>
           </section>
@@ -367,6 +359,7 @@
 
           <section id="faq" class="faq-section">
             <h2>常見問題</h2>
+            <p>以下是關於鋅的常見問題，希望能幫助您更了解這個重要的礦物質。</p>
             <div class="faq-item">
               <div class="faq-question">Q1: 鋅可以每天吃嗎？</div>
               <div class="faq-answer">

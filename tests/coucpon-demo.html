@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>折扣碼頁面佈局模擬</title>
+    <!-- 載入 Tailwind CSS，這是一種 CSS 框架，能讓我們用 class 快速建立好看的畫面 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 為了模擬網站的特定樣式，我們加一點點客製化 CSS */
+        /* 模擬折扣碼的虛線框 */
+        .coupon-code {
+            border: 2px dashed #e0e0e0;
+            padding: 8px 12px;
+            background-color: #f9f9f9;
+            font-weight: bold;
+            color: #d9534f; /* 模擬折扣碼的紅色 */
+        }
+        /* 讓 "複製" 按鈕小一點 */
+        .copy-btn {
+            padding: 4px 8px;
+            font-size: 0.875rem; /* 14px */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">Klook 折扣碼與優惠</h1>
+
+        <!-- 
+          設計邏輯 1: 清晰分類 (Filter Tabs)
+          使用 tab 讓使用者快速篩選他們想要的優惠類型。
+          "text-blue-600 border-blue-600" 是用來標示當前選中的標籤。
+        -->
+        <div class="flex space-x-2 border-b-2 border-gray-200 mb-6 overflow-x-auto pb-2">
+            <button class="py-2 px-4 text-sm md:text-base font-semibold text-blue-600 border-b-4 border-blue-600 whitespace-nowrap">全部 (63)</button>
+            <button class="py-2 px-4 text-sm md:text-base font-semibold text-gray-500 hover:text-gray-800 whitespace-nowrap">優惠券代碼 (48)</button>
+            <button class="py-2 px-4 text-sm md:text-base font-semibold text-gray-500 hover:text-gray-800 whitespace-nowrap">折扣 (12)</button>
+            <button class="py-2 px-4 text-sm md:text-base font-semibold text-gray-500 hover:text-gray-800 whitespace-nowrap">回饋 (1)</button>
+        </div>
+
+        <!-- 優惠卡片列表 -->
+        <div class="space-y-4">
+
+            <!-- 
+              卡片 1: 優惠券代碼 (Voucher Code)
+              設計邏輯 2 & 3: 視覺層次 & 漸進揭露
+              這是一張最典型的折扣碼卡片。
+              - "flex flex-col md:flex-row": 在手機上垂直排列，在電腦上水平排列。
+              - "w-full md:w-1/3": 在電腦上佔 1/3 寬度，用來放折扣力度和類型。
+              - "w-full md:w-2/3": 在電腦上佔 2/3 寬度，用來放標題和 CTA。
+              - "hidden" class: 預設隱藏折扣碼區域。
+            -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <!-- 左側: 優惠力度 -->
+                    <div class="w-full md:w-1/3 p-4 bg-gray-50 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-gray-100">
+                        <span class="text-3xl font-bold text-red-600">10% OFF</span>
+                        <span class="text-sm font-medium text-gray-600 mt-1">優惠券代碼</span>
+                    </div>
+                    
+                    <!-- 右側: 優惠詳情 & CTA -->
+                    <div class="w-full md:w-2/3 p-4 md:p-6">
+                        <h2 class="text-lg font-semibold text-gray-800">Klook 獨家 - 新用戶9折優惠</h2>
+                        <p class="text-sm text-gray-600 mt-2">下載 Klook App 並註冊，首筆訂單享 9 折優惠，最高折抵 NT$100。</p>
+                        
+                        <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <!-- 
+                              設計邏輯 4: 引導行動 (CTA Button)
+                              "showCode('card1')" 這是一個 JavaScript 函數，用來顯示隱藏的折扣碼。
+                            -->
+                            <button onclick="showCode('card1')" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300 w-full sm:w-auto">
+                                顯示折扣碼
+                            </button>
+                            <!-- 元數據: 建立信任 -->
+                            <span class="text-xs text-gray-500 mt-2 sm:mt-0">最後使用: 38 分鐘前</span>
+                        </div>
+
+                        <!-- 
+                          設計邏輯 3: 漸進揭露 (Code Reveal Area)
+                          這個區域預設是隱藏的 (class="hidden")。
+                          id="code-card1" 是為了讓 JavaScript 能找到它。
+                        -->
+                        <div id="code-card1" class="hidden mt-4 p-4 bg-gray-50 rounded-lg">
+                            <p class="text-sm text-gray-700 mb-2">複製折扣碼並在結帳時使用：</p>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                                <!-- 
+                                  id="text-card1" 是為了讓 "複製" 按鈕能抓到這個文字
+                                -->
+                                <span id="text-card1" class="coupon-code">NEWUSER90</span>
+                                <!--
+                                  onclick="copyCode('text-card1', 'btn-card1')"
+                                  點擊時觸發複製功能
+                                -->
+                                <button id="btn-card1" onclick="copyCode('text-card1', 'btn-card1')" class="copy-btn bg-gray-200 text-gray-800 font-semibold rounded-md hover:bg-gray-300 transition">
+                                    複製
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 詳情連結 -->
+                        <div class="mt-4">
+                            <a href="#" class="text-xs text-gray-500 hover:underline">詳情 & 條款</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 
+              卡片 2: 折扣 (Deal)
+              這種卡片不需要折扣碼，所以 CTA 是 "立即前往"。
+              href="..." 會直接連結到商家網站。
+            -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <!-- 左側: 優惠力度 -->
+                    <div class="w-full md:w-1/3 p-4 bg-gray-50 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-gray-100">
+                        <span class="text-3xl font-bold text-red-600">最高 94% OFF</span>
+                        <span class="text-sm font-medium text-gray-600 mt-1">折扣</span>
+                    </div>
+                    
+                    <!-- 右側: 優惠詳情 & CTA -->
+                    <div class="w-full md:w-2/3 p-4 md:p-6">
+                        <h2 class="text-lg font-semibold text-gray-800">Klook 景點門票 - 限時優惠低至 6 折</h2>
+                        <p class="text-sm text-gray-600 mt-2">精選全球熱門景點門票，無需折扣碼，享有限時獨家優惠。</p>
+                        
+                        <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <!-- 
+                              "Deal" 類型的 CTA 通常是 "a" 標籤 (連結)
+                            -->
+                            <a href="#" target="_blank" class="inline-block bg-green-600 text-white text-center font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition duration-300 w-full sm:w-auto">
+                                立即前往
+                            </a>
+                        </div>
+
+                        <!-- 詳情連結 -->
+                        <div class="mt-4">
+                            <a href="#" class="text-xs text-gray-500 hover:underline">詳情 & 條款</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 
+              卡片 3: 帶有到期日的優惠券
+              設計邏輯 5: 建立急迫性 (Urgency)
+              "text-red-500" 用來強調到期日，製造急迫感。
+            -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <!-- 左側: 優惠力度 -->
+                    <div class="w-full md:w-1/3 p-4 bg-gray-50 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-gray-100">
+                        <span class="text-3xl font-bold text-red-600">NT$100 OFF</span>
+                        <span class="text-sm font-medium text-gray-600 mt-1">優惠券代碼</span>
+                    </div>
+                    
+                    <!-- 右側: 優惠詳情 & CTA -->
+                    <div class="w-full md:w-2/3 p-4 md:p-6">
+                        <h2 class="text-lg font-semibold text-gray-800">全站商品 - 滿 NT$1000 折 $100</h2>
+                        <p class="text-sm text-gray-600 mt-2">適用於全站商品（部分特殊商品除外），需消費滿額。</p>
+                        
+                        <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <button onclick="showCode('card3')" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300 w-full sm:w-auto">
+                                顯示折扣碼
+                            </button>
+                            <!-- 到期日 -->
+                            <span class="text-sm font-medium text-red-500 mt-2 sm:mt-0">到期日: 30 Nov</span>
+                        </div>
+
+                        <!-- 隱藏的折扣碼區域 -->
+                        <div id="code-card3" class="hidden mt-4 p-4 bg-gray-50 rounded-lg">
+                            <p class="text-sm text-gray-700 mb-2">複製折扣碼並在結帳時使用：</p>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                                <span id="text-card3" class="coupon-code">KLOOK100</span>
+                                <button id="btn-card3" onclick="copyCode('text-card3', 'btn-card3')" class="copy-btn bg-gray-200 text-gray-800 font-semibold rounded-md hover:bg-gray-300 transition">
+                                    複製
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 詳情連結 -->
+                        <div class="mt-4">
+                            <a href="#" class="text-xs text-gray-500 hover:underline">詳情 & 條款</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- end card list -->
+
+    </div> <!-- end container -->
+
+    <!-- 
+      JavaScript 區塊
+      這裡放的是讓頁面動起來的程式碼。
+      身為一個正在學習 coding 的人，你可以特別注意這裡。
+    -->
+    <script>
+        // 函數 1: 顯示折扣碼
+        // cardId 是 'card1', 'card3' 這樣的字串
+        function showCode(cardId) {
+            // 1. 組合出折扣碼區域的 ID，例如 "code-card1"
+            const codeElementId = 'code-' + cardId;
+            // 2. 透過 ID 找到那個 <div
+            const codeElement = document.getElementById(codeElementId);
+            
+            // 3. 檢查它是否是隱藏的
+            if (codeElement.classList.contains('hidden')) {
+                // 4. 如果是隱藏的，就移除 'hidden' 這個 class，讓它顯示出來
+                codeElement.classList.remove('hidden');
+            }
+            // (如果已經顯示了，就什麼也不做)
+        }
+
+        // 函數 2: 複製文字到剪貼簿
+        // textElementId 是要複製的文字 ID，例如 "text-card1"
+        // buttonElementId 是 "複製" 按鈕的 ID，例如 "btn-card1"
+        function copyCode(textElementId, buttonElementId) {
+            // 1. 找到要複製的文字
+            const textToCopy = document.getElementById(textElementId).innerText;
+            // 2. 找到按鈕
+            const buttonElement = document.getElementById(buttonElementId);
+            
+            // 3. 嘗試使用 navigator.clipboard.writeText (新方法，安全)
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    // 複製成功
+                    buttonElement.innerText = '已複製!';
+                    // 2 秒後再改回 "複製"
+                    setTimeout(() => {
+                        buttonElement.innerText = '複製';
+                    }, 2000);
+                }).catch(err => {
+                    // 複製失敗 (可能因為權限等問題)，改用舊方法
+                    console.warn('Clipboard API failed, falling back to execCommand.', err);
+                    fallbackCopyTextToClipboard(textToCopy, buttonElement);
+                });
+            } else {
+                // 如果瀏覽器太舊，直接使用舊方法
+                console.warn('Clipboard API not available, falling back to execCommand.');
+                fallbackCopyTextToClipboard(textToCopy, buttonElement);
+            }
+        }
+
+        // 函數 3: 舊版瀏覽器複製功能 (Fallback)
+        // 這是比較舊的寫法，相容性較好，但新版瀏覽器漸漸不推薦
+        function fallbackCopyTextToClipboard(text, buttonElement) {
+            // 1. 建立一個暫時的 <textarea> 元素
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            
+            // 2. 把它藏到畫面外
+            textArea.style.position = 'fixed';
+            textArea.style.top = 0;
+            textArea.style.left = 0;
+            textArea.style.opacity = 0;
+
+            // 3. 把它加到頁面中
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select(); // 選取裡面的文字
+
+            try {
+                // 4. 執行 "複製" 命令
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    buttonElement.innerText = '已複製!';
+                } else {
+                    buttonElement.innerText = '複製失敗';
+                }
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+                buttonElement.innerText = '複製失敗';
+            }
+
+            // 5. 移除暫時的 <textarea>
+            document.body.removeChild(textArea);
+
+            // 6. 2 秒後恢復按鈕文字
+            if (buttonElement.innerText === '已複製!') {
+                setTimeout(() => {
+                    buttonElement.innerText = '複製';
+                }, 2000);
+            }
+        }
+
+    </script>
+</body>
+</html>
