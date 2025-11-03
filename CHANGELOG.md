@@ -6,7 +6,7 @@
     修正頁面目錄在切換裝置大小時，會覆蓋到內容的bug
     修正頁面背景 文章內容的容器沒有置中 導致背景灰底左右不均的問題 
     ****需要將互動式資料庫切塊，放到首頁中。
-    建立brand資料夾放優化碼頁面的內容  https://www.rewardpay.com/tw/klook#filter=discount
+    
     增加更多資訊圖表的內容
     使用https://app.neilpatel.com/zh/dashboard?去完成更多關鍵字問題
 
@@ -16,6 +16,17 @@
 
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
+
+## [1.3.0] - 2025-11-03
+
+### 新增
+- 建立「品牌優惠」頁面 (`category/brands.html`)，展示合作品牌的獨家優惠與折扣碼。
+- 將「品牌優惠」頁面連結新增至全站共用的頁首導覽列。
+- 為「品牌優惠」頁面新增 FAQ 區塊，以優化 SEO。
+
+### 修改
+- 移除「品牌優惠」頁面中與營養主題無關的品牌範例（如旅遊品牌），並更新側邊欄內容，使其完全聚焦於營養保健品。
+- 優化「品牌優惠」頁面的 Meta 標籤、JSON-LD 結構化資料及內容文案。
 
 ## [1.2.0] - 2025-10-29
 
