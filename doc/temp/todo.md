@@ -337,3 +337,56 @@ SEO： 這些相關的文字內容（Q&A、品牌介紹）富含「Klook」、�
 </body>
 </html>
 
+---
+
+### 待辦任務：重構品牌優惠頁面篩選邏輯
+
+**目標：** 將 `category/brands.html` 頁面的篩選機制從「分類」導向改為「品牌」導向，並在每個品牌區塊頂部新增品牌介紹，優化使用者體驗。
+
+**實作方法分析：**
+
+#### 1. **HTML 結構修改 (`category/brands.html`)**
+
+*   **更新篩選標籤容器：**
+    *   移除現有的靜態分類篩選按鈕。
+    *   建立一個新的容器 `<div id="brand-filter-tabs">`，用於動態載入品牌篩選標籤。
+
+*   **為每個品牌區塊新增 ID：**
+    *   為每一個 `<div class="brand-section">` 元素添加一個獨特的 `id`，以便 JavaScript 進行滾動定位。
+    *   **範例：** `<div class="brand-section" id="brand-iherb" data-brand-name="iHerb">`
+    *   同時新增 `data-brand-name` 屬性，方便 JS 讀取品牌名稱。
+
+*   **新增「品牌介紹框」元件：**
+    *   在每個品牌區塊的頂部（優惠券卡片列表上方），新增一個「品牌介紹框」 (`<div class="brand-intro-box">`)。
+    *   **內容應包含：**
+        *   品牌 Logo (`<img>`)
+        *   品牌名稱 (`<h2>`)
+        *   一段簡短的品牌介紹文字 (`<p>`)
+        *   前往官方網站的連結 (`<a>`)
+    *   這個介紹框將作為切換品牌時最先映入眼簾的內容。
+
+#### 2. **JavaScript 邏輯重構 (`brands.html` 內的 `<script>`)**
+
+*   **動態生成品牌篩選標籤：**
+    *   在 `DOMContentLoaded` 事件觸發後，編寫一段新的 JS 邏輯。
+    *   此邏輯會遍歷頁面上所有的 `.brand-section` 元素。
+    *   根據每個元素的 `data-brand-name` 和 `id`，動態創建對應的 `<button>` 標籤。
+    *   在所有品牌按鈕的最前方，手動新增一個「全部品牌」的按鈕。
+    *   將這些按鈕全部插入到 `<div id="brand-filter-tabs">` 容器中。
+
+*   **重寫篩選與滾動邏輯：**
+    *   為 `#brand-filter-tabs` 容器中的所有按鈕綁定新的點擊事件監聽器。
+    *   **點擊「全部品牌」按鈕時：**
+        *   顯示頁面上所有的 `.brand-section` 區塊。
+        *   移除所有品牌區塊可能有的高亮樣式。
+    *   **點擊特定品牌按鈕時（例如 "iHerb"）：**
+        *   首先，隱藏所有其他的 `.brand-section` 區塊。
+        *   僅顯示被點擊品牌對應的 `.brand-section` 區塊 (例如 `id="brand-iherb"` 的區塊)。
+        *   使用 `element.scrollIntoView({ behavior: 'smooth', block: 'start' })` 方法，將頁面平滑滾動到該品牌區塊的頂部，確保使用者第一眼看到的就是「品牌介紹框」。
+
+#### 3. **CSS 樣式調整**
+
+*   為新的「品牌介紹框」 (`.brand-intro-box`) 撰寫 CSS 樣式，使其視覺上清晰、美觀。
+*   為當前選中的篩選標籤設計一個更醒目的 `active` 狀態樣式。
+
+
