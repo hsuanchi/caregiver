@@ -78,9 +78,6 @@
       .breadcrumb a { color: #718096; text-decoration: none; transition: color 0.3s ease; }
       .breadcrumb a:hover { color: #ff6b35; }
       .breadcrumb .separator { margin: 0 8px; color: #a0aec0; }
-      .article-container { max-width: 1400px; margin: 0 auto; padding: 100px 20px 60px; display: grid; grid-template-columns: 280px 1fr; gap: 60px; position: relative; }
-      .sidebar { position: sticky; top: 100px; height: fit-content; }
-      .article-content { background: white; border-radius: 20px; padding: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
       
       .coupon-code {
             border: 2px dashed #e0e0e0;
@@ -101,8 +98,8 @@
           padding: 1.5rem; /* p-6 */
           margin-bottom: 1.5rem; /* mb-6 */
           display: flex;
-          align-items: flex-start;
-          gap: 1.5rem; /* space-x-6 */
+          flex-direction: column; /* Stack vertically on mobile */
+          gap: 1rem; /* space-y-4 */
       }
 
       .brand-intro-box img {
@@ -141,10 +138,11 @@
           text-decoration: underline;
       }
 
-      @media (max-width: 1024px) {
-        .article-container {
-          grid-template-columns: 1fr;
-          gap: 0;
+      @media (min-width: 640px) { /* sm breakpoint */
+        .brand-intro-box {
+          flex-direction: row;
+          align-items: flex-start;
+          gap: 1.5rem; /* space-x-6 */
         }
       }
     </style>
@@ -153,263 +151,267 @@
     <div class="progress-bar" id="progressBar"></div>
     <div id="header-component"></div>
 
-    <div class="article-container">
-      <aside class="sidebar" id="sidebar">
-        <!-- Related Stores Widget -->
-        <div class="bg-white rounded-lg shadow-md p-4 mb-6">
-            <h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4">相關品牌</h3>
-            <ul class="space-y-4">
-                <li class="flex items-center space-x-3">
-                    <img src="https://placehold.co/40x40/e2e8f0/333?text=DB" 
-                         alt="Doctor's Best Logo" 
-                         class="w-10 h-10 rounded-md object-cover bg-gray-200"
-                         onerror="this.src='https://placehold.co/40x40/e2e8f0/9ca3af?text=Logo'; this.onerror=null;">
-                    <div>
-                        <a href="#brand-doctors-best" class="font-semibold text-blue-600 hover:underline">Doctor's Best</a>
-                        <p class="text-sm text-gray-500">1 則優惠</p>
-                    </div>
-                </li>
-                <li class="flex items-center space-x-3">
-                    <img src="https://placehold.co/40x40/e2e8f0/333?text=CGN" 
-                         alt="California Gold Nutrition Logo" 
-                         class="w-10 h-10 rounded-md object-cover bg-gray-200"
-                         onerror="this.src='https://placehold.co/40x40/e2e8f0/9ca3af?text=Logo'; this.onerror=null;">
-                    <div>
-                        <a href="#brand-cgn" class="font-semibold text-blue-600 hover:underline">California Gold Nutrition</a>
-                        <p class="text-sm text-gray-500">1 則優惠</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        
-        <!-- Hints & Tips Widget -->
-        <div class="bg-white rounded-lg shadow-md p-4 mb-6">
-            <h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4">省錢提示 💡</h3>
-            <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm">
-                <li>訂閱品牌電子報，可即時獲取最新優惠資訊。</li>
-                <li>善用新用戶折扣碼，通常能享有首購優惠。</li>
-                <li>在特價活動期間（如黑色星期五）購買，可節省更多。</li>
-            </ul>
-        </div>
+    <!-- Main content wrapper with Tailwind classes -->
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <!-- Flex container for main content and sidebar -->
+        <div class="flex flex-col lg:flex-row lg:space-x-8">
+            <!-- Main Content Area -->
+            <main class="lg:w-2/3 order-1 bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8">
+                <h1 class="text-3xl font-bold text-gray-800 mb-4">合作品牌優惠與折扣碼</h1>
 
-        <!-- FAQ Widget -->
-        <div class="bg-white rounded-lg shadow-md p-4 mb-6">
-            <h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4">常見問題 (FAQ)</h3>
-            <div class="space-y-4 text-sm">
-                <div>
-                    <p class="font-semibold text-gray-700">如何使用本站提供的折扣碼？</p>
-                    <p class="text-gray-600 mt-1">點擊「顯示折扣碼」按鈕，複製代碼，然後在品牌官網（如 iHerb）的結帳頁面中貼上即可享受優惠。</p>
+                <!-- Search Bar (hidden for now) -->
+                <div class="mb-6" style="display: none;">
+                    <input type="search" id="search-input" placeholder="搜尋品牌或優惠關鍵字..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
                 </div>
-                <div>
-                    <p class="font-semibold text-gray-700">為什麼有些優惠沒有折扣碼？</p>
-                    <p class="text-gray-600 mt-1">這類「點擊前往」的優惠已包含在連結中，您無需手動輸入代碼，點擊後即可在官網享有特價。</p>
+
+                <div id="brand-filter-tabs" class="flex space-x-2 border-b-2 border-gray-200 mb-6 overflow-x-auto pb-2">
+                    <!-- Brand tabs will be injected here by JS -->
                 </div>
-                <div>
-                    <p class="font-semibold text-gray-700">這些折扣碼都有效嗎？</p>
-                    <p class="text-gray-600 mt-1">我們會定期檢查有效性並標示到期日，但最終請以品牌官網結帳時的金額為準。</p>
-                </div>
-            </div>
-        </div>
 
-        <!-- Offer Summary Widget -->
-        <div class="bg-white rounded-lg shadow-md p-4">
-            <h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4">今日有效優惠</h3>
-            <ul class="space-y-2 text-sm">
-                <li class="flex justify-between">
-                    <span class="text-gray-600">優惠券代碼</span> 
-                    <span class="font-medium">2</span>
-                </li>
-                <li class="flex justify-between">
-                    <span class="text-gray-600">折扣</span> 
-                    <span class="font-medium">2</span>
-                </li>
-                <li class="flex justify-between font-bold text-base mt-2 pt-2 border-t">
-                    <span class="text-gray-800">全部</span> 
-                    <span>4</span>
-                </li>
-            </ul>
-        </div>
-      </aside>
+                <div id="coupon-container" class="space-y-8">
 
-      <main class="article-content">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-3xl font-bold text-gray-800 mb-4">合作品牌優惠與折扣碼</h1>
-
-            <!-- Search Bar (hidden for now) -->
-            <div class="mb-6" style="display: none;">
-                <input type="search" id="search-input" placeholder="搜尋品牌或優惠關鍵字..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
-            </div>
-
-            <div id="brand-filter-tabs" class="flex space-x-2 border-b-2 border-gray-200 mb-6 overflow-x-auto pb-2">
-                <!-- Brand tabs will be injected here by JS -->
-            </div>
-
-            <div id="coupon-container" class="space-y-8">
-
-                <!-- iHerb Section -->
-                <div class="brand-section" id="brand-iherb" data-brand-name="iHerb">
-                    <div class="brand-intro-box">
-                        <img src="https://placehold.co/64x64/e0f2fe/0ea5e9?text=iHerb" alt="iHerb Logo" class="bg-gray-200">
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-800">iHerb</h2>
-                            <p class="text-gray-600 mt-1 text-sm">全球最大的天然產品線上商店之一，提供多樣化的維他命、保健食品和健康產品，以實惠的價格和全球直運服務聞名。</p>
-                            <a href="https://www.iherb.com" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">前往官網 &rarr;</a>
-                            <div class="related-info">
-                                <h4 class="font-semibold text-gray-700 mb-2">iHerb 相關文章</h4>
-                                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                                    <li><a href="/post/probiotics.html" class="text-blue-600 hover:underline">《益生菌挑選指南》：含 CGN LactoBif 菌株分析</a></li>
-                                    <li><a href="/post/fish-oil.html" class="text-blue-600 hover:underline">《魚油完整功效百科》：含 iHerb 自有品牌評比</a></li>
-                                </ul>
+                    <!-- iHerb Section -->
+                    <div class="brand-section" id="brand-iherb" data-brand-name="iHerb">
+                        <div class="brand-intro-box">
+                            <img src="https://placehold.co/64x64/e0f2fe/0ea5e9?text=iHerb" alt="iHerb Logo" class="bg-gray-200">
+                            <div>
+                                <h2 class="text-2xl font-bold text-gray-800">iHerb</h2>
+                                <p class="text-gray-600 mt-1 text-sm">全球最大的天然產品線上商店之一，提供多樣化的維他命、保健食品和健康產品，以實惠的價格和全球直運服務聞名。</p>
+                                <a href="https://www.iherb.com" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">前往官網 &rarr;</a>
+                                <div class="related-info">
+                                    <h4 class="font-semibold text-gray-700 mb-2">iHerb 相關文章</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                        <li><a href="/post/probiotics.html" class="text-blue-600 hover:underline">《益生菌挑選指南》：含 CGN LactoBif 菌株分析</a></li>
+                                        <li><a href="/post/fish-oil.html" class="text-blue-600 hover:underline">《魚油完整功效百科》：含 iHerb 自有品牌評比</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="coupon-card bg-white rounded-lg shadow-md overflow-hidden">
-                            <div class="flex flex-col md:flex-row">
-                                <div class="w-full md:w-1/3 p-4 bg-gray-50 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-gray-100">
-                                    <span class="text-3xl font-bold text-red-600">5% OFF</span>
-                                    <span class="text-sm font-medium text-gray-600 mt-1">優惠券代碼</span>
-                                </div>
-                                <div class="w-full md:w-2/3 p-4 md:p-6">
-                                    <h3 class="text-lg font-semibold text-gray-800">全站商品 95 折</h3>
-                                    <p class="text-sm text-gray-600 mt-2">探索全球最大的保健食品線上商店 iHerb。擁有超過三萬種天然產品，從維他命、補充劑到有機雜貨應有盡有。透過我們的獨家折扣碼，享受直寄台灣的便利與優惠。</p>
-                                    <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                                        <button onclick="showCode('iherb-1')" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300 w-full sm:w-auto">顯示折扣碼</button>
-                                        <span class="text-xs text-gray-500 mt-2 sm:mt-0">無到期日</span>
+                        <div class="space-y-4">
+                            <div class="coupon-card bg-white rounded-lg shadow-md overflow-hidden">
+                                <div class="flex flex-col md:flex-row">
+                                    <div class="w-full md:w-1/3 p-4 bg-gray-50 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-gray-100">
+                                        <span class="text-3xl font-bold text-red-600">5% OFF</span>
+                                        <span class="text-sm font-medium text-gray-600 mt-1">優惠券代碼</span>
                                     </div>
-                                    <div id="code-iherb-1" class="hidden mt-4 p-4 bg-gray-50 rounded-lg">
-                                        <p class="text-sm text-gray-700 mb-2">複製折扣碼並在結帳時使用：</p>
-                                        <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                                            <span id="text-iherb-1" class="coupon-code">NEW20</span>
-                                            <button id="btn-iherb-1" onclick="copyCode('text-iherb-1', 'btn-iherb-1')" class="copy-btn bg-gray-200 text-gray-800 font-semibold rounded-md hover:bg-gray-300 transition">複製</button>
+                                    <div class="w-full md:w-2/3 p-4 md:p-6">
+                                        <h3 class="text-lg font-semibold text-gray-800">全站商品 95 折</h3>
+                                        <p class="text-sm text-gray-600 mt-2">探索全球最大的保健食品線上商店 iHerb。擁有超過三萬種天然產品，從維他命、補充劑到有機雜貨應有盡有。透過我們的獨家折扣碼，享受直寄台灣的便利與優惠。</p>
+                                        <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                                            <button onclick="showCode('iherb-1')" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300 w-full sm:w-auto">顯示折扣碼</button>
+                                            <span class="text-xs text-gray-500 mt-2 sm:mt-0">無到期日</span>
+                                        </div>
+                                        <div id="code-iherb-1" class="hidden mt-4 p-4 bg-gray-50 rounded-lg">
+                                            <p class="text-sm text-gray-700 mb-2">複製折扣碼並在結帳時使用：</p>
+                                            <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                                                <span id="text-iherb-1" class="coupon-code">NEW20</span>
+                                                <button id="btn-iherb-1" onclick="copyCode('text-iherb-1', 'btn-iherb-1')" class="copy-btn bg-gray-200 text-gray-800 font-semibold rounded-md hover:bg-gray-300 transition">複製</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Myprotein Section -->
-                <div class="brand-section" id="brand-myprotein" data-brand-name="Myprotein">
-                    <div class="brand-intro-box">
-                        <img src="https://placehold.co/64x64/e0f2fe/0ea5e9?text=MP" alt="Myprotein Logo" class="bg-gray-200">
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-800">Myprotein</h2>
-                            <p class="text-gray-600 mt-1 text-sm">全球領先的運動營養品牌，提供高品質的乳清蛋白、維他命和機能零食，是健身愛好者的首選。</p>
-                            <a href="https://www.myprotein.tw" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">前往官網 &rarr;</a>
-                            <div class="related-info">
-                                <h4 class="font-semibold text-gray-700 mb-2">Myprotein 相關文章</h4>
-                                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                                    <li><a href="/post/protein.html" class="text-blue-600 hover:underline">《乳清蛋白全解析》：含 Myprotein 口味評比</a></li>
-                                    <li><a href="#" class="text-blue-600 hover:underline">《肌酸購買指南》：提升運動表現的關鍵</a></li>
-                                </ul>
+                    <!-- Myprotein Section -->
+                    <div class="brand-section" id="brand-myprotein" data-brand-name="Myprotein">
+                        <div class="brand-intro-box">
+                            <img src="https://placehold.co/64x64/e0f2fe/0ea5e9?text=MP" alt="Myprotein Logo" class="bg-gray-200">
+                            <div>
+                                <h2 class="text-2xl font-bold text-gray-800">Myprotein</h2>
+                                <p class="text-gray-600 mt-1 text-sm">全球領先的運動營養品牌，提供高品質的乳清蛋白、維他命和機能零食，是健身愛好者的首選。</p>
+                                <a href="https://www.myprotein.tw" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">前往官網 &rarr;</a>
+                                <div class="related-info">
+                                    <h4 class="font-semibold text-gray-700 mb-2">Myprotein 相關文章</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                        <li><a href="/post/protein.html" class="text-blue-600 hover:underline">《乳清蛋白全解析》：含 Myprotein 口味評比</a></li>
+                                        <li><a href="#" class="text-blue-600 hover:underline">《肌酸購買指南》：提升運動表現的關鍵</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="coupon-card bg-white rounded-lg shadow-md overflow-hidden">
-                            <div class="flex flex-col md:flex-row">
-                                <div class="w-full md:w-1/3 p-4 bg-gray-50 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-gray-100">
-                                    <span class="text-3xl font-bold text-red-600">45 折</span>
-                                    <span class="text-sm font-medium text-gray-600 mt-1">折扣</span>
-                                </div>
-                                <div class="w-full md:w-2/3 p-4 md:p-6">
-                                    <h3 class="text-lg font-semibold text-gray-800">精選商品最低 45 折</h3>
-                                    <p class="text-sm text-gray-600 mt-2">Myprotein 是全球領先的運動營養品牌，提供高品質的乳清蛋白、維他命和機能零食。無論您是健身愛好者或追求健康生活，都能在此找到所需。點擊連結即享官網限時優惠，無需輸入折扣碼。</p>
-                                    <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                                        <a href="#" target="_blank" class="inline-block bg-green-600 text-white text-center font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition duration-300 w-full sm:w-auto">立即前往</a>
+                        <div class="space-y-4">
+                            <div class="coupon-card bg-white rounded-lg shadow-md overflow-hidden">
+                                <div class="flex flex-col md:flex-row">
+                                    <div class="w-full md:w-1/3 p-4 bg-gray-50 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-gray-100">
+                                        <span class="text-3xl font-bold text-red-600">45 折</span>
+                                        <span class="text-sm font-medium text-gray-600 mt-1">折扣</span>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Doctor's Best Section -->
-                <div class="brand-section" id="brand-doctors-best" data-brand-name="Doctor's Best">
-                    <div class="brand-intro-box">
-                        <img src="https://placehold.co/64x64/e0f2fe/0ea5e9?text=DB" alt="Doctor's Best Logo" class="bg-gray-200">
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-800">Doctor's Best</h2>
-                            <p class="text-gray-600 mt-1 text-sm">由醫師創立的科學營養品牌，致力於提供基於科學研究的高品質營養補充品，其輔酶 Q10 等產品廣受好評。</p>
-                            <a href="#" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">前往官網 &rarr;</a>
-                            <div class="related-info">
-                                <h4 class="font-semibold text-gray-700 mb-2">Doctor's Best 相關文章</h4>
-                                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                                    <li><a href="/post/coenzyme-q10.html" class="text-blue-600 hover:underline">《輔酶Q10完整功效》：含 Doctor's Best 產品分析</a></li>
-                                    <li><a href="/post/vitamin-d.html" class="text-blue-600 hover:underline">《維生素D怎麼選》：含 Doctor's Best D3 評比</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="coupon-card bg-white rounded-lg shadow-md overflow-hidden">
-                            <div class="flex flex-col md:flex-row">
-                                <div class="w-full md:w-1/3 p-4 bg-gray-50 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-gray-100">
-                                    <span class="text-3xl font-bold text-red-600">20% OFF</span>
-                                    <span class="text-sm font-medium text-gray-600 mt-1">優惠券代碼</span>
-                                </div>
-                                <div class="w-full md:w-2/3 p-4 md:p-6">
-                                    <h3 class="text-lg font-semibold text-gray-800">輔酶 Q10 系列 8 折</h3>
-                                    <p class="text-sm text-gray-600 mt-2">Doctor's Best 是由醫師創立的科學營養品牌，其高品質的輔酶 Q10 產品廣受好評。</p>
-                                    <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                                        <button onclick="showCode('db-1')" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300 w-full sm:w-auto">顯示折扣碼</button>
-                                        <span class="text-xs text-gray-500 mt-2 sm:mt-0">到期日: 2025-12-31</span>
-                                    </div>
-                                    <div id="code-db-1" class="hidden mt-4 p-4 bg-gray-50 rounded-lg">
-                                        <p class="text-sm text-gray-700 mb-2">複製折扣碼並在結帳時使用：</p>
-                                        <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                                            <span id="text-db-1" class="coupon-code">BESTQ10</span>
-                                            <button id="btn-db-1" onclick="copyCode('text-db-1', 'btn-db-1')" class="copy-btn bg-gray-200 text-gray-800 font-semibold rounded-md hover:bg-gray-300 transition">複製</button>
+                                    <div class="w-full md:w-2/3 p-4 md:p-6">
+                                        <h3 class="text-lg font-semibold text-gray-800">精選商品最低 45 折</h3>
+                                        <p class="text-sm text-gray-600 mt-2">Myprotein 是全球領先的運動營養品牌，提供高品質的乳清蛋白、維他命和機能零食。無論您是健身愛好者或追求健康生活，都能在此找到所需。點擊連結即享官網限時優惠，無需輸入折扣碼。</p>
+                                        <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                                            <a href="#" target="_blank" class="inline-block bg-green-600 text-white text-center font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition duration-300 w-full sm:w-auto">立即前往</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- California Gold Nutrition Section -->
-                <div class="brand-section" id="brand-cgn" data-brand-name="California Gold Nutrition">
-                     <div class="brand-intro-box">
-                        <img src="https://placehold.co/64x64/e0f2fe/0ea5e9?text=CGN" alt="California Gold Nutrition Logo" class="bg-gray-200">
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-800">California Gold Nutrition</h2>
-                            <p class="text-gray-600 mt-1 text-sm">iHerb 的獨家自營品牌，以其極高的性價比和嚴格的品質把關而聞名，是追求健康的入門者與小資族的絕佳選擇。</p>
-                            <a href="#" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">前往官網 &rarr;</a>
-                            <div class="related-info">
-                                <h4 class="font-semibold text-gray-700 mb-2">CGN 相關文章</h4>
-                                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                                    <li><a href="/post/collagen.html" class="text-blue-600 hover:underline">《膠原蛋白的功效與真相》：含 CGN 膠原蛋白UP評比</a></li>
-                                    <li><a href="/post/probiotics.html" class="text-blue-600 hover:underline">《益生菌挑選指南》：含 CGN LactoBif 菌株分析</a></li>
-                                </ul>
+                    <!-- Doctor's Best Section -->
+                    <div class="brand-section" id="brand-doctors-best" data-brand-name="Doctor's Best">
+                        <div class="brand-intro-box">
+                            <img src="https://placehold.co/64x64/e0f2fe/0ea5e9?text=DB" alt="Doctor's Best Logo" class="bg-gray-200">
+                            <div>
+                                <h2 class="text-2xl font-bold text-gray-800">Doctor's Best</h2>
+                                <p class="text-gray-600 mt-1 text-sm">由醫師創立的科學營養品牌，致力於提供基於科學研究的高品質營養補充品，其輔酶 Q10 等產品廣受好評。</p>
+                                <a href="#" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">前往官網 &rarr;</a>
+                                <div class="related-info">
+                                    <h4 class="font-semibold text-gray-700 mb-2">Doctor's Best 相關文章</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                        <li><a href="/post/coenzyme-q10.html" class="text-blue-600 hover:underline">《輔酶Q10完整功效》：含 Doctor's Best 產品分析</a></li>
+                                        <li><a href="/post/vitamin-d.html" class="text-blue-600 hover:underline">《維生素D怎麼選》：含 Doctor's Best D3 評比</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="coupon-card bg-white rounded-lg shadow-md overflow-hidden">
-                            <div class="flex flex-col md:flex-row">
-                                <div class="w-full md:w-1/3 p-4 bg-gray-50 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-gray-100">
-                                    <span class="text-3xl font-bold text-red-600">10% OFF</span>
-                                    <span class="text-sm font-medium text-gray-600 mt-1">折扣</span>
-                                </div>
-                                <div class="w-full md:w-2/3 p-4 md:p-6">
-                                    <h3 class="text-lg font-semibold text-gray-800">iHerb 自營品牌全系列 9 折</h3>
-                                    <p class="text-sm text-gray-600 mt-2">iHerb 的獨家自營品牌，以其極高的性價比和嚴格的品質把關而聞名，是入門者的絕佳選擇。</p>
-                                    <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                                        <a href="#" target="_blank" class="inline-block bg-green-600 text-white text-center font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition duration-300 w-full sm:w-auto">立即前往</a>
+                        <div class="space-y-4">
+                            <div class="coupon-card bg-white rounded-lg shadow-md overflow-hidden">
+                                <div class="flex flex-col md:flex-row">
+                                    <div class="w-full md:w-1/3 p-4 bg-gray-50 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-gray-100">
+                                        <span class="text-3xl font-bold text-red-600">20% OFF</span>
+                                        <span class="text-sm font-medium text-gray-600 mt-1">優惠券代碼</span>
+                                    </div>
+                                    <div class="w-full md:w-2/3 p-4 md:p-6">
+                                        <h3 class="text-lg font-semibold text-gray-800">輔酶 Q10 系列 8 折</h3>
+                                        <p class="text-sm text-gray-600 mt-2">Doctor's Best 是由醫師創立的科學營養品牌，其高品質的輔酶 Q10 產品廣受好評。</p>
+                                        <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                                            <button onclick="showCode('db-1')" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300 w-full sm:w-auto">顯示折扣碼</button>
+                                            <span class="text-xs text-gray-500 mt-2 sm:mt-0">到期日: 2025-12-31</span>
+                                        </div>
+                                        <div id="code-db-1" class="hidden mt-4 p-4 bg-gray-50 rounded-lg">
+                                            <p class="text-sm text-gray-700 mb-2">複製折扣碼並在結帳時使用：</p>
+                                            <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                                                <span id="text-db-1" class="coupon-code">BESTQ10</span>
+                                                <button id="btn-db-1" onclick="copyCode('text-db-1', 'btn-db-1')" class="copy-btn bg-gray-200 text-gray-800 font-semibold rounded-md hover:bg-gray-300 transition">複製</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- California Gold Nutrition Section -->
+                    <div class="brand-section" id="brand-cgn" data-brand-name="California Gold Nutrition">
+                         <div class="brand-intro-box">
+                            <img src="https://placehold.co/64x64/e0f2fe/0ea5e9?text=CGN" alt="California Gold Nutrition Logo" class="bg-gray-200">
+                            <div>
+                                <h2 class="text-2xl font-bold text-gray-800">California Gold Nutrition</h2>
+                                <p class="text-gray-600 mt-1 text-sm">iHerb 的獨家自營品牌，以其極高的性價比和嚴格的品質把關而聞名，是追求健康的入門者與小資族的絕佳選擇。</p>
+                                <a href="#" target="_blank" class="text-blue-600 hover:underline text-sm mt-2 inline-block">前往官網 &rarr;</a>
+                                <div class="related-info">
+                                    <h4 class="font-semibold text-gray-700 mb-2">CGN 相關文章</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                        <li><a href="/post/collagen.html" class="text-blue-600 hover:underline">《膠原蛋白的功效與真相》：含 CGN 膠原蛋白UP評比</a></li>
+                                        <li><a href="/post/probiotics.html" class="text-blue-600 hover:underline">《益生菌挑選指南》：含 CGN LactoBif 菌株分析</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="coupon-card bg-white rounded-lg shadow-md overflow-hidden">
+                                <div class="flex flex-col md:flex-row">
+                                    <div class="w-full md:w-1/3 p-4 bg-gray-50 flex flex-col justify-center items-center border-b md:border-b-0 md:border-r border-gray-100">
+                                        <span class="text-3xl font-bold text-red-600">10% OFF</span>
+                                        <span class="text-sm font-medium text-gray-600 mt-1">折扣</span>
+                                    </div>
+                                    <div class="w-full md:w-2/3 p-4 md:p-6">
+                                        <h3 class="text-lg font-semibold text-gray-800">iHerb 自營品牌全系列 9 折</h3>
+                                        <p class="text-sm text-gray-600 mt-2">iHerb 的獨家自營品牌，以其極高的性價比和嚴格的品質把關而聞名，是入門者的絕佳選擇。</p>
+                                        <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                                            <a href="#" target="_blank" class="inline-block bg-green-600 text-white text-center font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition duration-300 w-full sm:w-auto">立即前往</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-            </div>
+            </main>
 
+            <!-- Sidebar Area -->
+            <aside class="lg:w-1/3 order-2 lg:order-1 mt-8 lg:mt-0"> <!-- Added mt-8 for mobile spacing -->
+                <!-- Related Stores Widget -->
+                <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4">相關品牌</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3">
+                            <img src="https://placehold.co/40x40/e2e8f0/333?text=DB" 
+                                 alt="Doctor's Best Logo" 
+                                 class="w-10 h-10 rounded-md object-cover bg-gray-200"
+                                 onerror="this.src='https://placehold.co/40x40/e2e8f0/9ca3af?text=Logo'; this.onerror=null;">
+                            <div>
+                                <a href="#brand-doctors-best" class="font-semibold text-blue-600 hover:underline">Doctor's Best</a>
+                                <p class="text-sm text-gray-500">1 則優惠</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <img src="https://placehold.co/40x40/e2e8f0/333?text=CGN" 
+                                 alt="California Gold Nutrition Logo" 
+                                 class="w-10 h-10 rounded-md object-cover bg-gray-200"
+                                 onerror="this.src='https://placehold.co/40x40/e2e8f0/9ca3af?text=Logo'; this.onerror=null;">
+                            <div>
+                                <a href="#brand-cgn" class="font-semibold text-blue-600 hover:underline">California Gold Nutrition</a>
+                                <p class="text-sm text-gray-500">1 則優惠</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Hints & Tips Widget -->
+                <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4">省錢提示 💡</h3>
+                    <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm">
+                        <li>訂閱品牌電子報，可即時獲取最新優惠資訊。</li>
+                        <li>善用新用戶折扣碼，通常能享有首購優惠。</li>
+                        <li>在特價活動期間（如黑色星期五）購買，可節省更多。</li>
+                    </ul>
+                </div>
+
+                <!-- FAQ Widget -->
+                <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4">常見問題 (FAQ)</h3>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <p class="font-semibold text-gray-700">如何使用本站提供的折扣碼？</p>
+                            <p class="text-gray-600 mt-1">點擊「顯示折扣碼」按鈕，複製代碼，然後在品牌官網（如 iHerb）的結帳頁面中貼上即可享受優惠。</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-700">為什麼有些優惠沒有折扣碼？</p>
+                            <p class="text-gray-600 mt-1">這類「點擊前往」的優惠已包含在連結中，您無需手動輸入代碼，點擊後即可在官網享有特價。</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-700">這些折扣碼都有效嗎？</p>
+                            <p class="text-gray-600 mt-1">我們會定期檢查有效性並標示到期日，但最終請以品牌官網結帳時的金額為準。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Offer Summary Widget -->
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4">今日有效優惠</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex justify-between">
+                            <span class="text-gray-600">優惠券代碼</span> 
+                            <span class="font-medium">2</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-gray-600">折扣</span> 
+                            <span class="font-medium">2</span>
+                        </li>
+                        <li class="flex justify-between font-bold text-base mt-2 pt-2 border-t">
+                            <span class="text-gray-800">全部</span> 
+                            <span>4</span>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
         </div>
-      </main>
     </div>
 
     <section class="disclaimer py-8 px-4 bg-gray-50 text-gray-700 text-center border-t border-gray-200">
