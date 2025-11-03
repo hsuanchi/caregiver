@@ -12,7 +12,7 @@
 
 
 
-所有此專案的 উল্লেখযোগ্য變更將會記錄在此檔案中。
+所有此專案的變更將會記錄在此檔案中。
 
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
