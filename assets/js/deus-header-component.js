@@ -23,8 +23,7 @@
         navLinks: [
           { text: "營養素總覽", href: "/category/archive.html" },
           { text: "互動式資料庫", href: "/category/nutrient-dashboard.html" },
-          { text: "健康主題式", href: "/category/health-topics.html" },
-          { text: "品牌優惠", href: "/category/brands.html" }
+          { text: "健康主題式", href: "/category/health-topics.html" }
         ],
         actionButtons: {
           login: { text: "登入", href: "#login", show: false },
