@@ -20,6 +20,14 @@
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
+## [1.3.2] - 2025-11-05
+
+### 新增
+- 為 `brand/betterbio.html` 品牌頁面新增 `SaleEvent` JSON-LD 結構化資料，以優化 SEO。
+
+### 修改
+- 優化 `brand/betterbio.html` 頁面中商品圖片的 `alt` 屬性，使其更具描述性，提升可訪問性。
+
 ## [1.3.1] - 2025-11-04
 
 ### 修正
