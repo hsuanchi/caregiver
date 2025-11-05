@@ -223,6 +223,8 @@ caregiver/
 │   ├── health-topics.html         # 健康主題頁面 (動態載入)
 │   ├── nutrient-dashboard.html    # 互動式儀表板 (動態載入)
 │   └── brands.html                # 合作品牌優惠頁面
+├── brand/
+│   └── betterbio.html             # BetterBio 品牌優惠頁面
 ├── post/
 │   ├── [nutrient].html            # 核心營養素文章
 │   └── topic-[topic-name].html    # 主題式文章
