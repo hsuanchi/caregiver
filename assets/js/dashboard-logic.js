@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     articlesData.sort((a, b) => (a.en_name || '').localeCompare(b.en_name || ''));
     
-    // const searchInput = document.getElementById('searchInput');
+    const searchInput = document.getElementById('searchInput');
     const resultsCount = document.getElementById('resultsCount');
     const clearGoalsBtn = document.getElementById('clearGoalsBtn');
     const healthGoalAccordionContainer = document.getElementById('healthGoalAccordionContainer');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     let activeGoals = new Set();
-    // let searchTerm = '';
+    let searchTerm = '';
 
     const healthGoalCategories = {
       '核心代謝與內在調理': ['免疫強化', '抗氧化與抗發炎', '細胞保護', '內分泌調節', '能量代謝', '甲狀腺與代謝', '血糖穩定', '體重管理', '肝臟解毒與代謝', '新生與發育', '生長發育與修復', '體液平衡'],
@@ -62,16 +62,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const requiredGoals = Array.from(activeGoals);
             filteredData = filteredData.filter(item => requiredGoals.every(goal => item.goals.includes(goal)));
         }
-        // if (searchTerm) {
-        //     const lowerSearchTerm = searchTerm.toLowerCase();
-        //     filteredData = filteredData.filter(item => 
-        //         item.name.toLowerCase().includes(lowerSearchTerm) ||
-        //         (item.en_name && item.en_name.toLowerCase().includes(lowerSearchTerm)) ||
-        //         item.func.toLowerCase().includes(lowerSearchTerm) ||
-        //         item.type.toLowerCase().includes(lowerSearchTerm) ||
-        //         item.goals.some(goal => goal.toLowerCase().includes(lowerSearchTerm))
-        //     );
-        // }
+        if (searchTerm) {
+            const lowerSearchTerm = searchTerm.toLowerCase();
+            filteredData = filteredData.filter(item => 
+                item.name.toLowerCase().includes(lowerSearchTerm) ||
+                (item.en_name && item.en_name.toLowerCase().includes(lowerSearchTerm)) ||
+                item.func.toLowerCase().includes(lowerSearchTerm) ||
+                item.type.toLowerCase().includes(lowerSearchTerm) ||
+                item.goals.some(goal => goal.toLowerCase().includes(lowerSearchTerm))
+            );
+        }
         nutrientGrid.innerHTML = filteredData.map(renderNutrientCard).join('');
         resultsCount.textContent = `找到 ${filteredData.length} 筆結果`;
     }
@@ -143,10 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // searchInput.addEventListener('input', e => {
-    //     searchTerm = e.target.value;
-    //     applyFilters();
-    // });
+    searchInput.addEventListener('input', e => {
+        searchTerm = e.target.value;
+        applyFilters();
+    });
 
     function updateStatusBar() {
         const totalCount = articlesData.length;
