@@ -4,11 +4,15 @@
 
 ---
 
-### 調整 Nutrient Dashboard 測試頁面
+### 調整 tests\index-dashboardtest.html 測試頁面
 
-- [ ] **分析頁面結構**: 讀取 `category/nutrient-dashboard-TEST.html`，特別是 `Section 2: Goal Filter & Search (Combined)` 的部分。
-- [ ] **移除搜尋功能**:
-    - [ ] 刪除 HTML 中的搜尋輸入框 (`<input>`) 和按鈕 (`<button>`)。
-    - [ ] 調整版面，確保 "依照健康目標顯示" 的功能仍然正常且美觀。
-- [ ] **檢查相關腳本**:
-    - [ ] 檢視 `assets/js/dashboard-logic.js`，找出並移除或註解與搜尋功能相關的 JavaScript 程式碼，避免頁面出錯。
+ <section class="popular" id="health-goals" style="background: white; padding-top: 50px;">
+      <div class="section-header">
+        <h2 class="section-title">依健康目標探索</h2>
+        <p class="section-subtitle">從特定健康需求出發，找到最適合您的營養素與保健知識。</p>
+      </div>
+      <div class="nutrients-grid">
+
+
+
+      我希望的是

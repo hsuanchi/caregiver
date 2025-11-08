@@ -782,6 +782,72 @@
         line-height: 1.6;
       }
 
+
+      /* --- (新) 健康目標手風琴樣式 --- */
+      .accordion-container {
+        max-width: 900px; /* 同 FAQ 容器寬度 */
+        margin: 0 auto;
+      }
+
+      .accordion-item {
+        background: white;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .accordion-item:hover {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .accordion-trigger {
+        padding: 25px 30px;
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #2d3748; /* 預設文字顏色 */
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      
+      .accordion-trigger h3 {
+        font-size: 1.3em;
+        font-weight: 700;
+        margin: 0; /* 覆蓋可能的預設邊距 */
+      }
+
+      .accordion-trigger::after {
+        content: "+";
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5em;
+        color: #ff6b35; /* 預設圖示顏色 */
+        transition: transform 0.3s ease;
+      }
+      
+      /* 讓彩色背景的觸發器使用白色圖示 */
+      .accordion-trigger[style*="color: white"]::after {
+        color: white;
+        opacity: 0.9;
+      }
+
+      .accordion-item.active .accordion-trigger::after {
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      .accordion-content {
+        /* .nutrient-content (在 HTML 中) 已經有 padding: 30px */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out; /* 動畫效果 */
+      }
+      /* --- (新) 樣式結束 --- */
+
+
       /* Disclaimer */
       .disclaimer {
         padding: 60px 20px;
@@ -1072,155 +1138,170 @@
       </div>
     </section>
 
-    <!-- Health Goals Section -->
+    <!-- (已修改) Health Goals Section -->
     <section class="popular" id="health-goals" style="background: white; padding-top: 50px;">
       <div class="section-header">
         <h2 class="section-title">依健康目標探索</h2>
         <p class="section-subtitle">從特定健康需求出發，找到最適合您的營養素與保健知識。</p>
       </div>
-      <div class="nutrients-grid">
-        <div class="nutrient-card fade-in">
-          <div class="nutrient-header" style="background: linear-gradient(135deg, #ff6b35 0%, #ff8f65 100%);">
-            <h3 class="nutrient-title">心血管健康</h3>
+
+      <!-- (新) Accordion Container -->
+      <div class="accordion-container">
+        
+        <!-- Accordion Item 1 -->
+        <div class="accordion-item fade-in">
+          <div class="accordion-trigger" style="background: linear-gradient(135deg, #ff6b35 0%, #ff8f65 100%); color: white;">
+            <h3>心血管健康</h3>
           </div>
-          <div class="nutrient-content">
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/folic-acid.html">葉酸</a></h4>
-              <p>守護心血管與新生的秘密功臣</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/vitamin-e.html">維生素E</a></h4>
-              <p>具抗氧化作用，保護細胞膜</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/vitamin-k.html">維生素K</a></h4>
-              <p>參與血液凝固和骨骼代謝</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/magnesium.html">鎂</a></h4>
-              <p>參與能量代謝、神經與肌肉功能</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/potassium.html">鉀</a></h4>
-              <p>維持體液平衡、神經傳導與肌肉收縮</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/lycopene.html">茄紅素</a></h4>
-              <p>強效抗氧化劑，尤其對攝護腺健康有益</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/anthocyanins.html">花青素</a></h4>
-              <p>強效抗氧化劑，有助於改善夜間視力與血管健康</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/coenzyme-q10.html">輔酶Q10</a></h4>
-              <p>參與細胞能量生成，具備抗氧化作用</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/dietary-fiber.html">膳食纖維</a></h4>
-              <p>維護腸道蠕動、增加飽足感</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/fish-oil.html">魚油</a></h4>
-              <p>包含DHA與EPA，有助於維持心血管健康與腦部功能</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/beta-glucan.html">β-葡聚醣</a></h4>
-              <p>有助於調節免疫、降低膽固醇與穩定血糖</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/topic-stroke-prevention-nutrients.html">預防中風營養素</a></h4>
-              <p>解析關鍵營養素如何保護血管、降低中風風險</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/topic-vascular-health-superfoods.html">血管保健超級食物</a></h4>
-              <p>解析5大超級食物與3大生活習慣如何逆轉血管硬化</p>
-            </div>
-          </div>
-        </div>
-        <div class="nutrient-card fade-in">
-          <div class="nutrient-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-            <h3 class="nutrient-title">免疫強化</h3>
-          </div>
-          <div class="nutrient-content">
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/vitamin-c.html">維生素C</a></h4>
-              <p>強力抗氧化、有助於膠原蛋白合成</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/vitamin-a.html">維生素A</a></h4>
-              <p>維持視力、免疫功能和上皮組織完整</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/vitamin-d.html">維生素D</a></h4>
-              <p>協助鈣質吸收、調節免疫功能</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/zinc.html">鋅</a></h4>
-              <p>參與免疫功能、生長發育與細胞修復</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/selenium.html">硒</a></h4>
-              <p>具抗氧化作用，保護細胞</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/probiotics.html">益生菌</a></h4>
-              <p>有助於平衡腸道菌群</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/prebiotics.html">益生質</a></h4>
-              <p>益生菌的食物，能促進益生菌生長</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/glutathione.html">穀胱甘肽</a></h4>
-              <p>人體的抗氧化之母，參與肝臟解毒與美白</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/beta-glucan.html">β-葡聚醣</a></h4>
-              <p>有助於調節免疫、降低膽固醇與穩定血糖</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/topic-immune-boosting-nutrients.html">強化免疫力營養素</a></h4>
-              <p>解析9大營養素如何打造黃金免疫部隊</p>
+          <div class="accordion-content">
+            <div class="nutrient-content"> <!-- 重複使用 nutrient-content 的 padding -->
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/folic-acid.html">葉酸</a></h4>
+                <p>守護心血管與新生的秘密功臣</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/vitamin-e.html">維生素E</a></h4>
+                <p>具抗氧化作用，保護細胞膜</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/vitamin-k.html">維生素K</a></h4>
+                <p>參與血液凝固和骨骼代謝</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/magnesium.html">鎂</a></h4>
+                <p>參與能量代謝、神經與肌肉功能</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/potassium.html">鉀</a></h4>
+                <p>維持體液平衡、神經傳導與肌肉收縮</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/lycopene.html">茄紅素</a></h4>
+                <p>強效抗氧化劑，尤其對攝護腺健康有益</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/anthocyanins.html">花青素</a></h4>
+                <p>強效抗氧化劑，有助於改善夜間視力與血管健康</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/coenzyme-q10.html">輔酶Q10</a></h4>
+                <p>參與細胞能量生成，具備抗氧化作用</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/dietary-fiber.html">膳食纖維</a></h4>
+                <p>維護腸道蠕動、增加飽足感</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/fish-oil.html">魚油</a></h4>
+                <p>包含DHA與EPA，有助於維持心血管健康與腦部功能</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/beta-glucan.html">β-葡聚醣</a></h4>
+                <p>有助於調節免疫、降低膽固醇與穩定血糖</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/topic-stroke-prevention-nutrients.html">預防中風營養素</a></h4>
+                <p>解析關鍵營養素如何保護血管、降低中風風險</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/topic-vascular-health-superfoods.html">血管保健超級食物</a></h4>
+                <p>解析5大超級食物與3大生活習慣如何逆轉血管硬化</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="nutrient-card fade-in">
-          <div class="nutrient-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-            <h3 class="nutrient-title">骨骼與牙齒健康</h3>
+        
+        <!-- Accordion Item 2 -->
+        <div class="accordion-item fade-in">
+          <div class="accordion-trigger" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <h3>免疫強化</h3>
           </div>
-          <div class="nutrient-content">
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/vitamin-d.html">維生素D</a></h4>
-              <p>協助鈣質吸收、調節免疫功能</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/vitamin-k.html">維生素K</a></h4>
-              <p>參與血液凝固和骨骼代謝</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/calcium.html">鈣</a></h4>
-              <p>構成骨骼與牙齒，參與肌肉收縮</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/phosphorus.html">磷</a></h4>
-              <p>構成骨骼與牙齒，參與能量代謝</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/manganese.html">錳</a></h4>
-              <p>參與骨骼形成與能量代謝的輔酶</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/fluoride.html">氟</a></h4>
-              <p>強化牙齒琺瑯質，預防蛀牙</p>
-            </div>
-            <div class="goal-nutrient-item">
-              <h4><a href="../post/collagen.html">膠原蛋白</a></h4>
-              <p>提供結構支撐，存在於皮膚、骨骼</p>
+          <div class="accordion-content">
+            <div class="nutrient-content">
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/vitamin-c.html">維生素C</a></h4>
+                <p>強力抗氧化、有助於膠原蛋白合成</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/vitamin-a.html">維生素A</a></h4>
+                <p>維持視力、免疫功能和上皮組織完整</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/vitamin-d.html">維生素D</a></h4>
+                <p>協助鈣質吸收、調節免疫功能</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/zinc.html">鋅</a></h4>
+                <p>參與免疫功能、生長發育與細胞修復</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/selenium.html">硒</a></h4>
+                <p>具抗氧化作用，保護細胞</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/probiotics.html">益生菌</a></h4>
+                <p>有助於平衡腸道菌群</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/prebiotics.html">益生質</a></h4>
+                <p>益生菌的食物，能促進益生菌生長</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/glutathione.html">穀胱甘肽</a></h4>
+                <p>人體的抗氧化之母，參與肝臟解毒與美白</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/beta-glucan.html">β-葡聚醣</a></h4>
+                <p>有助於調節免疫、降低膽固醇與穩定血糖</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/topic-immune-boosting-nutrients.html">強化免疫力營養素</a></h4>
+                <p>解析9大營養素如何打造黃金免疫部隊</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+        
+        <!-- Accordion Item 3 -->
+        <div class="accordion-item fade-in">
+          <div class="accordion-trigger" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;">
+            <h3>骨骼與牙齒健康</h3>
+          </div>
+          <div class="accordion-content">
+            <div class="nutrient-content">
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/vitamin-d.html">維生素D</a></h4>
+                <p>協助鈣質吸收、調節免疫功能</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/vitamin-k.html">維生素K</a></h4>
+                <p>參與血液凝固和骨骼代謝</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/calcium.html">鈣</a></h4>
+                <p>構成骨骼與牙齒，參與肌肉收縮</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/phosphorus.html">磷</a></h4>
+                <p>構成骨骼與牙齒，參與能量代謝</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/manganese.html">錳</a></h4>
+                <p>參與骨骼形成與能量代謝的輔酶</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/fluoride.html">氟</a></h4>
+                <p>強化牙齒琺瑯質，預防蛀牙</p>
+              </div>
+              <div class="goal-nutrient-item">
+                <h4><a href="../post/collagen.html">膠原蛋白</a></h4>
+                <p>提供結構支撐，存在於皮膚、骨骼</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- (新) Accordion Container 結束 -->
     </section>
    
     <!-- Disclaimer -->
@@ -1277,6 +1358,35 @@
         });
       });
 
+      // --- (新) 健康目標手風琴功能 ---
+      document.querySelectorAll(".accordion-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const item = trigger.parentElement; // .accordion-item
+          const content = item.querySelector(".accordion-content");
+
+          // 切換當前點擊項目的 active 狀態
+          item.classList.toggle("active");
+
+          // 根據 active 狀態設定 max-height
+          if (item.classList.contains("active")) {
+            // 展開：使用 scrollHeight 讓高度自適應內容
+            content.style.maxHeight = content.scrollHeight + "px";
+          } else {
+            // 收合
+            content.style.maxHeight = "0px";
+          }
+
+          // 關閉其他已展開的項目
+          document.querySelectorAll(".accordion-item").forEach((otherItem) => {
+            if (otherItem !== item) {
+              otherItem.classList.remove("active");
+              otherItem.querySelector(".accordion-content").style.maxHeight = "0px";
+            }
+          });
+        });
+      });
+      // --- (新) 手風琴功能結束 ---
+
       // Search functionality
       document.querySelector(".search-btn").addEventListener("click", () => {
         const searchValue = document
@@ -1296,7 +1406,8 @@
             return;
           }
           // Implement actual search functionality here
-          alert("搜尋功能開發中，您可以直接點擊相關營養素卡片了解更多！");
+          // 使用自定義的提示框代替 alert
+          console.warn("搜尋功能開發中，您可直接點擊相關營養素卡片了解更多！");
         }
       });
 
