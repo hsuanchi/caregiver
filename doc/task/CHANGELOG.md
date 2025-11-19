@@ -15,7 +15,7 @@
 | copper.html | 待優化 | |
 | curcumin.html | 待優化 | |
 | dietary-fiber.html | 待優化 | |
-| fish-oil.html | 待優化 | |
+| fish-oil.html | ✅ 已優化 | 2025-11-18 |
 | fluoride.html | 待優化 | |
 | folic-acid.html | 待優化 | |
 | gaba.html | 待優化 | |
