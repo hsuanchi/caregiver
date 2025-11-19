@@ -55,6 +55,14 @@
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
+## [1.3.3] - 2025-11-19
+
+### 修改
+- **優化儀表板卡片樣式 (DASHBOARD-CARD-STYLE-OPT)**：
+  - 重新設計了儀表板 (`nutrient-dashboard.html`) 的營養素資訊卡片，提升視覺美感與資訊清晰度。
+  - 簡化了卡片上的資訊標籤，使版面更為簡潔。
+  - 對 `assets/js/dashboard-logic.js` 中的 `renderNutrientCard` 函數進行了相應的調整，以生成新的卡片結構。
+
 ## [1.3.2] - 2025-11-05
 
 ### 新增

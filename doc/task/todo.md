@@ -34,11 +34,11 @@
 **核心分析：為什麼選這幾個？(Analyst Note)**
 基於 Winter Seasonality (冬季特性) 與 Search Intent (搜尋意圖)：
 
-- **第一王牌：魚油 (Fish Oil)**
+- **第一王牌：v魚油 (Fish Oil)**
   - **理由**: 冬季血液循環變差，中風風險高。魚油是「抗發炎」與「血管通暢」的搜尋首選。且它還能蹭到「冬季皮膚乾燥」的流量（魚油對皮膚好）。
   - **戰術**: 把它當作「旗艦產品」來打。
 
-- **剛需防禦：鎂 (Magnesium) & 鉀 (Potassium)**
+- **剛需防禦：v鎂 (Magnesium) & 鉀 (Potassium)**
   - **理由**: 天冷血管收縮，血壓易升高。這兩者是「天然降壓藥」。
   - **戰術**: 鎖定關鍵字「冬天血壓高怎麼辦」、「放鬆血管食物」。
 
@@ -57,11 +57,7 @@
 **相關檔案**: `index.html`, `category/nutrient-dashboard.html`, `assets/js/dashboard-logic.js`
 **詳細說明**: 此任務對應 `INTEGRATE_DASHBOARD_TO_HOMEPAGE.md` 的規劃。需要將現有儀表板邏輯重構為一個獨立的、可嵌入的 Shadow DOM 組件。
 
-### [待辦] 優化儀表板資訊卡樣式 (DASHBOARD-CARD-STYLE-OPT)
 
-**主要目標**: 讓儀表板的營養素資訊卡更美觀，並移除多餘的標籤。
-**相關檔案**: `assets/js/dashboard-logic.js` (或新組件的 CSS), `category/nutrient-dashboard.html`
-**詳細說明**: 專注於提升卡片的視覺設計，可能涉及調整佈局、顏色、字體和間距，並簡化卡片上的資訊標籤。
 
 ### [待辦] 移除儀表板的「資料總覽」區塊 (REMOVE-DASHBOARD-OVERVIEW)
 
