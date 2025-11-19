@@ -200,6 +200,81 @@
       #benefits .info-card-desc {
         font-size: 0.9em;
       }
+
+      /* Supplement Type Infographic */
+      .supplement-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+      }
+      .supplement-card {
+        background-color: #fff;
+        border-radius: 16px;
+        padding: 25px;
+        border: 1px solid #e2e8f0;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+      }
+      .supplement-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        border-color: var(--primary-color-light);
+      }
+      .supplement-card-header {
+        margin-bottom: 15px;
+        text-align: center;
+      }
+      .supplement-card-title {
+        font-size: 1.4em;
+        font-weight: 700;
+        color: var(--primary-color-dark);
+      }
+      .absorption-badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 0.9em;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+      .absorption-high { background-color: #dcfce7; color: #166534; }
+      .absorption-mid { background-color: #fef3c7; color: #92400e; }
+      .absorption-low { background-color: #fee2e2; color: #991b1b; }
+      .supplement-card-body {
+        flex-grow: 1;
+      }
+      .supplement-card-body ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .supplement-card-body li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 12px;
+        font-size: 0.95em;
+      }
+      .supplement-card-body li::before {
+        content: '✓';
+        flex-shrink: 0;
+        color: var(--primary-color);
+        font-weight: bold;
+        margin-top: 4px;
+      }
+      .supplement-card-footer {
+        margin-top: 20px;
+        background-color: var(--primary-color-bg);
+        padding: 15px;
+        border-radius: 12px;
+        font-size: 0.9em;
+        text-align: center;
+      }
+      .supplement-card-footer strong {
+        color: var(--primary-color-dark);
+      }
     </style>
 </head>
 <body>
@@ -220,12 +295,15 @@
             <li><a href="#benefits-energy" class="toc-link sub-item">4. 參與能量代謝</a></li>
             <li><a href="#benefits-vitamind" class="toc-link sub-item">5. 活化維生素D的關鍵輔酶</a></li>
             <li><a href="#benefits-pms" class="toc-link sub-item">6. 緩解偏頭痛與經前症候群</a></li>
+            <li><a href="#seasonal-needs" class="toc-link">季節性需求：為何冬季更需鎂？</a></li>
+            <li><a href="#synergy-vitamind" class="toc-link">鎂與維生素D的加乘作用</a></li>
             <li><a href="#reflection" class="toc-link">鎂的現代啟示：為何普遍缺鎂？</a></li>
             <li><a href="#how-much" class="toc-link">每日建議量與最佳時間</a></li>
             <li><a href="#action-plan-food" class="toc-link">實踐指引(一)：高鎂食物餐盤</a></li>
             <li><a href="#action-plan-supplements" class="toc-link">實踐指引(二)：如何挑選鎂補充品</a></li>
             <li><a href="#safety" class="toc-link">安全注意事項</a></li>
             <li><a href="#faq" class="toc-link">常見問題</a></li>
+            <li><a href="#references" class="toc-link">參考資料</a></li>
             <li><a href="#related-articles-container" class="toc-link">相關營養素</a></li>
           </ul>
         </div>
@@ -257,15 +335,15 @@
               <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>本篇重點速覽</h3>
               <ul>
                   <li><strong>天然的放鬆劑</strong>：鎂有助於穩定神經、放鬆肌肉，對於改善睡眠品質、舒緩焦慮與壓力至關重要。</li>
-                  <li><strong>現代人普遍缺乏</strong>：精緻飲食與長期壓力會加速鎂的消耗，高達7成的國人攝取未達建議量。</li>
-                  <li><strong>鈣鎂平衡是關鍵</strong>：鈣與鎂在體內相互拮抗，理想的鈣鎂攝取比例為 <span class="highlight-nutrient">2:1</span>，過多的鈣會抑制鎂的吸收。</li>
-                  <li><strong>睡前補充效果佳</strong>：晚餐後或睡前是補充鎂的最佳時機，特別是選擇吸收率高的「甘胺酸鎂」，有助於提升睡眠品質。</li>
+                  <li><strong>現代人普遍缺乏</strong>：精緻飲食與長期壓力會加速鎂的消耗，高達<strong>7成</strong>的國人攝取未達建議量。</li>
+                  <li><strong>鈣鎂平衡是關鍵</strong>：<span class="highlight-nutrient">鈣</span>與<span class="highlight-nutrient">鎂</span>在體內相互拮抗，理想的鈣鎂攝取比例為 <span class="highlight-nutrient">2:1</span>，過多的鈣會抑制鎂的吸收。</li>
+                  <li><strong>睡前補充效果佳</strong>：<span class="highlight-nutrient">晚餐後或睡前</span>是補充鎂的最佳時機，特別是選擇吸收率高的「<strong>甘胺酸鎂</strong>」，有助於提升睡眠品質。</li>
               </ul>
           </div>
 
           <section id="problem">
             <h2>您有這些「缺鎂」的困擾嗎？ </h2>
-            <p>半夜突然抽筋痛醒、翻來覆去睡不著，或是白天總覺得莫名的焦慮緊繃？這些看似無關的困擾，常常被歸因於壓力大或過度疲勞，但真正的元兇，可能指向一個常被忽略的關鍵營養素——「鎂」。</p>
+            <p>半夜突然抽筋痛醒、翻來覆去睡不著，或是白天總覺得莫名的焦慮緊繃？這些看似無關的困擾，常常被歸因於壓力大或過度疲勞，但真正的元兇，可能指向一個常被忽略的關鍵營養素——「<strong>鎂</strong>」。</p>
             <div class="risk-group-cards">
                 <div class="risk-card">
                     <h4 class="risk-card-title">難以入睡或淺眠多夢</h4>
@@ -282,34 +360,34 @@
                 </div>
                  <div class="risk-card">
                     <h4 class="risk-card-title">偏頭痛與經前症候群</h4>
-                    <p class="risk-card-desc">研究發現，偏頭痛患者體內的鎂濃度普遍較低。補充鎂也被證實有助於緩解經前症候群(PMS)帶來的情緒與生理不適。</p>
+                    <p class="risk-card-desc">研究發現，偏頭痛患者體內的鎂濃度普遍較低。補充鎂也被證實有助於緩解<strong>經前症候群(PMS)</strong>帶來的情緒與生理不適。</p>
                 </div>
             </div>
           </section>
 
           <section id="benefits">
             <h2>經科學實證的6大功效：鎂的多重效益</h2>
-            <p>鎂是人體中超過300種酵素系統的輔助因子，其影響力遍及全身。從神經傳導到能量產生，再到骨骼健康，鎂都扮演著不可或缺的角色。以下，我們將深入探討鎂最關鍵的六大科學實證功效。</p>
+            <p>鎂是人體中超過<strong>300種</strong>酵素系統的輔助因子，其影響力遍及全身。從神經傳導到能量產生，再到骨骼健康，鎂都扮演著不可或缺的角色。以下，我們將深入探討鎂最關鍵的六大科學實證功效。</p>
 
             <h3 id="benefits-sleep">1. 穩定神經，改善睡眠品質</h3>
-            <p>鎂被譽為「天然的鎮靜劑」，它對於維持神經系統的穩定與平靜至關重要。它透過多種途徑幫助身體進入休息模式，改善入睡困難並提升睡眠深度。</p>
+            <p>鎂被譽為「<strong>天然的鎮靜劑</strong>」，它對於維持神經系統的穩定與平靜至關重要。它透過多種途徑幫助身體進入休息模式，改善入睡困難並提升睡眠深度。</p>
             <div class="info-cards">
                 <div class="info-card">
                     <h4 class="info-card-title">增加GABA活性</h4>
-                    <p class="info-card-desc">鎂能與大腦中主要的抑制性神經傳導物質GABA的受體結合，幫助大腦「踩煞車」，減少焦慮和壓力感。</p>
+                    <p class="info-card-desc">鎂能與大腦中主要的抑制性神經傳導物質<span class="highlight-nutrient">GABA</span>的受體結合，幫助大腦「踩煞車」，減少焦慮和壓力感。</p>
                 </div>
                 <div class="info-card">
                     <h4 class="info-card-title">調節褪黑激素</h4>
-                    <p class="info-card-desc">鎂參與調節與睡眠週期有關的褪黑激素分泌，幫助身體建立規律的睡眠節律。</p>
+                    <p class="info-card-desc">鎂參與調節與睡眠週期有關的<span class="highlight-nutrient">褪黑激素</span>分泌，幫助身體建立規律的睡眠節律。</p>
                 </div>
             </div>
 
             <h3 id="benefits-muscle">2. 放鬆肌肉，預防抽筋</h3>
-            <p>在肌肉功能中，鈣與鎂扮演著蹺蹺板的兩端：鈣負責「收縮」，鎂則負責「放鬆」。充足的鎂能確保這個放鬆機制順暢運作，是維持肌肉正常功能的關鍵。</p>
+            <p>在肌肉功能中，<span class="highlight-nutrient">鈣</span>與<span class="highlight-nutrient">鎂</span>扮演著蹺蹺板的兩端：<span class="highlight-nutrient">鈣</span>負責「收縮」，<span class="highlight-nutrient">鎂</span>則負責「放鬆」。充足的鎂能確保這個放鬆機制順暢運作，是維持肌肉正常功能的關鍵。</p>
             <div class="info-cards">
                 <div class="info-card">
                     <h4 class="info-card-title">拮抗鈣離子</h4>
-                    <p class="info-card-desc">鎂作為天然的鈣通道阻斷劑，能防止過多的鈣離子進入肌肉細胞，從而促進肌肉的放鬆。</p>
+                    <p class="info-card-desc">鎂作為天然的<strong>鈣通道阻斷劑</strong>，能防止過多的鈣離子進入肌肉細胞，從而促進肌肉的放鬆。</p>
                 </div>
                 <div class="info-card">
                     <h4 class="info-card-title">維持電解質平衡</h4>
@@ -322,16 +400,16 @@
             <div class="info-cards">
                 <div class="info-card">
                     <h4 class="info-card-title">穩定心肌細胞</h4>
-                    <p class="info-card-desc">鎂協助調節鉀離子進出心肌細胞，維持細胞膜的電位穩定，確保心臟能規律地跳動。</p>
+                    <p class="info-card-desc">鎂協助調節<strong>鉀離子</strong>進出心肌細胞，維持細胞膜的電位穩定，確保心臟能規律地跳動。</p>
                 </div>
                 <div class="info-card">
                     <h4 class="info-card-title">幫助血管放鬆</h4>
-                    <p class="info-card-desc">鎂能促進血管壁的平滑肌放鬆，降低血管阻力，這對於維持健康的血壓有正面效益。</p>
+                    <p class="info-card-desc">鎂能促進血管壁的<strong>平滑肌</strong>放鬆，降低血管阻力，這對於維持健康的血壓有正面效益。</p>
                 </div>
             </div>
 
             <h3 id="benefits-energy">4. 參與能量代謝</h3>
-            <p>我們身體的能量貨幣「ATP」（三磷酸腺苷）本身並不穩定，它必須與一個鎂離子結合，才能形成具有生物活性的「Mg-ATP」複合物，為所有生命活動提供能量。</p>
+            <p>我們身體的能量貨幣「<span class="highlight-nutrient">ATP</span>」（三磷酸腺苷）本身並不穩定，它必須與一個鎂離子結合，才能形成具有生物活性的「<strong>Mg-ATP</strong>」複合物，為所有生命活動提供能量。</p>
             <div class="info-cards">
                 <div class="info-card">
                     <h4 class="info-card-title">活化ATP</h4>
@@ -340,16 +418,16 @@
             </div>
 
             <h3 id="benefits-vitamind">5. 活化維生素D的關鍵輔酶</h3>
-            <p>這是一個經常被忽略但極其重要的功能。我們攝取或經由陽光合成的維生素D，需要鎂的催化才能轉化為身體可利用的活性形式。</p>
+            <p>這是一個經常被忽略但極其重要的功能。我們攝取或經由陽光合成的<span class="highlight-nutrient">維生素D</span>，需要鎂的催化才能轉化為身體可利用的活性形式。</p>
             <div class="info-cards">
                 <div class="info-card">
                     <h4 class="info-card-title">催化維生素D轉化</h4>
-                    <p class="info-card-desc">如果體內缺鎂，即使補充了再多的維生素D，也可能無法被有效活化利用，進而影響鈣質吸收與免疫功能。</p>
+                    <p class="info-card-desc">如果體內缺鎂，即使補充了再多的<span class="highlight-nutrient">維生素D</span>，也可能無法被有效活化利用，進而影響鈣質吸收與免疫功能。</p>
                 </div>
             </div>
 
             <h3 id="benefits-pms">6. 緩解偏頭痛與經前症候群</h3>
-            <p>鎂能幫助穩定情緒、放鬆肌肉，因此對於緩解偏頭痛與經前症候群（PMS）相關的不適，也顯示出顯著的效果。</p>
+            <p>鎂能幫助穩定情緒、放鬆肌肉，因此對於緩解偏頭痛與<strong>經前症候群（PMS）</strong>相關的不適，也顯示出顯著的效果。</p>
             <div class="info-cards">
                 <div class="info-card">
                     <h4 class="info-card-title">降低偏頭痛頻率</h4>
@@ -362,17 +440,56 @@
             </div>
           </section>
 
+          <section id="seasonal-needs">
+            <h2>季節性需求：為何冬季更應關注鎂的攝取？</h2>
+            <p>許多人想知道「冬天血壓高怎麼辦？」，答案可能就藏在礦物質「鎂」之中。冬季氣溫下降，我們的身體為了保存熱量，會自然地收縮周邊血管，這稱為「<strong>血管收縮 (Vasoconstriction)</strong>」。這個過程會增加血液流動的阻力，導致血壓容易升高，對於有心血管風險的族群來說，這無疑增加了潛在的健康威脅。</p>
+            <p>鎂在這方面扮演著「<strong>天然降壓藥</strong>」和「<strong>放鬆血管食物</strong>」的關鍵角色。它能透過以下兩種主要機制，幫助身體應對冬季的心血管挑戰：</p>
+            <div class="info-cards">
+                <div class="info-card">
+                    <h4 class="info-card-title">促進血管放鬆</h4>
+                    <p class="info-card-desc">鎂能幫助血管壁的平滑肌放鬆，對抗因寒冷引發的過度收縮，從而降低血管阻力，幫助維持血壓穩定。</p>
+                </div>
+                <div class="info-card">
+                    <h4 class="info-card-title">穩定神經系統</h4>
+                    <p class="info-card-desc">鎂有助於穩定<strong>交感神經系統</strong>，避免因天氣變化或壓力引起的過度反應，從根本上減少血壓波動的機會。</p>
+                </div>
+            </div>
+            <p>因此，在寒冷的季節裡，確保飲食中含有足夠的鎂，例如多攝取深綠色蔬菜、堅果等富含鎂的食物，是應對季節性血壓問題、守護心血管健康的智慧策略。</p>
+          </section>
+
+          <section id="synergy-vitamind">
+            <h2>鎂與維生素D的加乘作用：不可不知的協同關係</h2>
+            <p>您可能正在補充維生素D來促進鈣質吸收或提升免疫力，但您知道嗎？如果沒有足夠的鎂，您吃下去的維生素D可能無法發揮作用。鎂是活化維生素D的<span class="highlight-nutrient">關鍵輔酶</span>。</p>
+            <p>我們從飲食或陽光中獲得的維生素D，在體內需要經過肝臟和腎臟的兩次轉化，才能成為具有生物活性的形式。這兩次關鍵的轉化過程，都需要鎂的參與。這意味著：</p>
+            <div class="info-cards">
+                <div class="info-card">
+                    <h4 class="info-card-title">缺鎂影響維生素D活化</h4>
+                    <p class="info-card-desc">體內鎂含量不足，會直接導致維生素D的活化路徑受阻。即使您補充了高劑量的維生素D，也可能因為缺乏鎂而無法被身體有效利用。</p>
+                </div>
+                <div class="info-card">
+                    <h4 class="info-card-title">補充D增加鎂消耗</h4>
+                    <p class="info-card-desc">反過來說，當您大量補充維生素D時，身體為了活化它，會消耗更多的鎂。如果您的鎂攝取量本就不足，這可能會加劇缺鎂的狀況。</p>
+                </div>
+            </div>
+            <div class="alert alert-nutritionist">
+              <div>
+                <strong>營養師建議：</strong>
+                <p>在補充維生素D時，應確保飲食中也富含鎂，或考慮同時補充。這兩種營養素的協同作用，才能真正確保鈣質的有效吸收，並支持骨骼與免疫系統的健康。您可以參考我們的<a href="./vitamin-d.html">《維生素D完整指南》</a>了解更多資訊。</p>
+              </div>
+            </div>
+          </section>
+
           <section id="reflection">
             <h2>鎂的現代啟示：為何我們普遍缺鎂？</h2>
-            <p>鎂的功效如此廣泛，但現代社會卻面臨一個普遍的矛盾：高達七成的國人鎂攝取量未達標。這並非偶然，而是我們的生活方式與環境變遷共同造成的結果，主要源於三大因素：</p>
+            <p>鎂的功效如此廣泛，但現代社會卻面臨一個普遍的矛盾：高達<strong>七成</strong>的國人鎂攝取量未達標。這並非偶然，而是我們的生活方式與環境變遷共同造成的結果，主要源於三大因素：</p>
             <div class="info-cards">
                 <div class="info-card">
                     <h4 class="info-card-title">1. 精緻化的飲食</h4>
-                    <p class="info-card-desc">鎂主要存在於穀物的麩皮與胚芽中。當我們選擇精緻的白米、白麵包時，超過80%的鎂都在加工過程中流失了。加工食品的普及，使我們的餐盤離天然的鎂來源越來越遠。</p>
+                    <p class="info-card-desc">鎂主要存在於穀物的麩皮與胚芽中。當我們選擇精緻的白米、白麵包時，超過<strong>80%</strong>的鎂都在加工過程中流失了。加工食品的普及，使我們的餐盤離天然的鎂來源越來越遠。</p>
                 </div>
                 <div class="info-card">
                     <h4 class="info-card-title">2. 慢性的壓力</h4>
-                    <p class="info-card-desc">壓力是鎂的「隱形殺手」。當身體處於壓力狀態時，會分泌壓力荷爾蒙，這不僅會增加鎂的需求量，還會加速鎂從尿液中排出，形成一個「越缺鎂，越焦慮；越焦慮，越缺鎂」的惡性循環。</p>
+                    <p class="info-card-desc">壓力是鎂的「<strong>隱形殺手</strong>」。當身體處於壓力狀態時，會分泌<span class="highlight-nutrient">壓力荷爾蒙</span>，這不僅會增加鎂的需求量，還會加速鎂從尿液中排出，形成一個「越缺鎂，越焦慮；越焦慮，越缺鎂」的惡性循環。</p>
                 </div>
                 <div class="info-card">
                     <h4 class="info-card-title">3. 土壤的貧瘠化</h4>
@@ -404,26 +521,26 @@
             <div class="alert alert-tip">
                 <div>
                     <strong>最佳補充時機：晚餐後或睡前</strong>
-                    <p>由於鎂具有幫助神經與肌肉放鬆的特性，在<span class="highlight-nutrient">晚餐飯後或睡前1小時</span>補充，最能發揮其幫助入睡、提升睡眠品質的效益。若單次補充劑量較高（超過200mg）且腸胃較敏感，可分為午、晚餐後兩次補充。</p>
+                    <p>由於鎂具有幫助神經與肌肉放鬆的特性，在<span class="highlight-nutrient">晚餐飯後或睡前1小時</span>補充，最能發揮其幫助入睡、提升睡眠品質的效益。若單次補充劑量較高（超過<strong>200mg</strong>）且腸胃較敏感，可分為午、晚餐後兩次補充。</p>
                 </div>
             </div>
           </section>
 
           <section id="action-plan-food">
             <h2>實踐指引(一)：高鎂食物餐盤</h2>
-            <p>補鎂應優先從天然食物開始。深綠色蔬菜、堅果種子、全穀類與豆類都是鎂的優質來源。在日常飲食中聰明地加入這些食材，就能輕鬆達標。</p>
+            <p>補鎂應優先從天然食物開始。<strong>深綠色蔬菜</strong>、<strong>堅果種子</strong>、<strong>全穀類</strong>與<strong>豆類</strong>都是鎂的優質來源。在日常飲食中聰明地加入這些食材，就能輕鬆達標。</p>
             <table class="data-table">
                 <thead><tr><th>食物類別</th><th>主要來源</th><th>食用建議</th></tr></thead>
                 <tbody>
                     <tr>
                         <td><strong>堅果種子</strong></td>
                         <td>南瓜籽、杏仁、腰果、奇亞籽</td>
-                        <td>每日一小把（約25克）堅果，是補充鎂、健康油脂與纖維的絕佳方式。</td>
+                        <td>每日一小把（約<strong>25克</strong>）堅果，是補充鎂、健康油脂與纖維的絕佳方式。</td>
                     </tr>
                     <tr>
                         <td><strong>深綠色蔬菜</strong></td>
                         <td>菠菜、羽衣甘藍、瑞士甜菜</td>
-                        <td>葉綠素的中心就是鎂離子，因此顏色越綠的蔬菜，鎂含量通常越高。</td>
+                        <td><span class="highlight-nutrient">葉綠素</span>的中心就是鎂離子，因此顏色越綠的蔬菜，鎂含量通常越高。</td>
                     </tr>
                      <tr>
                         <td><strong>豆類</strong></td>
@@ -437,7 +554,7 @@
                     </tr>
                      <tr>
                         <td><strong>其他</strong></td>
-                        <td>黑巧克力 (70%以上)、酪梨、香蕉</td>
+                        <td>黑巧克力 (<strong>70%以上</strong>)、酪梨、香蕉</td>
                         <td>黑巧克力不僅美味，更是鎂的意外好來源。</td>
                     </tr>
                 </tbody>
@@ -447,50 +564,60 @@
           <section id="action-plan-supplements">
             <h2>實踐指引(二)：如何挑選鎂補充品</h2>
             <p>當飲食無法滿足需求，或有特定健康目標（如改善睡眠、舒緩焦慮）時，鎂補充劑便成為一個高效的選擇。然而，市面上的產品琳瑯滿目，不同形式的鎂在吸收率、副作用和特定功效上差異極大，了解其區別才能做出最精準的選擇。</p>
-            <div class="responsive-table-wrapper">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>類型</th>
-                            <th>吸收率</th>
-                            <th>優點</th>
-                            <th>適用對象</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>氧化鎂 (Magnesium Oxide)</strong></td>
-                            <td>低 (~4%)</td>
-                            <td>鎂含量高、價格便宜</td>
-                            <td>偶爾便秘者 (作為軟便劑)，不適合長期補充。</td>
-                        </tr>
-                        <tr>
-                            <td><strong>檸檬酸鎂 (Magnesium Citrate)</strong></td>
-                            <td>高</td>
-                            <td>生物利用率佳，兼具溫和的軟便效果。</td>
-                            <td>一般日常保健、有便秘困擾者。</td>
-                        </tr>
-                        <tr>
-                            <td><strong>甘胺酸鎂 (Magnesium Glycinate)</strong></td>
-                            <td><strong>極高</strong></td>
-                            <td>與胺基酸螯合，對腸胃最溫和，且甘胺酸本身有助於鎮靜。</td>
-                            <td><strong>追求高品質睡眠、舒緩焦慮、腸胃敏感者</strong>的首選。</td>
-                        </tr>
-                        <tr>
-                            <td><strong>蘋果酸鎂 (Magnesium Malate)</strong></td>
-                            <td>高</td>
-                            <td>蘋果酸參與能量生成循環(克氏循環)，有助於提升能量。</td>
-                            <td>希望改善慢性疲勞、肌肉痠痛者。</td>
-                        </tr>
-                        <tr>
-                            <td><strong>L-蘇糖酸鎂 (Magnesium L-Threonate)</strong></td>
-                            <td>高</td>
-                            <td>唯一被研究證實能有效穿越血腦屏障(BBB)的鎂形式。</td>
-                            <td>希望增進學習力、記憶力與認知功能的族群。</td>
-                        </tr>
-                    </tbody>
-                </table>
+            
+            <div class="supplement-grid">
+              <!-- Card 1: Glycinate -->
+              <div class="supplement-card">
+                <div class="supplement-card-header">
+                  <h3 class="supplement-card-title">甘胺酸鎂</h3>
+                  <span class="absorption-badge absorption-high">吸收率：極高</span>
+                </div>
+                <div class="supplement-card-body">
+                  <ul>
+                    <li>與胺基酸螯合，對腸胃最溫和，不易引起腹瀉。</li>
+                    <li>甘胺酸本身有助於鎮靜神經，與鎂產生協同作用。</li>
+                  </ul>
+                </div>
+                <div class="supplement-card-footer">
+                  <strong>適用對象：</strong>追求高品質睡眠、舒緩焦慮、腸胃敏感者的<strong>首選</strong>。
+                </div>
+              </div>
+
+              <!-- Card 2: Citrate -->
+              <div class="supplement-card">
+                <div class="supplement-card-header">
+                  <h3 class="supplement-card-title">檸檬酸鎂</h3>
+                  <span class="absorption-badge absorption-mid">吸收率：高</span>
+                </div>
+                <div class="supplement-card-body">
+                  <ul>
+                    <li>生物利用率佳，為常見的有效形式之一。</li>
+                    <li>兼具溫和的軟便效果，有助於腸道蠕動。</li>
+                  </ul>
+                </div>
+                <div class="supplement-card-footer">
+                  <strong>適用對象：</strong>一般日常保健、有便秘困擾者。
+                </div>
+              </div>
+
+              <!-- Card 3: Oxide -->
+              <div class="supplement-card">
+                <div class="supplement-card-header">
+                  <h3 class="supplement-card-title">氧化鎂</h3>
+                  <span class="absorption-badge absorption-low">吸收率：低 (~4%)</span>
+                </div>
+                <div class="supplement-card-body">
+                  <ul>
+                    <li>價格便宜，但吸收率極低，大部分會留在腸道。</li>
+                    <li>主要的應用是作為滲透性軟便劑，而非補充鎂。</li>
+                  </ul>
+                </div>
+                <div class="supplement-card-footer">
+                  <strong>適用對象：</strong>僅建議用於緩解偶發性便秘，不適合長期作為鎂的補充來源。
+                </div>
+              </div>
             </div>
+            <p style="margin-top: 20px;">其他特殊形式如<strong>蘋果酸鎂 (Magnesium Malate)</strong> 有助於提升能量，適合改善慢性疲勞；而<strong>L-蘇糖酸鎂 (Magnesium L-Threonate)</strong> 則因其能有效穿越血腦屏障(BBB)的獨特性，被認為對增進認知功能特別有益。</p>
           </section>
 
           <section id="safety">
@@ -499,12 +626,12 @@
             <div class="alert alert-doctor">
               <div>
                 <strong>醫師警告：腎功能不全者請注意！</strong>
-                <p>腎臟是排除體內多餘鎂的主要器官。若您患有慢性腎臟病，請<span class="highlight-nutrient">絕對不要</span>自行補充任何形式的鎂劑，以免體內鎂離子過高，引發高血鎂症，可能導致噁心、嘔吐、心律不整等嚴重問題。補充前務必諮詢您的腎臟科醫師。</p>
+                <p>腎臟是排除體內多餘鎂的主要器官。若您患有<strong>慢性腎臟病</strong>，請<span class="highlight-nutrient">絕對不要</span>自行補充任何形式的鎂劑，以免體內鎂離子過高，引發<strong>高血鎂症</strong>，可能導致噁心、嘔吐、心律不整等嚴重問題。補充前務必諮詢您的腎臟科醫師。</p>
               </div>
             </div>
             <ul>
-              <li><strong>常見副作用：</strong>最常見的副作用是腹瀉，特別是使用吸收率較低的氧化鎂時。若出現此情況，可嘗試降低劑量、分次服用，或更換為對腸胃更溫和的甘胺酸鎂。</li>
-              <li><strong>藥物交互作用：</strong>鎂可能影響某些藥物（如四環黴素類抗生素、骨質疏鬆藥物）的吸收，建議服用時間至少間隔 2-3 小時。</li>
+              <li><strong>常見副作用：</strong>最常見的副作用是<strong>腹瀉</strong>，特別是使用吸收率較低的<span class="highlight-nutrient">氧化鎂</span>時。若出現此情況，可嘗試降低劑量、分次服用，或更換為對腸胃更溫和的<span class="highlight-nutrient">甘胺酸鎂</span>。</li>
+              <li><strong>藥物交互作用：</strong>鎂可能影響某些藥物（如<strong>四環黴素類抗生素</strong>、<strong>骨質疏鬆藥物</strong>）的吸收，建議服用時間至少間隔 <strong>2-3 小時</strong>。</li>
             </ul>
           </section>
 
@@ -514,21 +641,49 @@
             <div class="faq-item">
               <div class="faq-question">Q1: 鎂可以和鈣一起吃嗎？</div>
               <div class="faq-answer">
-                <p><strong>A: 可以，但建議分開或注意比例。</strong> 鈣和鎂在腸道中會競爭相同的吸收通道，高劑量的鈣（>500mg）可能會抑制鎂的吸收。若要同時補充，建議選擇鈣鎂比例為 2:1 的複方產品，或將兩者服用時間間隔2小時以上，例如早上補鈣、晚上補鎂。</p>
+                <p><strong>A: 可以，但建議分開或注意比例。</strong> <span class="highlight-nutrient">鈣</span>和<span class="highlight-nutrient">鎂</span>在腸道中會競爭相同的吸收通道，高劑量的鈣（><strong>500mg</strong>）可能會抑制鎂的吸收。若要同時補充，建議選擇鈣鎂比例為 <span class="highlight-nutrient">2:1</span> 的複方產品，或將兩者服用時間間隔<strong>2小時</strong>以上，例如早上補鈣、晚上補鎂。</p>
               </div>
             </div>
             <div class="faq-item">
               <div class="faq-question">Q2: 為什麼壓力大的人特別需要補鎂？</div>
               <div class="faq-answer">
-                <p><strong>A: 因為壓力會形成一個「鎂流失」的惡性循環。</strong> 當我們處於壓力下，身體會分泌壓力荷爾蒙（如皮質醇），這會促使鎂從細胞中釋放並由尿液排出。而缺鎂本身又會讓神經系統更難以放鬆，對壓力的反應更為敏感，從而導致更多的鎂流失。適時補充鎂，有助於打破這個惡性循環。</p>
+                <p><strong>A: 因為壓力會形成一個「鎂流失」的惡性循環。</strong> 當我們處於壓力下，身體會分泌<span class="highlight-nutrient">壓力荷爾蒙（如皮質醇）</span>，這會促使鎂從細胞中釋放並由尿液排出。而缺鎂本身又會讓神經系統更難以放鬆，對壓力的反應更為敏感，從而導致更多的鎂流失。適時補充鎂，有助於打破這個惡性循環。</p>
               </div>
             </div>
              <div class="faq-item">
               <div class="faq-question">Q3: 睡前吃鎂真的能幫助睡眠嗎？</div>
               <div class="faq-answer">
-                <p><strong>A: 是的，科學研究支持這個觀點。</strong> 鎂能透過多種途徑幫助睡眠：1) 增加有助放鬆的GABA活性；2) 調節與睡眠週期有關的褪黑激素分泌；3) 降低壓力荷爾蒙；4) 放鬆肌肉，減少夜間抽筋。因此，睡前補充鎂，特別是甘胺酸鎂，是改善睡眠品質的有效天然策略。</p>
+                <p><strong>A: 是的，科學研究支持這個觀點。</strong> 鎂能透過多種途徑幫助睡眠：1) 增加有助放鬆的<span class="highlight-nutrient">GABA</span>活性；2) 調節與睡眠週期有關的<span class="highlight-nutrient">褪黑激素</span>分泌；3) 降低壓力荷爾蒙；4) 放鬆肌肉，減少夜間抽筋。因此，睡前補充鎂，特別是<span class="highlight-nutrient">甘胺酸鎂</span>，是改善睡眠品質的有效天然策略。</p>
               </div>
             </div>
+            <div class="faq-item">
+              <div class="faq-question">Q4: 缺乏鎂的常見症狀有哪些？</div>
+              <div class="faq-answer">
+                <p><strong>A: 缺鎂的早期症狀可能很輕微，但值得注意。</strong> 由於鎂參與全身數百種反應，其缺乏症狀多樣且容易被忽略。常見的早期信號包括：</p>
+                <ul>
+                  <li><strong>肌肉問題：</strong>不明原因的肌肉顫抖、痙攣或頻繁抽筋。</li>
+                  <li><strong>精神狀態：</strong>情緒低落、焦慮、易怒或精神萎靡。</li>
+                  <li><strong>疲勞虛弱：</strong>即使休息充足，仍感到異常的疲勞和虛弱。</li>
+                  <li><strong>食慾不振與噁心：</strong>這是許多營養素缺乏的共同早期症狀。</li>
+                </ul>
+                <p>若長期忽視，嚴重缺鎂可能導致心律不整、麻木刺痛感等更嚴重的健康問題。如果您懷疑自己缺鎂，建議諮詢醫師或營養師。</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Q5: 鎂可以幫助排便嗎？</div>
+              <div class="faq-answer">
+                <p><strong>A: 是的，特定形式的鎂具有溫和的軟便效果。</strong> 鎂有助於將水分吸入腸道，軟化糞便，同時也能幫助放鬆腸道肌肉，促進腸道蠕動。其中，<span class="highlight-nutrient">氧化鎂 (Magnesium Oxide)</span> 和 <span class="highlight-nutrient">檸檬酸鎂 (Magnesium Citrate)</span> 的這個效果特別顯著，因此常被用於緩解偶發性的便秘。然而，若您沒有便秘困擾，或腸胃較為敏感，則建議選擇吸收率高且對腸胃更溫和的<span class="highlight-nutrient">甘胺酸鎂 (Magnesium Glycinate)</span>。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="references" class="references-section">
+            <h2>參考資料</h2>
+            <ul>
+                <li>National Institutes of Health (NIH) - Office of Dietary Supplements: <a href="https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/" target="_blank" rel="noopener noreferrer">Magnesium Fact Sheet for Health Professionals</a></li>
+                <li>Abbasi, B., Kimiagar, M., Sadeghniiat, K., Shirazi, M. M., Hedayati, M., & Rashidkhani, B. (2012). The effect of magnesium supplementation on primary insomnia in elderly: A double-blind placebo-controlled clinical trial. Journal of research in medical sciences : the official journal of Isfahan University of Medical Sciences, 17(12), 1161–1169.</li>
+                <li>Volpe, S. L. (2013). Magnesium in disease prevention and overall health. Advances in nutrition (Bethesda, Md.), 4(3), 378S–83S. <a href="https://doi.org/10.3945/an.112.003483" target="_blank" rel="noopener noreferrer">https://doi.org/10.3945/an.112.003483</a></li>
+            </ul>
           </section>
 
           <div id="related-articles-container"></div>
