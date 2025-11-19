@@ -71,23 +71,21 @@ console.log("<<<<< related-articles-component.js HAS LOADED >>>>>");
         const link = article.link || '#';
 
         return `
-            <div class="nutrient-card-wrapper border-${statusColor}">
+            <a href="${link}" class="nutrient-card-wrapper border-${statusColor}">
                 <div class="card-content">
                     <div class="card-header">
                          <h3 class="card-title">
-                             <a href="${link}">${article.name}</a> 
+                             ${article.name}
                              ${enNameDisplay}
                          </h3>
-                         <span class="card-status status-${statusColor}">${article.status}</span>
                     </div>
-                    <p class="card-type">類型: ${article.type}</p>
                     <div class="goal-tags-container">${goalTags}</div>
                     <p class="card-desc">${article.func}</p>
                 </div>
                 <div class="card-footer">
-                    <a href="${link}" class="read-more-btn">閱讀文章</a>
+                    <span class="read-more-link">閱讀文章 →</span>
                 </div>
-            </div>
+            </a>
         `;
     }
 
@@ -155,30 +153,23 @@ console.log("<<<<< related-articles-component.js HAS LOADED >>>>>");
         .border-amber { border-color: #f59e0b; }
         .nutrient-card-wrapper .card-content { flex-grow: 1; padding: 0; }
         .nutrient-card-wrapper .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
-        .nutrient-card-wrapper .card-title { font-size: 1.125rem; font-weight: 700; color: #1e293b; margin: 0; }
-        .nutrient-card-wrapper .card-title a { text-decoration: none; color: inherit; }
+        .nutrient-card-wrapper .card-title { font-size: 1.125rem; font-weight: 700; color: #1e293b; margin: 0; border-bottom: 2px solid #ff6b35; padding-bottom: 1px; display: inline-block; }
         .nutrient-card-wrapper .en-name { font-size: 1rem; font-weight: 500; color: #64748b; margin-left: 4px; }
-        .nutrient-card-wrapper .card-status { font-size: 0.75rem; font-weight: 600; padding: 4px 8px; border-radius: 9999px; flex-shrink: 0; }
-        .status-teal { background-color: #f0fdfa; color: #0f766e; }
-        .status-amber { background-color: #fffbeb; color: #b45309; }
-        .nutrient-card-wrapper .card-type { font-size: 0.875rem; color: #64748b; margin-bottom: 4px; }
         .goal-tags-container { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; }
         .goal-tag { font-size: 0.75rem; font-weight: 500; color: #475569; background-color: #f1f5f9; padding: 2px 8px; border-radius: 9999px; }
         .nutrient-card-wrapper .card-desc { font-size: 0.875rem; color: #334155; margin-bottom: 12px; }
         .nutrient-card-wrapper .card-footer { padding: 0; margin-top: auto; }
-        .read-more-btn {
+        .read-more-link {
             display: block;
-            width: 100%;
-            text-align: center;
-            background-color: #0d9488; /* bg-teal-600 */
-            color: white;
+            text-align: right;
+            color: #0d9488; /* teal-600 */
             font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: background-color 0.2s ease;
+            margin-top: 8px;
+            transition: color 0.2s ease;
         }
-        .read-more-btn:hover { background-color: #0f766e; } /* hover:bg-teal-700 */
+        .nutrient-card-wrapper:hover .read-more-link {
+            text-decoration: underline;
+        }
 
         /* Topic Card Styles */
         .topic-card-wrapper {
