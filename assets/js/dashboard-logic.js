@@ -38,21 +38,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const link = nutrient.link ? nutrient.link : '#';
 
         return `
-            <div class="bg-white rounded-lg shadow-md p-5 flex flex-col h-full border-l-4 border-${statusColor}-500 transition hover:shadow-xl hover:transform hover:-translate-y-1">
+            <a href="${link}" class="group bg-white rounded-lg shadow-md p-5 flex flex-col h-full border-l-4 border-${statusColor}-500 transition hover:shadow-xl hover:transform hover:-translate-y-1">
                 <div class="flex-grow">
                     <div class="flex justify-between items-start mb-2">
                          <h3 class="text-lg font-bold text-slate-900">
                              ${nutrient.name} 
                              ${enNameDisplay}
                          </h3>
-                         <span class="text-xs font-semibold text-${statusColor}-800 bg-${statusColor}-100 px-2 py-1 rounded-full">${nutrient.status}</span>
                     </div>
-                    <p class="text-sm text-slate-500 mb-1">類型: ${nutrient.type}</p>
                     <div class="flex flex-wrap gap-1 mb-3">${goalTags}</div>
                     <p class="text-slate-700 text-sm mb-3">${nutrient.func}</p>
                 </div>
-                ${nutrient.link ? `<a href="${link}" class="mt-4 block w-full text-center bg-teal-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-teal-700 transition">閱讀文章</a>` : ''}
-            </div>
+                ${nutrient.link ? `<span class="mt-auto pt-4 text-teal-600 font-semibold group-hover:underline transition">閱讀文章 →</span>` : ''}
+            </a>
         `;
     }
 

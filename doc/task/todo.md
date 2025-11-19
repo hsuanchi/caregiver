@@ -69,6 +69,16 @@
 **相關檔案**: `category/nutrient-dashboard.html`
 **詳細說明**: 移除包含進度條和狀態文本的整個 `div.bg-white` 區塊。
 
+### [待辦] 優化文章內相關營養素卡片樣式 (ARTICLE-INFO-CARD-STYLE-OPT)
+
+**主要目標**: 統一文章內相關營養素卡片的視覺風格，使其更現代、簡潔，並與整體設計語言保持一致。
+**相關檔案**: `post/*.html` (特別是 `.info-cards` 和 `.info-card` 元素)
+**詳細說明**:
+- 移除卡片中不必要的「類型」和「狀態」顯示。
+- 將卡片整體設計為可點擊區域。
+- 將「閱讀文章」按鈕改為簡潔的文字連結（例如：「閱讀文章 →」），並使其在卡片底部對齊，避免視覺混亂。
+- 參考 `assets/js/dashboard-logic.js` 中 `renderNutrientCard` 函數的最新優化邏輯。
+
 ### [待辦] 調整儀表板測試頁面標題 (DASHBOARD-TEST-TITLE)
 
 **主要目標**: 更新 `tests/index-dashboard-test.html` 中 `<section class="popular" id="health-goals">` 區塊的標題，使其更符合儀表板功能。
