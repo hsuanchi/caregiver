@@ -173,6 +173,15 @@
       .data-table tbody tr { border-bottom: 1px solid #e5e7eb; transition: background 0.3s ease; }
       .data-table tbody tr:hover { background: #f9fafb; }
       .data-table .food-icon { font-size: 1.5em; margin-right: 10px; }
+
+      .responsive-table-wrapper {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          margin: 20px 0;
+          border: 1px solid #e2e8f0;
+          border-radius: 15px;
+      }
+
       .info-cards, .risk-group-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 40px 0; }
       .info-card, .risk-card { background: white; border-radius: 15px; padding: 25px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; }
       .info-card:hover, .risk-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); }
@@ -288,6 +297,7 @@
           <section id="how-much">
             <h2>我該攝取多少？營養師的每日建議與換算</h2>
             <p>目前，花青素沒有官方的每日建議攝取量(RDA)。然而，多數研究指出，要達到顯著的健康效益，每日攝取量建議如下：</p>
+            <div class="responsive-table-wrapper">
             <table class="data-table">
               <thead><tr><th>攝取目標</th><th>每日建議量參考</th><th>約等於多少食物？</th></tr></thead>
               <tbody>
@@ -295,6 +305,7 @@
                 <tr><td>強化保養 (如3C重度使用者)</td><td><strong>100 - 500 毫克</strong></td><td>需透過高濃度補充品輔助</td></tr>
               </tbody>
             </table>
+            </div>
                         <div class="alert alert-tip">
               <div>
                 <strong>關鍵洞察：</strong>
@@ -306,6 +317,7 @@
           <section id="action-plan-food">
             <h2>實踐指引(一)：打造您的花青素彩虹餐盤</h2>
             <p>要從飲食中獲得足夠的花青素，關鍵在於選擇「顏色深邃」的蔬果。以下是您的最佳選擇：</p>
+            <div class="responsive-table-wrapper">
              <table class="data-table">
               <thead>
                 <tr>
@@ -340,6 +352,7 @@
                 </tr>
               </tbody>
             </table>
+            </div>
           </section>
 
           <section id="action-plan-supplements">

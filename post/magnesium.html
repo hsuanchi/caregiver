@@ -153,6 +153,15 @@
       .data-table thead { background-color: var(--primary-color-bg); }
       .data-table th { font-weight: 600; color: var(--primary-color-dark); }
       .data-table tbody tr:hover { background-color: #f8fafc; }
+
+      .responsive-table-wrapper {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          margin: 20px 0;
+          border: 1px solid #e2e8f0;
+          border-radius: 15px;
+      }
+      
       .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
       .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
       .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
@@ -530,6 +539,7 @@
           <section id="how-much">
             <h2>每日建議量與最佳時間</h2>
             <p>「我到底需要多少鎂？」這是最常見的問題。根據台灣衛福部「國人膳食營養素參考攝取量」第八版，鎂的建議攝取量如下，了解自己的每日目標是規劃補充策略的第一步。</p>
+            <div class="responsive-table-wrapper">
              <table class="data-table">
                 <thead>
                     <tr>
@@ -546,6 +556,7 @@
                     <tr><td>懷孕期</td><td><strong>+35</strong> (總計約345-355)</td><td><strong>700</strong></td></tr>
                 </tbody>
             </table>
+            </div>
             <div class="alert alert-tip">
                 <div>
                     <strong>最佳補充時機：晚餐後或睡前</strong>
@@ -557,6 +568,7 @@
           <section id="action-plan-food">
             <h2>實踐指引(一)：高鎂食物餐盤</h2>
             <p>補鎂應優先從天然食物開始。<strong>深綠色蔬菜</strong>、<strong>堅果種子</strong>、<strong>全穀類</strong>與<strong>豆類</strong>都是鎂的優質來源。在日常飲食中聰明地加入這些食材，就能輕鬆達標。</p>
+            <div class="responsive-table-wrapper">
             <table class="data-table">
                 <thead><tr><th>食物類別</th><th>主要來源</th><th>食用建議</th></tr></thead>
                 <tbody>
@@ -587,6 +599,7 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
           </section>
           
           <section id="action-plan-supplements">

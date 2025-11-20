@@ -122,6 +122,15 @@
       .data-table th { font-weight: 600; color: white; }
       .data-table tbody tr { border-bottom: 1px solid #e5e7eb; transition: background 0.3s ease; }
       .data-table tbody tr:hover { background: #f9fafb; }
+
+      .responsive-table-wrapper {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          margin: 20px 0;
+          border: 1px solid #e2e8f0;
+          border-radius: 15px;
+      }
+
       .info-cards, .risk-group-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 40px 0; }
       .info-card, .risk-card { background: white; border-radius: 15px; padding: 25px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; }
       .info-card:hover, .risk-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); }
@@ -376,6 +385,7 @@
           <section id="how-much">
             <h2>我該攝取多少？來自國際關節炎研究學會的建議</h2>
             <p>軟骨素的補充並非越多越好，而是需要達到一個有效的劑量並持之以恆。根據歐洲關節炎與風濕病聯盟(EULAR)與國際骨關節炎研究學會(OARSI)等權威機構的臨床指引，建議劑量如下：</p>
+            <div class="responsive-table-wrapper">
             <table class="data-table">
               <thead><tr><th>攝取目標</th><th>每日建議量</th><th>備註</th></tr></thead>
               <tbody>
@@ -383,6 +393,7 @@
                 <tr><td>改善已有症狀</td><td><strong>1200 毫克</strong></td><td>多數臨床研究所採用的有效劑量。</td></tr>
               </tbody>
             </table>
+            </div>
              <div class="alert alert-nutritionist">
                 <div>
                     <strong>營養師的補充時機與搭配建議</strong>
@@ -395,6 +406,7 @@
           <section id="action-food">
             <h2>實踐指引(一)：從飲食中補充天然軟骨素</h2>
             <p>軟骨素主要存在於動物的結締組織與軟骨中。雖然要單純透過日常飲食達到每日800-1200毫克的治療劑量有相當難度，但適量攝取這些富含膠質的食物，仍能為關節健康提供基礎支持。</p>
+            <div class="responsive-table-wrapper">
              <table class="data-table">
               <thead><tr><th>食物來源</th><th>食用提醒</th></tr></thead>
               <tbody>
@@ -403,6 +415,7 @@
                 <tr><td>秋葵、山藥、納豆</td><td>這些植物性食材的黏滑口感來自黏多醣，結構與軟骨素相似，但並非直接的軟骨素來源。</td></tr>
               </tbody>
             </table>
+            </div>
           </section>
 
           <section id="action-supplements">

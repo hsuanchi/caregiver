@@ -132,6 +132,15 @@
       .data-table th { font-weight: 600; color: white; }
       .data-table tbody tr { border-bottom: 1px solid #e5e7eb; transition: background 0.3s ease; }
       .data-table tbody tr:hover { background: #f9fafb; }
+
+      .responsive-table-wrapper {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          margin: 20px 0;
+          border: 1px solid #e2e8f0;
+          border-radius: 15px;
+      }
+      
       .info-cards,
       .risk-group-cards {
         display: inline-flex;
@@ -295,6 +304,7 @@
           <section id="how-much">
             <h2>我該攝取多少？來自權威機構的建議</h2>
             <p>與維生素不同，β-葡聚醣沒有統一的每日建議攝取量 (RDA)，其建議劑量完全取決於您的健康目標。是想降低膽固醇，還是為了日常的免疫保養？不同的需求，對應的劑量與來源也有所不同。</p>
+            <div class="responsive-table-wrapper">
             <table class="data-table">
               <thead><tr><th>健康目標</th><th>每日建議量</th><th>權威機構</th></tr></thead>
               <tbody>
@@ -302,6 +312,7 @@
                 <tr><td>調節免疫、日常保健</td><td><strong>250 - 500 毫克</strong></td><td>多數臨床研究劑量</td></tr>
               </tbody>
             </table>
+            </div>
                         <div class="alert alert-tip">
               <div>
                 <strong>關鍵洞察：</strong>
@@ -313,6 +324,7 @@
           <section id="action-plan-food">
             <h2>實踐指引(一)：打造您的高β-葡聚醣餐盤</h2>
             <p>透過天然食物攝取β-葡聚醣，不僅安全，更能同時獲得其他豐富的營養素。在日常飲食中增加β-葡聚醣的攝取比您想像的更簡單，就從您的早餐或家常菜色開始吧！</p>
+            <div class="responsive-table-wrapper">
              <table class="data-table">
               <thead><tr><th>食物來源</th><th>特色／食用建議</th></tr></thead>
               <tbody>
@@ -321,6 +333,7 @@
                 <tr><td><span class="food-icon">🌿</span> 海帶／紫菜</td><td>富含水溶性纖維，有助於腸道健康，可做成涼拌或湯品。</td></tr>
               </tbody>
             </table>
+            </div>
           </section>
 
           <section id="action-plan-supplements">

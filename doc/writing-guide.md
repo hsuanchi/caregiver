@@ -687,8 +687,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 ## 第二章：內容策略與結構
 
-### 標準文章結構
-每篇文章都應遵循以下標準結構，以確保內容的連貫性與完整性。
+### 指導性文章結構 (Recommended Structure)
+每篇文章都應**參考**以下標準結構，以確保內容的完整性與核心主題的覆蓋。這是一個**指導性框架而非強制規則**，我們鼓勵在涵蓋核心模組的基礎上，根據主題增加如「快速總覽」、「季節性需求」、「延伸反思」等更具吸引力的章節。
 . 頁面標題與導覽 (H1 & Breadcrumb)
 
 1.1 權威型長標題 (H1 Strategy)
@@ -704,8 +704,8 @@ document.addEventListener("DOMContentLoaded", function () {
 1.2 麵包屑導覽 (Breadcrumb)
 HTML 規則： <nav class="breadcrumb"> 的最後一節文字 (Last Child) 必須 與頁面 <h1> 的文字完全一致。
 
-2. 內文模組化結構 (Content Modules)
-內文必須依照以下順序使用 <h2> 和 <h3> 標籤。每個區塊對應特定的 UI 元件與 SEO 目的。
+2. 內文核心模組 (Core Content Modules)
+建議文章涵蓋以下核心模組，並可彈性調整標題與順序。每個模組對應特定的讀者問題與 UI 元件。
 Module 1: 基本資訊與定義
 標題： <h2> [營養素]是什麼？
 SEO 目的： 爭取 Google 精選摘要 (Featured Snippet) 的定義位置。
@@ -835,9 +835,10 @@ TOC 現已支援兩層式結構，並應包含 `<h3>` 標籤以提供更詳細�
 
 > **重要規則：**
 >
-> 1.  **禁止行內樣式**: 應完全避免使用 `style="..."` 屬性。 (來自 Checklist 強調)
-> 2.  **禁止裝飾性圖示**: **原則上禁止在文章內使用任何裝飾性圖示（包含 Emoji）**。
-> 3.  **例外：CSS 變數**：唯一允許使用 `style` 屬性的情境，是為了傳遞動態數值給 CSS 變數，例如 `style="--percent: 40%;"`。
+> 1.  **優先使用 Class**: 應優先使用功能性或通用的 CSS Class 來定義樣式。
+> 2.  **有限度使用行內樣式**: 避免使用 `style="..."` 屬性處理複雜樣式。僅在無法由 Class 控制的**動態樣式**（如由 JS 計算的寬度）或**極個別的單次排版需求**（如 `text-align: center`）時，才可有限度地使用。
+> 3.  **禁止裝飾性圖示**: **原則上禁止在文章內使用任何裝飾性圖示（包含 Emoji）**。
+> 4.  **例外：CSS 變數**：唯一允許使用 `style` 屬性的情境，是為了傳遞動態數值給 CSS 變數，例如 `style="--percent: 40%;"`。
 
 #### 1. 提示框 (`.alert`)
 
@@ -870,7 +871,7 @@ TOC 現已支援兩層式結構，並應包含 `<h3>` 標籤以提供更詳細�
 
 #### 2. 資訊卡片 (`.info-cards`)
 
-用於並列呈現核心觀點或功效。**[修改] 此舉是為了強調資訊卡僅用於呈現最核心的重點，故一個區塊不應放置超過 2 張卡片**。
+用於並列呈現核心觀點或功效。**建議每個區塊使用 2-4 張卡片**以獲得最佳視覺平衡。可搭配 `.md-grid-N` 通用類別來控制桌面版的欄數。
 
 ```html
 <!-- 桌面版為兩欄: md-grid-2 -->
@@ -900,50 +901,52 @@ TOC 現已支援兩層式結構，並應包含 `<h3>` 標籤以提供更詳細�
     </div>
 </div>
 
-#### 3. 風險族群卡片 (`.risk-group-cards`)
+#### 3. 需求自我檢測 (`.quick-test`)
 
-**一個區塊不應放置超過 3 張卡片**。（此規則不變）
+**[新建議]** 此互動式元件是 `.risk-group-cards` 的**進階替代方案**，透過讓使用者勾選符合的選項，能更有效地引發讀者共鳴，觸發其自我檢測心理。
 
 ```html
-<!-- 桌面版為三欄: md-grid-3 -->
-<div class="risk-group-cards md-grid-3">
-  <div class="risk-card">
-    <div class="risk-card-header">
-      <h4 class="risk-card-title">吸菸者</h4>
-    </div>
-    <p class="risk-card-desc">香菸會產生大量自由基...</p>
+<div class="quick-test">
+  <h3>Omega-3 需求評估</h3>
+  <p>請檢視您的生活與飲食習慣，是否存在以下情況？</p>
+  <div class="test-options">
+    <label class="test-option">
+      <input type="checkbox" name="need-test" />
+      <span>經常外食，飲食內容多高油、精緻澱粉</span>
+    </label>
+    <label class="test-option">
+      <input type="checkbox" name="need-test" />
+      <span>健檢報告提示三酸甘油酯等指數異常</span>
+    </label>
+    <!-- ... 其他選項 ... -->
   </div>
-  <!-- ... 其他卡片 ... -->
+  <p style="margin-top: 20px; color: #14532d; font-weight: 600">
+    <strong>若符合 2 項以上</strong>，表示補充高品質 Omega-3 可能對您有顯著幫助。
+  </p>
 </div>
 ```
 
 <div class="example-preview">
-    <h4 class="example-preview-title">即時預覽：風險族群卡片</h4>
-    <div class="risk-group-cards" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 1rem;">
-        <div class="risk-card" style="flex: 1; min-width: 250px; max-width: calc(33.333% - 14px); box-sizing: border-box; background: #fffbeb; border-left: 4px solid #f59e0b; padding: 1.5rem; border-radius: 0 0.5rem 0.5rem 0;">
-            <div class="risk-card-header" style="margin-bottom: 0.5rem;">
-                <h4 class="risk-card-title" style="font-size: 1.125rem; font-weight: 600; color: #78350f; margin-top: 0 !important;">吸菸者</h4>
-            </div>
-            <p class="risk-card-desc" style="font-size: 0.9rem; color: #78350f; margin: 0;">香菸會產生大量自由基，加速消耗體內抗氧化營養素。</p>
-        </div>
-        <div class="risk-card" style="flex: 1; min-width: 250px; max-width: calc(33.333% - 14px); box-sizing: border-box; background: #fffbeb; border-left: 4px solid #f59e0b; padding: 1.5rem; border-radius: 0 0.5rem 0.5rem 0;">
-            <div class="risk-card-header" style="margin-bottom: 0.5rem;">
-                <h4 class="risk-card-title" style="font-size: 1.125rem; font-weight: 600; color: #78350f; margin-top: 0 !important;">高壓上班族</h4>
-            </div>
-            <p class="risk-card-desc" style="font-size: 0.9rem; color: #78350f; margin: 0;">長期壓力會消耗體內B群與維生素C，導致疲勞。</p>
-        </div>
-        <div class="risk-card" style="flex: 1; min-width: 250px; max-width: calc(33.333% - 14px); box-sizing: border-box; background: #fffbeb; border-left: 4px solid #f59e0b; padding: 1.5rem; border-radius: 0 0.5rem 0.5rem 0;">
-            <div class="risk-card-header" style="margin-bottom: 0.5rem;">
-                <h4 class="risk-card-title" style="font-size: 1.125rem; font-weight: 600; color: #78350f; margin-top: 0 !important;">素食者</h4>
-            </div>
-            <p class="risk-card-desc" style="font-size: 0.9rem; color: #78350f; margin: 0;">部分營養素在植物性食物中含量較低，如B12與鐵。</p>
+    <h4 class="example-preview-title">即時預覽：互動式需求檢測</h4>
+    <div class="quick-test" style="background: #f0fdf4; border-radius: 20px; padding: 40px; margin: 40px 0; text-align: center;">
+        <h3 style="font-size: 1.8em; color: #14532d; margin-bottom: 20px;">Omega-3 需求評估</h3>
+        <p>請檢視您的生活與飲食習慣，是否存在以下情況？</p>
+        <div class="test-options" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 30px;">
+            <label class="test-option" style="background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 18px; cursor: pointer; transition: all 0.3s ease;">
+                <span>經常外食，飲食內容多高油、精緻澱粉</span>
+            </label>
+            <label class="test-option" style="background: linear-gradient(135deg, #ff6b35 0%, #fb923c 100%); border-color: #ff6b35; color: white; box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);">
+                 <span>健檢報告提示三酸甘油酯等指數異常</span>
+            </label>
         </div>
     </div>
 </div>
 
 #### 4. 比較表格 (`.data-table`)
 
-**必須**用 `<div class="responsive-table-wrapper">` 包裹。
+**大多數情況下**，普通表格都**必須**用 `<div class="responsive-table-wrapper">` 包裹，以確保在行動裝置上可以橫向滾動。
+
+**例外情況**：若表格已置於其他本身就提供滾動功能的容器中（例如 `.comparison-table-container`），則可不必重複包裹。
 
 ```html
 <div class="responsive-table-wrapper">
@@ -1043,7 +1046,116 @@ TOC 現已支援兩層式結構，並應包含 `<h3>` 標籤以提供更詳細�
     </div>
 </div>
 
-#### 6. 全局響應式設計 (Global RWD) - 整合 Checklist
+#### 6. [新] 視覺化劑量圖 (`.dosage-infographic-container`)
+用於以視覺化卡片呈現不同族群的建議劑量與成分比例。
+
+```html
+<div class="dosage-infographic-container">
+  <div class="dosage-card">
+    <div class="dosage-card-header">
+      <div class="dosage-card-title">心血管保健</div>
+      <div class="dosage-card-subtitle">三高族群</div>
+    </div>
+    <div class="dosage-card-dose">1000-2000<span class="unit">mg</span></div>
+    <div class="ratio-info">
+      <div class="ratio-label">EPA : DHA ≈ 2 : 1</div>
+      <div class="ratio-bar">
+        <!-- 使用 style 傳遞動態寬度 -->
+        <div class="ratio-bar-epa" style="width: 67%"></div>
+        <div class="ratio-bar-dha" style="width: 33%"></div>
+      </div>
+    </div>
+  </div>
+  <!-- ... 其他劑量卡片 ... -->
+</div>
+<div class="ratio-legend">
+    <div class="legend-item"><span class="legend-dot" style="background-color: #ff6b35;"></span> EPA</div>
+    <div class="legend-item"><span class="legend-dot" style="background-color: #2563eb;"></span> DHA</div>
+</div>
+```
+
+#### 7. [新] 步驟指南 (`.step-guide-container`)
+用於呈現有順序性的流程，例如產品的挑選步驟，透過視覺化的時間軸引導讀者。
+
+```html
+<div class="step-guide-container">
+  <h3 class="step-guide-title">魚油選購的黃金評估流程</h3>
+  <ol class="step-guide">
+    <li class="step-guide-item">
+      <h4>第一步：檢視濃度</h4>
+      <p>選擇 <strong>Omega-3 總濃度 > 85%</strong> 的產品，才能確保效率。</p>
+    </li>
+    <li class="step-guide-item">
+      <h4>第二步：確認新鮮度</h4>
+      <p>尋找明確標示 <strong>TOTOX 總氧化值 < 10</strong> 的產品。</p>
+    </li>
+    <!-- ... 其他步驟 ... -->
+  </ol>
+</div>
+```
+
+#### 8. [新] 正反列表 (`.dos-donts-container`)
+用於清晰地並列呈現「建議做」與「不建議做」的清單，視覺對比強烈。
+
+```html
+<div class="dos-donts-container">
+  <div class="do-list">
+    <h4><center>專業選購的 checklist</center></h4>
+    <ul class="dos-donts-list">
+      <li><p><strong>標示透明完整：</strong>應清楚列出 EPA/DHA 含量、來源與 TOTOX 值。</p></li>
+    </ul>
+  </div>
+  <div class="dont-list">
+    <h4><center>應警惕的危險信號</center></h4>
+    <ul class="dos-donts-list">
+      <li><p><strong>模糊的濃度標示：</strong>只寫「魚油 1000mg」，卻對 Omega-3 含量含糊其辭。</p></li>
+    </ul>
+  </div>
+</div>
+```
+
+#### 9. [新] SVG 視覺化圖表
+透過內嵌 SVG，可以創造更豐富、更具互動性的視覺化圖表，例如圓餅圖或長條圖。
+
+##### SVG 圓餅圖範例 (`.concentration-chart-container`)
+```html
+<div class="concentration-chart-container">
+  <div class="chart-panel">
+    <h4>高品質魚油</h4>
+    <svg class="donut-chart-svg" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="45" fill="transparent" stroke="#e5e7eb" stroke-width="10"></circle>
+      <circle class="donut-fg" cx="50" cy="50" r="45" fill="transparent" stroke="#ff6b35" stroke-width="10" stroke-linecap="round" transform="rotate(-90 50 50)" style="stroke-dasharray: 282.7; stroke-dashoffset: 42.4;"></circle>
+       <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+        <tspan class="chart-text-percent" fill="#166534">> 85%</tspan>
+        <tspan x="50%" dy="1.2em" class="chart-text-label">Omega-3</tspan>
+      </text>
+    </svg>
+    <p>每一顆都富含高純度的有效成分，確保每一次補充都高效、純淨。</p>
+  </div>
+  <!-- ... 其他圖表 ... -->
+</div>
+```
+
+##### SVG 長條圖範例 (`.absorption-chart-container`)
+```html
+<div class="absorption-chart-container">
+  <h3 class="absorption-chart-title">魚油型態與吸收率效益比較</h3>
+  <svg class="absorption-svg" viewBox="0 0 200 150">
+    <g>
+      <rect x="30" y="80" width="60" height="50" rx="4" fill="#a0aec0"/>
+      <text x="60" y="105" class="bar-value">基準</text>
+      <text x="60" y="145" class="bar-label">EE 型態</text>
+    </g>
+    <g>
+      <rect x="110" y="22" width="60" height="108" rx="4" fill="#ff6b35"/>
+      <text x="140" y="42" class="bar-value">+70%</text>
+      <text x="140" y="145" class="bar-label">rTG 型態</text>
+    </g>
+  </svg>
+</div>
+```
+
+#### 10. 全局響應式設計 (Global RWD) - 整合 Checklist
 
 **目標**: 整合並標準化全站的響應式設計規則，提升在所有裝置上的瀏覽體驗與未來可維護性。
 

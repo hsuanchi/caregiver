@@ -215,6 +215,15 @@
       .data-table tbody tr { border-bottom: 1px solid #e5e7eb; transition: background 0.3s ease; }
       .data-table tbody tr:hover { background: #f9fafb; }
       .data-table .food-icon { font-size: 1.5em; margin-right: 10px; }
+      
+      .responsive-table-wrapper {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          margin: 20px 0;
+          border: 1px solid #e2e8f0;
+          border-radius: 15px;
+      }
+
       .info-cards, .risk-group-cards { display: inline-flex; flex-wrap: wrap; align-items: stretch; justify-content: flex-start; gap: 20px; margin: 40px 0; }
       .info-card, .risk-card { flex: 1; min-width: 280px; max-width: calc(33.333% - 14px); box-sizing: border-box; background: white; border-radius: 15px; padding: 25px; text-align: left; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; }
       .info-card:hover, .risk-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); }
@@ -394,6 +403,7 @@
           <section id="how-much">
             <h2>我該攝取多少？從每日蛋白質建議量回推</h2>
             <p>與維生素或礦物質不同，胺基酸並沒有單獨的每日建議攝取量(RDA)。這是因為在正常情況下，我們是透過攝取「蛋白質」來獲得完整的胺基酸。因此，最實際的做法是計算每日所需的蛋白質總量，來確保胺基酸供應充足。以下是根據衛福部國健署對不同族群的建議：</p>
+            <div class="responsive-table-wrapper">
             <table class="data-table margin-y-30">
               <tbody>
                 <tr><td>一般健康成人</td><td><strong>1.0 - 1.2 克</strong></td><td>60 - 72 克</td></tr>
@@ -401,6 +411,7 @@
                 <tr><td>65歲以上長者</td><td><strong>1.2 - 1.5 克</strong></td><td>72 - 90 克</td></tr>
               </tbody>
             </table>
+            </div>
                         <div class="alert alert-tip">
               <div>
                 <strong>關鍵洞察：</strong>
@@ -412,6 +423,7 @@
           <section id="action-food">
             <h2>實踐指引(一)：打造您的高效胺基酸餐盤</h2>
             <p>獲取胺基酸最基礎也最重要的方式，就是攝取足夠的「完整蛋白質」——也就是含有全部九種必需胺基酸的蛋白質來源。動物性蛋白質通常都是完整蛋白質，而植物性來源則需要聰明搭配（如豆類配穀類）來補足。以下是一份速查表，幫助您在日常飲食中輕鬆達標：</p>
+            <div class="responsive-table-wrapper">
              <table class="data-table">
               <thead>
                 <tr>
@@ -453,6 +465,7 @@
                 </tr>
               </tbody>
             </table>
+            </div>
           </section>
 
           <section id="action-supplements">
