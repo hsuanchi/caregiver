@@ -88,6 +88,11 @@
       .toc-list a { color: #4a5568; text-decoration: none; font-size: 0.95em; display: block; padding: 8px 12px; transition: all 0.3s ease; position: relative; border-radius: 8px; border-left: 3px solid transparent; }
       .toc-list a.active { color: var(--primary-color); background: var(--primary-bg-light); border-left-color: var(--primary-color); font-weight: 600; }
       .toc-list a:hover { color: var(--primary-color); background: var(--primary-bg-light); border-left-color: var(--primary-light); transform: translateX(2px); }
+      .toc-list a:not(.sub-item) {
+        font-weight: 600;
+        background: rgba(72, 187, 120, 0.05);
+        margin-bottom: 4px;
+      }
       .toc-list a.active.sub-item::before {
         background: #4fd1c5;
       }

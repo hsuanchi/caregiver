@@ -37,14 +37,19 @@
 - 每個列表項為 `<li><a href="..." class="toc-link">...</a></li>`。
 - 子項目需在 `<a>` 標籤上額外加上 `sub-item` class。
 
+### 2.1 樣式標準 (Style Standard)
+- **粗體**: 所有第一層的目錄連結 (`.toc-list a:not(.sub-item)`) 都應明確設定為粗體 (`font-weight: 700;` 或 `font-weight: bold;`)，以確保在不同頁面主題色系下，視覺層級依然清晰。
+- **顏色**: 目錄的 `active` 與 `hover` 狀態顏色應使用頁面定義的 CSS 變數 (`--primary-color`, `--primary-bg-light`, etc.)，以保持主題一致性。
+
 ## 3. 任務拆解 (Task Breakdown)
 
 - [x] **[分析]** 比較 `post/00template.html` 與 `post/fish-oil.html` 的 TOC 結構，定義出標準範本。
 - [x] **[文件]** 建立此 `TOC_FORMAT_STANDARDIZATION.md` 任務文件。
 - [x] **[文件]** 將此任務新增至 `doc/task/todo.md`。
-- [x] **[重構]** 遍歷所有 `post/*.html` 檔案，檢查其 TOC 結構是否符合標準。
-- [x] **[重構]** 對於不符合標準的頁面，修改其 HTML 結構以符合上述範本。
-- [x] **[驗證]** 確保修改後的頁面，其桌面版與行動版的 TOC 功能與 RWD 樣式皆正常運作。
+- [ ] **[重構]** 遍歷所有 `post/*.html` 檔案，檢查其 TOC HTML 結構是否符合標準。
+- [ ] **[重構]** 檢查並統一所有 `post/*.html` 頁面中，針對 `.toc-list a:not(.sub-item)` 的 `font-weight` 樣式，確保其設定為 `700` 或 `bold`。
+- [ ] **[重構]** 對於不符合標準的頁面，修改其 HTML 結構以符合上述範本。
+- [ ] **[驗證]** 確保修改後的頁面，其桌面版與行動版的 TOC 功能與 RWD 樣式皆正常運作。
 - [ ] **[文件]** 將此次標準化修改記錄到 `CHANGELOG.md`。
 
 ## 4. 影響評估 (Impact Assessment)
