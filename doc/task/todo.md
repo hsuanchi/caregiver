@@ -52,24 +52,17 @@
 
 此區塊的任務為一次性或階段性的開發工作。
 
+### [待辦] 全站文章頁面 RWD 樣式標準化 (GLOBAL-ARTICLE-RWD-STANDARDIZATION)
+
+**主要目標**: 將修復行動裝置佈局問題的 CSS 規則 (`body { overflow-x: hidden; }`) 應用於所有 `post/*.html` 文章頁面，並藉此機會統一所有文章頁面的行動裝置 `@media` 查詢樣式，確保全站 RWD 效果一致。
+**相關檔案**: `post/*.html`, `post/00template.html`
+**詳細說明**: 遍歷所有文章頁面，檢查其 `@media (max-width: 1024px)` 媒體查詢區塊，確保 `body { overflow-x: hidden; }` 規則存在，並移除或統一其他可能存在衝突的舊樣式。
+
 ### [待辦] 首頁整合儀表板功能 (HOMEPAGE-DASHBOARD-INTEGRATION)
 
 **主要目標**: 將 `category/nutrient-dashboard.html` 的功能修改後，移植到首頁，呈現科技與數據感。
 **相關檔案**: `index.html`, `category/nutrient-dashboard.html`, `assets/js/dashboard-logic.js`
 **詳細說明**: 此任務對應 `INTEGRATE_DASHBOARD_TO_HOMEPAGE.md` 的規劃。需要將現有儀表板邏輯重構為一個獨立的、可嵌入的 Shadow DOM 組件。
-
-
-
-
-### [待辦] 優化文章內相關營養素卡片樣式 (ARTICLE-INFO-CARD-STYLE-OPT)
-
-**主要目標**: 統一文章內相關營養素卡片的視覺風格，使其更現代、簡潔，並與整體設計語言保持一致。
-**相關檔案**: `post/*.html` (特別是 `.info-cards` 和 `.info-card` 元素)
-**詳細說明**:
-- 移除卡片中不必要的「類型」和「狀態」顯示。
-- 將卡片整體設計為可點擊區域。
-- 將「閱讀文章」按鈕改為簡潔的文字連結（例如：「閱讀文章 →」），並使其在卡片底部對齊，避免視覺混亂。
-- 參考 `assets/js/dashboard-logic.js` 中 `renderNutrientCard` 函數的最新優化邏輯。
 
 ### [待辦] 調整儀表板測試頁面標題 (DASHBOARD-TEST-TITLE)
 
@@ -77,7 +70,7 @@
 **相關檔案**: `tests/index-dashboard-test.html`
 **詳細說明**: 確保標題能準確反映頁面內容，提升測試頁面的語義清晰度。
 
-### [待辦] BUG: 行動裝置容器左右留白不對稱 (BUG-MOBILE-LAYOUT-ASYMMETRY)
+### [已完成] BUG: 行動裝置容器左右留白不對稱 (BUG-MOBILE-LAYOUT-ASYMMETRY)
 
 **問題描述 (Problem)**:
 文章頁面 (例如 `post/magnesium.html`, `post/vitamin-c.html`) 在部分行動裝置的螢幕寬度下，主內容容器與頁面背景之間的左右留白(padding/margin)會出現不對稱的情況，導致視覺上的不平衡。
