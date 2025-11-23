@@ -55,6 +55,12 @@
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
+## [1.3.4] - 2025-11-23
+
+### 移除
+- **移除儀表板的「資料總覽」區塊 (REMOVE-DASHBOARD-OVERVIEW)**：
+  - 從 `category/nutrient-dashboard.html` 頁面中移除了「資料總覽：內容涵蓋狀態」區塊，以簡化頁面。
+
 ## [1.3.3] - 2025-11-19
 
 ### 修改

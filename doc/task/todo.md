@@ -60,11 +60,6 @@
 
 
 
-### [待辦] 移除儀表板的「資料總覽」區塊 (REMOVE-DASHBOARD-OVERVIEW)
-
-**主要目標**: 從 `category/nutrient-dashboard.html` 頁面中移除「資料總覽：內容涵蓋狀態」區塊，以簡化頁面。
-**相關檔案**: `category/nutrient-dashboard.html`
-**詳細說明**: 移除包含進度條和狀態文本的整個 `div.bg-white` 區塊。
 
 ### [待辦] 優化文章內相關營養素卡片樣式 (ARTICLE-INFO-CARD-STYLE-OPT)
 
