@@ -52,11 +52,13 @@
 
 此區塊的任務為一次性或階段性的開發工作。
 
-### [已完成] 全站文章頁面 RWD 樣式標準化 (GLOBAL-ARTICLE-RWD-STANDARDIZATION)
+### [已完成] 全站文章頁面 TOC 目錄結構標準化 (TOC-FORMAT-STANDARDIZATION)
 
-**主要目標**: 將修復行動裝置佈局問題的 CSS 規則 (`body { overflow-x: hidden; }`) 應用於所有 `post/*.html` 文章頁面，並藉此機會統一所有文章頁面的行動裝置 `@media` 查詢樣式，確保全站 RWD 效果一致。
-**相關檔案**: `post/*.html`, `post/00template.html`
-**詳細說明**: 遍歷所有文章頁面，檢查其 `@media (max-width: 1024px)` 媒體查詢區塊，確保 `body { overflow-x: hidden; }` 規則存在，並移除或統一其他可能存在衝突的舊樣式。
+**主要目標**: 確保所有 `post/*.html` 文章頁面的側邊欄目錄 (TOC) 結構與樣式，皆符合標準格式，以統一全站體驗並確保 RWD 功能正常。
+**相關檔案**: `post/*.html`, `doc/task/TOC_FORMAT_STANDARDIZATION.md`
+**詳細說明**: 依據 `TOC_FORMAT_STANDARDIZATION.md` 文件中定義的標準結構，逐一檢查並修正所有文章頁面的 TOC。
+
+### [已完成] 全站文章頁面 RWD 樣式標準化 (GLOBAL-ARTICLE-RWD-STANDARDIZATION)
 
 ### [待辦] 首頁整合儀表板功能 (HOMEPAGE-DASHBOARD-INTEGRATION)
 

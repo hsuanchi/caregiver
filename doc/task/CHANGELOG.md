@@ -55,6 +55,12 @@
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
+## [1.3.6] - 2025-11-23
+
+### 修改
+- **全站文章頁面 TOC 結構標準化 (TOC-FORMAT-STANDARDIZATION)**：
+  - 統一所有 `post/*.html` 文章頁面的側邊欄目錄 (TOC) HTML 結構，確保其 `<h3 class="toc-title">` 不包含 `<a>` 標籤，並為 `<aside>` 容器添加 `id="sidebar"`，以符合標準範本，確保 RWD 功能一致性。
+
 ## [1.3.5] - 2025-11-23
 
 ### 修改
