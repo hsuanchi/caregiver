@@ -52,7 +52,7 @@
 
 此區塊的任務為一次性或階段性的開發工作。
 
-### [待辦] 全站文章頁面 RWD 樣式標準化 (GLOBAL-ARTICLE-RWD-STANDARDIZATION)
+### [已完成] 全站文章頁面 RWD 樣式標準化 (GLOBAL-ARTICLE-RWD-STANDARDIZATION)
 
 **主要目標**: 將修復行動裝置佈局問題的 CSS 規則 (`body { overflow-x: hidden; }`) 應用於所有 `post/*.html` 文章頁面，並藉此機會統一所有文章頁面的行動裝置 `@media` 查詢樣式，確保全站 RWD 效果一致。
 **相關檔案**: `post/*.html`, `post/00template.html`
@@ -70,16 +70,3 @@
 **相關檔案**: `tests/index-dashboard-test.html`
 **詳細說明**: 確保標題能準確反映頁面內容，提升測試頁面的語義清晰度。
 
-### [已完成] BUG: 行動裝置容器左右留白不對稱 (BUG-MOBILE-LAYOUT-ASYMMETRY)
-
-**問題描述 (Problem)**:
-文章頁面 (例如 `post/magnesium.html`, `post/vitamin-c.html`) 在部分行動裝置的螢幕寬度下，主內容容器與頁面背景之間的左右留白(padding/margin)會出現不對稱的情況，導致視覺上的不平衡。
-
-**目標 (Goal)**:
-1.  分析造成此問題的 CSS 根本原因。
-2.  提出一個能適用於所有文章頁面的通用解決方案。
-3.  修復此問題，確保在各種行動裝置寬度下，頁面佈局皆能保持對稱與美觀。
-
-**影響範圍 (Affected Files)**:
-- 所有位於 `post/` 資料夾下的文章頁面。
-- 可能是頁面內嵌的通用 CSS 規則，特別是 `@media` query 中的設定。

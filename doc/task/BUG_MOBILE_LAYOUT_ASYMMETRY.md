@@ -35,8 +35,8 @@ caregiver/
 - [x] **[分析]** 閱讀 `post/magnesium.html` 的原始碼，找出其主內容容器的 class 或 id，並確認其載入的 CSS 樣式來源。
 - [x] **[分析]** 檢查找出的 CSS 規則，並假設問題源於子元素溢位 (overflow) 導致父容器無法正確置中。
 - [x] **[實作]** 撰寫 CSS 規則 `body { overflow-x: hidden; }`，並將其應用於 `post/magnesium.html` 和 `post/00template.html` 的行動裝置 `@media` 查詢中，作為通用解決方案。
-- [ ] **[驗證]** 確認修復方案在範例頁面 (`magnesium.html`) 上有效。
-- [ ] **[重構]** 將此通用解決方案應用於所有 `post/*.html` 文章頁面，確保樣式一致。
+- [x] **[驗證]** 確認修復方案在範例頁面 (`magnesium.html`) 上有效。
+- [x] **[重構]** 將此通用解決方案應用於所有 `post/*.html` 文章頁面，確保樣式一致。
 - [ ] **[文件]** 將此次修復記錄到 `CHANGELOG.md`。
 
 ## 4. 影響評估 (Impact Assessment)

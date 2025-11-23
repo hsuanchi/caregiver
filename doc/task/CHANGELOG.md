@@ -55,6 +55,12 @@
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
+## [1.3.5] - 2025-11-23
+
+### 修改
+- **全站文章頁面 RWD 標準化 (GLOBAL-ARTICLE-RWD-STANDARDIZATION)**：
+  - 為所有 `post/*.html` 文章頁面的行動裝置 `@media (max-width: 1024px)` 查詢中，新增 `body { overflow-x: hidden; }` 規則，以解決主內容容器左右留白不對稱問題，確保頁面佈局在行動裝置上保持對稱與美觀。
+
 ## [1.3.4] - 2025-11-23
 
 ### 移除

@@ -177,7 +177,7 @@
       .comparison-cell:last-child { border-radius: 0 10px 10px 0; }
       .safety-card { background: #fef2f2; border-left: 4px solid #ef4444; }
       .safety-card .info-card-title { color: #b91c1c; display: flex; align-items: center; gap: 10px; }
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } }
+      @media (max-width: 1024px) { body { overflow-x: hidden; } .article-container { grid-template-columns: 1fr; gap: 0; } }
       @media (max-width: 768px) { .article-content { padding: 25px; } .article-title { font-size: 2em; } .article-meta { flex-direction: column; gap: 10px; } .comparison-table, .comparison-table thead, .comparison-table tbody, .comparison-table th, .comparison-table td, .comparison-table tr { display: block; } .comparison-table thead { display: none; } .comparison-table tr { border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 15px; } .comparison-table td { display: flex; justify-content: space-between; padding: 10px 15px; text-align: right; border-bottom: 1px dashed #e2e8f0; } .comparison-table td:last-child { border-bottom: none; } .comparison-table td::before { content: attr(data-label); font-weight: 600; text-align: left; margin-right: 15px; } .comparison-label { display: none; } .comparison-cell { box-shadow: none; } .comparison-cell:last-child, .comparison-label { border-radius: 0; } }
     </style>
 </head>
