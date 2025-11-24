@@ -88,6 +88,11 @@
       .toc-list a { color: #4a5568; text-decoration: none; font-size: 0.95em; display: block; padding: 8px 12px; transition: all 0.3s ease; position: relative; border-radius: 8px; border-left: 3px solid transparent; }
       .toc-list a.active { color: var(--primary-color); background: var(--primary-bg-light); border-left-color: var(--primary-color); font-weight: 600; }
       .toc-list a:hover { color: var(--primary-color); background: var(--primary-bg-light); border-left-color: var(--primary-light); transform: translateX(2px); }
+      .toc-list a:not(.sub-item) {
+        font-weight: 600;
+        background: rgba(72, 187, 120, 0.05);
+        margin-bottom: 4px;
+      }
       .toc-list a.active.sub-item::before {
         background: #4fd1c5;
       }
@@ -177,7 +182,7 @@
       .comparison-cell:last-child { border-radius: 0 10px 10px 0; }
       .safety-card { background: #fef2f2; border-left: 4px solid #ef4444; }
       .safety-card .info-card-title { color: #b91c1c; display: flex; align-items: center; gap: 10px; }
-      @media (max-width: 1024px) { .article-container { grid-template-columns: 1fr; gap: 0; } }
+      @media (max-width: 1024px) { body { overflow-x: hidden; } .article-container { grid-template-columns: 1fr; gap: 0; } }
       @media (max-width: 768px) { .article-content { padding: 25px; } .article-title { font-size: 2em; } .article-meta { flex-direction: column; gap: 10px; } .comparison-table, .comparison-table thead, .comparison-table tbody, .comparison-table th, .comparison-table td, .comparison-table tr { display: block; } .comparison-table thead { display: none; } .comparison-table tr { border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 15px; } .comparison-table td { display: flex; justify-content: space-between; padding: 10px 15px; text-align: right; border-bottom: 1px dashed #e2e8f0; } .comparison-table td:last-child { border-bottom: none; } .comparison-table td::before { content: attr(data-label); font-weight: 600; text-align: left; margin-right: 15px; } .comparison-label { display: none; } .comparison-cell { box-shadow: none; } .comparison-cell:last-child, .comparison-label { border-radius: 0; } }
     </style>
 </head>
@@ -188,7 +193,7 @@
     <div class="article-container">
       <aside class="sidebar" id="sidebar">
         <div class="toc">
-          <h3 class="toc-title"><a href="#article-top" class="no-underline-inherit-color">目錄</a></h3>
+          <h3 class="toc-title"><span>目錄</span></h3>
           <ul class="toc-list">
             <li><a href="#problem" class="toc-link">您有這些困擾嗎？當身體的防線與代謝失衡</a></li>
             <li><a href="#solution" class="toc-link">β-葡聚醣：4大核心功效，重塑您的健康基礎</a></li>

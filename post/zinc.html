@@ -619,6 +619,7 @@
 
       section[id] { scroll-margin-top: 100px; }
       @media (max-width: 1024px) {
+        body { overflow-x: hidden; }
         .article-container {
           grid-template-columns: 1fr;
           gap: 0;
@@ -634,7 +635,7 @@
     <div id="header-component"></div>
 
     <div class="article-container">
-      <aside class="sidebar">
+      <aside class="sidebar" id="sidebar">
         <div class="toc">
           <h3 class="toc-title"><span>目錄</span></h3>
           <ul class="toc-list">

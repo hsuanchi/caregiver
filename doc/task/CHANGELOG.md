@@ -55,6 +55,24 @@
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
+## [1.3.6] - 2025-11-23
+
+### 修改
+- **全站文章頁面 TOC 結構標準化 (TOC-FORMAT-STANDARDIZATION)**：
+  - 統一所有 `post/*.html` 文章頁面的側邊欄目錄 (TOC) HTML 結構，確保其 `<h3 class="toc-title">` 不包含 `<a>` 標籤，並為 `<aside>` 容器添加 `id="sidebar"`，以符合標準範本，確保 RWD 功能一致性。
+
+## [1.3.5] - 2025-11-23
+
+### 修改
+- **全站文章頁面 RWD 標準化 (GLOBAL-ARTICLE-RWD-STANDARDIZATION)**：
+  - 為所有 `post/*.html` 文章頁面的行動裝置 `@media (max-width: 1024px)` 查詢中，新增 `body { overflow-x: hidden; }` 規則，以解決主內容容器左右留白不對稱問題，確保頁面佈局在行動裝置上保持對稱與美觀。
+
+## [1.3.4] - 2025-11-23
+
+### 移除
+- **移除儀表板的「資料總覽」區塊 (REMOVE-DASHBOARD-OVERVIEW)**：
+  - 從 `category/nutrient-dashboard.html` 頁面中移除了「資料總覽：內容涵蓋狀態」區塊，以簡化頁面。
+
 ## [1.3.3] - 2025-11-19
 
 ### 修改

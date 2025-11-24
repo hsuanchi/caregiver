@@ -12,11 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultsCount = document.getElementById('resultsCount');
     const clearGoalsBtn = document.getElementById('clearGoalsBtn');
     const healthGoalAccordionContainer = document.getElementById('healthGoalAccordionContainer');
-    const statusBar = {
-        container: document.getElementById('statusBarContainer'),
-        progressBar: document.getElementById('progressBar'),
-        text: document.getElementById('statusText')
-    };
 
     let activeGoals = new Set();
     let searchTerm = '';
@@ -146,24 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         applyFilters();
     });
 
-    function updateStatusBar() {
-        const totalCount = articlesData.length;
-        const completedCount = articlesData.filter(item => item.status === '完整').length;
-        const pendingCount = totalCount - completedCount;
-        if (totalCount > 0) {
-            const percentage = Math.round((completedCount / totalCount) * 100);
-            statusBar.progressBar.style.width = percentage + '%';
-            statusBar.progressBar.textContent = percentage + '%';
-            statusBar.text.textContent = `完整 ${completedCount} 篇 / 待補 ${pendingCount} 篇 (共 ${totalCount} 篇)`;
-        } else {
-            statusBar.progressBar.style.width = '0%';
-            statusBar.progressBar.textContent = '';
-            statusBar.text.textContent = '尚無資料';
-        }
-    }
-
     // Initial setup
-    updateStatusBar();
     setupGoalFilters(); 
     applyFilters();
 });

@@ -52,29 +52,19 @@
 
 此區塊的任務為一次性或階段性的開發工作。
 
+### [已完成] 全站文章頁面 TOC 目錄結構標準化 (TOC-FORMAT-STANDARDIZATION)
+
+**主要目標**: 確保所有 `post/*.html` 文章頁面的側邊欄目錄 (TOC) 結構與樣式，皆符合標準格式，以統一全站體驗並確保 RWD 功能正常。
+**相關檔案**: `post/*.html`, `doc/task/TOC_FORMAT_STANDARDIZATION.md`
+**詳細說明**: 依據 `TOC_FORMAT_STANDARDIZATION.md` 文件中定義的標準結構，逐一檢查並修正所有文章頁面的 TOC。
+
+### [已完成] 全站文章頁面 RWD 樣式標準化 (GLOBAL-ARTICLE-RWD-STANDARDIZATION)
+
 ### [待辦] 首頁整合儀表板功能 (HOMEPAGE-DASHBOARD-INTEGRATION)
 
 **主要目標**: 將 `category/nutrient-dashboard.html` 的功能修改後，移植到首頁，呈現科技與數據感。
 **相關檔案**: `index.html`, `category/nutrient-dashboard.html`, `assets/js/dashboard-logic.js`
 **詳細說明**: 此任務對應 `INTEGRATE_DASHBOARD_TO_HOMEPAGE.md` 的規劃。需要將現有儀表板邏輯重構為一個獨立的、可嵌入的 Shadow DOM 組件。
-
-
-
-### [待辦] 移除儀表板的「資料總覽」區塊 (REMOVE-DASHBOARD-OVERVIEW)
-
-**主要目標**: 從 `category/nutrient-dashboard.html` 頁面中移除「資料總覽：內容涵蓋狀態」區塊，以簡化頁面。
-**相關檔案**: `category/nutrient-dashboard.html`
-**詳細說明**: 移除包含進度條和狀態文本的整個 `div.bg-white` 區塊。
-
-### [待辦] 優化文章內相關營養素卡片樣式 (ARTICLE-INFO-CARD-STYLE-OPT)
-
-**主要目標**: 統一文章內相關營養素卡片的視覺風格，使其更現代、簡潔，並與整體設計語言保持一致。
-**相關檔案**: `post/*.html` (特別是 `.info-cards` 和 `.info-card` 元素)
-**詳細說明**:
-- 移除卡片中不必要的「類型」和「狀態」顯示。
-- 將卡片整體設計為可點擊區域。
-- 將「閱讀文章」按鈕改為簡潔的文字連結（例如：「閱讀文章 →」），並使其在卡片底部對齊，避免視覺混亂。
-- 參考 `assets/js/dashboard-logic.js` 中 `renderNutrientCard` 函數的最新優化邏輯。
 
 ### [待辦] 調整儀表板測試頁面標題 (DASHBOARD-TEST-TITLE)
 
@@ -82,16 +72,3 @@
 **相關檔案**: `tests/index-dashboard-test.html`
 **詳細說明**: 確保標題能準確反映頁面內容，提升測試頁面的語義清晰度。
 
-### [待辦] BUG: 行動裝置容器左右留白不對稱 (BUG-MOBILE-LAYOUT-ASYMMETRY)
-
-**問題描述 (Problem)**:
-文章頁面 (例如 `post/magnesium.html`, `post/vitamin-c.html`) 在部分行動裝置的螢幕寬度下，主內容容器與頁面背景之間的左右留白(padding/margin)會出現不對稱的情況，導致視覺上的不平衡。
-
-**目標 (Goal)**:
-1.  分析造成此問題的 CSS 根本原因。
-2.  提出一個能適用於所有文章頁面的通用解決方案。
-3.  修復此問題，確保在各種行動裝置寬度下，頁面佈局皆能保持對稱與美觀。
-
-**影響範圍 (Affected Files)**:
-- 所有位於 `post/` 資料夾下的文章頁面。
-- 可能是頁面內嵌的通用 CSS 規則，特別是 `@media` query 中的設定。
