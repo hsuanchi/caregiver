@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>視覺化營養百科 | 營養百科</title>
+    
+    <!-- 引入 Tailwind CSS (快速排版與美化) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 引入 Chart.js (資料視覺化圖表) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- 引入 Google Fonts (提升閱讀體驗) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- 引入 FontAwesome (圖示) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        /* 自定義隱藏捲軸 */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 1. 導航列 (Navbar) -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-leaf text-green-500 text-2xl"></i>
+                <span class="text-xl font-bold tracking-wide text-gray-900">營養百科</span>
+            </div>
+            <div class="hidden md:flex space-x-6 text-sm font-medium text-gray-500">
+                <a href="#" class="hover:text-green-600 transition">營養排行</a>
+                <a href="#" class="hover:text-green-600 transition">食物 PK</a>
+                <a href="#" class="hover:text-green-600 transition">關於我們</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. 搜尋與 Hero 區塊 -->
+    <header class="bg-green-600 text-white py-12 md:py-20 relative overflow-hidden">
+        <div class="absolute top-0 right-0 opacity-10 transform translate-x-10 -translate-y-10">
+            <i class="fa-solid fa-carrot text-9xl"></i>
+        </div>
+        
+        <div class="max-w-3xl mx-auto px-4 text-center relative z-10">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">將數據轉化為您的健康決策</h1>
+            <p class="text-green-100 mb-8 text-lg">全台最大的視覺化營養資料庫，輸入食材立即查詢。</p>
+            
+            <!-- 模擬搜尋框 -->
+            <div class="relative max-w-lg mx-auto">
+                <input type="text" id="searchInput" placeholder="試試看：酪梨、雞胸肉、鮭魚..." 
+                    class="w-full pl-12 pr-4 py-4 rounded-full shadow-lg text-gray-800 focus:outline-none focus:ring-4 focus:ring-green-400 transition"
+                    autocomplete="off">
+                <i class="fa-solid fa-search absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                
+                <!-- 搜尋建議下拉選單 (預設隱藏) -->
+                <div id="searchResults" class="hidden absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl overflow-hidden text-left text-gray-800 border border-gray-100">
+                    <!-- JS 動態生成結果 -->
+                </div>
+            </div>
+
+            <!-- 快速標籤 -->
+            <div class="mt-6 flex justify-center flex-wrap gap-2 text-sm">
+                <button class="quick-search-btn bg-green-700 bg-opacity-50 hover:bg-opacity-70 px-4 py-1 rounded-full transition" data-food="avocado">🥑 酪梨</button>
+                <button class="quick-search-btn bg-green-700 bg-opacity-50 hover:bg-opacity-70 px-4 py-1 rounded-full transition" data-food="chicken">🍗 雞胸肉</button>
+                <button class="quick-search-btn bg-green-700 bg-opacity-50 hover:bg-opacity-70 px-4 py-1 rounded-full transition" data-food="salmon">🐟 鮭魚</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. 主要內容區 (Main Content) -->
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        
+        <!-- 食物詳情卡片 -->
+        <div id="foodDetail" class="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300">
+            
+            <!-- 標題與份量控制區 -->
+            <div class="p-6 md:p-8 border-b border-gray-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div class="flex items-center gap-4">
+                    <div id="foodIcon" class="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center text-4xl shadow-inner">
+                        🥑
+                    </div>
+                    <div>
+                        <h2 id="foodName" class="text-3xl font-bold text-gray-800">酪梨 (Avocado)</h2>
+                        <span id="foodCategory" class="text-sm text-green-600 bg-green-50 px-2 py-1 rounded-md font-medium">油脂與堅果種子類</span>
+                    </div>
+                </div>
+
+                <!-- User Story: 份量換算器 -->
+                <div class="bg-gray-100 p-1 rounded-lg flex text-sm font-medium">
+                    <button class="portion-btn px-4 py-2 rounded-md shadow-sm bg-white text-green-700 transition" data-mult="1" id="btn-100g">100g (標準)</button>
+                    <button class="portion-btn px-4 py-2 rounded-md text-gray-500 hover:text-gray-700 transition" data-mult="1.5" id="btn-serving">1 顆 (去籽約 150g)</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-8">
+                
+                <!-- 左側：核心數據與圖表 -->
+                <div class="lg:col-span-1 p-6 md:p-8 bg-gray-50 border-r border-gray-100">
+                    <h3 class="text-lg font-bold text-gray-700 mb-6 flex items-center">
+                        <i class="fa-solid fa-chart-pie mr-2 text-green-500"></i> 營養分佈雷達
+                    </h3>
+                    <div class="relative w-full aspect-square max-w-[300px] mx-auto">
+                        <canvas id="nutritionRadar"></canvas>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <div class="text-4xl font-extrabold text-gray-800" id="caloriesDisplay">160 <span class="text-base font-normal text-gray-500">kcal</span></div>
+                        <div class="text-sm text-gray-500">總熱量</div>
+                    </div>
+                </div>
+
+                <!-- 右側：詳細數據 (資訊圖表化) -->
+                <div class="lg:col-span-2 p-6 md:p-8">
+                    <h3 class="text-lg font-bold text-gray-700 mb-6 flex items-center">
+                        <i class="fa-solid fa-list-check mr-2 text-green-500"></i> 營養素儀表板
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                        
+                        <!-- 巨量營養素 (Macro) -->
+                        <div class="space-y-5">
+                            <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">三大營養素</h4>
+                            
+                            <!-- 蛋白質 -->
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm font-medium text-gray-700">蛋白質 (Protein)</span>
+                                    <span class="text-sm font-bold text-gray-900" id="val-protein">2g</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div id="bar-protein" class="bg-blue-500 h-2.5 rounded-full" style="width: 10%"></div>
+                                </div>
+                            </div>
+
+                            <!-- 脂肪 -->
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm font-medium text-gray-700">總脂肪 (Fat)</span>
+                                    <span class="text-sm font-bold text-gray-900" id="val-fat">14.7g</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div id="bar-fat" class="bg-yellow-400 h-2.5 rounded-full" style="width: 70%"></div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1"><i class="fa-solid fa-circle-info text-blue-400"></i> 富含單元不飽和脂肪酸，對心血管有益。</p>
+                            </div>
+
+                            <!-- 碳水化合物 -->
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm font-medium text-gray-700">碳水化合物 (Carbs)</span>
+                                    <span class="text-sm font-bold text-gray-900" id="val-carbs">8.5g</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div id="bar-carbs" class="bg-green-500 h-2.5 rounded-full" style="width: 25%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 微量營養素與特徵 (Micro & Highlights) -->
+                        <div class="space-y-5">
+                            <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">重點微量元素</h4>
+                            
+                            <!-- 鉀 -->
+                            <div class="flex items-center p-3 bg-blue-50 rounded-lg border border-blue-100">
+                                <div class="p-2 bg-blue-100 rounded-full text-blue-600 mr-3">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium text-gray-600">鉀 (Potassium)</div>
+                                    <div class="text-lg font-bold text-gray-800" id="val-k">485mg</div>
+                                </div>
+                                <div class="text-xs font-bold text-white bg-blue-500 px-2 py-1 rounded">高</div>
+                            </div>
+
+                            <!-- 膳食纖維 -->
+                            <div class="flex items-center p-3 bg-green-50 rounded-lg border border-green-100">
+                                <div class="p-2 bg-green-100 rounded-full text-green-600 mr-3">
+                                    <i class="fa-solid fa-seedling"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium text-gray-600">膳食纖維 (Fiber)</div>
+                                    <div class="text-lg font-bold text-gray-800" id="val-fiber">6.7g</div>
+                                </div>
+                                <div class="text-xs font-bold text-white bg-green-500 px-2 py-1 rounded">優</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <!-- 結論/AI Summary -->
+                    <div class="mt-8 bg-gray-800 text-white p-4 rounded-xl flex gap-3 items-start">
+                        <i class="fa-solid fa-robot mt-1 text-green-400"></i>
+                        <div>
+                            <h5 class="font-bold text-sm text-green-400 mb-1">NutriBot 短評：</h5>
+                            <p class="text-sm leading-relaxed text-gray-300" id="ai-summary">
+                                這是非常優質的油脂來源！雖然熱量稍高，但富含膳食纖維與鉀離子。建議搭配雞胸肉食用，適合生酮飲食或增肌減脂族群。
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="bg-white border-t border-gray-200 mt-12 py-8 text-center text-sm text-gray-500">
+        <p>&copy; 2025 營養百科. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript 邏輯區 -->
+    <script>
+        // --- 1. 模擬資料庫 (Mock Database) ---
+        // 在真實專案中，這裡會是從 API Fetch 下來的 JSON 資料
+        const foodDatabase = {
+            'avocado': {
+                name: '酪梨',
+                engName: 'Avocado',
+                icon: '🥑',
+                category: '油脂與堅果種子類',
+                portionName: '1 顆 (去籽約 150g)',
+                portionWeight: 150, // g
+                base: { // per 100g
+                    calories: 160,
+                    protein: 2.0,
+                    fat: 14.7,
+                    carbs: 8.5,
+                    fiber: 6.7,
+                    potassium: 485 // mg
+                },
+                summary: '這是非常優質的油脂來源！雖然熱量稍高，但富含膳食纖維與鉀離子。建議搭配雞胸肉食用，適合生酮飲食或增肌減脂族群。',
+                color: 'bg-green-100'
+            },
+            'chicken': {
+                name: '雞胸肉',
+                engName: 'Chicken Breast',
+                icon: '🍗',
+                category: '豆魚蛋肉類',
+                portionName: '1 片 (約 180g)',
+                portionWeight: 180,
+                base: { 
+                    calories: 165,
+                    protein: 31.0,
+                    fat: 3.6,
+                    carbs: 0.0,
+                    fiber: 0.0,
+                    potassium: 256
+                },
+                summary: '增肌首選！極高蛋白質且低脂肪。因為完全沒有碳水化合物，建議搭配地瓜或糙米飯食用以獲得均衡營養。',
+                color: 'bg-orange-100'
+            },
+            'salmon': {
+                name: '鮭魚',
+                engName: 'Salmon',
+                icon: '🐟',
+                category: '豆魚蛋肉類',
+                portionName: '1 片 (約 200g)',
+                portionWeight: 200,
+                base: { 
+                    calories: 208,
+                    protein: 20.4,
+                    fat: 13.4,
+                    carbs: 0.0,
+                    fiber: 0.0,
+                    potassium: 363
+                },
+                summary: '含有豐富的 Omega-3 脂肪酸，對大腦與心臟健康極佳。雖然脂肪含量較高，但屬於優質好油。',
+                color: 'bg-blue-100'
+            }
+        };
+
+        // 狀態管理
+        let currentFoodKey = 'avocado';
+        let currentMultiplier = 1; // 1 = 100g, 其他為倍數
+        let radarChart = null;
+
+        // --- 2. 核心功能函數 ---
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFood(currentFoodKey);
+            
+            // 綁定份量按鈕事件
+            document.querySelectorAll('.portion-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    // UI 切換
+                    document.querySelectorAll('.portion-btn').forEach(b => {
+                        b.classList.remove('bg-white', 'text-green-700', 'shadow-sm');
+                        b.classList.add('text-gray-500');
+                    });
+                    e.target.classList.remove('text-gray-500');
+                    e.target.classList.add('bg-white', 'text-green-700', 'shadow-sm');
+                    
+                    // 邏輯運算
+                    currentMultiplier = parseFloat(e.target.dataset.mult);
+                    updateNumbers();
+                });
+            });
+
+            // 綁定快速搜尋按鈕
+            document.querySelectorAll('.quick-search-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const key = e.target.dataset.food;
+                    currentFoodKey = key;
+                    resetPortionUI();
+                    renderFood(key);
+                });
+            });
+            
+            // 綁定搜尋框 (簡易模擬)
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', (e) => {
+                // 這裡可以實作更複雜的 Autocomplete
+                // 為 Demo 簡化，若輸入 "雞" 則切換到雞胸肉
+                const val = e.target.value;
+                if(val.includes('雞')) document.querySelector('[data-food="chicken"]').click();
+                if(val.includes('魚')) document.querySelector('[data-food="salmon"]').click();
+                if(val.includes('酪')) document.querySelector('[data-food="avocado"]').click();
+            });
+        });
+
+        function resetPortionUI() {
+            currentMultiplier = 1;
+            const btn100 = document.getElementById('btn-100g');
+            const btnServing = document.getElementById('btn-serving');
+            
+            // 重置按鈕樣式
+            btn100.click(); 
+        }
+
+        // 渲染頁面主要數據
+        function renderFood(key) {
+            const data = foodDatabase[key];
+            if(!data) return;
+
+            // 更新文字與圖示
+            document.getElementById('foodName').innerText = `${data.name} (${data.engName})`;
+            document.getElementById('foodIcon').innerText = data.icon;
+            document.getElementById('foodCategory').innerText = data.category;
+            document.getElementById('ai-summary').innerText = data.summary;
+            
+            // 更新份量按鈕文字
+            document.getElementById('btn-serving').innerText = data.portionName;
+            
+            // 計算份量倍率 (Serving weight / 100)
+            const servingMult = data.portionWeight / 100;
+            document.getElementById('btn-serving').dataset.mult = servingMult;
+
+            updateNumbers();
+            updateChart(data);
+        }
+
+        // 更新數值與進度條 (User Story: 份量換算)
+        function updateNumbers() {
+            const data = foodDatabase[currentFoodKey].base;
+            const m = currentMultiplier; // Multiplier
+
+            // Helper: 格式化數字 (小數點後1位)
+            const fmt = (num) => (num * m).toFixed(1).replace('.0', '');
+
+            // 更新數值
+            document.getElementById('caloriesDisplay').innerHTML = `${Math.round(data.calories * m)} <span class="text-base font-normal text-gray-500">kcal</span>`;
+            document.getElementById('val-protein').innerText = `${fmt(data.protein)}g`;
+            document.getElementById('val-fat').innerText = `${fmt(data.fat)}g`;
+            document.getElementById('val-carbs').innerText = `${fmt(data.carbs)}g`;
+            document.getElementById('val-k').innerText = `${Math.round(data.potassium * m)}mg`;
+            document.getElementById('val-fiber').innerText = `${fmt(data.fiber)}g`;
+
+            // 更新進度條寬度 (視覺化)
+            // 假設每日參考值: 蛋白質 60g, 脂肪 60g, 碳水 300g
+            // 這裡用簡易邏輯：數值 / 參考值 * 100，最高 100%
+            const pPct = Math.min((data.protein * m / 60) * 100, 100);
+            const fPct = Math.min((data.fat * m / 60) * 100, 100);
+            const cPct = Math.min((data.carbs * m / 300) * 100, 100);
+
+            document.getElementById('bar-protein').style.width = `${pPct}%`;
+            document.getElementById('bar-fat').style.width = `${fPct}%`;
+            document.getElementById('bar-carbs').style.width = `${cPct}%`;
+        }
+
+        // --- 3. Chart.js 圖表設定 (User Story: 視覺化儀表板) ---
+        function updateChart(data) {
+            const ctx = document.getElementById('nutritionRadar').getContext('2d');
+            
+            // 銷毀舊圖表以避免重疊
+            if(radarChart) radarChart.destroy();
+
+            radarChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['蛋白質', '脂肪', '碳水', '纖維', '鉀'],
+                    datasets: [{
+                        label: '營養素佔比 (相對於高標)',
+                        data: [
+                            // 這裡為了讓雷達圖好看，做了一些正規化處理 (非絕對數值)
+                            (data.base.protein / 30) * 100, 
+                            (data.base.fat / 20) * 100, 
+                            (data.base.carbs / 50) * 100,
+                            (data.base.fiber / 10) * 100,
+                            (data.base.potassium / 500) * 100
+                        ],
+                        backgroundColor: 'rgba(34, 197, 94, 0.2)', // Tailwind Green-500
+                        borderColor: 'rgba(34, 197, 94, 1)',
+                        pointBackgroundColor: 'rgba(34, 197, 94, 1)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: { display: false }, // 隱藏刻度數字，保持介面乾淨
+                            grid: { color: '#e5e7eb' }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false } // 隱藏圖例
+                    },
+                    animation: {
+                        duration: 1000,
+                        easing: 'easeOutQuart'
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

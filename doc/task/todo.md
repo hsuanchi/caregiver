@@ -52,14 +52,6 @@
 
 此區塊的任務為一次性或階段性的開發工作。
 
-### [已完成] 全站文章頁面 TOC 目錄結構標準化 (TOC-FORMAT-STANDARDIZATION)
-
-**主要目標**: 確保所有 `post/*.html` 文章頁面的側邊欄目錄 (TOC) 結構與樣式，皆符合標準格式，以統一全站體驗並確保 RWD 功能正常。
-**相關檔案**: `post/*.html`, `doc/task/TOC_FORMAT_STANDARDIZATION.md`
-**詳細說明**: 依據 `TOC_FORMAT_STANDARDIZATION.md` 文件中定義的標準結構，逐一檢查並修正所有文章頁面的 TOC。
-
-### [已完成] 全站文章頁面 RWD 樣式標準化 (GLOBAL-ARTICLE-RWD-STANDARDIZATION)
-
 ### [待辦] 首頁整合儀表板功能 (HOMEPAGE-DASHBOARD-INTEGRATION)
 
 **主要目標**: 將 `category/nutrient-dashboard.html` 的功能修改後，移植到首頁，呈現科技與數據感。
@@ -71,4 +63,3 @@
 **主要目標**: 更新 `tests/index-dashboard-test.html` 中 `<section class="popular" id="health-goals">` 區塊的標題，使其更符合儀表板功能。
 **相關檔案**: `tests/index-dashboard-test.html`
 **詳細說明**: 確保標題能準確反映頁面內容，提升測試頁面的語義清晰度。
-

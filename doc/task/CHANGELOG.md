@@ -55,6 +55,22 @@
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
+## [2025-11-24] - TOC 結構標準化
+
+### 新增
+- 確立全站文章頁面 TOC (Table of Contents) 目錄結構與樣式標準。
+- 統一 `<aside class="sidebar" id="sidebar">`、`<h3 class="toc-title"><span>目錄</span></h3>`、`<ul class="toc-list">` 等 HTML 結構。
+- 規定第一層目錄連結 (`.toc-list a:not(.sub-item)`) 樣式必須為粗體 (`font-weight: 700;` 或 `bold`)。
+- 規定目錄 `active` 與 `hover` 狀態顏色使用 CSS 變數。
+ 2.1 樣式標準 (Style Standard)
+- **粗體**: 所有第一層的目錄連結 (`.toc-list a:not(.sub-item)`) 都應明確設定為粗體 (`font-weight: 700;` 或 `font-weight: bold;`)，以確保在不同頁面主題色系下，視覺層級依然清晰。
+- **顏色**: 目錄的 `active` 與 `hover` 狀態顏色應使用頁面定義的 CSS 變數 (`--primary-color`, `--primary-bg-light`, etc.)，以保持主題一致性。
+### 變更
+- 修正多個 `post/*.html` 頁面以符合新的 TOC 結構與樣式標準。
+
+### 備註
+- 確保所有修改後的頁面，其桌面版與行動版的 TOC 功能與 RWD 樣式皆正常運作。
+
 ## [1.3.6] - 2025-11-23
 
 ### 修改
