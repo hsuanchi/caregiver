@@ -576,6 +576,94 @@
         font-weight: bold;
       }
 
+      /* Health Topics Section (Replaces Experts Section) */
+      .topic-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      
+      .topic-master-card {
+        background: white;
+        border-radius: 16px;
+        padding: 32px 40px;
+        margin-bottom: 16px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        border: 1px solid #e2e8f0;
+      }
+
+      .topic-master-card-header {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 2px solid #f1f5f9;
+      }
+
+      .article-entry-list {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      .article-entry {
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 28px;
+      }
+
+      .article-entry-list .article-entry:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .article-entry-title {
+        font-size: 1.5em;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .article-entry-title a {
+        text-decoration: none;
+        color: #1d4ed8;
+        transition: color 0.2s ease;
+      }
+
+      .article-entry-title a:hover {
+        color: #3b82f6;
+        text-decoration: underline;
+      }
+
+      .article-entry-description {
+        font-size: 1em;
+        color: #475569;
+        line-height: 1.7;
+        margin-bottom: 16px;
+      }
+
+      .article-entry-keywords {
+        font-size: 0.9em;
+        color: #64748b;
+      }
+
+      .article-entry-keywords strong {
+        color: #334155;
+        font-weight: 600;
+      }
+
+      .article-entry-keywords span {
+        display: inline-block;
+        background: #f1f5f9;
+        color: #475569;
+        padding: 3px 10px;
+        border-radius: 12px;
+        margin-right: 6px;
+        margin-top: 4px;
+        font-size: 0.95em;
+      }
+
       /* Experts Section */
       .experts {
         padding: 100px 20px;
@@ -1264,42 +1352,70 @@
       </div>
     </section>
 
-    <!-- Experts Section -->
-    <section class="experts" id="experts">
+    <!-- Health Topics Section (Replaces Experts Section) -->
+    <section class="experts" id="health-topics">
       <div class="section-header">
-        <h2 class="section-title">專家觀點與最新研究</h2>
+        <h2 class="section-title">依健康主題探索</h2>
         <p class="section-subtitle">
-          由專業營養師團隊提供最新的營養研究和實用建議，助您掌握健康趨勢。
+          從心血管保健到免疫強化，找到您最關心的健康議題與相關文章。
         </p>
       </div>
 
-      <div class="articles-grid">
-        <article class="article-card fade-in">
-          <span class="article-tag">專家指引</span>
-          <h3 class="article-title">如何選擇適合的維生素D補充劑</h3>
-          <p class="article-summary">
-            專業營養師教您如何根據個人需求選擇維生素D補充劑，包括劑量選擇、時間安排和注意事項。
-          </p>
-          <a href="#" class="article-link">閱讀更多 →</a>
-        </article>
+      <div class="topic-grid">
+        <!-- Topic: Cardiovascular Health -->
+        <div class="topic-master-card fade-in">
+          <h3 class="topic-master-card-header">心血管健康</h3>
+          <div class="article-entry-list">
+            <!-- Article: Fish Oil -->
+            <div class="article-entry">
+              <h4 class="article-entry-title"><a href="post/fish-oil.html">魚油的5大功效與科學實證：終極選購指南</a></h4>
+              <p class="article-entry-description">深度解析魚油如何保護心血管、活化大腦，並提供rTG、濃度、TOTOX值等專業選購標準，助您做出明智選擇。</p>
+              <div class="article-entry-keywords">
+                <strong>關鍵字：</strong>
+                <span>Omega-3</span><span>EPA</span><span>DHA</span><span>三酸甘油酯</span>
+              </div>
+            </div>
+            <!-- Article: Coenzyme Q10 -->
+            <div class="article-entry">
+              <h4 class="article-entry-title"><a href="post/coenzyme-q10.html">輔酶Q10的完整功效：不只強心，更是能量的火星塞</a></h4>
+              <p class="article-entry-description">了解輔酶Q10如何為心臟提供能量，以及還原型(QH)與氧化型(CoQ10)的差異，為您的心血管健康加油。</p>
+              <div class="article-entry-keywords">
+                <strong>關鍵字：</strong>
+                <span>心臟能量</span><span>抗氧化</span><span>疲勞恢復</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <article class="article-card fade-in">
-          <span class="article-tag">營養知識</span>
-          <h3 class="article-title">素食者的鐵質攝取指引</h3>
-          <p class="article-summary">
-            素食者如何從植物性食物中獲得足夠的鐵質，以及提高鐵質吸收率的實用技巧。
-          </p>
-          <a href="#" class="article-link">閱讀更多 →</a>
-        </article>
+        <!-- Topic: Brain & Cognitive Function -->
+        <div class="topic-master-card fade-in">
+          <h3 class="topic-master-card-header">腦部與認知功能</h3>
+          <div class="article-entry-list">
+            <!-- Article: Lutein -->
+            <div class="article-entry">
+              <h4 class="article-entry-title"><a href="post/lutein.html">葉黃素的6大功效：不只是晶亮，更是腦部健康的關鍵</a></h4>
+              <p class="article-entry-description">探索葉黃素如何保護視網膜，並揭示其在提升記憶力、認知功能方面的最新科學實證。</p>
+              <div class="article-entry-keywords">
+                <strong>關鍵字：</strong>
+                <span>晶亮保養</span><span>游離型</span><span>酯化型</span><span>藍光防護</span>
+              </div>
+            </div>
+            <!-- Article: Vitamin B -->
+            <div class="article-entry">
+                <h4 class="article-entry-title"><a href="post/vitamin-b.html">維生素B群的8種功效解析：提神、解憂、護腦的全方位角色</a></h4>
+                <p class="article-entry-description">B群不只是提神！全面了解維生素B1、B2、B6、B12等成員如何共同支持神經系統運作，穩定情緒並提升專注力。</p>
+                <div class="article-entry-keywords">
+                    <strong>關鍵字：</strong>
+                    <span>能量代謝</span><span>神經系統</span><span>B12</span><span>活性B群</span>
+                </div>
+            </div>
+          </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="category/health-topics.html" class="search-btn" style="text-decoration: none;">查看所有主題</a>
+        </div>
 
-        <article class="article-card fade-in">
-          <span class="article-tag">選購建議</span>
-          <h3 class="article-title">益生菌選擇的五大要點</h3>
-          <p class="article-summary">
-            市面上益生菌產品眾多，了解如何選擇真正有效的益生菌補充品。
-          </p>
-          <a href="#" class="article-link">閱讀更多 →</a>
-        </article>
       </div>
     </section>
 
