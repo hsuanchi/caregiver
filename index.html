@@ -664,6 +664,94 @@
         font-size: 0.95em;
       }
 
+      /* Health Topics Section Styles */
+      .topic-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      
+      .topic-master-card {
+        background: white;
+        border-radius: 16px;
+        padding: 32px 40px;
+        margin-bottom: 16px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        border: 1px solid #e2e8f0;
+      }
+
+      .topic-master-card-header {
+        font-size: 2em;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 2px solid #f1f5f9;
+      }
+
+      .article-entry-list {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      .article-entry {
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 28px;
+      }
+
+      .article-entry-list .article-entry:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .article-entry-title {
+        font-size: 1.5em;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .article-entry-title a {
+        text-decoration: none;
+        color: #1d4ed8;
+        transition: color 0.2s ease;
+      }
+
+      .article-entry-title a:hover {
+        color: #3b82f6;
+        text-decoration: underline;
+      }
+
+      .article-entry-description {
+        font-size: 1em;
+        color: #475569;
+        line-height: 1.7;
+        margin-bottom: 16px;
+      }
+
+      .article-entry-keywords {
+        font-size: 0.9em;
+        color: #64748b;
+      }
+
+      .article-entry-keywords strong {
+        color: #334155;
+        font-weight: 600;
+      }
+
+      .article-entry-keywords span {
+        display: inline-block;
+        background: #f1f5f9;
+        color: #475569;
+        padding: 3px 10px;
+        border-radius: 12px;
+        margin-right: 6px;
+        margin-top: 4px;
+        font-size: 0.95em;
+      }
+
       /* Experts Section */
       .experts {
         padding: 100px 20px;
