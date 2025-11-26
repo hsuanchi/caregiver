@@ -581,26 +581,52 @@
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 32px;
       }
       
       .topic-master-card {
-        background: white;
-        border-radius: 16px;
+        background: linear-gradient(145deg, #f0f2f5, #ffffff);
+        border: none;
+        border-radius: 20px;
         padding: 32px 40px;
-        margin-bottom: 16px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-        border: 1px solid #e2e8f0;
+        box-shadow: 10px 10px 30px #d9d9d9, -10px -10px 30px #ffffff;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+      }
+
+      .topic-master-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.5), transparent 30%);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none; /* Ignore clicks */
+      }
+
+      .topic-master-card:hover::before {
+        opacity: 1;
+      }
+
+      .topic-master-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 15px 15px 35px #c7c7c7, -15px -15px 35px #ffffff;
       }
 
       .topic-master-card-header {
-        font-size: 2em;
+        font-size: 1.8em;
         font-weight: 700;
-        color: #2d3748;
+        color: #2c3e50;
         margin-bottom: 24px;
         padding-bottom: 16px;
-        border-bottom: 2px solid #f1f5f9;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        display: flex;
+        align-items: center;
+        gap: 15px;
       }
 
       .article-entry-list {
@@ -610,118 +636,33 @@
       }
 
       .article-entry {
-        border-bottom: 1px solid #e2e8f0;
-        padding-bottom: 28px;
+        padding: 20px;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.8);
       }
 
-      .article-entry-list .article-entry:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-      }
-
-      .article-entry-title {
-        font-size: 1.5em;
-        font-weight: 600;
-        margin-bottom: 8px;
-      }
-
-      .article-entry-title a {
-        text-decoration: none;
-        color: #1d4ed8;
-        transition: color 0.2s ease;
-      }
-
-      .article-entry-title a:hover {
-        color: #3b82f6;
-        text-decoration: underline;
-      }
-
-      .article-entry-description {
-        font-size: 1em;
-        color: #475569;
-        line-height: 1.7;
-        margin-bottom: 16px;
-      }
-
-      .article-entry-keywords {
-        font-size: 0.9em;
-        color: #64748b;
-      }
-
-      .article-entry-keywords strong {
-        color: #334155;
-        font-weight: 600;
-      }
-
-      .article-entry-keywords span {
-        display: inline-block;
-        background: #f1f5f9;
-        color: #475569;
-        padding: 3px 10px;
-        border-radius: 12px;
-        margin-right: 6px;
-        margin-top: 4px;
-        font-size: 0.95em;
-      }
-
-      /* Health Topics Section Styles */
-      .topic-grid {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-      
-      .topic-master-card {
+      .article-entry:hover {
+        transform: translateX(10px);
         background: white;
-        border-radius: 16px;
-        padding: 32px 40px;
-        margin-bottom: 16px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-        border: 1px solid #e2e8f0;
-      }
-
-      .topic-master-card-header {
-        font-size: 2em;
-        font-weight: 700;
-        color: #2d3748;
-        margin-bottom: 24px;
-        padding-bottom: 16px;
-        border-bottom: 2px solid #f1f5f9;
-      }
-
-      .article-entry-list {
-        display: flex;
-        flex-direction: column;
-        gap: 28px;
-      }
-
-      .article-entry {
-        border-bottom: 1px solid #e2e8f0;
-        padding-bottom: 28px;
-      }
-
-      .article-entry-list .article-entry:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
       }
 
       .article-entry-title {
-        font-size: 1.5em;
-        font-weight: 600;
+        font-size: 1.2em;
+        font-weight: 700;
         margin-bottom: 8px;
       }
 
       .article-entry-title a {
         text-decoration: none;
-        color: #1d4ed8;
+        color: #34495e;
         transition: color 0.2s ease;
       }
 
       .article-entry-title a:hover {
-        color: #3b82f6;
-        text-decoration: underline;
+        color: #2980b9;
       }
 
       .article-entry-description {

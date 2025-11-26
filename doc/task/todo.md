@@ -58,8 +58,10 @@
 **相關檔案**: `index.html`, `category/nutrient-dashboard.html`, `assets/js/dashboard-logic.js`
 **詳細說明**: 此任務對應 `INTEGRATE_DASHBOARD_TO_HOMEPAGE.md` 的規劃。需要將現有儀表板邏輯重構為一個獨立的、可嵌入的 Shadow DOM 組件。
 
-### [待辦] 調整儀表板測試頁面標題 (DASHBOARD-TEST-TITLE)
 
-**主要目標**: 更新 `tests/index-dashboard-test.html` 中 `<section class="popular" id="health-goals">` 區塊的標題，使其更符合儀表板功能。
-**相關檔案**: `tests/index-dashboard-test.html`
-**詳細說明**: 確保標題能準確反映頁面內容，提升測試頁面的語義清晰度。
+### [已完成] 優化首頁「依健康主題探索」區塊設計 (OPTIMIZE-HEALTH-TOPICS-SECTION)
+
+**主要目標**: 優化首頁「依健康主題探索」區塊的視覺設計與美觀性。
+**相關檔案**: `index.html`, `assets/css/article.css` (or relevant CSS files for homepage)
+**詳細說明**: 針對現有的「依健康主題探索」區塊，檢討其排版、配色、圖片呈現等，使其更具吸引力與使用者體驗，解決其美觀性不足的問題。
+
