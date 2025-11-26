@@ -222,12 +222,16 @@ caregiver/
 │   ├── archive.html               # 文章總覽頁面 (動態載入)
 │   ├── health-topics.html         # 健康主題頁面 (動態載入)
 │   ├── nutrient-dashboard.html    # 互動式儀表板 (動態載入)
+│   ├── foodWiki.html              # 食物營養資料庫頁面
 │   └── brands.html                # 合作專屬優惠頁面
 ├── brand/
 │   └── betterbio.html             # BetterBio 專屬優惠頁面
 ├── post/
 │   ├── [nutrient].html            # 核心營養素文章
 │   └── topic-[topic-name].html    # 主題式文章
+├── food/
+│   ├── [food-name].html           # 獨立食物營養頁面
+│   └── food_data.js               # 食物資料庫
 ├── assets/
 │   └── js/
 │       ├── articles-data.js         # 文章與營養素的中央資料庫

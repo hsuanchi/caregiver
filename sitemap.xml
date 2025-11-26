@@ -307,4 +307,28 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://life.maxlist.xyz/food/salmon.html</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://life.maxlist.xyz/food/mackerel.html</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://life.maxlist.xyz/food/flaxseed.html</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://life.maxlist.xyz/food/walnut.html</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
