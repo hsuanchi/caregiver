@@ -40,7 +40,7 @@
             <h1 class="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-gray-900">
                 <span class="text-green-600">數據</span> 轉化為您的健康決策
             </h1>
-            <p class="text-gray-500 mb-8 text-lg">全台最大的視覺化營養資料庫，輸入食材立即查詢。</p>
+            <p class="text-gray-500 mb-8 text-lg">常見美食視覺化營養資料庫，輸入食材立即查詢。</p>
             
             <!-- 搜尋框區塊 -->
             <div class="relative max-w-lg mx-auto z-30">
@@ -57,6 +57,13 @@
                 </div>
             </div>
 
+            <div class="mt-6 flex justify-center flex-wrap gap-2 text-sm opacity-80">
+                <span class="text-gray-400 text-xs py-1">熱門搜尋：</span>
+                <button class="quick-search-btn text-green-600 hover:text-green-800 underline decoration-green-300 decoration-2 underline-offset-2 transition" data-food="avocado">酪梨</button>
+                <button class="quick-search-btn text-green-600 hover:text-green-800 underline decoration-green-300 decoration-2 underline-offset-2 transition" data-food="chicken">雞胸肉</button>
+                <button class="quick-search-btn text-green-600 hover:text-green-800 underline decoration-green-300 decoration-2 underline-offset-2 transition" data-food="pearl_milk_tea">珍奶</button>
+            </div>
+
             <!-- 分類篩選區塊 (Category Filter) -->
             <div class="mt-8">
                 <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider font-bold">按分類瀏覽</p>
@@ -66,18 +73,18 @@
             </div>
 
             <!-- 快速標籤 -->
-            <div class="mt-6 flex justify-center flex-wrap gap-2 text-sm opacity-80">
-                <span class="text-gray-400 text-xs py-1">熱門搜尋：</span>
-                <button class="quick-search-btn text-green-600 hover:text-green-800 underline decoration-green-300 decoration-2 underline-offset-2 transition" data-food="avocado">酪梨</button>
-                <button class="quick-search-btn text-green-600 hover:text-green-800 underline decoration-green-300 decoration-2 underline-offset-2 transition" data-food="chicken">雞胸肉</button>
-                <button class="quick-search-btn text-green-600 hover:text-green-800 underline decoration-green-300 decoration-2 underline-offset-2 transition" data-food="pearl_milk_tea">珍奶</button>
-            </div>
+           
         </div>
     </header>
 
     <!-- 3. 主要內容區 (Main Content) -->
     <main class="max-w-6xl mx-auto px-4 py-8">
         
+        <!-- 分類篩選結果容器 (預設隱藏) -->
+        <div id="categoryResultsContainer" class="hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+            <!-- JS 動態生成分類結果卡片 -->
+        </div>
+
         <!-- 食物詳情卡片 -->
         <div id="foodDetail" class="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300">
             
@@ -379,25 +386,48 @@
         // 動態生成分類按鈕
         function generateCategoryButtons() {
             const container = document.getElementById('categoryFilters');
-            
-            // 1. 提取所有分類並去重
             const categories = [...new Set(Object.values(foodDatabase).map(item => item.category))];
             
-            // 2. 生成 "全部" 按鈕 (可選)
-            // 3. 生成各分類按鈕
+            // Add 'All' button
+            const allBtn = document.createElement('button');
+            allBtn.className = 'px-3 py-1 rounded-full text-xs font-medium border border-green-500 bg-green-500 text-white transition shadow-sm';
+            allBtn.innerText = '全部';
+            allBtn.addEventListener('click', () => {
+                const allFoodKeys = Object.keys(foodDatabase);
+                document.getElementById('foodDetail').classList.add('hidden');
+                document.getElementById('categoryResultsContainer').classList.remove('hidden');
+                renderCategoryResults(allFoodKeys);
+                
+                // Active state
+                document.querySelectorAll('#categoryFilters button').forEach(b => b.classList.remove('bg-green-500', 'text-white'));
+                allBtn.classList.add('bg-green-500', 'text-white');
+            });
+            container.appendChild(allBtn);
+
             categories.forEach(category => {
                 const btn = document.createElement('button');
                 btn.className = 'px-3 py-1 rounded-full text-xs font-medium border border-gray-300 bg-white text-gray-600 hover:bg-green-50 hover:text-green-700 hover:border-green-300 transition shadow-sm';
                 btn.innerText = category;
-                btn.addEventListener('click', () => filterByCategory(category));
+                btn.addEventListener('click', (e) => {
+                    filterByCategory(category);
+                    
+                    // Active state
+                    document.querySelectorAll('#categoryFilters button').forEach(b => {
+                        b.classList.remove('bg-green-500', 'text-white');
+                        b.classList.add('bg-white', 'text-gray-600');
+                    });
+                    e.currentTarget.classList.add('bg-green-500', 'text-white');
+                    e.currentTarget.classList.remove('bg-white', 'text-gray-600');
+                });
                 container.appendChild(btn);
             });
         }
 
         // 依分類篩選功能
         function filterByCategory(category) {
-            const searchResults = document.getElementById('searchResults');
             const searchInput = document.getElementById('searchInput');
+            const foodDetail = document.getElementById('foodDetail');
+            const categoryResultsContainer = document.getElementById('categoryResultsContainer');
             
             // 清空搜尋框，讓使用者知道現在是分類瀏覽模式
             searchInput.value = '';
@@ -408,7 +438,43 @@
                 return foodDatabase[key].category === category;
             });
 
-            renderSearchResults(results, `分類：${category}`);
+            // 隱藏食物詳情，顯示分類結果
+            foodDetail.classList.add('hidden');
+            categoryResultsContainer.classList.remove('hidden');
+
+            renderCategoryResults(results);
+        }
+
+        // NEW: 渲染分類結果到主內容區
+        function renderCategoryResults(results) {
+            const container = document.getElementById('categoryResultsContainer');
+            container.innerHTML = ''; // 清空舊結果
+
+            if (results.length > 0) {
+                results.forEach(key => {
+                    const food = foodDatabase[key];
+                    const card = document.createElement('div');
+                    card.className = 'cursor-pointer bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:transform hover:-translate-y-1 transition-all';
+                    
+                    card.innerHTML = `
+                        <div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center text-3xl mx-auto mb-3">${food.icon}</div>
+                        <div class="text-center">
+                            <div class="font-bold text-gray-800">${food.name}</div>
+                            <div class="text-xs text-gray-500">${food.category}</div>
+                        </div>
+                    `;
+                    
+                    card.addEventListener('click', () => {
+                        selectFood(key);
+                        // 切換回詳情視圖
+                        document.getElementById('foodDetail').classList.remove('hidden');
+                        container.classList.add('hidden');
+                    });
+                    container.appendChild(card);
+                });
+            } else {
+                container.innerHTML = `<p class="text-center text-gray-500 col-span-full">此分類下沒有食物。</p>`;
+            }
         }
 
         function handlePortionClick(e) {
@@ -426,10 +492,20 @@
         function handleQuickSearchClick(e) {
             const key = e.currentTarget.dataset.food;
             selectFood(key);
+             // 確保視圖正確
+            document.getElementById('foodDetail').classList.remove('hidden');
+            document.getElementById('categoryResultsContainer').classList.add('hidden');
         }
 
         function handleSearch(query) {
             const searchResults = document.getElementById('searchResults');
+            const foodDetail = document.getElementById('foodDetail');
+            const categoryResultsContainer = document.getElementById('categoryResultsContainer');
+
+            // 當使用者開始搜尋時，確保顯示食物詳情，隱藏分類結果
+            foodDetail.classList.remove('hidden');
+            categoryResultsContainer.classList.add('hidden');
+
             if (query.trim() === '') {
                 searchResults.classList.add('hidden');
                 return;
@@ -499,6 +575,10 @@
             // 更新 UI 狀態
             const searchInput = document.getElementById('searchInput');
             const searchResults = document.getElementById('searchResults');
+            
+            // 確保詳情頁顯示
+            document.getElementById('foodDetail').classList.remove('hidden');
+            document.getElementById('categoryResultsContainer').classList.add('hidden');
             
             searchInput.value = foodDatabase[key].name; // 將選中的食物填入搜尋框
             searchInput.placeholder = "試試看：酪梨、雞胸肉、鮭魚..."; // 重置 placeholder

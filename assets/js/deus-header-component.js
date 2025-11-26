@@ -23,6 +23,7 @@
         navLinks: [
           { text: "營養素總覽", href: "/category/archive.html" },
           { text: "互動式資料庫", href: "/category/nutrient-dashboard.html" },
+          { text: "食物資料庫", href: "/post/tools/foodWiki.html" },
           { text: "健康主題式", href: "/category/health-topics.html" },
           { text: "專屬優惠", href: "/brand/betterbio.html" }
         ],
