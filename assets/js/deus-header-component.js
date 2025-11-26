@@ -21,10 +21,10 @@
         logoUrl: "/index.html",
         showMobileMenu: false,
         navLinks: [
-          { text: "營養素總覽", href: "/category/archive.html" },
-          { text: "互動式資料庫", href: "/category/nutrient-dashboard.html" },
-          { text: "食物資料庫", href: "/post/tools/foodWiki.html" },
-          { text: "健康主題式", href: "/category/health-topics.html" },
+          { text: "營養素資料庫", href: "/category/nutrient-dashboard.html" },
+          { text: "食物營養資料庫", href: "/post/tools/foodWiki.html" },
+          { text: "健康主題專區", href: "/category/health-topics.html" },
+          { text: "文章總覽", href: "/category/archive.html" },
           { text: "專屬優惠", href: "/brand/betterbio.html" }
         ],
         actionButtons: {
