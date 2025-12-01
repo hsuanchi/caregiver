@@ -641,8 +641,8 @@ const articlesData = [
         description: "經常感冒、擔心血糖血脂問題？本篇完整解析「β-葡聚醣」如何從根本調節您的免疫系統與新陳代謝...",
         keywords: "β-葡聚醣, Beta-Glucan, 免疫力, 膽固醇, 血糖, 燕麥, 酵母, 靈芝多醣體, 膳食纖維, 益生菌"
     },
-    {
-        id: "card-official-sites",
+    { 
+        id: 'card-official-sites',
         category: "other",
         published: "2025-09-22",
         modified: "2025-09-22",

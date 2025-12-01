@@ -45,6 +45,7 @@
 | vitamin-e.html | 待優化 | |
 | vitamin-k.html | 待優化 | |
 | zinc.html | 待優化 | |
+| garlic.html | 待優化 | |
 
 ---
 
@@ -54,6 +55,13 @@
 
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
+
+## [1.3.7] - 2025-12-01
+
+### 新增
+- 建立 `food/garlic.html` 頁面，內容為「大蒜 - 天然抗生素與心血管守護者」。
+### 變更
+- 將 `food/garlic.html` 的文章資料從 `assets/js/articles-data.js` 移至 `food/food_data.js`，並更新 `sitemap.xml`。
 
 ## [2025-11-24] - TOC 結構標準化
 
