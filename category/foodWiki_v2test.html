@@ -212,6 +212,13 @@
                         </div>
                     </div>
 
+                    <!-- 查看完整頁面按鈕 -->
+                    <div class="mt-4 text-right">
+                        <a id="full-page-link" href="#" class="inline-block text-green-600 hover:text-green-800 font-medium transition-colors group">
+                            查看完整營養分析 <i class="fa-solid fa-arrow-right ml-1 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -858,6 +865,12 @@
             document.getElementById('foodCategory').innerText = data.category;
             document.getElementById('ai-summary').innerText = data.summary;
             document.getElementById('btn-serving').innerText = data.portionName;
+
+            // 更新「查看完整頁面」連結
+            const fullPageLink = document.getElementById('full-page-link');
+            if (fullPageLink) {
+                fullPageLink.href = `../food/${key}.html`;
+            }
             
             const servingMult = data.portionWeight / 100;
             document.getElementById('btn-serving').dataset.mult = servingMult;
