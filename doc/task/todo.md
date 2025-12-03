@@ -84,3 +84,28 @@
 2.  **檔案命名**: 檔案應儲存在 `post/food/` 目錄下，命名格式為 `{英文名稱小寫}.html` (例如：`post/food/banana.html`)。
 3.  **整合**: `post/tools/foodWiki.html` 中的食物卡片應連結到這些獨立頁面。
 4.  **SEO**: 每個獨立頁面應具備完整的 SEO metadata (title, description, keywords, JSON-LD)。
+
+### [待辦] 優化首頁健康主題區塊 (HOMEPAGE-TOPICS-UI-IMPROVEMENT)
+
+**主要目標**: 重新設計首頁的「健康主題」區塊 (`<section class="experts" id="health-topics">`)，提升其視覺美感與使用者體驗。
+**相關檔案**: `index.html`
+**詳細說明**: 目前的設計不夠突出，無法有效吸引使用者點擊。優化方向可考慮：
+1. 採用更現代的卡片式設計 (Card-based design)。
+2. 為每個主題增加一個具代表性的圖示 (Icon)。
+3. 調整排版和色彩，使其更符合網站整體的專業與清新風格。
+4. 考慮加入滑鼠懸停 (hover) 的互動效果。
+---
+
+### [可選] 自動化食物資料庫生成 (AUTOMATE-FOOD-DATA-GENERATION)
+
+**主要目標**: 建立一個後端建置腳本，自動讀取 `food/*.html` 的內容，並產生 `food/food_data.js`，以確保資料的單一來源與同步。
+**相關檔案**: `food/*.html`, `food/food_data.js`, `scripts/build-food-data.js` (新腳本)
+**詳細說明**: 
+此任務旨在解決「資料源頭不一」的維護問題。目前的作法是手動維護 `food_data.js` 與各個 `food/*.html` 頁面，未來可能導致內容不同步。
+解決方案是建立一個建置腳本（例如 Node.js 腳本），在網站部署前執行。該腳本會：
+1. 掃描 `food/` 資料夾下的所有 HTML 檔案。
+2. 解析每個 HTML 檔案，提取所需的營養數據、摘要等資訊。
+3. 將所有資料彙整成 `foodDatabase` 物件。
+4. 自動覆寫 `food/food_data.js` 檔案。
+這樣做可以讓 `food/*.html` 成為唯一的內容真實來源，同時保持前端載入效能，是比「在瀏覽器動態抓取」更專業的作法。此任務會改變目前的純靜態開發流程，引入「建置」步驟。
+---
