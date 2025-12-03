@@ -5,15 +5,15 @@
 | 文章名稱 | 優化狀態 | 最後更新日期 |
 | :--- | :---: | :---: |
 | amino-acids.html | ✅ 已優化 | 2025-12-03 |
-| anthocyanins.html | 待優化 | |
-| beta-glucan.html | 待優化 | |
-| calcium.html | 待優化 | |
-| chondroitin.html | 待優化 | |
-| chromium.html | 待優化 | |
+| anthocyanins.html | ✅ 已優化 | 2025-12-03 |
+| beta-glucan.html | ✅ 已優化 | 2025-12-03 |
+| calcium.html | ✅ 已優化 | 2025-12-03 |
+| chondroitin.html | ✅ 已優化 | 2025-12-03 |
+| chromium.html | ✅ 已優化 | 2025-12-03 |
 | coenzyme-q10.html | ✅ 已優化 | 2025-12-03 |
-| collagen.html | 待優化 | |
-| copper.html | 待優化 | |
-| curcumin.html | 待優化 | |
+| collagen.html | ✅ 已優化 | 2025-12-03 |
+| copper.html | ✅ 已優化 | 2025-12-03 |
+| curcumin.html | ✅ 已優化 | 2025-12-03 |
 | dietary-fiber.html | ✅ 已優化 | 2025-12-03 |
 | fish-oil.html | ✅ 已優化 | 2025-11-18 |
 | fluoride.html | 待優化 | |
