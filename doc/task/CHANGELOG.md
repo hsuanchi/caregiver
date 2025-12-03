@@ -19,8 +19,8 @@
 | fluoride.html | ✅ 已優化 | 2025-12-03 |
 | folic-acid.html | ✅ 已優化 | 2025-12-03 |
 | gaba.html | ✅ 已優化 | 2025-12-03 |
-| glucosamine.html | 待優化 | |
-| glutathione.html | 待優化 | |
+| glucosamine.html | ✅ 已優化 | 2025-12-03 |
+| glutathione.html | ✅ 已優化 | 2025-12-03 |
 | iodine.html | 待優化 | |
 | iron.html | 待優化 | |
 | lutein.html | 待優化 | |
