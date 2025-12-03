@@ -21,30 +21,30 @@
 | gaba.html | ✅ 已優化 | 2025-12-03 |
 | glucosamine.html | ✅ 已優化 | 2025-12-03 |
 | glutathione.html | ✅ 已優化 | 2025-12-03 |
-| iodine.html | 待優化 | |
-| iron.html | 待優化 | |
-| lutein.html | 待優化 | |
+| iodine.html | ✅ 已優化 | 2025-12-03 |
+| iron.html | ✅ 已優化 | 2025-12-03 |
+| lutein.html | ✅ 已優化 | 2025-12-03 |
 | lycopene.html | ✅ 已優化 | 2025-12-03 |
 | magnesium.html | ✅ 已優化 | 2025-12-03 |
-| manganese.html | 待優化 | |
-| official-health-sites.html | 待優化 | |
-| phosphorus.html | 待優化 | |
+| manganese.html | ✅ 已優化 | 2025-12-03 |
+| official-health-sites.html | ✅ 已優化 | 2025-12-03 |
+| phosphorus.html | ✅ 已優化 | 2025-12-03 |
 | potassium.html | ✅ 已優化 | 2025-12-03 |
-| prebiotics.html | 待優化 | |
-| probiotics.html | 待優化 | |
-| protein.html | 待優化 | |
-| selenium.html | 待優化 | |
-| sodium.html | 待優化 | |
+| prebiotics.html | ✅ 已優化 | 2025-12-03 |
+| probiotics.html | ✅ 已優化 | 2025-12-03 |
+| protein.html | ✅ 已優化 | 2025-12-03 |
+| selenium.html | ✅ 已優化 | 2025-12-03 |
+| sodium.html | ✅ 已優化 | 2025-12-03 |
 | topic-immune-boosting-nutrients.html | 待優化 | |
 | topic-stroke-prevention-nutrients.html | 待優化 | |
 | topic-vascular-health-superfoods.html | 待優化 | |
-| vitamin-a.html | 待優化 | |
+| vitamin-a.html | ✅ 已優化 | 2025-12-03 |
 | vitamin-b.html | ✅ 已優化 | 2025-12-03 |
-| vitamin-c.html | 待優化 | |
+| vitamin-c.html | ✅ 已優化 | 2025-12-03 |
 | vitamin-d.html | ✅ 已優化 | 2025-12-03 |
-| vitamin-e.html | 待優化 | |
-| vitamin-k.html | 待優化 | |
-| zinc.html | 待優化 | |
+| vitamin-e.html | ✅ 已優化 | 2025-12-03 |
+| vitamin-k.html | ✅ 已優化 | 2025-12-03 |
+| zinc.html | ✅ 已優化 | 2025-12-03 |
 | garlic.html | ✅ 已優化 | 2025-12-03 |
 
 ---
