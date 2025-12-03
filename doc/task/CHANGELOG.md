@@ -10,26 +10,26 @@
 | calcium.html | 待優化 | |
 | chondroitin.html | 待優化 | |
 | chromium.html | 待優化 | |
-| coenzyme-q10.html | 待優化 | |
+| coenzyme-q10.html | ✅ 已優化 | 2025-12-03 |
 | collagen.html | 待優化 | |
 | copper.html | 待優化 | |
 | curcumin.html | 待優化 | |
-| dietary-fiber.html | 待優化 | |
+| dietary-fiber.html | ✅ 已優化 | 2025-12-03 |
 | fish-oil.html | ✅ 已優化 | 2025-11-18 |
 | fluoride.html | 待優化 | |
-| folic-acid.html | 待優化 | |
+| folic-acid.html | ✅ 已優化 | 2025-12-03 |
 | gaba.html | 待優化 | |
 | glucosamine.html | 待優化 | |
 | glutathione.html | 待優化 | |
 | iodine.html | 待優化 | |
 | iron.html | 待優化 | |
 | lutein.html | 待優化 | |
-| lycopene.html | 待優化 | |
-| magnesium.html | 待優化 | |
+| lycopene.html | ✅ 已優化 | 2025-12-03 |
+| magnesium.html | ✅ 已優化 | 2025-12-03 |
 | manganese.html | 待優化 | |
 | official-health-sites.html | 待優化 | |
 | phosphorus.html | 待優化 | |
-| potassium.html | 待優化 | |
+| potassium.html | ✅ 已優化 | 2025-12-03 |
 | prebiotics.html | 待優化 | |
 | probiotics.html | 待優化 | |
 | protein.html | 待優化 | |
@@ -39,13 +39,13 @@
 | topic-stroke-prevention-nutrients.html | 待優化 | |
 | topic-vascular-health-superfoods.html | 待優化 | |
 | vitamin-a.html | 待優化 | |
-| vitamin-b.html | 待優化 | |
+| vitamin-b.html | ✅ 已優化 | 2025-12-03 |
 | vitamin-c.html | 待優化 | |
-| vitamin-d.html | 待優化 | |
+| vitamin-d.html | ✅ 已優化 | 2025-12-03 |
 | vitamin-e.html | 待優化 | |
 | vitamin-k.html | 待優化 | |
 | zinc.html | 待優化 | |
-| garlic.html | 待優化 | |
+| garlic.html | ✅ 已優化 | 2025-12-03 |
 
 ---
 
@@ -55,6 +55,20 @@
 
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
+
+## [1.4.0] - 2025-12-03
+
+### 新增
+- **心血管健康專項計畫 (CARDIOVASCULAR-HEALTH-INITIATIVE)**：
+  - 建立新的心血管健康主題頁面 `post/topic-cardiovascular-health.html`，整合所有相關營養素。
+  - 建立「植物固醇」頁面 `post/plant-sterols.html`，並在主題頁面中加入連結。
+  - 建立「大蒜素」頁面 `post/garlic.html`。
+
+### 優化
+- 根據心血管專項計畫，全面檢視並確認以下核心營養素頁面內容的完整性與準確性：
+  - **第一梯隊**: `fish-oil.html`, `coenzyme-q10.html`, `potassium.html`, `magnesium.html`
+  - **第二梯隊**: `dietary-fiber.html`, `vitamin-b.html`, `folic-acid.html`
+  - **第三梯隊**: `vitamin-d.html`, `lycopene.html`
 
 ## [1.3.9] - 2025-12-03
 
