@@ -16,9 +16,9 @@
 | curcumin.html | ✅ 已優化 | 2025-12-03 |
 | dietary-fiber.html | ✅ 已優化 | 2025-12-03 |
 | fish-oil.html | ✅ 已優化 | 2025-11-18 |
-| fluoride.html | 待優化 | |
+| fluoride.html | ✅ 已優化 | 2025-12-03 |
 | folic-acid.html | ✅ 已優化 | 2025-12-03 |
-| gaba.html | 待優化 | |
+| gaba.html | ✅ 已優化 | 2025-12-03 |
 | glucosamine.html | 待優化 | |
 | glutathione.html | 待優化 | |
 | iodine.html | 待優化 | |
