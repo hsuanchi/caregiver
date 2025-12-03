@@ -4,7 +4,7 @@
 
 | 文章名稱 | 優化狀態 | 最後更新日期 |
 | :--- | :---: | :---: |
-| amino-acids.html | 待優化 | |
+| amino-acids.html | ✅ 已優化 | 2025-12-03 |
 | anthocyanins.html | 待優化 | |
 | beta-glucan.html | 待優化 | |
 | calcium.html | 待優化 | |
