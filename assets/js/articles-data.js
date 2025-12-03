@@ -720,6 +720,22 @@ const topicArticles = [
         published: '2025-10-11',
         modified: '2025-10-11',
         tag: '主題文章'
+    },
+    {
+        id: 'topic-card-cardiovascular-health',
+        goal: '心血管健康',
+        title: '心血管健康 - 全方位護心指南',
+        link: '/post/topic-cardiovascular-health.html',
+        description: "這是一個專為心血管健康設計的全面指南，整合了所有相關的關鍵營養素與保健策略，幫助您從飲食、生活習慣到營養補充，全方位守護心臟與血管健康。",
+        keywords: "心血管健康, 心臟保健, 血管保養, 高血壓, 膽固醇, Omega-3, 輔酶Q10, 鎂, 鉀, 葉酸, 維生素D, 植物固醇, 大蒜素",
+        type: '主題式文章',
+        name: '心血管健康指南',
+        en_name: 'Cardiovascular Health Guide',
+        func: '整合所有心血管健康相關的關鍵營養素與保健策略',
+        status: '完整',
+        category: 'topic',
+        published: '2025-12-03',
+        modified: '2025-12-03',
+        tag: '主題文章'
     }
-    // 您可以在此處新增更多主題性文章
 ];
