@@ -122,6 +122,12 @@
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+
+        // Initialize the new NutrientDashboard component
+        if (window.NutrientDashboard && typeof articlesData !== 'undefined') {
+            const dashboardContainer = document.querySelector('.main-container');
+            new window.NutrientDashboard(dashboardContainer, articlesData).initialize();
+        }
       });
     </script>
 </body>
