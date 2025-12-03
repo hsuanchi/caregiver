@@ -1,36 +1,25 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>地瓜 (Sweet Potato) 的營養成分、熱量與功效 | 營養百科</title>
-    <meta
-      name="description"
-      content="深度解析地瓜的完整營養資訊，包含熱量、三大營養素、膳食纖維等。了解這個低GI值的優質澱粉來源，如何幫助穩定血糖、促進排便，以及與馬鈴薯的比較。"
-    />
-    <meta
-      name="keywords"
-      content="地瓜, Sweet Potato, 地瓜熱量, 地瓜營養, 地瓜功效, 低GI, 膳食纖維, 抗性澱粉"
-    />
+    <title>地瓜 - 低GI優質澱粉：一篇搞懂地瓜的營養、功效與健康吃法 | 營養百科</title>
+    <meta name="description" content="地瓜是低GI的優質澱粉，富含膳食纖維、β-胡蘿蔔素。帶皮吃纖維更多，冷卻後會產生抗性澱粉，熱量更低。本篇將深入解析地瓜的營養價值與功效。" />
+    <meta name="keywords" content="地瓜, Sweet Potato, 地瓜熱量, 地瓜營養, 地瓜功效, 低GI, 膳食纖維, 抗性澱粉, 維生素A" />
     
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
     <link rel="shortcut icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
-    <!-- Open Graph for Social Media -->
     <meta property="og:site_name" content="營養百科" />
 
-    <!-- JSON-LD for WebSite (Site Name in Search Results) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "營養百科",
-      "alternateName": "",
       "url": "https://life.maxlist.xyz/"
     }
     </script>
 
-    <!-- JSON-LD for Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -39,8 +28,9 @@
         "@type": "WebPage",
         "@id": "https://life.maxlist.xyz/food/sweet_potato.html"
       },
-      "headline": "地瓜 (Sweet Potato) 的營養成分、熱量與功效",
-      "description": "深度解析地瓜的完整營養資訊，包含熱量、三大營養素、膳食纖維等。了解這個低GI值的優質澱粉來源，如何幫助穩定血糖、促進排便，以及與馬鈴薯的比較。",
+      "headline": "地瓜 - 低GI優質澱粉：一篇搞懂地瓜的營養、功效與健康吃法 | 營養百科",
+      "description": "地瓜是低GI的優質澱粉，富含膳食纖維、β-胡蘿蔔素。帶皮吃纖維更多，冷卻後會產生抗性澱粉，熱量更低。本篇將深入解析地瓜的營養價值與功效。",
+      "image": "https://life.maxlist.xyz/assets/images/sweet-potato-og-image.jpg",
       "author": {
         "@type": "Organization",
         "name": "Caregiver 營養百科",
@@ -54,12 +44,11 @@
           "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
         }
       },
-      "datePublished": "2025-11-25",
-      "dateModified": "2025-11-25"
+      "datePublished": "2025-12-03",
+      "dateModified": "2025-12-03"
     }
     </script>
 
-    <!-- JSON-LD for Breadcrumb -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -72,290 +61,233 @@
       },{
         "@type": "ListItem",
         "position": 2,
-        "name": "食物資料庫",
-        "item": "https://life.maxlist.xyz/post/tools/foodWiki.html"
-      },{
-        "@type": "ListItem",
-        "position": 3,
-        "name": "地瓜"
+        "name": "地瓜 - 低GI優質澱粉"
       }]
     }
     </script>
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NutritionInformation",
+      "name": "地瓜",
+      "servingSize": "165 g",
+      "calories": "214.5 kcal",
+      "proteinContent": "3.135 g",
+      "fatContent": "0.33 g",
+      "carbohydrateContent": "48.675 g",
+      "fiberContent": "3.96 g",
+      "potassiumContent": "462 mg"
+    }
+    </script>
 
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
-        line-height: 1.8;
-        color: #2d3748;
-        background: #faf8f5;
-      }
-
-      /* Progress Bar */
-      .progress-bar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 3px;
-        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
-        z-index: 1001;
-        transition: width 0.3s ease;
-      }
-
-      /* Breadcrumb Navigation */
-      .breadcrumb {
-        margin-bottom: 20px;
-        font-size: 0.9em;
-        color: #718096;
-      }
-
-      .breadcrumb a {
-        color: #718096;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .breadcrumb a:hover {
-        color: #ff6b35;
-      }
-
-      .breadcrumb .separator {
-        margin: 0 8px;
-        color: #a0aec0;
-      }
-
-      /* Article Layout */
-      .article-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 100px 20px 60px;
-        display: grid;
-        grid-template-columns: 280px 1fr;
-        gap: 60px;
-        position: relative;
-      }
-
-      /* Main Content Area */
-      .article-content {
-        background: white;
-        border-radius: 20px;
-        padding: 50px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      }
-
-      /* Article Header */
-      .article-header {
-        margin-bottom: 60px;
-        position: relative;
-      }
-
-      .article-hero {
-        background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%);
-        border-radius: 20px;
-        padding: 60px;
-        margin-bottom: 40px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .article-category {
-        display: inline-block;
-        background: white;
-        color: #f57f17;
-        padding: 8px 20px;
-        border-radius: 20px;
-        font-size: 0.9em;
-        font-weight: 600;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .article-title {
-        font-size: 2.5em;
-        font-weight: 800;
-        color: #f57f17;
-        line-height: 1.3;
-        margin-bottom: 20px;
-        max-width: 800px;
-      }
-
-      .article-subtitle {
-        font-size: 1.3em;
-        color: #f9a825;
-        line-height: 1.6;
-        max-width: 700px;
-        margin-bottom: 30px;
-      }
-      
-      .food-summary-card {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.8);
-        border-radius: 12px;
-        padding: 20px;
-        margin-top: 30px;
-      }
-      
-      .food-summary-card p {
-        color: #f57f17;
-        font-size: 1.1em;
-        line-height: 1.7;
-      }
-
-      .data-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 30px 0;
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      }
-
-      .data-table thead {
-        background: linear-gradient(135deg, #fdd835 0%, #fff176 100%);
-        color: #424242;
-      }
-
-      .data-table th,
-      .data-table td {
-        padding: 15px 20px;
-        text-align: left;
-      }
-      
-      .data-table tbody tr {
-        border-bottom: 1px solid #e5e7eb;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 1024px) {
-        .article-container { grid-template-columns: 1fr; }
-        .sidebar { display: none; }
-        .article-content { padding: 30px; }
-        .article-title { font-size: 2em; }
-      }
-    </style>
+    <link rel="stylesheet" href="../assets/css/article.css">
   </head>
-  <body>
-    <!-- Progress Bar -->
+  <body data-article-id="food-sweet_potato">
     <div class="progress-bar" id="progressBar"></div>
-
-    <!-- Header Component Container -->
     <div id="header-component"></div>
 
-    <!-- Article Container -->
     <div class="article-container">
-      <!-- Sidebar -->
       <aside class="sidebar" id="sidebar">
-        <!-- Sidebar can be used for related foods or other navigation -->
+        <div class="toc">
+          <h3 class="toc-title"><span>目錄</span></h3>
+          <ul class="toc-list">
+            <li><a href="#introduction" class="toc-link">地瓜：餐桌上的健康主食</a></li>
+            <li><a href="#nutrition" class="toc-link">營養成分一覽</a></li>
+            <li><a href="#benefits" class="toc-link">地瓜的健康益處</a></li>
+            <li><a href="#how-to-eat" class="toc-link">健康烹調與食用秘訣</a></li>
+            <li><a href="#faq" class="toc-link">常見問題</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關食物</a></li>
+          </ul>
+        </div>
       </aside>
 
-      <!-- Main Content -->
       <main class="article-content">
-        <!-- Article Header -->
         <header class="article-header">
           <div class="article-hero">
             <nav class="breadcrumb">
-              <a href="../../index.html">首頁</a>
+              <a href="../index.html">首頁</a>
               <span class="separator">/</span>
-              <a href="../post/tools/foodWiki.html">食物資料庫</a>
-              <span class="separator">/</span>
-              <span>地瓜</span>
+              <span>地瓜 - 低GI優質澱粉</span>
             </nav>
             <span class="article-category">全穀雜糧類</span>
-            <h1 class="article-title">🍠 地瓜 (Sweet Potato)</h1>
-            <p class="article-subtitle">
-              最親民的超級澱粉，以其低GI值、高纖維的特性，成為取代白米飯的健康新選擇。
-            </p>
-            <div class="food-summary-card">
-                <p><strong>一句話總結：</strong>低 GI 優質澱粉。帶皮吃纖維更多。冷卻後會產生抗性澱粉，熱量更低。</p>
+            <h1 class="article-title" id="page-title">地瓜：低GI優質澱粉，健康主食新選擇</h1>
+            <p class="article-subtitle">地瓜，這款國民級的根莖類食物，不僅口感香甜，更富含膳食纖維和β-胡蘿蔔素。帶皮吃纖維更多，冷卻後還會產生抗性澱粉，是低GI的優質澱粉。</p>
+            <div class="article-meta">
+              <span>撰寫單位：營養百科團隊</span>
+              <span>最後更新：2025-12-03</span>
+              <span>預估閱讀時間：5 分鐘</span>
             </div>
           </div>
         </header>
 
-        <!-- Article Body -->
+        <div id="toc-mobile-target"></div>
         <article class="article-body">
-          <section id="nutrition-facts">
-            <h2>營養成分總覽 (每 100g)</h2>
-            <p>以下是地瓜每 100 公克的詳細營養成分，資料來源為台灣食品成分資料庫。</p>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>營養素</th>
-                        <th>含量</th>
-                        <th>單位</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>熱量</td>
-                        <td>130</td>
-                        <td>kcal</td>
-                    </tr>
-                    <tr>
-                        <td>蛋白質</td>
-                        <td>1.9</td>
-                        <td>g</td>
-                    </tr>
-                    <tr>
-                        <td>總脂肪</td>
-                        <td>0.2</td>
-                        <td>g</td>
-                    </tr>
-                    <tr>
-                        <td>碳水化合物</td>
-                        <td>29.5</td>
-                        <td>g</td>
-                    </tr>
-                    <tr>
-                        <td>膳食纖維</td>
-                        <td>2.4</td>
-                        <td>g</td>
-                    </tr>
-                    <tr>
-                        <td>鉀</td>
-                        <td>280</td>
-                        <td>mg</td>
-                    </tr>
-                </tbody>
-            </table>
-          </section>
+            <section id="introduction">
+              <h2>地瓜：餐桌上的健康主食</h2>
+              <p>地瓜（Sweet Potato），又稱甘藷、番薯，是台灣非常普及且深受喜愛的根莖類食物。它不僅口感香甜綿密，更是營養價值極高的優質澱粉來源。地瓜富含膳食纖維、β-胡蘿蔔素（維生素A前驅物）、維生素C和多種礦物質，使其在健康飲食中佔有重要地位。</p>
+            </section>
           
-          <section id="benefits">
-              <h2>主要健康益處</h2>
-              <ul>
-                  <li><strong>穩定血糖：</strong>地瓜屬於低升糖指數(GI)食物，能緩慢釋放能量，避免血糖快速波動，適合糖尿病患者適量食用。</li>
-                  <li><strong>促進腸道健康：</strong>豐富的膳食纖維有助於促進腸道蠕動，預防便秘。</li>
-                  <li><strong>抗性澱粉來源：</strong>將地瓜放涼後食用，部分澱粉會轉化為「抗性澱粉」，其熱量較低，且能作為腸道益生菌的食物。</li>
-                  <li><strong>富含 β-胡蘿蔔素：</strong>特別是紅肉地瓜，富含的 β-胡蘿蔔素能在體內轉化為維生素A，有助於保護視力與皮膚健康。</li>
-              </ul>
-          </section>
+            <section id="nutrition">
+              <h2>營養成分一覽 (以一條中型地瓜，約165克計算)</h2>
+              <p>以下為一條中型地瓜的主要營養成分：</p>
+              <div class="responsive-table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>營養素</th>
+                            <th>含量</th>
+                            <th>說明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>熱量</td>
+                            <td>約 214.5 大卡</td>
+                            <td>熱量比同份量白飯低，提供飽足感。</td>
+                        </tr>
+                        <tr>
+                            <td>碳水化合物</td>
+                            <td>約 48.68 克</td>
+                            <td>主要為澱粉，提供穩定能量。</td>
+                        </tr>
+                        <tr>
+                            <td>膳食纖維</td>
+                            <td>約 3.96 克</td>
+                            <td>豐富的膳食纖維，有助促進腸道蠕動。</td>
+                        </tr>
+                        <tr>
+                            <td>β-胡蘿蔔素</td>
+                            <td>含量極高</td>
+                            <td>能在體內轉化為維生素A，護眼關鍵。</td>
+                        </tr>
+                        <tr>
+                            <td>維生素C</td>
+                            <td>約 30-40 毫克</td>
+                            <td>具抗氧化作用，提升免疫力。</td>
+                        </tr>
+                        <tr>
+                            <td>鉀</td>
+                            <td>約 462 毫克</td>
+                            <td>有助於維持電解質平衡，穩定血壓。</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+              <p class="quick-test-message">註：此為估算值，實際含量因品種（如紅肉、黃肉）和烹調方式而異。</p>
+            </section>
+            
+            <section id="benefits">
+                <h2>地瓜的健康益處</h2>
+                <p>規律攝取地瓜，能為健康帶來多方面的好處：</p>
+                <div class="info-cards md-grid-2">
+                  <div class="info-card">
+                      <h4 class="info-card-title">低GI優質澱粉，穩定血糖</h4>
+                      <p class="info-card-desc">地瓜屬於低升糖指數（GI）食物，其膳食纖維能減緩糖分吸收，避免血糖劇烈波動，對於糖尿病患者或需要控制血糖的人群非常有益。</p>
+                  </div>
+                  <div class="info-card">
+                      <h4 class="info-card-title">豐富膳食纖維，促進腸道健康</h4>
+                      <p class="info-card-desc">地瓜富含水溶性與非水溶性膳食纖維，有助於促進腸道蠕動，增加糞便體積，預防便秘，並支持健康的腸道菌相。</p>
+                  </div>
+                  <div class="info-card">
+                      <h4 class="info-card-title">抗性澱粉，助體重管理</h4>
+                      <p class="info-card-desc">地瓜放涼後會產生「抗性澱粉」，其熱量較低且不易被消化，能提供更持久的飽足感，有助於體重控制。</p>
+                  </div>
+                  <div class="info-card">
+                      <h4 class="info-card-title">β-胡蘿蔔素，護眼抗氧化</h4>
+                      <p class="info-card-desc">特別是紅肉地瓜，含有豐富的β-胡蘿蔔素，能在體內轉化為維生素A，對維護視力、皮膚健康和增強免疫力有重要作用。</p>
+                  </div>
+                </div>
+            </section>
 
+            <section id="how-to-eat">
+              <h2>健康烹調與食用秘訣</h2>
+              <p>地瓜烹調簡單，能輕鬆融入日常飲食，但掌握幾個小技巧能讓它更健康。</p>
+              <div class="alert alert-nutritionist">
+                <div>
+                  <strong>營養師提醒</strong>
+                  <p><strong>帶皮吃更營養</strong>：地瓜皮富含膳食纖維和多種植化素，清洗乾淨後建議連皮一同食用。<br>
+                  <strong>蒸、煮、烤為佳</strong>：避免油炸或過度調味，清蒸、水煮或烘烤是最佳的烹調方式，能保留地瓜的天然甜味和營養。<br>
+                  <strong>取代部分主食</strong>：將地瓜視為一份主食，而非額外點心。當天有吃地瓜時，可減少米飯或麵條的份量，以避免碳水化合物攝取過量。</p>
+                </div>
+              </div>
+            </section>
+
+            <section id="faq" class="faq-section">
+              <h2>常見問題</h2>
+              <p>以下是關於地瓜的常見問題。</p>
+              <div class="faq-item">
+                <div class="faq-question">Q1: 吃地瓜會脹氣嗎？</div>
+                <div class="faq-answer">
+                  <p>A: 地瓜含有寡糖和膳食纖維，部分腸胃敏感的人食用後可能會感到脹氣。建議從少量開始，並搭配足夠的水分攝取，烹煮時可加少量薑片，有助於減輕脹氣情況。</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">Q2: 地瓜冷卻後真的比較健康嗎？</div>
+                <div class="faq-answer">
+                  <p>A: 是的。地瓜放涼後，部分澱粉會轉化為「抗性澱粉」。抗性澱粉不易被人體消化吸收，因此其熱量會相對較低，且有助於穩定血糖、增加飽足感。但若再次加熱，抗性澱粉會減少。</p>
+                </div>
+              </div>
+            </section>
         </article>
       </main>
     </div>
 
-    <!-- Footer Component Container -->
+    <section class="disclaimer">
+      <div class="disclaimer-content">
+        <h3>免責聲明</h3>
+        <p>本站資訊僅供教育與參考目的，不能取代專業醫療建議、診斷或治療。在開始任何新的營養補充計劃或更改現有健康方案前，請務必諮詢您的醫師或合格的醫療專業人員。</p>
+      </div>
+    </section>
+
     <div id="footer-component"></div>
 
-    <!-- Load Components -->
-    <script src="../../assets/js/deus-analytics-component.js"></script>
-    <script src="../../assets/js/deus-header-component.js"></script>
-    <script src="../../assets/js/deus-footer-component.js"></script>
-
+    <script src="../assets/js/deus-analytics-component.js"></script>
+    <script src="../assets/js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
     <script>
+      function updateProgressBar() { 
+        const scrollPosition = window.scrollY;
+        const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (scrollPosition / documentHeight) * 100;
+        document.getElementById("progressBar").style.width = scrollPercentage + "%";
+      }
+      window.addEventListener("scroll", updateProgressBar);
+
+      function highlightTOC() {
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".toc-link");
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100;
+          if (window.scrollY >= sectionTop) { current = section.getAttribute("id"); }
+        });
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) { link.classList.add("active"); }
+        });
+      }
+      window.addEventListener("scroll", highlightTOC);
+
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          question.parentElement.classList.toggle("active");
+        });
+      });
+
       document.addEventListener("DOMContentLoaded", function () {
-        // Initialize Components
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+        const relatedContainer = document.getElementById("related-articles-container");
+        const articleId = document.body.dataset.articleId; // Ensure this matches the ID from data-article-id
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
       });
     </script>
   </body>

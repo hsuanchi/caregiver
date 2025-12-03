@@ -56,6 +56,27 @@
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
+## [1.3.9] - 2025-12-03
+
+### 新增
+- **補齊食物數據頁面內容 (FILL-FOOD-DATA-PAGES)**：
+  - 根據 `food/apple.html` 範本，補齊了 `food/` 目錄下所有食物頁面的內容。
+  - 完善了每個頁面的 SEO meta 標籤 (`title`, `description`, `keywords`) 和 JSON-LD 結構化資料 (`WebSite`, `Article`, `NutritionInformation`, `BreadcrumbList`)。
+  - 增加了完整的 `article-body` 結構，包含 `introduction`、`nutrition` (更新為200g份量，並包含所有重要營養素)、`benefits` (使用 `info-cards`)、`how-to-eat` (使用 `alert-nutritionist` 或 `alert-doctor`) 和 `faq-section`。
+  - 移除了舊的 inline style，統一使用 `assets/css/article.css`。
+  - 補齊了所有頁面所需的 JavaScript 引用和功能，如進度條、TOC 高亮、FAQ 互動等。
+
+## [1.3.8] - 2025-12-03
+
+### 新增
+- **建立食物數據獨立頁面 (FOOD-DATA-PAGES)**：
+  - 為 `food/food_data.js` 中的21種食物（如雞胸肉、滷肉飯、鹹酥雞等）建立了獨立的HTML頁面。
+  - 每個頁面都包含詳細的營養資訊、簡介和健康建議。
+  - 所有新頁面均存放於 `food/` 目錄下。
+
+### 變更
+- 更新 `food/food_data.js`，將相關食物的 `link` 屬性從 `null` 更新為指向對應新頁面的路徑，以完成整合。
+
 ## [1.3.7] - 2025-12-01
 
 ### 新增

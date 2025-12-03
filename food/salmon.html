@@ -1,36 +1,25 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>鮭魚 (Salmon) 的營養成分、熱量與功效 | 營養百科</title>
-    <meta
-      name="description"
-      content="深度解析鮭魚的完整營養資訊，包含熱量、Omega-3脂肪酸(EPA/DHA)、蛋白質等。了解這個超級食物如何支持心血管與大腦健康，以及如何選擇與烹調。"
-    />
-    <meta
-      name="keywords"
-      content="鮭魚, Salmon, 鮭魚熱量, 鮭魚營養, 鮭魚功效, Omega-3, EPA, DHA"
-    />
+    <title>鮭魚 - Omega-3 脂肪酸寶庫：一篇搞懂鮭魚的營養、功效與烹調方式 | 營養百科</title>
+    <meta name="description" content="鮭魚是Omega-3脂肪酸(EPA/DHA)的寶庫，有助於心血管與大腦健康。本篇深入解析鮭魚的營養價值、功效，以及如何選擇與烹調。" />
+    <meta name="keywords" content="鮭魚, Salmon, 鮭魚熱量, 鮭魚營養, 鮭魚功效, Omega-3, EPA, DHA, 心血管健康, 大腦健康, 維生素D, 蛋白質" />
     
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
     <link rel="shortcut icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
-    <!-- Open Graph for Social Media -->
     <meta property="og:site_name" content="營養百科" />
 
-    <!-- JSON-LD for WebSite (Site Name in Search Results) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "營養百科",
-      "alternateName": "",
       "url": "https://life.maxlist.xyz/"
     }
     </script>
 
-    <!-- JSON-LD for Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -39,8 +28,9 @@
         "@type": "WebPage",
         "@id": "https://life.maxlist.xyz/food/salmon.html"
       },
-      "headline": "鮭魚 (Salmon) 的營養成分、熱量與功效",
-      "description": "深度解析鮭魚的完整營養資訊，包含熱量、Omega-3脂肪酸(EPA/DHA)、蛋白質等。了解這個超級食物如何支持心血管與大腦健康，以及如何選擇與烹調。",
+      "headline": "鮭魚 - Omega-3 脂肪酸寶庫：一篇搞懂鮭魚的營養、功效與烹調方式 | 營養百科",
+      "description": "鮭魚是Omega-3脂肪酸(EPA/DHA)的寶庫，有助於心血管與大腦健康。本篇深入解析鮭魚的營養價值、功效，以及如何選擇與烹調。",
+      "image": "https://life.maxlist.xyz/assets/images/salmon-og-image.jpg",
       "author": {
         "@type": "Organization",
         "name": "Caregiver 營養百科",
@@ -54,12 +44,11 @@
           "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
         }
       },
-      "datePublished": "2025-11-25",
-      "dateModified": "2025-11-25"
+      "datePublished": "2025-12-03",
+      "dateModified": "2025-12-03"
     }
     </script>
 
-    <!-- JSON-LD for Breadcrumb -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -72,290 +61,240 @@
       },{
         "@type": "ListItem",
         "position": 2,
-        "name": "食物資料庫",
-        "item": "https://life.maxlist.xyz/post/tools/foodWiki.html"
-      },{
-        "@type": "ListItem",
-        "position": 3,
-        "name": "鮭魚"
+        "name": "鮭魚 - Omega-3 脂肪酸寶庫"
       }]
     }
     </script>
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NutritionInformation",
+      "name": "鮭魚",
+      "servingSize": "200 g",
+      "calories": "416 kcal",
+      "proteinContent": "40 g",
+      "fatContent": "26 g",
+      "carbohydrateContent": "0 g",
+      "fiberContent": "0 g",
+      "potassiumContent": "726 mg"
+    }
+    </script>
 
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
-        line-height: 1.8;
-        color: #2d3748;
-        background: #faf8f5;
-      }
-
-      /* Progress Bar */
-      .progress-bar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 3px;
-        background: linear-gradient(90deg, #ff6b35 0%, #ff8f65 100%);
-        z-index: 1001;
-        transition: width 0.3s ease;
-      }
-
-      /* Breadcrumb Navigation */
-      .breadcrumb {
-        margin-bottom: 20px;
-        font-size: 0.9em;
-        color: #718096;
-      }
-
-      .breadcrumb a {
-        color: #718096;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .breadcrumb a:hover {
-        color: #ff6b35;
-      }
-
-      .breadcrumb .separator {
-        margin: 0 8px;
-        color: #a0aec0;
-      }
-
-      /* Article Layout */
-      .article-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 100px 20px 60px;
-        display: grid;
-        grid-template-columns: 280px 1fr;
-        gap: 60px;
-        position: relative;
-      }
-
-      /* Main Content Area */
-      .article-content {
-        background: white;
-        border-radius: 20px;
-        padding: 50px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      }
-
-      /* Article Header */
-      .article-header {
-        margin-bottom: 60px;
-        position: relative;
-      }
-
-      .article-hero {
-        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-        border-radius: 20px;
-        padding: 60px;
-        margin-bottom: 40px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .article-category {
-        display: inline-block;
-        background: white;
-        color: #1565c0;
-        padding: 8px 20px;
-        border-radius: 20px;
-        font-size: 0.9em;
-        font-weight: 600;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .article-title {
-        font-size: 2.5em;
-        font-weight: 800;
-        color: #0d47a1;
-        line-height: 1.3;
-        margin-bottom: 20px;
-        max-width: 800px;
-      }
-
-      .article-subtitle {
-        font-size: 1.3em;
-        color: #1976d2;
-        line-height: 1.6;
-        max-width: 700px;
-        margin-bottom: 30px;
-      }
-      
-      .food-summary-card {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.8);
-        border-radius: 12px;
-        padding: 20px;
-        margin-top: 30px;
-      }
-      
-      .food-summary-card p {
-        color: #0d47a1;
-        font-size: 1.1em;
-        line-height: 1.7;
-      }
-
-      .data-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 30px 0;
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      }
-
-      .data-table thead {
-        background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);
-        color: white;
-      }
-
-      .data-table th,
-      .data-table td {
-        padding: 15px 20px;
-        text-align: left;
-      }
-      
-      .data-table tbody tr {
-        border-bottom: 1px solid #e5e7eb;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 1024px) {
-        .article-container { grid-template-columns: 1fr; }
-        .sidebar { display: none; }
-        .article-content { padding: 30px; }
-        .article-title { font-size: 2em; }
-      }
-    </style>
+    <link rel="stylesheet" href="../assets/css/article.css">
   </head>
-  <body>
-    <!-- Progress Bar -->
+  <body data-article-id="food-salmon">
     <div class="progress-bar" id="progressBar"></div>
-
-    <!-- Header Component Container -->
     <div id="header-component"></div>
 
-    <!-- Article Container -->
     <div class="article-container">
-      <!-- Sidebar -->
       <aside class="sidebar" id="sidebar">
-        <!-- Sidebar can be used for related foods or other navigation -->
+        <div class="toc">
+          <h3 class="toc-title"><span>目錄</span></h3>
+          <ul class="toc-list">
+            <li><a href="#introduction" class="toc-link">鮭魚：海洋中的營養巨星</a></li>
+            <li><a href="#nutrition" class="toc-link">營養成分一覽</a></li>
+            <li><a href="#benefits" class="toc-link">鮭魚的健康益處</a></li>
+            <li><a href="#how-to-eat" class="toc-link">如何選擇與烹調</a></li>
+            <li><a href="#faq" class="toc-link">常見問題</a></li>
+            <li><a href="#related-articles-container" class="toc-link">相關食物</a></li>
+          </ul>
+        </div>
       </aside>
 
-      <!-- Main Content -->
       <main class="article-content">
-        <!-- Article Header -->
         <header class="article-header">
           <div class="article-hero">
             <nav class="breadcrumb">
-              <a href="../../index.html">首頁</a>
+              <a href="../index.html">首頁</a>
               <span class="separator">/</span>
-              <a href="../post/tools/foodWiki.html">食物資料庫</a>
-              <span class="separator">/</span>
-              <span>鮭魚</span>
+              <span>鮭魚 - Omega-3 脂肪酸寶庫</span>
             </nav>
-            <span class="article-category">豆魚蛋肉類</span>
-            <h1 class="article-title">🐟 鮭魚 (Salmon)</h1>
-            <p class="article-subtitle">
-              富含 Omega-3 脂肪酸的超級食物，是保護心血管與活化大腦的不二之選。
-            </p>
-            <div class="food-summary-card">
-                <p><strong>一句話總結：</strong>豐富的 Omega-3 脂肪酸，護腦護心首選。雖然油脂較多，但屬於抗發炎的好油，適合每週食用 2-3 次。</p>
+            <span class="article-category">魚貝海鮮</span>
+            <h1 class="article-title" id="page-title">鮭魚：Omega-3 脂肪酸寶庫</h1>
+            <p class="article-subtitle">鮭魚以其豐富的 Omega-3 脂肪酸、優質蛋白質和多種維生素而聞名。它是保護心血管與活化大腦的超級食物，也是健康餐桌上的明星食材。</p>
+            <div class="article-meta">
+              <span>撰寫單位：營養百科團隊</span>
+              <span>最後更新：2025-12-03</span>
+              <span>預估閱讀時間：5 分鐘</span>
             </div>
           </div>
         </header>
 
-        <!-- Article Body -->
+        <div id="toc-mobile-target"></div>
         <article class="article-body">
-          <section id="nutrition-facts">
-            <h2>營養成分總覽 (每 100g)</h2>
-            <p>以下是鮭魚每 100 公克的詳細營養成分，資料來源為台灣食品成分資料庫。</p>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>營養素</th>
-                        <th>含量</th>
-                        <th>單位</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>熱量</td>
-                        <td>208</td>
-                        <td>kcal</td>
-                    </tr>
-                    <tr>
-                        <td>蛋白質</td>
-                        <td>20</td>
-                        <td>g</td>
-                    </tr>
-                    <tr>
-                        <td>總脂肪</td>
-                        <td>13</td>
-                        <td>g</td>
-                    </tr>
-                    <tr>
-                        <td>碳水化合物</td>
-                        <td>0</td>
-                        <td>g</td>
-                    </tr>
-                    <tr>
-                        <td>膳食纖維</td>
-                        <td>0</td>
-                        <td>g</td>
-                    </tr>
-                    <tr>
-                        <td>鉀</td>
-                        <td>363</td>
-                        <td>mg</td>
-                    </tr>
-                </tbody>
-            </table>
-          </section>
+            <section id="introduction">
+              <h2>鮭魚：海洋中的營養巨星</h2>
+              <p>鮭魚（Salmon）是全球最受歡迎的食用魚類之一，以其美麗的橙紅色澤、細膩的肉質和豐富的健康益處而備受推崇。它不僅是餐桌上的美味佳餚，更是Omega-3脂肪酸（特別是EPA和DHA）、優質蛋白質和多種維生素礦物質的寶庫，被廣泛認為是維護心血管和大腦健康的「超級食物」。</p>
+            </section>
           
-          <section id="benefits">
-              <h2>主要健康益處</h2>
-              <ul>
-                  <li><strong>極豐富的 Omega-3 來源：</strong>鮭魚是 EPA 與 DHA 最好的天然食物來源之一，有助於抗發炎、降低三酸甘油酯、保護心血管。</li>
-                  <li><strong>支持大腦健康：</strong>DHA 是構成大腦與視網膜的重要成分，攝取鮭魚有助於維持認知功能、提升記憶力。</li>
-                  <li><strong>優質蛋白質：</strong>提供身體所需的完整胺基酸，幫助肌肉生長與組織修復。</li>
-                  <li><strong>富含維生素 D：</strong>少數天然含有維生素 D 的食物，對鈣質吸收與免疫功能至關重要。</li>
-              </ul>
-          </section>
+            <section id="nutrition">
+              <h2>營養成分一覽 (以一片200克生鮭魚計算)</h2>
+              <p>以下為一片生鮭魚的主要營養成分：</p>
+              <div class="responsive-table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>營養素</th>
+                            <th>含量</th>
+                            <th>說明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>熱量</td>
+                            <td>約 416 大卡</td>
+                            <td>熱量主要來自蛋白質和健康的脂肪。</td>
+                        </tr>
+                        <tr>
+                            <td>蛋白質</td>
+                            <td>約 40 克</td>
+                            <td>優質的完全蛋白質，提供身體所需。</td>
+                        </tr>
+                        <tr>
+                            <td>脂肪</td>
+                            <td>約 26 克</td>
+                            <td>富含Omega-3多元不飽和脂肪酸。</td>
+                        </tr>
+                        <tr>
+                            <td>Omega-3 (EPA+DHA)</td>
+                            <td>含量極高</td>
+                            <td>保護心血管、大腦和抗發炎的關鍵。</td>
+                        </tr>
+                        <tr>
+                            <td>維生素D</td>
+                            <td>含量豐富</td>
+                            <td>天然維生素D來源，有助鈣質吸收。</td>
+                        </tr>
+                        <tr>
+                            <td>維生素B12</td>
+                            <td>含量豐富</td>
+                            <td>維持神經系統功能與紅血球生成。</td>
+                        </tr>
+                        <tr>
+                            <td>鉀</td>
+                            <td>約 726 毫克</td>
+                            <td>有助於維持電解質平衡。</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+              <p class="quick-test-message">註：此為估算值，實際含量因鮭魚品種、捕獲季節和部位而異。</p>
+            </section>
+            
+            <section id="benefits">
+                <h2>鮭魚的健康益處</h2>
+                <p>規律攝取鮭魚，能為健康帶來多方面的好處：</p>
+                <div class="info-cards md-grid-2">
+                  <div class="info-card">
+                      <h4 class="info-card-title">心血管健康的守護者</h4>
+                      <p class="info-card-desc">鮭魚中豐富的Omega-3脂肪酸（EPA和DHA）能有效降低三酸甘油酯、減少發炎反應、改善血管內皮功能，顯著降低心臟病和中風的風險。</p>
+                  </div>
+                  <div class="info-card">
+                      <h4 class="info-card-title">促進大腦與視力發育</h4>
+                      <p class="info-card-desc">DHA是大腦和視網膜的重要組成成分，攝取充足的鮭魚有助於嬰幼兒的大腦和視力發展，並能維持成人的認知功能，預防認知衰退。</p>
+                  </div>
+                  <div class="info-card">
+                      <h4 class="info-card-title">優質蛋白質來源</h4>
+                      <p class="info-card-desc">鮭魚提供身體所需的完整必需胺基酸，是增肌、修復組織的良好來源，對於運動員、發育中的青少年及老年人皆有益。</p>
+                  </div>
+                  <div class="info-card">
+                      <h4 class="info-card-title">天然維生素D補給</h4>
+                      <p class="info-card-desc">鮭魚是少數天然富含維生素D的食物之一。維生素D對於鈣質吸收、骨骼健康、免疫系統功能以及情緒調節都至關重要。</p>
+                  </div>
+                </div>
+            </section>
 
+            <section id="how-to-eat">
+              <h2>如何選擇與烹調</h2>
+              <p>新鮮的鮭魚肉質緊實、色澤明亮，適合多種烹調方式。</p>
+              <div class="alert alert-nutritionist">
+                <div>
+                  <strong>營養師提醒</strong>
+                  <p><strong>選擇新鮮野生或養殖鮭魚</strong>：選擇來源可靠、有明確標示的鮭魚。野生鮭魚通常肉色較深，養殖鮭魚則脂肪紋路較均勻。<br>
+                  <strong>多樣化烹調</strong>：鮭魚適合香煎、烘烤、清蒸、煮湯或做成生魚片。由於Omega-3脂肪酸不耐高溫，建議避免長時間高溫油炸，以保留更多營養。<br>
+                  <strong>搭配抗氧化食材</strong>：烹調時可搭配檸檬、大蒜、迷迭香等抗氧化食材，不僅增添風味，也能提供更多健康效益。</p>
+                </div>
+              </div>
+            </section>
+
+            <section id="faq" class="faq-section">
+              <h2>常見問題</h2>
+              <p>以下是關於鮭魚的常見問題。</p>
+              <div class="faq-item">
+                <div class="faq-question">Q1: 鮭魚的魚皮可以吃嗎？</div>
+                <div class="faq-answer">
+                  <p>A: 是的，鮭魚皮含有豐富的Omega-3脂肪酸和膠原蛋白。只要徹底清洗乾淨，並確保烹調方式是煎、烤等能將魚皮烤至酥脆，是可以食用的。若不喜歡魚皮口感，去除亦可。</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">Q2: 吃鮭魚會有重金屬汙染問題嗎？</div>
+                <div class="faq-answer">
+                  <p>A: 鮭魚屬於大型魚，但其重金屬（特別是汞）含量普遍低於鮪魚、旗魚等大型深海掠食性魚類。美國FDA和EPA建議孕婦和兒童可以安心食用鮭魚，每週2-3份。選擇有認證的產品，可以進一步降低疑慮。</p>
+                </div>
+              </div>
+            </section>
         </article>
+        
+        <div id="related-articles-container"></div>
       </main>
     </div>
 
-    <!-- Footer Component Container -->
+    <section class="disclaimer">
+      <div class="disclaimer-content">
+        <h3>免責聲明</h3>
+        <p>本站資訊僅供教育與參考目的，不能取代專業醫療建議、診斷或治療。在開始任何新的營養補充計劃或更改現有健康方案前，請務必諮詢您的醫師或合格的醫療專業人員。</p>
+      </div>
+    </section>
+
     <div id="footer-component"></div>
 
-    <!-- Load Components -->
-    <script src="../../assets/js/deus-analytics-component.js"></script>
-    <script src="../../assets/js/deus-header-component.js"></script>
-    <script src="../../assets/js/deus-footer-component.js"></script>
-
+    <script src="../assets/js/deus-analytics-component.js"></script>
+    <script src="../assets/js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-footer-component.js"></script>
+    <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/related-articles-component.js"></script>
+    <script src="../assets/js/responsive-toc-component.js"></script>
     <script>
+      function updateProgressBar() { 
+        const scrollPosition = window.scrollY;
+        const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (scrollPosition / documentHeight) * 100;
+        document.getElementById("progressBar").style.width = scrollPercentage + "%";
+      }
+      window.addEventListener("scroll", updateProgressBar);
+
+      function highlightTOC() {
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".toc-link");
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100;
+          if (window.scrollY >= sectionTop) { current = section.getAttribute("id"); }
+        });
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) { link.classList.add("active"); }
+        });
+      }
+      window.addEventListener("scroll", highlightTOC);
+
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          question.parentElement.classList.toggle("active");
+        });
+      });
+
       document.addEventListener("DOMContentLoaded", function () {
-        // Initialize Components
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment("production");
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+        const relatedContainer = document.getElementById("related-articles-container");
+        const articleId = document.body.dataset.articleId; // Ensure this matches the ID from data-article-id
+        if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
+          new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+        }
+        if (window.ResponsiveTocComponent) new window.ResponsiveTocComponent().initialize();
       });
     </script>
   </body>
