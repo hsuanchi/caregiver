@@ -11,13 +11,13 @@
         }
 
         initialize() {
-            this.generateCategoryButtons();
+            this.renderExpandableCategories(); // NEW: Call the new method
             
             this.hostElement.querySelectorAll('.quick-search-btn').forEach(btn => {
                 btn.addEventListener('click', this.handleQuickSearchClick.bind(this));
             });
             
-            const defaultFoodKey = Object.keys(this.foodDatabase)[0];
+            const defaultFoodKey = 'avocado'; // More user-friendly default
             this.currentFoodKey = defaultFoodKey;
             this.renderFood(this.currentFoodKey);
             
@@ -34,9 +34,10 @@
                 });
             }
             
+            // Hide search/category results on outside click
             this.hostElement.addEventListener('click', (e) => {
                 if (!e.target.closest('#searchInput') && 
-                    !e.target.closest('#categoryFilters') &&
+                    !e.target.closest('#expandable-category-browser') && // UPDATED
                     !e.target.closest('#searchResults')) {
                     if (searchResults) {
                         searchResults.classList.add('hidden');
@@ -45,62 +46,86 @@
             });
         }
 
-        generateCategoryButtons() {
-            const container = this.hostElement.querySelector('#categoryFilters');
+        renderExpandableCategories() {
+            const container = this.hostElement.querySelector('#expandable-category-browser');
             if (!container) return;
-            const categories = [...new Set(Object.values(this.foodDatabase).map(item => item.category))];
-            
-            const allBtn = document.createElement('button');
-            allBtn.className = 'px-3 py-1 rounded-full text-xs font-medium border border-green-500 bg-green-500 text-white transition shadow-sm';
-            allBtn.innerText = '全部';
-            allBtn.addEventListener('click', () => {
-                const allFoodKeys = Object.keys(this.foodDatabase);
-                this.hostElement.querySelector('#foodDetail').classList.add('hidden');
-                this.hostElement.querySelector('#categoryResultsContainer').classList.remove('hidden');
-                this.renderCategoryResults(allFoodKeys);
-                
-                this.hostElement.querySelectorAll('#categoryFilters button').forEach(b => b.classList.remove('bg-green-500', 'text-white'));
-                allBtn.classList.add('bg-green-500', 'text-white');
-            });
-            container.appendChild(allBtn);
 
-            categories.forEach(category => {
-                const btn = document.createElement('button');
-                btn.className = 'px-3 py-1 rounded-full text-xs font-medium border border-gray-300 bg-white text-gray-600 hover:bg-green-50 hover:text-green-700 hover:border-green-300 transition shadow-sm';
-                btn.innerText = category;
-                btn.addEventListener('click', (e) => {
-                    this.filterByCategory(category);
-                    
-                    this.hostElement.querySelectorAll('#categoryFilters button').forEach(b => {
-                        b.classList.remove('bg-green-500', 'text-white');
-                        b.classList.add('bg-white', 'text-gray-600');
-                    });
-                    e.currentTarget.classList.add('bg-green-500', 'text-white');
-                    e.currentTarget.classList.remove('bg-white', 'text-gray-600');
-                });
-                container.appendChild(btn);
-            });
-        }
+            const foodsByCategory = Object.entries(this.foodDatabase).reduce((acc, [key, food]) => {
+                const { category } = food;
+                if (!acc[category]) {
+                    acc[category] = [];
+                }
+                acc[category].push({ key, ...food });
+                return acc;
+            }, {});
 
-        filterByCategory(category) {
-            const searchInput = this.hostElement.querySelector('#searchInput');
-            const foodDetail = this.hostElement.querySelector('#foodDetail');
-            const categoryResultsContainer = this.hostElement.querySelector('#categoryResultsContainer');
-            
-            if (searchInput) {
-                searchInput.value = '';
-                searchInput.placeholder = `正在瀏覽：${category}`;
+            let html = '';
+            for (const category in foodsByCategory) {
+                const items = foodsByCategory[category];
+                const previewItems = items.slice(0, 6); // MODIFIED: Show 6 items initially
+                const hiddenItems = items.slice(6);
+
+                html += `
+                    <div class="category-group bg-white rounded-xl shadow-sm p-5 mb-4">
+                        <h3 class="text-lg font-bold text-gray-800 mb-4">${category}</h3>
+                        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-x-4 gap-y-3">
+                            ${previewItems.map(item => `
+                                <div class="food-item text-center cursor-pointer group" data-food-key="${item.key}">
+                                    <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-2xl mx-auto mb-1 group-hover:scale-110 transition-transform">${item.icon}</div>
+                                    <p class="text-xs font-medium text-gray-600 group-hover:text-green-600 leading-tight">${item.name}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                        ${hiddenItems.length > 0 ? `
+                            <div class="hidden-items hidden mt-3 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-x-4 gap-y-3">
+                                ${hiddenItems.map(item => `
+                                    <div class="food-item text-center cursor-pointer group" data-food-key="${item.key}">
+                                        <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-2xl mx-auto mb-1 group-hover:scale-110 transition-transform">${item.icon}</div>
+                                        <p class="text-xs font-medium text-gray-600 group-hover:text-green-600 leading-tight">${item.name}</p>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            <div class="text-center mt-4">
+                                <button class="show-more-btn text-xs font-semibold text-gray-500 hover:text-green-600 transition bg-gray-100 hover:bg-green-50 px-3 py-1 rounded-full">
+                                    展開看全部 ${items.length} 項 <i class="fa-solid fa-chevron-down text-xs ml-1 transition-transform"></i>
+                                </button>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
             }
+            container.innerHTML = html;
 
-            const results = Object.keys(this.foodDatabase).filter(key => {
-                return this.foodDatabase[key].category === category;
+            // Add event listeners
+            container.querySelectorAll('.food-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    this.selectFood(item.dataset.foodKey);
+                    const foodDetailElement = this.hostElement.querySelector('#foodDetail');
+                    if (foodDetailElement) {
+                        window.scrollTo({ top: foodDetailElement.offsetTop - 100, behavior: 'smooth' });
+                    }
+                });
             });
 
-            if (foodDetail) foodDetail.classList.add('hidden');
-            if (categoryResultsContainer) categoryResultsContainer.classList.remove('hidden');
+            container.querySelectorAll('.show-more-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const group = e.target.closest('.category-group');
+                    const hiddenItems = group.querySelector('.hidden-items');
+                    const icon = e.target.querySelector('i');
+                    const button = e.target;
 
-            this.renderCategoryResults(results);
+                    hiddenItems.classList.toggle('hidden');
+                    if (hiddenItems.classList.contains('hidden')) {
+                        button.innerHTML = `展開看全部 ${group.querySelectorAll('.food-item').length} 項 <i class="fa-solid fa-chevron-down text-xs ml-1 transition-transform"></i>`;
+                        button.classList.remove('bg-green-100');
+                    } else {
+                        button.innerHTML = `收合 <i class="fa-solid fa-chevron-up text-xs ml-1 transition-transform"></i>`;
+                        button.classList.add('bg-green-100');
+                    }
+                });
+            });
         }
+
 
         renderCategoryResults(results) {
             const container = this.hostElement.querySelector('#categoryResultsContainer');

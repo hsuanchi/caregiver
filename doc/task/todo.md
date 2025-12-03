@@ -77,13 +77,38 @@
 
 ### [待辦] 建立食物數據獨立頁面 (FOOD-DATA-PAGES)
 
-**主要目標**: 為 `post/tools/food_data.js` 中 `foodDatabase` 裡的所有食物數據建立獨立的靜態頁面。
-**相關檔案**: `post/food/*.html`, `post/tools/food_data.js`
+**主要目標**: 為 `food/food_data.js` 中 `foodDatabase` 裡的所有食物數據建立獨立的靜態頁面。
+**相關檔案**: `food/*.html`, `food/food_data.js`
 **詳細說明**: 
 1.  **頁面結構**: 每個食物頁面應包含該食物的詳細營養資訊（巨量營養素、微量營養素）、簡要介紹、食物來源圖片、以及與該食物相關的健康益處。
-2.  **檔案命名**: 檔案應儲存在 `post/food/` 目錄下，命名格式為 `{英文名稱小寫}.html` (例如：`post/food/banana.html`)。
-3.  **整合**: `post/tools/foodWiki.html` 中的食物卡片應連結到這些獨立頁面。
+2.  **檔案命名**: 檔案應儲存在 `food/` 目錄下，命名格式為 `{key}.html` (例如：`banana.html`)。
+3.  **整合**: `category/foodWiki.html` 中的食物項目應連結到這些獨立頁面。
 4.  **SEO**: 每個獨立頁面應具備完整的 SEO metadata (title, description, keywords, JSON-LD)。
+
+**待建立頁面清單 (Checklist):**
+- [ ] `chicken.html` (雞胸肉)
+- [ ] `braised_pork_rice.html` (滷肉飯)
+- [ ] `beef_noodle.html` (紅燒牛肉麵)
+- [ ] `stinky_tofu.html` (炸臭豆腐)
+- [ ] `oyster_omelet.html` (蚵仔煎)
+- [ ] `ba_wan.html` (肉圓)
+- [ ] `scallion_pancake.html` (蔥油餅)
+- [ ] `sausage.html` (烤香腸)
+- [ ] `luwei.html` (滷味拼盤)
+- [ ] `pig_blood_cake.html` (豬血糕)
+- [ ] `popcorn_chicken.html` (鹹酥雞)
+- [ ] `black_tea.html` (紅茶)
+- [ ] `green_tea.html` (綠茶)
+- [ ] `latte.html` (拿鐵咖啡)
+- [ ] `americano.html` (美式咖啡)
+- [ ] `cola.html` (可樂)
+- [ ] `beer.html` (啤酒)
+- [ ] `orange_juice.html` (柳橙汁)
+- [ ] `soy_sauce.html` (醬油)
+- [ ] `ketchup.html` (番茄醬)
+- [ ] `mayonnaise.html` (美乃滋)
+
+
 
 ### [待辦] 優化首頁健康主題區塊 (HOMEPAGE-TOPICS-UI-IMPROVEMENT)
 

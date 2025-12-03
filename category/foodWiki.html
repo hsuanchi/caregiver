@@ -64,12 +64,12 @@
                 <button class="quick-search-btn text-green-600 hover:text-green-800 underline decoration-green-300 decoration-2 underline-offset-2 transition" data-food="pearl_milk_tea">珍奶</button>
             </div>
 
-            <!-- 分類篩選區塊 (Category Filter) -->
-            <div class="mt-8">
-                <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider font-bold">按分類瀏覽</p>
-                <div id="categoryFilters" class="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
-                    <!-- JS 將會動態生成分類按鈕 -->
-                </div>
+            <!-- 新的：分類瀏覽錨點按鈕 -->
+            <div class="mt-8 text-center">
+                <a href="#expandable-category-browser" class="browse-by-category-btn text-gray-500 font-medium text-sm hover:text-green-600 transition group">
+                    或按分類瀏覽
+                    <i class="fa-solid fa-angles-down ml-1 transform group-hover:translate-y-0.5 transition-transform"></i>
+                </a>
             </div>
 
             <!-- 快速標籤 -->
@@ -77,16 +77,10 @@
         </div>
     </header>
 
-    <!-- 3. 主要內容區 (Main Content) -->
     <main class="max-w-6xl mx-auto px-4 py-8">
-        
-        <!-- 分類篩選結果容器 (預設隱藏) -->
-        <div id="categoryResultsContainer" class="hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
-            <!-- JS 動態生成分類結果卡片 -->
-        </div>
 
-        <!-- 食物詳情卡片 -->
-        <div id="foodDetail" class="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300">
+        <!-- 食物詳情卡片 (預設顯示) -->
+        <div id="foodDetail" class="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 mt-8">
             
             <!-- 標題與份量控制區 -->
             <div class="p-6 md:p-8 border-b border-gray-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -223,6 +217,10 @@
             </div>
         </div>
 
+        <!-- 新的：可展開的分類瀏覽區塊 (已移至此處) -->
+        <div id="expandable-category-browser" class="space-y-6 mt-12">
+            <!-- JS will render expandable categories here -->
+        </div>
     </main>
 
     <!-- Footer Component Container -->
@@ -251,6 +249,22 @@
             if (window.FoodWiki && typeof foodDatabase !== 'undefined') {
                 new window.FoodWiki(document.body, foodDatabase).initialize();
             }
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    // Use the hostElement for querySelector to respect Shadow DOM boundaries if needed, but for page-level IDs, document is fine.
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 120, // Adjust for fixed header height
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>

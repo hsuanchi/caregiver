@@ -215,6 +215,15 @@ const homepage = new CaregiverHomepage(
 
 ## 專案結構
 
+### 內容架構理念 (Hub-and-Spoke)
+
+本專案的內容架構採用「Hub-and-Spoke」（軸心輻射）模型，以建立主題權威性並優化 SEO。
+
+-   **Hub (軸心)**: 為高層次的「主題彙整頁面」（如 `topic-cardiovascular-health.html`），圍繞特定健康目標提供全面性的指引。
+-   **Spoke (輻射)**: 為基礎的「元素頁面」，深入探討單一「營養素」(`post/[nutrient].html`) 或「食物」(`food/[food-name].html`)。
+
+所有文章都應遵循此模型的內部連結策略，即「主題頁面」連結到多個「元素頁面」，而「元素頁面」也應連回答所屬的「主題頁面」，形成緊密的內容網絡。詳細的寫作與連結指引請參閱 `doc/writing-guide.md`。
+
 ```
 caregiver/
 ├── index.html                     # 主頁面文件
