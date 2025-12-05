@@ -69,3 +69,16 @@
 4. 自動覆寫 `food/food_data.js` 檔案。
 這樣做可以讓 `food/*.html` 成為唯一的內容真實來源，同時保持前端載入效能，是比「在瀏覽器動態抓取」更專業的作法。此任務會改變目前的純靜態開發流程，引入「建置」步驟。
 ---
+
+### [待辦] 移除所有 Food 頁面的目錄並簡化版面 (SIMPLIFY-FOOD-PAGES)
+
+**主要目標**: 全面移除 `food/` 目錄下所有食物頁面的側邊欄目錄 (TOC)，並將版面調整為更簡潔的單欄置中佈局。
+**執行原因**: 考量到食物頁面的內容相對精簡，單頁滾動足以輕鬆閱讀，無需目錄導覽。移除目錄可簡化頁面結構，提升維護性與載入效能。
+**參考範本**: `food/apple.html` (此檔案已完成範本化，其修改後的狀態即為目標標準)
+**核心步驟**:
+1.  **遍歷檔案**: 對 `food/*.html` 目錄下**除了 `food/apple.html` 之外**的所有 HTML 檔案執行以下操作。
+2.  **處理舊範本**: 如果頁面仍使用 `<link rel="stylesheet" href="../assets/css/article.css">` 外部樣式表（即舊範本），則需**先將其替換為 `food/apple.html` 內的完整內嵌 `<style>` 區塊**。
+3.  **刪除目錄區塊**: 完整刪除 `<aside class="sidebar" id="sidebar">...</aside>` HTML 區塊。
+4.  **調整CSS版面**: 在頁面的 `<style>` 區塊中，找到 `.article-container` 的樣式規則。
+5.  **修改樣式**: 將其 `grid-template-columns` 屬性從 `280px 1fr` 移除（或修改為 `1fr`），並將 `max-width: 1400px;` 調整為 `max-width: 900px;`，同時移除 `display: grid;` 和 `gap: 60px;` 等與網格佈局相關的屬性，以達成內容置中的單欄佈局。
+---
