@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>炸臭豆腐 - 越臭越愛的台灣味：解析炸臭豆腐的營養與健康風險 | 營養百科</title>
     <meta name="description" content="炸臭豆腐是台灣夜市的經典小吃，其獨特風味讓人又愛又恨。本篇將分析炸臭豆腐的營養成分，並探討其健康風險與建議吃法。" />
-    <meta name="keywords" content="臭豆腐, 炸臭豆腐, 台灣小吃, 夜市美食, 發酵食品, 熱量, 蛋白質, 脂肪, 碳水化合物, 纖維, 鉀" />
+    <meta name="keywords" content="臭豆腐, 炸臭豆腐, 台灣小吃, 夜市美食, 發酵食品, 熱量, 蛋白質, 脂肪" />
     
+    <!-- 建議：若有自定義 favicon 請確認路徑 -->
     <link rel="icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
     <link rel="shortcut icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
     <meta property="og:site_name" content="營養百科" />
 
+    <!-- 引入 Google Fonts: Noto Sans TC (無襯線) 與 Noto Serif TC (襯線，用於標題增添質感) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- 引入 FontAwesome 用於 icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- JSON-LD 結構化資料保持不變，這對 SEO 非常重要 -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -19,52 +29,20 @@
       "url": "https://life.maxlist.xyz/"
     }
     </script>
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://life.maxlist.xyz/food/stinky_tofu.html"
-      },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://life.maxlist.xyz/food/stinky_tofu.html" },
       "headline": "炸臭豆腐 - 越臭越愛的台灣味：解析炸臭豆腐的營養與健康風險 | 營養百科",
       "description": "炸臭豆腐是台灣夜市的經典小吃，其獨特風味讓人又愛又恨。本篇將分析炸臭豆腐的營養成分，並探討其健康風險與建議吃法。",
-      "author": {
-        "@type": "Organization",
-        "name": "Caregiver 營養百科",
-        "url": "https://life.maxlist.xyz/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Caregiver 營養百科",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
-        }
-      },
+      "image": "https://life.maxlist.xyz/assets/images/stinky-tofu-og-image.jpg",
+      "author": { "@type": "Organization", "name": "Caregiver 營養百科", "url": "https://life.maxlist.xyz/" },
+      "publisher": { "@type": "Organization", "name": "Caregiver 營養百科", "logo": { "@type": "ImageObject", "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png" } },
       "datePublished": "2025-12-03",
       "dateModified": "2025-12-03"
     }
     </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "營養百科",
-        "item": "https://life.maxlist.xyz/"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "炸臭豆腐 - 越臭越愛的台灣味"
-      }]
-    }
-    </script>
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -74,52 +52,245 @@
       "calories": "500 kcal",
       "proteinContent": "20 g",
       "fatContent": "30 g",
-      "carbohydrateContent": "40 g",
-      "fiberContent": "4 g",
-      "potassiumContent": "300 mg"
+      "carbohydrateContent": "40 g"
     }
     </script>
 
-    <link rel="stylesheet" href="../assets/css/article.css">
+    <style>
+      /* --- 1. CSS 變數系統：統一設計語言 --- */
+      :root {
+        --primary-color: #A1887F;       /* 主色調：臭豆腐色 */
+        --primary-light: #EFEBE9;       /* 淺主色：背景用 */
+        --primary-dark: #5D4037;        /* 深主色：互動用 */
+        --text-color: #2d3748;          /* 主要文字 */
+        --text-light: #718096;          /* 次要文字 */
+        --bg-color: #faf8f5;            /* 全站背景 */
+        --card-bg: #ffffff;             /* 卡片背景 */
+        --shadow-sm: 0 4px 6px rgba(0,0,0,0.02);
+        --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.025);
+        --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.05), 0 10px 10px -5px rgba(0,0,0,0.02);
+        --radius-md: 12px;
+        --radius-lg: 20px;
+        --spacing-container: max(20px, 5vw); /* 響應式邊距 */
+      }
+
+      /* --- 2. 基礎重置與排版 --- */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      html { scroll-behavior: smooth; } /* 平滑捲動 */
+
+      body { 
+        font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif; 
+        line-height: 1.8; 
+        color: var(--text-color); 
+        background: var(--bg-color); 
+        -webkit-font-smoothing: antialiased; /* 讓文字在 Mac 上更清晰 */
+      }
+
+      h1, h2, h3 { font-family: 'Noto Serif TC', serif; color: #1a202c; letter-spacing: 0.02em; }
+      
+      /* 使用 clamp 實現流體字體大小：在手機與桌機間自動縮放 */
+      h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.3; }
+      h2 { font-size: clamp(1.5rem, 3vw, 1.8rem); margin-bottom: 1.5rem; position: relative; padding-left: 1rem; }
+      h2::before { 
+        content: ''; position: absolute; left: 0; top: 15%; bottom: 15%; 
+        width: 4px; background: var(--primary-color); border-radius: 4px; 
+      }
+      p { margin-bottom: 1.5rem; font-size: 1.05rem; }
+
+      [id] { scroll-margin-top: 100px; } /* 錨點定位修正 */
+
+      /* --- 3. 元件樣式 --- */
+      
+      /* 進度條 */
+      .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(90deg, var(--primary-color), #D7CCC8); z-index: 9999; transition: width 0.2s ease; }
+
+      /* 麵包屑 */
+      .breadcrumb { margin-bottom: 24px; font-size: 0.9em; color: var(--text-light); }
+      .breadcrumb a { color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+      .breadcrumb a:hover { color: var(--primary-color); }
+      .breadcrumb .separator { margin: 0 8px; color: #cbd5e0; }
+
+      /* 主容器佈局 */
+      .article-container { 
+        max-width: 900px; /* 稍微加寬以適應現代螢幕 */
+        margin: 0 auto; 
+        padding: 40px var(--spacing-container); 
+        display: flex; /* 預備未來可能的側欄擴充 */
+        gap: 40px;
+      }
+
+      .article-content { 
+        width: 100%; 
+        background: var(--card-bg); 
+        border-radius: var(--radius-lg); 
+        padding: clamp(30px, 5vw, 60px); /* 響應式內距 */
+        box-shadow: var(--shadow-md); 
+      }
+
+      /* Hero 區塊 */
+      .article-hero { 
+        text-align: center; /* 置中更有雜誌感 */
+        margin-bottom: 60px; 
+        padding-bottom: 40px;
+        border-bottom: 1px solid #edf2f7;
+      }
+      .article-category { 
+        display: inline-block; 
+        background: var(--primary-light); 
+        color: var(--primary-dark); 
+        padding: 6px 16px; 
+        border-radius: 50px; 
+        font-size: 0.85em; 
+        font-weight: 700; 
+        margin-bottom: 16px; 
+        letter-spacing: 0.05em;
+      }
+      .article-subtitle { 
+        font-size: 1.2rem; 
+        color: var(--text-light); 
+        margin: 20px auto 30px; 
+        max-width: 700px; 
+      }
+      .article-meta { 
+        display: flex; justify-content: center; gap: 20px; 
+        color: var(--text-light); font-size: 0.9em; flex-wrap: wrap; 
+      }
+      .article-meta span { display: flex; align-items: center; gap: 6px; }
+
+      /* 表格優化 (UIUX + RWD) */
+      .responsive-table-wrapper { 
+        width: 100%; 
+        overflow-x: auto; /* 手機版橫向捲動 */
+        border-radius: var(--radius-md); 
+        box-shadow: var(--shadow-sm); 
+        margin: 30px 0;
+        border: 1px solid #e2e8f0;
+      }
+      .data-table { width: 100%; border-collapse: collapse; min-width: 500px; /* 確保最小寬度 */ }
+      .data-table thead { background: #f7fafc; border-bottom: 2px solid #e2e8f0; }
+      .data-table th { color: #4a5568; font-weight: 700; text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.05em; }
+      .data-table th, .data-table td { padding: 16px 24px; text-align: left; }
+      .data-table tbody tr:not(:last-child) { border-bottom: 1px solid #edf2f7; }
+      .data-table tbody tr:hover { background-color: #fafffd; } /* 懸停效果 */
+
+      /* 資訊卡片 (Grid Layout) */
+      .info-cards { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 自動適應欄位 */
+        gap: 24px; 
+        margin: 40px 0; 
+      }
+      .info-card { 
+        background: #fff; 
+        border: 1px solid #e2e8f0; 
+        border-radius: var(--radius-md); 
+        padding: 24px; 
+        transition: transform 0.3s ease, box-shadow 0.3s ease; 
+      }
+      .info-card:hover { 
+        transform: translateY(-5px); 
+        box-shadow: var(--shadow-lg); 
+        border-color: var(--primary-light); 
+      }
+      .info-card-title { font-size: 1.1em; font-weight: 700; color: var(--primary-color); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+      .info-card-title::before { content: '★'; font-size: 0.8em; }
+
+      /* 提示框 (Alerts) */
+      .alert { 
+        padding: 20px 24px; 
+        border-radius: var(--radius-md); 
+        margin: 30px 0; 
+        display: flex; gap: 16px; 
+        border: 1px solid transparent; 
+      }
+      .alert-danger { 
+        background: #FFF1F2; 
+        border-color: #FECACA; 
+        color: #991B1B; 
+      }
+      .alert-icon { font-size: 1.5em; flex-shrink: 0; }
+
+      /* FAQ 區塊 */
+      .faq-section { margin-top: 60px; }
+      .faq-item { 
+        border: 1px solid #e2e8f0; 
+        border-radius: var(--radius-md); 
+        margin-bottom: 16px; 
+        overflow: hidden; 
+        transition: all 0.3s ease;
+      }
+      .faq-item.active { border-color: var(--primary-color); box-shadow: var(--shadow-sm); }
+      .faq-question { 
+        padding: 20px 24px; 
+        background: #fff; 
+        cursor: pointer; 
+        font-weight: 600; 
+        display: flex; justify-content: space-between; align-items: center; 
+        color: var(--text-color);
+      }
+      .faq-question:hover { color: var(--primary-color); }
+      .faq-question::after { 
+        content: '\f078'; /* FontAwesome chevron-down */
+        font-family: 'Font Awesome 6 Free'; 
+        font-weight: 900; 
+        transition: transform 0.3s ease; 
+        font-size: 0.8em; color: var(--text-light);
+      }
+      .faq-item.active .faq-question::after { transform: rotate(180deg); color: var(--primary-color); }
+      .faq-answer { 
+        max-height: 0; 
+        overflow: hidden; 
+        transition: max-height 0.3s ease-out; 
+        background: #fcfcfc; 
+      }
+      .faq-answer p { margin: 0; padding: 24px; color: #4a5568; border-top: 1px solid #edf2f7; }
+
+      /* 免責聲明 */
+      .disclaimer { 
+        background: #f7fafc; 
+        border-top: 1px solid #e2e8f0; 
+        padding: 60px 20px; 
+        text-align: center; 
+        margin-top: 80px; 
+      }
+      .disclaimer h3 { font-size: 1.1em; color: #718096; margin-bottom: 12px; }
+      .disclaimer p { max-width: 700px; margin: 0 auto; font-size: 0.9em; color: #a0aec0; }
+
+      /* 手機版適配 */
+      @media (max-width: 768px) {
+        .article-hero { text-align: left; }
+        .article-meta { justify-content: flex-start; }
+        .alert { flex-direction: column; gap: 10px; }
+        .alert-icon { display: none; } /* 手機版簡化 */
+      }
+    </style>
 </head>
 <body data-article-id="food-stinky_tofu">
+    <!-- 閱讀進度條 -->
     <div class="progress-bar" id="progressBar"></div>
+    
+    <!-- 頂部導航 (Placeholder) -->
     <div id="header-component"></div>
 
     <div class="article-container">
-      <aside class="sidebar" id="sidebar">
-        <div class="toc">
-          <h3 class="toc-title"><span>目錄</span></h3>
-          <ul class="toc-list">
-            <li><a href="#introduction" class="toc-link">炸臭豆腐：經典台灣味的魅力與隱憂</a></li>
-            <li><a href="#nutrition" class="toc-link">營養成分一覽</a></li>
-            <li><a href="#health-risks" class="toc-link">主要健康風險</a></li>
-            <li><a href="#healthy-choices" class="toc-link">健康享用指南</a></li>
-            <li><a href="#faq" class="toc-link">常見問題</a></li>
-            <li><a href="#related-articles-container" class="toc-link">相關食物</a></li>
-          </ul>
-        </div>
-      </aside>
-
       <main class="article-content">
+        
+        <!-- 文章頭部 (Hero Section) -->
         <header class="article-header">
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a>
               <span class="separator">/</span>
-              <span>炸臭豆腐 - 越臭越愛的台灣味</span>
+              <span>營養百科</span>
             </nav>
             <span class="article-category">夜市小吃</span>
-            <h1 class="article-title" id="page-title">炸臭豆腐：越臭越愛的台灣味</h1>
-            <p class="article-subtitle">炸臭豆腐是台灣夜市的經典小吃，其獨特風味讓人又愛又恨。本篇將分析炸臭豆腐的營養成分，並探討其健康風險與建議吃法。</p>
-            <div class="article-meta">
-              <span>撰寫單位：營養百科團隊</span>
-              <span>最後更新：2025-12-03</span>
-              <span>預估閱讀時間：4 分鐘</span>
-            </div>
+            <h1 class="article-title" id="page-title">炸臭豆腐</h1>
+          
           </div>
         </header>
 
+        <!-- 供手機版 TOC 使用的錨點 -->
         <div id="toc-mobile-target"></div>
 
         <article class="article-body">
@@ -130,58 +301,42 @@
           </section>
 
           <section id="nutrition">
-            <h2>營養成分一覽 (以一份約200克炸臭豆腐計算)</h2>
-            <p>以下為一份炸臭豆腐的主要營養成分：</p>
+            <h2>營養成分一覽</h2>
+            <p>以下為一份約200克炸臭豆腐的主要營養成分：</p>
             <div class="responsive-table-wrapper">
               <table class="data-table">
                 <thead>
                   <tr>
                     <th>營養素</th>
                     <th>含量</th>
-                    <th>說明</th>
+                    <th>營養價值說明</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>熱量</td>
-                    <td>約 500 大卡</td>
+                    <td>500 kcal</td>
                     <td>熱量主要來自油炸過程吸收的油脂。</td>
                   </tr>
                   <tr>
                     <td>脂肪</td>
-                    <td>約 30 克</td>
+                    <td>30 g</td>
                     <td>高脂肪含量，尤其是油炸用油。</td>
                   </tr>
                   <tr>
-                    <td>碳水化合物</td>
-                    <td>約 40 克</td>
-                    <td>主要來自臭豆腐本身的澱粉及裹粉。</td>
-                  </tr>
-                  <tr>
                     <td>蛋白質</td>
-                    <td>約 20 克</td>
+                    <td>20 g</td>
                     <td>來自豆製品的優質蛋白質。</td>
-                  </tr>
-                  <tr>
-                    <td>膳食纖維</td>
-                    <td>約 4 克</td>
-                    <td>主要來自搭配的泡菜。</td>
-                  </tr>
-                  <tr>
-                    <td>鉀</td>
-                    <td>約 300 毫克</td>
-                    <td>微量元素。</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p class="quick-test-message">註：此為估算值，實際含量因店家配方、油炸程度和份量而異。</p>
           </section>
 
           <section id="health-risks">
             <h2>主要健康風險</h2>
-            <p>炸臭豆腐的健康風險主要來自於其高溫油炸的烹調方式。</p>
             <div class="alert alert-danger">
+                <div class="alert-icon">⚠️</div>
               <div>
                 <strong>健康警訊</strong>
                 <p>高溫油炸會使食物吸附大量油脂，大幅增加熱量和脂肪攝取。反覆使用的油品可能產生有害物質。此外，高溫可能破壞臭豆腐發酵過程中產生的益生菌。長期或過量攝取炸物會增加肥胖、心血管疾病、發炎反應和癌症的風險。搭配的醬料也常含高鈉。</p>
@@ -192,52 +347,54 @@
           <section id="healthy-choices">
             <h2>健康享用指南</h2>
             <p>若實在無法抗拒炸臭豆腐的誘惑，以下是一些相對健康的享用建議：</p>
-            <div class="info-cards md-grid-2">
+            <div class="info-cards">
               <div class="info-card">
                 <h4 class="info-card-title">選擇清蒸或麻辣臭豆腐</h4>
-                <p class="info-card-desc">清蒸或麻辣臭豆腐可以大幅減少油脂攝取，是比油炸臭豆腐更健康的選擇。</p>
+                <p>清蒸或麻辣臭豆腐可以大幅減少油脂攝取，是比油炸臭豆腐更健康的選擇。</p>
               </div>
               <div class="info-card">
                 <h4 class="info-card-title">多搭配泡菜</h4>
-                <p class="info-card-desc">泡菜富含膳食纖維，有助於平衡餐點的營養組成，但應注意其鈉含量。</p>
-              </div>
-              <div class="info-card">
-                <h4 class="info-card-title">控制份量與醬料</h4>
-                <p class="info-card-desc">與親友分食，並減少醬料的使用，可以有效控制熱量、糖和鈉的攝取。</p>
+                <p>泡菜富含膳食纖維，有助於平衡餐點的營養組成，但應注意其鈉含量。</p>
               </div>
             </div>
           </section>
 
           <section id="faq" class="faq-section">
-            <h2>常見問題</h2>
+            <h2>常見問題 (FAQ)</h2>
             <div class="faq-item">
               <div class="faq-question">Q1: 臭豆腐發酵後有益生菌嗎？</div>
               <div class="faq-answer">
-                <p>A: 臭豆腐的發酵過程中確實會產生益生菌，但經過高溫油炸後，這些益生菌會被殺死。若想攝取益生菌，建議選擇未經高溫烹調的發酵食品，如泡菜、優格。</p>
+                <p><strong>A: 臭豆腐的發酵過程中確實會產生益生菌，但經過高溫油炸後，這些益生菌會被殺死。</strong> 若想攝取益生菌，建議選擇未經高溫烹調的發酵食品，如泡菜、優格。</p>
               </div>
             </div>
             <div class="faq-item">
               <div class="faq-question">Q2: 臭豆腐的臭味是怎麼來的？</div>
               <div class="faq-answer">
-                <p>A: 臭豆腐的臭味主要來自於發酵過程中，微生物分解蛋白質所產生的一些硫化物和胺類物質，這些物質賦予了它獨特的風味。</p>
+                <p><strong>A: 臭豆腐的臭味主要來自於發酵過程中，微生物分解蛋白質所產生的一些硫化物和胺類物質</strong>，這些物質賦予了它獨特的風味。</p>
               </div>
             </div>
           </section>
         </article>
 
+        <!-- 相關文章容器 (由 JS 填充) -->
         <div id="related-articles-container"></div>
+
       </main>
     </div>
 
+    <!-- 免責聲明 -->
     <section class="disclaimer">
       <div class="disclaimer-content">
         <h3>免責聲明</h3>
-        <p>本站資訊僅供教育與參考目的，不能取代專業醫療建議、診斷或治療。在開始任何新的營養補充計劃或更改現有健康方案前，請務必諮詢您的醫師或合格的醫療專業人員。</p>
+        <p>
+          本資訊僅供教育目的，不能取代專業醫療建議、診斷或治療。若有特定的健康問題或飲食需求，請諮詢醫師或註冊營養師。
+        </p>
       </div>
     </section>
 
     <div id="footer-component"></div>
 
+    <!-- 腳本引入 (保持原有邏輯) -->
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
@@ -246,6 +403,7 @@
     <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
+      // 1. 進度條邏輯
       function updateProgressBar() { 
         const scrollPosition = window.scrollY;
         const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -254,27 +412,25 @@
       }
       window.addEventListener("scroll", updateProgressBar);
 
-      function highlightTOC() {
-        const sections = document.querySelectorAll("section[id]");
-        const navLinks = document.querySelectorAll(".toc-link");
-        let current = "";
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 100;
-          if (window.scrollY >= sectionTop) { current = section.getAttribute("id"); }
-        });
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href") === "#" + current) { link.classList.add("active"); }
-        });
-      }
-      window.addEventListener("scroll", highlightTOC);
-
+      // 2. FAQ 互動邏輯 (使用 class 切換與 max-height 動畫)
       document.querySelectorAll(".faq-question").forEach((question) => {
         question.addEventListener("click", () => {
-          question.parentElement.classList.toggle("active");
+          const item = question.parentElement;
+          const answer = item.querySelector('.faq-answer');
+          
+          // 切換 active 狀態
+          item.classList.toggle("active");
+          
+          // 動態計算高度以實現滑動效果
+          if (item.classList.contains('active')) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          } else {
+            answer.style.maxHeight = "0";
+          }
         });
       });
 
+      // 3. 元件初始化
       document.addEventListener("DOMContentLoaded", function () {
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);

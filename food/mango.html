@@ -7,10 +7,20 @@
     <meta name="description" content="愛文芒果是夏季限定的甜蜜滋味，富含維生素A、維生素C和膳食纖維。本篇將介紹芒果的營養價值、對眼睛的益處與食用注意事項。" />
     <meta name="keywords" content="芒果, 芒果功效, 芒果營養, 維生素A, 夏季水果, 膳食纖維, 高GI水果" />
     
+    <!-- 建議：若有自定義 favicon 請確認路徑 -->
     <link rel="icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
     <link rel="shortcut icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
     <meta property="og:site_name" content="營養百科" />
 
+    <!-- 引入 Google Fonts: Noto Sans TC (無襯線) 與 Noto Serif TC (襯線，用於標題增添質感) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- 引入 FontAwesome 用於 icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- JSON-LD 結構化資料保持不變，這對 SEO 非常重要 -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -19,53 +29,20 @@
       "url": "https://life.maxlist.xyz/"
     }
     </script>
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://life.maxlist.xyz/food/mango.html"
-      },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://life.maxlist.xyz/food/mango.html" },
       "headline": "愛文芒果 - 夏季的甜蜜果實：一篇搞懂芒果的營養、功效與食用注意事項 | 營養百科",
       "description": "愛文芒果是夏季限定的甜蜜滋味，富含維生素A、維生素C和膳食纖維。本篇將介紹芒果的營養價值、對眼睛的益處與食用注意事項。",
       "image": "https://life.maxlist.xyz/assets/images/mango-og-image.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "Caregiver 營養百科",
-        "url": "https://life.maxlist.xyz/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Caregiver 營養百科",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png"
-        }
-      },
+      "author": { "@type": "Organization", "name": "Caregiver 營養百科", "url": "https://life.maxlist.xyz/" },
+      "publisher": { "@type": "Organization", "name": "Caregiver 營養百科", "logo": { "@type": "ImageObject", "url": "https://life.maxlist.xyz/assets/images/logo-for-google.png" } },
       "datePublished": "2025-12-03",
       "dateModified": "2025-12-03"
     }
     </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "營養百科",
-        "item": "https://life.maxlist.xyz/"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "愛文芒果 - 夏季的甜蜜果實"
-      }]
-    }
-    </script>
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -75,52 +52,245 @@
       "calories": "150 kcal",
       "proteinContent": "2 g",
       "fatContent": "1 g",
-      "carbohydrateContent": "37.5 g",
-      "fiberContent": "4 g",
-      "potassiumContent": "420 mg"
+      "carbohydrateContent": "37.5 g"
     }
     </script>
 
-    <link rel="stylesheet" href="../assets/css/article.css">
+    <style>
+      /* --- 1. CSS 變數系統：統一設計語言 --- */
+      :root {
+        --primary-color: #FFA000;       /* 主色調：芒果黃 */
+        --primary-light: #FFF8E1;       /* 淺主色：背景用 */
+        --primary-dark: #F57F17;        /* 深主色：互動用 */
+        --text-color: #2d3748;          /* 主要文字 */
+        --text-light: #718096;          /* 次要文字 */
+        --bg-color: #faf8f5;            /* 全站背景 */
+        --card-bg: #ffffff;             /* 卡片背景 */
+        --shadow-sm: 0 4px 6px rgba(0,0,0,0.02);
+        --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.025);
+        --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.05), 0 10px 10px -5px rgba(0,0,0,0.02);
+        --radius-md: 12px;
+        --radius-lg: 20px;
+        --spacing-container: max(20px, 5vw); /* 響應式邊距 */
+      }
+
+      /* --- 2. 基礎重置與排版 --- */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      html { scroll-behavior: smooth; } /* 平滑捲動 */
+
+      body { 
+        font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif; 
+        line-height: 1.8; 
+        color: var(--text-color); 
+        background: var(--bg-color); 
+        -webkit-font-smoothing: antialiased; /* 讓文字在 Mac 上更清晰 */
+      }
+
+      h1, h2, h3 { font-family: 'Noto Serif TC', serif; color: #1a202c; letter-spacing: 0.02em; }
+      
+      /* 使用 clamp 實現流體字體大小：在手機與桌機間自動縮放 */
+      h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.3; }
+      h2 { font-size: clamp(1.5rem, 3vw, 1.8rem); margin-bottom: 1.5rem; position: relative; padding-left: 1rem; }
+      h2::before { 
+        content: ''; position: absolute; left: 0; top: 15%; bottom: 15%; 
+        width: 4px; background: var(--primary-color); border-radius: 4px; 
+      }
+      p { margin-bottom: 1.5rem; font-size: 1.05rem; }
+
+      [id] { scroll-margin-top: 100px; } /* 錨點定位修正 */
+
+      /* --- 3. 元件樣式 --- */
+      
+      /* 進度條 */
+      .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: linear-gradient(90deg, var(--primary-color), #FFC107); z-index: 9999; transition: width 0.2s ease; }
+
+      /* 麵包屑 */
+      .breadcrumb { margin-bottom: 24px; font-size: 0.9em; color: var(--text-light); }
+      .breadcrumb a { color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+      .breadcrumb a:hover { color: var(--primary-color); }
+      .breadcrumb .separator { margin: 0 8px; color: #cbd5e0; }
+
+      /* 主容器佈局 */
+      .article-container { 
+        max-width: 900px; /* 稍微加寬以適應現代螢幕 */
+        margin: 0 auto; 
+        padding: 40px var(--spacing-container); 
+        display: flex; /* 預備未來可能的側欄擴充 */
+        gap: 40px;
+      }
+
+      .article-content { 
+        width: 100%; 
+        background: var(--card-bg); 
+        border-radius: var(--radius-lg); 
+        padding: clamp(30px, 5vw, 60px); /* 響應式內距 */
+        box-shadow: var(--shadow-md); 
+      }
+
+      /* Hero 區塊 */
+      .article-hero { 
+        text-align: center; /* 置中更有雜誌感 */
+        margin-bottom: 60px; 
+        padding-bottom: 40px;
+        border-bottom: 1px solid #edf2f7;
+      }
+      .article-category { 
+        display: inline-block; 
+        background: var(--primary-light); 
+        color: var(--primary-dark); 
+        padding: 6px 16px; 
+        border-radius: 50px; 
+        font-size: 0.85em; 
+        font-weight: 700; 
+        margin-bottom: 16px; 
+        letter-spacing: 0.05em;
+      }
+      .article-subtitle { 
+        font-size: 1.2rem; 
+        color: var(--text-light); 
+        margin: 20px auto 30px; 
+        max-width: 700px; 
+      }
+      .article-meta { 
+        display: flex; justify-content: center; gap: 20px; 
+        color: var(--text-light); font-size: 0.9em; flex-wrap: wrap; 
+      }
+      .article-meta span { display: flex; align-items: center; gap: 6px; }
+
+      /* 表格優化 (UIUX + RWD) */
+      .responsive-table-wrapper { 
+        width: 100%; 
+        overflow-x: auto; /* 手機版橫向捲動 */
+        border-radius: var(--radius-md); 
+        box-shadow: var(--shadow-sm); 
+        margin: 30px 0;
+        border: 1px solid #e2e8f0;
+      }
+      .data-table { width: 100%; border-collapse: collapse; min-width: 500px; /* 確保最小寬度 */ }
+      .data-table thead { background: #f7fafc; border-bottom: 2px solid #e2e8f0; }
+      .data-table th { color: #4a5568; font-weight: 700; text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.05em; }
+      .data-table th, .data-table td { padding: 16px 24px; text-align: left; }
+      .data-table tbody tr:not(:last-child) { border-bottom: 1px solid #edf2f7; }
+      .data-table tbody tr:hover { background-color: #fafffd; } /* 懸停效果 */
+
+      /* 資訊卡片 (Grid Layout) */
+      .info-cards { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 自動適應欄位 */
+        gap: 24px; 
+        margin: 40px 0; 
+      }
+      .info-card { 
+        background: #fff; 
+        border: 1px solid #e2e8f0; 
+        border-radius: var(--radius-md); 
+        padding: 24px; 
+        transition: transform 0.3s ease, box-shadow 0.3s ease; 
+      }
+      .info-card:hover { 
+        transform: translateY(-5px); 
+        box-shadow: var(--shadow-lg); 
+        border-color: var(--primary-light); 
+      }
+      .info-card-title { font-size: 1.1em; font-weight: 700; color: var(--primary-color); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+      .info-card-title::before { content: '★'; font-size: 0.8em; }
+
+      /* 提示框 (Alerts) */
+      .alert { 
+        padding: 20px 24px; 
+        border-radius: var(--radius-md); 
+        margin: 30px 0; 
+        display: flex; gap: 16px; 
+        border: 1px solid transparent; 
+      }
+      .alert-doctor { 
+        background: #FFF1F2; 
+        border-color: #FECACA; 
+        color: #991B1B; 
+      }
+      .alert-icon { font-size: 1.5em; flex-shrink: 0; }
+
+      /* FAQ 區塊 */
+      .faq-section { margin-top: 60px; }
+      .faq-item { 
+        border: 1px solid #e2e8f0; 
+        border-radius: var(--radius-md); 
+        margin-bottom: 16px; 
+        overflow: hidden; 
+        transition: all 0.3s ease;
+      }
+      .faq-item.active { border-color: var(--primary-color); box-shadow: var(--shadow-sm); }
+      .faq-question { 
+        padding: 20px 24px; 
+        background: #fff; 
+        cursor: pointer; 
+        font-weight: 600; 
+        display: flex; justify-content: space-between; align-items: center; 
+        color: var(--text-color);
+      }
+      .faq-question:hover { color: var(--primary-color); }
+      .faq-question::after { 
+        content: '\f078'; /* FontAwesome chevron-down */
+        font-family: 'Font Awesome 6 Free'; 
+        font-weight: 900; 
+        transition: transform 0.3s ease; 
+        font-size: 0.8em; color: var(--text-light);
+      }
+      .faq-item.active .faq-question::after { transform: rotate(180deg); color: var(--primary-color); }
+      .faq-answer { 
+        max-height: 0; 
+        overflow: hidden; 
+        transition: max-height 0.3s ease-out; 
+        background: #fcfcfc; 
+      }
+      .faq-answer p { margin: 0; padding: 24px; color: #4a5568; border-top: 1px solid #edf2f7; }
+
+      /* 免責聲明 */
+      .disclaimer { 
+        background: #f7fafc; 
+        border-top: 1px solid #e2e8f0; 
+        padding: 60px 20px; 
+        text-align: center; 
+        margin-top: 80px; 
+      }
+      .disclaimer h3 { font-size: 1.1em; color: #718096; margin-bottom: 12px; }
+      .disclaimer p { max-width: 700px; margin: 0 auto; font-size: 0.9em; color: #a0aec0; }
+
+      /* 手機版適配 */
+      @media (max-width: 768px) {
+        .article-hero { text-align: left; }
+        .article-meta { justify-content: flex-start; }
+        .alert { flex-direction: column; gap: 10px; }
+        .alert-icon { display: none; } /* 手機版簡化 */
+      }
+    </style>
 </head>
 <body data-article-id="food-mango">
+    <!-- 閱讀進度條 -->
     <div class="progress-bar" id="progressBar"></div>
+    
+    <!-- 頂部導航 (Placeholder) -->
     <div id="header-component"></div>
 
     <div class="article-container">
-      <aside class="sidebar" id="sidebar">
-        <div class="toc">
-          <h3 class="toc-title"><span>目錄</span></h3>
-          <ul class="toc-list">
-            <li><a href="#introduction" class="toc-link">愛文芒果：台灣夏季的甜蜜代表</a></li>
-            <li><a href="#nutrition" class="toc-link">營養成分一覽</a></li>
-            <li><a href="#benefits" class="toc-link">芒果的健康功效</a></li>
-            <li><a href="#how-to-eat" class="toc-link">食用注意事項</a></li>
-            <li><a href="#faq" class="toc-link">常見問題</a></li>
-            <li><a href="#related-articles-container" class="toc-link">相關食物</a></li>
-          </ul>
-        </div>
-      </aside>
-
       <main class="article-content">
+        
+        <!-- 文章頭部 (Hero Section) -->
         <header class="article-header">
           <div class="article-hero">
             <nav class="breadcrumb">
               <a href="../index.html">首頁</a>
               <span class="separator">/</span>
-              <span>愛文芒果 - 夏季的甜蜜果實</span>
+              <span>營養百科</span>
             </nav>
             <span class="article-category">水果類</span>
-            <h1 class="article-title" id="page-title">愛文芒果：夏季的甜蜜果實</h1>
-            <p class="article-subtitle">愛文芒果是台灣夏季限定的甜蜜滋味，它不僅香甜多汁，更富含維生素A和多種抗氧化劑。然而，作為中高GI水果，適量攝取是享受美味的關鍵。</p>
-            <div class="article-meta">
-              <span>撰寫單位：營養百科團隊</span>
-              <span>最後更新：2025-12-03</span>
-              <span>預估閱讀時間：4 分鐘</span>
-            </div>
+            <h1 class="article-title" id="page-title">愛文芒果</h1>
+          
           </div>
         </header>
 
+        <!-- 供手機版 TOC 使用的錨點 -->
         <div id="toc-mobile-target"></div>
 
         <article class="article-body">
@@ -131,26 +301,26 @@
           </section>
 
           <section id="nutrition">
-            <h2>營養成分一覽 (以一顆愛文芒果，約250克計算)</h2>
-            <p>以下為一顆愛文芒果的主要營養成分：</p>
+            <h2>營養成分一覽</h2>
+            <p>以下為一顆愛文芒果（約250克）的主要營養成分：</p>
             <div class="responsive-table-wrapper">
               <table class="data-table">
                 <thead>
                   <tr>
                     <th>營養素</th>
                     <th>含量</th>
-                    <th>說明</th>
+                    <th>營養價值說明</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>熱量</td>
-                    <td>約 150 大卡</td>
+                    <td>150 kcal</td>
                     <td>熱量來自天然糖分。</td>
                   </tr>
                   <tr>
                     <td>碳水化合物</td>
-                    <td>約 37.5 克</td>
+                    <td>37.5 g</td>
                     <td>主要為果糖，是中高GI水果。</td>
                   </tr>
                   <tr>
@@ -163,49 +333,34 @@
                     <td>含量豐富</td>
                     <td>具抗氧化作用，提升免疫力。</td>
                   </tr>
-                  <tr>
-                    <td>膳食纖維</td>
-                    <td>約 4 克</td>
-                    <td>有助於腸道健康。</td>
-                  </tr>
-                  <tr>
-                    <td>鉀</td>
-                    <td>約 420 毫克</td>
-                    <td>有助於維持電解質平衡。</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
-            <p class="quick-test-message">註：此為估算值，實際含量因芒果品種和成熟度而異。</p>
           </section>
 
           <section id="benefits">
             <h2>芒果的健康功效</h2>
             <p>愛文芒果除了美味，還帶來多重健康益處：</p>
-            <div class="info-cards md-grid-2">
+            <div class="info-cards">
               <div class="info-card">
                 <h4 class="info-card-title">保護眼睛健康</h4>
-                <p class="info-card-desc">芒果富含β-胡蘿蔔素，能在體內轉化為維生素A，對維護視力、預防夜盲症和眼睛乾燥症有重要作用。</p>
+                <p>芒果富含β-胡蘿蔔素，能在體內轉化為維生素A，對維護視力、預防夜盲症和眼睛乾燥症有重要作用。</p>
               </div>
               <div class="info-card">
                 <h4 class="info-card-title">增強免疫力</h4>
-                <p class="info-card-desc">豐富的維生素C是強效的抗氧化劑，能幫助身體抵抗自由基，並支持免疫系統的正常運作，有助於預防感冒。</p>
+                <p>豐富的維生素C是強效的抗氧化劑，能幫助身體抵抗自由基，並支持免疫系統的正常運作，有助於預防感冒。</p>
               </div>
                <div class="info-card">
                 <h4 class="info-card-title">促進消化與腸道健康</h4>
-                <p class="info-card-desc">芒果含有膳食纖維和消化酵素，有助於促進腸道蠕動，改善消化不良和便秘問題。</p>
-              </div>
-               <div class="info-card">
-                <h4 class="info-card-title">提供抗氧化保護</h4>
-                <p class="info-card-desc">芒果除了維生素C，還含有多種多酚類化合物，這些天然抗氧化劑能保護細胞免受氧化損傷，有助於延緩老化。</p>
+                <p>芒果含有膳食纖維和消化酵素，有助於促進腸道蠕動，改善消化不良和便秘問題。</p>
               </div>
             </div>
           </section>
 
           <section id="how-to-eat">
             <h2>食用注意事項</h2>
-            <p>享受芒果的美味，同時也要注意以下幾點：</p>
             <div class="alert alert-doctor">
+                <div class="alert-icon">⚠️</div>
               <div>
                 <strong>醫師警告</strong>
                 <p><strong>過敏反應</strong>：部分人可能對芒果的漆酚（urushiol）過敏，接觸或食用後可能引起皮膚紅腫、發癢等症狀。<br>
@@ -215,36 +370,41 @@
           </section>
 
           <section id="faq" class="faq-section">
-            <h2>常見問題</h2>
-            <p>以下是關於芒果的常見問題。</p>
+            <h2>常見問題 (FAQ)</h2>
             <div class="faq-item">
               <div class="faq-question">Q1: 芒果可以空腹吃嗎？</div>
               <div class="faq-answer">
-                <p>A: 對於大多數健康的人來說，空腹吃芒果是沒有問題的。但對於腸胃敏感或有胃病的人，由於芒果含有酵素，空腹食用可能引起胃部不適。糖尿病患者則應避免空腹大量食用，以免血糖波動過大。</p>
+                <p><strong>A: 對於大多數健康的人來說，空腹吃芒果是沒有問題的。</strong> 但對於腸胃敏感或有胃病的人，由於芒果含有酵素，空腹食用可能引起胃部不適。糖尿病患者則應避免空腹大量食用，以免血糖波動過大。</p>
               </div>
             </div>
             <div class="faq-item">
               <div class="faq-question">Q2: 芒果和鳳梨一樣，會咬舌頭嗎？</div>
               <div class="faq-answer">
-                <p>A: 芒果和鳳梨都含有消化酵素，但芒果中的酵素活性通常比鳳梨弱，所以較少引起「咬舌頭」的感覺。不過，對芒果敏感的人，仍可能感覺到輕微的不適。</p>
+                <p><strong>A: 芒果和鳳梨都含有消化酵素</strong>，但芒果中的酵素活性通常比鳳梨弱，所以較少引起「咬舌頭」的感覺。不過，對芒果敏感的人，仍可能感覺到輕微的不適。</p>
               </div>
             </div>
           </section>
         </article>
 
+        <!-- 相關文章容器 (由 JS 填充) -->
         <div id="related-articles-container"></div>
+
       </main>
     </div>
 
+    <!-- 免責聲明 -->
     <section class="disclaimer">
       <div class="disclaimer-content">
         <h3>免責聲明</h3>
-        <p>本站資訊僅供教育與參考目的，不能取代專業醫療建議、診斷或治療。在開始任何新的營養補充計劃或更改現有健康方案前，請務必諮詢您的醫師或合格的醫療專業人員。</p>
+        <p>
+          本資訊僅供教育目的，不能取代專業醫療建議、診斷或治療。若有特定的健康問題或飲食需求，請諮詢醫師或註冊營養師。
+        </p>
       </div>
     </section>
 
     <div id="footer-component"></div>
 
+    <!-- 腳本引入 (保持原有邏輯) -->
     <script src="../assets/js/deus-analytics-component.js"></script>
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
@@ -253,6 +413,7 @@
     <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
+      // 1. 進度條邏輯
       function updateProgressBar() { 
         const scrollPosition = window.scrollY;
         const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -261,27 +422,25 @@
       }
       window.addEventListener("scroll", updateProgressBar);
 
-      function highlightTOC() {
-        const sections = document.querySelectorAll("section[id]");
-        const navLinks = document.querySelectorAll(".toc-link");
-        let current = "";
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 100;
-          if (window.scrollY >= sectionTop) { current = section.getAttribute("id"); }
-        });
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href") === "#" + current) { link.classList.add("active"); }
-        });
-      }
-      window.addEventListener("scroll", highlightTOC);
-
+      // 2. FAQ 互動邏輯 (使用 class 切換與 max-height 動畫)
       document.querySelectorAll(".faq-question").forEach((question) => {
         question.addEventListener("click", () => {
-          question.parentElement.classList.toggle("active");
+          const item = question.parentElement;
+          const answer = item.querySelector('.faq-answer');
+          
+          // 切換 active 狀態
+          item.classList.toggle("active");
+          
+          // 動態計算高度以實現滑動效果
+          if (item.classList.contains('active')) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          } else {
+            answer.style.maxHeight = "0";
+          }
         });
       });
 
+      // 3. 元件初始化
       document.addEventListener("DOMContentLoaded", function () {
         if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
