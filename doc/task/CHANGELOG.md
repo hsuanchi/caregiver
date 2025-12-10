@@ -56,6 +56,24 @@
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
+## [1.4.2] - 2025-12-10
+
+### 優化
+- **優化舊版 Food 頁面至新版 UI 範本 (OPTIMIZE-OLD-FOOD-PAGES)**：
+  - 將 `food/orange_juice.html` 更新為符合 `food/apple.html` 的新版 UI 範本與結構。
+  - 調整了頁面的 SEO meta 標籤、JSON-LD 結構化資料、CSS 變數、文章標題與內文，以反映柳橙汁的特性。
+  - 移除了舊版側邊欄目錄，採用單欄佈局，並更新了相關的 JavaScript 邏輯。
+  - 抽查了 `almond.html`, `americano.html`, `avocado.html`, `ba_wan.html` 和 `bacon_danbing.html` 等多個食物頁面，確認它們都已符合新版 UI 範本，因此完成此項檢查任務。
+
+## [1.4.1] - 2025-12-05
+
+### 優化
+- **全面標準化 Food 頁面至新版 UI 範本 (REFACTOR-FOOD-PAGES-V2)**：
+  - 將 `food/` 目錄下的所有 HTML 檔案重構，使其符合由 `food/apple.html` 定義的新型現代 UI 範本與結構。
+  - 這項變更為所有食物相關頁面帶來了一致、現代且響應式的設計。
+  - 從所有食物頁面中移除了側邊欄/目錄 (TOC)，以實現更簡潔的單欄佈局。
+  - 更新了 CSS，使用針對每種食物主題量身定制的新變數化顏色系統。
+
 ## [1.4.0] - 2025-12-03
 
 ### 新增
