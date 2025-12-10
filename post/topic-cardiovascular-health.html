@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>心血管健康：看懂血脂、血壓、血管鈣化的完整解決方案 | 營養百科</title>
+    <title>[實戰指南] 心血管保養的工程師邏輯：看懂身體的「故障燈號」與修復方案 | 營養百科</title>
     <meta
       name="description"
-      content="本文整合最新科學實證，提供一份完整的心血管健康策略。從解析發炎、氧化、鈣化三大核心問題，到比較魚油、Q10、紅麴、維生素K2等關鍵營養素，並提供內部連結導向深度評測，是您管理心血管健康的權威起點。"
+      content="別死背醫學名詞，用工程師邏輯看懂心血管健康。本文解析發炎、鈣化、粒線體衰竭三大核心機制，並透過數據分析，提供魚油、Q10、維生素K2的精準介入方案。"
     />
     <meta
       name="keywords"
-      content="心血管健康, 動脈硬化, 降血壓, 降血脂, 血管鈣化, 魚油, 輔酶Q10, 維生素K2, 鎂, 鉀, 紅麴"
+      content="心血管健康, 動脈硬化, 降血壓, 降血脂, 血管鈣化, 魚油, 輔酶Q10, 維生素K2, 鎂, 鉀, 納豆激酶"
     />
     
     <!-- Favicon -->
@@ -18,19 +18,11 @@
     <link rel="shortcut icon" type="image/png" href="/pic/Nutrition Encyclopedia.png">
     <!-- Open Graph for Social Media -->
     <meta property="og:site_name" content="營養百科" />
+    <meta property="og:title" content="[實戰指南] 心血管保養的工程師邏輯" />
+    <meta property="og:description" content="別死背醫學名詞，用數據看懂心血管健康。本文提供完整的修復協議與魚油CP值計算。" />
+    <meta property="og:image" content="https://life.maxlist.xyz/assets/images/cardiovascular-health-og.jpg" />
 
-    <!-- JSON-LD for WebSite (Site Name in Search Results) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "營養百科",
-      "alternateName": "",
-      "url": "https://life.maxlist.xyz/"
-    }
-    </script>
-
-    <!-- JSON-LD for Structured Data -->
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -39,13 +31,11 @@
         "@type": "WebPage",
         "@id": "https://life.maxlist.xyz/post/topic-cardiovascular-health.html"
       },
-      "headline": "心血管健康：一篇搞懂血脂、血壓、血管鈣化的完整解決方案",
-      "description": "本文整合最新科學實證，提供一份完整的心血管健康策略。從解析發炎、氧化、鈣化三大核心問題，到比較魚油、Q10、紅麴、維生素K2等關鍵營養素，並提供內部連結導向深度評測，是您管理心血管健康的權威起點。",
-      "image": "https://life.maxlist.xyz/assets/images/cardiovascular-health-og.jpg",
+      "headline": "[實戰指南] 心血管保養的工程師邏輯：看懂身體的「故障燈號」與修復方案",
+      "description": "本文整合最新科學實證，提供一份完整的心血管健康策略。從解析發炎、氧化、鈣化三大核心問題，到比較魚油、Q10、紅麴、維生素K2等關鍵營養素，並提供內部連結導向深度評測。",
       "author": {
         "@type": "Organization",
-        "name": "Caregiver 營養百科",
-        "url": "https://life.maxlist.xyz/"
+        "name": "Caregiver 營養百科"
       },
       "publisher": {
         "@type": "Organization",
@@ -60,7 +50,7 @@
     }
     </script>
 
-    <!-- JSON-LD for Breadcrumb -->
+    <!-- Breadcrumb JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -79,109 +69,266 @@
     </script>
 
     <style>
+      /* Global Reset & Base */
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif; line-height: 1.8; color: #2d3748; background: #faf8f5; }
 
+      /* Anchor Scroll Offset */
       [id] { scroll-margin-top: 100px; }
+
+      /* Components */
       .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%); z-index: 1001; transition: width 0.3s ease; }
+      
       .breadcrumb { margin-bottom: 20px; font-size: 0.9em; color: #718096; }
       .breadcrumb a { color: #718096; text-decoration: none; transition: color 0.3s ease; }
       .breadcrumb a:hover { color: #3b82f6; }
       .breadcrumb .separator { margin: 0 8px; color: #a0aec0; }
+
+      /* Layout */
       .article-container { max-width: 1400px; margin: 0 auto; padding: 100px 20px 60px; display: grid; grid-template-columns: 280px 1fr; gap: 60px; position: relative; }
       .sidebar { position: sticky; top: 100px; height: fit-content; max-height: calc(100vh - 120px); overflow-y: auto; }
+      .article-content { background: white; border-radius: 20px; padding: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
+
+      /* TOC Styling */
       .toc { background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
-      .toc-title { font-size: 1.2em; font-weight: 700; color: #2d3748; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-      .toc-title a { color: inherit; text-decoration: none; }
+      .toc-title { font-size: 1.2em; font-weight: 700; color: #2d3748; margin-bottom: 20px; }
       .toc-list { list-style: none; padding-left: 0; }
       .toc-list li { margin-bottom: 8px; }
       .toc-list a { color: #4a5568; text-decoration: none; font-size: 0.95em; display: block; padding: 8px 12px; transition: all 0.3s ease; position: relative; border-radius: 8px; border-left: 3px solid transparent; }
       .toc-list a.active { color: #3b82f6; background: rgba(59, 130, 246, 0.1); border-left-color: #3b82f6; font-weight: 600; }
       .toc-list a:hover { color: #3b82f6; background: rgba(59, 130, 246, 0.08); border-left-color: #60a5fa; transform: translateX(2px); }
       .toc-list a:not(.sub-item) { font-weight: 600; background: rgba(59, 130, 246, 0.05); margin-bottom: 4px; }
-      .toc-list a.sub-item { margin-left: 16px; font-size: 0.9em; color: #718096; background: rgba(113, 128, 150, 0.03); border-left-color: #e2e8f0; position: relative; }
-      .toc-list a.sub-item::before { content: ""; position: absolute; left: -12px; top: 50%; width: 8px; height: 1px; background: #d1d5db; transform: translateY(-50%); }
-      .toc-list a.active.sub-item { color: #3b82f6; background: rgba(59, 130, 246, 0.08); border-left-color: #60a5fa; }
-      .toc-list a.active.sub-item::before { background: #60a5fa; }
-      .article-content { background: white; border-radius: 20px; padding: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
-      .article-header { margin-bottom: 60px; position: relative; }
-      .article-hero { background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border-radius: 20px; padding: 60px; margin-bottom: 40px; position: relative; overflow: hidden; }
+      .toc-list a.sub-item { margin-left: 16px; font-size: 0.9em; color: #718096; background: rgba(113, 128, 150, 0.03); border-left-color: #e2e8f0; }
+
+      /* Article Header */
+      .article-header { margin-bottom: 60px; }
+      .article-hero { background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border-radius: 20px; padding: 60px; margin-bottom: 40px; }
       .article-category { display: inline-block; background: white; color: #3b82f6; padding: 8px 20px; border-radius: 20px; font-size: 0.9em; font-weight: 600; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
-      .article-title { font-size: 2.5em; font-weight: 800; color: #1e3a8a; line-height: 1.3; margin-bottom: 20px; max-width: 800px; }
-      .article-subtitle { font-size: 1.3em; color: #1e40af; line-height: 1.6; max-width: 700px; margin-bottom: 30px; }
+      .article-title { font-size: 2.5em; font-weight: 800; color: #1e3a8a; line-height: 1.3; margin-bottom: 20px; }
+      .article-subtitle { font-size: 1.3em; color: #1e40af; line-height: 1.6; max-width: 800px; margin-bottom: 30px; }
       .article-meta { display: flex; gap: 30px; color: #475569; font-size: 0.95em; flex-wrap: wrap; }
-      .article-meta span { display: flex; align-items: center; gap: 8px; }
+
+      /* Content Typography & Elements */
+      h2 { font-size: 1.8em; color: #1e3a8a; margin-top: 50px; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 2px solid #e2e8f0; }
+      h3 { font-size: 1.4em; color: #2d3748; margin-top: 35px; margin-bottom: 15px; font-weight: 700; }
+      p { margin-bottom: 20px; font-size: 1.05em; color: #4a5568; }
+      
+      /* Alerts / Callouts */
       .alert { display: flex; align-items: flex-start; padding: 20px; border-radius: 10px; margin: 30px 0; border-left: 4px solid; }
-      .alert::before { font-size: 1.2em; line-height: 1.6; margin-right: 12px; }
       .alert-doctor { background-color: #fef2f2; border-color: #dc2626; color: #991b1b; }
-      .alert-doctor::before { content: "⚠️"; }
-      .alert-tip { background: #fffbeb; color: #b45309; border-color: #fde68a; }
-      .alert-tip::before { content: "💡"; }
-      .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
-      .alert-nutritionist::before { content: "💡"; }
-      .alert > div > strong { font-weight: bold; color: inherit; display: block; margin-bottom: 8px; }
-      .alert p:last-child { margin-bottom: 0; }
-      .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); }
+      .alert-doctor::before { content: "⚠️"; margin-right: 12px; font-size: 1.2em; }
+      .alert-tip, .alert-nutritionist { background-color: #eff6ff; border-color: #60a5fa; color: #1e40af; }
+      .alert-tip::before { content: "💡"; margin-right: 12px; font-size: 1.2em; }
+
+      /* Tables */
+      .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); font-size: 0.95em; }
       .data-table thead { background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%); color: white; }
       .data-table th, .data-table td { padding: 15px 20px; text-align: left; }
-      .data-table th { font-weight: 600; }
-      .data-table tbody tr { border-bottom: 1px solid #e5e7eb; transition: background 0.3s ease; }
-      .data-table tbody tr:hover { background: #f9fafb; }
+      .data-table tbody tr { border-bottom: 1px solid #e5e7eb; }
       .data-table tbody tr:last-child { border-bottom: none; }
-      .info-cards, .risk-group-cards {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        margin: 40px 0;
-      }
-      .info-card, .risk-card {
-        flex: 1;
-        min-width: 250px;
-      }
-      .quick-test-message { text-align: center; margin-top: 20px; color: #14532d; font-weight: 600; }
+      .table-responsive { overflow-x: auto; }
 
-      .disclaimer {
-        background: #f9fafb;
-        padding: 60px 0;
-        text-align: center;
-      }
-      .disclaimer-content {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-      .disclaimer h3 {
-        color: #4b5563;
-        margin-bottom: 15px;
-        font-size: 1.5em;
-      }
-      .disclaimer p {
-        color: #6b7280;
-        font-size: 0.95em;
-      }
+      /* Special Visual Components (New) */
+      .symptom-box { background: #fff; padding: 20px; border-radius: 12px; border-left: 5px solid; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+      .symptom-box.yellow { border-color: #facc15; }
+      .symptom-box.red { border-color: #f87171; }
+      
+      .cta-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 12px; padding: 25px; margin: 30px 0; text-align: center; }
+      .cta-btn { display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 15px; transition: background 0.3s; box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2); }
+      .cta-btn:hover { background: #1d4ed8; transform: translateY(-1px); }
 
+      .flowchart { display: flex; justify-content: space-between; gap: 15px; margin: 30px 0; align-items: stretch; text-align: center; }
+      .flow-step { flex: 1; background: white; padding: 20px 15px; border-radius: 10px; border-top: 4px solid; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center; }
+      .flow-arrow { display: flex; align-items: center; color: #cbd5e1; font-size: 1.5em; font-weight: bold; }
+
+      .food-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-top: 15px; }
+      .food-item { background: white; padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0; text-align: center; }
+      .food-val { color: #2563eb; font-weight: 800; font-size: 1.1em; display: block; margin-top: 5px; }
+
+      /* FAQ & Disclaimer */
+      .faq-item { margin-bottom: 15px; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; }
+      .faq-question { padding: 15px 20px; background: #f8fafc; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+      .faq-question::after { content: "+"; font-size: 1.2em; }
+      .active .faq-question::after { content: "-"; }
+      .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: white; }
+      .active .faq-answer { padding: 20px; max-height: 500px; }
+      
+      .disclaimer { background: #f9fafb; padding: 60px 0; text-align: center; margin-top: 60px; }
+      .disclaimer-content { max-width: 800px; margin: 0 auto; padding: 0 20px; color: #6b7280; font-size: 0.9em; }
+
+      /* Responsive */
       @media (max-width: 1024px) {
-        body { overflow-x: hidden; }
-        .article-container {
-          grid-template-columns: 1fr;
-          gap: 0;
-        }
-        /* .sidebar { display: none; } -- This is now handled by responsive-toc-component.js */
+        .article-container { grid-template-columns: 1fr; padding-top: 80px; }
+        .sidebar { display: none; } /* Mobile handled by component */
+      }
+      @media (max-width: 768px) {
+        .article-hero { padding: 30px; }
+        .article-title { font-size: 1.8em; }
+        .flowchart { flex-direction: column; }
+        .flow-arrow { transform: rotate(90deg); justify-content: center; margin: 10px 0; }
       }
 
-      @media (min-width: 768px) {
-        .md-grid-2 { 
+        /* --- Component Scope CSS --- */
+        :root {
+            --c-symptom: #ef4444; /* Red for Alerts */
+            --c-cause: #eab308;   /* Yellow for Warnings/Logic */
+            --c-solution: #3b82f6; /* Blue for Solutions */
+            --bg-panel: #ffffff;
+            --line-inactive: #e5e7eb;
+            --line-active: #64748b;
+        }
+
+        .info-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px; /* Add some space below */
+        }
+
+        .info-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .info-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .info-subtitle {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-top: 5px;
+        }
+
+        /* The Grid Layout */
+        .debug-map {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); 
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            position: relative;
         }
-        .md-grid-3 { 
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); 
+
+        /* Columns */
+        .col-header {
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 0.9rem;
         }
-        .md-flex-row { 
-            flex-direction: row; 
+        .col-symptom .col-header { color: var(--c-symptom); background: #fef2f2; }
+        .col-cause .col-header { color: var(--c-cause); background: #fefce8; }
+        .col-solution .col-header { color: var(--c-solution); background: #eff6ff; }
+
+        .node-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: relative;
+            z-index: 2; /* Above SVG lines */
         }
-      }
+
+        /* Node Cards */
+        .node {
+            background: white;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.85rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .node:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-color: currentColor;
+        }
+
+        /* Node Specific Colors */
+        .node[data-type="symptom"] { border-left: 4px solid var(--c-symptom); }
+        .node[data-type="symptom"]:hover, .node[data-type="symptom"].active { background: #fef2f2; border-color: var(--c-symptom); }
+        
+        .node[data-type="cause"] { border-left: 4px solid var(--c-cause); }
+        .node[data-type="cause"]:hover, .node[data-type="cause"].active { background: #fefce8; border-color: var(--c-cause); }
+        
+        .node[data-type="solution"] { border-left: 4px solid var(--c-solution); }
+        .node[data-type="solution"]:hover, .node[data-type="solution"].active { background: #eff6ff; border-color: var(--c-solution); }
+
+        .node-icon { margin-right: 8px; font-size: 1.1em; }
+        .node-jump { opacity: 0; font-size: 0.8em; color: #94a3b8; transition: opacity 0.2s; }
+        .node:hover .node-jump { opacity: 1; }
+
+        /* SVG Connections Layer */
+        .connections-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        path {
+            fill: none;
+            stroke: var(--line-inactive);
+            stroke-width: 1.5;
+            transition: stroke 0.4s, stroke-width 0.4s;
+        }
+
+        path.active {
+            stroke: var(--line-active);
+            stroke-width: 3;
+            stroke-dasharray: 10;
+            animation: dash 1s linear infinite;
+        }
+
+        @keyframes dash {
+            to { stroke-dashoffset: -20; }
+        }
+
+        /* Safety Warning Box */
+        .safety-box {
+            margin-top: 30px;
+            padding: 15px;
+            background: #fff1f2;
+            border: 1px solid #fda4af;
+            border-radius: 8px;
+            color: #9f1239;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: start;
+            gap: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .debug-map {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            .connections-layer { display: none; } /* Hide lines on mobile stack */
+            .node { margin-bottom: 5px; }
+            .node::after { content: "⬇"; display: block; position: absolute; bottom: -18px; left: 50%; color: #cbd5e1; font-size: 10px; }
+            .col-solution .node::after { display: none; }
+        }
     </style>
 </head>
 <body data-article-id="topic-cardiovascular-health">
@@ -200,13 +347,18 @@
             <span>目錄</span>
           </h3>
           <ul class="toc-list">
-            <li><a href="#summary" class="toc-link">執行摘要</a></li>
-            <li><a href="#pain-points" class="toc-link">你的痛點在哪裡？</a></li>
-            <li><a href="#solutions" class="toc-link">核心解決方案</a></li>
-            <li><a href="#solutions-level1" class="toc-link sub-item">Level 1: 基礎建設 (抗發炎)</a></li>
-            <li><a href="#solutions-level2" class="toc-link sub-item">Level 2: 動能強化 (能量供應)</a></li>
-            <li><a href="#solutions-level3" class="toc-link sub-item">Level 3: 管路維護 (鈣化防禦)</a></li>
-            <li><a href="#tools" class="toc-link">互動風險評估</a></li>
+            <li><a href="#dashboard" class="toc-link">1. 身體儀表板：你的血管亮紅燈了嗎？</a></li>
+            <li><a href="#dashboard-A" class="toc-link sub-item">訊號 A：管路淤積</a></li>
+            <li><a href="#dashboard-B" class="toc-link sub-item">訊號 B：馬達無力與壓力過載</a></li>
+            <li><a href="#root-cause" class="toc-link">2. 三大核心故障原因</a></li>
+            <li><a href="#root-cause-1" class="toc-link sub-item">原因1：發炎與斑塊</a></li>
+            <li><a href="#root-cause-2" class="toc-link sub-item">原因2：血管鈣化</a></li>
+            <li><a href="#root-cause-3" class="toc-link sub-item">原因3：生物能量匱乏</a></li>
+            <li><a href="#repair" class="toc-link">3. 修復工程：精準營養介入</a></li>
+            <li><a href="#repair-1" class="toc-link sub-item">3.1 血管清道夫：抗發炎與溶栓</a></li>
+            <li><a href="#repair-2" class="toc-link sub-item">3.2 彈性修復師：逆轉鈣化</a></li>
+            <li><a href="#repair-3" class="toc-link sub-item">3.3 心臟電池：粒線體賦活</a></li>
+            <li><a href="#tools" class="toc-link">📝 實用營養工具</a></li>
             <li><a href="#faq" class="toc-link">常見問題</a></li>
           </ul>
         </div>
@@ -223,12 +375,12 @@
               <span>心血管健康主題</span>
             </nav>
             <span class="article-category">核心主題</span>
-            <h1 class="article-title">心血管健康</h1>
+            <h1 class="article-title">[實戰指南] 心血管保養的工程師邏輯：看懂身體的「故障燈號」與修復方案</h1>
             <p class="article-subtitle">
-              整合最新科學實證，從解析發炎、氧化、鈣化三大核心問題，到比較魚油、Q10、維生素K2等關鍵營養素，提供您管理心血管健康的權威起點。
+              別死背醫學名詞，但要看懂數據。本文解析 3 大血管風險機制（動脈硬化、鈣化、粒線體衰竭），並透過數據分析，告訴你魚油、Q10 與鎂該怎麼搭配。
             </p>
             <div class="article-meta">
-              <span>✍️ 營養百科團隊</span>
+              <span>✍️ 營養百科分析團隊</span>
               <span>📅 2025 年 12 月 10 日</span>
               <span>⏱️ 閱讀時間：8 分鐘</span>
             </div>
@@ -236,78 +388,299 @@
         </header>
 
         <div id="toc-mobile-target"></div>
+        
         <!-- Article Body -->
         <article class="article-body">
 
-          <section id="summary">
-            <h2>執行摘要：重新定義心血管問題與營養介入的典範轉移</h2>
-            <p>心血管疾病 (CVD) 長期以來在全球主要死因中居首，其病理機制複雜，不再僅被視為單純的「脂質堆積」。現代醫學已深刻理解，真正驅動心血管疾病進程的，是多重底層病理機制交織的結果。本篇指南將深入剖析其中三大核心問題：</p>
-            <ul>
-              <li><strong>慢性低度發炎 (Chronic Low-grade Inflammation)</strong>：這是動脈粥狀硬化的始動因素，使血管壁變得脆弱並容易形成斑塊。持續的發炎反應會加速血管損傷，形成惡性循環。</li>
-              <li><strong>氧化壓力 (Oxidative Stress)</strong>：體內過多的自由基會攻擊並損壞血管內皮細胞與脂蛋白，加速斑塊的形成與不穩定，進一步惡化發炎反應。</li>
-              <li><strong>血管鈣化 (Vascular Calcification)</strong>：過去曾被錯誤地視為單純的老化現象，現已被證實為主動且受調控的生物過程。不當的鈣沉積會使血管失去彈性、變得僵硬，大幅增加心血管事件風險。</li>
-            </ul>
-            <p>面對這些複雜的挑戰，營養醫學的角色正經歷從「避免缺乏」到「代謝調節」的典範轉移。具備藥理活性的營養素，能夠在分子層面調節基因表現、改善粒線體生物能量學及修復內皮細胞功能。本篇主題文章作為一個「導航中樞 (Hub)」，旨在幫助您系統性地理解這些核心問題與最新的預防策略，並將您精準導引至各個「輻射頁面 (Spoke)」以獲取更深入的營養素解析與實證評測。我們將聚焦於「問題本質」與「精準策略」的連結，而非詳述單一營養素的全部細節。</p>
-          </section>
+          <div class="info-container">
+              <div class="info-header">
+                  <div class="info-title">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                      </svg>
+                      心血管系統故障除錯圖 (System Diagnostics)
+                  </div>
+                  <div class="info-subtitle">滑鼠移至「故障訊號」即可追蹤病理源頭與修復方案</div>
+              </div>
 
-          <section id="pain-points">
-            <h2>你的痛點在哪裡？心血管風險自我檢視與策略指引</h2>
-            <p>心血管健康狀況往往在初期難以察覺。請根據您的身體警訊、生活習慣或健康檢查報告，從下方選擇最符合您當前困擾的描述。我們將引導您至與之對應的核心解決方案區塊，幫助您精準找到改善方向。</p>
-            <div class="info-cards md-grid-3">
-              <a href="#solutions-level1" class="info-card">
-                <h3 class="info-card-title">體檢報告顯示血脂異常 (高三酸甘油酯、LDL過高) 或慢性發炎指標偏高</h3>
-                <p class="info-card-desc">這直接指向體內的「慢性發炎」與「氧化壓力」水平，是心血管疾病的根本驅動因素，處理發炎是首要戰場。</p>
-              </a>
-              <a href="#solutions-level2" class="info-card">
-                <h3 class="info-card-title">容易感到疲勞、心悸、體力不佳，或正在服用Statin類降血脂藥物</h3>
-                <p class="info-card-desc">這些症狀可能暗示心肌細胞的「能量供應」不足。特別是Statin藥物會影響CoQ10的合成，補充能量因子至關重要。</p>
-              </a>
-              <a href="#solutions-level3" class="info-card">
-                <h3 class="info-card-title">血壓長期偏高，或擔心血管硬化、彈性變差及血管鈣化問題</h3>
-                <p class="info-card-desc">這關係到血管的「結構完整性」與「彈性」。隨著年齡增長或慢性疾病，血管鈣化是一個被動且被忽略的風險因子。</p>
-              </a>
+              <div class="debug-map">
+                  <!-- SVG Layer for Lines -->
+                  <svg class="connections-layer" id="svg-layer"></svg>
+
+                  <!-- Column 1: Symptoms (Alerts) -->
+                  <div class="col-symptom">
+                      <div class="col-header">📡 1. 故障訊號 (Symptoms)</div>
+                      <div class="node-group">
+                          <div class="node" data-id="sym-acs" data-type="symptom" onclick="parent.location.hash='symptoms-acs'">
+                              <span><span class="node-icon">💔</span>胸悶/輻射痛 (ACS)</span>
+                              <span class="node-jump">↗</span>
+                          </div>
+                          <div class="node" data-id="sym-female" data-type="symptom" onclick="parent.location.hash='symptoms-acs'">
+                              <span><span class="node-icon">🤢</span>頸背痛/噁心 (女性非典型)</span>
+                              <span class="node-jump">↗</span>
+                          </div>
+                          <div class="node" data-id="sym-cold" data-type="symptom" onclick="parent.location.hash='signal-blockage'">
+                              <span><span class="node-icon">❄️</span>手腳冰冷/跛行 (PAD)</span>
+                              <span class="node-jump">↗</span>
+                          </div>
+                          <div class="node" data-id="sym-breath" data-type="symptom" onclick="parent.location.hash='symptoms-chronic'">
+                              <span><span class="node-icon">😮‍💨</span>爬樓梯喘/端坐呼吸</span>
+                              <span class="node-jump">↗</span>
+                          </div>
+                          <div class="node" data-id="sym-ed" data-type="symptom" onclick="parent.location.hash='signal-blockage'">
+                              <span><span class="node-icon">⚠️</span>勃起障礙 (早期警訊)</span>
+                              <span class="node-jump">↗</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Column 2: Mechanisms (Root Cause) -->
+                  <div class="col-cause">
+                      <div class="col-header">⚙️ 2. 核心故障 (Root Cause)</div>
+                      <div class="node-group">
+                          <div class="node" data-id="cau-inflam" data-type="cause" onclick="parent.location.hash='root-cause-1'">
+                              <span><span class="node-icon">🔥</span>發炎與斑塊 (Atherosclerosis)</span>
+                          </div>
+                          <div class="node" data-id="cau-thromb" data-type="cause" onclick="parent.location.hash='pathology-thrombosis'">
+                              <span><span class="node-icon">🩸</span>血栓形成 (Thrombosis)</span>
+                          </div>
+                          <div class="node" data-id="cau-calc" data-type="cause" onclick="parent.location.hash='root-cause-2'">
+                              <span><span class="node-icon">🦴</span>血管鈣化 (Stiffness)</span>
+                          </div>
+                          <div class="node" data-id="cau-energy" data-type="cause" onclick="parent.location.hash='root-cause-3'">
+                              <span><span class="node-icon">🔋</span>粒線體衰竭 (Energy Fail)</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Column 3: Solutions (Patches) -->
+                  <div class="col-solution">
+                      <div class="col-header">🛠️ 3. 修復協議 (Protocol)</div>
+                      <div class="node-group">
+                          <div class="node" data-id="sol-fish" data-type="solution" onclick="parent.location.hash='repair-1'">
+                              <span><span class="node-icon">🐟</span>高濃度魚油 (Anti-Inflam)</span>
+                              <span class="node-jump">Go</span>
+                          </div>
+                          <div class="node" data-id="sol-natto" data-type="solution" onclick="parent.location.hash='solution-thrombosis'">
+                              <span><span class="node-icon">🥢</span>納豆激酶 (Fibrinolytic)</span>
+                              <span class="node-jump">Go</span>
+                          </div>
+                          <div class="node" data-id="sol-k2" data-type="solution" onclick="parent.location.hash='repair-2'">
+                              <span><span class="node-icon">🥬</span>維生素 K2 + 鎂 (Structure)</span>
+                              <span class="node-jump">Go</span>
+                          </div>
+                          <div class="node" data-id="sol-no" data-type="solution" onclick="parent.location.hash='solution-endothelium'">
+                              <span><span class="node-icon">🍉</span>瓜胺酸/精胺酸 (NO Boost)</span>
+                              <span class="node-jump">Go</span>
+                          </div>
+                          <div class="node" data-id="sol-q10" data-type="solution" onclick="parent.location.hash='repair-3'">
+                              <span><span class="node-icon">⚡</span>輔酶 Q10 (Recharge)</span>
+                              <span class="node-jump">Go</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Safety Protocol -->
+              <div class="safety-box">
+                  <span style="font-size: 1.5em;">🛡️</span>
+                  <div>
+                      <strong>安全防火牆 (Safety Protocol):</strong>
+                      <ul style="margin: 5px 0 0 0; padding-left: 20px;">
+                          <li>服用 <strong>Warfarin</strong> 者：禁用高劑量 K2、納豆激酶、丹參。</li>
+                          <li>服用 <strong>Statins</strong> 者：嚴禁配葡萄柚汁，但建議補充 Q10。</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Section 1: 儀表板檢測 -->
+          <section id="dashboard">
+            <h2>1. 身體儀表板：你的血管亮紅燈了嗎？</h2>
+            <p>心血管疾病往往有長達數年的「沈默缺血期 (Silent Ischemia)」。當下列非典型症狀頻繁出現時，代表系統容錯率已降至臨界點。</p>
+            
+            <!-- 症狀矩陣表 -->
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>故障燈號 (症狀)</th>
+                            <th>潛在系統問題</th>
+                            <th>工程師解讀 (Analyst Note)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: #dc2626; font-weight: bold;">冬天手腳極度冰冷</td>
+                            <td>末梢循環淤積</td>
+                            <td>微血管硬化，熱能輸送效率低落。</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #dc2626; font-weight: bold;">爬樓梯易喘</td>
+                            <td>泵浦輸出不足</td>
+                            <td>心輸出量 (Cardiac Output) 下降，引擎馬力不足。</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #dc2626; font-weight: bold;">蹲下站起頭暈</td>
+                            <td>壓力調節延遲</td>
+                            <td>血管彈性變差，無法即時加壓回流血液。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="dashboard-A" class="symptom-box yellow">
+                <h3 style="margin-top: 0; color: #b45309;">⚠️ 訊號 A：管路淤積 (Perfusion Deficit)</h3>
+                <ul>
+                    <li><strong>間歇性跛行 (Intermittent Claudication)</strong>：走路走久了小腿會痛（缺氧），休息一下又好了。這是周邊動脈疾病 (PAD) 的典型特徵。</li>
+                    <li><strong>勃起功能障礙 (ED)</strong>：陰莖動脈直徑僅 1-2mm，比冠狀動脈更細，往往是血管堵塞的第一個「金絲雀」警訊。</li>
+                </ul>
+            </div>
+
+            <div id="dashboard-B" class="symptom-box red">
+                <h3 style="margin-top: 0; color: #991b1b;">⚠️ 訊號 B：馬達無力與壓力過載 (Pump Failure)</h3>
+                <ul>
+                    <li><strong>非典型輻射痛 (Referred Pain)</strong>：不僅是胸痛，有時表現為下顎痠麻、左肩胛骨疼痛，甚至被誤診為胃食道逆流。</li>
+                    <li><strong>長期異常疲勞</strong>：睡眠充足卻仍感到極度疲憊，可能是心臟效能低下的表現。</li>
+                </ul>
             </div>
           </section>
 
-          <section id="solutions">
-            <h2>核心解決方案：三層次強化策略，打造全方位心血管防護網</h2>
-            <p>我們將心血管保健視為一個系統性的工程，需要從不同的層面進行強化。如同建造一棟堅固的建築，我們需要穩固的地基、強大的結構與完善的管路系統。以下為您拆解三個關鍵層次：</p>
+          <!-- Section 2: 核心故障原因 -->
+          <section id="root-cause">
+            <h2>2. 三大核心故障原因 (Root Cause Analysis)</h2>
+            <p>真正驅動心血管疾病進程的，是多重底層病理機制交織的結果。我們將其簡化為以下時間軸：</p>
 
-            <h3 id="solutions-level1">Level 1: 基礎建設 (抗發炎與抗氧化) — Omega-3 魚油 & 植化素</h3>
-            <p>這是所有心血管健康的基石，旨在對抗引發動脈粥狀硬化與血管損傷的根源——慢性低度發炎和氧化壓力。高品質的 <strong>Omega-3 脂肪酸 (特別是 EPA)</strong> 是體內最強效的抗發炎介質之一，能顯著降低三酸甘油酯，抑制血管壁發炎。此外，如<strong>茄紅素</strong>與<strong>花青素</strong>等強力植化素也在此層級發揮抗氧化作用，保護血管內皮。</p>
-            <div class="alert alert-nutritionist">
-              <div>
-                <strong>深入了解 & 產品評測:</strong>
-                <p>關於如何選擇高濃度、rTG型態的魚油，以及各類產品的詳細比較，請參閱我們的 <a href="./fish-oil.html"><strong>《魚油完整指南與產品評測》</strong></a>。欲了解更多植化素的保護機制，可參考 <a href="#"><strong>《植化素的血管保護力》</strong></a> (即將上線)。</p>
-              </div>
+            <!-- 流程圖 -->
+            <div class="flowchart">
+                <div class="flow-step" style="border-top-color: #22c55e;">
+                    <div style="font-weight: bold; margin-bottom: 5px;">1. 內皮受損</div>
+                    <div style="font-size: 0.85em; color: #64748b;">高血壓/血糖劃傷管壁</div>
+                </div>
+                <div class="flow-arrow">➜</div>
+                <div class="flow-step" style="border-top-color: #eab308;">
+                    <div style="font-weight: bold; margin-bottom: 5px;">2. 發炎反應</div>
+                    <div style="font-size: 0.85em; color: #64748b;">LDL 氧化堆積 (油垢)</div>
+                </div>
+                <div class="flow-arrow">➜</div>
+                <div class="flow-step" style="border-top-color: #ef4444;">
+                    <div style="font-weight: bold; margin-bottom: 5px;">3. 斑塊鈣化</div>
+                    <div style="font-size: 0.85em; color: #64748b;">血管變硬、狹窄 (阻塞)</div>
+                </div>
             </div>
 
-            <h3 id="solutions-level2">Level 2: 動能強化 (能量供應與內皮功能) — 輔酶 Q10 & NO前驅物</h3>
-            <p>心臟是人體能量需求最高的器官，其持續運作依賴高效的能量供應。<strong>輔酶 Q10 (CoQ10)</strong> 是心肌細胞粒線體中產生能量 (ATP) 的關鍵輔酶，對於心臟泵血功能至關重要。同時，維持健康的血管內皮功能，確保一氧化氮 (NO) 的充足生成，對於血管舒張與血流暢通有著決定性影響。<strong>L-瓜胺酸</strong>及<strong>膳食硝酸鹽 (如甜菜根)</strong> 則是有效的 NO 前驅物。</p>
-            <div class="alert alert-nutritionist">
-              <div>
-                <strong>深入了解 & 產品評測:</strong>
-                <p>關於還原型 (Ubiquinol) 與氧化型 (Ubiquinone) CoQ10 的差異，以及如何選擇，請參閱我們的 <a href="./coenzyme-q10.html"><strong>《輔酶Q10功效與選購指南》</strong></a>。關於提升 NO 的策略，請參考 <a href="#"><strong>《一氧化氮：血管健康的隱形冠軍》</strong></a> (即將上線)。</p>
-              </div>
+            <h3 id="root-cause-1">1. 發炎與斑塊 (Atherosclerosis)</h3>
+            <p><strong>慢性低度發炎</strong>是始動因素。血管內皮受損後，巨噬細胞吞噬氧化的壞膽固醇 <strong>(Oxidized LDL)</strong> 形成泡沫細胞，堆積成斑塊。</p>
+            
+            <h3 id="root-cause-2">2. 血管鈣化 (Vascular Calcification)</h3>
+            <p>平滑肌細胞發生錯誤轉分化，導致鈣質沉積在血管壁。這通常是因為鈣化抑制蛋白 <strong>(MGP)</strong> 缺乏活化，導致鈣質「跑錯地方」（不去骨頭，跑去血管）。</p>
+            
+            <h3 id="root-cause-3">3. 生物能量匱乏 (Mitochondrial Dysfunction)</h3>
+            <p>心肌細胞富含粒線體。當電子傳遞鏈效率下降，<strong>ATP 生成不足</strong>，心臟收縮力就會減弱，就像電池老化的馬達。</p>
+          </section>
+
+          <!-- Section 3: 修復工程 -->
+          <section id="repair">
+            <h2>3. 修復工程：精準營養介入</h2>
+            <p>如同維護精密儀器，我們需要針對不同層次進行營養補充：</p>
+
+            <!-- 3.1 魚油 -->
+            <h3 id="repair-1">3.1 血管清道夫：抗發炎與溶栓 (Target: TG / Fibrin)</h3>
+            <p>高品質的 <strong>Omega-3 (特別是 EPA)</strong> 是最強的天然抗發炎劑。但市售魚油規格混亂，請參考以下數據：</p>
+            
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>型態 (Form)</th>
+                            <th>濃度 (Purity)</th>
+                            <th>吸收率</th>
+                            <th>工程師評價</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>rTG 型</strong></td>
+                            <td style="color: #16a34a; font-weight: bold;">80% ~ 90%</td>
+                            <td style="color: #16a34a;">高 (200%)</td>
+                            <td>🌟 <strong>首選</strong>：雜質少，身體負擔小。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>EE 型</strong></td>
+                            <td>50% ~ 70%</td>
+                            <td style="color: #ca8a04;">中</td>
+                            <td>需飯後吃，依靠膽汁乳化吸收。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TG 型</strong></td>
+                            <td style="color: #dc2626;">30% (低)</td>
+                            <td>中</td>
+                            <td>❌ <strong>不推薦</strong>：多數是沙拉油。</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <h3 id="solutions-level3">Level 3: 管路維護 (鈣化防禦與結構完整) — 維生素 K2 & 鎂/鉀 & 納豆激酶</h3>
-            <p>血管的彈性與結構完整性是預防動脈硬化的關鍵。<strong>維生素 K2 (特別是 MK-7)</strong> 能活化「基質Gla蛋白」，精準引導鈣離子至骨骼，而非沉積在血管壁，有效預防血管鈣化。<strong>鎂</strong>與<strong>鉀</strong>則扮演天然的「鈣離子阻斷劑」與電解質平衡者，幫助血管平滑肌放鬆，維持穩定血壓。此外，<strong>納豆激酶</strong>則透過其纖維蛋白溶解活性，幫助維持血液流動性，預防血栓形成。</p>
-            <div class="alert alert-nutritionist">
-              <div>
-                <strong>深入了解 & 相關營養素:</strong>
-                <p>想了解更多關於「鈣悖論」以及維生素K2如何解開此難題，請閱讀我們的 <a href="./vitamin-k.html"><strong>《維生素K功效解析》</strong></a>。並可進一步參考 <a href="./magnesium.html">《鎂》</a>、<a href="./potassium.html">《鉀》</a> 的重要性，以及 <a href="#"><strong>《納豆激酶：血栓溶解的天然解方》</strong></a> (即將上線)。</p>
-              </div>
+            <div class="cta-box">
+                <h4 style="margin: 0 0 10px 0; color: #1e40af;">🤔 你的魚油 CP 值合格嗎？</h4>
+                <p style="margin-bottom: 20px; font-size: 0.95em;">濃度低於 50% 的魚油，多餘成分反而是身體負擔。我們爬取了市售 15 款魚油數據。</p>
+                <a href="./review-fish-oil.html" class="cta-btn">👉 開啟 [魚油 CP 值計算機] & 2025 評測報告</a>
+            </div>
+
+            <!-- 3.2 鈣化 -->
+            <h3 id="repair-2">3.2 彈性修復師：逆轉鈣化 (Target: MGP Protein)</h3>
+            <p><strong>維生素 K2 (MK-7)</strong> 能活化 MGP 蛋白，將鈣離子「抓」回骨骼。<strong>鎂</strong>則能放鬆平滑肌。</p>
+            
+            <div class="alert alert-tip">
+                <div>
+                    <strong>📊 補鎂食物排行榜 (每 100g 含量):</strong>
+                    <div class="food-grid">
+                        <a href="../food/pumpkin_seed.html" class="food-item" style="text-decoration: none; color: inherit;">
+                            <div>🎃 南瓜籽</div>
+                            <span class="food-val">592 mg</span>
+                        </a>
+                        <a href="../food/dark_chocolate.html" class="food-item" style="text-decoration: none; color: inherit;">
+                            <div>🍫 黑巧克力</div>
+                            <span class="food-val">228 mg</span>
+                        </a>
+                        <a href="../food/almond.html" class="food-item" style="text-decoration: none; color: inherit;">
+                            <div>🥜 杏仁</div>
+                            <span class="food-val">270 mg</span>
+                        </a>
+                        <a href="../food/spinach.html" class="food-item" style="text-decoration: none; color: inherit;">
+                            <div>🥬 菠菜</div>
+                            <span class="food-val">87 mg</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3.3 Q10 -->
+            <h3 id="repair-3">3.3 心臟電池：粒線體賦活 (Target: Electron Transport Chain)</h3>
+            <p><strong>輔酶 Q10 (CoQ10)</strong> 是心臟發電的關鍵。40 歲後合成效率驟降。</p>
+            
+            <div class="alert alert-doctor">
+                <div>
+                    <strong>[Analyst Note: 藥物交互作用]</strong>
+                    <p>降血脂藥物 (Statins) 的路徑會同時阻斷 Q10 合成，長期服用易導致肌肉疼痛。Statin 使用者每日建議補充 100-200mg Q10。</p>
+                    <p><a href="./coenzyme-q10.html" style="color: #991b1b; text-decoration: underline;">👉 閱讀深度報告：Q10 還原態 vs 氧化態怎麼選？</a></p>
+                </div>
             </div>
           </section>
 
           <section id="tools">
-            <h2>互動風險評估</h2>
-            <p>我們正在開發一款簡單的互動工具，幫助您快速評估心血管風險因子，並提供個人化的營養建議。敬請期待！</p>
-            <!-- Placeholder for interactive tool -->
-            <div class="quick-test">
-                <h3>心血管風險快篩 (即將上線)</h3>
-                <p>回答幾個簡單問題，了解您的隱藏風險。</p>
+            <h2>📝 實用營養工具 (Tools)</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <div style="background: #eff6ff; padding: 25px; border-radius: 12px; border: 1px solid #dbeafe;">
+                    <h3 style="margin-top: 0; color: #1e40af;">🐟 魚油 CP 值計算機</h3>
+                    <p style="font-size: 0.9em;">別被價格騙了！輸入價格與顆數，一鍵算出 Omega-3 真實成本。</p>
+                    <a href="./review-fish-oil.html" style="color: #2563eb; font-weight: bold; text-decoration: none;">前往計算 →</a>
+                </div>
+                <div style="background: #fefce8; padding: 25px; border-radius: 12px; border: 1px solid #fef9c3;">
+                    <h3 style="margin-top: 0; color: #854d0e;">☕ 咖啡因耐受度計算</h3>
+                    <p style="font-size: 0.9em;">避免心悸！根據體重計算你的每日咖啡安全上限。</p>
+                    <a href="#" style="color: #ca8a04; font-weight: bold; text-decoration: none;">前往計算 (即將上線) →</a>
+                </div>
             </div>
           </section>
 
@@ -316,29 +689,19 @@
             <div class="faq-item">
               <div class="faq-question">心血管疾病的根本原因是什麼？</div>
               <div class="faq-answer">
-                <p>現代醫學認為心血管疾病的根本原因並非單純的高膽固醇或高血壓，而是源於多重底層機制，包括慢性低度發炎、氧化壓力以及血管內皮功能障礙。這些因素共同作用，導致動脈粥狀硬化、血管硬化與功能異常。</p>
+                <p>現代醫學認為並非單純的高膽固醇，而是源於多重底層機制，包括慢性低度發炎、氧化壓力以及血管內皮功能障礙。</p>
               </div>
             </div>
-
             <div class="faq-item">
-              <div class="faq-question">除了藥物，營養補充品在心血管健康中扮演什麼角色？</div>
+              <div class="faq-question">魚油跟鈣片可以一起吃嗎？</div>
               <div class="faq-answer">
-                <p>營養補充品在心血管健康中扮演輔助和優化的角色。它們可以針對藥物未能完全覆蓋的病理機制進行干預，例如通過抗發炎（Omega-3）、提供能量（CoQ10）、引導鈣質分佈（維生素K2）等方式，幫助降低殘餘風險，並改善整體心血管功能。</p>
-                <p>然而，營養補充品不能取代藥物治療，特別是在急性期或高風險期。所有補充策略都應在專業醫師或營養師的指導下進行。</p>
+                <p>建議分開。魚油是油脂，鈣片是礦物質，皂化反應可能會影響吸收。建議魚油飯後吃，鈣片睡前吃。</p>
               </div>
             </div>
-
             <div class="faq-item">
-              <div class="faq-question">如何安全地併用營養補充品與心血管藥物？</div>
+              <div class="faq-question">已經在吃降血壓藥，還能吃精胺酸嗎？</div>
               <div class="faq-answer">
-                <p>安全併用營養補充品與心血管藥物至關重要。某些營養素（如紅麴、納豆激酶、維生素K2）可能與抗凝血劑、降血脂藥物產生交互作用，導致藥效增強或降低，甚至引發嚴重副作用。在開始任何新的營養補充計劃前，<strong>務必告知您的主治醫師或藥師</strong>，進行專業評估，避免不必要的風險。</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <div class="faq-question">心血管健康是否與性別有關？</div>
-              <div class="faq-answer">
-                <p>是的，心血管疾病在不同性別間的表現和病理機制存在顯著差異。例如，女性在心臟病發作時，可能出現非典型的症狀（如極度疲勞、消化道不適），而非典型的胸痛。此外，女性心血管疾病的微血管功能障礙和發炎反應也可能更為突出。了解這些性別差異有助於更早診斷與精準治療。</p>
+                <p>需小心低血壓風險。精胺酸會擴張血管，建議與藥物間隔 2 小時，並從低劑量開始監測血壓。</p>
               </div>
             </div>
           </section>
@@ -353,7 +716,7 @@
       <div class="disclaimer-content">
         <h3>免責聲明</h3>
         <p>
-          本資訊僅供教育目的，不能取代專業醫療建議。開始任何營養補充計劃前，請諮詢醫療專業人員。個人需求可能因健康狀況、藥物使用和生活方式而有所不同。
+          本資訊僅供教育目的，不能取代專業醫療建議。開始任何營養補充計劃前，請諮詢醫療專業人員。
         </p>
       </div>
     </section>
@@ -370,6 +733,148 @@
     <script src="../assets/js/responsive-toc-component.js"></script>
 
     <script>
+      // 1. Data Mapping (The Logic)
+      // 定義連接關係： [起點] -> [終點]
+      const connections = [
+          // Symptoms -> Causes
+          { from: 'sym-acs', to: 'cau-thromb' },
+          { from: 'sym-acs', to: 'cau-inflam' },
+          { from: 'sym-female', to: 'cau-inflam' }, // 微血管病變
+          { from: 'sym-cold', to: 'cau-calc' },     // 硬化導致末梢差
+          { from: 'sym-cold', to: 'cau-inflam' },   // 阻塞
+          { from: 'sym-breath', to: 'cau-energy' }, // 心衰竭
+          { from: 'sym-ed', to: 'cau-inflam' },     // 內皮功能障礙
+          
+          // Causes -> Solutions
+          { from: 'cau-inflam', to: 'sol-fish' },
+          { from: 'cau-inflam', to: 'sol-no' },
+          { from: 'cau-thromb', to: 'sol-natto' },
+          { from: 'cau-thromb', to: 'sol-fish' },   // 魚油也有抗血小板功能
+          { from: 'cau-calc', to: 'sol-k2' },
+          { from: 'cau-energy', to: 'sol-q10' },
+          { from: 'cau-energy', to: 'sol-no' }      // 改善灌流
+      ];
+
+      const svg = document.getElementById('svg-layer');
+      const nodes = document.querySelectorAll('.node');
+      const container = document.querySelector('.debug-map');
+
+      // 2. Draw Lines Function
+      function drawLines() {
+          if (!svg || !container) return;
+          svg.innerHTML = ''; // Clear existing lines
+          
+          // 取得容器相對於視窗的位置，用於校正座標
+          const containerRect = container.getBoundingClientRect();
+
+          connections.forEach(conn => {
+              const fromEl = document.querySelector(`[data-id="${conn.from}"]`);
+              const toEl = document.querySelector(`[data-id="${conn.to}"]`);
+              
+              if (!fromEl || !toEl) return;
+
+              const fromRect = fromEl.getBoundingClientRect();
+              const toRect = toEl.getBoundingClientRect();
+
+              // 計算相對於 SVG 畫布的座標
+              const x1 = fromRect.right - containerRect.left;
+              const y1 = fromRect.top + fromRect.height / 2 - containerRect.top;
+              const x2 = toRect.left - containerRect.left;
+              const y2 = toRect.top + toRect.height / 2 - containerRect.top;
+
+              // 繪製貝茲曲線 (Bezier Curve)
+              const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+              const controlOffset = 40;
+              const d = `M ${x1} ${y1} C ${x1 + controlOffset} ${y1}, ${x2 - controlOffset} ${y2}, ${x2} ${y2}`;
+              
+              path.setAttribute('d', d);
+              path.setAttribute('data-from', conn.from);
+              path.setAttribute('data-to', conn.to);
+              svg.appendChild(path);
+          });
+      }
+
+      // 3. Interaction Logic
+      function activatePath(nodeId, type) {
+          if (!nodeId || !type) return;
+          // Reset all
+          document.querySelectorAll('.node').forEach(n => n.classList.remove('active'));
+          document.querySelectorAll('path').forEach(p => p.classList.remove('active'));
+
+          const activeNodes = new Set([nodeId]);
+          const activePaths = new Set();
+
+          // Highlight Logic (Recursively find connected nodes)
+          if (type === 'symptom') {
+              connections.filter(c => c.from === nodeId).forEach(c1 => {
+                  activeNodes.add(c1.to); 
+                  activePaths.add(`${c1.from}-${c1.to}`);
+                  
+                  connections.filter(c => c.from === c1.to).forEach(c2 => {
+                      activeNodes.add(c2.to); 
+                      activePaths.add(`${c2.from}-${c2.to}`);
+                  });
+              });
+          }
+          
+          if (type === 'cause') {
+              connections.filter(c => c.to === nodeId).forEach(c1 => {
+                  activeNodes.add(c1.from); 
+                  activePaths.add(`${c1.from}-${c1.to}`);
+              });
+              connections.filter(c => c.from === nodeId).forEach(c2 => {
+                  activeNodes.add(c2.to); 
+                  activePaths.add(`${c2.from}-${c2.to}`);
+              });
+          }
+
+          if (type === 'solution') {
+              connections.filter(c => c.to === nodeId).forEach(c1 => {
+                  activeNodes.add(c1.from); 
+                  activePaths.add(`${c1.from}-${c1.to}`);
+
+                  connections.filter(c => c.to === c1.from).forEach(c2 => {
+                      activeNodes.add(c2.from); 
+                      activePaths.add(`${c2.from}-${c2.to}`);
+                  });
+              });
+          }
+
+          // Apply classes
+          activeNodes.forEach(id => {
+              const el = document.querySelector(`[data-id="${id}"]`);
+              if(el) el.classList.add('active');
+          });
+          
+          document.querySelectorAll('path').forEach(path => {
+              const from = path.getAttribute('data-from');
+              const to = path.getAttribute('data-to');
+              if (activePaths.has(`${from}-${to}`)) {
+                  path.classList.add('active');
+                  path.parentNode.appendChild(path);
+              }
+          });
+      }
+
+      // Event Listeners
+      if (nodes.length > 0 && container) {
+        nodes.forEach(node => {
+            node.addEventListener('mouseenter', () => {
+                activatePath(node.dataset.id, node.dataset.type);
+            });
+        });
+
+        container.addEventListener('mouseleave', () => {
+            document.querySelectorAll('.node').forEach(n => n.classList.remove('active'));
+            document.querySelectorAll('path').forEach(p => p.classList.remove('active'));
+        });
+      }
+
+      // Initialize
+      window.addEventListener('load', drawLines);
+      window.addEventListener('resize', drawLines); 
+    </script>
+    <script>
       function updateProgressBar() { 
         const scrollPosition = window.scrollY;
         const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -383,7 +888,7 @@
         const navLinks = document.querySelectorAll(".toc-link");
         let current = "";
         sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 100;
+          const sectionTop = section.offsetTop - 150;
           if (window.scrollY >= sectionTop) { current = section.getAttribute("id"); }
         });
         navLinks.forEach((link) => {
