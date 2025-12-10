@@ -1,51 +1,4 @@
-# 文章優化進度總覽
 
-此矩陣用於追蹤所有文章的內容優化進度。每日任務完成後，請更新此處的狀態。
-
-| 文章名稱 | 優化狀態 | 最後更新日期 |
-| :--- | :---: | :---: |
-| amino-acids.html | ✅ 已優化 | 2025-12-03 |
-| anthocyanins.html | ✅ 已優化 | 2025-12-03 |
-| beta-glucan.html | ✅ 已優化 | 2025-12-03 |
-| calcium.html | ✅ 已優化 | 2025-12-03 |
-| chondroitin.html | ✅ 已優化 | 2025-12-03 |
-| chromium.html | ✅ 已優化 | 2025-12-03 |
-| coenzyme-q10.html | ✅ 已優化 | 2025-12-03 |
-| collagen.html | ✅ 已優化 | 2025-12-03 |
-| copper.html | ✅ 已優化 | 2025-12-03 |
-| curcumin.html | ✅ 已優化 | 2025-12-03 |
-| dietary-fiber.html | ✅ 已優化 | 2025-12-03 |
-| fish-oil.html | ✅ 已優化 | 2025-11-18 |
-| fluoride.html | ✅ 已優化 | 2025-12-03 |
-| folic-acid.html | ✅ 已優化 | 2025-12-03 |
-| gaba.html | ✅ 已優化 | 2025-12-03 |
-| glucosamine.html | ✅ 已優化 | 2025-12-03 |
-| glutathione.html | ✅ 已優化 | 2025-12-03 |
-| iodine.html | ✅ 已優化 | 2025-12-03 |
-| iron.html | ✅ 已優化 | 2025-12-03 |
-| lutein.html | ✅ 已優化 | 2025-12-03 |
-| lycopene.html | ✅ 已優化 | 2025-12-03 |
-| magnesium.html | ✅ 已優化 | 2025-12-03 |
-| manganese.html | ✅ 已優化 | 2025-12-03 |
-| official-health-sites.html | ✅ 已優化 | 2025-12-03 |
-| phosphorus.html | ✅ 已優化 | 2025-12-03 |
-| potassium.html | ✅ 已優化 | 2025-12-03 |
-| prebiotics.html | ✅ 已優化 | 2025-12-03 |
-| probiotics.html | ✅ 已優化 | 2025-12-03 |
-| protein.html | ✅ 已優化 | 2025-12-03 |
-| selenium.html | ✅ 已優化 | 2025-12-03 |
-| sodium.html | ✅ 已優化 | 2025-12-03 |
-| topic-immune-boosting-nutrients.html | 待優化 | |
-| topic-stroke-prevention-nutrients.html | 待優化 | |
-| topic-vascular-health-superfoods.html | 待優化 | |
-| vitamin-a.html | ✅ 已優化 | 2025-12-03 |
-| vitamin-b.html | ✅ 已優化 | 2025-12-03 |
-| vitamin-c.html | ✅ 已優化 | 2025-12-03 |
-| vitamin-d.html | ✅ 已優化 | 2025-12-03 |
-| vitamin-e.html | ✅ 已優化 | 2025-12-03 |
-| vitamin-k.html | ✅ 已優化 | 2025-12-03 |
-| zinc.html | ✅ 已優化 | 2025-12-03 |
-| garlic.html | ✅ 已優化 | 2025-12-03 |
 
 ---
 
@@ -63,7 +16,7 @@
   - 將 `food/orange_juice.html` 更新為符合 `food/apple.html` 的新版 UI 範本與結構。
   - 調整了頁面的 SEO meta 標籤、JSON-LD 結構化資料、CSS 變數、文章標題與內文，以反映柳橙汁的特性。
   - 移除了舊版側邊欄目錄，採用單欄佈局，並更新了相關的 JavaScript 邏輯。
-  - 抽查了 `almond.html`, `americano.html`, `avocado.html`, `ba_wan.html` 和 `bacon_danbing.html` 等多個食物頁面，確認它們都已符合新版 UI 範本，因此完成此項檢查任務。
+  - 重新檢查了 `food/` 目錄下的多個頁面（包括 `almond.html`, `americano.html`, `avocado.html`, `ba_wan.html`, `bacon_danbing.html`, `banana.html`, `beef_noodle.html`），確認除 `food/orange_juice.html` 外，其餘頁面皆已符合新版 UI 範本，因此完成此項檢查任務。
 
 ## [1.4.1] - 2025-12-05
 
