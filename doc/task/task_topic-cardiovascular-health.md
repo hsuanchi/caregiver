@@ -1,6 +1,6 @@
 # 任務名稱：核心主題戰略：心血管健康戰情室 (Cardiovascular Hub Strategy)
 
-**狀態**: `規劃中`
+**狀態**: `已完成`
 **負責人**: @[團隊成員] (請指派)
 **預計完成日期**: 
 **相關連結**: `post/topic-cardiovascular-health.html`
@@ -34,14 +34,14 @@ caregiver/
 ## 3. 任務拆解 (Task Breakdown)
 
 ### Phase 1: 內容與結構規劃
-- [ ] **定義文章結構與標題**: 依據下方 Phase 2 的規劃，建立 H1, H2, H3 的完整文章骨架。
-- [ ] **規劃內容與 UI 對應**: 將每個章節的內容，明確對應到 `writing-guide.md` 中最適合的 UI 元件。
-- [ ] **提取核心內容**: 根據指定文件，整理出心血管健康的常見痛點、對應營養素、建議劑量、以及具吸引力的「反直覺洞察」作為內容素材。
+- [x] **定義文章結構與標題**: 依據下方 Phase 2 的規劃，建立 H1, H2, H3 的完整文章骨架。
+- [x] **規劃內容與 UI 對應**: 將每個章節的內容，明確對應到 `writing-guide.md` 中最適合的 UI 元件。
+- [x] **提取核心內容**: 根據指定文件，整理出心血管健康的常見痛點、對應營養素、建議劑量、以及具吸引力的「反直覺洞察」作為內容素材。
 
 ### Phase 2: 頁面建構與 UI 實作
-- [ ] **建立頁面檔案**: 複製 `post/00template.html` 為 `post/topic-cardiovascular-health.html`。
-- [ ] **撰寫執行摘要與引言**: 在 H1 後，撰寫引人入勝的開頭，強調核心觀點（如：發炎與氧化問題），並呈現關鍵數據圖表。
-- [ ] **實作文章核心結構與 UI 元件**: 
+- [x] **建立頁面檔案**: 複製 `post/00template.html` 為 `post/topic-cardiovascular-health.html`。
+- [x] **撰寫執行摘要與引言**: 在 H1 後，撰寫引人入勝的開頭，強調核心觀點（如：發炎與氧化問題），並呈現關鍵數據圖表。
+- [x] **實作文章核心結構與 UI 元件**: 
 
     **H1: 心血管健康地圖：看懂症狀、病因與完整修復方案**
 
@@ -69,10 +69,10 @@ caregiver/
     - **內容**: 回答 PAA (People Also Ask) 中的熱門問題。
 
 ### Phase 3: 內容撰寫與發布前檢查
-- [ ] **填寫內容**: 將 Phase 1 產生的內容素材填入對應的 UI 元件區塊中。
-- [ ] **使用標準提示框**: 在適當位置使用如 `<div class="alert alert-doctor">` 或 `<div class="alert alert-tip">` 來強調重點。
-- [ ] **實作內部連結策略**: 確保所有提及特定營養素或產品的地方，都已正確連結至對應的輻射頁面。
-- [ ] **完成 SEO 設定**: 填寫 `<title>`, `<meta name="description">`，並實作 `Article` 與 `BreadcrumbList` JSON-LD。
+- [x] **填寫內容**: 將 Phase 1 產生的內容素材填入對應的 UI 元件區塊中。
+- [x] **使用標準提示框**: 在適當位置使用如 `<div class="alert alert-doctor">` 或 `<div class="alert alert-tip">` 來強調重點。
+- [x] **實作內部連結策略**: 確保所有提及特定營養素或產品的地方，都已正確連結至對應的輻射頁面。
+- [x] **完成 SEO 設定**: 填寫 `<title>`, `<meta name="description">`，並實作 `Article` 與 `BreadcrumbList` JSON-LD。
 
 ## 4. 影響評估 (Impact Assessment)
 
@@ -80,12 +80,12 @@ caregiver/
 - **相依性**: 本任務的成效高度相依於各「輻射頁面」(Spoke Pages) 的完成度。
 
 ## 5. 驗收標準 (Acceptance Criteria)
-- [ ] `topic-cardiovascular-health.html` 頁面已建立，且基於 `00template.html`。
-- [ ] 頁面結構符合 Phase 2 中定義的架構，並正確使用了 `.quick-test`, `.step-guide-container`, `.dosage-infographic-container` 等標準元件。
-- [ ] 頁面中的所有「行動呼籲」(Call-to-Action) 連結皆能正確指向指定的輻射頁面。
-- [ ] 頁面在視覺上符合設計規範，包含正確使用 `.alert` 提示框。
-- [ ] 頁面已完成 On-Page SEO 與 JSON-LD 結構化資料設定。
-- [ ] 頁面通過 W3C HTML 驗證，無嚴重錯誤。
+- [x] `topic-cardiovascular-health.html` 頁面已建立，且基於 `00template.html`。
+- [x] 頁面結構符合 Phase 2 中定義的架構，並正確使用了 `.quick-test`, `.step-guide-container`, `.dosage-infographic-container` 等標準元件。
+- [x] 頁面中的所有「行動呼籲」(Call-to-Action) 連結皆能正確指向指定的輻射頁面。
+- [x] 頁面在視覺上符合設計規範，包含正確使用 `.alert` 提示框。
+- [x] 頁面已完成 On-Page SEO 與 JSON-LD 結構化資料設定。
+- [x] 頁面通過 W3C HTML 驗證，無嚴重錯誤。
 
 ## 6. 關鍵指標 (Key Metrics / KPIs)
 - **流量指標**: `頁面瀏覽量`, `不重複訪客數`
