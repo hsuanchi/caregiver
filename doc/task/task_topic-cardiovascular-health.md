@@ -101,3 +101,8 @@ caregiver/
 - [x] **分析研究報告**: 讀取並分析 `心血管保健食品全攻略`, `症狀、病因與解決方案`, `營養素研究詳解` 三份草稿。
 - [x] **設計 UI 組件**: 實作 `Collapsible Info Card` (可折疊資訊卡)，用於收納艱深內容。
 - [x] **內容注入**: 將專業知識轉化為資訊卡格式，插入至對應章節 (病因分析、營養素詳解等)。
+
+### Phase 5: UI 標準化與修復 (Standardization & Fixes)
+- [x] **移除實驗性風格**: 移除導致視覺不一致的 Glassmorphism CSS，回歸 Rose Theme 標準。
+- [x] **HTML 結構修復**: 修正巢狀表格與標籤缺失導致的破版問題。
+- [x] **組件還原**: 確保 System Diagnostics Map 與 Flowchart 在新版 CSS 下正常顯示。

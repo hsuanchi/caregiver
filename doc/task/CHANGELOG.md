@@ -9,6 +9,15 @@
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
+## [1.4.5] - 2025-12-17
+
+### 修復 (Fixes)
+- **心血管主題頁 UI 標準化與修復 (CARDIO-UI-REPAIR)**:
+  - **樣式重構**: 移除實驗性的 Glassmorphism 風格，統一回歸專案標準的 Rose Theme (Flat Design)，確保全站視覺一致性。
+  - **結構修復**: 修正了導致排版錯亂的 HTML 巢狀表格錯誤 (Nested Tables) 與缺失的表格標籤。
+  - **組件還原**: 修復了因樣式覆蓋而消失的「系統故障診斷圖 (System Diagnostics Map)」，並為其補回了對應的響應式 CSS。
+  - **細節調整**: 修正免責聲明 (Disclaimer) 的置中對齊問題。
+
 ## [1.4.4] - 2025-12-17
 
 ### 優化
