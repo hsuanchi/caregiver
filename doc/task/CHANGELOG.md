@@ -9,6 +9,25 @@
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
+## [1.4.4] - 2025-12-17
+
+### 優化
+- **心血管主題頁深度優化 (CARDIO-PAGE-ENRICHMENT)**：
+  - **內容擴充**: 整合研究報告，新增「進階症狀學」、「魚油/及Q10深度比較」、「內皮重塑機制」等資訊卡 (Info Cards)。
+  - **專業度提升**: 全面移除裝飾性 Emoji，改用 FontAwesome 專業圖標；修正「CP值/駭客」等口語用詞。
+  - **行動版優化**: 實作 `table-responsive` 表格捲動與 `flowchart` 垂直堆疊，確保手機閱讀體驗流暢。
+  - **UI 組件**: 新增「可折疊專業洞察卡 (Professional Insight Card)」組件。
+
+## [1.4.3] - 2025-12-17
+
+### 新增
+- **魚油品類數據化評測 (FISH-OIL-DATA-ANALYTICS)**：
+  - 建立評測頁面 `post/review-fish-oil.html`，整合 15 款熱門魚油的真實成本數據。
+  - 開發 `FishOilCalculator` 互動式組件，提供使用者計算 "每 1000mg Omega-3 真實成本"。
+  - 整合 Chart.js 動態散佈圖與長條圖，視覺化呈現「智商稅散佈」與「CP 值排行」。
+  - 引用深度研究報告，新增「深度產品分析」與「避坑指南」區塊，提供高價值的分析師觀點。
+  - 建立 `assets/data/fish_oil_data.csv` 與 `assets/analysis/fish_oil_analytics.py` 數據處理流程。
+
 ## [1.4.2] - 2025-12-10
 
 ### 優化
