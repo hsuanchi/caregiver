@@ -14,7 +14,6 @@
 ### 優化
 - **心血管主題頁深度優化 (CARDIO-PAGE-ENRICHMENT)**：
   - **內容擴充**: 整合研究報告，新增「進階症狀學」、「魚油/及Q10深度比較」、「內皮重塑機制」等資訊卡 (Info Cards)。
-  - **專業度提升**: 全面移除裝飾性 Emoji，改用 FontAwesome 專業圖標；修正「CP值/駭客」等口語用詞。
   - **行動版優化**: 實作 `table-responsive` 表格捲動與 `flowchart` 垂直堆疊，確保手機閱讀體驗流暢。
   - **UI 組件**: 新增「可折疊專業洞察卡 (Professional Insight Card)」組件。
 
