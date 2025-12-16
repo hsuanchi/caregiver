@@ -9,6 +9,15 @@
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
+## [1.5.0] - 2025-12-17
+### Added
+- **New Page**: `post/vitamin-k2.html` - "Project Omega II" Deep Dive report covering Cis/Trans isomers, patent analysis (MenaQ7/K2Vital), and stability issues.
+- **Content Expansion**: Updated `post/magnesium.html` with "Buffered Magnesium" trap analysis and EML (Effective Magnesium Load) calculator.
+
+### Changed
+- **Cardiovascular Hub**: Updated `post/topic-cardiovascular-health.html` Section 3.2 to include deep links to the new K2 and Magnesium reports.
+- **System**: Updated `article-data.js` and `sitemap.xml` to include the new K2 page.
+
 ## [1.4.5] - 2025-12-17
 
 ### 修復 (Fixes)
