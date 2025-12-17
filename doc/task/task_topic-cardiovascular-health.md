@@ -97,6 +97,17 @@ caregiver/
 - **長尾關鍵字**: `心血管保健食品推薦`, `預防心血管疾病`, `魚油 Q10 功效`
 - **On-Page SEO**: `Meta 標題`, `Meta 描述`, `結構化資料 (Article, FAQPage)`
 - **推廣計畫**: 內容發布後，透過電子報 (Newsletter)、社群媒體 (Facebook, Line) 等渠道進行推廣。
+
+## 8. 已知問題 (Known Issues)
+- [ ] **FAQ 區塊顯示異常**: `post/topic-cardiovascular-health.html` 頁面中的 FAQ 區塊未能正確顯示手風琴式 (accordion) 的互動 UI。
+  - **問題描述**: 儘管 FAQ 的 HTML 結構已更新為符合 `00template.html` 中的標準格式（使用 `.faq-item`, `.faq-question`, `.faq-answer` 類別），但在前端頁面載入時，其點擊展開/收合的功能並未生效，導致所有問答內容預設展開，且缺乏互動效果。
+  - **初步判斷**: 此問題可能源於以下原因：
+    1.  **CSS 樣式缺失或未載入**: `post/topic-cardiovascular-health.html` 頁面本身可能缺少了驅動 FAQ UI 的關鍵 CSS 樣式，或者樣式被其他規則覆蓋。
+    2.  **JavaScript 初始化錯誤**: 頁面底部的 FAQ 互動 JavaScript (`document.querySelectorAll(".faq-question").forEach(...)`) 未能正確選取到 `post/topic-cardiovascular-health.html` 頁面中的 FAQ 元素，導致點擊事件未被監聽。
+    3.  **HTML 結構細微差異**: 雖然已盡力比對，但仍可能存在 HTML 結構上與 `00template.html` 範本的細微不符之處。
+  - **後續排查建議**:
+    *   仔細檢查 `post/topic-cardiovascular-health.html` 的 `<style>` 區塊，確認所有與 FAQ 相關的 CSS 規則是否都已複製過來，特別是控制 `max-height` 和 `transform` 的規則。
+    *   在瀏覽器開發者工具中，比對 `post/topic-cardiovascular-health.html` 和一個正常運作的 `00template.html` 頁面（若有），查看兩者的 FAQ 元素計算樣式 (Computed Style) 和 JavaScript 控制台輸出。
 ### Phase 4: 深度內容擴充 (Deep Content Enrichment)
 - [x] **分析研究報告**: 讀取並分析 `心血管保健食品全攻略`, `症狀、病因與解決方案`, `營養素研究詳解` 三份草稿。
 - [x] **設計 UI 組件**: 實作 `Collapsible Info Card` (可折疊資訊卡)，用於收納艱深內容。
@@ -106,3 +117,27 @@ caregiver/
 - [x] **移除實驗性風格**: 移除導致視覺不一致的 Glassmorphism CSS，回歸 Rose Theme 標準。
 - [x] **HTML 結構修復**: 修正巢狀表格與標籤缺失導致的破版問題。
 - [x] **組件還原**: 確保 System Diagnostics Map 與 Flowchart 在新版 CSS 下正常顯示。
+
+### Phase 6: 深度內容整合與專業化 (Deep Content Integration & Professionalization)
+- [ ] **[待辦] 系統性分析草稿**: 重新深度閱讀 `心血管保健食品全攻略`, `心血管疾病：症狀、病因與解決方案`, `心血管營養素研究詳解` 三份草稿。
+- [ ] **[待辦] 提取專業知識**: 提取適合進階讀者的詳細機制、臨床數據、藥物動力學等複雜資訊。
+- [ ] **[待辦] 逐步內容注入**: 將提取的專業內容，分階段、有系統地整合進 `post/topic-cardiovascular-health.html` 的對應章節。
+- [ ] **[待辦] 使用 Insight Card 封裝**: **強制要求**將所有注入的、高度技術性或複雜的知識點，使用 `<details class="professional-insight-card">` 元件進行收納，以維持主文的流暢與易讀性。
+- [ ] **[待辦] 確保上下文連貫**: 確保新加入的「專業洞察卡片」與其所在章節的上下文邏輯相符、位置得當。
+
+- [x] **擴展 FAQ 區塊至多層次用戶導向問答 (Expand FAQ to Multi-layered User-Oriented Q&A)**
+- [x] **導入 FAQ 區塊所需 CSS 樣式**:
+  -   從 `00template.html` 複製 FAQ 相關 CSS 規則到 `post/topic-cardiovascular-health.html` 的 `<style>` 區塊。
+  -   包含 `.faq-section`, `.faq-category-title`, `.faq-item`, `.faq-question`, `.faq-answer` 等，特別是控制 `max-height` 和 `transform` 的規則，以啟用手風琴互動效果。
+- [ ] **[待辦] 修正 FAQ 內容格式與字型大小**:
+  -   將現有 FAQ 內容調整為符合 `00template.html` 的正確 HTML 結構 (`<div class="faq-item">` 包含 `<div class="faq-question">` 和 `<div class="faq-answer">`)。
+  -   調整 `.faq-question` 字型大小為 `1.05em`，`.faq-answer p, .faq-answer ul` 字型大小為 `0.95em`。
+- [x] **擴充 FAQ - 第一階段 (年齡層)**:
+  -   新增「E. 不同年齡層的提醒」分類及其問答。
+- [x] **擴充 FAQ - 第二階段 (生活型態)**:
+  -   新增「F. 不同生活型態的策略」分類及其問答。
+- [x] **擴充 FAQ - 第三階段 (健康狀況)**:
+  -   新增「G. 不同健康狀況的考量」分類及其問答。
+- [ ] **[待辦] 驗證 FAQ 互動功能**:
+  -   確認所有 FAQ 項目都能正確點擊展開/收合。
+  -   檢查所有內部錨點連結和頁面連結是否正常運作。
