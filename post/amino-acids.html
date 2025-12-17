@@ -108,18 +108,18 @@
         },
         {
           "@type": "Question",
-          "name": "身體如何利用胺基酸？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "被吸收到血液中的胺基酸會形成一個「胺基酸池」。身體會根據各組織的需求，從這個池子中提取所需的胺基酸來進行各種建設，例如：修復肌肉、生成酵素和荷爾蒙、製造免疫細胞等。如果攝取過量，多餘的胺基酸也可以被轉換為能量使用或儲存成脂肪。"
-          }
-        },
-        {
-          "@type": "Question",
           "name": "什麼是胺基酸池 (Amino Acid Pool)？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "胺基酸池是指存在於我們血液和細胞中，可供身體隨時取用的游離胺基酸。這個池子的來源包括飲食攝取的蛋白質分解，以及身體舊蛋白質的分解。它是一個動態平衡的系統，不斷有胺基酸注入，也不斷被提取使用。維持這個池子的穩定與充足，是確保身體各項功能正常運作的關鍵。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "身體如何利用胺基酸？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "被吸收到血液中的胺基酸會形成一個「胺基酸池」。身體會根據各組織的需求，從這個池子中提取所需的胺基酸來進行各種建設，例如：修復肌肉、生成酵素和荷爾蒙、製造免疫細胞等。如果攝取過量，多餘的胺基酸也可以被轉換為能量使用或儲存成脂肪。"
           }
         },
         {
@@ -300,22 +300,7 @@
       section[id] { scroll-margin-top: 100px; }
       .article-body h2 { font-size: 2em; font-weight: 700; color: #2d3748; margin: 50px 0 30px; padding-top: 20px; position: relative; }
             .article-body h2::before { content: ""; position: absolute; left: 0; top: 0; width: 50px; height: 4px; background: linear-gradient(90deg, #38b2ac 0%, #4fd1c5 100%); border-radius: 2px; }
-      .faq-category-title {
-        font-size: 1.5em;
-        font-weight: 700;
-        color: #2c7a7b; /* Themed color */
-        margin: 40px 0 20px 0;
-        padding-bottom: 10px;
-        border-bottom: 2px solid #38b2ac;
-      }
-      .faq-section { margin-top: 60px; padding-top: 40px; border-top: 2px solid #e5e7eb; }
-      .faq-item { background: #f9fafb; border-radius: 15px; margin-bottom: 20px; overflow: hidden; transition: all 0.3s ease; }
-      .faq-item:hover { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
-      .faq-question { padding: 20px 25px; font-weight: 600; color: #2d3748; cursor: pointer; position: relative; transition: all 0.3s ease; }
-      .faq-question::after { content: "+"; position: absolute; right: 25px; top: 50%; transform: translateY(-50%); font-size: 1.5em; color: #38b2ac; transition: transform 0.3s ease; }
-      .faq-item.active .faq-question::after { transform: translateY(-50%) rotate(45deg); }
-      .faq-answer { padding: 0 25px; max-height: 0; overflow: hidden; transition: all 0.3s ease; }
-      .faq-item.active .faq-answer { padding: 0 25px 20px; max-height: 500px; }
+
       .related-title { font-size: 2em; font-weight: 700; color: #2d3748; text-align: center; margin: 60px 0 40px; }
       .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
       .related-card { background: white; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; text-decoration: none; }
@@ -599,25 +584,54 @@
                   <li><strong>補充水分：</strong> 攝取較高量的蛋白質或胺基酸時，身體需要足夠的水分來幫助代謝含氮廢物的排除。確保每日飲用足夠的水，以支持腎臟健康。</li>
                 </ul>
               </div>
-            </div>
-          </section>
-
-          <section id="faq" class="faq-section">
-            <h2>常見問題</h2>
-            <div class="faq-item">
-              <div class="faq-question">Q1: 胺基酸和蛋白質有什麼不同？</div>
-              <div class="faq-answer"><p><strong>A:</strong> 簡單來說，胺基酸是構成蛋白質的最小單位。蛋白質就像一條珍珠項鍊，而每一顆珍珠就是一個胺基酸。我們吃進蛋白質後，身體會將其消化分解成單一的胺基酸，再吸收利用來建造我們自己身體所需的各種蛋白質。</p></div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Q2: 補充胺基酸有副作用嗎？</div>
-              <div class="faq-answer"><p><strong>A:</strong> 對於健康成人來說，透過均衡飲食攝取胺基酸是非常安全的。若使用補充品，只要遵照產品建議劑量，也相當安全。極高劑量的單一胺基酸補充可能影響其他胺基酸的平衡，或對肝腎造成負擔，因此若有特殊疾病，使用前應諮詢醫師或營養師。</p></div>
-            </div>
-             <div class="faq-item">
-              <div class="faq-question">Q3: BCAA 和 EAA 該選哪一種？</div>
-              <div class="faq-answer"><p><strong>A:</strong> BCAA（支鏈胺基酸）能快速提供運動中能量、啟動肌肉生長信號；EAA（必需胺基酸）則提供更全面的原料。一般來說，如果您的日常蛋白質攝取充足，運動中補充BCAA是不錯的選擇。但若想追求更全面的肌肉合成與恢復，或飲食中蛋白質可能不足，EAA會是更全面的選項。</p></div>
-            </div>
-          </section>
-          <div id="related-articles-container"></div>
+                        </div>
+                      </section>
+            
+            
+                      <section id="faq" class="faq-section">
+                        <h2 id="faq-main-title">常見問題</h2>
+            
+                        <h3 class="faq-category-title">胺基酸基礎知識</h3>
+                                        <div class="faq-answer"><p><strong>A:</strong> 簡單來說，<a href="#mechanism">胺基酸</a>是構成<a href="/post/protein.html">蛋白質</a>的最小單位。蛋白質就像一條珍珠項鍊，而每一顆珍珠就是一個胺基酸。我們吃進蛋白質後，身體會將其消化分解成單一的胺基酸，再吸收利用來建造我們自己身體所需的各種蛋白質。</p></div>
+                                    </div>
+                                    <div class="faq-item" id="faq-basic-2">
+                                        <div class="faq-question">Q2: 「必需胺基酸」和「非必需胺基酸」有什麼差別？</div>
+                                        <div class="faq-answer"><p><strong>A:</strong> 人體需要約20種不同的胺基酸，其中有9種身體無法自行合成，必須從食物中獲取，這些被稱為「<a href="#mechanism">必需胺基酸</a>」(EAA)。剩下的則可以由身體自行製造，稱為「非必需胺基酸」。這9種必需胺基酸缺一不可，否則蛋白質的合成就會受阻。</p></div>
+                                    </div>
+                                    <div class="faq-item" id="faq-basic-3">
+                                        <div class="faq-question">Q3: 為什麼完整的蛋白質這麼重要？</div>
+                                        <div class="faq-answer"><p><strong>A:</strong> 一個<a href="/post/protein.html">蛋白質</a>來源被稱為「完整」，代表它含有全部9種必需胺基酸，且比例均衡。動物性來源（肉、魚、蛋、奶）大多是完整蛋白質。若缺乏任何一種必需胺基酸，就會像生產線缺少零件一樣，身體的蛋白質合成效率會大打折扣，這就是為何強調攝取完整蛋白質的重要性。</p></div>
+                                    </div>
+                                    <div class="faq-item" id="faq-basic-4">
+                                        <div class="faq-question">Q6: 什麼是胺基酸池 (Amino Acid Pool)？</div>
+                                        <div class="faq-answer"><p><strong>A:</strong> <a href="#mechanism">胺基酸</a>池是指存在於我們血液和細胞中，可供身體隨時取用的游離胺基酸。這個池子的來源包括飲食攝取的蛋白質分解，以及身體舊蛋白質的分解。它是一個動態平衡的系統，不斷有胺基酸注入，也不斷被提取使用。維持這個池子的穩定與充足，是確保身體各項功能正常運作的關鍵。</p></div>
+                                    </div>
+                                    <div class="faq-item" id="faq-basic-5">
+                                        <div class="faq-question">Q7: 身體如何利用胺基酸？</div>
+                                        <div class="faq-answer"><p><strong>A:</strong> 被吸收到血液中的胺基酸會形成一個「<a href="#faq-basic-4">胺基酸池</a>」。身體會根據各組織的需求，從這個池子中提取所需的胺基酸來進行各種建設，例如：<a href="#solution">修復肌肉</a>、生成酵素和荷爾蒙、製造免疫細胞等。如果攝取過量，多餘的胺基酸也可以被轉換為能量使用或儲存成脂肪。</p></div>
+                                    </div>            
+                        <h3 class="faq-category-title">胺基酸補充指南</h3>
+                                    <div class="faq-item" id="faq-guide-1">
+                                        <div class="faq-question">Q4: BCAA 和 EAA 該選哪一種？</div>
+                                        <div class="faq-answer"><p><strong>A:</strong> BCAA（支鏈胺基酸）能快速提供運動中能量、啟動肌肉生長信號；EAA（必需胺基酸）則提供更全面的原料。一般來說，如果您的日常<a href="/post/protein.html">蛋白質</a>攝取充足，運動中補充BCAA是不錯的選擇。但若想追求更全面的肌肉合成與恢復，或飲食中蛋白質可能不足（如素食者、老年人），EAA會是更全面的<a href="#action-supplements">胺基酸補充品</a>選項。</p></div>
+                                    </div>
+                                    <div class="faq-item" id="faq-guide-2">
+                                        <div class="faq-question">Q5: 補充胺基酸有副作用嗎？</div>
+                                        <div class="faq-answer"><p><strong>A:</strong> 對於健康成人來說，透過均衡飲食攝取胺基酸是非常安全的。若使用<a href="#action-supplements">補充品</a>，只要<a href="#safety">遵照產品建議劑量</a>，也相當安全。極高劑量的單一胺基酸補充可能影響其他胺基酸的平衡，或對<a href="#safety">肝腎</a>造成負擔，因此若有特殊疾病，使用前應諮詢醫師或營養師。</p></div>
+                                    </div>
+                                    <div class="faq-item" id="faq-guide-3">
+                                        <div class="faq-question">Q8: 我應該在運動前還是運動後補充胺基酸？</div>
+                                        <div class="faq-answer"><p><strong>A:</strong> 兩者皆可，但目標稍有不同。<a href="#action-supplements">運動前補充（特別是BCAA）</a>，有助於提供<a href="#action-supplements">運動中能量</a>，減少<a href="#solution">肌肉分解</a>，延緩疲勞。<a href="#action-supplements">運動後補充（特別是EAA或乳清蛋白）</a>，則是在肌肉最需要原料的「黃金修復期」提供充足建材，最大化肌肉的合成與增長效果。</p></div>
+                                    </div>
+                                    <div class="faq-item" id="faq-guide-4">
+                                        <div class="faq-question">Q9: 素食者如何確保攝取足夠的必需胺基酸？</div>
+                                        <div class="faq-answer"><p><strong>A:</strong> <a href="/post/protein.html">植物性蛋白質</a>來源多為「不完全蛋白質」，可能缺乏一或多種必需胺基酸。素食者可以透過「<a href="#action-food">蛋白質互補法</a>」來解決，例如將豆類（缺乏甲硫胺酸）與穀類（缺乏離胺酸）一起食用，就能組成完整的必需胺基酸。此外，黃豆、藜麥、奇亞籽是少數含有完整必需胺基酸的植物性來源，可多加利用。</p></div>
+                                    </div>
+                                    <div class="faq-item" id="faq-guide-5">
+                                        <div class="faq-question">Q10: 單獨補充某一種胺基酸（如精胺酸、麩醯胺酸）好嗎？</div>
+                                        <div class="faq-answer"><p><strong>A:</strong> 針對特定需求是可以的。例如，<a href="#advanced-science">精胺酸</a>有助於生成一氧化氮以放鬆血管；<a href="#advanced-science">麩醯胺酸</a>有助於修復腸道黏膜。然而，如無特定目的，長期高劑量補充單方胺基酸可能造成體內<a href="#safety">胺基酸失衡</a>。對於一般保健或肌肉增長，補充均衡的複合式EAA通常是更安全有效的選擇。</p></div>
+                                    </div>                      </section>
+                      <div id="related-articles-container"></div>
         </article>
       </main>
     </div>
