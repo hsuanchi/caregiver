@@ -17,33 +17,8 @@
 
 ### [待辦] 全站 FAQ 內容擴展與結構升級 (GLOBAL-FAQ-EXPANSION-STRATEGY)
 
-**主要目標**: 將所有主要文章 (`post/*.html`) 的 FAQ 區塊，系統性地擴展並升級為一個內容全面、結構清晰的二層式問答系統，以提升頁面的專業深度與使用者體驗。
-
-**執行方案 (SOP)**:
-1.  **問題生成 (5W1H 框架)**:
-    -   分析目標文章的內容，使用 5W1H 框架（What, Why, How, Who, When）進行地毯式提問。
-    -   需包含「自問自答」式的深度問題，以預測並解答讀者尚未提出的疑惑。
-
-2.  **二層次分類 (Categorization)**:
-    -   將生成的所有問題，歸納為至少兩大維度的分類：
-        -   **知識主題導向**: 例如「核心觀念與機制」、「關鍵營養素解析」、「安全性與藥物交互作用」等。
-        -   **使用者族群導向**: 例如「不同年齡層的提醒」、「不同生活型態的策略」、「不同健康狀況的考量」等。
-
-3.  **UI 結構與實作**:
-    -   **第一層 (主分類)**: 使用 `<h3 class="faq-category-title">` 作為每個問題大分類的標題，以在視覺上明確區分。
-    -   **第二層 (問答對)**: 所有問答皆須使用標準的 accordion 結構，即 `<div class="faq-item">` 包含 `<div class="faq-question">` 和 `<div class="faq-answer">`。
-    -   **樣式檢查**: 確保目標頁面已包含 `faq-category-title` 及 `faq-item` 相關的 CSS 樣式。若無，需從 `@post/00template.html` 複製。
-
-4.  **連結與錨點 (Linking)**:
-    -   **強制要求**: 在答案的內文中，必須為關鍵字加上連結，以引導使用者進行深度閱讀。
-    -   **錨點連結**: 對於指向本文內部其他段落的連結，應先為目標區塊設定 `id` 屬性，然後使用 `#id-name` 進行連結。
-    -   **頁面連結**: 對於指向其他文章、營養素或食物頁面的連結，使用標準的 `/folder/page.html` 路徑。
-
-5.  **字型大小調整**:
-    -   若擴充後的 FAQ 總問題數超過 10 個，建議適度縮小 `.faq-question` 和 `.faq-answer` 的 `font-size`（例如：分別調整為 `1.05em` 和 `0.95em`），以優化長篇內容的版面密度與可讀性。
-
-### [已完成] 心血管主題文章
-**主要目標**: 依據 `doc/task/task_topic-cardiovascular-health.md` 的規劃，建立一個權威性的「心血管健康導航頁」，旨在教育使用者並將流量導向高轉換率的評測頁面。
+**主要目標**: 將所有文章的 FAQ 區塊進行系統性升級，以提升內容深度與 SEO 表現。
+**詳細規劃**: 請參閱獨立任務文件 `doc/task/task_global-faq-strategy.md`。
 
 ### [待辦] 首頁整合儀表板功能 (HOMEPAGE-DASHBOARD-INTEGRATION)
 
@@ -51,11 +26,6 @@
 **相關檔案**: `index.html`, `category/nutrient-dashboard.html`, `assets/js/dashboard-logic.js`
 **詳細說明**: 此任務對應 `INTEGRATE_DASHBOARD_TO_HOMEPAGE.md` 的規劃。需要將現有儀表板邏輯重構為一個獨立的、可嵌入的 Shadow DOM 組件。
 
-### [已完成] 優化首頁健康主題區塊 (HOMEPAGE-TOPICS-UI-IMPROVEMENT)
-
-**主要目標**: 重新設計首頁的「健康主題」區塊 (`<section class="experts" id="health-topics">`)，提升其視覺美感與使用者體驗。
-**相關檔案**: `index.html`
-**詳細說明**: 採用了更具權威感的卡片式設計，並改為動態載入，已完成。
 ---
 
 ### [待辦] 將食物儀表板整合至所有 Food 頁面 (FOOD-PAGE-DASHBOARD-INTEGRATION)
@@ -103,5 +73,3 @@
 4. 自動覆寫 `food/food_data.js` 檔案。
 這樣做可以讓 `food/*.html` 成為唯一的內容真實來源，同時保持前端載入效能，是比「在瀏覽器動態抓取」更專業的作法。此任務會改變目前的純靜態開發流程，引入「建置」步驟。
 ---
-
-
