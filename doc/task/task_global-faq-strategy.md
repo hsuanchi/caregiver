@@ -32,24 +32,24 @@
 
 以下為預計需要執行此 FAQ 優化策略的文章頁面清單。
 
-- [ ] post/amino-acids.html
-- [ ] post/anthocyanins.html
-- [ ] post/beta-glucan.html
-- [ ] post/calcium.html
-- [ ] post/chondroitin.html
-- [ ] post/chromium.html
-- [ ] post/coenzyme-q10.html
-- [ ] post/collagen.html
-- [ ] post/copper.html
-- [ ] post/curcumin.html
-- [ ] post/dietary-fiber.html
-- [ ] post/fish-oil.html
-- [ ] post/fluoride.html
-- [ ] post/folic-acid.html
-- [ ] post/gaba.html
-- [ ] post/garlic.html
-- [ ] post/glucosamine.html
-- [ ] post/glutathione.html
+- [x] post/amino-acids.html
+- [x] post/anthocyanins.html
+- [x] post/beta-glucan.html
+- [x] post/calcium.html
+- [x] post/chondroitin.html
+- [x] post/chromium.html
+- [x] post/coenzyme-q10.html
+- [x] post/collagen.html
+- [x] post/copper.html
+- [x] post/curcumin.html
+- [x] post/dietary-fiber.html
+- [x] post/fish-oil.html
+- [x] post/fluoride.html
+- [x] post/folic-acid.html
+- [x] post/gaba.html
+- [x] post/garlic.html
+- [x] post/glucosamine.html
+- [x] post/glutathione.html
 - [ ] post/iodine.html
 - [ ] post/iron.html
 - [ ] post/lutein.html
