@@ -806,6 +806,44 @@
     .faq-category-title:first-of-type {
         margin-top: 0;
     }
+    .faq-subcategory {
+        margin-top: 30px;
+        padding-left: 0px; /* Remove padding-left to allow faq-items-container to handle indentation */
+        border-radius: 0;
+        padding: 0px;
+        margin-bottom: 20px;
+    }
+    .faq-subcategory-title {
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #2d3748; /* Use a darker text color for emphasis */
+        margin-bottom: 15px;
+        position: relative;
+        cursor: pointer;
+        padding-left: 20px; /* Indent the subcategory title itself */
+    }
+    .faq-subcategory-title::after {
+        content: '+';
+        position: absolute;
+        right: 0px; /* Adjust as needed */
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.4em;
+        color: var(--primary-dark);
+        transition: transform 0.3s ease;
+    }
+    .faq-subcategory-title.active::after {
+        transform: translateY(-50%) rotate(45deg);
+    }
+    .faq-items-container {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+        padding-left: 30px; /* Increased indentation for content within subcategory */
+    }
+    .faq-subcategory.active .faq-items-container {
+        max-height: 1000px; /* Adjust as needed */
+    }
     .faq-item {
         border-bottom: 1px solid #e2e8f0;
     }
@@ -1787,6 +1825,36 @@
                 <p>「內皮」是血管最內層的細胞，健康的內皮會分泌一氧化氮(NO)讓血管放鬆。當內皮因高血壓、高血糖等原因受損時，它分泌NO的能力就會下降，導致血管無法有效舒張、血壓升高、血小板易於凝集。這種「內皮無法正常工作」的狀態，就是<a href="#solution-endothelium">內皮功能障礙</a>，被視為心血管疾病的最早期警訊。</p>
             </div>
           </div>
+          <div class="faq-item">
+            <div class="faq-question">膽固醇有好壞之分嗎？LDL 一定是壞的嗎？</div>
+            <div class="faq-answer">
+                <p>是的，膽固醇有好壞之分。<strong>高密度脂蛋白膽固醇 (HDL-C)</strong> 被稱為「好膽固醇」，負責將多餘的膽固醇運回肝臟代謝。<strong>低密度脂蛋白膽固醇 (LDL-C)</strong> 被稱為「壞膽固醇」，因為它容易被氧化並堆積在血管壁上。然而，LDL 本身並非絕對壞，它參與體內多種必要功能。真正的問題在於<strong>小而緻密的低密度脂蛋白 (sd-LDL)</strong>，這種亞型的 LDL 更容易穿透血管內皮並被氧化，是引發動脈粥狀硬化的主要元兇。因此，除了總數值，LDL 的「品質」和顆粒大小更值得關注。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">什麼是「胰島素阻抗」？它跟心血管健康有何關聯？</div>
+            <div class="faq-answer">
+                <p>胰島素阻抗是指身體細胞對胰島素的敏感度下降，導致需要更多胰島素才能維持血糖穩定。這種狀態會引發一系列代謝問題，與心血管健康密切相關：1) 導致高血糖，直接損傷血管內皮；2) 促使肝臟產生更多三酸甘油酯和 VLDL (極低密度脂蛋白)，加劇血脂異常；3) 增加身體的發炎反應。可以說，胰島素阻抗是連接肥胖、糖尿病與心血管疾病的中心樞紐。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">hs-CRP (高敏度C-反應蛋白) 這個指標代表什麼？為何它很重要？</div>
+            <div class="faq-answer">
+                <p>hs-CRP 是一個高度敏感的<strong>發炎指標</strong>。傳統的 CRP 用於檢測急性感染，而 hs-CRP 則能偵測到體內長期、慢性的低度發炎狀態。在心血管領域，hs-CRP 數值升高，代表血管系統可能正處於慢性發炎中，這是動脈粥狀硬化斑塊不穩定、容易破裂的警訊。研究顯示，hs-CRP 是比 LDL-C 更強的獨立心血管事件預測因子。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">血栓 (Thrombosis) 和斑塊 (Plaque) 有什麼不同？</div>
+            <div class="faq-answer">
+                <p>兩者是不同階段的產物。<strong>斑塊 (Plaque)</strong> 是長期累積的結果，主要由氧化的膽固醇、泡沫細胞、鈣質等物質組成，慢慢地使血管管徑變窄。<strong>血栓 (Thrombus)</strong> 則是短時間內形成的「血塊」。當不穩定的斑塊突然破裂，其內容物接觸到血液，就會像觸發警報一樣，瞬間啟動凝血機制，在幾分鐘內形成血栓，徹底堵死血管，這就是心肌梗塞或缺血性腦中風發生的原因。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">壓力 (Stress) 是如何具體地傷害心臟和血管的？</div>
+            <div class="faq-answer">
+                <p>長期壓力主要透過兩條路徑傷害心血管：1) <strong>神經荷爾蒙途徑</strong>：壓力會使身體持續分泌皮質醇 (Cortisol) 和腎上腺素等壓力荷爾蒙，導致心率加快、血壓升高，並促進發炎。2) <strong>行為改變途徑</strong>：處於壓力下的人們，往往會傾向於不健康的行為，如抽菸、酗酒、暴飲暴食、睡眠不足等，這些行為本身就是心血管疾病的獨立風險因子。因此，壓力管理是心血管保健中常被忽略但極為重要的一環。</p>
+            </div>
+          </div>
 
           <h3 class="faq-category-title">B. 關鍵營養素解析</h3>
           <div class="faq-item">
@@ -1814,6 +1882,36 @@
                 <p>不建議。雖然紅麴中的 Monacolin K 結構與藥物相同，但市售紅麴產品的劑量、純度與污染物（如橘黴素）的監管遠不如處方藥嚴格。自行以紅麴替代處方藥，可能導致劑量不足或過量，甚至承擔不必要的毒性風險。任何藥物調整都應在醫師指導下進行。詳情請見 <a href="#safety-protocol">藥物交互作用矩陣</a>。</p>
             </div>
           </div>
+          <div class="faq-item">
+            <div class="faq-question">維生素 K2 和一般的維生素 K (K1) 有什麼不同？</div>
+            <div class="faq-answer">
+                <p>兩者功能不同。<strong>維生素 K1</strong> 主要在肝臟作用，與血液凝固有關。而 <strong>維生素 K2</strong> 則在全身作用，負責活化 MGP 和骨鈣素等蛋白，扮演「鈣質導航」的角色，引導鈣質進入骨骼，並防止其沉積在血管等不該去的地方。因此，在預防血管鈣化方面，補充 K2 (特別是長效的 MK-7 形式) 比 K1 更為重要。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">聽說「高劑量」的維生素B群可以降血脂，這是真的嗎？</div>
+            <div class="faq-answer">
+                <p>這是指特定形式的維生素B3，即**菸鹼酸 (Niacin)**。在藥物劑量下（每日 1000mg 以上），菸鹼酸確實能顯著降低 LDL 和三酸甘油酯，並提升 HDL。然而，它也會帶來劇烈的皮膚潮紅、發癢等副作用，且需醫師處方與監控。市面上一般的 B 群補充品所含的菸鹼醯胺 (Niacinamide) 或劑量遠不足以達到降血脂的效果，切勿自行嘗試高劑量補充。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">什麼是「植物固醇」？它能取代降膽固醇藥物嗎？</div>
+            <div class="faq-answer">
+                <p>植物固醇 (Plant Sterols) 是一種存在於植物中的天然化合物，其化學結構與膽固醇非常相似。在腸道中，它可以透過「競爭性抑制」的方式，減少人體對飲食中膽固醇的吸收。每日攝取 2 克植物固醇，約可降低 10% 的 LDL-C。然而，它只作用於腸道吸收端，無法取代 Statin 類藥物（作用於肝臟製造端）的地位，但可以作為輔助療法，或適合膽固醇輕微超標且不想用藥的族群。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">補充大蒜精 (Garlic) 對心血管有什麼具體好處？</div>
+            <div class="faq-answer">
+                <p>大蒜中的活性成分**大蒜素 (Allicin)** 具有多重心血管保護作用。研究顯示它能：1) 輕微降低血壓；2) 抑制血小板凝集，降低血栓風險；3) 抗氧化與抗發炎；4) 幫助降低總膽固醇與 LDL-C。不過大蒜素非常不穩定，容易在烹煮或消化過程中被破壞，因此補充標準化的大蒜精產品是更有效的方式。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">瓜胺酸 (Citrulline) 和精胺酸 (Arginine) 哪個對提升一氧化氮 (NO) 比較好？</div>
+            <div class="faq-answer">
+                <p>雖然精胺酸是 NO 的直接原料，但研究顯示口服 <strong>L-瓜胺酸</strong> 在提升體內精胺酸和 NO 濃度的效率上反而更高。這是因為口服的精胺酸大部分會在進入全身循環前就被肝臟代謝掉（首過效應），而瓜胺酸則能繞過此路徑，在腎臟被轉換成精胺酸，成為更有效率的 NO 補充來源。</p>
+            </div>
+          </div>
 
           <h3 class="faq-category-title">C. 飲食、運動與生活</h3>
           <div class="faq-item">
@@ -1832,6 +1930,36 @@
             <div class="faq-question">聽說喝紅酒對心臟好，是真的嗎？</div>
             <div class="faq-answer">
               <p>這是個被過度放大的迷思。雖然紅酒中的白藜蘆醇等抗氧化物在「細胞實驗」中顯示出潛力，但要達到有效劑量需要大量飲用，屆時酒精帶來的肝臟損傷、癌症風險與熱量問題，早已遠遠超過其微弱的好處。美國心臟協會等權威機構<strong>不建議</strong>任何人以「保護心臟」為由開始飲酒。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">DASH 飲食和地中海飲食，哪一個對心血管更好？</div>
+            <div class="faq-answer">
+                <p>兩者都是頂級的護心飲食法，只是側重點稍有不同。<strong>DASH 飲食</strong> (得舒飲食) 最初是為了控制高血壓設計，強調高鉀、高鎂、高鈣、低鈉，蔬菜水果和低脂乳製品是核心。<strong>地中海飲食</strong>則更強調健康的脂肪來源 (如橄欖油、魚油、堅果)、全穀類和豐富的植化素。近年來許多研究推崇結合兩者優點的 <strong>MIND 飲食</strong>，被認為對心腦血管都有更全面的保護力。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">睡眠不足或睡眠品質差，真的會影響心血管健康嗎？</div>
+            <div class="faq-answer">
+                <p>絕對會。睡眠是身體進行修復、調節荷爾蒙和降低發炎的關鍵時期。長期睡眠不足（少於 6-7 小時）會導致交感神經系統過度活化，造成血壓和心率升高，增加高血壓、心肌梗塞和中風的風險。睡眠呼吸中止症更是心血管疾病的獨立高風險因子，若有嚴重打鼾或白天嗜睡問題，應及早就醫檢查。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">間歇性斷食 (Intermittent Fasting) 對心臟有好處嗎？</div>
+            <div class="faq-answer">
+                <p>有潛力，但需謹慎執行。研究顯示，間歇性斷食（如 168 斷食法）可能透過改善胰島素敏感性、降低發炎、啟動細胞自噬 (Autophagy) 等機制來促進心血管健康。然而，若在進食窗口內攝取大量不健康的食物，則好處會被抵銷。重點仍在於「吃什麼」而非單純「何時吃」。執行前建議與醫師或營養師討論。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">我應該完全不吃鹽（鈉）嗎？</div>
+            <div class="faq-answer">
+                <p>不是完全不吃，而是「限制」。鈉是維持體液平衡和神經傳導的必需礦物質，但現代飲食普遍超標。過量的鈉會使水分滯留體內，增加血容量，從而升高血壓。世界衛生組織建議成人每日鈉攝取量應低於 2000 毫克（約等於 5 克鹽）。重點是避開加工食品、罐頭、醬料等隱藏的鈉來源，而非完全水煮。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">重量訓練對心臟有幫助嗎？還是只該做有氧運動？</div>
+            <div class="faq-answer">
+                <p>重量訓練對心臟非常有益。過去認為有氧運動才是護心首選，但現在的研究指出，重量訓練能：1) 增加肌肉量，提升基礎代謝率與胰島素敏感度；2) 降低腹部脂肪；3) 改善血脂組成。理想的運動計畫應結合有氧運動（如 Zone 2 訓練）和阻力訓練，兩者相輔相成，能達到最佳的心血管保護效果。</p>
             </div>
           </div>
 
@@ -1858,18 +1986,96 @@
               <p>在常規劑量下，魚油與阿斯匹靈併用是相對安全的，但仍建議告知醫師。高劑量（每日>3克）的魚油具有輕微的抗血小板作用，理論上可能與阿斯匹靈產生加成效果，增加出血風險。若您發現不明原因的瘀青或出血傾向，應立即諮詢醫師。</p>
             </div>
           </div>
-          
-          <h3 class="faq-category-title">E. 不同年齡層的提醒</h3>
-           <div class="faq-item">
-            <div class="faq-question">我才 30 歲，需要開始擔心心血管健康嗎？</div>
+          <div class="faq-item">
+            <div class="faq-question">葡萄柚和心血管藥物之間有什麼禁忌？</div>
             <div class="faq-answer">
-              <p>絕對需要。動脈粥狀硬化的早期病變（脂肪紋）在青少年時期就可能出現。年輕時建立的<a href="#lifestyle">良好飲食與運動習慣</a>，是避免中年後心血管問題爆發的最重要投資。預防遠勝於治療。</p>
+                <p>葡萄柚或葡萄柚汁是許多心血管藥物的「頭號公敵」。它含有的<strong>呋喃香豆素 (furanocoumarins)</strong> 會抑制體內一種名為 <strong>CYP3A4</strong> 的代謝酵素，該酵素負責分解許多藥物，包括 Statin 類降血脂藥、部分鈣離子通道阻斷劑 (降血壓藥) 等。抑制作用會導致藥物無法正常代謝，在血中濃度異常升高，有時可達數倍甚至數十倍，從而引發如橫紋肌溶解、急性腎衰竭等嚴重毒性反應。服用特定藥物期間，應完全避免攝取葡萄柚相關製品。</p>
             </div>
           </div>
-           <div class="faq-item">
-            <div class="faq-question">中年人最該關注的心血管指標是什麼？</div>
+          <div class="faq-item">
+            <div class="faq-question">除了納豆激酶，還有哪些保健食品會和抗凝血藥 (Warfarin) 產生交互作用？</div>
             <div class="faq-answer">
-              <p>除了傳統的血壓、血脂，建議您特別關注「<a href="#cause-hcy">同半胱胺酸 (Homocysteine)</a>」和「高敏度C-反應蛋白 (hs-CRP)」。前者是血管內皮的獨立風險因子，後者則反映了體內的慢性發炎水平，兩者都比單看膽固醇數值更能預測未來風險。</p>
+                <p>非常多，需要特別小心。除了明確會抵銷藥效的<strong>維生素K</strong>，許多具有「活血化瘀」功效的草本補充品，都可能增強 Warfarin 的抗凝血效果，增加出血風險。常見的例子包括：<strong>丹參、當歸、銀杏、高劑量的魚油 (每日 > 3克)、大蒜精、和 EGCG (綠茶素)</strong>。若正在服用 Warfarin，在新增任何保健食品前，都必須與您的醫師或藥師進行詳細諮詢。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">我在吃降血壓藥，可以補充鉀離子或鎂離子嗎？</div>
+            <div class="faq-answer">
+                <p>大部分情況下是安全且有益的，但有例外。從飲食中增加鉀鎂攝取（如多吃蔬菜、堅果）通常是安全的。但若您服用的是<strong>保鉀型利尿劑 (Potassium-sparing diuretics)</strong> 或 <strong>血管張力素轉化酶抑制劑 (ACEI)</strong>，額外補充高劑量鉀補充劑可能導致高血鉀症，引發心律不整。鎂則相對安全，且有輔助降壓放鬆血管的效果，但腎功能不全者需注意劑量。總之，用藥期間補充礦物質，最好先讓醫師知道。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">市面上的「清血管」保健食品，真的能清除已形成的斑塊嗎？</div>
+            <div class="faq-answer">
+                <p>這是一個常見的行銷話術，需要釐清。目前沒有任何保健食品被證實能「完全清除」或「溶解」已經形成並鈣化的動脈粥狀硬化斑塊。納豆激酶能溶解的是「血栓」，而非「斑塊」。魚油、維生素 K2 等營養素的主要作用在於<strong>抗發炎、減緩斑塊生長、增加斑塊穩定性 (避免破裂)</strong>，以及<strong>預防和部分逆轉鈣化</strong>。它們是「預防」和「延緩惡化」，而非「清除」。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">服用 Statin 類藥物，為何一定要補充輔酶 Q10？</div>
+            <div class="faq-answer">
+                <p>因為 Statin 類藥物的作用機制是抑制肝臟中一個名為「HMG-CoA 還原酶」的酵素，來減少膽固醇的合成。然而，這個生化路徑同時也是體內合成輔酶 Q10 的必經之路。因此，Statin 在降膽固醇的同時，也「順便」阻斷了 Q10 的製造。缺乏 Q10 會影響細胞能量供應，特別是心臟和肌肉，導致許多患者出現肌肉痠痛、無力、疲勞等副作用。補充 Q10 能有效緩解這些副作用，並維持心肌的正常能量代謝。</p>
+            </div>
+          </div>
+          
+          <h3 class="faq-category-title">E. 不同年齡層的提醒</h3>
+
+          <div class="faq-subcategory">
+            <h4 class="faq-subcategory-title">青少年 (12-18歲)</h4>
+            <div class="faq-items-container">
+              <div class="faq-item">
+                <div class="faq-question">兒童和青少年需要注意心血管保健嗎？</div>
+                <div class="faq-answer">
+                    <p>需要，但重點不同。兒童和青少年的心血管保健，核心在於建立「一生受用的健康習慣」。動脈粥狀硬化的最早病理特徵「脂肪紋」，在兒童時期就可能出現。此階段的重點不是吃保健食品，而是確保均衡飲食、避免含糖飲料和過度加工的零食、維持健康體重，並培養規律運動的習慣。這些是預防未來心血管疾病最根本的基石。</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">年輕人如果血脂或血壓偏高，可以只靠運動和飲食調整嗎？</div>
+                <div class="faq-answer">
+                    <p>在初期絕對應該先嘗試嚴格的生活方式調整。對於年輕的初發患者，除非數值高到危險程度，或具有家族性高膽固醇血症等特殊情況，醫師通常會建議給予 3-6 個月的觀察期，透過積極的飲食控制和規律運動來改善。許多人僅透過此方式就能讓指標恢復正常。但若調整後效果不彰，仍需遵照醫囑考慮藥物治療，切勿因年紀輕而輕忽。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-subcategory">
+            <h4 class="faq-subcategory-title">中壯年 (30-60歲)</h4>
+            <div class="faq-items-container">
+              <div class="faq-item">
+                <div class="faq-question">我才 30 歲，需要開始擔心心血管健康嗎？</div>
+                <div class="faq-answer">
+                  <p>絕對需要。動脈粥狀硬化的早期病變（脂肪紋）在青少年時期就可能出現。年輕時建立的<a href="#lifestyle">良好飲食與運動習慣</a>，是避免中年後心血管問題爆發的最重要投資。預防遠勝於治療。</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">中年人最該關注的心血管指標是什麼？</div>
+                <div class="faq-answer">
+                  <p>除了傳統的血壓、血脂，建議您特別關注「<a href="#cause-hcy">同半胱胺酸 (Homocysteine)</a>」和「高敏度C-反應蛋白 (hs-CRP)」。前者是血管內皮的獨立風險因子，後者則反映了體內的慢性發炎水平，兩者都比單看膽固醇數值更能預測未來風險。</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-question">為什麼停經後的女性，心血管疾病風險會大幅上升？</div>
+                <div class="faq-answer">
+                    <p>這主要是因為雌激素 (Estrogen) 的保護作用消失了。雌激素對女性的心血管系統有多重益處，包括：維持血管彈性、降低壞膽固醇 (LDL)、提升好膽固醇 (HDL) 等。停經後，雌激素水平驟降，使得女性的風險輪廓在短短幾年內迅速追上同年齡男性。因此，更年期後的女性更應積極採取護心行動。</p>
+                </div>
+              </div>
+              <div class="faq-item">
+                  <div class="faq-question">中年男性和女性，在心血管風險上有何最大不同？</div>
+                  <div class="faq-answer">
+                      <p>中年男性最大的風險通常是較差的生活習慣（抽菸、飲酒、壓力）和腹部肥胖導致的典型代謝症候群。而中年（尤其更年期前後）女性的風險，除了雌激素下降外，還常表現為「非典型症狀」，如極度疲勞、噁心、頸背痛等，這些症狀容易被誤認為是更年期不適或腸胃問題，從而延誤就醫。</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-subcategory">
+            <h4 class="faq-subcategory-title">老年 (60歲以上)</h4>
+            <div class="faq-items-container">
+              <div class="faq-item">
+                <div class="faq-question">70歲以上的長者，血壓和膽固醇的標準需要放寬嗎？</div>
+                <div class="faq-answer">
+                    <p>這是一個複雜且個人化的議題。過去曾有「血壓標準隨年齡放寬」的說法，但近年大型研究 (如 SPRINT-MIND) 指出，對於身體狀況尚佳的長者，將收縮壓更嚴格地控制在 120 mmHg 左右，能顯著降低心血管事件和總死亡率。然而，對於身體衰弱、多重共病或有姿勢性低血壓風險的長者，過低的血壓可能增加跌倒風險。膽固醇的標準也是類似邏輯。最終的目標值應由醫師根據患者的整體健康狀況、預期壽命和潛在風險來量身定制。</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1896,6 +2102,36 @@
               </ul>
             </div>
           </div>
+          <div class="faq-item">
+            <div class="faq-question">輪班或夜班工作者，該如何調整生活作息來保護心血管？</div>
+            <div class="faq-answer">
+                <p>輪班工作會打亂生理時鐘 (Circadian Rhythm)，是心血管疾病的獨立風險因子。保護策略包括：1) <strong>盡力維持規律</strong>：即使是輪班，也要盡可能固定睡眠和起床時間，創造一個「相對規律」的作息。2) <strong>維持絕對黑暗的睡眠環境</strong>：使用遮光窗簾、眼罩，確保在白天睡覺時能模擬夜晚，促進褪黑激素分泌。3) <strong>謹慎安排進食時間</strong>：避免在深夜（生理時鐘的睡眠時間）大吃大喝，這會加重代謝負擔。盡量將主要餐點安排在輪班前或下班後。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">長途飛行或需要長時間久坐的族群，有什麼預防血栓的技巧？</div>
+            <div class="faq-answer">
+                <p>長時間不動會讓下肢血液循環變差，增加深度靜脈血栓 (DVT) 的風險。預防技巧包括：1) <strong>定時活動</strong>：每隔一小時起身走動一下，伸展雙腿。2) <strong>做腳踝運動</strong>：即使坐著，也可以做腳踝的上下屈伸和畫圈運動，啟動小腿肌肉幫浦。3) <strong>補充水分</strong>：多喝水能避免血液過於濃稠。4) <strong>穿著壓力襪</strong>：對於高風險族群，穿戴分級壓力襪能有效促進靜脈回流。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">我是健身愛好者，有在用乳清蛋白，會不會增加心血管負擔？</div>
+            <div class="faq-answer">
+                <p>適量攝取優質乳清蛋白，對心血管健康反而是有益的。乳清蛋白是高品質蛋白質，有助於肌肉生長與修復，而肌肉量增加能改善胰島素敏感性和整體代謝。部分研究還發現乳清蛋白中的生物活性胜肽，可能具有輕微降血壓的效果。關鍵在於總熱量控制，並選擇無過多添加糖或不健康脂肪的產品。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">經常需要應酬飲酒的業務，如何將心血管傷害降到最低？</div>
+            <div class="faq-answer">
+                <p>首先必須認知，酒精沒有「安全劑量」，任何劑量都會增加長期風險。如果無法避免，減害策略包括：1) <strong>限制總量</strong>：盡力將單次飲酒量控制在建議範圍內（男性每日不超過2個酒精當量，女性不超過1個）。2) <strong>避免空腹飲酒</strong>：喝酒前先進食，特別是含有蛋白質和脂肪的食物，能減緩酒精吸收速度。3) <strong>補充B群與水分</strong>：酒精代謝會消耗大量B群，喝酒前後多喝水則有助於加速酒精代謝產物排出。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">我是個咖啡愛好者，每天喝咖啡對心臟是好是壞？</div>
+            <div class="faq-answer">
+                <p>對於大多數人來說，適量飲用咖啡（每日約 3-4 杯）是利大於弊的。大量流行病學研究顯示，規律喝咖啡與較低的心血管疾病、中風和心衰竭風險有關。這可能歸功於咖啡中豐富的綠原酸等多酚類抗氧化物。然而，部分人因基因關係對咖啡因代謝較慢，可能容易出現心悸、焦慮或血壓暫時升高的反應。重點是觀察自身反應，並避免添加大量的糖和奶精。</p>
+            </div>
+          </div>
 
           <h3 class="faq-category-title">G. 不同健康狀況的考量</h3>
           <div class="faq-item">
@@ -1908,6 +2144,36 @@
             <div class="faq-question">減重對於改善心血管健康有多重要？</div>
             <div class="faq-answer">
               <p>極度重要。肥胖，特別是腹部肥胖，是造成胰島素阻抗、高血壓、高血脂與全身性發炎的核心因素。研究證實，即使只是減去總體重的 5-10%，也能顯著改善各項心血管代謝指標。減重本身就是最強效的心血管「藥物」之一。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">糖尿病患者在心血管保健上，除了控血糖外，還要注意什麼？</div>
+            <div class="faq-answer">
+                <p>糖尿病被視為心血管疾病的「等危症」，表示一旦確診糖尿病，其心血管風險就等同於已發生過心肌梗塞的患者。除了嚴格控制血糖 (HbA1c)，更要積極管理<strong>血壓</strong>和<strong>血脂</strong>，做到「控糖、穩壓、降血脂」三效合一。此外，定期檢查腎功能 (eGFR、尿蛋白) 和眼底病變也至關重要，因為它們都是反映全身小血管健康狀況的櫥窗。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">已經在洗腎 (透析) 的患者，在營養補充上有什麼特別禁忌？</div>
+            <div class="faq-answer">
+                <p>洗腎患者的營養管理非常複雜，<strong>嚴禁</strong>自行補充保健食品。幾個關鍵點：1) <strong>磷、鉀限制</strong>：腎臟無法有效排出磷和鉀，攝取過多會導致高血磷症 (皮膚搔癢、血管鈣化) 和高血鉀症 (心律不整)。2) <strong>蛋白質需「足夠」</strong>：與一般腎病不同，透析過程會流失蛋白質，反而需要補充高品質蛋白質。3) <strong>水溶性維生素易流失</strong>：透析會流失 B 群、維生素 C 等，常需額外補充。所有營養調整都必須在醫師和腎臟科營養師的嚴密監控下進行。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">如果已經裝了心臟支架，是否就一勞永逸了？</div>
+            <div class="faq-answer">
+                <p>完全不是。心臟支架只是解決了「單點」最嚴重的堵塞，如同在坍方的隧道中打通一條臨時便道，但它沒有改變整條公路 (全身血管) 持續在惡化的事實。裝設支架後，更需要積極地透過藥物、飲食和生活習慣改變來控制發炎、血脂和血壓，否則可能發生「支架內再狹窄」，或是在其他位置產生新的堵塞。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">自體免疫疾病 (如紅斑性狼瘡、類風濕性關節炎) 為何會增加心血管風險？</div>
+            <div class="faq-answer">
+                <p>自體免疫疾病的核心是全身性的<strong>慢性發炎</strong>。這些長期存在的發炎因子 (如細胞激素) 會不斷攻擊、傷害血管內皮，加速動脈粥狀硬化的進程。這就好像血管一直處於被火悶燒的狀態。因此，這類患者的心血管風險遠高於一般人，除了控制自體免疫疾病本身，也需要更積極地進行心血管風險管理。</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">脂肪肝只是肝臟的問題嗎？它跟心血管健康有關嗎？</div>
+            <div class="faq-answer">
+                <p>脂肪肝絕不只是肝臟的問題，它被認為是「代謝症候群在肝臟的表現」。非酒精性脂肪肝 (NAFLD) 的患者，通常也伴隨著胰島素阻抗、血脂異常、腹部肥胖等問題，這些都是心血管疾病的強烈風險因子。肝臟發炎釋出的物質也會加劇全身的發炎反應。因此，看到健檢報告上的脂肪肝紅字，不應只擔心肝硬化，更要警覺到這是心血管系統亮起的黃燈。</p>
             </div>
           </div>
         </section>
@@ -2123,6 +2389,12 @@
       });
     }
     window.addEventListener("scroll", highlightTOC);
+
+    document.querySelectorAll(".faq-subcategory-title").forEach((title) => {
+      title.addEventListener("click", () => {
+        title.parentElement.classList.toggle("active");
+      });
+    });
 
     document.querySelectorAll(".faq-question").forEach((question) => {
       question.addEventListener("click", () => {
