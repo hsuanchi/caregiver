@@ -13,9 +13,13 @@
 ### Added
 - **New Page**: `post/vitamin-k2.html` - "Project Omega II" Deep Dive report covering Cis/Trans isomers, patent analysis (MenaQ7/K2Vital), and stability issues.
 - **Content Expansion**: Updated `post/magnesium.html` with "Buffered Magnesium" trap analysis and EML (Effective Magnesium Load) calculator.
+- **Content Expansion**: Integrated `post/review-fish-oil.html` content (Charts, Calculator, Tier List) into `post/fish-oil.html` as the new "Market Reality" section.
+- **Refinement**: Adjusted tone in `post/topic-cardiovascular-health.html` from "Engineering Logic" to "Expert Nutrition Team" persona while retaining helpful system metaphors.
+- **Privacy & Tone**: Neutralized tone in `post/fish-oil.html` Market Review (removed "IQ Tax" ref), removed all affiliate/direct purchase links, and added market data disclaimer.
 
 ### Changed
 - **Cardiovascular Hub**: Updated `post/topic-cardiovascular-health.html` Section 3.2 to include deep links to the new K2 and Magnesium reports.
+- **Redirect**: `post/review-fish-oil.html` now redirects to `post/fish-oil.html`.
 - **System**: Updated `article-data.js` and `sitemap.xml` to include the new K2 page.
 
 ## [1.4.5] - 2025-12-17
