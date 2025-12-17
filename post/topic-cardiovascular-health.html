@@ -372,6 +372,54 @@
       color: #4a5568;
     }
 
+    /* New Food Ranking Component */
+    .food-ranking-container {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 30px 0;
+    }
+    .food-ranking-title {
+      font-size: 1.2em;
+      font-weight: 700;
+      color: #2d3748;
+      margin: 0 0 20px 0;
+    }
+    .food-ranking-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .food-ranking-list li a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 12px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #334155;
+      font-weight: 500;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .food-ranking-list li a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .food-ranking-list .food-value {
+      font-weight: 700;
+      color: var(--primary-color);
+      font-family: 'Inter', sans-serif;
+      background-color: var(--primary-bg-light);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.9em;
+    }
+
     /* Components: Tables */
     .data-table {
       width: 100%;
@@ -400,6 +448,13 @@
 
     .data-table tbody tr:hover {
       background-color: #f8fafc;
+    }
+
+    /* Make tables scrollable on mobile */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
     }
 
     /* Components: Alerts */
@@ -1377,28 +1432,14 @@
           <h3 id="repair-2">3.2 鈣化調節機制：逆轉鈣化 (Target: MGP Protein)</h3>
           <p><strong>維生素 K2 (MK-7)</strong> 能活化 MGP 蛋白，將鈣離子「抓」回骨骼。<strong>鎂</strong>則能放鬆平滑肌。</p>
 
-          <div class="alert alert-tip">
-            <div>
-              <strong>📊 補鎂食物排行榜 (每 100g 含量):</strong>
-              <div class="food-grid">
-                <a href="../food/pumpkin_seed.html" class="food-item" style="text-decoration: none; color: inherit;">
-                  <div>南瓜籽</div>
-                  <span class="food-val">592 mg</span>
-                </a>
-                <a href="../food/dark_chocolate.html" class="food-item" style="text-decoration: none; color: inherit;">
-                  <div>黑巧克力</div>
-                  <span class="food-val">228 mg</span>
-                </a>
-                <a href="../food/almond.html" class="food-item" style="text-decoration: none; color: inherit;">
-                  <div>杏仁</div>
-                  <span class="food-val">270 mg</span>
-                </a>
-                <a href="../food/spinach.html" class="food-item" style="text-decoration: none; color: inherit;">
-                  <div>菠菜</div>
-                  <span class="food-val">87 mg</span>
-                </a>
-              </div>
-            </div>
+          <div class="food-ranking-container">
+            <h4 class="food-ranking-title">📊 補鎂食物排行榜 (每 100g 含量)</h4>
+            <ul class="food-ranking-list">
+              <li><a href="../food/pumpkin_seed.html"><span>南瓜籽</span> <span class="food-value">592 mg</span></a></li>
+              <li><a href="../food/almond.html"><span>杏仁</span> <span class="food-value">270 mg</span></a></li>
+              <li><a href="../food/dark_chocolate.html"><span>黑巧克力</span> <span class="food-value">228 mg</span></a></li>
+              <li><a href="../food/spinach.html"><span>菠菜</span> <span class="food-value">87 mg</span></a></li>
+            </ul>
           </div>
 
           <div

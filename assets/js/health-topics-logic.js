@@ -42,33 +42,67 @@ document.addEventListener("DOMContentLoaded", function () {
     // 2. Generate master cards for each goal
     const cardsHTML = sortedGoals.map(goal => {
         const articlesInGoal = goalsData[goal];
-        const slug = goal.toLowerCase().replace(/\s+/g, '-'); // Simple slug for ID
+        const slug = goal.toLowerCase().replace(/\s+/g, '-');
 
-        const articlesHTML = articlesInGoal.map(article => {
-            const keywordsHTML = article.keywords ? article.keywords.split(', ').map(k => `<span>${k}</span>`).join('') : '';
+        // =================== NEW LOGIC: HUB CARD FOR CARDIOVASCULAR ===================
+        if (goal === '心血管健康') {
+            const hubArticle = articlesInGoal.find(a => a.id === 'topic-card-cardiovascular-health');
+            const subArticles = articlesInGoal.filter(a => a.id !== 'topic-card-cardiovascular-health');
+
+            if (!hubArticle) {
+                console.error("Hub article for Cardiovascular Health not found!");
+                return ''; // Avoid rendering an empty card
+            }
+
+            const subArticlesHTML = subArticles.map(sub => `<li><a href="${sub.link}">${sub.title}</a></li>`).join('');
+
             return `
-                <div class="article-entry">
-                    <h3 class="article-entry-title"><a href="${article.link}">${article.title}</a></h3>
-                    <div class="article-entry-meta">
-                        <span class="article-entry-published">發布日期: ${article.published || 'N/A'}</span>
+              <div class="topic-hub-card" id="topic-${slug}">
+                <div class="hub-main-section">
+                  <span class="hub-eyebrow">核心總覽 (Pillar Page)</span>
+                  <h2><a href="${hubArticle.link}">${hubArticle.title}</a></h2>
+                  <p>${hubArticle.description}</p>
+                  <a href="${hubArticle.link}" class="hub-cta-button">閱讀全方位指南 &raquo;</a>
+                </div>
+                ${subArticles.length > 0 ? `
+                <div class="hub-sub-section">
+                  <h4>延伸閱讀 (Deep Dives)</h4>
+                  <ul>
+                    ${subArticlesHTML}
+                  </ul>
+                </div>
+                ` : ''}
+              </div>
+            `;
+        } 
+        // =================== ELSE: ORIGINAL LOGIC FOR OTHER TOPICS ===================
+        else {
+            const articlesHTML = articlesInGoal.map(article => {
+                const keywordsHTML = article.keywords ? article.keywords.split(', ').map(k => `<span>${k}</span>`).join('') : '';
+                return `
+                    <div class="article-entry">
+                        <h3 class="article-entry-title"><a href="${article.link}">${article.title}</a></h3>
+                        <div class="article-entry-meta">
+                            <span class="article-entry-published">發布日期: ${article.published || 'N/A'}</span>
+                        </div>
+                        <p class="article-entry-description">${article.description || ''}</p>
+                        <div class="article-entry-keywords">
+                            <strong>關鍵字:</strong> 
+                            ${keywordsHTML}
+                        </div>
                     </div>
-                    <p class="article-entry-description">${article.description || ''}</p>
-                    <div class="article-entry-keywords">
-                        <strong>關鍵字:</strong> 
-                        ${keywordsHTML}
-                    </div>
+                `;
+            }).join('');
+
+            return `
+                <div class="topic-master-card" id="topic-${slug}">
+                  <h2 class="topic-master-card-header">${goal}</h2>
+                  <div class="article-entry-list">
+                    ${articlesHTML}
+                  </div>
                 </div>
             `;
-        }).join('');
-
-        return `
-            <div class="topic-master-card" id="topic-${slug}">
-              <h2 class="topic-master-card-header">${goal}</h2>
-              <div class="article-entry-list">
-                ${articlesHTML}
-              </div>
-            </div>
-        `;
+        }
     }).join('');
 
     topicGrid.innerHTML = cardsHTML;
