@@ -29,15 +29,11 @@
 
 
 
-### [待辦] 優化首頁健康主題區塊 (HOMEPAGE-TOPICS-UI-IMPROVEMENT)
+### [已完成] 優化首頁健康主題區塊 (HOMEPAGE-TOPICS-UI-IMPROVEMENT)
 
 **主要目標**: 重新設計首頁的「健康主題」區塊 (`<section class="experts" id="health-topics">`)，提升其視覺美感與使用者體驗。
 **相關檔案**: `index.html`
-**詳細說明**: 目前的設計不夠突出，無法有效吸引使用者點擊。優化方向可考慮：
-1. 採用更現代的卡片式設計 (Card-based design)。
-2. 為每個主題增加一個具代表性的圖示 (Icon)。
-3. 調整排版和色彩，使其更符合網站整體的專業與清新風格。
-4. 考慮加入滑鼠懸停 (hover) 的互動效果。
+**詳細說明**: 採用了更具權威感的卡片式設計，並改為動態載入，已完成。
 ---
 
 ### [待辦] 將食物儀表板整合至所有 Food 頁面 (FOOD-PAGE-DASHBOARD-INTEGRATION)

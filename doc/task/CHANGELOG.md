@@ -9,6 +9,23 @@
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
+## [1.5.1] - 2025-12-17
+### Changed
+- **首頁UI優化 (HOMEPAGE-TOPICS-UI-IMPROVEMENT)**:
+  - 將首頁「健康主題」區塊從靜態、擬物化的樣式，重構為動態生成、更具專業權威感的卡片式設計。
+  - 新設計透過結構化、以排版為主的佈局取代了裝飾性圖示，突顯了專業感。
+  - 主題卡片現在經由 JavaScript 動態生成，展示精選的核心健康主題，提升了可維護性。
+
+### Docs
+- 在寫作指南中，新增了 `professional-insight-card` 元件的說明文件。
+- 在文章範本中，加入了 `professional-insight-card` 的範例。
+- 更新 `todo.md` 以反映任務完成狀態。
+
+### Refactor
+- 重構網站 Footer，使其連結策略與 Hub-and-Spoke 內容架構一致，並以主要主題為導覽核心。
+- 修正 Footer 中的無效連結，移除失效連結，並為提升使用者體驗和 SEO 新增了網站地圖連結。
+- 將 Footer 元件更新為使用封閉式 (closed) Shadow DOM。
+
 ## [1.5.0] - 2025-12-17
 ### Added
 - **New Page**: `post/vitamin-k2.html` - "Project Omega II" Deep Dive report covering Cis/Trans isomers, patent analysis (MenaQ7/K2Vital), and stability issues.
