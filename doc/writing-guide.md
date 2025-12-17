@@ -1074,6 +1074,51 @@ TOC 現已支援兩層式結構，並應包含 `<h3>` 標籤以提供更詳細�
     </div>
 </div>
 
+#### [新] 可折疊專業洞察卡 (`.professional-insight-card`)
+此元件使用 HTML 原生的 `<details>` 與 `<summary>` 標籤，提供一種無需 JavaScript 即可實現的「點擊展開」互動功能。它非常適合用來收納較為深入、專業，但非所有讀者都感興趣的內容（例如：詳細的病理機制、次要的研究數據等）。
+- **目的**：在保持主文流程簡潔的同時，提供給想深入了解的讀者一個探索的入口。
+- **優點**：原生、輕量、SEO友好。
+
+```html
+<details class="professional-insight-card">
+  <summary class="insight-summary">
+    <!-- Icon (可選) -->
+    <div class="insight-icon"><i class="fas fa-microscope"></i></div>
+    <!-- 標題與預覽 -->
+    <div class="insight-header">
+      <span class="insight-title">病理機制詳解：動脈粥狀硬化的分子過程</span>
+      <span class="insight-preview">這不僅僅是膽固醇堆積，而是一場發炎反應與氧化風暴。</span>
+    </div>
+    <!-- 箭頭 Icon -->
+    <i class="fas fa-chevron-down toggle-icon"></i>
+  </summary>
+  <div class="insight-content">
+    <p>現代病理學已證實...</p>
+    <ul>
+      <li><strong>1. 內皮功能障礙...</strong></li>
+      <li><strong>2. 脂質浸潤與氧化...</strong></li>
+    </ul>
+  </div>
+</details>
+```
+
+<div class="example-preview">
+    <h4 class="example-preview-title">即時預覽：專業洞察卡片</h4>
+    <details class="professional-insight-card" style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; margin: 20px 0; overflow: hidden; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);">
+        <summary class="insight-summary" style="list-style: none; padding: 20px; background: #f8fafc; cursor: pointer; display: flex; align-items: center; justify-content: space-between; transition: background 0.2s;">
+            <div class="insight-icon" style="font-size: 1.5em; color: #be123c; margin-right: 15px;">🔬</div>
+            <div class="insight-header" style="flex: 1;">
+                <span class="insight-title" style="display: block; font-weight: 700; color: #1e293b; margin-bottom: 4px;">病理機制詳解</span>
+                <span class="insight-preview" style="display: block; font-size: 0.9em; color: #64748b;">這不僅僅是膽固醇堆積，而是一場發炎反應...</span>
+            </div>
+            <div class="toggle-icon" style="font-size: 1.2em; color: #94a3b8;">▼</div>
+        </summary>
+        <div class="insight-content" style="padding: 20px; border-top: 1px solid #e2e8f0; background: white;">
+            <p>現代病理學已證實，動脈粥狀硬化 (Atherosclerosis) 是一種慢性發炎疾病...</p>
+        </div>
+    </details>
+</div>
+
 #### 6. [新] 視覺化劑量圖 (`.dosage-infographic-container`)
 用於以視覺化卡片呈現不同族群的建議劑量與成分比例。
 

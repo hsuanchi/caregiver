@@ -11,7 +11,7 @@
     constructor(hostElement) {
       // 建立 Shadow DOM
       this.hostElement = hostElement || document.body;
-      this.shadowRoot = this.hostElement.attachShadow({ mode: "open" });
+      this.shadowRoot = this.hostElement.attachShadow({ mode: "closed" });
 
       // 初始化設定
       this._config = {
@@ -260,40 +260,6 @@
                         <div class="footer-brand">
                             <div class="footer-logo">${this._config.companyName}</div>
                             <p class="footer-description">${this._config.companyDescription}</p>
-                        </div>
-
-                        <!-- Quick Links -->
-                        <div class="footer-section">
-                            <h3>營養素</h3>
-                            <ul class="footer-links">
-                                <li><a href="/post/fish-oil.html">魚油</a></li>
-                                <li><a href="/post/prebiotics.html">益生質</a></li>
-                                <li><a href="/post/vitamin-c.html">維生素C</a></li>
-                                <li><a href="/post/calcium.html">鈣</a></li>
-                                <li><a href="/post/zinc.html">鋅</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Resources -->
-                        <div class="footer-section">
-                            <h3>資源中心</h3>
-                            <ul class="footer-links">
-                                <li><a href="/post/tools/nutrient-dashboard.html">互動式營養素資料庫</a></li>
-                                <li><a href="/post/archive.html">文章彙整</a></li>
-                                <li><a href="/about.html">關於我們</a></li>
-                                <li><a href="/post/official-health-sites.html">官方資料</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Contact -->
-                        <div class="footer-section">
-                            <h3><a href="/about.html" style="color: inherit; text-decoration: none;">關於我們</a></h3>
-                            <div class="contact-info" style="margin-bottom: 20px;">
-                                <div class="contact-item">
-                                    <span class="contact-icon">✉️</span>
-                                    <a href="mailto:${this._config.email}" style="color: #a0aec0; text-decoration: none;">${this._config.email}</a>
-                                </div>
-                            </div>
                             <div class="social-links">
                                 <a href="${this._config.socialLinks.facebook}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook" id="facebook-link">
                                     <span>f</span>
@@ -306,6 +272,38 @@
                                 </a>
                             </div>
                         </div>
+
+                        <!-- Topic Navigation -->
+                        <div class="footer-section">
+                            <h3>主題導覽</h3>
+                            <ul class="footer-links">
+                                <li><a href="/post/topic-cardiovascular-health.html">心血管健康</a></li>
+                                <li><a href="/post/topic-immune-boosting-nutrients.html">免疫強化</a></li>
+                                <li><a href="/post/lutein.html">視力維護</a></li>
+                                <li><a href="/post/glucosamine.html">關節與軟骨</a></li>
+                                <li><a href="/post/probiotics.html">腸道菌群平衡</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Explore More -->
+                        <div class="footer-section">
+                            <h3>探索更多</h3>
+                            <ul class="footer-links">
+                                <li><a href="/category/archive.html">文章總覽</a></li>
+                                <li><a href="/category/nutrient-dashboard.html">互動式儀表板</a></li>
+                                <li><a href="/category/foodWiki.html">食物營養百科</a></li>
+                                <li><a href="/post/official-health-sites.html">官方資料</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- About This Site -->
+                        <div class="footer-section">
+                            <h3>關於本站</h3>
+                             <ul class="footer-links">
+                                <li><a href="/about.html">關於我們</a></li>
+                                <li><a href="mailto:${this._config.email}">聯絡我們</a></li>
+                            </ul>
+                        </div>
                     </div>
 
                     <!-- Footer Bottom -->
@@ -313,8 +311,8 @@
                         <div class="copyright">${this._config.copyright}</div>
                         <ul class="footer-bottom-links">
                             <li><a href="/privacy.html">隱私權政策</a></li>
-                            <li><a href="#">服務條款</a></li>
                             <li><a href="/disclaimer.html">免責聲明</a></li>
+                            <li><a href="/sitemap.xml">網站地圖</a></li>
                         </ul>
                     </div>
 

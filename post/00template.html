@@ -116,6 +116,65 @@
       .data-table tbody tr { border-bottom: 1px solid #e5e7eb; transition: background 0.3s ease; }
       .data-table tbody tr:hover { background: #f9fafb; }
       .data-table tbody tr:last-child { border-bottom: none; }
+
+      /* Component: Professional Insight Card */
+      .professional-insight-card {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        margin: 30px 0;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      .insight-summary {
+        list-style: none; /* Hide the default marker */
+        padding: 20px;
+        background: #f8fafc;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: background 0.2s;
+      }
+      .insight-summary::-webkit-details-marker {
+        display: none; /* Hide the default marker in Chrome */
+      }
+      .insight-summary:hover {
+        background: #f1f5f9;
+      }
+      .insight-header {
+        flex: 1;
+        margin: 0 15px;
+      }
+      .insight-title {
+        display: block;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 4px;
+      }
+      .insight-preview {
+        display: block;
+        font-size: 0.9em;
+        color: #64748b;
+      }
+      .insight-content {
+        padding: 20px;
+        border-top: 1px solid #e2e8f0;
+        background: white;
+      }
+      .insight-icon {
+        font-size: 1.5em;
+        color: #0369a1; /* Using a neutral blue from the theme */
+        flex-shrink: 0;
+      }
+      .toggle-icon {
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+      }
+      .professional-insight-card[open] .toggle-icon {
+        transform: rotate(180deg);
+      }
+
       .info-cards, .risk-group-cards {
         display: flex;
         flex-direction: column;
@@ -257,6 +316,29 @@
                 <p>這用於提供專業的健康風險、副作用或藥物交互作用。例如，長期每日攝取超過40mg的鋅，可能會干擾銅的吸收。</p>
               </div>
             </div>
+
+            <h3 style="margin-top: 40px;">專業洞察卡片展示 (Professional Insight Card)</h3>
+            <p>此元件適合收納較為深入、專業的內容，使用原生 <code>&lt;details&gt;</code> 標籤，無需 JS 即可互動。</p>
+            <details class="professional-insight-card">
+              <summary class="insight-summary">
+                <!-- 圖示為可選，若無 FontAwesome 可使用 Emoji (如 🔬) 或文字 -->
+                <div class="insight-icon">🔬</div>
+                <div class="insight-header">
+                  <span class="insight-title">病理機制詳解：一個複雜的標題</span>
+                  <span class="insight-preview">這裡是一段簡短的預覽文字，吸引讀者點擊展開來閱讀更多細節。</span>
+                </div>
+                <!-- 箭頭圖示同樣可用 Emoji (如 ▼) -->
+                <div class="toggle-icon">▼</div>
+              </summary>
+              <div class="insight-content">
+                <p>這裡是展開後顯示的詳細內容。現代病理學已證實，動脈粥狀硬化 (Atherosclerosis) 是一種慢性發炎疾病，其進程分為四個關鍵步驟...</p>
+                <ul>
+                  <li><strong>1. 內皮功能障礙 (Endothelial Dysfunction)</strong>：詳細說明...</li>
+                  <li><strong>2. 脂質浸潤與氧化</strong>：詳細說明...</li>
+                </ul>
+              </div>
+            </details>
+
           </section>
 
           <section id="solution">
