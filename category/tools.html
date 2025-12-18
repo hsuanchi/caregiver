@@ -11,6 +11,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../pic/Nutrition Encyclopedia.png">
     <link rel="shortcut icon" type="image/png" href="../pic/Nutrition Encyclopedia.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- JSON-LD for Breadcrumb -->
     <script type="application/ld+json">
@@ -180,6 +181,97 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
+        /* Professional Insight Card Styles */
+        .professional-insight-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            margin: 30px auto;
+            max-width: 800px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+
+        .insight-summary {
+            list-style: none;
+            padding: 20px;
+            background: #f8fafc;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.2s;
+        }
+
+        .insight-summary:hover {
+            background: #f1f5f9;
+        }
+
+        /* Remove default arrow in Chrome/Safari */
+        .insight-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .insight-icon {
+            font-size: 1.4rem;
+            color: #ff6b35;
+            width: 30px;
+            text-align: center;
+        }
+
+        .insight-header {
+            flex: 1;
+            margin: 0 15px;
+        }
+
+        .insight-title {
+            display: block;
+            font-weight: 700;
+            color: #1e293b;
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .insight-preview {
+            display: block;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .insight-content {
+            padding: 25px;
+            border-top: 1px solid #e2e8f0;
+            background: white;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .insight-content h4 {
+            color: #1e293b;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .insight-content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .insight-content li {
+            margin-bottom: 8px;
+        }
+
+        .toggle-icon {
+            transition: transform 0.3s ease;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        details[open] .toggle-icon {
+            transform: rotate(180deg);
+        }
+
         @media (max-width: 768px) {
             .tools-title {
                 font-size: 2rem;
@@ -224,6 +316,39 @@
                 </p>
             </div>
             <div id="caffeine-calc-root"></div>
+
+            <details class="professional-insight-card">
+                <summary class="insight-summary">
+                    <div class="insight-icon"><i class="fas fa-brain"></i></div>
+                    <div class="insight-header">
+                        <span class="insight-title">專業洞察：為什麼有人喝咖啡沒感覺？</span>
+                        <span class="insight-preview">探索遺傳差異、腺苷受體與咖啡因耐受性的科學機制。</span>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </summary>
+                <div class="insight-content">
+                    <h4>為什麼您需要這個工具？</h4>
+                    <p>咖啡因的代謝速度在不同個體間差異巨大。有些人喝一杯咖啡就心悸失眠，有些人則「無感」卻在無形中攝取過量，導致自律神經失調或影響<a
+                            href="/post/gaba.html">深層睡眠品質</a>。盲目跟隨大眾建議的「每日兩杯」可能並不適合您的體質。</p>
+
+                    <h4>這項工具如何幫助您？</h4>
+                    <p>本工具根據您的<strong>體重</strong>與<strong>咖啡因敏感度遺傳特徵</strong>，動態算出屬於您的「安全攝取紅線」。它能幫助您精準掌握單次攝取量，在換取<a
+                            href="/post/vitamin-b.html">工作專注力與能量代謝</a>的同時，守護您的心血管健康。</p>
+
+                    <h4>使用方法</h4>
+                    <ul>
+                        <li><strong>步驟 1：</strong>輸入您的當前體重（公斤）。</li>
+                        <li><strong>步驟 2：</strong>根據過往經驗選擇您的敏感程度（敏感、一般、或高抗性）。</li>
+                        <li><strong>步驟 3：</strong>對照下方的飲品對照表，確保整日的總攝取量維持在安全限額內。</li>
+                    </ul>
+
+                    <h4>權威科學來源</h4>
+                    <ul>
+                        <li><strong>FDA (U.S. Food and Drug Administration)：</strong>建議健康成年人每日攝取量上限為 400 毫克。</li>
+                        <li><strong>EFSA (European Food Safety Authority)：</strong>建議單次攝取不超過 3mg/kg 體重，以維持神經安全性。</li>
+                    </ul>
+                </div>
+            </details>
         </section>
 
         <div class="divider"></div>
@@ -237,6 +362,41 @@
                 </p>
             </div>
             <div id="fish-oil-calc-root"></div>
+
+            <details class="professional-insight-card">
+                <summary class="insight-summary">
+                    <div class="insight-icon"><i class="fas fa-microscope"></i></div>
+                    <div class="insight-header">
+                        <span class="insight-title">專業洞察：如何挑選真正高效的魚油？</span>
+                        <span class="insight-preview">了解 rTG 型態、新鲜度指標 TOTOX 與 EPA/DHA 比例。</span>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </summary>
+                <div class="insight-content">
+                    <h4>為什麼您需要這個工具？</h4>
+                    <p>市售魚油產品琳瑯滿目，廠商常利用「高顆數」或「低總價」來模糊焦點。實際上，許多低品質魚油的有效成分（EPA+DHA）極低，導致您吞下了一堆無用的脂肪，卻沒能補足身體所需的營養，甚至可能造成額外的代謝負擔。
+                    </p>
+
+                    <h4>這項工具如何幫助您？</h4>
+                    <p>本工具自動將複雜的營養標示轉換為<strong>「每 1000mg Omega-3 的真實花費」</strong>。透過數據化比較，您可以一秒看穿行銷陷阱，挑選出真正高純度、高 CP
+                        值的魚油，確保每一分錢都花在健康上。建議同步參考<a href="/post/fish-oil.html">魚油深度挑選指南</a>或了解<a
+                            href="/post/food/salmon.html">天然食物來源</a>。</p>
+
+                    <h4>使用方法</h4>
+                    <ul>
+                        <li><strong>步驟 1：</strong>輸入產品的單瓶售價與總顆數。</li>
+                        <li><strong>步驟 2：</strong>依照包裝標示填入「每份」含有的 Omega-3 (EPA+DHA) 總毫克數。</li>
+                        <li><strong>步驟 3：</strong>點擊計算，參考系統給出的「性價比評級」，選擇單位成本最低的高純度產品。</li>
+                    </ul>
+
+                    <h4>權威科學來源</h4>
+                    <ul>
+                        <li><strong>GOED (Global Organization for EPA & DHA Omega-3s)：</strong>為全球魚油品質設定嚴格純度與新鮮度自願性規範。
+                        </li>
+                        <li><strong>AHA (American Heart Association)：</strong>對於不同健康目標下的 Omega-3 每日攝取建議。</li>
+                    </ul>
+                </div>
+            </details>
         </section>
 
         <div class="divider"></div>
@@ -250,6 +410,40 @@
                 </p>
             </div>
             <div id="cardio-risk-calc-root"></div>
+
+            <details class="professional-insight-card">
+                <summary class="insight-summary">
+                    <div class="insight-icon"><i class="fas fa-heartbeat"></i></div>
+                    <div class="insight-header">
+                        <span class="insight-title">專業洞察：解讀您的十年心血管風險</span>
+                        <span class="insight-preview">理解 AHA 演算法背後的邏輯與早期干預的重要性。</span>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </summary>
+                <div class="insight-content">
+                    <h4>為什麼您需要這個工具？</h4>
+                    <p>動脈粥狀硬化往往是長達數十年的積累，在初期幾乎沒有任何症狀。單純看體檢報告上的「紅字」往往讓人焦慮卻不知所措，不知道自己的具體患病風險到底有多高，也不知道何時該開始積極干預。您可以先閱讀<a
+                            href="/post/topic-cardiovascular-health.html">心血管健康專題</a>了解基礎知識。</p>
+
+                    <h4>這項工具如何幫助您？</h4>
+                    <p>本工具量化您<strong>未來 10 年內發生主要心血管事件（如中風、心肌梗塞）的機率</strong>。它能整合為一個具體的參考數值，幫助您與專業醫師討論預防方針，或搭配<a
+                            href="/post/garlic.html">大蒜精華</a>與<a href="/post/plant-sterols.html">植物固醇</a>進行輔助管理。</p>
+
+                    <h4>使用方法</h4>
+                    <ul>
+                        <li><strong>步驟 1：</strong>備妥您最近三個月內的血液檢查報告（總膽固醇、HDL）。</li>
+                        <li><strong>步驟 2：</strong>依照欄位填入真實數據，並勾選相關病史（如糖尿病、抽菸）。</li>
+                        <li><strong>步驟 3：</strong>獲得百分比風險評級，建議 40 歲以上族群定期自我追蹤。</li>
+                    </ul>
+
+                    <h4>權威科學來源</h4>
+                    <ul>
+                        <li><strong>AHA/ACC (American Heart Association / American College of Cardiology)：</strong>2013
+                            年發布的「彙整隊列方程 (Pooled Cohort Equations)」。</li>
+                        <li><strong>ESC (European Society of Cardiology)：</strong>心血管疾病預防指南建議框架。</li>
+                    </ul>
+                </div>
+            </details>
         </section>
 
         <div class="divider"></div>
@@ -263,6 +457,42 @@
                 </p>
             </div>
             <div id="ionic-balance-calc-root"></div>
+
+            <details class="professional-insight-card">
+                <summary class="insight-summary">
+                    <div class="insight-icon"><i class="fas fa-balance-scale"></i></div>
+                    <div class="insight-header">
+                        <span class="insight-title">專業洞察：鈉鉀平衡——靜默的血壓守護者</span>
+                        <span class="insight-preview">深入了解「鈉鉀幫浦」與現代飲食中的礦物質陷阱。</span>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </summary>
+                <div class="insight-content">
+                    <h4>為什麼您需要這個工具？</h4>
+                    <p>現代飲食中充斥著過量的加工鹽分（鈉），卻嚴重缺乏來自天然植物的鉀。這種「高鈉低鉀」的失衡是導致現代人高血壓、水腫與慢性血管損傷的核心誘因。單純<a
+                            href="/post/sodium.html">少吃鹽（減鈉）</a>往往不夠，必須同時<a
+                            href="/post/potassium.html">補對鉀</a>才能啟動身體的平衡機制。</p>
+
+                    <h4>這項工具如何幫助您？</h4>
+                    <p>本工具協助監測您的<strong>鈉鉀比值 (Na:K Ratio)</strong>。WHO 指出理想比值應接近
+                        1.0。透過優化這個比值，您可以有效調節細胞內外的滲透壓，減輕心臟負擔，從根本優化血壓管理。</p>
+
+                    <h4>使用方法</h4>
+                    <ul>
+                        <li><strong>步驟 1：</strong>對照營養標示或食物資料庫，估算您整日的鈉攝取總量（毫克）。</li>
+                        <li><strong>步驟 2：</strong>同樣估算您的鉀攝取總量。</li>
+                        <li><strong>步驟 3：</strong>查看計算出的比值。若數值高於 1.0，建議增加深綠色蔬菜、豆類或<a
+                                href="/post/food/avocado.html">酪梨</a>與<a
+                                href="/post/food/sweet_potato.html">地瓜</a>等高鉀食物的比例。</li>
+                    </ul>
+
+                    <h4>權威科學來源</h4>
+                    <ul>
+                        <li><strong>WHO (World Health Organization)：</strong>建議成人每日攝取低於 2000mg 的鈉，並攝取至少 3510mg 的鉀。</li>
+                        <li><strong>DASH Diet (飲食防治高血壓計畫)：</strong>強調增加鉀攝取量對於降低收縮壓的顯著效果。</li>
+                    </ul>
+                </div>
+            </details>
         </section>
 
         <div class="divider"></div>
@@ -276,6 +506,40 @@
                 </p>
             </div>
             <div id="zone2-calc-root"></div>
+
+            <details class="professional-insight-card">
+                <summary class="insight-summary">
+                    <div class="insight-icon"><i class="fas fa-running"></i></div>
+                    <div class="insight-header">
+                        <span class="insight-title">專業洞察：Zone 2 訓練——啟動細胞能量工廠</span>
+                        <span class="insight-preview">為什麼「慢有氧」能修復粒線體並提升脂肪代謝力？</span>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </summary>
+                <div class="insight-content">
+                    <h4>為什麼您需要這個工具？</h4>
+                    <p>很多人的運動習慣是「越累越好」，盲目追求汗流浹背。然而，長期的高強度訓練可能導致慢性發炎與代謝僵化。如果您感到運動後疲憊不堪卻遲遲不見體質改善，可能就是強度設定錯了。建議搭配<a
+                            href="/post/magnesium.html">補充鎂質</a>來幫助肌肉放鬆與能量恢復。</p>
+
+                    <h4>這項工具如何幫助您？</h4>
+                    <p> Zone 2
+                        是<strong>「脂肪氧化效率最高」</strong>的區間，也是修復粒線體的黃金地帶。本工具精準算出您的運動強度範圍，確保您的有氧訓練能真正優化「代謝靈活度」，在不造成身體多餘壓力的情況下，建立強大的健康基石。
+                    </p>
+
+                    <h4>使用方法</h4>
+                    <ul>
+                        <li><strong>步驟 1：</strong>輸入您的年齡，以及在早晨清醒時測得的「安靜心率」。</li>
+                        <li><strong>步驟 2：</strong>計算機會提供 Karvonen（精準評估）與 Maffetone 180（保守建議）兩種目標範圍。</li>
+                        <li><strong>步驟 3：</strong>在長時數（30-60分鐘）的有氧運動中，將心率維持在建議區間。</li>
+                    </ul>
+
+                    <h4>權威科學來源</h4>
+                    <ul>
+                        <li><strong>Dr. Iñigo San Millán：</strong>科羅拉多大學代謝科學權威，研究證實 Zone 2 訓練對於粒線體修復的價值。</li>
+                        <li><strong>Phil Maffetone：</strong>180 訓練法的創始人，強調低心率訓練對於建立代謝基礎的重要性。</li>
+                    </ul>
+                </div>
+            </details>
         </section>
 
     </main>
