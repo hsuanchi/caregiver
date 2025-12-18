@@ -31,6 +31,7 @@
 const articlesData = [
     {
         id: 'card-vitamin-b',
+        parent: 'category-archive',
         type: '維生素類',
         goals: ['能量代謝', '神經與情緒健康', '皮膚與黏膜健康', '血紅素與氣色'],
         name: '維生素B群',
@@ -48,6 +49,7 @@ const articlesData = [
     },
     {
         id: 'card-folic-acid',
+        parent: 'topic-card-cardiovascular-health',
         type: '維生素類',
         goals: ['心血管健康', '新生與發育', '神經與情緒健康', '血紅素與氣色'],
         name: '葉酸',
@@ -65,6 +67,7 @@ const articlesData = [
     },
     {
         id: 'card-vitamin-c',
+        parent: 'topic-card-immune-boosting',
         type: '維生素類',
         goals: ['免疫強化', '抗氧化與抗發炎', '肌膚與膠原蛋白'],
         name: '維生素C',
@@ -82,6 +85,7 @@ const articlesData = [
     },
     {
         id: 'card-vitamin-a',
+        parent: 'topic-card-immune-boosting',
         type: '維生素類',
         goals: ['視力維護', '免疫強化', '皮膚與黏膜健康', '生長發育與修復'],
         name: '維生素A',
@@ -99,6 +103,8 @@ const articlesData = [
     },
     {
         id: 'card-vitamin-d',
+        parent: 'category-archive',
+        parent: 'topic-card-cardiovascular-health',
         type: '維生素類',
         goals: ['骨骼與牙齒健康', '免疫強化', '內分泌調節', '神經與情緒健康'],
         name: '維生素D',
@@ -116,6 +122,7 @@ const articlesData = [
     },
     {
         id: 'card-vitamin-e',
+        parent: 'category-archive',
         type: '維生素類',
         goals: ['抗氧化與抗發炎', '心血管健康', '細胞保護', '皮膚與黏膜健康'],
         name: '維生素E',
@@ -133,6 +140,7 @@ const articlesData = [
     },
     {
         id: 'card-vitamin-k',
+        parent: 'category-archive',
         type: '維生素類',
         goals: ['骨骼與牙齒健康', '心血管健康', '血液凝固'],
         name: '維生素K',
@@ -150,6 +158,7 @@ const articlesData = [
     },
     {
         id: 'card-vitamin-k2',
+        parent: 'topic-card-cardiovascular-health',
         type: '維生素類',
         goals: ['骨骼與牙齒健康', '心血管健康'],
         name: '維生素K2 (MK-7)',
@@ -167,6 +176,7 @@ const articlesData = [
     },
     {
         id: 'card-calcium',
+        parent: 'category-archive',
         type: '礦物質類',
         goals: ['骨骼與牙齒健康', '神經與肌肉功能', '睡眠與放鬆'],
         name: '鈣',
@@ -184,6 +194,7 @@ const articlesData = [
     },
     {
         id: 'card-magnesium',
+        parent: 'topic-card-cardiovascular-health',
         type: '礦物質類',
         goals: ['睡眠與放鬆', '神經與肌肉功能', '能量代謝', '心血管健康', '血糖穩定', '骨骼與牙齒健康'],
         name: '鎂',
@@ -201,6 +212,7 @@ const articlesData = [
     },
     {
         id: 'card-potassium',
+        parent: 'topic-card-cardiovascular-health',
         type: '礦物質類',
         goals: ['心血管健康', '體液平衡', '神經與肌肉功能'],
         name: '鉀',
@@ -218,6 +230,7 @@ const articlesData = [
     },
     {
         id: 'card-sodium',
+        parent: 'topic-card-cardiovascular-health',
         type: '礦物質類',
         goals: ['體液平衡', '神經與肌肉功能'],
         name: '鈉',
@@ -235,6 +248,7 @@ const articlesData = [
     },
     {
         id: 'card-phosphorus',
+        parent: 'category-archive',
         type: '礦物質類',
         goals: ['骨骼與牙齒健康', '能量代謝'],
         name: '磷',
@@ -252,6 +266,7 @@ const articlesData = [
     },
     {
         id: 'card-iron',
+        parent: 'category-archive',
         type: '礦物質類',
         goals: ['血紅素與氣色', '能量代謝', '新生與發育', '腦部認知'],
         name: '鐵',
@@ -269,6 +284,7 @@ const articlesData = [
     },
     {
         id: 'card-zinc',
+        parent: 'topic-card-immune-boosting',
         type: '礦物質類',
         goals: ['免疫強化', '生長發育與修復', '皮膚與黏膜健康', '男性保健', '內分泌調節'],
         name: '鋅',
@@ -286,6 +302,7 @@ const articlesData = [
     },
     {
         id: 'card-iodine',
+        parent: 'category-archive',
         type: '礦物質類',
         goals: ['甲狀腺與代謝', '內分泌調節', '新生與發育', '腦部認知'],
         name: '碘',
@@ -303,6 +320,7 @@ const articlesData = [
     },
     {
         id: 'card-selenium',
+        parent: 'topic-card-cardiovascular-health',
         type: '礦物質類',
         goals: ['抗氧化與抗發炎', '細胞保護', '甲狀腺與代謝', '免疫強化', '男性保健'],
         name: '硒',
@@ -320,6 +338,8 @@ const articlesData = [
     },
     {
         id: 'card-copper',
+        parent: 'category-archive',
+        parent: 'topic-card-cardiovascular-health',
         type: '礦物質類',
         goals: ['能量代謝', '細胞保護', '血紅素與氣色', '肌膚與膠原蛋白', '神經與情緒健康'],
         name: '銅',
@@ -337,6 +357,7 @@ const articlesData = [
     },
     {
         id: 'card-manganese',
+        parent: 'category-archive',
         type: '礦物質類',
         goals: ['骨骼與牙齒健康', '抗氧化與抗發炎', '能量代謝', '關節與軟骨'],
         name: '錳',
@@ -354,6 +375,7 @@ const articlesData = [
     },
     {
         id: 'card-fluoride',
+        parent: 'category-archive',
         type: '礦物質類',
         goals: ['骨骼與牙齒健康'],
         name: '氟',
@@ -371,6 +393,7 @@ const articlesData = [
     },
     {
         id: 'card-chromium',
+        parent: 'topic-card-cardiovascular-health',
         type: '機能性成分',
         goals: ['血糖穩定', '體重管理', '能量代謝'],
         name: '鉻',
@@ -388,6 +411,7 @@ const articlesData = [
     },
     {
         id: 'card-glucosamine',
+        parent: 'category-archive',
         type: '機能性成分',
         goals: ['關節與軟骨', '運動修復與支持'],
         name: '葡萄糖胺',
@@ -405,6 +429,7 @@ const articlesData = [
     },
     {
         id: 'card-chondroitin',
+        parent: 'category-archive',
         type: '機能性成分',
         goals: ['關節與軟骨', '運動修復與支持', '抗氧化與抗發炎'],
         name: '軟骨素',
@@ -422,6 +447,8 @@ const articlesData = [
     },
     {
         id: 'card-collagen',
+        parent: 'category-archive',
+        parent: 'topic-card-cardiovascular-health',
         type: '機能性成分',
         goals: ['肌膚與膠原蛋白', '關節與軟骨', '骨骼與牙齒健康'],
         name: '膠原蛋白',
@@ -439,6 +466,7 @@ const articlesData = [
     },
     {
         id: 'card-lutein',
+        parent: 'category-archive',
         type: '機能性成分',
         goals: ['視力維護', '抗氧化與抗發炎', '腦部認知'],
         name: '葉黃素',
@@ -456,6 +484,7 @@ const articlesData = [
     },
     {
         id: 'card-curcumin',
+        parent: 'category-archive',
         type: '機能性成分',
         goals: ['抗氧化與抗發炎', '消化道健康', '細胞保護', '關節與軟骨', '肝臟解毒與代謝'],
         name: '薑黃素',
@@ -473,6 +502,7 @@ const articlesData = [
     },
     {
         id: 'card-lycopene',
+        parent: 'topic-card-cardiovascular-health',
         type: '機能性成分',
         goals: ['抗氧化與抗發炎', '心血管健康', '細胞保護', '男性保健'],
         name: '茄紅素',
@@ -490,6 +520,7 @@ const articlesData = [
     },
     {
         id: 'card-anthocyanins',
+        parent: 'topic-card-cardiovascular-health',
         type: '機能性成分',
         goals: ['抗氧化與抗發炎', '視力維護', '心血管健康'],
         name: '花青素',
@@ -507,6 +538,7 @@ const articlesData = [
     },
     {
         id: 'card-coenzyme-q10',
+        parent: 'topic-card-cardiovascular-health',
         type: '機能性成分',
         goals: ['心血管健康', '能量代謝', '抗氧化與抗發炎', '皮膚與黏膜健康'],
         name: '輔酶Q10',
@@ -524,6 +556,7 @@ const articlesData = [
     },
     {
         id: 'card-probiotics',
+        parent: 'topic-card-immune-boosting',
         type: '機能性成分',
         goals: ['腸道菌群平衡', '免疫強化', '消化道健康'],
         name: '益生菌',
@@ -541,6 +574,7 @@ const articlesData = [
     },
     {
         id: 'card-prebiotics',
+        parent: 'topic-card-immune-boosting',
         type: '機能性成分',
         goals: ['腸道菌群平衡', '消化道健康', '免疫強化'],
         name: '益生質',
@@ -558,6 +592,7 @@ const articlesData = [
     },
     {
         id: 'card-dietary-fiber',
+        parent: 'topic-card-cardiovascular-health',
         type: '機能性成分',
         goals: ['消化道健康', '體重管理', '腸道菌群平衡', '血糖穩定', '心血管健康'],
         name: '膳食纖維',
@@ -575,6 +610,7 @@ const articlesData = [
     },
     {
         id: 'card-fish-oil',
+        parent: 'topic-card-cardiovascular-health',
         type: '機能性成分',
         goals: ['心血管健康', '腦部認知', '抗氧化與抗發炎', '視力維護', '神經與情緒健康'],
         name: '魚油',
@@ -592,6 +628,7 @@ const articlesData = [
     },
     {
         id: 'card-gaba',
+        parent: 'category-archive',
         type: '機能性成分',
         goals: ['睡眠與放鬆', '神經與情緒健康'],
         name: 'GABA',
@@ -609,6 +646,7 @@ const articlesData = [
     },
     {
         id: 'card-glutathione',
+        parent: 'topic-card-immune-boosting',
         type: '機能性成分',
         goals: ['肝臟解毒與代謝', '肌膚與膠原蛋白', '抗氧化與抗發炎', '免疫強化'],
         name: '穀胱甘肽',
@@ -626,6 +664,7 @@ const articlesData = [
     },
     {
         id: 'card-amino-acids',
+        parent: 'topic-card-cardiovascular-health',
         type: '機能性成分',
         goals: ['運動修復與支持', '肌肉與能量', '肝臟解毒與代謝', '神經與情緒健康'],
         name: '胺基酸',
@@ -643,6 +682,7 @@ const articlesData = [
     },
     {
         id: 'card-beta-glucan',
+        parent: 'topic-card-cardiovascular-health',
         type: '機能性成分',
         goals: ['免疫強化', '心血管健康', '血糖穩定', '腸道菌群平衡'],
         name: 'β-葡聚醣',
@@ -660,6 +700,7 @@ const articlesData = [
     },
     {
         id: 'card-official-sites',
+        parent: 'category-archive',
         type: '其他',
         goals: [],
         name: '權威營養資訊',
@@ -677,6 +718,7 @@ const articlesData = [
     },
     {
         id: 'card-garlic',
+        parent: 'topic-card-cardiovascular-health',
         type: '機能性成分',
         goals: ['心血管健康', '抗氧化與抗發炎', '免疫強化', '細胞保護'],
         name: '大蒜素',
@@ -694,6 +736,7 @@ const articlesData = [
     },
     {
         id: 'card-plant-sterols',
+        parent: 'topic-card-cardiovascular-health',
         type: '機能性成分',
         goals: ['心血管健康', '細胞保護'],
         name: '植物固醇',
@@ -711,6 +754,7 @@ const articlesData = [
     },
     {
         id: 'card-health-tools',
+        parent: 'home',
         type: '實用工具',
         goals: ['心血管健康', '運動修復與支持', '精準營養測量'],
         name: '健康計算機工具箱',
@@ -728,6 +772,7 @@ const articlesData = [
     },
     {
         id: 'card-protein',
+        parent: 'category-archive',
         type: '蛋白質類',
         goals: ['運動修復與支持', '肌肉與能量', '生長發育與修復', '體重管理'],
         name: '蛋白質',
@@ -825,6 +870,7 @@ const articlesData = [
 const topicArticles = [
     {
         id: 'topic-card-stroke-prevention',
+        parent: 'category-health-topics',
         goal: '心血管健康',
         title: '避免中風的5大關鍵營養素 - 建立心血管防線的飲食全攻略',
         link: '/post/topic-stroke-prevention-nutrients.html',
@@ -842,6 +888,7 @@ const topicArticles = [
     },
     {
         id: 'topic-card-immune-boosting',
+        parent: 'category-health-topics',
         goal: '免疫強化',
         title: '強化免疫力的9大關鍵營養素 - 打造黃金免疫部隊的全方位指引',
         link: '/post/topic-immune-boosting-nutrients.html',
@@ -859,6 +906,7 @@ const topicArticles = [
     },
     {
         id: 'topic-card-vascular-health',
+        parent: 'category-health-topics',
         goal: '心血管健康',
         title: '逆轉血管硬化：保養血管最好的5種超級食物與3大生活習慣',
         link: '/post/topic-vascular-health-superfoods.html',
@@ -876,6 +924,7 @@ const topicArticles = [
     },
     {
         id: 'topic-card-cardiovascular-health',
+        parent: 'category-health-topics',
         goal: '心血管健康',
         title: '心血管健康 - 全方位護心指南',
         link: '/post/topic-cardiovascular-health.html',

@@ -1,6 +1,6 @@
-# 任務規格：導覽標記 (Breadcrumb) 專業化優化
+# 任務規格：導覽標記 (Breadcrumb) 專業化優化 (v2.0)
 
-**目標**: 重構網站的導覽標記 (Breadcrumb) 系統，使其符合 2024-2025 年的專業 SEO 與無障礙設計標準。
+**目標**: 重構網站的導覽標記 (Breadcrumb) 系統，使其符合 2024-2025 年的專業 SEO 與無障礙設計標準，並採用高內聚、可維護的自動化組件方案。
 
 ---
 
@@ -10,33 +10,23 @@
 - **格式**: JSON-LD `BreadcrumbList`。
 - **屬性**: 每個項目必須包含 `position`、`name` 和 `item` (URL)。
 - **階層**: 必須反映網站的邏輯結構（首頁 > 分類 > 當前頁面）。
+- **注入位置 (優化)**: 為確保最佳的搜尋引擎相容性，JSON-LD 的 `<script>` 標籤**必須**被注入到主頁面的 `<head>` (Light DOM) 中，而非 Shadow DOM 內部。
 
 ### 使用者體驗與無障礙設計 (WAI-ARIA)
 - **容器**: `<nav aria-label="Breadcrumb">`。
 - **結構**: 使用有序列表 `<ol>` 以表示邏輯順序。
 - **當前頁面**: 最後一個項目必須加上 `aria-current="page"` 屬性，且**不應**是可點擊的連結。
-- **微互動**: 包含細緻的滑鼠懸停效果與一致的分隔符號（例如 `/` 或 `>`）。
 
 ### 視覺設計與佈局
-- **響應式設計**: 確保導覽標記在行動裝置上能優雅地換行或截斷（必要時可使用 `white-space: nowrap` 和 `overflow-x: auto`）。
+- **樣式一致性 (優化)**: 組件應使用 CSS 變數（例如 `var(--primary-color, #fallback)`) 來接收全域樣式，確保其外觀與網站主題一致。
+- **響應式設計**: 確保導覽標記在行動裝置上能優雅地橫向滾動。
 - **位置**: 固定放置在文章內容中 `h1` 標題的上方。
 
 ---
 
-## 1.1. 採用自動化組件方案的理由
+## 2. 技術路線圖：自動化 Custom Element 方案
 
-鑑於本專案的架構（零依賴、原生 JavaScript、組件化、使用 Shadow DOM 進行隔離）以及大量的文章頁面，手動更新導覽標記不僅效率低下，且容易出錯。因此，我們將採用一個自動化的組件式解決方案。此策略具有以下優勢：
-
-*   **可維護性**: 集中化的邏輯意味著未來對導覽標記的結構、樣式或邏輯的任何修改，都只需編輯單一組件。
-*   **可擴展性**: 新增內容時僅需更新資料來源，而無需手動編輯 HTML。
-*   **一致性與可靠性**: 自動化能確保所有頁面上的導覽標記都是統一且無錯誤的。
-*   **架構一致性**: 與專案現有的「將功能封裝在 JavaScript 組件中」的模式保持一致。
-
----
-
-## 2. 技術路線圖：自動化組件方案
-
-此路線圖專注於建立一個動態的 `BreadcrumbComponent.js`，以程式化方式生成導覽標記。
+此路線圖專注於建立一個名為 `<breadcrumb-component>` 的動態自訂元素 (Custom Element)，以程式化方式生成導覽標記。
 
 ### 步驟一：集中化階層數據 (數據驅動)
 
@@ -49,91 +39,209 @@
 ```javascript
 const articlesData = {
   // ... 其他條目
-  'home': {
-    name: '首頁',
-    path: '/', // 假設 '/' 是首頁路徑
-    parent: null // 根元素
-  },
-  'health-topics': {
-    name: '健康主題',
-    path: '/category/health-topics.html',
-    parent: 'home'
-  },
-  'topic-cardiovascular-health': {
-    name: '心血管健康',
-    path: '/post/topic-cardiovascular-health.html',
-    parent: 'health-topics'
-  },
-  'fish-oil': {
-    name: '魚油',
-    path: '/post/fish-oil.html',
-    parent: 'topic-cardiovascular-health'
-  }
+  'home': { name: '首頁', path: '/', parent: null },
+  'health-topics': { name: '健康主題', path: '/category/health-topics.html', parent: 'home' },
+  'topic-cardiovascular-health': { name: '心血管健康', path: '/post/topic-cardiovascular-health.html', parent: 'health-topics' },
+  'fish-oil': { name: '魚油', path: '/post/fish-oil.html', parent: 'topic-cardiovascular-health' }
   // ... 等等
 };
 ```
 
-### 步驟二：開發 `BreadcrumbComponent.js` 組件
+### 步驟二：開發 `<breadcrumb-component>` 組件
 
-此組件是新系統的核心。
+此自訂元素是新系統的核心，將被封裝在 `assets/js/components/BreadcrumbComponent.js` 中。
 
-*   **動作**: 在 `assets/js/components/BreadcrumbComponent.js` 建立新檔案。
-*   **功能**:
-    1.  組件的建構函數 (`constructor`) 將接受一個 `containerElement`（將要渲染導覽標記的 DOM 元素）和當前頁面的 `articleId`（例如 'fish-oil'）。
-    2.  它將使用 `articleId` 在 `articlesData` 中查找當前頁面。
-    3.  它將使用 `parent` 屬性遞迴地遍歷階層，直到找到 `null`（首頁），從而建立完整的路徑。
-    4.  它將動態生成完整的導覽標記 HTML，包括：
-        *   一個 `<nav aria-label="Breadcrumb">` 容器。
-        *   一個 `<ol>` 列表。
-        *   路徑中每個項目的 `<li>` 元素。
-        *   當前頁面的最後一個 `<li>` 將是一個帶有 `aria-current="page"` 的 `<span>`，且不可點擊。
-    5.  它還將根據生成的路徑，動態生成一個包含 `BreadcrumbList` 結構化資料的 `<script type="application/ld+json">` 標籤。
-    6.  最後，它會將 HTML 和 JSON-LD 一起渲染到 `containerElement` 中。根據專案慣例，該組件必須將其 CSS 封裝在 Shadow DOM 內。
+*   **功能與內部邏輯**:
+    1.  **資料接收**: 組件將通過 `article-id` 屬性接收當前頁面的 ID。
+    2.  **路徑解析 (`buildPath`)**:
+        -   內部具有一個純邏輯函數，根據 `article-id` 遞迴地遍歷 `articlesData` 中的 `parent` 屬性，建立出完整的路徑陣列 `pathArray`。
+        -   **防呆機制**: 遞迴邏輯中必須包含最大深度限制（例如 10 層）或已訪問節點檢查，以防止因數據配置錯誤導致的無限迴圈。
+    3.  **JSON-LD 生成 (`generateJSONLD`)**:
+        -   此函數接收 `pathArray`，生成符合 `BreadcrumbList` 規範的 JSON 物件。
+        -   **關鍵**: 它會建立一個 `<script type="application/ld+json">` 標籤，並將其**注入到主文件的 `<head>` 中**，確保 SEO 效果。
+    4.  **HTML 渲染 (`render`)**:
+        -   此函數同樣接收 `pathArray`，在 Shadow DOM 中生成符合 WAI-ARIA 標準的 `<nav>` 和 `<ol>` HTML 結構。
+        -   CSS 將被完全封裝在 Shadow DOM 內，並使用 CSS 變數來適配網站主題。
+    5.  **生命週期**: 使用 `attributeChangedCallback` 監聽 `article-id` 屬性的變化，實現動態更新。
 
 ### 步驟三：整合組件至範本
 
 *   **動作**: 修改主要文章範本 `post/00template.html`。
 *   **細節**:
     1.  移除任何現有的硬編碼導覽標記 HTML。
-    2.  在其位置上，新增一個空的佔位符：`<div id="breadcrumb-container"></div>`。
-    3.  新增一個 `<script>` 區塊，用於：
-        *   確保 `BreadcrumbComponent.js` 已被載入。
-        *   獲取當前頁面的 `articleId`（例如，從 `<body>` 標籤的 `data-article-id` 屬性中獲取）。
-        *   實例化 `BreadcrumbComponent`，將容器元素和 `articleId` 傳遞給它。
-        *   呼叫組件上的 `initialize()` 或 `render()` 方法來生成並注入導覽標記。
+    2.  在原位置上，直接使用自訂元素標籤，並傳入當前頁面的 `articleId`。
+        ```html
+        <!-- 假設 articleId 是從 body 的 data-article-id 屬性讀取 -->
+        <breadcrumb-component 
+            id="breadcrumb-component-container"
+            article-id="CURRENT_ARTICLE_ID">
+        </breadcrumb-component>
+
+        <script>
+          // 腳本獲取 articleId 並設置到組件上
+          const articleId = document.body.dataset.articleId;
+          document.getElementById('breadcrumb-component-container').setAttribute('article-id', articleId);
+        </script>
+        ```
+    3.  確保 `BreadcrumbComponent.js` 腳本已在頁面中被正確引入。
 
 ### 步驟四：全站部署與驗證
 
-*   **動作**: 由於大多數頁面都使用 `00template.html`，這些變更將自動應用於全站。對於未使用主要範本的特定頁面（例如，某些 `category/*.html` 檔案或 `index.html`），需要手動添加容器 `div` 和組件初始化腳本。
-*   **任務**:
-    1.  確保 `BreadcrumbComponent.js` 在所有相關頁面上被正確載入。
-    2.  執行驗證步驟：
-        *   使用 W3C 驗證器驗證 HTML。
-        *   使用 Google 的複合式搜尋結果測試工具驗證 `BreadcrumbList` 結構化資料。
-        *   執行無障礙檢查，確保螢幕閱讀器能正確解讀新結構。
+*   **動作**: 由於大多數頁面都基於範本，變更將自動應用於全站。對未使用範本的頁面進行手動整合。
+*   **任務**: 執行驗證步驟，包括 W3C HTML 驗證、Google 複合式搜尋結果測試及螢幕閱讀器相容性測試。
 
 ---
 
 ## 3. 任務執行檢查清單
 
 ### 階段一：資料準備與組件開發
-- [ ] 更新 `assets/js/articles-data.js`，為所有相關的文章和分類添加 `parent` 和 `path` 屬性。 <!-- id: 0 -->
-- [ ] 建立 `assets/js/components/BreadcrumbComponent.js`，具備動態生成 HTML 和 JSON-LD 的功能。 <!-- id: 1 -->
+- [ ] 更新 `assets/js/articles-data.js`，為所有相關條目添加 `parent` 和 `path` 屬性。 <!-- id: 0 -->
+- [ ] 建立 `<breadcrumb-component>` 自訂元素 (`assets/js/components/BreadcrumbComponent.js`)。 <!-- id: 1 -->
     - [ ] 實作 Shadow DOM 以封裝 CSS。 <!-- id: 2 -->
-    - [ ] 實作遍歷 `articlesData` 階層的邏輯。 <!-- id: 3 -->
-    - [ ] 生成語意化的 HTML（`<nav>`, `<ol>`, `<li>`, 以及用於當前頁面的 `<span>`）。 <!-- id: 4 -->
-    - [ ] 應用 WAI-ARIA 屬性（`aria-label`, `aria-current`）。 <!-- id: 5 -->
-    - [ ] 生成 JSON-LD `BreadcrumbList` 結構化資料。 <!-- id: 6 -->
+    - [ ] 實作遍歷 `articlesData` 階層的 `buildPath` 邏輯。 <!-- id: 3 -->
+    - [ ] **(優化)** 在 `buildPath` 中加入遞迴防呆機制（如最大深度限制）。 <!-- id: 3a -->
+    - [ ] 生成語意化的 HTML (`<nav>`, `<ol>`) 並應用 WAI-ARIA 屬性。 <!-- id: 4 -->
+    - [ ] **(優化)** 在組件的 CSS 中使用 CSS 變數（如 `var(--primary-color)`)。 <!-- id: 5a -->
+    - [ ] **(優化)** 建立 `generateJSONLD` 函數，將 `BreadcrumbList` 腳本**注入 Light DOM 的 `<head>`**。 <!-- id: 6 -->
 
 ### 階段二：範本整合與初步部署
 - [ ] 重構 `post/00template.html`: <!-- id: 7 -->
     - [ ] 移除現有的導覽標記 HTML。 <!-- id: 8 -->
-    - [ ] 新增 `<div id="breadcrumb-container"></div>` 佔位符。 <!-- id: 9 -->
-    - [ ] 新增腳本以載入並初始化 `BreadcrumbComponent.js`，並傳遞 `articleId`。 <!-- id: 10 -->
-- [ ] 根據需要，將組件整合到關鍵的非範本頁面（例如 `category/tools.html`, `index.html`）。 <!-- id: 11 -->
+    - [ ] **(優化)** 直接插入 `<breadcrumb-component>` 自訂元素標籤。 <!-- id: 9 -->
+    - [ ] 新增腳本以動態設定組件的 `article-id` 屬性。 <!-- id: 10 -->
+- [ ] 將組件整合到關鍵的非範本頁面。 <!-- id: 11 -->
 
 ### 階段三：全域覆蓋與驗證
-- [ ] 確保所有剩餘的 `post/` 和 `food/` 文章都能正確顯示新的導覽標記。 <!-- id: 12 -->
+- [ ] 確保所有 `post/` 和 `food/` 文章都能正確顯示新的導覽標記。 <!-- id: 12 -->
 - [ ] 驗證 HTML (W3C)。 <!-- id: 13 -->
-- [ ] 驗證複合式搜尋結果 (Google Search Console Simulator)。 <!-- id: 14 -->
+- [ ] 驗證複合式搜尋結果 (Google)。 <!-- id: 14 -->
 - [ ] 無障礙檢查 (螢幕閱讀器相容性)。 <!-- id: 15 -->
+
+---
+
+## 4. 程式碼實作參考 (Code Implementation Reference)
+
+以下是 `<breadcrumb-component>` 的核心邏輯草稿，已整合上述優化建議：
+
+```javascript
+class BreadcrumbComponent extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
+  // 監聽 'article-id' 屬性，以便動態傳入
+  static get observedAttributes() { return ['article-id']; }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'article-id' && oldValue !== newValue) {
+      this.render(newValue);
+    }
+  }
+
+  buildPath(articleId) {
+    const path = [];
+    let currentId = articleId;
+    let depth = 0;
+    const maxDepth = 10; // 防呆機制：防止無限迴圈
+
+    // 假設 articlesData 是全域變數或已匯入
+    while (currentId && articlesData[currentId] && depth < maxDepth) {
+      const item = articlesData[currentId];
+      // 將項目加到陣列開頭
+      path.unshift({
+        name: item.name,
+        url: item.path,
+        isCurrent: depth === 0
+      });
+      
+      currentId = item.parent;
+      depth++;
+    }
+    return path;
+  }
+
+  generateJSONLD(pathArray) {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": pathArray.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        // URL 必須是絕對路徑
+        "item": window.location.origin + item.url 
+      }))
+    };
+
+    // 檢查是否已存在，避免重複注入
+    let script = document.getElementById('json-ld-breadcrumb');
+    if (!script) {
+      script = document.createElement('script');
+      script.id = 'json-ld-breadcrumb';
+      script.type = 'application/ld+json';
+      document.head.appendChild(script); // 注入到 Light DOM 的 head
+    }
+    script.textContent = JSON.stringify(schema, null, 2);
+  }
+
+  render(articleId) {
+    if (!articleId) return;
+    const pathArray = this.buildPath(articleId);
+    
+    // 1. 生成 JSON-LD (作為副作用執行)
+    this.generateJSONLD(pathArray);
+
+    // 2. 生成視覺化 HTML 到 Shadow DOM
+    this.shadowRoot.innerHTML = `
+      <style>
+        :host { 
+          display: block; 
+          --separator: '/';
+          --link-color: var(--primary-color, #007bff);
+          --text-color: var(--text-secondary, #6c757d);
+          --hover-color: var(--primary-color-dark, #0056b3);
+        }
+        nav { font-size: 0.9rem; color: var(--text-color); }
+        ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; }
+        li { display: inline-flex; align-items: center; }
+        li:not(:last-child)::after {
+          content: var(--separator);
+          margin: 0 0.5rem;
+          color: #ccc;
+        }
+        a { text-decoration: none; color: var(--link-color); }
+        a:hover { text-decoration: underline; color: var(--hover-color); }
+        span[aria-current="page"] { color: inherit; font-weight: bold; }
+        
+        /* 行動裝置優化：橫向滾動 */
+        @media (max-width: 600px) {
+           ol { 
+             flex-wrap: nowrap; 
+             overflow-x: auto; 
+             white-space: nowrap; 
+             padding-bottom: 5px; 
+             -ms-overflow-style: none;  /* IE and Edge */
+             scrollbar-width: none;  /* Firefox */
+           }
+           ol::-webkit-scrollbar { display: none; } /* Chrome, Safari, and Opera */
+        }
+      </style>
+      <nav aria-label="Breadcrumb">
+        <ol>
+          ${pathArray.map(item => `
+            <li>
+              ${!item.isCurrent && item.url
+                ? `<a href="${item.url}">${item.name}</a>`
+                : `<span aria-current="page">${item.name}</span>`
+              }
+            </li>
+          `).join('')}
+        </ol>
+      </nav>
+    `;
+  }
+}
+
+// customElements.define('breadcrumb-component', BreadcrumbComponent);
+```

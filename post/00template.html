@@ -49,22 +49,7 @@
     }
     </script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "營養百科",
-        "item": "https://life.maxlist.xyz/"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "鋅 - 點燃300種代謝反應的生命火星塞"
-      }]
-    }
-    </script>
+    
 
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -256,11 +241,10 @@
       <main class="article-content">
         <header class="article-header">
           <div class="article-hero">
-            <nav class="breadcrumb">
-              <a href="../index.html">首頁</a>
-              <span class="separator">/</span>
-              <span>鋅 - 點燃300種代謝反應的生命火星塞</span>
-            </nav>
+
+            <breadcrumb-component 
+                id="breadcrumb-component-container">
+            </breadcrumb-component>
             <span class="article-category">礦物質</span>
             <h1 class="article-title" id="page-title">鋅 - 點燃300種代謝反應的生命火星塞</h1>
             <p class="article-subtitle">掉髮、皮膚差、免疫力下降？您可能不是太累，而是身體缺乏了點燃代謝反應的關鍵火星塞——鋅。</p>
@@ -499,6 +483,7 @@
     <script src="../assets/js/deus-header-component.js"></script>
     <script src="../assets/js/deus-footer-component.js"></script>
     <script src="../assets/js/articles-data.js"></script>
+    <script src="../assets/js/components/BreadcrumbComponent.js"></script>
     <script src="../assets/js/related-articles-component.js"></script>
     <script src="../assets/js/responsive-toc-component.js"></script>
 
@@ -537,8 +522,14 @@
         if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
         if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
 
-        const relatedContainer = document.getElementById("related-articles-container");
+        // Initialize BreadcrumbComponent
         const articleId = document.body.dataset.articleId;
+        const breadcrumbComponent = document.getElementById('breadcrumb-component-container');
+        if (breadcrumbComponent && articleId) {
+            breadcrumbComponent.setAttribute('article-id', articleId);
+        }
+
+        const relatedContainer = document.getElementById("related-articles-container");
         if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
           new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
         }
