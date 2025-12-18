@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>健康計算機工具箱 | 營養百科</title>
+    <meta name="description" content="提供專業的咖啡因耐受度計算、魚油真實成本計算等健康工具，幫助您做出更精準的營養決策。" />
+    <meta name="keywords" content="健康工具, 咖啡因計算機, 魚油計算機, 營養計算, 健康評估" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../pic/Nutrition Encyclopedia.png">
+    <link rel="shortcut icon" type="image/png" href="../pic/Nutrition Encyclopedia.png">
+
+    <!-- JSON-LD for Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "營養百科",
+        "item": "https://life.maxlist.xyz/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "健康計算機工具箱"
+      }]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #2d3748;
+            background: #faf8f5;
+        }
+
+        .main-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 120px 20px 60px;
+        }
+
+        .tools-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .tools-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        .tools-subtitle {
+            font-size: 1.1rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tool-section {
+            margin-bottom: 80px;
+            scroll-margin-top: 100px;
+        }
+
+        .tool-info {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            text-align: center;
+        }
+
+        .tool-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #334155;
+        }
+
+        .tool-info p {
+            color: #475569;
+            font-size: 1rem;
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+            margin: 60px 0;
+        }
+
+        .tools-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #475569;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-btn:hover {
+            border-color: #ff6b35;
+            color: #ff6b35;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .tools-title {
+                font-size: 2rem;
+            }
+
+            .main-container {
+                padding-top: 100px;
+            }
+
+            .tools-nav {
+                margin-top: 20px;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-component"></div>
+
+    <main class="main-container">
+        <header class="tools-header">
+            <h1 class="tools-title">健康計算機工具箱</h1>
+            <p class="tools-subtitle">
+                科學數據化的健康管理，我們將複雜的指標轉化為簡單易懂的行動參考。
+            </p>
+            <nav class="tools-nav">
+                <a href="#caffeine-calculator" class="nav-btn">☕ 咖啡因限量</a>
+                <a href="#fish-oil-calculator" class="nav-btn">🐟 魚油性價比</a>
+                <a href="#cardio-risk-calculator" class="nav-btn">📈 心血管風險評估</a>
+                <a href="#ionic-balance-calculator" class="nav-btn">⚖️ 鈉鉀平衡比</a>
+                <a href="#zone2-calculator" class="nav-btn">🏃 Zone 2 心率</a>
+            </nav>
+        </header>
+
+        <!-- Tool 1: Caffeine Calculator -->
+        <section class="tool-section" id="caffeine-calculator">
+            <div class="tool-info">
+                <h3>咖啡因每日安全攝取限額</h3>
+                <p>
+                    咖啡因在體內的代謝速度因人而異。透過您的體重與健康狀態，我們可以推估一個相對安全的每日總攝取量紅線。
+                </p>
+            </div>
+            <div id="caffeine-calc-root"></div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Tool 2: Fish Oil Calculator -->
+        <section class="tool-section" id="fish-oil-calculator">
+            <div class="tool-info">
+                <h3>魚油真實成本計算機</h3>
+                <p>
+                    不要只看單瓶價格！真正重要的是「每 1000mg Omega-3」要花你多少錢。一分鐘識破行銷陷阱。
+                </p>
+            </div>
+            <div id="fish-oil-calc-root"></div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Tool 3: ASCVD Risk Calculator -->
+        <section class="tool-section" id="cardio-risk-calculator">
+            <div class="tool-info">
+                <h3>ASCVD 10年心血管風險評估</h3>
+                <p>
+                    基於 AHA/ACC 權威演算法，評估未來十年內發生心臟病或中風的機率。掌握數據，及早進行血管修復。
+                </p>
+            </div>
+            <div id="cardio-risk-calc-root"></div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Tool 4: Sodium-Potassium Ratio Calculator -->
+        <section class="tool-section" id="ionic-balance-calculator">
+            <div class="tool-info">
+                <h3>鈉鉀離子平衡比 (Na:K Ratio)</h3>
+                <p>
+                    WHO 指出「高鈉低鉀」是高血壓的主要誘因。透過計算您的每日攝取比值，調整礦物質比例，從根本守護血壓健康。
+                </p>
+            </div>
+            <div id="ionic-balance-calc-root"></div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Tool 5: Zone 2 Heart Rate Calculator -->
+        <section class="tool-section" id="zone2-calculator">
+            <div class="tool-info">
+                <h3>Zone 2 運動心率計算器</h3>
+                <p>
+                    低強度的有氧訓練，是改善代謝靈活度與心臟效率的關鍵。透過精準的心率區間，確保您的訓練在最佳修復帶，而非盲目消耗。
+                </p>
+            </div>
+            <div id="zone2-calc-root"></div>
+        </section>
+
+    </main>
+
+    <div id="footer-component"></div>
+
+    <!-- Core Dependencies -->
+    <script src="../assets/js/deus-analytics-component.js"></script>
+    <script src="../assets/js/deus-header-component.js"></script>
+    <script src="../assets/js/deus-footer-component.js"></script>
+
+    <!-- Tool Components -->
+    <script src="../assets/js/tools-JS/caffeine-calculator.js"></script>
+    <script src="../assets/js/tools-JS/fish-oil-calculator.js"></script>
+    <script src="../assets/js/tools-JS/cardio-risk-calculator.js"></script>
+    <script src="../assets/js/tools-JS/ionic-balance-calculator.js"></script>
+    <script src="../assets/js/tools-JS/zone2-calculator.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Init Global Components
+            if (window.DeusAnalyticsComponent) new window.DeusAnalyticsComponent().setDebug(false).setEnvironment('production');
+            if (window.DeusHeaderComponent) new window.DeusHeaderComponent(document.getElementById("header-component")).setDebug(false);
+            if (window.DeusFooterComponent) new window.DeusFooterComponent(document.getElementById("footer-component")).setDebug(false);
+
+            // Init Caffeine Calculator
+            const caffeineRoot = document.getElementById('caffeine-calc-root');
+            if (caffeineRoot && window.CaffeineCalculator) {
+                new window.CaffeineCalculator(caffeineRoot).initialize();
+            }
+
+            // Init Fish Oil Calculator
+            const fishOilRoot = document.getElementById('fish-oil-calc-root');
+            if (fishOilRoot && window.FishOilCalculator) {
+                new window.FishOilCalculator(fishOilRoot).initialize();
+            }
+
+            // Init Cardio Risk Calculator
+            const cardioRiskRoot = document.getElementById('cardio-risk-calc-root');
+            if (cardioRiskRoot && window.CardioRiskCalculator) {
+                new window.CardioRiskCalculator(cardioRiskRoot).initialize();
+            }
+
+            // Init Na:K Ratio Calculator
+            const ionicBalanceRoot = document.getElementById('ionic-balance-calc-root');
+            if (ionicBalanceRoot && window.SodiumPotassiumCalc) {
+                new window.SodiumPotassiumCalc(ionicBalanceRoot).initialize();
+            }
+
+            // Init Zone 2 Calculator
+            const zone2Root = document.getElementById('zone2-calc-root');
+            if (zone2Root && window.Zone2Calculator) {
+                new window.Zone2Calculator(zone2Root).initialize();
+            }
+        });
+    </script>
+</body>
+
+</html>

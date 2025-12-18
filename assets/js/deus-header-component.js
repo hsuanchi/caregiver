@@ -24,6 +24,7 @@
           { text: "營養素資料庫", href: "/category/nutrient-dashboard.html" },
           { text: "食物資料庫", href: "/category/foodWiki.html" },
           { text: "健康主題專區", href: "/category/health-topics.html" },
+          { text: "健康工具箱", href: "/category/tools.html" },
           { text: "文章總覽", href: "/category/archive.html" },
           { text: "專屬優惠", href: "/brand/betterbio.html" }
         ],

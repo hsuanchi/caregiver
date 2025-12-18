@@ -9,6 +9,47 @@
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
+## [1.5.7] - 2025-12-18
+### Documentation & Metadata
+- **專案文件與索引更新 (PROJECT-DOCS-UPDATE)**:
+  - **README.md**: 全面更新「互動式健康工具組件」與「專案結構」章節，新增所有五大健康計算機的描述。
+  - **Sitemap.xml**: 更新健康工具首頁的更新頻率為 `weekly`，確保搜尋引擎索引效能。
+  - **文章索引 (articles-data.js)**: 新增「大蒜素」、「植物固醇」文章與「健康計算機工具箱」元數據，同步更新文章彙整頁面 (archive.html)。
+  - **維修與清理**: 完成心血管健康工具組件的程式碼重構與目錄遷移，並清理 `CHANGELOG.md` 與 `task.md`。
+
+## [1.5.6] - 2025-12-18
+### Feat
+- **Zone 2 運動心率計算器 (CARDIO-TOOLS-EXPANSION)**:
+  - **新組件**: 開發 `Zone2Calculator` 組件，支援 Maffetone 180 (代謝保護) 與 Karvonen (運動表現) 雙公式。
+  - **視覺化反饋**: 內建五區間心率條 (5-Zone HR Bar)，突顯 Zone 2 的生理價值與範圍。
+  - **工具中心整合**: 於 `category/tools.html` 嵌入計算機，並新增導覽列快速跳轉連結。
+
+## [1.5.5] - 2025-12-18
+### Feat
+- **鈉鉀離子平衡比 (Na:K Ratio) 計算機 (CARDIO-TOOLS-EXPANSION)**:
+  - **新組件**: 開發 `SodiumPotassiumCalc` 組件，支援每日鈉/鉀攝取平衡評估，並內建鹽分 (NaCl) 轉鈉 (Na) 工具。
+  - **健康工具箱整合**: 於 `category/tools.html` 嵌入鈉鉀平衡計算機，並新增快速跳轉按鈕。
+
+## [1.5.4] - 2025-12-18
+### Feat
+- **ASCVD 心血管風險評估器 (CARDIO-TOOLS-EXPANSION)**:
+  - **新組件**: 實作 `CardioRiskCalculator` 組件，基於 2013 AHA/ACC 彙整隊列方程 (PCE) 提供 10 年心血管疾病風險評估。
+  - **工具中心整合**: 將 ASCVD 評估器整合至 `category/tools.html` 並新增快速導覽按鈕。
+
+### Refactor
+- **工具腳本目錄重組**: 
+  - 建立 `assets/js/tools-JS/` 目錄，統一收納所有計算機腳本。
+  - 將 `caffeine-calculator.js`, `fish-oil-calculator.js`, 與 `cardio-risk-calculator.js` 移至新目錄。
+  - 同步更新 `category/tools.html` 與 `post/fish-oil.html` 中的腳本引用路徑。
+
+## [1.5.3] - 2025-12-18
+### Feat
+- **健康工具箱與咖啡因計算機 (TOOL-LED-GROWTH)**:
+  - **新組件**: 開發 `CaffeineCalculator` 原生 JavaScript 組件，基於 FDA/EFSA 數據提供精準的每日建議限量計算與飲品換算。
+  - **新頁面**: 建立 `category/tools.html` 作為全站工具中心，整合「咖啡因耐受度計算機」與「魚油真實成本計算機」。
+  - **全站整合**: 更新全站導覽列 (deus-header-component.js) 加入「健康工具箱」選項，並同步更新 Sitemap.xml。
+  - **頁面修復**: 更新 `post/topic-cardiovascular-health.html` 的工具連結，並修復了 Sitemap 中失效的心血管健康專題連結。
+
 ## [1.5.2] - 2025-12-18
 ### Feat
 - **FAQ 內容全面擴展與結構升級 (GLOBAL-FAQ-EXPANSION-STRATEGY)**:

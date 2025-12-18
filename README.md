@@ -213,6 +213,32 @@ const homepage = new CaregiverHomepage(
   .initialize();
 ```
 
+## 互動式健康工具組件 (Health Tools)
+
+本專案開發了一系列基於醫學實證的互動式工具，封裝為獨立的 JavaScript 類別，並使用 Shadow DOM 隔離樣式。
+
+### 1. 咖啡因耐受度計算機 (`CaffeineCalculator`)
+- **功能**：根據體重與敏感度計算每日安全攝取限量，並提供飲品換算。
+- **標準**：參考 FDA 與 EFSA 安全指引。
+
+### 2. 魚油真實成本計算機 (`FishOilCalculator`)
+- **功能**：屏除行銷標語，直觀計算「每 1000mg Omega-3」的純粹成本。
+- **核心**：幫助使用者辨識性價比均衡的產品。
+
+### 3. ASCVD 10年心血管風險評估器 (`CardioRiskCalculator`)
+- **功能**：計算十年內動脈粥狀硬化性心血管疾病的發生風險。
+- **演算法**：基於 2013 AHA/ACC Pooled Cohort Equations。
+
+### 4. 鈉鉀離子平衡比計算機 (`SodiumPotassiumCalc`)
+- **功能**：評估飲食中的鈉鉀比例，並提供對應的平衡建議。
+- **標準**：依循 WHO 與 AHA 關於血壓控管的礦物質攝取建議。
+
+### 5. Zone 2 運動心率計算器 (`Zone2Calculator`)
+- **功能**：鎖定代謝靈活度與血管修復的最佳訓練區間。
+- **演算法**：支援 Maffetone 180 與 Karvonen 雙重公式。
+
+這些工具統一於 `category/tools.html` 中載入與初始化。
+
 ## 專案結構
 
 ### 內容架構理念 (Hub-and-Spoke)
@@ -231,6 +257,7 @@ caregiver/
 │   ├── archive.html               # 文章總覽頁面 (動態載入)
 │   ├── health-topics.html         # 健康主題頁面 (動態載入)
 │   ├── nutrient-dashboard.html    # 互動式儀表板 (動態載入)
+│   ├── tools.html                 # 健康計算機工具箱 (整合多項工具)
 │   ├── foodWiki.html              # 食物營養資料庫頁面
 │   └── brands.html                # 合作專屬優惠頁面
 ├── brand/
@@ -247,6 +274,12 @@ caregiver/
 │       ├── archive-logic.js         # 文章總覽頁面的顯示邏輯
 │       ├── health-topics-logic.js   # 健康主題頁面的顯示邏輯
 │       ├── dashboard-logic.js       # 儀表板頁面的顯示邏輯
+│       └── tools-JS/               # 獨立工具組件
+│           ├── caffeine-calculator.js
+│           ├── fish-oil-calculator.js
+│           ├── cardio-risk-calculator.js
+│           ├── ionic-balance-calculator.js
+│           └── zone2-calculator.js
 │       └── ...
 ├── doc/
 │   ├── writing-guide.md           # 文章風格指引

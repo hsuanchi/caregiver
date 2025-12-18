@@ -37,22 +37,6 @@
     b. JavaScript 邏輯需要能夠根據當前頁面的食物 ID（可從 `body[data-article-id]` 讀取）來填充儀表板的數據。
 5.  **樣式與腳本**: 確保所有 `food/*.html` 頁面都正確引入了必要的 CSS（如 FontAwesome）和 JavaScript（如 Chart.js 和新的儀表板邏輯腳本）。
 
-### [待辦] 開發 Web Tools (魚油 CP 值與咖啡因耐受度計算機) (TOOL-LED-GROWTH)
-
-**主要目標**: 開發兩個簡單的 Web 工具：「魚油 CP 值計算機」與「每日咖啡因耐受度計算機」，以提升網站的實用性、使用者停留時間與 SEO 外連效益。
-**相關檔案**: `post/review-fish-oil.html`, `assets/js/fish-oil-calculator.js`
-**詳細說明**: 
-- **魚油 CP 值計算機 (已完成)**：已整合至 `post/review-fish-oil.html`，提供完整的真實成本計算功能。
-- **每日咖啡因耐受度計算機 (待辦)**：後續規劃中。
-
-**C. 頁面整合與 SEO**
-1.  **新工具頁面**: 建立一個新的 HTML 頁面，例如 `category/tools.html`，用於展示這兩個工具。
-2.  **樣式**: 確保工具的 UI/UX 設計簡潔、易用，並符合網站整體風格。
-3.  **SEO 考量**:
-    *   確保頁面有適當的 `title`, `description`, `keywords`。
-    *   考慮加入 JSON-LD structured data (例如 `WebPage`, `HowTo` 等，若適用)。
-    *   頁面內容應簡要介紹工具的用途與健康建議。
-
 ### [可選] 自動化食物資料庫生成 (AUTOMATE-FOOD-DATA-GENERATION)
 
 **主要目標**: 建立一個後端建置腳本，自動讀取 `food/*.html` 的內容，並產生 `food/food_data.js`，以確保資料的單一來源與同步。
