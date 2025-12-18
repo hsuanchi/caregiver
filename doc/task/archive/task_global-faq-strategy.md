@@ -6,13 +6,30 @@
 
 ---
 
-## 簡潔有效的 FAQ 建立流程 (Simplified & Efficient FAQ Creation Workflow)
+## 高效率 FAQ 建立流程 (Modular & High-Efficiency FAQ Workflow)
 
-**核心原則**: 專注於內容生成、站內連結優化及結構化資料，忽略 UI 格式的嚴格檢查，以內容完整度和功能性為優先。
+**核心原則**: 以「小單位、模組化、高效率」為核心，確保在擴展至 20 個問答對時，仍能維持高品質的內容與 SEO 結構。
 
-### Step 1: 內容生成與組織 (Content Generation & Organization)
--   **a. FAQ 內容撰寫**: 分析目標文章內容，運用 5W1H 框架，撰寫至少 10 個高品質的問答對。
--   **b. 內容分組與二層式框架**: 將所有問題依據主題或類型，歸納為清晰的「兩層式分類框架」。確保相同類型的問題在同一分類層級下。在 HTML 結構中，建議使用 `<h3>` 標籤作為主要分類標題。
+### Step 1: 模組化內容生成 (Modular Content Mapping)
+為了確保 20 個問題能全面覆蓋讀者需求，採用以下 **5 大模組分類法** 進行內容開發：
+- **A. 基礎知識 (Basics)**: 定義、成分與運作機制 (建議 5-6 題)。
+- **B. 功效解析 (Benefits)**: 具體健康效益、複方搭配效果 (建議 5-6 題)。
+- **C. 攝取建議 (Usage)**: 時機、劑量、天然與補充品比較 (建議 3-4 題)。
+- **D. 安全與禁忌 (Safety)**: 副作用、藥物干擾、特殊情況處理 (建議 3-4 題)。
+- **E. 特定族群 (Populations)**: 不同年齡或生活型態的特定建議 (建議 2-3 題)。
+
+### Step 2: 結構化標註與 ID 規範 (Structured ID Pattern)
+每個 `.faq-item` 必須具備唯一且具描述性的 `id`（支持深層連結與 Google 深層搜尋）：
+- **命名規範**: `faq-[主題]-[序號]` (例如: `faq-benefit-1`, `faq-safety-2`)。
+- **優勢**: 使用者可從搜尋結果直接導向特定答案，提升 SEO 權威度。
+
+### Step 3: SEO 數據同步 (JSON-LD Sync)
+確保視覺內容與 `FAQPage` JSON-LD 結構化資料完全同步。建議先完成內容對應表，再一次性更新 HTML 與 JSON-LD，減少人工對齊負擔。
+
+### Step 4: 階層化框架選擇 (Hierarchy Choice)
+根據內容複雜度選擇合適的視覺架構：
+- **兩層式 (標準版)**: `<h3>` 分類標題 -> `.faq-item`。
+- **三層式 (Hub/專題版)**: `<h3>` (Category) -> `<h4>` (Subcategory) -> `.faq-item`。
 
 ### Step 2: 內部連結優化 (Internal Linking Optimization)
 -   在 FAQ 答案中，為關鍵字或相關概念添加連結，提升文章的內部關聯性與使用者體驗。
@@ -79,7 +96,42 @@
 - [x] post/vitamin-k2.html
 - [ ] post/zinc.html
 
-## 4. 執行紀錄 (Execution Log)
+## 5. 第二階段：全站 FAQ 20 題深度優化 (Phase 2: 20-FAQ Expansion)
 
-- **2025-12-17**: 優化 post/topic-cardiovascular-health.html，完成內容擴充、三層式結構、樣式簡化、錨點添加與 JSON-LD 生成。
-- **YYYY-MM-DD**: ...
+**重點目標**: 依照鋅 (Zinc) 頁面的標竿模式，將所有頁面的 FAQ 擴展至 20 題，包含 5 大模組分類與 JSON-LD 同步。
+
+### 執行順序與分組 (Batch Priority)
+
+為了維持高效，將頁面分為以下批次執行：
+
+#### Batch 1: 高流量核心營養素 (Core Nutrients)
+- [x] post/zinc.html (Demo 完成)
+- [ ] post/fish-oil.html
+- [ ] post/vitamin-d.html
+- [ ] post/vitamin-c.html
+- [ ] post/magnesium.html
+- [ ] post/protein.html
+
+#### Batch 2: 維生素與礦物質家族 (Vitamins & Minerals)
+- [ ] post/vitamin-a.html
+- [ ] post/vitamin-b.html
+- [ ] post/vitamin-e.html
+- [ ] post/vitamin-k.html
+- [ ] post/vitamin-k2.html
+- [ ] post/calcium.html
+- [ ] post/iron.html
+- [ ] post/selenium.html
+
+#### Batch 3: 特殊機能營養素 (Functional Nutrients)
+- [ ] post/lutein.html
+- [ ] post/coenzyme-q10.html
+- [ ] post/curcumin.html
+- [ ] post/probiotics.html
+- [ ] post/collagen.html
+
+## 6. 執行紀錄 (Execution Log)
+
+- **2025-12-18**: 確立「Phase 2: 20-FAQ 擴展計畫」。
+- **2025-12-18**: 完成 `post/zinc.html` 作為 Phase 2 首篇標竿示範，達成 20 題模組化擴展與 JSON-LD 同步。
+- **2025-12-18**: 確立「每個項目獨立 ID」與「三層式 Hub 結構」為標準 FAQ 策略。
+- **2025-12-17**: 優化 `post/topic-cardiovascular-health.html`，完成內容擴充、三層式結構。
