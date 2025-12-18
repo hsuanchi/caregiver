@@ -9,6 +9,19 @@
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
+
+## [1.5.8] - 2025-12-18
+### Optimization & UX
+- **健康工具優化 (HEALTH-TOOLS-OPT)**:
+  - **資料持久化**: 實作 `localStorage` 持久化，所有計算機輸入皆可自動保存並於載入時恢復。
+  - **交互優化**: 實作「靜默初始計算」，確保頁面初始化時自動根據保存數據渲染結果，無多餘警示與動畫。
+  - **交叉連結**: 於計算結果中整合「推薦閱讀」邏輯，引導使用者深入了解相關健康主題（如：心血管風險、魚油、鈉鉀平衡）。
+  - **SEO 強化**: 於 `tools.html` 為所有工具實作 `SoftwareApplication` JSON-LD 結構化數據，提升搜尋引擎理解度。
+  - **文章整合**: 將相關計算機深度嵌入至教育文章中：
+    - 魚油計算機嵌入 `post/fish-oil.html`。
+    - 鈉鉀比例計算機嵌入 `post/sodium.html` 與 `post/potassium.html`。
+    - ASCVD 風險評估器嵌入 `post/garlic.html`、`post/plant-sterols.html` 與心血管健康主題頁面。
+
 ## [1.5.7] - 2025-12-18
 ### Documentation & Metadata
 - **專案文件與索引更新 (PROJECT-DOCS-UPDATE)**:

@@ -2251,1044 +2251,1043 @@
             <h2>1. 身體警訊評估：你的血管亮紅燈了嗎？</h2>
             <p>心血管疾病往往有長達數年的「沈默缺血期 (Silent Ischemia)」。當下列非典型症狀頻繁出現時，代表系統容錯率已降至臨界點。</p>
 
-            <div class="table-responsive">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>身體訊號 (Signal)</th>
-                    <th>潛在故障 (Defect)</th>
-                    <th>病理機制 (Mechanism)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style="color: #dc2626; font-weight: bold;">冬天手腳極度冰冷</td>
-                    <td>末梢循環淤積</td>
-                    <td>微血管硬化，熱能輸送效率低落。</td>
-                  </tr>
-                  <tr>
-                    <td style="color: #dc2626; font-weight: bold;">爬樓梯易喘</td>
-                    <td>泵浦輸出不足</td>
-                    <td>心輸出量 (Cardiac Output) 下降，引擎馬力不足。</td>
-                  </tr>
-                  <tr>
-                    <td style="color: #dc2626; font-weight: bold;">蹲下站起頭暈</td>
-                    <td>壓力調節延遲</td>
-                    <td>血管彈性變差，無法即時加壓回流血液。</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
         </div>
 
-        <div class="risk-group-cards">
-          <div class="risk-card">
-            <h4 class="risk-card-title">⚠️ 訊號 A：管路淤積 (Perfusion Deficit)</h4>
-            <ul style="padding-left: 20px; font-size: 0.95em; color: #4a5568;">
-              <li><strong>間歇性跛行</strong>：走路走久了小腿會痛（缺氧），休息一下又好了。這是周邊動脈疾病 (PAD) 的典型特徵。</li>
-              <li><strong>勃起功能障礙 (ED)</strong>：陰莖動脈直徑僅 1-2mm，比冠狀動脈更細，往往是血管堵塞的第一個「金絲雀」警訊。</li>
-            </ul>
-          </div>
-          <div class="risk-card">
-            <h4 class="risk-card-title">⚠️ 訊號 B：馬達無力 (Pump Failure)</h4>
-            <ul style="padding-left: 20px; font-size: 0.95em; color: #4a5568;">
-              <li><strong>非典型輻射痛</strong>：不僅是胸痛，有時表現為下顎痠麻、左肩胛骨疼痛，甚至被誤診為胃食道逆流。</li>
-              <li><strong>長期異常疲勞</strong>：睡眠充足卻仍感到極度疲憊，可能是心臟效能低下的表現。</li>
-            </ul>
-          </div>
+        <!-- ASCVD Risk Evaluator -->
+        <div class="interactive-check"
+          style="background-color: #fff; border-radius: 15px; padding: 30px; margin: 40px 0; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.07); border-left: 5px solid #ef4444;">
+          <h3 style="color: #b91c1c; margin-top: 0;"><i class="fas fa-heartbeat"></i> ASCVD 10年動脈硬化風險評估</h3>
+          <p>基於美國心臟協會 (AHA) 演算法，評估您未來 10 年發生心肌梗塞或中風的機率。</p>
+          <div id="ascvd-calc-container"></div>
         </div>
+  </div>
 
-        <div class="alert alert-doctor">
-          <div>
-            <strong>🩺 特別診斷：容易被忽視的非典型族群</strong>
-            <div
-              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 10px;">
-              <div>
-                <strong style="color: #be123c;">👩 女性心臟病 (The Female Pattern)</strong>
-                <ul style="font-size: 0.9em; margin-top: 5px; color: #334155; padding-left: 20px;">
-                  <li><strong>極度疲勞</strong>：發病前數週莫名累到無法起床。</li>
-                  <li><strong>消化道症狀</strong>：噁心、嘔吐、上腹痛。</li>
-                </ul>
-              </div>
-              <div>
-                <strong style="color: #1e40af;">👴 高齡隱匿型 (Silent Elderly)</strong>
-                <ul style="font-size: 0.9em; margin-top: 5px; color: #334155; padding-left: 20px;">
-                  <li><strong>意識混亂</strong>：突然變得糊塗。</li>
-                  <li><strong>氣喘/虛弱</strong>：沒有胸痛，只有「喘不過氣」。</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        </section>
+  <div class="risk-group-cards">
+    <div class="risk-card">
+      <h4 class="risk-card-title">⚠️ 訊號 A：管路淤積 (Perfusion Deficit)</h4>
+      <ul style="padding-left: 20px; font-size: 0.95em; color: #4a5568;">
+        <li><strong>間歇性跛行</strong>：走路走久了小腿會痛（缺氧），休息一下又好了。這是周邊動脈疾病 (PAD) 的典型特徵。</li>
+        <li><strong>勃起功能障礙 (ED)</strong>：陰莖動脈直徑僅 1-2mm，比冠狀動脈更細，往往是血管堵塞的第一個「金絲雀」警訊。</li>
+      </ul>
+    </div>
+    <div class="risk-card">
+      <h4 class="risk-card-title">⚠️ 訊號 B：馬達無力 (Pump Failure)</h4>
+      <ul style="padding-left: 20px; font-size: 0.95em; color: #4a5568;">
+        <li><strong>非典型輻射痛</strong>：不僅是胸痛，有時表現為下顎痠麻、左肩胛骨疼痛，甚至被誤診為胃食道逆流。</li>
+        <li><strong>長期異常疲勞</strong>：睡眠充足卻仍感到極度疲憊，可能是心臟效能低下的表現。</li>
+      </ul>
+    </div>
+  </div>
 
-        <!-- Section 2: 核心故障原因 -->
-        <section id="root-cause">
-          <h2>2. 三大核心致病機制 (Root Cause Analysis)</h2>
-          <p>真正驅動心血管疾病進程的，是多重底層病理機制交織的結果。我們將其簡化為以下時間軸：</p>
-
-          <!-- 流程圖 -->
-          <!-- 流程圖 -->
-          <div class="flowchart">
-            <div class="flow-step">
-              <div style="font-weight: 700; margin-bottom: 5px; color: #1e293b;">1. 內皮受損</div>
-              <div style="font-size: 0.85em; color: #64748b;">高血壓/血糖劃傷管壁</div>
-            </div>
-            <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
-            <div class="flow-step">
-              <div style="font-weight: 700; margin-bottom: 5px; color: #1e293b;">2. 發炎反應</div>
-              <div style="font-size: 0.85em; color: #64748b;">LDL 氧化堆積 (油垢)</div>
-            </div>
-            <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
-            <div class="flow-step">
-              <div style="font-weight: 700; margin-bottom: 5px; color: #1e293b;">3. 斑塊鈣化</div>
-              <div style="font-size: 0.85em; color: #64748b;">血管變硬、狹窄 (阻塞)</div>
-            </div>
-          </div>
-
-          <!-- 深度病理機制深度分析 (Collapsible Insight) -->
-          <details class="professional-insight-card">
-            <summary class="insight-summary">
-              <div class="insight-icon"><i class="fas fa-microscope"></i></div>
-              <div class="insight-header">
-                <span class="insight-title">病理機制詳解：動脈粥狀硬化的分子過程</span>
-                <span class="insight-preview">這不僅僅是膽固醇堆積，而是一場發炎反應與氧化風暴。</span>
-              </div>
-              <i class="fas fa-chevron-down toggle-icon"></i>
-            </summary>
-            <div class="insight-content">
-              <p>現代病理學已證實，動脈粥狀硬化 (Atherosclerosis) 是一種慢性發炎疾病，其進程分為四個關鍵步驟：</p>
-              <ul>
-                <li><strong>1. 內皮功能障礙 (Endothelial Dysfunction)</strong>：高血壓剪力或高血糖氧化壓力破壞內皮完整性，使其失去抗凝血功能，這是疾病的起點。</li>
-                <li><strong>2. 脂質浸潤與氧化</strong>：LDL 穿過受損內皮進入血管內膜。關鍵在於 <strong>氧化 (Oxidation)</strong> — LDL 被自由基氧化成
-                  <strong>ox-LDL</strong>，才具有強烈的細胞毒性與致發炎性。
-                </li>
-                <li><strong>3. 泡沫細胞形成</strong>：免疫細胞 (巨噬細胞) 吞噬 ox-LDL，變成滿載油脂的「泡沫細胞」，堆積形成脂肪紋。</li>
-                <li><strong>4. 斑塊破裂與血栓</strong>：發炎導致斑塊表面的纖維帽變薄、脆弱。一旦破裂，內部物質接觸血液，瞬間引發血栓，導致心肌梗塞。</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="professional-insight-card">
-            <summary class="insight-summary">
-              <div class="insight-icon"><i class="fas fa-bone"></i></div>
-              <div class="insight-header">
-                <span class="insight-title">血管鈣化悖論 (Calcium Paradox)</span>
-                <span class="insight-preview">為什麼骨頭缺鈣，血管卻長鈣化斑塊？關鍵在於 MGP 蛋白的「導航」失效。</span>
-              </div>
-              <i class="fas fa-chevron-down toggle-icon"></i>
-            </summary>
-            <div class="insight-content">
-              <p>「鈣矛盾」是指患者同時面臨<strong>骨質疏鬆與動脈硬化</strong>。這顯示問題不在於鈣攝取量，而在於鈣的「分佈管理」失調。</p>
-              <h4>MGP 的關鍵角色</h4>
-              <p>血管壁中存在一種強效鈣化抑制蛋白 — <strong>基質 Gla 蛋白 (MGP)</strong>。它能結合鈣離子，阻止其沉積在血管。然而，MGP 必須依賴 <strong>維生素
-                  K2</strong> 進行羧化修飾 (Carboxylation) 才能活化。</p>
-              <h4>Warfarin 的代價</h4>
-              <p>抗凝血藥 Warfarin 透過抑制維生素 K 來防止血栓，但副作用是導致 MGP 失效 (無法活化)，進而加速血管鈣化。這解釋了為何長期服用 Warfarin 的患者反而面臨更高的動脈硬化風險。
-              </p>
-            </div>
-          </details>
-
-          <h3 id="root-cause-1">1. 發炎與斑塊 (Atherosclerosis)</h3>
-          <p><strong>慢性低度發炎</strong>是始動因素。血管內皮受損後，巨噬細胞吞噬氧化的壞膽固醇 <strong>(Oxidized LDL)</strong> 形成泡沫細胞，堆積成斑塊。</p>
-
-          <h3 id="root-cause-2">2. 血管鈣化 (Vascular Calcification)</h3>
-          <p>平滑肌細胞發生錯誤轉分化，導致鈣質沉積在血管壁。這通常是因為鈣化抑制蛋白 <strong>(MGP)</strong> 缺乏活化，導致鈣質「跑錯地方」（不去骨頭，跑去血管）。</p>
-
-          <h3 id="root-cause-3">3. 生物能量匱乏 (Mitochondrial Dysfunction)</h3>
-          <p>心肌細胞富含粒線體。當電子傳遞鏈效率下降，<strong>ATP 生成不足</strong>，心臟收縮力就會減弱，就像電池老化的馬達。</p>
-
-          <h3 id="cause-hcy">4. 隱藏殺手：同半胱胺酸 (Homocysteine)</h3>
-          <p>這個指標常被健檢忽略，卻比膽固醇更具破壞力。它是蛋白質代謝的中間產物，若堆積過高，會直接腐蝕血管內皮。成因通常是 <strong>B 群代謝異常</strong> (如 MTHFR 基因缺損) 或葉酸攝取不足。
-          </p>
-
-          <details class="professional-insight-card">
-            <summary class="insight-summary">
-              <div class="insight-icon"><i class="fas fa-atom"></i></div>
-              <div class="insight-header">
-                <span class="insight-title">代謝解方：B 群必須是「活性」的</span>
-                <span class="insight-preview">吃 B 群沒效？可能是你選錯了形式 (尤其是 MTHFR 變異者)。</span>
-              </div>
-              <i class="fas fa-chevron-down toggle-icon"></i>
-            </summary>
-            <div class="insight-content">
-              <p>約 30-40% 的亞洲人帶有 <strong>MTHFR 基因變異</strong>，無法有效代謝傳統人工合成的葉酸與 B12。若要有效降低同半胱胺酸，請選購以下活性形式：</p>
-              <ul>
-                <li><strong>葉酸 (B9)</strong>：選擇 <strong>5-MTHF (Methylfolate)</strong>，避免 "Folic Acid"。</li>
-                <li><strong>維生素 B12</strong>：選擇 <strong>Methylcobalamin (甲鈷胺)</strong>，避免 "Cyanocobalamin" (氰鈷胺)。</li>
-                <li><strong>維生素 B6</strong>：選擇 <strong>P-5-P</strong>。</li>
-              </ul>
-            </div>
-          </details>
-        </section>
-
-        <!-- Section 3: 修復工程 -->
-        <section id="repair">
-          <h2>3. 系統性調理對策：精準營養介入</h2>
-          <p>如同維護精密儀器，我們需要針對不同層次進行營養補充：</p>
-
-          <!-- 3.1 魚油 -->
-          <h3 id="repair-1">3.1 血管清道夫：抗發炎與溶栓 (Target: TG / Fibrin)</h3>
-          <p>高品質的 <strong>Omega-3 (特別是 EPA)</strong> 是最強的天然抗發炎劑。但市售魚油規格混亂，請參考以下數據：</p>
-
-          <div class="table-wrapper">
-            <div class="table-responsive">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>形式</th>
-                    <th>濃度 (Omega-3)</th>
-                    <th>吸收率 (Bioavailability)</th>
-                    <th>專家評級</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>rTG 型 (再酯化)</strong></td>
-                    <td>80% - 90%</td>
-                    <td>⭐⭐⭐⭐⭐ (最高)</td>
-                    <td><strong>首選</strong> (製程最先進，兼具高濃度與高吸收)</td>
-                  </tr>
-                  <tr>
-                    <td><strong>EE 型 (酯化)</strong></td>
-                    <td>50% - 70%</td>
-                    <td>⭐⭐ (需配合油脂)</td>
-                    <td><strong>次選</strong> (身體需額外酵素轉化，效率較差)</td>
-                  </tr>
-                  <tr>
-                    <td><strong>TG 型 (萃取)</strong></td>
-                    <td>30% - 50%</td>
-                    <td>⭐⭐⭐⭐</td>
-                    <td><strong>避免</strong> (雜質多，有效成分低，吞心酸的)</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <details id="epa-dha-comparison" class="professional-insight-card">
-            <summary class="insight-summary">
-              <div class="insight-icon">🔬</div>
-              <div class="insight-header">
-                <span class="insight-title">深度解析：EPA 與 DHA 的臨床差異與應用</span>
-                <span class="insight-preview">JELIS、REDUCE-IT 與 STRENGTH 三大試驗揭示了高純度 EPA 在心血管次級預防中的獨特優勢。</span>
-              </div>
-              <div class="toggle-icon">▼</div>
-            </summary>
-            <div class="insight-content">
-              <h4>分子機制差異</h4>
-              <p>雖然 EPA 與 DHA 常被統稱為 Omega-3，但其臨床應用已逐漸分化。EPA 能更有效地整合入動脈粥狀硬化斑塊的細胞膜中，抑制脂質過氧化與泡沫細胞形成。相較之下，DHA
-                雖對神經保護與降血壓有益，但部分研究顯示其可能輕微提升 LDL-C（低密度脂蛋白膽固醇），這在高血脂患者的治療中需納入考量。</p>
-              <h4>關鍵臨床試驗的啟示</h4>
-              <ul>
-                <li><strong>JELIS & REDUCE-IT 試驗</strong>：這兩項大型試驗皆採用「高純度 EPA」作為研究藥物，並觀察到主要心血管事件（MACE）的顯著降低（分別為 19% 與
-                  25%）。這奠定了高純度 EPA 在心血管次級預防中的地位。</li>
-                <li><strong>STRENGTH 試驗</strong>：此試驗採用「EPA+DHA 混合配方」，最終因未達到預期效益而提早終止。</li>
-              </ul>
-              <p>綜合以上證據，目前學界主流觀點認為，針對已有心血管疾病史或高風險族群，**單方高純度 EPA** 在預防心血管事件上的證據等級高於混合型魚油。</p>
-            </div>
-          </details>
-
-          <div class="cta-box">
-            <h4 style="margin: 0 0 10px 0; color: #1e40af;"><i class="fas fa-calculator"></i> 你的魚油成本效益合格嗎？</h4>
-            <p style="margin-bottom: 20px; font-size: 0.95em;">濃度低於 50% 的魚油，多餘成分反而是身體負擔。我們爬取了市售 15 款魚油數據。</p>
-            <a href="./fish-oil.html#market-reality-check" class="cta-btn">👉 開啟 [魚油性價比計算機] & 2025 評測報告</a>
-          </div>
-
-          <!-- Nattokinase Insight -->
-          <details class="professional-insight-card">
-            <summary class="insight-summary">
-              <div class="insight-icon"><i class="fas fa-biohazard"></i></div>
-              <div class="insight-header">
-                <span class="insight-title">隱藏英雄：納豆激酶 (Nattokinase) 與血栓溶解</span>
-                <span class="insight-preview">只有它能直接分解纖維蛋白，是預防中風的強力輔助。</span>
-              </div>
-              <i class="fas fa-chevron-down toggle-icon"></i>
-            </summary>
-            <div class="insight-content">
-              <p>不同於抗凝血藥 (防止血栓形成)，納豆激酶具有獨特的<strong>溶栓能力 (Fibrinolytic Activity)</strong>，能直接分解已形成的纖維蛋白 (Fibrin)。
-              </p>
-              <h4>關鍵指標：FU (Fibrin Units)</h4>
-              <p>選購時請忽略「大豆異黃酮」含量，<strong>FU 活性單位</strong>才是重點。
-              <ul>
-                <li><strong>一般保養</strong>：2000 FU / 日 (約等於一盒納豆)。</li>
-                <li><strong>積極調理</strong>：4000 FU / 日 (早晚各一次)。</li>
-              </ul>
-              </p>
-              <p><strong>⚠️ 禁忌</strong>：因其強效溶血特性，服用抗凝血劑 (Warfarin) 者、手術前後 2 週、懷孕期間盡量避免或諮詢醫師。</p>
-            </div>
-          </details>
-
-          <!-- Red Yeast Rice Insight -->
-          <details class="professional-insight-card">
-            <summary class="insight-summary">
-              <div class="insight-icon"><i class="fas fa-flask"></i></div>
-              <div class="insight-header">
-                <span class="insight-title">天然的他汀：紅麴 (Red Yeast Rice) 的雙面刃</span>
-                <span class="insight-preview">有效降膽固醇，但要注意「橘黴素」毒性與 Q10 耗損。</span>
-              </div>
-              <i class="fas fa-chevron-down toggle-icon"></i>
-            </summary>
-            <div class="insight-content">
-              <p>紅麴發酵產生的 <strong>Monacolin K</strong>，其結構與降血脂藥 Lovastatin 完全相同，因此降膽固醇效果顯著。</p>
-              <h4>兩大安全隱憂</h4>
-              <ol>
-                <li><strong>橘黴素 (Citrinin)</strong>：紅麴發酵不當會產生具肝腎毒性的橘黴素。務必選擇有檢驗報告 (未檢出) 的大廠原料。</li>
-                <li><strong>Q10 阻斷效應</strong>：Monacolin K 在阻斷膽固醇合成路徑時，會順便阻斷輔酶 Q10 的生成。長期吃紅麴若不補 Q10，容易導致肌肉痠痛、心臟無力。</li>
-              </ol>
-            </div>
-          </details>
-
-          <!-- 3.2 鈣化 -->
-          <h3 id="repair-2">3.2 鈣化調節機制：逆轉鈣化 (Target: MGP Protein)</h3>
-          <p><strong>維生素 K2 (MK-7)</strong> 能活化 MGP 蛋白，將鈣離子「抓」回骨骼。<strong>鎂</strong>則能放鬆平滑肌。</p>
-
-          <div class="food-ranking-container">
-            <h4 class="food-ranking-title">📊 補鎂食物排行榜 (每 100g 含量)</h4>
-            <ul class="food-ranking-list">
-              <li><a href="../food/pumpkin_seed.html"><span>南瓜籽</span> <span class="food-value">592 mg</span></a></li>
-              <li><a href="../food/almond.html"><span>杏仁</span> <span class="food-value">270 mg</span></a></li>
-              <li><a href="../food/dark_chocolate.html"><span>黑巧克力</span> <span class="food-value">228 mg</span></a>
-              </li>
-              <li><a href="../food/spinach.html"><span>菠菜</span> <span class="food-value">87 mg</span></a></li>
-            </ul>
-          </div>
-
-          <details id="magnesium-forms" class="professional-insight-card">
-            <summary class="insight-summary">
-              <div class="insight-icon">🧪</div>
-              <div class="insight-header">
-                <span class="insight-title">選對鎂，才有效：不同形式鎂的生物利用率與功能比較</span>
-                <span class="insight-preview">氧化鎂、甘胺酸鎂、牛磺酸鎂...它們的吸收率與功效天差地遠。</span>
-              </div>
-              <div class="toggle-icon">▼</div>
-            </summary>
-            <div class="insight-content">
-              <p>市售鎂補充劑形式繁多，其吸收率與臨床適應症差異巨大，選錯了可能只是在繳「智商稅」。</p>
-              <ul>
-                <li><strong>氧化鎂 (Magnesium Oxide)</strong>：含鎂量高但生物利用率極低（約
-                  4%）。主要作用是作為滲透性軟便劑，對於提升組織鎂濃度的效果極其有限，不應作為心血管保健首選。</li>
-                <li><strong>甘胺酸鎂 (Magnesium Glycinate)</strong>：由鎂與甘胺酸螯合而成，生物利用率高且對腸胃溫和。甘胺酸本身有助於放鬆與改善睡眠，適合壓力大或有心悸傾向的患者。
-                </li>
-                <li><strong>牛磺酸鎂 (Magnesium
-                    Taurate)</strong>：<strong>心血管保健首選形式</strong>。牛磺酸本身在心臟中濃度極高，具有抗心律不整及輔助降血壓的效果，與鎂結合能產生協同護心作用。</li>
-              </ul>
-              <p><strong>結論：</strong>針對心血管健康，應優先選擇<strong>牛磺酸鎂</strong>；若以放鬆助眠為主要訴求，則可選擇<strong>甘胺酸鎂</strong>。</p>
-            </div>
-          </details>
-
-          <div
-            style="margin-top: 20px; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px dashed #cbd5e1;">
-            <strong style="color: #0f172a;">🧪 專家選購指南：鎂的形式決定命運</strong>
-            <ul style="margin-top: 10px; list-style: none; padding: 0;">
-              <li style="margin-bottom: 10px; display: flex; align-items: start;">
-                <span
-                  style="background: #22c55e; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; margin-right: 10px; flex-shrink: 0;">首選</span>
-                <span><strong>牛磺酸鎂 (Magnesium Taurate)</strong>：心血管專用。牛磺酸本身護心抗律不整，協同鎂離子放鬆血管。</span>
-              </li>
-              <li style="margin-bottom: 10px; display: flex; align-items: start;">
-                <span
-                  style="background: #3b82f6; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; margin-right: 10px; flex-shrink: 0;">次選</span>
-                <span><strong>甘胺酸鎂 (Magnesium Glycinate)</strong>：吸收率最高，助眠放鬆，適合壓力大者。</span>
-              </li>
-              <li style="display: flex; align-items: start;">
-                <span
-                  style="background: #ef4444; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; margin-right: 10px; flex-shrink: 0;">避免</span>
-                <span style="color: #64748b;"><strong>氧化鎂 (Magnesium Oxide)</strong>：吸收率僅
-                  4%，主要功能是「軟便劑」。吃多只會拉肚子，無法補心臟。</span>
-              </li>
-            </ul>
-            <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #cbd5e1;">
-              <a href="./magnesium.html#supplement-truth"
-                style="color: #0369a1; text-decoration: none; font-weight: 600; font-size: 0.9em; display: flex; align-items: center;">
-                <span style="margin-right: 5px;">🧬</span> Project Omega: 揭開鎂補充劑的「緩衝型」標籤陷阱 (深度評測) <span
-                  style="margin-left: auto;">➜</span>
-              </a>
-            </div>
-          </div>
-
-          <details id="k2-calcium-paradox" class="professional-insight-card">
-            <summary class="insight-summary">
-              <div class="insight-icon">🚦</div>
-              <div class="insight-header">
-                <span class="insight-title">維生素 K2：解開「鈣矛盾」的關鍵交通警察</span>
-                <span class="insight-preview">為何補鈣卻讓血管硬化？關鍵在於 MGP 蛋白的活化，以及 MK-4 與 MK-7 的形式差異。</span>
-              </div>
-              <div class="toggle-icon">▼</div>
-            </summary>
-            <div class="insight-content">
-              <h4>鈣矛盾 (Calcium Paradox)</h4>
-              <p>臨床上常見患者同時面臨骨質疏鬆（骨骼缺鈣）與動脈硬化（血管壁鈣化）。這顯示問題不在於鈣的總量，而在於鈣的「分佈管理」失調。維生素 K2 正是解決此矛盾的關鍵調節因子。</p>
-              <h4>MGP 蛋白：鈣化的清道夫</h4>
-              <p>維生素 K2 是血管壁中「基質格拉蛋白 (MGP)」的專屬輔酶。活化後的 MGP 能像清道夫一樣，結合並清除血管壁中游離的鈣，阻止其沉積，從而保持血管柔軟。缺乏 K2 會導致 MGP
-                無法活化，是血管鈣化的主因之一。</p>
-              <h4>MK-4 vs. MK-7：形式決定命運</h4>
-              <ul>
-                <li><strong>MK-4</strong>：半衰期極短（數小時），主要分佈於肝外組織，需每日多次高劑量服用才能維持濃度。</li>
-                <li><strong>MK-7</strong>：長鏈形式（多源自納豆發酵），半衰期長達數天，能更穩定地維持血中濃度以持續活化 MGP。因此，心血管保健首選 MK-7。</li>
-              </ul>
-              <p>臨床研究顯示，每日補充 180 µg 的 MK-7 能顯著降低動脈僵硬度，是少數證實能「逆轉」血管硬化進程的營養素。選購時，務必確認為高生物活性的「全反式 (All-Trans)」結構。</p>
-              <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #f1f5f9;">
-                <a href="./vitamin-k2.html"
-                  style="color: #be123c; text-decoration: none; font-weight: 700; display: block;">
-                  👉 Project Omega II: 市售 K2 的異構物風暴 - 別買到無效的偽劣品 (完整評測)
-                </a>
-              </div>
-            </div>
-          </details>
-
-          <!-- 3.3 Q10 -->
-          <h3 id="repair-3">3.3 能量代謝賦活：粒線體修復 (Target: Electron Transport Chain)</h3>
-          <p><strong>輔酶 Q10 (CoQ10)</strong> 是心臟發電的關鍵。40 歲後合成效率驟降。</p>
-
-          <details class="professional-insight-card">
-            <summary class="insight-summary">
-              <div class="insight-icon">⚡</div>
-              <div class="insight-header">
-                <span class="insight-title">還原型 (Ubiquinol) vs 氧化型 (Ubiquinone)：一場行銷與科學的對話</span>
-                <span class="insight-preview">還原型真的比較好嗎？關鍵在於「晶體分散技術」與特定族群的需求。</span>
-              </div>
-              <div class="toggle-icon">▼</div>
-            </summary>
-            <div class="insight-content">
-              <p>市面上充斥著「還原型吸收率遠高於氧化型」的說法，但科學事實更為複雜：</p>
-              <ul>
-                <li><strong>體內轉換機制</strong>：人體有高效的轉換系統，攝入穩定的氧化型 (Ubiquinone) 後，在吸收或進入血液後會迅速轉化為活性的還原型
-                  (Ubiquinol)。長期補充下，兩者在提升血漿總濃度的效果上並無巨大差異。</li>
-                <li><strong>吸收率的關鍵</strong>：真正決定吸收率的是「晶體分散技術」。未經處理的 CoQ10 晶體巨大，吸收率極低（
-                  <1%）。經乳化或奈米化處理的氧化型，其生物利用率可遠高於未處理的還原型。< /li>
-                <li><strong>特定族群的例外</strong>：對於年長者或嚴重慢性心臟衰竭患者，因腸道吸收功能可能受損，直接補充還原型 (Ubiquinol) 能更有效地提升血中濃度。</li>
-              </ul>
-              <p><strong>Q-SYMBIO 試驗啟示</strong>：此大型臨床試驗證實，每日補充 300mg 的 CoQ10 作為心衰竭的標準輔助療法，能顯著降低心血管死亡率。這確立了 CoQ10
-                在心臟能量代謝支持中的關鍵地位。</p>
-            </div>
-          </details>
-
-          <div class="alert alert-doctor">
-            <div>
-              <strong>[Clinical Insight: 藥物交互作用]</strong>
-              <p>降血脂藥物 (Statins) 的路徑會同時阻斷 Q10 合成，長期服用易導致肌肉疼痛。Statin 使用者每日建議補充 100-200mg Q10。</p>
-              <p><a href="./coenzyme-q10.html" style="color: #991b1b; text-decoration: underline;">👉 閱讀深度報告：Q10 還原態
-                  vs
-                  氧化態怎麼選？</a></p>
-            </div>
-          </div>
-        </section>
-
-        <!-- 3.4 NO Boost -->
-        <section id="repair-4">
-          <h3 id="solution-endothelium">3.4 內皮功能優化：提升一氧化氮 (NO)</h3>
-          <p>提升血液中一氧化氮 (NO) 濃度，是讓血管放鬆、維持彈性的關鍵。然而，如何有效補充 NO 的前驅物，是一門重要的學問。</p>
-          <details class="professional-insight-card">
-            <summary class="insight-summary">
-              <div class="insight-icon">🧬</div>
-              <div class="insight-header">
-                <span class="insight-title">生物利用率駭客：L-精胺酸 vs. L-瓜胺酸</span>
-                <span class="insight-preview">為何補充 L-瓜胺酸，提升體內精胺酸的效率反而更高？</span>
-              </div>
-              <div class="toggle-icon">▼</div>
-            </summary>
-            <div class="insight-content">
-              <p><strong>L-精胺酸悖論 (The L-Arginine Paradox)</strong>：直觀上，補充作為 NO 直接前驅物的精胺酸 (Arginine) 應最有效。然而，口服精胺酸有高達 40%
-                會在腸道與肝臟被「精胺酸酶」提前分解（首過效應），導致最終進入血液循環的量大打折扣。</p>
-              <p><strong>L-瓜胺酸 (Citrulline) 的優勢</strong>：瓜胺酸則像一個「特洛伊木馬」，它可以順利通過腸肝屏障，進入腎臟後再被轉化為精胺酸，從而繞過了首過效應。研究證實，補充
-                L-瓜胺酸提升血中 NO 的效率，是直接吃精胺酸的 1.6 倍以上。</p>
-              <p><strong>結論</strong>：若要高效提升體內 NO 水平以促進血管健康，應優先選擇 <strong>L-瓜胺酸</strong>。</p>
-            </div>
-          </details>
-
-          <!-- Beetroot/Nitrate Insight -->
-          <details class="professional-insight-card">
-            <summary class="insight-summary">
-              <div class="insight-icon"><i class="fas fa-carrot"></i></div>
-              <div class="insight-header">
-                <span class="insight-title">天然備案：硝酸鹽路徑 (The Nitrate Pathway)</span>
-                <span class="insight-preview">除了精胺酸，你還可以靠「吃菜」來擴張血管。</span>
-              </div>
-              <i class="fas fa-chevron-down toggle-icon"></i>
-            </summary>
-            <div class="insight-content">
-              <p>人體有兩條產生 NO 的路徑：</p>
-              <ol>
-                <li><strong>精胺酸路徑 (L-Arginine Pathway)</strong>：依賴內皮酵素 NOS，但此酵素在老化的血管中效率極差。</li>
-                <li><strong>硝酸鹽路徑 (Nitrate-Nitrite-NO Pathway)</strong>：透過口腔細菌還原食物中的硝酸鹽。這是一條「不依賴內皮完整性」的備用道路。</li>
-              </ol>
-              <p><strong>實戰應用</strong>：每日飲用 250ml <strong>甜菜根汁 (Beetroot
-                  Juice)</strong>，已被證實能顯著降低收縮壓。請注意，使用強效漱口水會殺死口腔益菌，阻斷此路徑！</p>
-            </div>
-          </details>
-        </section>
-
-        <!-- Section 4: 飲食與生活型態 -->
-        <section id="lifestyle">
-          <h2>4. 根本逆轉：飲食與運動策略</h2>
-          <p>營養品只是「補給彈藥」，真正的戰場在餐桌與運動場。以下是經科學證實最有效的修復方案：</p>
-
-          <h3 id="diet-strategy">4.1 飲食策略：DASH 與地中海的黃金交集</h3>
-          <p>不必死背菜單，掌握三大原則即可大幅降低血管發炎：</p>
-          <ul>
-            <li><strong>高鉀鎂 (High K/Mg)</strong>：大量深綠色蔬菜、南瓜籽、堅果。鉀離子能幫助排鈉降血壓。</li>
-            <li><strong>好油替換 (Oil Swap)</strong>：全面停用大豆沙拉油/葵花油 (Omega-6 促發炎)，改用<strong>特級初榨橄欖油 (EVOO)</strong>
-              與<strong>酪梨油</strong>。</li>
-            <li><strong>超級纖維 (Super Fiber)</strong>：每天早餐加入<strong>燕麥
-                (Beta-葡聚醣)</strong>，它能像海綿一樣在腸道吸附膽汁酸，強迫肝臟消耗血液中的膽固醇來製造新膽汁。</li>
+  <div class="alert alert-doctor">
+    <div>
+      <strong>🩺 特別診斷：容易被忽視的非典型族群</strong>
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 10px;">
+        <div>
+          <strong style="color: #be123c;">👩 女性心臟病 (The Female Pattern)</strong>
+          <ul style="font-size: 0.9em; margin-top: 5px; color: #334155; padding-left: 20px;">
+            <li><strong>極度疲勞</strong>：發病前數週莫名累到無法起床。</li>
+            <li><strong>消化道症狀</strong>：噁心、嘔吐、上腹痛。</li>
           </ul>
+        </div>
+        <div>
+          <strong style="color: #1e40af;">👴 高齡隱匿型 (Silent Elderly)</strong>
+          <ul style="font-size: 0.9em; margin-top: 5px; color: #334155; padding-left: 20px;">
+            <li><strong>意識混亂</strong>：突然變得糊塗。</li>
+            <li><strong>氣喘/虛弱</strong>：沒有胸痛，只有「喘不過氣」。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
 
-          <h3 id="exercise-zone2">4.2 運動處方：Zone 2 低心率訓練</h3>
-          <p>除了飲食，運動是逆轉心血管風險的另一大基石。然而，很多人都「練錯了」。比起高強度間歇，修復心血管系統的關鍵在於低強度的有氧訓練。</p>
-          <details class="professional-insight-card">
-            <summary class="insight-summary">
-              <div class="insight-icon">🏃</div>
-              <div class="insight-header">
-                <span class="insight-title">Zone 2 訓練：為粒線體重新充電</span>
-                <span class="insight-preview">為何「可以說話但微喘」的運動強度，才是修復心臟的關鍵？</span>
-              </div>
-              <div class="toggle-icon">▼</div>
-            </summary>
-            <div class="insight-content">
-              <p><strong>Zone 2 低心率訓練</strong>指的是將心率維持在最大心率的 60-70%
-                區間的長時間、低強度有氧運動。在這個強度下，身體的主要能量來源會從燃燒肝醣轉變為燃燒<strong>脂肪</strong>。</p>
-              <p>這個轉換至關重要，因為它能強迫因現代久坐生活而退化的粒線體「重新開機」，提升其氧化能力與效率。規律的 Zone 2 訓練不僅能改善心肺功能，更能從根本上修復細胞的能量工廠。建議每週累積 150-180
-                分鐘的 Zone 2 訓練時間。</p>
-            </div>
-          </details>
-        </section>
+  <!-- Section 2: 核心故障原因 -->
+  <section id="root-cause">
+    <h2>2. 三大核心致病機制 (Root Cause Analysis)</h2>
+    <p>真正驅動心血管疾病進程的，是多重底層病理機制交織的結果。我們將其簡化為以下時間軸：</p>
 
-        <!-- Section 5: 劑量建議圖表 -->
-        <section id="dosage">
-          <h2>5. 各族群的精準劑量建議 (Dosage Protocol)</h2>
-          <!-- Infographic: Dosage & Strategy -->
-          <div class="dosage-infographic-container">
-            <!-- Card 1: Maintenance -->
-            <div class="dosage-card" style="border-top: 5px solid #10b981;">
-              <div class="d-card-header">
-                <div class="d-card-icon" style="font-size: 2em; margin-right: 15px;">🍃</div>
-                <div>
-                  <span class="d-card-title">日常保養族</span>
-                  <span class="d-card-subtitle">健檢正常，預防為主</span>
-                </div>
-              </div>
-              <ul class="d-list">
-                <li class="d-item"><span class="d-name">魚油 (Omega-3)</span> <span class="d-val">1000 mg</span></li>
-                <li class="d-item"><span class="d-name">輔酶 Q10</span> <span class="d-val">100 mg</span></li>
-                <li class="d-item"><span class="d-name">維生素 K2 (MK-7)</span> <span class="d-val">100 µg</span></li>
-                <li class="d-item" style="border-bottom: none;"><span class="d-name">鎂</span> <span class="d-val">200
-                    mg</span></li>
-              </ul>
-            </div>
-            <!-- Card 2: Active Intervention -->
-            <div class="dosage-card" style="border-top: 5px solid #f97316;">
-              <div class="d-card-header">
-                <div class="d-card-icon" style="font-size: 2em; margin-right: 15px;">🎯</div>
-                <div>
-                  <span class="d-card-title">積極調理族</span>
-                  <span class="d-card-subtitle">三高、高壓、外食族群</span>
-                </div>
-              </div>
-              <ul class="d-list">
-                <li class="d-item"><span class="d-name">魚油 (Omega-3)</span> <span class="d-val">2000 mg</span></li>
-                <li class="d-item"><span class="d-name">輔酶 Q10</span> <span class="d-val">200 mg</span></li>
-                <li class="d-item"><span class="d-name">維生素 K2 (MK-7)</span> <span class="d-val">200 µg</span></li>
-                <li class="d-item" style="border-bottom: none;"><span class="d-name">鎂</span> <span class="d-val">400
-                    mg</span></li>
-              </ul>
-            </div>
+    <!-- 流程圖 -->
+    <!-- 流程圖 -->
+    <div class="flowchart">
+      <div class="flow-step">
+        <div style="font-weight: 700; margin-bottom: 5px; color: #1e293b;">1. 內皮受損</div>
+        <div style="font-size: 0.85em; color: #64748b;">高血壓/血糖劃傷管壁</div>
+      </div>
+      <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+      <div class="flow-step">
+        <div style="font-weight: 700; margin-bottom: 5px; color: #1e293b;">2. 發炎反應</div>
+        <div style="font-size: 0.85em; color: #64748b;">LDL 氧化堆積 (油垢)</div>
+      </div>
+      <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+      <div class="flow-step">
+        <div style="font-weight: 700; margin-bottom: 5px; color: #1e293b;">3. 斑塊鈣化</div>
+        <div style="font-size: 0.85em; color: #64748b;">血管變硬、狹窄 (阻塞)</div>
+      </div>
+    </div>
+
+    <!-- 深度病理機制深度分析 (Collapsible Insight) -->
+    <details class="professional-insight-card">
+      <summary class="insight-summary">
+        <div class="insight-icon"><i class="fas fa-microscope"></i></div>
+        <div class="insight-header">
+          <span class="insight-title">病理機制詳解：動脈粥狀硬化的分子過程</span>
+          <span class="insight-preview">這不僅僅是膽固醇堆積，而是一場發炎反應與氧化風暴。</span>
+        </div>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </summary>
+      <div class="insight-content">
+        <p>現代病理學已證實，動脈粥狀硬化 (Atherosclerosis) 是一種慢性發炎疾病，其進程分為四個關鍵步驟：</p>
+        <ul>
+          <li><strong>1. 內皮功能障礙 (Endothelial Dysfunction)</strong>：高血壓剪力或高血糖氧化壓力破壞內皮完整性，使其失去抗凝血功能，這是疾病的起點。</li>
+          <li><strong>2. 脂質浸潤與氧化</strong>：LDL 穿過受損內皮進入血管內膜。關鍵在於 <strong>氧化 (Oxidation)</strong> — LDL 被自由基氧化成
+            <strong>ox-LDL</strong>，才具有強烈的細胞毒性與致發炎性。
+          </li>
+          <li><strong>3. 泡沫細胞形成</strong>：免疫細胞 (巨噬細胞) 吞噬 ox-LDL，變成滿載油脂的「泡沫細胞」，堆積形成脂肪紋。</li>
+          <li><strong>4. 斑塊破裂與血栓</strong>：發炎導致斑塊表面的纖維帽變薄、脆弱。一旦破裂，內部物質接觸血液，瞬間引發血栓，導致心肌梗塞。</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="professional-insight-card">
+      <summary class="insight-summary">
+        <div class="insight-icon"><i class="fas fa-bone"></i></div>
+        <div class="insight-header">
+          <span class="insight-title">血管鈣化悖論 (Calcium Paradox)</span>
+          <span class="insight-preview">為什麼骨頭缺鈣，血管卻長鈣化斑塊？關鍵在於 MGP 蛋白的「導航」失效。</span>
+        </div>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </summary>
+      <div class="insight-content">
+        <p>「鈣矛盾」是指患者同時面臨<strong>骨質疏鬆與動脈硬化</strong>。這顯示問題不在於鈣攝取量，而在於鈣的「分佈管理」失調。</p>
+        <h4>MGP 的關鍵角色</h4>
+        <p>血管壁中存在一種強效鈣化抑制蛋白 — <strong>基質 Gla 蛋白 (MGP)</strong>。它能結合鈣離子，阻止其沉積在血管。然而，MGP 必須依賴 <strong>維生素
+            K2</strong> 進行羧化修飾 (Carboxylation) 才能活化。</p>
+        <h4>Warfarin 的代價</h4>
+        <p>抗凝血藥 Warfarin 透過抑制維生素 K 來防止血栓，但副作用是導致 MGP 失效 (無法活化)，進而加速血管鈣化。這解釋了為何長期服用 Warfarin 的患者反而面臨更高的動脈硬化風險。
+        </p>
+      </div>
+    </details>
+
+    <h3 id="root-cause-1">1. 發炎與斑塊 (Atherosclerosis)</h3>
+    <p><strong>慢性低度發炎</strong>是始動因素。血管內皮受損後，巨噬細胞吞噬氧化的壞膽固醇 <strong>(Oxidized LDL)</strong> 形成泡沫細胞，堆積成斑塊。</p>
+
+    <h3 id="root-cause-2">2. 血管鈣化 (Vascular Calcification)</h3>
+    <p>平滑肌細胞發生錯誤轉分化，導致鈣質沉積在血管壁。這通常是因為鈣化抑制蛋白 <strong>(MGP)</strong> 缺乏活化，導致鈣質「跑錯地方」（不去骨頭，跑去血管）。</p>
+
+    <h3 id="root-cause-3">3. 生物能量匱乏 (Mitochondrial Dysfunction)</h3>
+    <p>心肌細胞富含粒線體。當電子傳遞鏈效率下降，<strong>ATP 生成不足</strong>，心臟收縮力就會減弱，就像電池老化的馬達。</p>
+
+    <h3 id="cause-hcy">4. 隱藏殺手：同半胱胺酸 (Homocysteine)</h3>
+    <p>這個指標常被健檢忽略，卻比膽固醇更具破壞力。它是蛋白質代謝的中間產物，若堆積過高，會直接腐蝕血管內皮。成因通常是 <strong>B 群代謝異常</strong> (如 MTHFR 基因缺損) 或葉酸攝取不足。
+    </p>
+
+    <details class="professional-insight-card">
+      <summary class="insight-summary">
+        <div class="insight-icon"><i class="fas fa-atom"></i></div>
+        <div class="insight-header">
+          <span class="insight-title">代謝解方：B 群必須是「活性」的</span>
+          <span class="insight-preview">吃 B 群沒效？可能是你選錯了形式 (尤其是 MTHFR 變異者)。</span>
+        </div>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </summary>
+      <div class="insight-content">
+        <p>約 30-40% 的亞洲人帶有 <strong>MTHFR 基因變異</strong>，無法有效代謝傳統人工合成的葉酸與 B12。若要有效降低同半胱胺酸，請選購以下活性形式：</p>
+        <ul>
+          <li><strong>葉酸 (B9)</strong>：選擇 <strong>5-MTHF (Methylfolate)</strong>，避免 "Folic Acid"。</li>
+          <li><strong>維生素 B12</strong>：選擇 <strong>Methylcobalamin (甲鈷胺)</strong>，避免 "Cyanocobalamin" (氰鈷胺)。</li>
+          <li><strong>維生素 B6</strong>：選擇 <strong>P-5-P</strong>。</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- Section 3: 修復工程 -->
+  <section id="repair">
+    <h2>3. 系統性調理對策：精準營養介入</h2>
+    <p>如同維護精密儀器，我們需要針對不同層次進行營養補充：</p>
+
+    <!-- 3.1 魚油 -->
+    <h3 id="repair-1">3.1 血管清道夫：抗發炎與溶栓 (Target: TG / Fibrin)</h3>
+    <p>高品質的 <strong>Omega-3 (特別是 EPA)</strong> 是最強的天然抗發炎劑。但市售魚油規格混亂，請參考以下數據：</p>
+
+    <div class="table-wrapper">
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>形式</th>
+              <th>濃度 (Omega-3)</th>
+              <th>吸收率 (Bioavailability)</th>
+              <th>專家評級</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>rTG 型 (再酯化)</strong></td>
+              <td>80% - 90%</td>
+              <td>⭐⭐⭐⭐⭐ (最高)</td>
+              <td><strong>首選</strong> (製程最先進，兼具高濃度與高吸收)</td>
+            </tr>
+            <tr>
+              <td><strong>EE 型 (酯化)</strong></td>
+              <td>50% - 70%</td>
+              <td>⭐⭐ (需配合油脂)</td>
+              <td><strong>次選</strong> (身體需額外酵素轉化，效率較差)</td>
+            </tr>
+            <tr>
+              <td><strong>TG 型 (萃取)</strong></td>
+              <td>30% - 50%</td>
+              <td>⭐⭐⭐⭐</td>
+              <td><strong>避免</strong> (雜質多，有效成分低，吞心酸的)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <details id="epa-dha-comparison" class="professional-insight-card">
+      <summary class="insight-summary">
+        <div class="insight-icon">🔬</div>
+        <div class="insight-header">
+          <span class="insight-title">深度解析：EPA 與 DHA 的臨床差異與應用</span>
+          <span class="insight-preview">JELIS、REDUCE-IT 與 STRENGTH 三大試驗揭示了高純度 EPA 在心血管次級預防中的獨特優勢。</span>
+        </div>
+        <div class="toggle-icon">▼</div>
+      </summary>
+      <div class="insight-content">
+        <h4>分子機制差異</h4>
+        <p>雖然 EPA 與 DHA 常被統稱為 Omega-3，但其臨床應用已逐漸分化。EPA 能更有效地整合入動脈粥狀硬化斑塊的細胞膜中，抑制脂質過氧化與泡沫細胞形成。相較之下，DHA
+          雖對神經保護與降血壓有益，但部分研究顯示其可能輕微提升 LDL-C（低密度脂蛋白膽固醇），這在高血脂患者的治療中需納入考量。</p>
+        <h4>關鍵臨床試驗的啟示</h4>
+        <ul>
+          <li><strong>JELIS & REDUCE-IT 試驗</strong>：這兩項大型試驗皆採用「高純度 EPA」作為研究藥物，並觀察到主要心血管事件（MACE）的顯著降低（分別為 19% 與
+            25%）。這奠定了高純度 EPA 在心血管次級預防中的地位。</li>
+          <li><strong>STRENGTH 試驗</strong>：此試驗採用「EPA+DHA 混合配方」，最終因未達到預期效益而提早終止。</li>
+        </ul>
+        <p>綜合以上證據，目前學界主流觀點認為，針對已有心血管疾病史或高風險族群，**單方高純度 EPA** 在預防心血管事件上的證據等級高於混合型魚油。</p>
+      </div>
+    </details>
+
+    <div class="cta-box">
+      <h4 style="margin: 0 0 10px 0; color: #1e40af;"><i class="fas fa-calculator"></i> 你的魚油成本效益合格嗎？</h4>
+      <p style="margin-bottom: 20px; font-size: 0.95em;">濃度低於 50% 的魚油，多餘成分反而是身體負擔。我們爬取了市售 15 款魚油數據。</p>
+      <a href="./fish-oil.html#market-reality-check" class="cta-btn">👉 開啟 [魚油性價比計算機] & 2025 評測報告</a>
+    </div>
+
+    <!-- Nattokinase Insight -->
+    <details class="professional-insight-card">
+      <summary class="insight-summary">
+        <div class="insight-icon"><i class="fas fa-biohazard"></i></div>
+        <div class="insight-header">
+          <span class="insight-title">隱藏英雄：納豆激酶 (Nattokinase) 與血栓溶解</span>
+          <span class="insight-preview">只有它能直接分解纖維蛋白，是預防中風的強力輔助。</span>
+        </div>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </summary>
+      <div class="insight-content">
+        <p>不同於抗凝血藥 (防止血栓形成)，納豆激酶具有獨特的<strong>溶栓能力 (Fibrinolytic Activity)</strong>，能直接分解已形成的纖維蛋白 (Fibrin)。
+        </p>
+        <h4>關鍵指標：FU (Fibrin Units)</h4>
+        <p>選購時請忽略「大豆異黃酮」含量，<strong>FU 活性單位</strong>才是重點。
+        <ul>
+          <li><strong>一般保養</strong>：2000 FU / 日 (約等於一盒納豆)。</li>
+          <li><strong>積極調理</strong>：4000 FU / 日 (早晚各一次)。</li>
+        </ul>
+        </p>
+        <p><strong>⚠️ 禁忌</strong>：因其強效溶血特性，服用抗凝血劑 (Warfarin) 者、手術前後 2 週、懷孕期間盡量避免或諮詢醫師。</p>
+      </div>
+    </details>
+
+    <!-- Red Yeast Rice Insight -->
+    <details class="professional-insight-card">
+      <summary class="insight-summary">
+        <div class="insight-icon"><i class="fas fa-flask"></i></div>
+        <div class="insight-header">
+          <span class="insight-title">天然的他汀：紅麴 (Red Yeast Rice) 的雙面刃</span>
+          <span class="insight-preview">有效降膽固醇，但要注意「橘黴素」毒性與 Q10 耗損。</span>
+        </div>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </summary>
+      <div class="insight-content">
+        <p>紅麴發酵產生的 <strong>Monacolin K</strong>，其結構與降血脂藥 Lovastatin 完全相同，因此降膽固醇效果顯著。</p>
+        <h4>兩大安全隱憂</h4>
+        <ol>
+          <li><strong>橘黴素 (Citrinin)</strong>：紅麴發酵不當會產生具肝腎毒性的橘黴素。務必選擇有檢驗報告 (未檢出) 的大廠原料。</li>
+          <li><strong>Q10 阻斷效應</strong>：Monacolin K 在阻斷膽固醇合成路徑時，會順便阻斷輔酶 Q10 的生成。長期吃紅麴若不補 Q10，容易導致肌肉痠痛、心臟無力。</li>
+        </ol>
+      </div>
+    </details>
+
+    <!-- 3.2 鈣化 -->
+    <h3 id="repair-2">3.2 鈣化調節機制：逆轉鈣化 (Target: MGP Protein)</h3>
+    <p><strong>維生素 K2 (MK-7)</strong> 能活化 MGP 蛋白，將鈣離子「抓」回骨骼。<strong>鎂</strong>則能放鬆平滑肌。</p>
+
+    <div class="food-ranking-container">
+      <h4 class="food-ranking-title">📊 補鎂食物排行榜 (每 100g 含量)</h4>
+      <ul class="food-ranking-list">
+        <li><a href="../food/pumpkin_seed.html"><span>南瓜籽</span> <span class="food-value">592 mg</span></a></li>
+        <li><a href="../food/almond.html"><span>杏仁</span> <span class="food-value">270 mg</span></a></li>
+        <li><a href="../food/dark_chocolate.html"><span>黑巧克力</span> <span class="food-value">228 mg</span></a>
+        </li>
+        <li><a href="../food/spinach.html"><span>菠菜</span> <span class="food-value">87 mg</span></a></li>
+      </ul>
+    </div>
+
+    <details id="magnesium-forms" class="professional-insight-card">
+      <summary class="insight-summary">
+        <div class="insight-icon">🧪</div>
+        <div class="insight-header">
+          <span class="insight-title">選對鎂，才有效：不同形式鎂的生物利用率與功能比較</span>
+          <span class="insight-preview">氧化鎂、甘胺酸鎂、牛磺酸鎂...它們的吸收率與功效天差地遠。</span>
+        </div>
+        <div class="toggle-icon">▼</div>
+      </summary>
+      <div class="insight-content">
+        <p>市售鎂補充劑形式繁多，其吸收率與臨床適應症差異巨大，選錯了可能只是在繳「智商稅」。</p>
+        <ul>
+          <li><strong>氧化鎂 (Magnesium Oxide)</strong>：含鎂量高但生物利用率極低（約
+            4%）。主要作用是作為滲透性軟便劑，對於提升組織鎂濃度的效果極其有限，不應作為心血管保健首選。</li>
+          <li><strong>甘胺酸鎂 (Magnesium Glycinate)</strong>：由鎂與甘胺酸螯合而成，生物利用率高且對腸胃溫和。甘胺酸本身有助於放鬆與改善睡眠，適合壓力大或有心悸傾向的患者。
+          </li>
+          <li><strong>牛磺酸鎂 (Magnesium
+              Taurate)</strong>：<strong>心血管保健首選形式</strong>。牛磺酸本身在心臟中濃度極高，具有抗心律不整及輔助降血壓的效果，與鎂結合能產生協同護心作用。</li>
+        </ul>
+        <p><strong>結論：</strong>針對心血管健康，應優先選擇<strong>牛磺酸鎂</strong>；若以放鬆助眠為主要訴求，則可選擇<strong>甘胺酸鎂</strong>。</p>
+      </div>
+    </details>
+
+    <div style="margin-top: 20px; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px dashed #cbd5e1;">
+      <strong style="color: #0f172a;">🧪 專家選購指南：鎂的形式決定命運</strong>
+      <ul style="margin-top: 10px; list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px; display: flex; align-items: start;">
+          <span
+            style="background: #22c55e; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; margin-right: 10px; flex-shrink: 0;">首選</span>
+          <span><strong>牛磺酸鎂 (Magnesium Taurate)</strong>：心血管專用。牛磺酸本身護心抗律不整，協同鎂離子放鬆血管。</span>
+        </li>
+        <li style="margin-bottom: 10px; display: flex; align-items: start;">
+          <span
+            style="background: #3b82f6; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; margin-right: 10px; flex-shrink: 0;">次選</span>
+          <span><strong>甘胺酸鎂 (Magnesium Glycinate)</strong>：吸收率最高，助眠放鬆，適合壓力大者。</span>
+        </li>
+        <li style="display: flex; align-items: start;">
+          <span
+            style="background: #ef4444; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; margin-right: 10px; flex-shrink: 0;">避免</span>
+          <span style="color: #64748b;"><strong>氧化鎂 (Magnesium Oxide)</strong>：吸收率僅
+            4%，主要功能是「軟便劑」。吃多只會拉肚子，無法補心臟。</span>
+        </li>
+      </ul>
+      <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #cbd5e1;">
+        <a href="./magnesium.html#supplement-truth"
+          style="color: #0369a1; text-decoration: none; font-weight: 600; font-size: 0.9em; display: flex; align-items: center;">
+          <span style="margin-right: 5px;">🧬</span> Project Omega: 揭開鎂補充劑的「緩衝型」標籤陷阱 (深度評測) <span
+            style="margin-left: auto;">➜</span>
+        </a>
+      </div>
+    </div>
+
+    <details id="k2-calcium-paradox" class="professional-insight-card">
+      <summary class="insight-summary">
+        <div class="insight-icon">🚦</div>
+        <div class="insight-header">
+          <span class="insight-title">維生素 K2：解開「鈣矛盾」的關鍵交通警察</span>
+          <span class="insight-preview">為何補鈣卻讓血管硬化？關鍵在於 MGP 蛋白的活化，以及 MK-4 與 MK-7 的形式差異。</span>
+        </div>
+        <div class="toggle-icon">▼</div>
+      </summary>
+      <div class="insight-content">
+        <h4>鈣矛盾 (Calcium Paradox)</h4>
+        <p>臨床上常見患者同時面臨骨質疏鬆（骨骼缺鈣）與動脈硬化（血管壁鈣化）。這顯示問題不在於鈣的總量，而在於鈣的「分佈管理」失調。維生素 K2 正是解決此矛盾的關鍵調節因子。</p>
+        <h4>MGP 蛋白：鈣化的清道夫</h4>
+        <p>維生素 K2 是血管壁中「基質格拉蛋白 (MGP)」的專屬輔酶。活化後的 MGP 能像清道夫一樣，結合並清除血管壁中游離的鈣，阻止其沉積，從而保持血管柔軟。缺乏 K2 會導致 MGP
+          無法活化，是血管鈣化的主因之一。</p>
+        <h4>MK-4 vs. MK-7：形式決定命運</h4>
+        <ul>
+          <li><strong>MK-4</strong>：半衰期極短（數小時），主要分佈於肝外組織，需每日多次高劑量服用才能維持濃度。</li>
+          <li><strong>MK-7</strong>：長鏈形式（多源自納豆發酵），半衰期長達數天，能更穩定地維持血中濃度以持續活化 MGP。因此，心血管保健首選 MK-7。</li>
+        </ul>
+        <p>臨床研究顯示，每日補充 180 µg 的 MK-7 能顯著降低動脈僵硬度，是少數證實能「逆轉」血管硬化進程的營養素。選購時，務必確認為高生物活性的「全反式 (All-Trans)」結構。</p>
+        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #f1f5f9;">
+          <a href="./vitamin-k2.html" style="color: #be123c; text-decoration: none; font-weight: 700; display: block;">
+            👉 Project Omega II: 市售 K2 的異構物風暴 - 別買到無效的偽劣品 (完整評測)
+          </a>
+        </div>
+      </div>
+    </details>
+
+    <!-- 3.3 Q10 -->
+    <h3 id="repair-3">3.3 能量代謝賦活：粒線體修復 (Target: Electron Transport Chain)</h3>
+    <p><strong>輔酶 Q10 (CoQ10)</strong> 是心臟發電的關鍵。40 歲後合成效率驟降。</p>
+
+    <details class="professional-insight-card">
+      <summary class="insight-summary">
+        <div class="insight-icon">⚡</div>
+        <div class="insight-header">
+          <span class="insight-title">還原型 (Ubiquinol) vs 氧化型 (Ubiquinone)：一場行銷與科學的對話</span>
+          <span class="insight-preview">還原型真的比較好嗎？關鍵在於「晶體分散技術」與特定族群的需求。</span>
+        </div>
+        <div class="toggle-icon">▼</div>
+      </summary>
+      <div class="insight-content">
+        <p>市面上充斥著「還原型吸收率遠高於氧化型」的說法，但科學事實更為複雜：</p>
+        <ul>
+          <li><strong>體內轉換機制</strong>：人體有高效的轉換系統，攝入穩定的氧化型 (Ubiquinone) 後，在吸收或進入血液後會迅速轉化為活性的還原型
+            (Ubiquinol)。長期補充下，兩者在提升血漿總濃度的效果上並無巨大差異。</li>
+          <li><strong>吸收率的關鍵</strong>：真正決定吸收率的是「晶體分散技術」。未經處理的 CoQ10 晶體巨大，吸收率極低（
+            <1%）。經乳化或奈米化處理的氧化型，其生物利用率可遠高於未處理的還原型。< /li>
+          <li><strong>特定族群的例外</strong>：對於年長者或嚴重慢性心臟衰竭患者，因腸道吸收功能可能受損，直接補充還原型 (Ubiquinol) 能更有效地提升血中濃度。</li>
+        </ul>
+        <p><strong>Q-SYMBIO 試驗啟示</strong>：此大型臨床試驗證實，每日補充 300mg 的 CoQ10 作為心衰竭的標準輔助療法，能顯著降低心血管死亡率。這確立了 CoQ10
+          在心臟能量代謝支持中的關鍵地位。</p>
+      </div>
+    </details>
+
+    <div class="alert alert-doctor">
+      <div>
+        <strong>[Clinical Insight: 藥物交互作用]</strong>
+        <p>降血脂藥物 (Statins) 的路徑會同時阻斷 Q10 合成，長期服用易導致肌肉疼痛。Statin 使用者每日建議補充 100-200mg Q10。</p>
+        <p><a href="./coenzyme-q10.html" style="color: #991b1b; text-decoration: underline;">👉 閱讀深度報告：Q10 還原態
+            vs
+            氧化態怎麼選？</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3.4 NO Boost -->
+  <section id="repair-4">
+    <h3 id="solution-endothelium">3.4 內皮功能優化：提升一氧化氮 (NO)</h3>
+    <p>提升血液中一氧化氮 (NO) 濃度，是讓血管放鬆、維持彈性的關鍵。然而，如何有效補充 NO 的前驅物，是一門重要的學問。</p>
+    <details class="professional-insight-card">
+      <summary class="insight-summary">
+        <div class="insight-icon">🧬</div>
+        <div class="insight-header">
+          <span class="insight-title">生物利用率駭客：L-精胺酸 vs. L-瓜胺酸</span>
+          <span class="insight-preview">為何補充 L-瓜胺酸，提升體內精胺酸的效率反而更高？</span>
+        </div>
+        <div class="toggle-icon">▼</div>
+      </summary>
+      <div class="insight-content">
+        <p><strong>L-精胺酸悖論 (The L-Arginine Paradox)</strong>：直觀上，補充作為 NO 直接前驅物的精胺酸 (Arginine) 應最有效。然而，口服精胺酸有高達 40%
+          會在腸道與肝臟被「精胺酸酶」提前分解（首過效應），導致最終進入血液循環的量大打折扣。</p>
+        <p><strong>L-瓜胺酸 (Citrulline) 的優勢</strong>：瓜胺酸則像一個「特洛伊木馬」，它可以順利通過腸肝屏障，進入腎臟後再被轉化為精胺酸，從而繞過了首過效應。研究證實，補充
+          L-瓜胺酸提升血中 NO 的效率，是直接吃精胺酸的 1.6 倍以上。</p>
+        <p><strong>結論</strong>：若要高效提升體內 NO 水平以促進血管健康，應優先選擇 <strong>L-瓜胺酸</strong>。</p>
+      </div>
+    </details>
+
+    <!-- Beetroot/Nitrate Insight -->
+    <details class="professional-insight-card">
+      <summary class="insight-summary">
+        <div class="insight-icon"><i class="fas fa-carrot"></i></div>
+        <div class="insight-header">
+          <span class="insight-title">天然備案：硝酸鹽路徑 (The Nitrate Pathway)</span>
+          <span class="insight-preview">除了精胺酸，你還可以靠「吃菜」來擴張血管。</span>
+        </div>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </summary>
+      <div class="insight-content">
+        <p>人體有兩條產生 NO 的路徑：</p>
+        <ol>
+          <li><strong>精胺酸路徑 (L-Arginine Pathway)</strong>：依賴內皮酵素 NOS，但此酵素在老化的血管中效率極差。</li>
+          <li><strong>硝酸鹽路徑 (Nitrate-Nitrite-NO Pathway)</strong>：透過口腔細菌還原食物中的硝酸鹽。這是一條「不依賴內皮完整性」的備用道路。</li>
+        </ol>
+        <p><strong>實戰應用</strong>：每日飲用 250ml <strong>甜菜根汁 (Beetroot
+            Juice)</strong>，已被證實能顯著降低收縮壓。請注意，使用強效漱口水會殺死口腔益菌，阻斷此路徑！</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- Section 4: 飲食與生活型態 -->
+  <section id="lifestyle">
+    <h2>4. 根本逆轉：飲食與運動策略</h2>
+    <p>營養品只是「補給彈藥」，真正的戰場在餐桌與運動場。以下是經科學證實最有效的修復方案：</p>
+
+    <h3 id="diet-strategy">4.1 飲食策略：DASH 與地中海的黃金交集</h3>
+    <p>不必死背菜單，掌握三大原則即可大幅降低血管發炎：</p>
+    <ul>
+      <li><strong>高鉀鎂 (High K/Mg)</strong>：大量深綠色蔬菜、南瓜籽、堅果。鉀離子能幫助排鈉降血壓。</li>
+      <li><strong>好油替換 (Oil Swap)</strong>：全面停用大豆沙拉油/葵花油 (Omega-6 促發炎)，改用<strong>特級初榨橄欖油 (EVOO)</strong>
+        與<strong>酪梨油</strong>。</li>
+      <li><strong>超級纖維 (Super Fiber)</strong>：每天早餐加入<strong>燕麥
+          (Beta-葡聚醣)</strong>，它能像海綿一樣在腸道吸附膽汁酸，強迫肝臟消耗血液中的膽固醇來製造新膽汁。</li>
+    </ul>
+
+    <!-- Na:K Ratio Calculator -->
+    <div class="interactive-check"
+      style="background-color: #f0f9ff; border-radius: 15px; padding: 30px; margin: 30px 0; border: 1px solid #bae6fd;">
+      <h3 style="color: #0369a1; margin-top: 0;"><i class="fas fa-balance-scale"></i> 鈉鉀平衡比 (Na:K Ratio) 計算機</h3>
+      <p>維持「低鈉高鉀」是降血壓的核心。輸入您的攝取量，看看是否達標。</p>
+      <div id="sodium-potassium-calc-container"></div>
+    </div>
+
+    <h3 id="exercise-zone2">4.2 運動處方：Zone 2 低心率訓練</h3>
+    <p>除了飲食，運動是逆轉心血管風險的另一大基石。然而，很多人都「練錯了」。比起高強度間歇，修復心血管系統的關鍵在於低強度的有氧訓練。</p>
+    <details class="professional-insight-card">
+      <summary class="insight-summary">
+        <div class="insight-icon">🏃</div>
+        <div class="insight-header">
+          <span class="insight-title">Zone 2 訓練：為粒線體重新充電</span>
+          <span class="insight-preview">為何「可以說話但微喘」的運動強度，才是修復心臟的關鍵？</span>
+        </div>
+        <div class="toggle-icon">▼</div>
+      </summary>
+      <div class="insight-content">
+        <p><strong>Zone 2 低心率訓練</strong>指的是將心率維持在最大心率的 60-70%
+          區間的長時間、低強度有氧運動。在這個強度下，身體的主要能量來源會從燃燒肝醣轉變為燃燒<strong>脂肪</strong>。</p>
+        <p>這個轉換至關重要，因為它能強迫因現代久坐生活而退化的粒線體「重新開機」，提升其氧化能力與效率。規律的 Zone 2 訓練不僅能改善心肺功能，更能從根本上修復細胞的能量工廠。建議每週累積 150-180
+          分鐘的 Zone 2 訓練時間。</p>
+      </div>
+    </details>
+
+    <!-- Zone 2 HR Calculator -->
+    <div class="interactive-check"
+      style="background-color: #fdf2f8; border-radius: 15px; padding: 30px; margin: 30px 0; border: 1px solid #fbcfe8;">
+      <h3 style="color: #9d174d; margin-top: 0;"><i class="fas fa-running"></i> Zone 2 心率目標計算機</h3>
+      <p>精準找出您的 Zone 2 區間，讓每一次運動都成為修復血管的良藥。</p>
+      <div id="zone2-calc-container"></div>
+    </div>
+  </section>
+
+  <!-- Section 5: 劑量建議圖表 -->
+  <section id="dosage">
+    <h2>5. 各族群的精準劑量建議 (Dosage Protocol)</h2>
+    <!-- Infographic: Dosage & Strategy -->
+    <div class="dosage-infographic-container">
+      <!-- Card 1: Maintenance -->
+      <div class="dosage-card" style="border-top: 5px solid #10b981;">
+        <div class="d-card-header">
+          <div class="d-card-icon" style="font-size: 2em; margin-right: 15px;">🍃</div>
+          <div>
+            <span class="d-card-title">日常保養族</span>
+            <span class="d-card-subtitle">健檢正常，預防為主</span>
           </div>
-          <p style="font-size: 0.9em; color: #64748b; text-align: center; margin-top: 20px;">
-            *以上建議僅供參考，若有服用抗凝血藥物或降血脂藥物，請務必先諮詢醫師。</p>
-        </section>
+        </div>
+        <ul class="d-list">
+          <li class="d-item"><span class="d-name">魚油 (Omega-3)</span> <span class="d-val">1000 mg</span></li>
+          <li class="d-item"><span class="d-name">輔酶 Q10</span> <span class="d-val">100 mg</span></li>
+          <li class="d-item"><span class="d-name">維生素 K2 (MK-7)</span> <span class="d-val">100 µg</span></li>
+          <li class="d-item" style="border-bottom: none;"><span class="d-name">鎂</span> <span class="d-val">200
+              mg</span></li>
+        </ul>
+      </div>
+      <!-- Card 2: Active Intervention -->
+      <div class="dosage-card" style="border-top: 5px solid #f97316;">
+        <div class="d-card-header">
+          <div class="d-card-icon" style="font-size: 2em; margin-right: 15px;">🎯</div>
+          <div>
+            <span class="d-card-title">積極調理族</span>
+            <span class="d-card-subtitle">三高、高壓、外食族群</span>
+          </div>
+        </div>
+        <ul class="d-list">
+          <li class="d-item"><span class="d-name">魚油 (Omega-3)</span> <span class="d-val">2000 mg</span></li>
+          <li class="d-item"><span class="d-name">輔酶 Q10</span> <span class="d-val">200 mg</span></li>
+          <li class="d-item"><span class="d-name">維生素 K2 (MK-7)</span> <span class="d-val">200 µg</span></li>
+          <li class="d-item" style="border-bottom: none;"><span class="d-name">鎂</span> <span class="d-val">400
+              mg</span></li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size: 0.9em; color: #64748b; text-align: center; margin-top: 20px;">
+      *以上建議僅供參考，若有服用抗凝血藥物或降血脂藥物，請務必先諮詢醫師。</p>
+  </section>
 
 
 
 
-        <section id="tools">
-          <h2>📝 實用營養工具 (Tools)</h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-            <div style="background: #eff6ff; padding: 25px; border-radius: 12px; border: 1px solid #dbeafe;">
-              <h3 style="margin-top: 0; color: #1e40af;">🐟 魚油 CP 值計算機</h3>
-              <p style="font-size: 0.9em;">別被價格騙了！輸入價格與顆數，一鍵算出 Omega-3 真實成本。</p>
-              <a href="../category/tools.html#fish-oil-calculator"
-                style="color: #2563eb; font-weight: bold; text-decoration: none;">前往計算 →</a>
-            </div>
-            <div style="background: #fefce8; padding: 25px; border-radius: 12px; border: 1px solid #fef9c3;">
-              <h3 style="margin-top: 0; color: #854d0e;">☕ 咖啡因耐受度計算機</h3>
-              <p style="font-size: 0.9em;">避免心悸！根據體重計算你的每日咖啡因安全上限。</p>
-              <a href="../category/tools.html#caffeine-calculator"
-                style="color: #ca8a04; font-weight: bold; text-decoration: none;">前往計算 →</a>
-            </div>
-          </div>
-        </section>
+  <section id="tools">
+    <h2>📝 實用營養工具 (Tools)</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+      <div style="background: #eff6ff; padding: 25px; border-radius: 12px; border: 1px solid #dbeafe;">
+        <h3 style="margin-top: 0; color: #1e40af;">🐟 魚油 CP 值計算機</h3>
+        <p style="font-size: 0.9em;">別被價格騙了！輸入價格與顆數，一鍵算出 Omega-3 真實成本。</p>
+        <a href="../category/tools.html#fish-oil-calculator"
+          style="color: #2563eb; font-weight: bold; text-decoration: none;">前往計算 →</a>
+      </div>
+      <div style="background: #fefce8; padding: 25px; border-radius: 12px; border: 1px solid #fef9c3;">
+        <h3 style="margin-top: 0; color: #854d0e;">☕ 咖啡因耐受度計算機</h3>
+        <p style="font-size: 0.9em;">避免心悸！根據體重計算你的每日咖啡因安全上限。</p>
+        <a href="../category/tools.html#caffeine-calculator"
+          style="color: #ca8a04; font-weight: bold; text-decoration: none;">前往計算 →</a>
+      </div>
+    </div>
+  </section>
 
-        <section id="faq" class="faq-section">
-          <h2>常見問題</h2>
+  <section id="faq" class="faq-section">
+    <h2>常見問題</h2>
 
-          <h3 class="faq-category-title">A. 核心觀念與病理機制</h3>
-          <div class="faq-item" id="faq-mechanism-1">
-            <div class="faq-question">什麼是動脈粥狀硬化？它跟膽固醇有什麼關係？</div>
-            <div class="faq-answer">
-              <p>動脈粥狀硬化不只是「油管卡油垢」。它本質上是一場發生在血管壁的<strong>慢性發炎反應</strong>。當血管內皮受損，氧化的壞膽固醇 (ox-LDL)
-                會入侵並引發免疫反應，最終形成斑塊。所以，關鍵不只是膽固醇多寡，更是「膽固醇是否被氧化」以及「血管是否正在發炎」。</p>
-              <p>更詳細的分子過程，請參考<a href="#root-cause-1">「發炎與斑塊」</a>章節的說明。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-mechanism-2">
-            <div class="faq-question">為何血管會鈣化？補鈣會讓情況更糟嗎？</div>
-            <div class="faq-answer">
-              <p>這就是所謂的「鈣矛盾」，是一個真實存在的風險。關鍵不在於不補鈣，而在於確保鈣能被正確地「導航」到骨骼，而非沉積在血管。</p>
-              <p>解決方案是確保您同時攝取足夠的 <a href="/post/vitamin-k2.html">維生素K2</a>，它能活化 MGP 蛋白，扮演「鈣質交通警察」的角色。詳細機轉請參考 <a
-                  href="#k2-calcium-paradox">K2 如何指揮鈣質歸位</a>的說明。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-mechanism-3">
-            <div class="faq-question">高血壓是如何傷害血管的？</div>
-            <div class="faq-answer">
-              <p>高血壓像是一股持續衝擊血管壁的過高水壓。這股「剪力」會直接損傷脆弱的血管內皮細胞，使其產生微小裂縫。這為壞膽固醇(LDL)的入侵和後續的<a
-                  href="#root-cause-1">發炎反應</a>創造了條件，是動脈粥狀硬化的起始步驟。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-mechanism-4">
-            <div class="faq-question">文章中提到的「內皮功能障礙」是什麼意思？</div>
-            <div class="faq-answer">
-              <p>
-                「內皮」是血管最內層的細胞，健康的內皮會分泌一氧化氮(NO)讓血管放鬆。當內皮因高血壓、高血糖等原因受損時，它分泌NO的能力就會下降，導致血管無法有效舒張、血壓升高、血小板易於凝集。這種「內皮無法正常工作」的狀態，就是<a
-                  href="#solution-endothelium">內皮功能障礙</a>，被視為心血管疾病的最早期警訊。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-mechanism-5">
-            <div class="faq-question">膽固醇有好壞之分嗎？LDL 一定是壞的嗎？</div>
-            <div class="faq-answer">
-              <p>是的，膽固醇有好壞之分。<strong>高密度脂蛋白膽固醇 (HDL-C)</strong> 被稱為「好膽固醇」，負責將多餘的膽固醇運回肝臟代謝。<strong>低密度脂蛋白膽固醇
-                  (LDL-C)</strong> 被稱為「壞膽固醇」，因為它容易被氧化並堆積在血管壁上。然而，LDL 本身並非絕對壞，它參與體內多種必要功能。真正的問題在於<strong>小而緻密的低密度脂蛋白
-                  (sd-LDL)</strong>，這種亞型的 LDL 更容易穿透血管內皮並被氧化，是引發動脈粥狀硬化的主要元兇。因此，除了總數值，LDL 的「品質」和顆粒大小更值得關注。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-mechanism-6">
-            <div class="faq-question">什麼是「胰島素阻抗」？它跟心血管健康有何關聯？</div>
-            <div class="faq-answer">
-              <p>胰島素阻抗是指身體細胞對胰島素的敏感度下降，導致需要更多胰島素才能維持血糖穩定。這種狀態會引發一系列代謝問題，與心血管健康密切相關：1) 導致高血糖，直接損傷血管內皮；2) 促使肝臟產生更多三酸甘油酯和
-                VLDL (極低密度脂蛋白)，加劇血脂異常；3) 增加身體的發炎反應。可以說，胰島素阻抗是連接肥胖、糖尿病與心血管疾病的中心樞紐。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-mechanism-7">
-            <div class="faq-question">hs-CRP (高敏度C-反應蛋白) 這個指標代表什麼？為何它很重要？</div>
-            <div class="faq-answer">
-              <p>hs-CRP 是一個高度敏感的<strong>發炎指標</strong>。傳統的 CRP 用於檢測急性感染，而 hs-CRP 則能偵測到體內長期、慢性的低度發炎狀態。在心血管領域，hs-CRP
-                數值升高，代表血管系統可能正處於慢性發炎中，這是動脈粥狀硬化斑塊不穩定、容易破裂的警訊。研究顯示，hs-CRP 是比 LDL-C 更強的獨立心血管事件預測因子。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-mechanism-8">
-            <div class="faq-question">血栓 (Thrombosis) 和斑塊 (Plaque) 有什麼不同？</div>
-            <div class="faq-answer">
-              <p>兩者是不同階段的產物。<strong>斑塊 (Plaque)</strong> 是長期累積的結果，主要由氧化的膽固醇、泡沫細胞、鈣質等物質組成，慢慢地使血管管徑變窄。<strong>血栓
-                  (Thrombus)</strong>
-                則是短時間內形成的「血塊」。當不穩定的斑塊突然破裂，其內容物接觸到血液，就會像觸發警報一樣，瞬間啟動凝血機制，在幾分鐘內形成血栓，徹底堵死血管，這就是心肌梗塞或缺血性腦中風發生的原因。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-mechanism-9">
-            <div class="faq-question">壓力 (Stress) 是如何具體地傷害心臟和血管的？</div>
-            <div class="faq-answer">
-              <p>長期壓力主要透過兩條路徑傷害心血管：1) <strong>神經荷爾蒙途徑</strong>：壓力會使身體持續分泌皮質醇 (Cortisol) 和腎上腺素等壓力荷爾蒙，導致心率加快、血壓升高，並促進發炎。2)
-                <strong>行為改變途徑</strong>：處於壓力下的人們，往往會傾向於不健康的行為，如抽菸、酗酒、暴飲暴食、睡眠不足等，這些行為本身就是心血管疾病的獨立風險因子。因此，壓力管理是心血管保健中常被忽略但極為重要的一環。
-              </p>
-            </div>
-          </div>
+    <h3 class="faq-category-title">A. 核心觀念與病理機制</h3>
+    <div class="faq-item" id="faq-mechanism-1">
+      <div class="faq-question">什麼是動脈粥狀硬化？它跟膽固醇有什麼關係？</div>
+      <div class="faq-answer">
+        <p>動脈粥狀硬化不只是「油管卡油垢」。它本質上是一場發生在血管壁的<strong>慢性發炎反應</strong>。當血管內皮受損，氧化的壞膽固醇 (ox-LDL)
+          會入侵並引發免疫反應，最終形成斑塊。所以，關鍵不只是膽固醇多寡，更是「膽固醇是否被氧化」以及「血管是否正在發炎」。</p>
+        <p>更詳細的分子過程，請參考<a href="#root-cause-1">「發炎與斑塊」</a>章節的說明。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-mechanism-2">
+      <div class="faq-question">為何血管會鈣化？補鈣會讓情況更糟嗎？</div>
+      <div class="faq-answer">
+        <p>這就是所謂的「鈣矛盾」，是一個真實存在的風險。關鍵不在於不補鈣，而在於確保鈣能被正確地「導航」到骨骼，而非沉積在血管。</p>
+        <p>解決方案是確保您同時攝取足夠的 <a href="/post/vitamin-k2.html">維生素K2</a>，它能活化 MGP 蛋白，扮演「鈣質交通警察」的角色。詳細機轉請參考 <a
+            href="#k2-calcium-paradox">K2 如何指揮鈣質歸位</a>的說明。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-mechanism-3">
+      <div class="faq-question">高血壓是如何傷害血管的？</div>
+      <div class="faq-answer">
+        <p>高血壓像是一股持續衝擊血管壁的過高水壓。這股「剪力」會直接損傷脆弱的血管內皮細胞，使其產生微小裂縫。這為壞膽固醇(LDL)的入侵和後續的<a
+            href="#root-cause-1">發炎反應</a>創造了條件，是動脈粥狀硬化的起始步驟。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-mechanism-4">
+      <div class="faq-question">文章中提到的「內皮功能障礙」是什麼意思？</div>
+      <div class="faq-answer">
+        <p>
+          「內皮」是血管最內層的細胞，健康的內皮會分泌一氧化氮(NO)讓血管放鬆。當內皮因高血壓、高血糖等原因受損時，它分泌NO的能力就會下降，導致血管無法有效舒張、血壓升高、血小板易於凝集。這種「內皮無法正常工作」的狀態，就是<a
+            href="#solution-endothelium">內皮功能障礙</a>，被視為心血管疾病的最早期警訊。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-mechanism-5">
+      <div class="faq-question">膽固醇有好壞之分嗎？LDL 一定是壞的嗎？</div>
+      <div class="faq-answer">
+        <p>是的，膽固醇有好壞之分。<strong>高密度脂蛋白膽固醇 (HDL-C)</strong> 被稱為「好膽固醇」，負責將多餘的膽固醇運回肝臟代謝。<strong>低密度脂蛋白膽固醇
+            (LDL-C)</strong> 被稱為「壞膽固醇」，因為它容易被氧化並堆積在血管壁上。然而，LDL 本身並非絕對壞，它參與體內多種必要功能。真正的問題在於<strong>小而緻密的低密度脂蛋白
+            (sd-LDL)</strong>，這種亞型的 LDL 更容易穿透血管內皮並被氧化，是引發動脈粥狀硬化的主要元兇。因此，除了總數值，LDL 的「品質」和顆粒大小更值得關注。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-mechanism-6">
+      <div class="faq-question">什麼是「胰島素阻抗」？它跟心血管健康有何關聯？</div>
+      <div class="faq-answer">
+        <p>胰島素阻抗是指身體細胞對胰島素的敏感度下降，導致需要更多胰島素才能維持血糖穩定。這種狀態會引發一系列代謝問題，與心血管健康密切相關：1) 導致高血糖，直接損傷血管內皮；2) 促使肝臟產生更多三酸甘油酯和
+          VLDL (極低密度脂蛋白)，加劇血脂異常；3) 增加身體的發炎反應。可以說，胰島素阻抗是連接肥胖、糖尿病與心血管疾病的中心樞紐。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-mechanism-7">
+      <div class="faq-question">hs-CRP (高敏度C-反應蛋白) 這個指標代表什麼？為何它很重要？</div>
+      <div class="faq-answer">
+        <p>hs-CRP 是一個高度敏感的<strong>發炎指標</strong>。傳統的 CRP 用於檢測急性感染，而 hs-CRP 則能偵測到體內長期、慢性的低度發炎狀態。在心血管領域，hs-CRP
+          數值升高，代表血管系統可能正處於慢性發炎中，這是動脈粥狀硬化斑塊不穩定、容易破裂的警訊。研究顯示，hs-CRP 是比 LDL-C 更強的獨立心血管事件預測因子。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-mechanism-8">
+      <div class="faq-question">血栓 (Thrombosis) 和斑塊 (Plaque) 有什麼不同？</div>
+      <div class="faq-answer">
+        <p>兩者是不同階段的產物。<strong>斑塊 (Plaque)</strong> 是長期累積的結果，主要由氧化的膽固醇、泡沫細胞、鈣質等物質組成，慢慢地使血管管徑變窄。<strong>血栓
+            (Thrombus)</strong>
+          則是短時間內形成的「血塊」。當不穩定的斑塊突然破裂，其內容物接觸到血液，就會像觸發警報一樣，瞬間啟動凝血機制，在幾分鐘內形成血栓，徹底堵死血管，這就是心肌梗塞或缺血性腦中風發生的原因。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-mechanism-9">
+      <div class="faq-question">壓力 (Stress) 是如何具體地傷害心臟和血管的？</div>
+      <div class="faq-answer">
+        <p>長期壓力主要透過兩條路徑傷害心血管：1) <strong>神經荷爾蒙途徑</strong>：壓力會使身體持續分泌皮質醇 (Cortisol) 和腎上腺素等壓力荷爾蒙，導致心率加快、血壓升高，並促進發炎。2)
+          <strong>行為改變途徑</strong>：處於壓力下的人們，往往會傾向於不健康的行為，如抽菸、酗酒、暴飲暴食、睡眠不足等，這些行為本身就是心血管疾病的獨立風險因子。因此，壓力管理是心血管保健中常被忽略但極為重要的一環。
+        </p>
+      </div>
+    </div>
 
-          <h3 class="faq-category-title">B. 關鍵營養素解析</h3>
-          <div class="faq-item" id="faq-nutrients-1">
-            <div class="faq-question">魚油的 EPA 和 DHA 到底有什麼不同？心血管保健該選哪一種？</div>
-            <div class="faq-answer">
-              <p>兩者功能不同。簡單來說，<strong>EPA 主要負責抗發炎與心血管保護</strong>，而 **DHA 則偏重於大腦與視網膜的結構健康**。</p>
-              <p>根據 REDUCE-IT 等大型臨床試驗的結果，針對已有心血管疾病風險的族群，使用「高純度EPA」的效益優於混合型魚油。詳細的科學證據比較，請參考 <a
-                  href="#epa-dha-comparison">EPA 與 DHA 的臨床差異解析</a>。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-nutrients-2">
-            <div class="faq-question">為何你們說還原型Q10(Ubiquinol)不一定比氧化型(Ubiquinone)好？</div>
-            <div class="faq-answer">
-              <p>
-                因為人體有高效的轉換機制，且真正影響吸收率的關鍵是「晶體分散技術」而非型態。對於一般健康人，經良好技術處理的氧化型(Ubiquinone)已足夠。但對於年長者或心衰竭患者，因腸道吸收功能可能較差，直接補充還原型(Ubiquinol)可能更有效益。詳情請見<a
-                  href="#repair-3">輔酶 Q10</a>的深度解析。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-nutrients-3">
-            <div class="faq-question">鎂有這麼多種（氧化鎂、甘胺酸鎂、牛磺酸鎂），我該怎麼選？</div>
-            <div class="faq-answer">
-              <p>
-                選擇的關鍵在於您的主要目標。為了心血管健康，含有牛磺酸的<strong>牛磺酸鎂</strong>是首選。若主要目的是放鬆助眠，則可選吸收率最高的**甘胺酸鎂**。應盡量避免吸收率極低的**氧化鎂**。更詳細的比較請見<a
-                  href="#magnesium-forms">不同形式鎂的比較卡片</a>。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-nutrients-4">
-            <div class="faq-question">紅麴既然和 Statin 藥物成分一樣，我可以直接吃紅麴代替嗎？</div>
-            <div class="faq-answer">
-              <p>不建議。雖然紅麴中的 Monacolin K
-                結構與藥物相同，但市售紅麴產品的劑量、純度與污染物（如橘黴素）的監管遠不如處方藥嚴格。自行以紅麴替代處方藥，可能導致劑量不足或過量，甚至承擔不必要的毒性風險。任何藥物調整都應在醫師指導下進行。詳情請見 <a
-                  href="#safety-protocol">藥物交互作用矩陣</a>。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-nutrients-5">
-            <div class="faq-question">維生素 K2 和一般的維生素 K (K1) 有什麼不同？</div>
-            <div class="faq-answer">
-              <p>兩者功能不同。<strong>維生素 K1</strong> 主要在肝臟作用，與血液凝固有關。而 <strong>維生素 K2</strong> 則在全身作用，負責活化 MGP
-                和骨鈣素等蛋白，扮演「鈣質導航」的角色，引導鈣質進入骨骼，並防止其沉積在血管等不該去的地方。因此，在預防血管鈣化方面，補充 K2 (特別是長效的 MK-7 形式) 比 K1 更為重要。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-nutrients-6">
-            <div class="faq-question">聽說「高劑量」的維生素B群可以降血脂，這是真的嗎？</div>
-            <div class="faq-answer">
-              <p>這是指特定形式的維生素B3，即**菸鹼酸 (Niacin)**。在藥物劑量下（每日 1000mg 以上），菸鹼酸確實能顯著降低 LDL 和三酸甘油酯，並提升
-                HDL。然而，它也會帶來劇烈的皮膚潮紅、發癢等副作用，且需醫師處方與監控。市面上一般的 B 群補充品所含的菸鹼醯胺 (Niacinamide) 或劑量遠不足以達到降血脂的效果，切勿自行嘗試高劑量補充。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-nutrients-7">
-            <div class="faq-question">什麼是「植物固醇」？它能取代降膽固醇藥物嗎？</div>
-            <div class="faq-answer">
-              <p>植物固醇 (Plant Sterols) 是一種存在於植物中的天然化合物，其化學結構與膽固醇非常相似。在腸道中，它可以透過「競爭性抑制」的方式，減少人體對飲食中膽固醇的吸收。每日攝取 2
-                克植物固醇，約可降低 10% 的 LDL-C。然而，它只作用於腸道吸收端，無法取代 Statin 類藥物（作用於肝臟製造端）的地位，但可以作為輔助療法，或適合膽固醇輕微超標且不想用藥的族群。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-nutrients-8">
-            <div class="faq-question">補充大蒜精 (Garlic) 對心血管有什麼具體好處？</div>
-            <div class="faq-answer">
-              <p>大蒜中的活性成分**大蒜素 (Allicin)** 具有多重心血管保護作用。研究顯示它能：1) 輕微降低血壓；2) 抑制血小板凝集，降低血栓風險；3) 抗氧化與抗發炎；4) 幫助降低總膽固醇與
-                LDL-C。不過大蒜素非常不穩定，容易在烹煮或消化過程中被破壞，因此補充標準化的大蒜精產品是更有效的方式。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-nutrients-9">
-            <div class="faq-question">瓜胺酸 (Citrulline) 和精胺酸 (Arginine) 哪個對提升一氧化氮 (NO) 比較好？</div>
-            <div class="faq-answer">
-              <p>雖然精胺酸是 NO 的直接原料，但研究顯示口服 <strong>L-瓜胺酸</strong> 在提升體內精胺酸和 NO
-                濃度的效率上反而更高。這是因為口服的精胺酸大部分會在進入全身循環前就被肝臟代謝掉（首過效應），而瓜胺酸則能繞過此路徑，在腎臟被轉換成精胺酸，成為更有效率的 NO 補充來源。</p>
-            </div>
-          </div>
+    <h3 class="faq-category-title">B. 關鍵營養素解析</h3>
+    <div class="faq-item" id="faq-nutrients-1">
+      <div class="faq-question">魚油的 EPA 和 DHA 到底有什麼不同？心血管保健該選哪一種？</div>
+      <div class="faq-answer">
+        <p>兩者功能不同。簡單來說，<strong>EPA 主要負責抗發炎與心血管保護</strong>，而 **DHA 則偏重於大腦與視網膜的結構健康**。</p>
+        <p>根據 REDUCE-IT 等大型臨床試驗的結果，針對已有心血管疾病風險的族群，使用「高純度EPA」的效益優於混合型魚油。詳細的科學證據比較，請參考 <a href="#epa-dha-comparison">EPA 與
+            DHA 的臨床差異解析</a>。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-nutrients-2">
+      <div class="faq-question">為何你們說還原型Q10(Ubiquinol)不一定比氧化型(Ubiquinone)好？</div>
+      <div class="faq-answer">
+        <p>
+          因為人體有高效的轉換機制，且真正影響吸收率的關鍵是「晶體分散技術」而非型態。對於一般健康人，經良好技術處理的氧化型(Ubiquinone)已足夠。但對於年長者或心衰竭患者，因腸道吸收功能可能較差，直接補充還原型(Ubiquinol)可能更有效益。詳情請見<a
+            href="#repair-3">輔酶 Q10</a>的深度解析。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-nutrients-3">
+      <div class="faq-question">鎂有這麼多種（氧化鎂、甘胺酸鎂、牛磺酸鎂），我該怎麼選？</div>
+      <div class="faq-answer">
+        <p>
+          選擇的關鍵在於您的主要目標。為了心血管健康，含有牛磺酸的<strong>牛磺酸鎂</strong>是首選。若主要目的是放鬆助眠，則可選吸收率最高的**甘胺酸鎂**。應盡量避免吸收率極低的**氧化鎂**。更詳細的比較請見<a
+            href="#magnesium-forms">不同形式鎂的比較卡片</a>。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-nutrients-4">
+      <div class="faq-question">紅麴既然和 Statin 藥物成分一樣，我可以直接吃紅麴代替嗎？</div>
+      <div class="faq-answer">
+        <p>不建議。雖然紅麴中的 Monacolin K
+          結構與藥物相同，但市售紅麴產品的劑量、純度與污染物（如橘黴素）的監管遠不如處方藥嚴格。自行以紅麴替代處方藥，可能導致劑量不足或過量，甚至承擔不必要的毒性風險。任何藥物調整都應在醫師指導下進行。詳情請見 <a
+            href="#safety-protocol">藥物交互作用矩陣</a>。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-nutrients-5">
+      <div class="faq-question">維生素 K2 和一般的維生素 K (K1) 有什麼不同？</div>
+      <div class="faq-answer">
+        <p>兩者功能不同。<strong>維生素 K1</strong> 主要在肝臟作用，與血液凝固有關。而 <strong>維生素 K2</strong> 則在全身作用，負責活化 MGP
+          和骨鈣素等蛋白，扮演「鈣質導航」的角色，引導鈣質進入骨骼，並防止其沉積在血管等不該去的地方。因此，在預防血管鈣化方面，補充 K2 (特別是長效的 MK-7 形式) 比 K1 更為重要。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-nutrients-6">
+      <div class="faq-question">聽說「高劑量」的維生素B群可以降血脂，這是真的嗎？</div>
+      <div class="faq-answer">
+        <p>這是指特定形式的維生素B3，即**菸鹼酸 (Niacin)**。在藥物劑量下（每日 1000mg 以上），菸鹼酸確實能顯著降低 LDL 和三酸甘油酯，並提升
+          HDL。然而，它也會帶來劇烈的皮膚潮紅、發癢等副作用，且需醫師處方與監控。市面上一般的 B 群補充品所含的菸鹼醯胺 (Niacinamide) 或劑量遠不足以達到降血脂的效果，切勿自行嘗試高劑量補充。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-nutrients-7">
+      <div class="faq-question">什麼是「植物固醇」？它能取代降膽固醇藥物嗎？</div>
+      <div class="faq-answer">
+        <p>植物固醇 (Plant Sterols) 是一種存在於植物中的天然化合物，其化學結構與膽固醇非常相似。在腸道中，它可以透過「競爭性抑制」的方式，減少人體對飲食中膽固醇的吸收。每日攝取 2
+          克植物固醇，約可降低 10% 的 LDL-C。然而，它只作用於腸道吸收端，無法取代 Statin 類藥物（作用於肝臟製造端）的地位，但可以作為輔助療法，或適合膽固醇輕微超標且不想用藥的族群。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-nutrients-8">
+      <div class="faq-question">補充大蒜精 (Garlic) 對心血管有什麼具體好處？</div>
+      <div class="faq-answer">
+        <p>大蒜中的活性成分**大蒜素 (Allicin)** 具有多重心血管保護作用。研究顯示它能：1) 輕微降低血壓；2) 抑制血小板凝集，降低血栓風險；3) 抗氧化與抗發炎；4) 幫助降低總膽固醇與
+          LDL-C。不過大蒜素非常不穩定，容易在烹煮或消化過程中被破壞，因此補充標準化的大蒜精產品是更有效的方式。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-nutrients-9">
+      <div class="faq-question">瓜胺酸 (Citrulline) 和精胺酸 (Arginine) 哪個對提升一氧化氮 (NO) 比較好？</div>
+      <div class="faq-answer">
+        <p>雖然精胺酸是 NO 的直接原料，但研究顯示口服 <strong>L-瓜胺酸</strong> 在提升體內精胺酸和 NO
+          濃度的效率上反而更高。這是因為口服的精胺酸大部分會在進入全身循環前就被肝臟代謝掉（首過效應），而瓜胺酸則能繞過此路徑，在腎臟被轉換成精胺酸，成為更有效率的 NO 補充來源。</p>
+      </div>
+    </div>
 
-          <h3 class="faq-category-title">C. 飲食、運動與生活</h3>
-          <div class="faq-item" id="faq-lifestyle-1">
-            <div class="faq-question">除了保健食品，最推薦的護心飲食法是什麼？</div>
-            <div class="faq-answer">
-              <p>飲食是根本。建議參考 <a href="#diet-strategy">DASH 或地中海飲食原則</a>。核心原則包括：多攝取高鉀鎂食物（如 <a
-                  href="/food/spinach.html">菠菜</a>、<a href="/food/almond.html">杏仁</a>）、使用橄欖油等好油、多吃 <a
-                  href="/food/salmon.html">鮭魚</a> 等深海魚以攝取 Omega-3。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-lifestyle-2">
-            <div class="faq-question">哪種運動對心臟最好？是不是越喘越有效？</div>
-            <div class="faq-answer">
-              <p>不一定。對於修復心血管系統、提升粒線體功能而言，長時間的低強度有氧運動，即 <strong>Zone 2
-                  訓練</strong>，往往比高強度運動更為關鍵。它能有效地讓身體學會燃燒脂肪，從而改善細胞能量代謝。詳情請見 <a href="#exercise-zone2">Zone 2
-                  訓練：為粒線體重新充電</a>的說明。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-lifestyle-3">
-            <div class="faq-question">聽說喝紅酒對心臟好，是真的嗎？</div>
-            <div class="faq-answer">
-              <p>
-                這是個被過度放大的迷思。雖然紅酒中的白藜蘆醇等抗氧化物在「細胞實驗」中顯示出潛力，但要達到有效劑量需要大量飲用，屆時酒精帶來的肝臟損傷、癌症風險與熱量問題，早已遠遠超過其微弱的好處。美國心臟協會等權威機構<strong>不建議</strong>任何人以「保護心臟」為由開始飲酒。
-              </p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-lifestyle-4">
-            <div class="faq-question">DASH 飲食和地中海飲食，哪一個對心血管更好？</div>
-            <div class="faq-answer">
-              <p>兩者都是頂級的護心飲食法，只是側重點稍有不同。<strong>DASH 飲食</strong> (得舒飲食)
-                最初是為了控制高血壓設計，強調高鉀、高鎂、高鈣、低鈉，蔬菜水果和低脂乳製品是核心。<strong>地中海飲食</strong>則更強調健康的脂肪來源
-                (如橄欖油、魚油、堅果)、全穀類和豐富的植化素。近年來許多研究推崇結合兩者優點的 <strong>MIND 飲食</strong>，被認為對心腦血管都有更全面的保護力。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-lifestyle-5">
-            <div class="faq-question">睡眠不足或睡眠品質差，真的會影響心血管健康嗎？</div>
-            <div class="faq-answer">
-              <p>絕對會。睡眠是身體進行修復、調節荷爾蒙和降低發炎的關鍵時期。長期睡眠不足（少於 6-7
-                小時）會導致交感神經系統過度活化，造成血壓和心率升高，增加高血壓、心肌梗塞和中風的風險。睡眠呼吸中止症更是心血管疾病的獨立高風險因子，若有嚴重打鼾或白天嗜睡問題，應及早就醫檢查。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-lifestyle-6">
-            <div class="faq-question">間歇性斷食 (Intermittent Fasting) 對心臟有好處嗎？</div>
-            <div class="faq-answer">
-              <p>有潛力，但需謹慎執行。研究顯示，間歇性斷食（如 168 斷食法）可能透過改善胰島素敏感性、降低發炎、啟動細胞自噬 (Autophagy)
-                等機制來促進心血管健康。然而，若在進食窗口內攝取大量不健康的食物，則好處會被抵銷。重點仍在於「吃什麼」而非單純「何時吃」。執行前建議與醫師或營養師討論。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-lifestyle-7">
-            <div class="faq-question">我應該完全不吃鹽（鈉）嗎？</div>
-            <div class="faq-answer">
-              <p>不是完全不吃，而是「限制」。鈉是維持體液平衡和神經傳導的必需礦物質，但現代飲食普遍超標。過量的鈉會使水分滯留體內，增加血容量，從而升高血壓。世界衛生組織建議成人每日鈉攝取量應低於 2000 毫克（約等於 5
-                克鹽）。重點是避開加工食品、罐頭、醬料等隱藏的鈉來源，而非完全水煮。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-lifestyle-8">
-            <div class="faq-question">重量訓練對心臟有幫助嗎？還是只該做有氧運動？</div>
-            <div class="faq-answer">
-              <p>重量訓練對心臟非常有益。過去認為有氧運動才是護心首選，但現在的研究指出，重量訓練能：1) 增加肌肉量，提升基礎代謝率與胰島素敏感度；2) 降低腹部脂肪；3) 改善血脂組成。理想的運動計畫應結合有氧運動（如
-                Zone 2 訓練）和阻力訓練，兩者相輔相成，能達到最佳的心血管保護效果。</p>
-            </div>
-          </div>
+    <h3 class="faq-category-title">C. 飲食、運動與生活</h3>
+    <div class="faq-item" id="faq-lifestyle-1">
+      <div class="faq-question">除了保健食品，最推薦的護心飲食法是什麼？</div>
+      <div class="faq-answer">
+        <p>飲食是根本。建議參考 <a href="#diet-strategy">DASH 或地中海飲食原則</a>。核心原則包括：多攝取高鉀鎂食物（如 <a
+            href="/food/spinach.html">菠菜</a>、<a href="/food/almond.html">杏仁</a>）、使用橄欖油等好油、多吃 <a
+            href="/food/salmon.html">鮭魚</a> 等深海魚以攝取 Omega-3。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-lifestyle-2">
+      <div class="faq-question">哪種運動對心臟最好？是不是越喘越有效？</div>
+      <div class="faq-answer">
+        <p>不一定。對於修復心血管系統、提升粒線體功能而言，長時間的低強度有氧運動，即 <strong>Zone 2
+            訓練</strong>，往往比高強度運動更為關鍵。它能有效地讓身體學會燃燒脂肪，從而改善細胞能量代謝。詳情請見 <a href="#exercise-zone2">Zone 2
+            訓練：為粒線體重新充電</a>的說明。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-lifestyle-3">
+      <div class="faq-question">聽說喝紅酒對心臟好，是真的嗎？</div>
+      <div class="faq-answer">
+        <p>
+          這是個被過度放大的迷思。雖然紅酒中的白藜蘆醇等抗氧化物在「細胞實驗」中顯示出潛力，但要達到有效劑量需要大量飲用，屆時酒精帶來的肝臟損傷、癌症風險與熱量問題，早已遠遠超過其微弱的好處。美國心臟協會等權威機構<strong>不建議</strong>任何人以「保護心臟」為由開始飲酒。
+        </p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-lifestyle-4">
+      <div class="faq-question">DASH 飲食和地中海飲食，哪一個對心血管更好？</div>
+      <div class="faq-answer">
+        <p>兩者都是頂級的護心飲食法，只是側重點稍有不同。<strong>DASH 飲食</strong> (得舒飲食)
+          最初是為了控制高血壓設計，強調高鉀、高鎂、高鈣、低鈉，蔬菜水果和低脂乳製品是核心。<strong>地中海飲食</strong>則更強調健康的脂肪來源
+          (如橄欖油、魚油、堅果)、全穀類和豐富的植化素。近年來許多研究推崇結合兩者優點的 <strong>MIND 飲食</strong>，被認為對心腦血管都有更全面的保護力。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-lifestyle-5">
+      <div class="faq-question">睡眠不足或睡眠品質差，真的會影響心血管健康嗎？</div>
+      <div class="faq-answer">
+        <p>絕對會。睡眠是身體進行修復、調節荷爾蒙和降低發炎的關鍵時期。長期睡眠不足（少於 6-7
+          小時）會導致交感神經系統過度活化，造成血壓和心率升高，增加高血壓、心肌梗塞和中風的風險。睡眠呼吸中止症更是心血管疾病的獨立高風險因子，若有嚴重打鼾或白天嗜睡問題，應及早就醫檢查。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-lifestyle-6">
+      <div class="faq-question">間歇性斷食 (Intermittent Fasting) 對心臟有好處嗎？</div>
+      <div class="faq-answer">
+        <p>有潛力，但需謹慎執行。研究顯示，間歇性斷食（如 168 斷食法）可能透過改善胰島素敏感性、降低發炎、啟動細胞自噬 (Autophagy)
+          等機制來促進心血管健康。然而，若在進食窗口內攝取大量不健康的食物，則好處會被抵銷。重點仍在於「吃什麼」而非單純「何時吃」。執行前建議與醫師或營養師討論。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-lifestyle-7">
+      <div class="faq-question">我應該完全不吃鹽（鈉）嗎？</div>
+      <div class="faq-answer">
+        <p>不是完全不吃，而是「限制」。鈉是維持體液平衡和神經傳導的必需礦物質，但現代飲食普遍超標。過量的鈉會使水分滯留體內，增加血容量，從而升高血壓。世界衛生組織建議成人每日鈉攝取量應低於 2000 毫克（約等於 5
+          克鹽）。重點是避開加工食品、罐頭、醬料等隱藏的鈉來源，而非完全水煮。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-lifestyle-8">
+      <div class="faq-question">重量訓練對心臟有幫助嗎？還是只該做有氧運動？</div>
+      <div class="faq-answer">
+        <p>重量訓練對心臟非常有益。過去認為有氧運動才是護心首選，但現在的研究指出，重量訓練能：1) 增加肌肉量，提升基礎代謝率與胰島素敏感度；2) 降低腹部脂肪；3) 改善血脂組成。理想的運動計畫應結合有氧運動（如
+          Zone 2 訓練）和阻力訓練，兩者相輔相成，能達到最佳的心血管保護效果。</p>
+      </div>
+    </div>
 
-          <h3 class="faq-category-title">D. 安全性與藥物交互作用</h3>
-          <div class="faq-item" id="faq-safety-1">
-            <div class="faq-question">魚油、Q10、納豆激酶可以一起吃嗎？有沒有順序？</div>
-            <div class="faq-answer">
-              <p>可以，但建議錯開時間以達最佳吸收效果：</p>
-              <ul>
-                <li><strong>魚油</strong>和<strong>輔酶Q10</strong>：兩者皆為脂溶性，建議隨餐或飯後服用，可以一起吃。</li>
-                <li><strong>納豆激酶</strong>：為一種酵素，建議在空腹時（如飯前或睡前）服用，避免胃酸破壞其活性。</li>
-              </ul>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-safety-2">
-            <div class="faq-question">我正在服用降血壓/降血脂藥，還能吃這些保健食品嗎？</div>
-            <div class="faq-answer">
-              <p>這是一個高風險問題，<strong>強烈建議在諮詢您的醫師前不要自行併用</strong>。部分組合有嚴重交互作用，例如 Statin 藥物不應與紅麴併用、抗凝血藥 Warfarin 不應與 K2
-                或納豆激酶併用。更詳細的資訊，請務必參考文章中的 <a href="#safety-protocol">藥物與營養素交互作用矩陣</a>。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-safety-3">
-            <div class="faq-question">如果我吃了魚油，是不是就不能吃阿斯匹靈了？</div>
-            <div class="faq-answer">
-              <p>
-                在常規劑量下，魚油與阿斯匹靈併用是相對安全的，但仍建議告知醫師。高劑量（每日>3克）的魚油具有輕微的抗血小板作用，理論上可能與阿斯匹靈產生加成效果，增加出血風險。若您發現不明原因的瘀青或出血傾向，應立即諮詢醫師。
-              </p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-safety-4">
-            <div class="faq-question">葡萄柚和心血管藥物之間有什麼禁忌？</div>
-            <div class="faq-answer">
-              <p>葡萄柚或葡萄柚汁是許多心血管藥物的「頭號公敵」。它含有的<strong>呋喃香豆素 (furanocoumarins)</strong> 會抑制體內一種名為 <strong>CYP3A4</strong>
-                的代謝酵素，該酵素負責分解許多藥物，包括 Statin 類降血脂藥、部分鈣離子通道阻斷劑 (降血壓藥)
-                等。抑制作用會導致藥物無法正常代謝，在血中濃度異常升高，有時可達數倍甚至數十倍，從而引發如橫紋肌溶解、急性腎衰竭等嚴重毒性反應。服用特定藥物期間，應完全避免攝取葡萄柚相關製品。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-safety-5">
-            <div class="faq-question">除了納豆激酶，還有哪些保健食品會和抗凝血藥 (Warfarin) 產生交互作用？</div>
-            <div class="faq-answer">
-              <p>非常多，需要特別小心。除了明確會抵銷藥效的<strong>維生素K</strong>，許多具有「活血化瘀」功效的草本補充品，都可能增強 Warfarin
-                的抗凝血效果，增加出血風險。常見的例子包括：<strong>丹參、當歸、銀杏、高劑量的魚油 (每日 > 3克)、大蒜精、和 EGCG (綠茶素)</strong>。若正在服用
-                Warfarin，在新增任何保健食品前，都必須與您的醫師或藥師進行詳細諮詢。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-safety-6">
-            <div class="faq-question">我在吃降血壓藥，可以補充鉀離子或鎂離子嗎？</div>
-            <div class="faq-answer">
-              <p>大部分情況下是安全且有益的，但有例外。從飲食中增加鉀鎂攝取（如多吃蔬菜、堅果）通常是安全的。但若您服用的是<strong>保鉀型利尿劑 (Potassium-sparing
-                  diuretics)</strong> 或 <strong>血管張力素轉化酶抑制劑
-                  (ACEI)</strong>，額外補充高劑量鉀補充劑可能導致高血鉀症，引發心律不整。鎂則相對安全，且有輔助降壓放鬆血管的效果，但腎功能不全者需注意劑量。總之，用藥期間補充礦物質，最好先讓醫師知道。
-              </p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-safety-7">
-            <div class="faq-question">市面上的「清血管」保健食品，真的能清除已形成的斑塊嗎？</div>
-            <div class="faq-answer">
-              <p>這是一個常見的行銷話術，需要釐清。目前沒有任何保健食品被證實能「完全清除」或「溶解」已經形成並鈣化的動脈粥狀硬化斑塊。納豆激酶能溶解的是「血栓」，而非「斑塊」。魚油、維生素 K2
-                等營養素的主要作用在於<strong>抗發炎、減緩斑塊生長、增加斑塊穩定性
-                  (避免破裂)</strong>，以及<strong>預防和部分逆轉鈣化</strong>。它們是「預防」和「延緩惡化」，而非「清除」。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-safety-8">
-            <div class="faq-question">服用 Statin 類藥物，為何一定要補充輔酶 Q10？</div>
-            <div class="faq-answer">
-              <p>因為 Statin 類藥物的作用機制是抑制肝臟中一個名為「HMG-CoA 還原酶」的酵素，來減少膽固醇的合成。然而，這個生化路徑同時也是體內合成輔酶 Q10 的必經之路。因此，Statin
-                在降膽固醇的同時，也「順便」阻斷了 Q10 的製造。缺乏 Q10 會影響細胞能量供應，特別是心臟和肌肉，導致許多患者出現肌肉痠痛、無力、疲勞等副作用。補充 Q10
-                能有效緩解這些副作用，並維持心肌的正常能量代謝。</p>
-            </div>
-          </div>
+    <h3 class="faq-category-title">D. 安全性與藥物交互作用</h3>
+    <div class="faq-item" id="faq-safety-1">
+      <div class="faq-question">魚油、Q10、納豆激酶可以一起吃嗎？有沒有順序？</div>
+      <div class="faq-answer">
+        <p>可以，但建議錯開時間以達最佳吸收效果：</p>
+        <ul>
+          <li><strong>魚油</strong>和<strong>輔酶Q10</strong>：兩者皆為脂溶性，建議隨餐或飯後服用，可以一起吃。</li>
+          <li><strong>納豆激酶</strong>：為一種酵素，建議在空腹時（如飯前或睡前）服用，避免胃酸破壞其活性。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-safety-2">
+      <div class="faq-question">我正在服用降血壓/降血脂藥，還能吃這些保健食品嗎？</div>
+      <div class="faq-answer">
+        <p>這是一個高風險問題，<strong>強烈建議在諮詢您的醫師前不要自行併用</strong>。部分組合有嚴重交互作用，例如 Statin 藥物不應與紅麴併用、抗凝血藥 Warfarin 不應與 K2
+          或納豆激酶併用。更詳細的資訊，請務必參考文章中的 <a href="#safety-protocol">藥物與營養素交互作用矩陣</a>。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-safety-3">
+      <div class="faq-question">如果我吃了魚油，是不是就不能吃阿斯匹靈了？</div>
+      <div class="faq-answer">
+        <p>
+          在常規劑量下，魚油與阿斯匹靈併用是相對安全的，但仍建議告知醫師。高劑量（每日>3克）的魚油具有輕微的抗血小板作用，理論上可能與阿斯匹靈產生加成效果，增加出血風險。若您發現不明原因的瘀青或出血傾向，應立即諮詢醫師。
+        </p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-safety-4">
+      <div class="faq-question">葡萄柚和心血管藥物之間有什麼禁忌？</div>
+      <div class="faq-answer">
+        <p>葡萄柚或葡萄柚汁是許多心血管藥物的「頭號公敵」。它含有的<strong>呋喃香豆素 (furanocoumarins)</strong> 會抑制體內一種名為 <strong>CYP3A4</strong>
+          的代謝酵素，該酵素負責分解許多藥物，包括 Statin 類降血脂藥、部分鈣離子通道阻斷劑 (降血壓藥)
+          等。抑制作用會導致藥物無法正常代謝，在血中濃度異常升高，有時可達數倍甚至數十倍，從而引發如橫紋肌溶解、急性腎衰竭等嚴重毒性反應。服用特定藥物期間，應完全避免攝取葡萄柚相關製品。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-safety-5">
+      <div class="faq-question">除了納豆激酶，還有哪些保健食品會和抗凝血藥 (Warfarin) 產生交互作用？</div>
+      <div class="faq-answer">
+        <p>非常多，需要特別小心。除了明確會抵銷藥效的<strong>維生素K</strong>，許多具有「活血化瘀」功效的草本補充品，都可能增強 Warfarin
+          的抗凝血效果，增加出血風險。常見的例子包括：<strong>丹參、當歸、銀杏、高劑量的魚油 (每日 > 3克)、大蒜精、和 EGCG (綠茶素)</strong>。若正在服用
+          Warfarin，在新增任何保健食品前，都必須與您的醫師或藥師進行詳細諮詢。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-safety-6">
+      <div class="faq-question">我在吃降血壓藥，可以補充鉀離子或鎂離子嗎？</div>
+      <div class="faq-answer">
+        <p>大部分情況下是安全且有益的，但有例外。從飲食中增加鉀鎂攝取（如多吃蔬菜、堅果）通常是安全的。但若您服用的是<strong>保鉀型利尿劑 (Potassium-sparing
+            diuretics)</strong> 或 <strong>血管張力素轉化酶抑制劑
+            (ACEI)</strong>，額外補充高劑量鉀補充劑可能導致高血鉀症，引發心律不整。鎂則相對安全，且有輔助降壓放鬆血管的效果，但腎功能不全者需注意劑量。總之，用藥期間補充礦物質，最好先讓醫師知道。
+        </p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-safety-7">
+      <div class="faq-question">市面上的「清血管」保健食品，真的能清除已形成的斑塊嗎？</div>
+      <div class="faq-answer">
+        <p>這是一個常見的行銷話術，需要釐清。目前沒有任何保健食品被證實能「完全清除」或「溶解」已經形成並鈣化的動脈粥狀硬化斑塊。納豆激酶能溶解的是「血栓」，而非「斑塊」。魚油、維生素 K2
+          等營養素的主要作用在於<strong>抗發炎、減緩斑塊生長、增加斑塊穩定性
+            (避免破裂)</strong>，以及<strong>預防和部分逆轉鈣化</strong>。它們是「預防」和「延緩惡化」，而非「清除」。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-safety-8">
+      <div class="faq-question">服用 Statin 類藥物，為何一定要補充輔酶 Q10？</div>
+      <div class="faq-answer">
+        <p>因為 Statin 類藥物的作用機制是抑制肝臟中一個名為「HMG-CoA 還原酶」的酵素，來減少膽固醇的合成。然而，這個生化路徑同時也是體內合成輔酶 Q10 的必經之路。因此，Statin
+          在降膽固醇的同時，也「順便」阻斷了 Q10 的製造。缺乏 Q10 會影響細胞能量供應，特別是心臟和肌肉，導致許多患者出現肌肉痠痛、無力、疲勞等副作用。補充 Q10
+          能有效緩解這些副作用，並維持心肌的正常能量代謝。</p>
+      </div>
+    </div>
 
-          <h3 class="faq-category-title">E. 不同年齡層的提醒</h3>
+    <h3 class="faq-category-title">E. 不同年齡層的提醒</h3>
 
-          <div class="faq-subcategory">
-            <h4 class="faq-subcategory-title">青少年 (12-18歲)</h4>
-            <div class="faq-items-container">
-              <div class="faq-item" id="faq-age-1">
-                <div class="faq-question">兒童和青少年需要注意心血管保健嗎？</div>
-                <div class="faq-answer">
-                  <p>
-                    需要，但重點不同。兒童和青少年的心血管保健，核心在於建立「一生受用的健康習慣」。動脈粥狀硬化的最早病理特徵「脂肪紋」，在兒童時期就可能出現。此階段的重點不是吃保健食品，而是確保均衡飲食、避免含糖飲料和過度加工的零食、維持健康體重，並培養規律運動的習慣。這些是預防未來心血管疾病最根本的基石。
-                  </p>
-                </div>
-              </div>
-              <div class="faq-item" id="faq-age-2">
-                <div class="faq-question">年輕人如果血脂或血壓偏高，可以只靠運動和飲食調整嗎？</div>
-                <div class="faq-answer">
-                  <p>在初期絕對應該先嘗試嚴格的生活方式調整。對於年輕的初發患者，除非數值高到危險程度，或具有家族性高膽固醇血症等特殊情況，醫師通常會建議給予 3-6
-                    個月的觀察期，透過積極的飲食控制和規律運動來改善。許多人僅透過此方式就能讓指標恢復正常。但若調整後效果不彰，仍需遵照醫囑考慮藥物治療，切勿因年紀輕而輕忽。</p>
-                </div>
-              </div>
-            </div>
+    <div class="faq-subcategory">
+      <h4 class="faq-subcategory-title">青少年 (12-18歲)</h4>
+      <div class="faq-items-container">
+        <div class="faq-item" id="faq-age-1">
+          <div class="faq-question">兒童和青少年需要注意心血管保健嗎？</div>
+          <div class="faq-answer">
+            <p>
+              需要，但重點不同。兒童和青少年的心血管保健，核心在於建立「一生受用的健康習慣」。動脈粥狀硬化的最早病理特徵「脂肪紋」，在兒童時期就可能出現。此階段的重點不是吃保健食品，而是確保均衡飲食、避免含糖飲料和過度加工的零食、維持健康體重，並培養規律運動的習慣。這些是預防未來心血管疾病最根本的基石。
+            </p>
           </div>
+        </div>
+        <div class="faq-item" id="faq-age-2">
+          <div class="faq-question">年輕人如果血脂或血壓偏高，可以只靠運動和飲食調整嗎？</div>
+          <div class="faq-answer">
+            <p>在初期絕對應該先嘗試嚴格的生活方式調整。對於年輕的初發患者，除非數值高到危險程度，或具有家族性高膽固醇血症等特殊情況，醫師通常會建議給予 3-6
+              個月的觀察期，透過積極的飲食控制和規律運動來改善。許多人僅透過此方式就能讓指標恢復正常。但若調整後效果不彰，仍需遵照醫囑考慮藥物治療，切勿因年紀輕而輕忽。</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-          <div class="faq-subcategory">
-            <h4 class="faq-subcategory-title">中壯年 (30-60歲)</h4>
-            <div class="faq-items-container">
-              <div class="faq-item" id="faq-age-3">
-                <div class="faq-question">我才 30 歲，需要開始擔心心血管健康嗎？</div>
-                <div class="faq-answer">
-                  <p>絕對需要。動脈粥狀硬化的早期病變（脂肪紋）在青少年時期就可能出現。年輕時建立的<a
-                      href="#lifestyle">良好飲食與運動習慣</a>，是避免中年後心血管問題爆發的最重要投資。預防遠勝於治療。</p>
-                </div>
-              </div>
-              <div class="faq-item" id="faq-age-4">
-                <div class="faq-question">中年人最該關注的心血管指標是什麼？</div>
-                <div class="faq-answer">
-                  <p>除了傳統的血壓、血脂，建議您特別關注「<a href="#cause-hcy">同半胱胺酸 (Homocysteine)</a>」和「高敏度C-反應蛋白
-                    (hs-CRP)」。前者是血管內皮的獨立風險因子，後者則反映了體內的慢性發炎水平，兩者都比單看膽固醇數值更能預測未來風險。</p>
-                </div>
-              </div>
-              <div class="faq-item" id="faq-age-5">
-                <div class="faq-question">為什麼停經後的女性，心血管疾病風險會大幅上升？</div>
-                <div class="faq-answer">
-                  <p>這主要是因為雌激素 (Estrogen) 的保護作用消失了。雌激素對女性的心血管系統有多重益處，包括：維持血管彈性、降低壞膽固醇 (LDL)、提升好膽固醇 (HDL)
-                    等。停經後，雌激素水平驟降，使得女性的風險輪廓在短短幾年內迅速追上同年齡男性。因此，更年期後的女性更應積極採取護心行動。</p>
-                </div>
-              </div>
-              <div class="faq-item" id="faq-age-6">
-                <div class="faq-question">中年男性和女性，在心血管風險上有何最大不同？</div>
-                <div class="faq-answer">
-                  <p>
-                    中年男性最大的風險通常是較差的生活習慣（抽菸、飲酒、壓力）和腹部肥胖導致的典型代謝症候群。而中年（尤其更年期前後）女性的風險，除了雌激素下降外，還常表現為「非典型症狀」，如極度疲勞、噁心、頸背痛等，這些症狀容易被誤認為是更年期不適或腸胃問題，從而延誤就醫。
-                  </p>
-                </div>
-              </div>
-            </div>
+    <div class="faq-subcategory">
+      <h4 class="faq-subcategory-title">中壯年 (30-60歲)</h4>
+      <div class="faq-items-container">
+        <div class="faq-item" id="faq-age-3">
+          <div class="faq-question">我才 30 歲，需要開始擔心心血管健康嗎？</div>
+          <div class="faq-answer">
+            <p>絕對需要。動脈粥狀硬化的早期病變（脂肪紋）在青少年時期就可能出現。年輕時建立的<a href="#lifestyle">良好飲食與運動習慣</a>，是避免中年後心血管問題爆發的最重要投資。預防遠勝於治療。
+            </p>
           </div>
+        </div>
+        <div class="faq-item" id="faq-age-4">
+          <div class="faq-question">中年人最該關注的心血管指標是什麼？</div>
+          <div class="faq-answer">
+            <p>除了傳統的血壓、血脂，建議您特別關注「<a href="#cause-hcy">同半胱胺酸 (Homocysteine)</a>」和「高敏度C-反應蛋白
+              (hs-CRP)」。前者是血管內皮的獨立風險因子，後者則反映了體內的慢性發炎水平，兩者都比單看膽固醇數值更能預測未來風險。</p>
+          </div>
+        </div>
+        <div class="faq-item" id="faq-age-5">
+          <div class="faq-question">為什麼停經後的女性，心血管疾病風險會大幅上升？</div>
+          <div class="faq-answer">
+            <p>這主要是因為雌激素 (Estrogen) 的保護作用消失了。雌激素對女性的心血管系統有多重益處，包括：維持血管彈性、降低壞膽固醇 (LDL)、提升好膽固醇 (HDL)
+              等。停經後，雌激素水平驟降，使得女性的風險輪廓在短短幾年內迅速追上同年齡男性。因此，更年期後的女性更應積極採取護心行動。</p>
+          </div>
+        </div>
+        <div class="faq-item" id="faq-age-6">
+          <div class="faq-question">中年男性和女性，在心血管風險上有何最大不同？</div>
+          <div class="faq-answer">
+            <p>
+              中年男性最大的風險通常是較差的生活習慣（抽菸、飲酒、壓力）和腹部肥胖導致的典型代謝症候群。而中年（尤其更年期前後）女性的風險，除了雌激素下降外，還常表現為「非典型症狀」，如極度疲勞、噁心、頸背痛等，這些症狀容易被誤認為是更年期不適或腸胃問題，從而延誤就醫。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-          <div class="faq-subcategory">
-            <h4 class="faq-subcategory-title">老年 (60歲以上)</h4>
-            <div class="faq-items-container">
-              <div class="faq-item" id="faq-age-7">
-                <div class="faq-question">70歲以上的長者，血壓和膽固醇的標準需要放寬嗎？</div>
-                <div class="faq-answer">
-                  <p>這是一個複雜且個人化的議題。過去曾有「血壓標準隨年齡放寬」的說法，但近年大型研究 (如 SPRINT-MIND) 指出，對於身體狀況尚佳的長者，將收縮壓更嚴格地控制在 120 mmHg
-                    左右，能顯著降低心血管事件和總死亡率。然而，對於身體衰弱、多重共病或有姿勢性低血壓風險的長者，過低的血壓可能增加跌倒風險。膽固醇的標準也是類似邏輯。最終的目標值應由醫師根據患者的整體健康狀況、預期壽命和潛在風險來量身定制。
-                  </p>
-                </div>
-              </div>
-            </div>
+    <div class="faq-subcategory">
+      <h4 class="faq-subcategory-title">老年 (60歲以上)</h4>
+      <div class="faq-items-container">
+        <div class="faq-item" id="faq-age-7">
+          <div class="faq-question">70歲以上的長者，血壓和膽固醇的標準需要放寬嗎？</div>
+          <div class="faq-answer">
+            <p>這是一個複雜且個人化的議題。過去曾有「血壓標準隨年齡放寬」的說法，但近年大型研究 (如 SPRINT-MIND) 指出，對於身體狀況尚佳的長者，將收縮壓更嚴格地控制在 120 mmHg
+              左右，能顯著降低心血管事件和總死亡率。然而，對於身體衰弱、多重共病或有姿勢性低血壓風險的長者，過低的血壓可能增加跌倒風險。膽固醇的標準也是類似邏輯。最終的目標值應由醫師根據患者的整體健康狀況、預期壽命和潛在風險來量身定制。
+            </p>
           </div>
+        </div>
+      </div>
+    </div>
 
-          <h3 class="faq-category-title">F. 不同生活型態的策略</h3>
-          <div class="faq-item" id="faq-lifestyle-group-1">
-            <div class="faq-question">工作壓力大、經常外食的上班族，該優先補充什麼？</div>
-            <div class="faq-answer">
-              <p>建議優先補充三樣：</p>
-              <ul>
-                <li><strong>高濃度魚油</strong>：對抗外食帶來的高 Omega-6 發炎體質（詳見 <a href="#repair-1">魚油章節</a>）。</li>
-                <li><strong>鎂</strong>：壓力會大量消耗鎂，補充有助於放鬆神經、改善睡眠（詳見 <a href="#magnesium-forms">鎂的形式比較</a>）。</li>
-                <li><strong>B群</strong>：支持能量代謝，幫助身體應對壓力。</li>
-              </ul>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-lifestyle-group-2">
-            <div class="faq-question">素食者在心血管保健上有哪些特別的營養缺口？</div>
-            <div class="faq-answer">
-              <p>素食者需要特別注意：</p>
-              <ul>
-                <li><strong>Omega-3</strong>：植物來源的 ALA 轉換成 EPA/DHA 的效率極低。建議補充來自藻類的「藻油」。</li>
-                <li><strong>維生素B12</strong>：幾乎只存在於動物性食物中，是維持神經系統與代謝同半胱胺酸的必需品，建議所有素食者都要額外補充。</li>
-                <li><strong>鐵</strong>：植物性鐵（非血基質鐵）吸收率較低，可搭配<a href="/post/vitamin-c.html">維生素C</a>一同攝取以提高吸收。</li>
-              </ul>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-lifestyle-group-3">
-            <div class="faq-question">輪班或夜班工作者，該如何調整生活作息來保護心血管？</div>
-            <div class="faq-answer">
-              <p>輪班工作會打亂生理時鐘 (Circadian Rhythm)，是心血管疾病的獨立風險因子。保護策略包括：1)
-                <strong>盡力維持規律</strong>：即使是輪班，也要盡可能固定睡眠和起床時間，創造一個「相對規律」的作息。2)
-                <strong>維持絕對黑暗的睡眠環境</strong>：使用遮光窗簾、眼罩，確保在白天睡覺時能模擬夜晚，促進褪黑激素分泌。3)
-                <strong>謹慎安排進食時間</strong>：避免在深夜（生理時鐘的睡眠時間）大吃大喝，這會加重代謝負擔。盡量將主要餐點安排在輪班前或下班後。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-lifestyle-group-4">
-            <div class="faq-question">長途飛行或需要長時間久坐的族群，有什麼預防血栓的技巧？</div>
-            <div class="faq-answer">
-              <p>長時間不動會讓下肢血液循環變差，增加深度靜脈血栓 (DVT) 的風險。預防技巧包括：1) <strong>定時活動</strong>：每隔一小時起身走動一下，伸展雙腿。2)
-                <strong>做腳踝運動</strong>：即使坐著，也可以做腳踝的上下屈伸和畫圈運動，啟動小腿肌肉幫浦。3) <strong>補充水分</strong>：多喝水能避免血液過於濃稠。4)
-                <strong>穿著壓力襪</strong>：對於高風險族群，穿戴分級壓力襪能有效促進靜脈回流。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-lifestyle-group-5">
-            <div class="faq-question">我是健身愛好者，有在用乳清蛋白，會不會增加心血管負擔？</div>
-            <div class="faq-answer">
-              <p>
-                適量攝取優質乳清蛋白，對心血管健康反而是有益的。乳清蛋白是高品質蛋白質，有助於肌肉生長與修復，而肌肉量增加能改善胰島素敏感性和整體代謝。部分研究還發現乳清蛋白中的生物活性胜肽，可能具有輕微降血壓的效果。關鍵在於總熱量控制，並選擇無過多添加糖或不健康脂肪的產品。
-              </p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-lifestyle-group-6">
-            <div class="faq-question">經常需要應酬飲酒的業務，如何將心血管傷害降到最低？</div>
-            <div class="faq-answer">
-              <p>首先必須認知，酒精沒有「安全劑量」，任何劑量都會增加長期風險。如果無法避免，減害策略包括：1)
-                <strong>限制總量</strong>：盡力將單次飲酒量控制在建議範圍內（男性每日不超過2個酒精當量，女性不超過1個）。2)
-                <strong>避免空腹飲酒</strong>：喝酒前先進食，特別是含有蛋白質和脂肪的食物，能減緩酒精吸收速度。3)
-                <strong>補充B群與水分</strong>：酒精代謝會消耗大量B群，喝酒前後多喝水則有助於加速酒精代謝產物排出。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-lifestyle-group-7">
-            <div class="faq-question">我是個咖啡愛好者，每天喝咖啡對心臟是好是壞？</div>
-            <div class="faq-answer">
-              <p>對於大多數人來說，適量飲用咖啡（每日約 3-4
-                杯）是利大於弊的。大量流行病學研究顯示，規律喝咖啡與較低的心血管疾病、中風和心衰竭風險有關。這可能歸功於咖啡中豐富的綠原酸等多酚類抗氧化物。然而，部分人因基因關係對咖啡因代謝較慢，可能容易出現心悸、焦慮或血壓暫時升高的反應。重點是觀察自身反應，並避免添加大量的糖和奶精。
-              </p>
-            </div>
-          </div>
+    <h3 class="faq-category-title">F. 不同生活型態的策略</h3>
+    <div class="faq-item" id="faq-lifestyle-group-1">
+      <div class="faq-question">工作壓力大、經常外食的上班族，該優先補充什麼？</div>
+      <div class="faq-answer">
+        <p>建議優先補充三樣：</p>
+        <ul>
+          <li><strong>高濃度魚油</strong>：對抗外食帶來的高 Omega-6 發炎體質（詳見 <a href="#repair-1">魚油章節</a>）。</li>
+          <li><strong>鎂</strong>：壓力會大量消耗鎂，補充有助於放鬆神經、改善睡眠（詳見 <a href="#magnesium-forms">鎂的形式比較</a>）。</li>
+          <li><strong>B群</strong>：支持能量代謝，幫助身體應對壓力。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-lifestyle-group-2">
+      <div class="faq-question">素食者在心血管保健上有哪些特別的營養缺口？</div>
+      <div class="faq-answer">
+        <p>素食者需要特別注意：</p>
+        <ul>
+          <li><strong>Omega-3</strong>：植物來源的 ALA 轉換成 EPA/DHA 的效率極低。建議補充來自藻類的「藻油」。</li>
+          <li><strong>維生素B12</strong>：幾乎只存在於動物性食物中，是維持神經系統與代謝同半胱胺酸的必需品，建議所有素食者都要額外補充。</li>
+          <li><strong>鐵</strong>：植物性鐵（非血基質鐵）吸收率較低，可搭配<a href="/post/vitamin-c.html">維生素C</a>一同攝取以提高吸收。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-lifestyle-group-3">
+      <div class="faq-question">輪班或夜班工作者，該如何調整生活作息來保護心血管？</div>
+      <div class="faq-answer">
+        <p>輪班工作會打亂生理時鐘 (Circadian Rhythm)，是心血管疾病的獨立風險因子。保護策略包括：1)
+          <strong>盡力維持規律</strong>：即使是輪班，也要盡可能固定睡眠和起床時間，創造一個「相對規律」的作息。2)
+          <strong>維持絕對黑暗的睡眠環境</strong>：使用遮光窗簾、眼罩，確保在白天睡覺時能模擬夜晚，促進褪黑激素分泌。3)
+          <strong>謹慎安排進食時間</strong>：避免在深夜（生理時鐘的睡眠時間）大吃大喝，這會加重代謝負擔。盡量將主要餐點安排在輪班前或下班後。
+        </p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-lifestyle-group-4">
+      <div class="faq-question">長途飛行或需要長時間久坐的族群，有什麼預防血栓的技巧？</div>
+      <div class="faq-answer">
+        <p>長時間不動會讓下肢血液循環變差，增加深度靜脈血栓 (DVT) 的風險。預防技巧包括：1) <strong>定時活動</strong>：每隔一小時起身走動一下，伸展雙腿。2)
+          <strong>做腳踝運動</strong>：即使坐著，也可以做腳踝的上下屈伸和畫圈運動，啟動小腿肌肉幫浦。3) <strong>補充水分</strong>：多喝水能避免血液過於濃稠。4)
+          <strong>穿著壓力襪</strong>：對於高風險族群，穿戴分級壓力襪能有效促進靜脈回流。
+        </p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-lifestyle-group-5">
+      <div class="faq-question">我是健身愛好者，有在用乳清蛋白，會不會增加心血管負擔？</div>
+      <div class="faq-answer">
+        <p>
+          適量攝取優質乳清蛋白，對心血管健康反而是有益的。乳清蛋白是高品質蛋白質，有助於肌肉生長與修復，而肌肉量增加能改善胰島素敏感性和整體代謝。部分研究還發現乳清蛋白中的生物活性胜肽，可能具有輕微降血壓的效果。關鍵在於總熱量控制，並選擇無過多添加糖或不健康脂肪的產品。
+        </p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-lifestyle-group-6">
+      <div class="faq-question">經常需要應酬飲酒的業務，如何將心血管傷害降到最低？</div>
+      <div class="faq-answer">
+        <p>首先必須認知，酒精沒有「安全劑量」，任何劑量都會增加長期風險。如果無法避免，減害策略包括：1)
+          <strong>限制總量</strong>：盡力將單次飲酒量控制在建議範圍內（男性每日不超過2個酒精當量，女性不超過1個）。2)
+          <strong>避免空腹飲酒</strong>：喝酒前先進食，特別是含有蛋白質和脂肪的食物，能減緩酒精吸收速度。3)
+          <strong>補充B群與水分</strong>：酒精代謝會消耗大量B群，喝酒前後多喝水則有助於加速酒精代謝產物排出。
+        </p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-lifestyle-group-7">
+      <div class="faq-question">我是個咖啡愛好者，每天喝咖啡對心臟是好是壞？</div>
+      <div class="faq-answer">
+        <p>對於大多數人來說，適量飲用咖啡（每日約 3-4
+          杯）是利大於弊的。大量流行病學研究顯示，規律喝咖啡與較低的心血管疾病、中風和心衰竭風險有關。這可能歸功於咖啡中豐富的綠原酸等多酚類抗氧化物。然而，部分人因基因關係對咖啡因代謝較慢，可能容易出現心悸、焦慮或血壓暫時升高的反應。重點是觀察自身反應，並避免添加大量的糖和奶精。
+        </p>
+      </div>
+    </div>
 
-          <h3 class="faq-category-title">G. 不同健康狀況的考量</h3>
-          <div class="faq-item" id="faq-health-1">
-            <div class="faq-question">我有心血管疾病的家族史，預防上該怎麼做？</div>
-            <div class="faq-answer">
-              <p>有家族史代表您可能具有易感基因，更應積極預防。除了維持<a
-                  href="#lifestyle">極度健康的飲食與運動習慣</a>外，建議您提早並更頻繁地進行健康檢查，監控血壓、血脂與發炎指標。此外，與您的醫師討論，根據您的個人狀況，提早開始服用低劑量史他汀類藥物或阿斯匹靈，可能是合理的預防策略。
-              </p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-health-2">
-            <div class="faq-question">減重對於改善心血管健康有多重要？</div>
-            <div class="faq-answer">
-              <p>極度重要。肥胖，特別是腹部肥胖，是造成胰島素阻抗、高血壓、高血脂與全身性發炎的核心因素。研究證實，即使只是減去總體重的 5-10%，也能顯著改善各項心血管代謝指標。減重本身就是最強效的心血管「藥物」之一。
-              </p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-health-3">
-            <div class="faq-question">糖尿病患者在心血管保健上，除了控血糖外，還要注意什麼？</div>
-            <div class="faq-answer">
-              <p>糖尿病被視為心血管疾病的「等危症」，表示一旦確診糖尿病，其心血管風險就等同於已發生過心肌梗塞的患者。除了嚴格控制血糖
-                (HbA1c)，更要積極管理<strong>血壓</strong>和<strong>血脂</strong>，做到「控糖、穩壓、降血脂」三效合一。此外，定期檢查腎功能 (eGFR、尿蛋白)
-                和眼底病變也至關重要，因為它們都是反映全身小血管健康狀況的櫥窗。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-health-4">
-            <div class="faq-question">已經在洗腎 (透析) 的患者，在營養補充上有什麼特別禁忌？</div>
-            <div class="faq-answer">
-              <p>洗腎患者的營養管理非常複雜，<strong>嚴禁</strong>自行補充保健食品。幾個關鍵點：1) <strong>磷、鉀限制</strong>：腎臟無法有效排出磷和鉀，攝取過多會導致高血磷症
-                (皮膚搔癢、血管鈣化) 和高血鉀症 (心律不整)。2) <strong>蛋白質需「足夠」</strong>：與一般腎病不同，透析過程會流失蛋白質，反而需要補充高品質蛋白質。3)
-                <strong>水溶性維生素易流失</strong>：透析會流失 B 群、維生素 C 等，常需額外補充。所有營養調整都必須在醫師和腎臟科營養師的嚴密監控下進行。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-health-5">
-            <div class="faq-question">如果已經裝了心臟支架，是否就一勞永逸了？</div>
-            <div class="faq-answer">
-              <p>完全不是。心臟支架只是解決了「單點」最嚴重的堵塞，如同在坍方的隧道中打通一條臨時便道，但它沒有改變整條公路 (全身血管)
-                持續在惡化的事實。裝設支架後，更需要積極地透過藥物、飲食和生活習慣改變來控制發炎、血脂和血壓，否則可能發生「支架內再狹窄」，或是在其他位置產生新的堵塞。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-health-6">
-            <div class="faq-question">自體免疫疾病 (如紅斑性狼瘡、類風濕性關節炎) 為何會增加心血管風險？</div>
-            <div class="faq-answer">
-              <p>自體免疫疾病的核心是全身性的<strong>慢性發炎</strong>。這些長期存在的發炎因子 (如細胞激素)
-                會不斷攻擊、傷害血管內皮，加速動脈粥狀硬化的進程。這就好像血管一直處於被火悶燒的狀態。因此，這類患者的心血管風險遠高於一般人，除了控制自體免疫疾病本身，也需要更積極地進行心血管風險管理。</p>
-            </div>
-          </div>
-          <div class="faq-item" id="faq-health-7">
-            <div class="faq-question">脂肪肝只是肝臟的問題嗎？它跟心血管健康有關嗎？</div>
-            <div class="faq-answer">
-              <p>脂肪肝絕不只是肝臟的問題，它被認為是「代謝症候群在肝臟的表現」。非酒精性脂肪肝 (NAFLD)
-                的患者，通常也伴隨著胰島素阻抗、血脂異常、腹部肥胖等問題，這些都是心血管疾病的強烈風險因子。肝臟發炎釋出的物質也會加劇全身的發炎反應。因此，看到健檢報告上的脂肪肝紅字，不應只擔心肝硬化，更要警覺到這是心血管系統亮起的黃燈。
-              </p>
-            </div>
-          </div>
-        </section>
+    <h3 class="faq-category-title">G. 不同健康狀況的考量</h3>
+    <div class="faq-item" id="faq-health-1">
+      <div class="faq-question">我有心血管疾病的家族史，預防上該怎麼做？</div>
+      <div class="faq-answer">
+        <p>有家族史代表您可能具有易感基因，更應積極預防。除了維持<a
+            href="#lifestyle">極度健康的飲食與運動習慣</a>外，建議您提早並更頻繁地進行健康檢查，監控血壓、血脂與發炎指標。此外，與您的醫師討論，根據您的個人狀況，提早開始服用低劑量史他汀類藥物或阿斯匹靈，可能是合理的預防策略。
+        </p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-health-2">
+      <div class="faq-question">減重對於改善心血管健康有多重要？</div>
+      <div class="faq-answer">
+        <p>極度重要。肥胖，特別是腹部肥胖，是造成胰島素阻抗、高血壓、高血脂與全身性發炎的核心因素。研究證實，即使只是減去總體重的 5-10%，也能顯著改善各項心血管代謝指標。減重本身就是最強效的心血管「藥物」之一。
+        </p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-health-3">
+      <div class="faq-question">糖尿病患者在心血管保健上，除了控血糖外，還要注意什麼？</div>
+      <div class="faq-answer">
+        <p>糖尿病被視為心血管疾病的「等危症」，表示一旦確診糖尿病，其心血管風險就等同於已發生過心肌梗塞的患者。除了嚴格控制血糖
+          (HbA1c)，更要積極管理<strong>血壓</strong>和<strong>血脂</strong>，做到「控糖、穩壓、降血脂」三效合一。此外，定期檢查腎功能 (eGFR、尿蛋白)
+          和眼底病變也至關重要，因為它們都是反映全身小血管健康狀況的櫥窗。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-health-4">
+      <div class="faq-question">已經在洗腎 (透析) 的患者，在營養補充上有什麼特別禁忌？</div>
+      <div class="faq-answer">
+        <p>洗腎患者的營養管理非常複雜，<strong>嚴禁</strong>自行補充保健食品。幾個關鍵點：1) <strong>磷、鉀限制</strong>：腎臟無法有效排出磷和鉀，攝取過多會導致高血磷症
+          (皮膚搔癢、血管鈣化) 和高血鉀症 (心律不整)。2) <strong>蛋白質需「足夠」</strong>：與一般腎病不同，透析過程會流失蛋白質，反而需要補充高品質蛋白質。3)
+          <strong>水溶性維生素易流失</strong>：透析會流失 B 群、維生素 C 等，常需額外補充。所有營養調整都必須在醫師和腎臟科營養師的嚴密監控下進行。
+        </p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-health-5">
+      <div class="faq-question">如果已經裝了心臟支架，是否就一勞永逸了？</div>
+      <div class="faq-answer">
+        <p>完全不是。心臟支架只是解決了「單點」最嚴重的堵塞，如同在坍方的隧道中打通一條臨時便道，但它沒有改變整條公路 (全身血管)
+          持續在惡化的事實。裝設支架後，更需要積極地透過藥物、飲食和生活習慣改變來控制發炎、血脂和血壓，否則可能發生「支架內再狹窄」，或是在其他位置產生新的堵塞。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-health-6">
+      <div class="faq-question">自體免疫疾病 (如紅斑性狼瘡、類風濕性關節炎) 為何會增加心血管風險？</div>
+      <div class="faq-answer">
+        <p>自體免疫疾病的核心是全身性的<strong>慢性發炎</strong>。這些長期存在的發炎因子 (如細胞激素)
+          會不斷攻擊、傷害血管內皮，加速動脈粥狀硬化的進程。這就好像血管一直處於被火悶燒的狀態。因此，這類患者的心血管風險遠高於一般人，除了控制自體免疫疾病本身，也需要更積極地進行心血管風險管理。</p>
+      </div>
+    </div>
+    <div class="faq-item" id="faq-health-7">
+      <div class="faq-question">脂肪肝只是肝臟的問題嗎？它跟心血管健康有關嗎？</div>
+      <div class="faq-answer">
+        <p>脂肪肝絕不只是肝臟的問題，它被認為是「代謝症候群在肝臟的表現」。非酒精性脂肪肝 (NAFLD)
+          的患者，通常也伴隨著胰島素阻抗、血脂異常、腹部肥胖等問題，這些都是心血管疾病的強烈風險因子。肝臟發炎釋出的物質也會加劇全身的發炎反應。因此，看到健檢報告上的脂肪肝紅字，不應只擔心肝硬化，更要警覺到這是心血管系統亮起的黃燈。
+        </p>
+      </div>
+    </div>
+  </section>
 
-        <div id="related-articles-container"></div>
-      </article>
-    </main>
+  <div id="related-articles-container"></div>
+  </article>
+  </main>
   </div>
 
   <!-- Disclaimer Section -->
@@ -3311,6 +3310,9 @@
   <script src="../assets/js/articles-data.js"></script>
   <script src="../assets/js/related-articles-component.js"></script>
   <script src="../assets/js/responsive-toc-component.js"></script>
+  <script src="../assets/js/tools-JS/cardio-risk-calculator.js"></script>
+  <script src="../assets/js/tools-JS/ionic-balance-calculator.js"></script>
+  <script src="../assets/js/tools-JS/zone2-calculator.js"></script>
 
   <script>
     // 1. Data Mapping (The Logic)
@@ -3519,6 +3521,17 @@
       const articleId = document.body.dataset.articleId;
       if (relatedContainer && window.RelatedArticlesComponent && typeof articlesData !== 'undefined' && typeof topicArticles !== 'undefined') {
         new window.RelatedArticlesComponent(relatedContainer, articleId, articlesData, topicArticles).initialize();
+      }
+
+      // Initialize Calculators
+      if (window.CardioRiskCalculator) {
+        new window.CardioRiskCalculator(document.getElementById('ascvd-calc-container')).initialize();
+      }
+      if (window.SodiumPotassiumCalc) {
+        new window.SodiumPotassiumCalc(document.getElementById('sodium-potassium-calc-container')).initialize();
+      }
+      if (window.Zone2Calculator) {
+        new window.Zone2Calculator(document.getElementById('zone2-calc-container')).initialize();
       }
 
       if (window.ResponsiveTocComponent) {

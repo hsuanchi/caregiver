@@ -23,8 +23,48 @@
         initialize() {
             this.createStyles();
             this.createContent();
+            this.loadState();
             this.attachEvents();
             return this;
+        }
+
+        loadState() {
+            try {
+                const saved = localStorage.getItem('caregiver_ascvd_calc_state');
+                if (saved) {
+                    const state = JSON.parse(saved);
+                    if (state.sex) this.shadowRoot.getElementById('sex').value = state.sex;
+                    if (state.age) this.shadowRoot.getElementById('age').value = state.age;
+                    if (state.sbp) this.shadowRoot.getElementById('sbp').value = state.sbp;
+                    if (state.tc) this.shadowRoot.getElementById('tc').value = state.tc;
+                    if (state.hdl) this.shadowRoot.getElementById('hdl').value = state.hdl;
+                    this.shadowRoot.getElementById('is-smoker').checked = !!state.smoker;
+                    this.shadowRoot.getElementById('has-diabetes').checked = !!state.diabetes;
+                    this.shadowRoot.getElementById('is-treated').checked = !!state.treated;
+
+                    this.calculate(true);
+                }
+            } catch (e) {
+                console.error('Failed to load state:', e);
+            }
+        }
+
+        saveState() {
+            try {
+                const state = {
+                    sex: this.shadowRoot.getElementById('sex').value,
+                    age: this.shadowRoot.getElementById('age').value,
+                    sbp: this.shadowRoot.getElementById('sbp').value,
+                    tc: this.shadowRoot.getElementById('tc').value,
+                    hdl: this.shadowRoot.getElementById('hdl').value,
+                    smoker: this.shadowRoot.getElementById('is-smoker').checked,
+                    diabetes: this.shadowRoot.getElementById('has-diabetes').checked,
+                    treated: this.shadowRoot.getElementById('is-treated').checked
+                };
+                localStorage.setItem('caregiver_ascvd_calc_state', JSON.stringify(state));
+            } catch (e) {
+                console.error('Failed to save state:', e);
+            }
         }
 
         createStyles() {
@@ -117,6 +157,35 @@
                 .risk-level-high { background: #fef2f2; border-color: #fecaca; color: #991b1b; }
 
                 .desc { font-size: 0.9rem; color: #475569; margin-top: 15px; line-height: 1.6; }
+                
+                .suggest-links {
+                    margin-top: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    text-align: left;
+                }
+                
+                .suggest-link {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 12px;
+                    background: white;
+                    border: 1px solid var(--primary-light);
+                    border-radius: 10px;
+                    text-decoration: none;
+                    color: var(--primary);
+                    font-size: 0.9rem;
+                    font-weight: 700;
+                    transition: all 0.2s;
+                }
+                
+                .suggest-link:hover {
+                    background: var(--primary-light);
+                    transform: translateX(5px);
+                }
+
                 .disclaimer { font-size: 0.75rem; color: #94a3b8; margin-top: 25px; border-top: 1px dashed #e2e8f0; padding-top: 15px; }
 
                 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -180,8 +249,9 @@
                     <div class="risk-percent"><span id="risk-val">--</span><span style="font-size: 1.2rem; margin-left: 2px;">%</span></div>
                     <div class="risk-label" id="risk-label">風險程度：--</div>
                     <p class="desc" id="risk-desc"></p>
+                    <div id="suggest-area" class="suggest-links"></div>
                     <div class="disclaimer">
-                        * 本計算基於 AHA/ACC PCE 演算法。計算結果僅供參考，不能取代專業診斷。若您的風險大於 7.5%，建議諮詢醫師討論 Statin 藥物或生活調整，並可參考本站魚油與 K2 文章。
+                        * 本計算基於 AHA/ACC PCE 演算法。計算結果僅供參考，不能取代專業診斷。若您的風險大於 7.5%，建議諮詢醫師討論 Statin 藥物或生活調整，並可參考本站相關營養文章。
                     </div>
                 </div>
             `;
@@ -192,13 +262,36 @@
             this.valEl = this.shadowRoot.getElementById('risk-val');
             this.labelEl = this.shadowRoot.getElementById('risk-label');
             this.descEl = this.shadowRoot.getElementById('risk-desc');
+            this.suggestArea = this.shadowRoot.getElementById('suggest-area');
+
+            // 緩存輸入元素以供事件監聽
+            this.inputs = [
+                this.shadowRoot.getElementById('sex'),
+                this.shadowRoot.getElementById('age'),
+                this.shadowRoot.getElementById('sbp'),
+                this.shadowRoot.getElementById('tc'),
+                this.shadowRoot.getElementById('hdl'),
+                this.shadowRoot.getElementById('is-smoker'),
+                this.shadowRoot.getElementById('has-diabetes'),
+                this.shadowRoot.getElementById('is-treated')
+            ];
         }
 
         attachEvents() {
-            this.btn.addEventListener('click', () => this.calculate());
+            this.btn.addEventListener('click', () => {
+                this.calculate();
+                this.saveState();
+            });
+
+            this.inputs.forEach(input => {
+                input.addEventListener('change', () => this.saveState());
+                if (input.tagName === 'INPUT' && input.type === 'number') {
+                    input.addEventListener('input', () => this.saveState());
+                }
+            });
         }
 
-        calculate() {
+        calculate(silent = false) {
             // Get inputs
             const sex = this.shadowRoot.getElementById('sex').value;
             const age = parseFloat(this.shadowRoot.getElementById('age').value);
@@ -218,23 +311,6 @@
 
             // Calculation based on Sex
             if (sex === 'female') {
-                const terms =
-                    (-29.799 * lnAge) +
-                    (4.884 * Math.pow(lnAge, 2)) +
-                    (13.540 * lnTC) +
-                    (-3.114 * lnAge * lnTC) +
-                    (-13.578 * lnHDL) +
-                    (3.149 * lnAge * lnHDL) +
-                    (2.019 * lnSBP) + // Treated
-                    (treated ? 2.019 : 1.957) + // This is slightly simplified from original complex treatment interactions
-                    (7.574 * smoker) +
-                    (-1.665 * lnAge * smoker) +
-                    (0.661 * diabetes);
-
-                // Note: PCE has interaction terms. To be accurate, we use the full equation.
-                // Ref: https://www.ahajournals.org/doi/10.1161/01.cir.0000437741.48617.87
-
-                // Re-calculating with precise White Female Coefficients
                 const sum =
                     -29.799 * lnAge +
                     4.884 * Math.pow(lnAge, 2) +
@@ -265,39 +341,67 @@
             }
 
             const percent = Math.min(Math.max(risk * 100, 0.1), 99).toFixed(1);
-            this.showResult(percent);
+            this.showResult(percent, silent);
         }
 
-        showResult(val) {
+        showResult(val, silent = false) {
             this.valEl.textContent = val;
-            this.resultBox.className = 'result-box show';
 
             let label = '';
             let desc = '';
             let styleClass = '';
+            let suggestions = [];
 
             const riskNum = parseFloat(val);
             if (riskNum < 5) {
                 label = '低風險 (<5%)';
-                desc = '您的血管健康狀態良好。建議維持目前的均衡飲食（地中海飲食）與規律運動。可持續攝取 Omega-3 作為基礎保養，避免血管壁脂肪紋堆積。';
+                desc = '您的血管健康狀態良好。建議維持目前的均衡飲食（地中海飲食）與規律運動。';
                 styleClass = 'risk-level-low';
+                suggestions = [
+                    { name: '🐟 魚油基礎保養', link: '/post/fish-oil.html' }
+                ];
             } else if (riskNum < 7.5) {
                 label = '邊緣風險 (5-7.4%)';
-                desc = '風險處於邊緣地帶。建議開始監控飲食中的飽和脂肪，並增加抗氧化營養素（如 Q10、維生素 C）的攝取，防止 LDL 氧化引發發炎反應。';
+                desc = '風險處於邊緣地帶。建議開始監控飲食中的飽和脂肪，並增加抗氧化營養素。';
                 styleClass = 'risk-level-med';
+                suggestions = [
+                    { name: '🐟 高濃度魚油指南', link: '/post/fish-oil.html' },
+                    { name: '🛡️ 輔酶 Q10 功效', link: '/post/coenzyme-q10.html' }
+                ];
             } else if (riskNum < 20) {
                 label = '中等風險 (7.5-19.9%)';
-                desc = '這是一個警訊。建議諮詢醫師關於生活調整或 Statin 藥物。在營養補充上，強烈建議合併高濃度魚油 (EPA) 與維生素 K2，以減緩血管鈣化與發炎。';
+                desc = '這是一個警訊。建議諮詢醫師。在營養補充上，建議考慮高濃度魚油與維生素 K2。';
                 styleClass = 'risk-level-med';
+                suggestions = [
+                    { name: '🔗 EPA 魚油對心血管的作用', link: '/post/fish-oil.html#calculating-epa' },
+                    { name: '🦴 維生素 K2 與血管鈣化', link: '/post/vitamin-k2.html' },
+                    { name: '🧄 大蒜素：自然的血壓調節器', link: '/post/garlic.html' }
+                ];
             } else {
                 label = '高風險 (≥20%)';
-                desc = '風險顯著升高，高度建議醫療處置。請務必遵守醫師處方，並考慮進行頸動脈超音波檢查。生活上應嚴格控管血糖與血壓，並積極補充血管修復營養素。';
+                desc = '風險顯著升高，高度建議醫療處置。請務必遵守醫師處方，並考慮積極補充血管修復營養素。';
                 styleClass = 'risk-level-high';
+                suggestions = [
+                    { name: '⚠️ 魚油、K2 與心臟保護', link: '/post/topic-cardiovascular-health.html' },
+                    { name: '🌱 植物固醇與膽固醇管理', link: '/post/plant-sterols.html' }
+                ];
             }
 
             this.labelEl.textContent = `風險程度：${label}`;
             this.descEl.textContent = desc;
-            this.resultBox.classList.add(styleClass);
+            this.resultBox.className = 'result-box show ' + styleClass;
+
+            // 渲染建議連結
+            this.suggestArea.innerHTML = suggestions.map(s => `
+                <a href="${s.link}" class="suggest-link">
+                    <span>${s.name}</span>
+                    <span style="margin-left: auto;">➔</span>
+                </a>
+            `).join('');
+
+            if (silent) {
+                this.resultBox.style.display = 'block';
+            }
         }
     }
 

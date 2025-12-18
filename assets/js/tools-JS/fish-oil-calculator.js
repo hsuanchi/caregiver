@@ -38,9 +38,52 @@
         initialize() {
             this.createStyles();
             this.createContent();
+            this.loadState(); // 載入儲存的狀態
             this.attachEvents();
             this.log('debug', 'FishOilCalculator Initialized');
             return this;
+        }
+
+        /**
+         * 載入狀態
+         */
+        loadState() {
+            try {
+                const saved = localStorage.getItem('caregiver_fishoil_calc_state');
+                if (saved) {
+                    const state = JSON.parse(saved);
+                    if (state.price) this.inputPrice.value = state.price;
+                    if (state.totalCapsules) this.inputCapsules.value = state.totalCapsules;
+                    if (state.servingSize) this.inputServingSize.value = state.servingSize;
+                    if (state.omega3PerServing) this.inputOmega3.value = state.omega3PerServing;
+                    if (state.form) this.inputForm.value = state.form;
+                    this.log('debug', 'State loaded from localStorage');
+
+                    // 如果有舊數據，自動跑一次計算顯示結果
+                    this.calculate(true);
+                }
+            } catch (e) {
+                this.log('error', 'Failed to load state: ' + e.message);
+            }
+        }
+
+        /**
+         * 儲存狀態
+         */
+        saveState() {
+            try {
+                const state = {
+                    price: this.inputPrice.value,
+                    totalCapsules: this.inputCapsules.value,
+                    servingSize: this.inputServingSize.value,
+                    omega3PerServing: this.inputOmega3.value,
+                    form: this.inputForm.value
+                };
+                localStorage.setItem('caregiver_fishoil_calc_state', JSON.stringify(state));
+                this.log('debug', 'State saved to localStorage');
+            } catch (e) {
+                this.log('error', 'Failed to save state: ' + e.message);
+            }
         }
 
         /**
@@ -305,13 +348,22 @@
         attachEvents() {
             this.btnCalc.addEventListener('click', () => {
                 this.calculate();
+                this.saveState();
             });
+
+            // 自動儲存輸入
+            const autoSave = () => this.saveState();
+            this.inputPrice.addEventListener('input', autoSave);
+            this.inputCapsules.addEventListener('input', autoSave);
+            this.inputServingSize.addEventListener('input', autoSave);
+            this.inputOmega3.addEventListener('input', autoSave);
+            this.inputForm.addEventListener('change', autoSave);
         }
 
         /**
          * 執行計算邏輯
          */
-        calculate() {
+        calculate(silent = false) {
             // 取得輸入值
             const price = parseFloat(this.inputPrice.value);
             const totalCapsules = parseFloat(this.inputCapsules.value);
@@ -319,9 +371,9 @@
             const omega3PerServing = parseFloat(this.inputOmega3.value);
             const form = this.inputForm.value;
 
-            // 驗證輸入
+            // 驗證輸入 (靜默模式不彈窗)
             if (!price || !totalCapsules || !servingSize || !omega3PerServing) {
-                alert('請完整填寫所有欄位！');
+                if (!silent) alert('請完整填寫所有欄位！');
                 return;
             }
 
@@ -332,24 +384,19 @@
             // 2. 單顆 Omega-3 含量 (mg)
             const omega3PerCapsule = omega3PerServing / servingSize;
 
-            // 3. 假設一顆膠囊總重 (若無數據，粗估：高濃度款約1200mg, 低濃度約1000~1400mg)
-            // 這裡我們只計算純 Omega-3 的成本，不反推濃度百分比以免誤導 (除非使用者輸入總重)
-            // 但我們可以計算「每 1000mg Omega-3 的成本」
-
-            // 真實成本 = 吃進 1000mg Omega-3 需要多少錢
-            // 需要幾顆才能湊到 1000mg = 1000 / omega3PerCapsule
+            // 真实成本 = 吃進 1000mg Omega-3 需要多少錢
             const capsulesNeededFor1000mg = 1000 / omega3PerCapsule;
             const costPer1000mg = pricePerCapsule * capsulesNeededFor1000mg;
 
             // 顯示結果
-            this.showResult(costPer1000mg, omega3PerCapsule);
+            this.showResult(costPer1000mg, omega3PerCapsule, silent);
             this.log('debug', `Calculation: Price=${price}, Caps=${totalCapsules}, Serv=${servingSize}, O3=${omega3PerServing} => Cost=${costPer1000mg.toFixed(2)}`);
         }
 
         /**
          * 顯示計算結果
          */
-        showResult(cost, omega3PerCap) {
+        showResult(cost, omega3PerCap, silent = false) {
             // 更新數值
             const elRealCost = this.shadowRoot.getElementById('res-real-cost');
             const elDailyCost = this.shadowRoot.getElementById('res-daily-cost');
@@ -359,9 +406,7 @@
             elRealCost.textContent = `$${cost.toFixed(1)}`;
             elDailyCost.textContent = `$${cost.toFixed(1)}`; // 每日建議攝取約 1000mg，故相同
 
-            // 估算濃度 (假設膠囊內容物重 1000mg ~ 1200mg，取中間值 1100mg 用作參考)
-            // 這只是參考值
-            // elConc.textContent = '依標示'; 
+            // 估算濃度
             elConc.textContent = Math.round(omega3PerCap) + ' mg/顆';
 
             // 評級邏輯 (Subjective Tier)
@@ -386,7 +431,11 @@
             elBadge.textContent = tier;
 
             // 顯示區塊
-            this.resultBox.classList.add('show');
+            if (!silent) {
+                this.resultBox.classList.add('show');
+            } else {
+                this.resultBox.style.display = 'block';
+            }
         }
 
         // =================

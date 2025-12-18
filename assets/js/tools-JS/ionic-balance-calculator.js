@@ -27,8 +27,35 @@
         initialize() {
             this.createStyles();
             this.createContent();
+            this.loadState();
             this.attachEvents();
             return this;
+        }
+
+        loadState() {
+            try {
+                const saved = localStorage.getItem('caregiver_nak_calc_state');
+                if (saved) {
+                    const state = JSON.parse(saved);
+                    if (state.na) this.naInput.value = state.na;
+                    if (state.k) this.kInput.value = state.k;
+                    this.calculate(true);
+                }
+            } catch (e) {
+                console.error('Failed to load state:', e);
+            }
+        }
+
+        saveState() {
+            try {
+                const state = {
+                    na: this.naInput.value,
+                    k: this.kInput.value
+                };
+                localStorage.setItem('caregiver_nak_calc_state', JSON.stringify(state));
+            } catch (e) {
+                console.error('Failed to save state:', e);
+            }
         }
 
         createStyles() {
@@ -164,6 +191,34 @@
                 .suggestion-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; color: #1e293b; }
                 .suggestion-list { margin: 0; padding-left: 20px; font-size: 0.85rem; color: #475569; line-height: 1.6; }
 
+                .suggest-links {
+                    margin-top: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    text-align: left;
+                }
+                
+                .suggest-link {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 12px;
+                    background: white;
+                    border: 1px solid var(--primary-light);
+                    border-radius: 10px;
+                    text-decoration: none;
+                    color: var(--primary);
+                    font-size: 0.9rem;
+                    font-weight: 700;
+                    transition: all 0.2s;
+                }
+                
+                .suggest-link:hover {
+                    background: var(--primary-light);
+                    transform: translateX(5px);
+                }
+
                 .disclaimer { font-size: 0.75rem; color: #94a3b8; margin-top: 25px; border-top: 1px dashed #e2e8f0; padding-top: 15px; text-align: center; }
 
                 @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -224,6 +279,8 @@
                         <ul class="suggestion-list" id="suggestion-list"></ul>
                     </div>
 
+                    <div id="suggest-area" class="suggest-links"></div>
+
                     <div class="disclaimer">
                         * 本工具僅供飲食參考。WHO 建議鈉攝取應低於 2000mg，鉀應高於 3510mg。若有腎臟疾病者，請務必諮詢診治醫師。
                     </div>
@@ -241,47 +298,53 @@
             this.statusBadge = this.shadowRoot.getElementById('status-badge');
             this.gaugeFill = this.shadowRoot.getElementById('gauge-fill');
             this.suggestionList = this.shadowRoot.getElementById('suggestion-list');
+            this.suggestArea = this.shadowRoot.getElementById('suggest-area');
         }
 
         attachEvents() {
-            this.btn.addEventListener('click', () => this.calculate());
+            this.btn.addEventListener('click', () => {
+                this.calculate();
+                this.saveState();
+            });
 
             this.saltInput.addEventListener('input', (e) => {
                 const salt = parseFloat(e.target.value) || 0;
                 const na = Math.round(salt * 400);
                 this.saltResult.textContent = `約 ${na} mg 鈉`;
                 this.naInput.value = na;
+                this.saveState();
             });
 
-            // Prevent negative inputs
             [this.naInput, this.kInput].forEach(input => {
+                input.addEventListener('input', () => this.saveState());
                 input.addEventListener('change', (e) => {
                     if (parseFloat(e.target.value) < 0) e.target.value = 0;
+                    this.saveState();
                 });
             });
         }
 
-        calculate() {
+        calculate(silent = false) {
             const na = parseFloat(this.naInput.value) || 0;
             const k = parseFloat(this.kInput.value) || 0;
 
             if (k === 0) {
-                alert('鉀攝取量不能為 0，請輸入正確數值。');
+                if (!silent) alert('鉀攝取量不能為 0，請輸入正確數值。');
                 return;
             }
 
             const ratio = na / k;
-            this.showResult(ratio, na, k);
+            this.showResult(ratio, na, k, silent);
         }
 
-        showResult(ratio, na, k) {
+        showResult(ratio, na, k, silent = false) {
             this.ratioVal.textContent = ratio.toFixed(2);
-            this.resultArea.classList.add('show');
 
             let status = '';
             let statusClass = '';
             let color = '';
             let suggestions = [];
+            let articleLinks = [];
 
             if (ratio < 0.5) {
                 status = '極致平衡 (AHA 理想)';
@@ -289,26 +352,29 @@
                 color = '#059669';
                 suggestions = [
                     '您的鈉鉀比例非常理想，這對血壓穩定極具幫助。',
-                    '請維持目前這種低度加工、天然植物來源豐富的飲食習慣。',
-                    '注意：若日常運動量極大且出汗多，可略微增加鈉攝取以防低血鈉。'
+                    '請維持目前這種低度加工、天然植物來源豐富的飲食習慣。'
                 ];
+                articleLinks = [{ name: '❤️ 心血管健康總覽', link: '/post/topic-cardiovascular-health.html' }];
             } else if (ratio <= 0.7) {
                 status = '良好平衡 (WHO 標準)';
                 statusClass = 'status-good';
                 color = '#10b981';
                 suggestions = [
                     '比例符合健康標準，屬於中風風險較低的族群。',
-                    '持續以天然食材為主，避免過度依賴餐館與外食。',
                     '每日可搭配適量的高鉀水果（如香蕉、奇異果）來固守平衡。'
                 ];
+                articleLinks = [{ name: '🔍 探索鉀離子的好處', link: '/post/potassium.html' }];
             } else if (ratio <= 1.0) {
                 status = '輕微失衡 (警戒區)';
                 statusClass = 'status-warning';
                 color = '#f59e0b';
                 suggestions = [
-                    '目前的鈉攝取略高於鉀，可能增加腎臟負擔與水腫機率。',
-                    '**減鈉建議**：烹飪時嘗試用香料（薑、蒜、檸檬）取代部分鹽分。',
-                    '**增鉀建議**：晚餐增加半碗綠色葉菜類或根莖類（如地瓜、南瓜）。'
+                    '目前的鈉攝取略高於鉀，可能增加水腫機率。',
+                    '**增鉀建議**：晚餐增加半碗綠色葉菜類或根莖類（如地瓜）。'
+                ];
+                articleLinks = [
+                    { name: '🥦 高鉀食物百科', link: '/post/potassium.html' },
+                    { name: '🚫 隱形鈉含量警告', link: '/post/sodium.html' }
                 ];
             } else {
                 status = '嚴重失衡 (高風險)';
@@ -316,26 +382,38 @@
                 color = '#dc2626';
                 suggestions = [
                     '強烈警訊！過高的鈉攝取正對您的心血管造成壓力。',
-                    '**首要任務**：大幅減少加工食品、罐頭與連鎖速食的攝取。',
                     '**急救措施**：多補充富含鉀的深綠色蔬菜與酪梨。',
-                    '**水分補充**：確保每日飲水量充足，協助身體排除多餘的鈉。'
+                    '**水分補充**：協助身體排除多餘的鈉。'
+                ];
+                articleLinks = [
+                    { name: '🆘 快速減鈉攻略', link: '/post/sodium.html' },
+                    { name: '🥗 高鉀飲食餐盤建議', link: '/post/potassium.html' },
+                    { name: '🫀 中風預防營養指南', link: '/post/topic-stroke-prevention-nutrients.html' }
                 ];
             }
-
-            // Additional logic for double high/low
-            if (na > 2300) suggestions.push('提醒：您的總鈉量已超過 2300mg 限制。');
-            if (k < 2500) suggestions.push('提醒：您的總鉀量嚴重不足（低於 2500mg）。');
 
             this.statusBadge.textContent = status;
             this.statusBadge.className = `status-badge ${statusClass}`;
 
-            // Gauge fill (0 to 2.0 scale)
             const fillWidth = Math.min((ratio / 2) * 100, 100);
             this.gaugeFill.style.width = `${fillWidth}%`;
             this.gaugeFill.style.backgroundColor = color;
 
-            // Render suggestions
             this.suggestionList.innerHTML = suggestions.map(s => `<li>${s}</li>`).join('');
+
+            // 渲染建議連結
+            this.suggestArea.innerHTML = articleLinks.map(s => `
+                <a href="${s.link}" class="suggest-link">
+                    <span>${s.name}</span>
+                    <span style="margin-left: auto;">➔</span>
+                </a>
+            `).join('');
+
+            if (!silent) {
+                this.resultArea.classList.add('show');
+            } else {
+                this.resultArea.style.display = 'block';
+            }
         }
     }
 

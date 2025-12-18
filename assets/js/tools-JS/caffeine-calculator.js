@@ -46,9 +46,48 @@
         initialize() {
             this.createStyles();
             this.createContent();
+            this.loadState(); // 載入儲存的狀態
             this.attachEvents();
             this.log('debug', 'CaffeineCalculator Initialized');
             return this;
+        }
+
+        /**
+         * 載入狀態
+         */
+        loadState() {
+            try {
+                const saved = localStorage.getItem('caregiver_caffeine_calc_state');
+                if (saved) {
+                    const state = JSON.parse(saved);
+                    if (state.userType) this.inputUserType.value = state.userType;
+                    if (state.weight) this.inputWeight.value = state.weight;
+                    if (state.sensitivity) this.inputSensitivity.value = state.sensitivity;
+                    this.log('debug', 'State loaded from localStorage');
+
+                    // 如果有舊數據，自動跑一次計算顯示結果
+                    this.calculate(true);
+                }
+            } catch (e) {
+                this.log('error', 'Failed to load state: ' + e.message);
+            }
+        }
+
+        /**
+         * 儲存狀態
+         */
+        saveState() {
+            try {
+                const state = {
+                    userType: this.inputUserType.value,
+                    weight: this.inputWeight.value,
+                    sensitivity: this.inputSensitivity.value
+                };
+                localStorage.setItem('caregiver_caffeine_calc_state', JSON.stringify(state));
+                this.log('debug', 'State saved to localStorage');
+            } catch (e) {
+                this.log('error', 'Failed to save state: ' + e.message);
+            }
         }
 
         /**
@@ -313,13 +352,22 @@
          * 綁定事件
          */
         attachEvents() {
-            this.btnCalc.addEventListener('click', () => this.calculate());
+            this.btnCalc.addEventListener('click', () => {
+                this.calculate();
+                this.saveState(); // 點擊計算時儲存
+            });
+
+            // 輸入變動時也自動儲存 (選用，增加體驗)
+            const autoSave = () => this.saveState();
+            this.inputUserType.addEventListener('change', autoSave);
+            this.inputWeight.addEventListener('input', autoSave);
+            this.inputSensitivity.addEventListener('change', autoSave);
         }
 
         /**
          * 計算邏輯
          */
-        calculate() {
+        calculate(silent = false) {
             const userType = this.inputUserType.value;
             const weight = parseFloat(this.inputWeight.value) || 70;
             const sensitivity = this.inputSensitivity.value;
@@ -355,13 +403,13 @@
             // 確保數值整除
             limit = Math.round(limit / 5) * 5;
 
-            this.showResult(limit, userType, weight);
+            this.showResult(limit, userType, weight, silent);
         }
 
         /**
          * 顯示結果
          */
-        showResult(limit, userType, weight) {
+        showResult(limit, userType, weight, silent = false) {
             this.elLimit.textContent = limit;
 
             // 描述語句
@@ -387,7 +435,12 @@
                 this.elBevList.appendChild(card);
             });
 
-            this.resultBox.classList.add('show');
+            if (!silent) {
+                this.resultBox.classList.add('show');
+            } else {
+                // 如果是靜默載入，但也顯示結果框（但不要動畫）
+                this.resultBox.style.display = 'block';
+            }
             this.log('debug', `Limit Calculated: ${limit}mg`);
         }
 

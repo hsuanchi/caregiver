@@ -32,9 +32,49 @@
         initialize() {
             this.createStyles();
             this.createContent();
+            this.loadState();
             this.attachEvents();
-            this.calculate(); // Initial calculation
+            this.calculate(true); // Initial calculation (silent)
             return this;
+        }
+
+        loadState() {
+            try {
+                const saved = localStorage.getItem('caregiver_zone2_calc_state');
+                if (saved) {
+                    const state = JSON.parse(saved);
+                    if (state.age) this.ageInput.value = state.age;
+                    if (state.rhr) this.rhrInput.value = state.rhr;
+                    if (state.formula) {
+                        this.btns.forEach(b => {
+                            b.classList.toggle('active', b.dataset.formula === state.formula);
+                        });
+                        this.updateFields(state.formula);
+                    }
+                    if (state.modifier !== undefined) {
+                        const radio = this.shadowRoot.querySelector(`input[name="status"][value="${state.modifier}"]`);
+                        if (radio) radio.checked = true;
+                    }
+                }
+            } catch (e) {
+                console.error('Failed to load state:', e);
+            }
+        }
+
+        saveState() {
+            try {
+                const activeBtn = this.shadowRoot.querySelector('.toggle-btn.active');
+                const selectedRadio = this.shadowRoot.querySelector('input[name="status"]:checked');
+                const state = {
+                    age: this.ageInput.value,
+                    rhr: this.rhrInput.value,
+                    formula: activeBtn ? activeBtn.dataset.formula : 'maffetone',
+                    modifier: selectedRadio ? selectedRadio.value : '0'
+                };
+                localStorage.setItem('caregiver_zone2_calc_state', JSON.stringify(state));
+            } catch (e) {
+                console.error('Failed to save state:', e);
+            }
         }
 
         createStyles() {
@@ -162,6 +202,34 @@
                 }
                 .benefits-title { font-weight: 700; margin-bottom: 5px; color: #166534; }
 
+                .suggest-links {
+                    margin-top: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    text-align: left;
+                }
+                
+                .suggest-link {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 12px;
+                    background: white;
+                    border: 1px solid #bbf7d0;
+                    border-radius: 10px;
+                    text-decoration: none;
+                    color: #166534;
+                    font-size: 0.9rem;
+                    font-weight: 700;
+                    transition: all 0.2s;
+                }
+                
+                .suggest-link:hover {
+                    background: #dcfce7;
+                    transform: translateX(5px);
+                }
+
                 .disclaimer { font-size: 0.75rem; color: #94a3b8; margin-top: 25px; border-top: 1px dashed #e2e8f0; padding-top: 15px; }
 
                 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -224,7 +292,7 @@
                     </div>
                 </div>
 
-                <div class="result-container">
+                <div class="result-container" id="result-box">
                     <div style="font-size: 0.9rem; font-weight: 700; color: #166534;">建議 Zone 2 訓練強度</div>
                     <div class="hr-range"><span id="hr-low">--</span> - <span id="hr-high">--</span> <span class="hr-unit">BPM</span></div>
                     
@@ -246,6 +314,8 @@
                         </div>
                     </div>
 
+                    <div id="suggest-area" class="suggest-links"></div>
+
                     <div class="disclaimer">
                         * 計算結果僅供參考。若感到不適或有胸悶等症狀，請立即停止運動並諮詢醫療人員。
                     </div>
@@ -261,6 +331,8 @@
             this.hrHigh = this.shadowRoot.getElementById('hr-high');
             this.btns = this.shadowRoot.querySelectorAll('.toggle-btn');
             this.statusRadios = this.shadowRoot.querySelectorAll('input[name="status"]');
+            this.resultBox = this.shadowRoot.getElementById('result-box');
+            this.suggestArea = this.shadowRoot.getElementById('suggest-area');
         }
 
         attachEvents() {
@@ -271,11 +343,18 @@
                     const formula = btn.dataset.formula;
                     this.updateFields(formula);
                     this.calculate();
+                    this.saveState();
                 });
             });
 
-            [this.ageInput, this.rhrInput].forEach(el => el.addEventListener('input', () => this.calculate()));
-            this.statusRadios.forEach(el => el.addEventListener('change', () => this.calculate()));
+            [this.ageInput, this.rhrInput].forEach(el => el.addEventListener('input', () => {
+                this.calculate();
+                this.saveState();
+            }));
+            this.statusRadios.forEach(el => el.addEventListener('change', () => {
+                this.calculate();
+                this.saveState();
+            }));
         }
 
         updateFields(formula) {
@@ -288,30 +367,50 @@
             }
         }
 
-        calculate() {
-            const formula = this.shadowRoot.querySelector('.toggle-btn.active').dataset.formula;
+        calculate(silent = false) {
+            const activeBtn = this.shadowRoot.querySelector('.toggle-btn.active');
+            if (!activeBtn) return;
+            const formula = activeBtn.dataset.formula;
             const age = parseInt(this.ageInput.value) || 30;
 
             let low, high;
 
             if (formula === 'maffetone') {
-                const modifier = parseInt(this.shadowRoot.querySelector('input[name="status"]:checked').value);
+                const selectedRadio = this.shadowRoot.querySelector('input[name="status"]:checked');
+                const modifier = selectedRadio ? parseInt(selectedRadio.value) : 0;
                 const mafLimit = (180 - age) + modifier;
                 high = mafLimit;
                 low = mafLimit - 10;
             } else {
                 const rhr = parseInt(this.rhrInput.value) || 60;
-                // Tanaka Formula for MaxHR: 208 - (0.7 * age)
                 const maxHR = Math.round(208 - (0.7 * age));
                 const hrr = maxHR - rhr;
-
-                // Zone 2 is typically 60-70% of Karvonen (HRR)
                 low = Math.round(hrr * 0.60 + rhr);
-                high = Math.round(hrr * 0.75 + rhr); // Extending slightly to 75% for athlete inclusivity
+                high = Math.round(hrr * 0.75 + rhr);
             }
 
             this.hrLow.textContent = low;
             this.hrHigh.textContent = high;
+
+            this.showResult(silent);
+        }
+
+        showResult(silent = false) {
+            const suggestions = [
+                { name: '🫀 心血管健康完整指南', link: '/post/topic-cardiovascular-health.html' },
+                { name: '🐟 魚油：血管修復的基石', link: '/post/fish-oil.html' }
+            ];
+
+            this.suggestArea.innerHTML = suggestions.map(s => `
+                <a href="${s.link}" class="suggest-link">
+                    <span>${s.name}</span>
+                    <span style="margin-left: auto;">➔</span>
+                </a>
+            `).join('');
+
+            if (silent) {
+                this.resultBox.style.animation = 'none';
+            }
         }
     }
 
