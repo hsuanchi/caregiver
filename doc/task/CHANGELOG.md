@@ -10,6 +10,18 @@
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
 
+## [1.5.9] - 2025-12-18
+### Feat
+- **FAQ 20-題深度優化 (GLOBAL-FAQ-20-EXPANSION)**:
+  - **模組化擴展**: 實作 5 大模組分類法（基礎、功效、用法、安全、特定族群），並將 `post/zinc.html` 與 `post/fish-oil.html` 擴展至 20 題高品質問答。
+  - **獨立 ID 與深層連結**: 為每個問答對實作唯一 ID (例：`faq-oil-basic-1`)，支援搜尋引擎深層索引。
+  - **結構化資料同步**: 100% 同步視覺內容與 `FAQPage` JSON-LD 結構化資料。
+
+### Optimization & Project Management
+- **任務中央化與排程 (PROJECT-SCHEDULING)**:
+  - **Todo 清單整合**: 將「心血管健康工具擴充」與「全站 FAQ 20 題優化」計畫正式寫入 `doc/task/todo.md`，建立明確的執行批次與進度追蹤。
+  - **Breadcrumb 專業化計畫**: 完成「導覽標記 (Breadcrumbs)」專業化優化計畫書與任務分拆，建立 `doc/task/task_breadcrumb-optimization.md` 作為執行基準。
+
 ## [1.5.8] - 2025-12-18
 ### Optimization & UX
 - **健康工具優化 (HEALTH-TOOLS-OPT)**:

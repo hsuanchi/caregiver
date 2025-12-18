@@ -49,3 +49,32 @@
 3. 將所有資料彙整成 `foodDatabase` 物件。
 4. 自動覆寫 `food/food_data.js` 檔案。
 這樣做可以讓 `food/*.html` 成為唯一的內容真實來源，同時保持前端載入效能，是比「在瀏覽器動態抓取」更專業的作法。此任務會改變目前的純靜態開發流程，引入「建置」步驟。
+
+### [規劃中] 心血管健康工具擴充與全站整合 (CARDIO-TOOLS-EXPANSION)
+
+**主要目標**: 將專業評估工具（ASCVD, Na:K Ratio, Zone 2）與專業洞察卡片 (Insight Cards) 整合至**所有相關 `post/` 頁面**。
+**相關檔案**: `category/tools.html`, `assets/js/tools-JS/*.js`, `post/*.html`
+**詳細說明**: 
+1. **工具開發**: 已完成 ASCVD、鈉鉀比、Zone 2 計算機開發。
+2. **全站審核與優化**: 逐一檢查所有 `post/` 頁面，針對具有心血管相關聯性的營養素（如魚油、維生素 K2、鎂等）嵌入對應工具或「專業洞察卡」。
+3. **內鏈結構**: 確保每個工具在相關文章中皆有正確的跳轉錨點與導流連結，強化內容深度。
+
+### [進行中] 全站 FAQ 20 題模組化擴展計畫 (GLOBAL-FAQ-EXPANSION)
+
+**主要目標**: **對全站所有 `post/` 文章進行補充檢查**，並將其 FAQ 擴展至 20 題，落實 5 大模組分類與 JSON-LD 同步。
+**相關檔案**: `post/*.html`, `doc/task/archive/task_global-faq-strategy.md`
+**詳細說明**: 
+1. **全站優化**: 針對所有文章落實 A-E 五大模組（基礎、功效、用法、安全、族群），確保每個問答皆有獨立 ID 與深層連結支援。
+2. **Batch 1 (核心營養素)**: 鋅 (已完成), 魚油 (已完成), 維生素 D, 維生素 C, 鎂, 蛋白質。
+3. **Batch 2 (維家族)**: 維生素 A, B, E, K, K2, 鈣, 鐵, 硒。
+4. **Batch 3 (機能類)**: 葉黃素, Q10, 薑黃,益生菌, 膠原蛋白。
+5. **Batch 4 (全站剩餘文章)**: 逐篇檢查其餘所有 post 文章並完成 20 題優化。
+
+### [待辦] 導覽標記 (Breadcrumb) 專業化優化 (BREADCRUMB-OPTIMIZATION)
+
+**主要目標**: 重構網站導覽系統，達成 2024-2025 專業 SEO (JSON-LD) 與無障礙 (WAI-ARIA) 標準。
+**相關檔案**: `post/00template.html`, `post/*.html`, `doc/task/task_breadcrumb-optimization.md`
+**詳細說明**: 
+1. **標準重構**: 採用 `<nav aria-label="Breadcrumb">` 與 `<ol>` 語義化結構，並由 JSON-LD `BreadcrumbList` 同步數據。
+2. **無障礙優化**: 加入 `aria-current="page"` 標註，確保螢幕閱讀器正確辨識，且當前頁面不連結回自身。
+3. **全站導入**: 從 `00template.html` 開始標準化，並分批將此結構導入全站所有文章頁面。
