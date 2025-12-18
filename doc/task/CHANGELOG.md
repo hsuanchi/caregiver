@@ -9,6 +9,14 @@
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
+## [1.5.2] - 2025-12-18
+### Feat
+- **FAQ 內容全面擴展與結構升級 (GLOBAL-FAQ-EXPANSION-STRATEGY)**:
+  - 為所有文章頁面（包括 topic-cardiovascular-health.html, topic-immune-boosting-nutrients.html, topic-stroke-prevention-nutrients.html, topic-vascular-health-superfoods.html, vitamin-a.html, vitamin-b.html, vitamin-c.html, vitamin-d.html, vitamin-e.html, vitamin-k.html, vitamin-k2.html, zinc.html 以及其他先前已完成文章）全面擴展並升級 FAQ 內容。
+  - 每篇文章的 FAQ 部分現在至少包含 10 個高品質問答對，並採用兩層式分類框架 (`<h3>` 標籤用於分類)。
+  - 所有 FAQ 回答都增加了豐富的內部連結 (包括頁面內部錨點、其他 post/ 文章、food/ 頁面)，以提升閱讀體驗和站內 SEO。
+  - FAQ 結構嚴格遵循簡化流程，確保內容完整性與功能性，而無需修改 CSS 或 JSON-LD。
+
 ## [1.5.1] - 2025-12-17
 ### Changed
 - **首頁UI優化 (HOMEPAGE-TOPICS-UI-IMPROVEMENT)**:

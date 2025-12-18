@@ -15,18 +15,11 @@
 
 此區塊的任務為一次性或階段性的開發工作。
 
-### [待辦] 全站 FAQ 內容擴展與結構升級 (GLOBAL-FAQ-EXPANSION-STRATEGY)
-
-**主要目標**: 將所有文章的 FAQ 區塊進行系統性升級，以提升內容深度與 SEO 表現。
-**詳細規劃**: 請參閱獨立任務文件 `doc/task/task_global-faq-strategy.md`。
-
 ### [待辦] 首頁整合儀表板功能 (HOMEPAGE-DASHBOARD-INTEGRATION)
 
 **主要目標**: 將 `category/nutrient-dashboard.html` 的功能修改後，移植到首頁，呈現科技與數據感。
 **相關檔案**: `index.html`, `category/nutrient-dashboard.html`, `assets/js/dashboard-logic.js`
 **詳細說明**: 此任務對應 `INTEGRATE_DASHBOARD_TO_HOMEPAGE.md` 的規劃。需要將現有儀表板邏輯重構為一個獨立的、可嵌入的 Shadow DOM 組件。
-
----
 
 ### [待辦] 將食物儀表板整合至所有 Food 頁面 (FOOD-PAGE-DASHBOARD-INTEGRATION)
 
@@ -44,7 +37,7 @@
     b. JavaScript 邏輯需要能夠根據當前頁面的食物 ID（可從 `body[data-article-id]` 讀取）來填充儀表板的數據。
 5.  **樣式與腳本**: 確保所有 `food/*.html` 頁面都正確引入了必要的 CSS（如 FontAwesome）和 JavaScript（如 Chart.js 和新的儀表板邏輯腳本）。
 
-### [已完成] 開發 Web Tools (魚油 CP 值與咖啡因耐受度計算機) (TOOL-LED-GROWTH)
+### [待辦] 開發 Web Tools (魚油 CP 值與咖啡因耐受度計算機) (TOOL-LED-GROWTH)
 
 **主要目標**: 開發兩個簡單的 Web 工具：「魚油 CP 值計算機」與「每日咖啡因耐受度計算機」，以提升網站的實用性、使用者停留時間與 SEO 外連效益。
 **相關檔案**: `post/review-fish-oil.html`, `assets/js/fish-oil-calculator.js`
@@ -72,4 +65,3 @@
 3. 將所有資料彙整成 `foodDatabase` 物件。
 4. 自動覆寫 `food/food_data.js` 檔案。
 這樣做可以讓 `food/*.html` 成為唯一的內容真實來源，同時保持前端載入效能，是比「在瀏覽器動態抓取」更專業的作法。此任務會改變目前的純靜態開發流程，引入「建置」步驟。
----

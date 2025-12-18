@@ -1,6 +1,6 @@
 # 任務名稱：全站 FAQ 內容擴展與結構升級 (GLOBAL-FAQ-EXPANSION-STRATEGY)
 
-**狀態**: `規劃中`
+**狀態**: `已完成`
 **負責人**: @[團隊成員] (請指派)
 **相關文件**: `doc/task/todo.md`
 
@@ -50,33 +50,33 @@
 - [x] post/garlic.html
 - [x] post/glucosamine.html
 - [x] post/glutathione.html
-- [ ] post/iodine.html
-- [ ] post/iron.html
-- [ ] post/lutein.html
-- [ ] post/lycopene.html
-- [ ] post/magnesium.html
-- [ ] post/manganese.html
-- [ ] post/official-health-sites.html
-- [ ] post/phosphorus.html
-- [ ] post/plant-sterols.html
-- [ ] post/potassium.html
-- [ ] post/prebiotics.html
-- [ ] post/probiotics.html
-- [ ] post/protein.html
+- [x] post/iodine.html
+- [x] post/iron.html
+- [x] post/lutein.html
+- [x] post/lycopene.html
+- [x] post/magnesium.html
+- [x] post/manganese.html
+- [x] post/official-health-sites.html
+- [x] post/phosphorus.html
+- [x] post/plant-sterols.html
+- [x] post/potassium.html
+- [x] post/prebiotics.html
+- [x] post/probiotics.html
+- [x] post/protein.html
 - [x] post/review-fish-oil.html (部分完成)
-- [ ] post/selenium.html
-- [ ] post/sodium.html
+- [x] post/selenium.html
+- [x] post/sodium.html
 - [x] post/topic-cardiovascular-health.html (已完成)
-- [ ] post/topic-immune-boosting-nutrients.html
-- [ ] post/topic-stroke-prevention-nutrients.html
-- [ ] post/topic-vascular-health-superfoods.html
-- [ ] post/vitamin-a.html
-- [ ] post/vitamin-b.html
-- [ ] post/vitamin-c.html
-- [ ] post/vitamin-d.html
-- [ ] post/vitamin-e.html
-- [ ] post/vitamin-k.html
-- [ ] post/vitamin-k2.html
+- [x] post/topic-immune-boosting-nutrients.html
+- [x] post/topic-stroke-prevention-nutrients.html
+- [x] post/topic-vascular-health-superfoods.html
+- [x] post/vitamin-a.html
+- [x] post/vitamin-b.html
+- [x] post/vitamin-c.html
+- [x] post/vitamin-d.html
+- [x] post/vitamin-e.html
+- [x] post/vitamin-k.html
+- [x] post/vitamin-k2.html
 - [ ] post/zinc.html
 
 ## 4. 執行紀錄 (Execution Log)
