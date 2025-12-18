@@ -1,8 +1,0 @@
-fix(navigation): repair broken FAQ links in article TOCs
-
-This commit addresses an issue where the "常見問題" (FAQ) link in the Table of Contents (TOC) of multiple articles was pointing to the wrong anchor.
-
-- Corrected the href attribute in <a> tags to point to the correct id="faq-main-title" of the <h2> heading.
-- Added missing TOC structures for pages where the TOC was absent.
-- Ensured consistency across all processed articles for improved user navigation and accessibility.
-- Updated CHANGELOG.md to reflect these fixes.
