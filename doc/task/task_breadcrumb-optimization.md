@@ -95,7 +95,7 @@ const articlesData = {
 ## 3. 任務執行檢查清單
 
 ### 階段一：資料準備與組件開發
-- [ ] 更新 `assets/js/articles-data.js`，為所有相關條目添加 `parent` 和 `path` 屬性。 <!-- id: 0 -->
+- [ ] 更新 `assets/js/articles-data.js`，為所有相關的文章和分類添加 `parent` 和 `path` 屬性。 <!-- id: 0 -->
 - [ ] 建立 `<breadcrumb-component>` 自訂元素 (`assets/js/components/BreadcrumbComponent.js`)。 <!-- id: 1 -->
     - [ ] 實作 Shadow DOM 以封裝 CSS。 <!-- id: 2 -->
     - [ ] 實作遍歷 `articlesData` 階層的 `buildPath` 邏輯。 <!-- id: 3 -->
@@ -109,7 +109,7 @@ const articlesData = {
     - [ ] 移除現有的導覽標記 HTML。 <!-- id: 8 -->
     - [ ] **(優化)** 直接插入 `<breadcrumb-component>` 自訂元素標籤。 <!-- id: 9 -->
     - [ ] 新增腳本以動態設定組件的 `article-id` 屬性。 <!-- id: 10 -->
-- [ ] 將組件整合到關鍵的非範本頁面。 <!-- id: 11 -->
+- [ ] 將組件整合到關鍵的非範本頁面（例如 `category/tools.html`, `index.html`）。 <!-- id: 11 -->
 
 ### 階段三：全域覆蓋與驗證
 - [ ] 確保所有 `post/` 和 `food/` 文章都能正確顯示新的導覽標記。 <!-- id: 12 -->
