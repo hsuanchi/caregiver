@@ -110,6 +110,18 @@ const articlesData = {
     - [ ] **(優化)** 直接插入 `<breadcrumb-component>` 自訂元素標籤。 <!-- id: 9 -->
     - [ ] 新增腳本以動態設定組件的 `article-id` 屬性。 <!-- id: 10 -->
 - [ ] 將組件整合到關鍵的非範本頁面（例如 `category/tools.html`, `index.html`）。 <!-- id: 11 -->
+    **整合指南 (針對非範本頁面)**:
+    1.  **修改 `<body>` 標籤**: 在 `<body>` 標籤中加入 `data-article-id` 屬性，其值應對應 `articles-data.js` 中該頁面的 `id` (例如 `<body data-article-id="category-tools">`)。
+    2.  **置入 `<breadcrumb-component>` 標籤**: 在頁面 HTML 內容的適當位置 (通常在主要標題上方) 插入組件標籤，例如 `<breadcrumb-component id="breadcrumb-component-container"></breadcrumb-component>`。
+    3.  **載入 JavaScript 檔案**: 確保頁面載入了 `articles-data.js` 和 `assets/js/components/BreadcrumbComponent.js`。請注意相對路徑的調整。
+    4.  **初始化組件**: 在 `DOMContentLoaded` 事件監聽器中，加入以下初始化邏輯：
+        ```javascript
+        const articleId = document.body.dataset.articleId;
+        const breadcrumbComponent = document.getElementById('breadcrumb-component-container');
+        if (breadcrumbComponent && articleId) {
+            breadcrumbComponent.setAttribute('article-id', articleId);
+        }
+        ```
 
 ### 階段三：全域覆蓋與驗證
 - [ ] 確保所有 `post/` 和 `food/` 文章都能正確顯示新的導覽標記。 <!-- id: 12 -->
