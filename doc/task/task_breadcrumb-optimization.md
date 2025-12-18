@@ -19,45 +19,113 @@ Refactor the website's breadcrumb system to meet 2024-2025 professional SEO and 
 - **Responsiveness**: Ensure breadcrumbs wrap or truncate gracefully on mobile (using `white-space: nowrap` and `overflow-x: auto` if needed).
 - **Placement**: Consistently placed above the `h1` title within the article content.
 
-## 2. Technical Roadmap
+## 1.1 Rationale for Automated Component Approach
 
-### Phase 1: Global CSS & Template Upgrade
-1.  **Refactor CSS**: Update `.breadcrumb` styles in `post/00template.html` to support the new list-based structure.
-2.  **Refactor HTML Structure**: Replace the flat `nav` structure with a semantic `nav > ol > li` pattern.
-3.  **Refactor JSON-LD**: Update the template's script block to a more robust `BreadcrumbList` schema.
+Given the project's architecture (zero-dependency, native JavaScript, component-based, Shadow DOM for isolation) and the large number of article pages, a manual approach to updating breadcrumbs is inefficient and prone to errors. Therefore, we will adopt an automated component-based solution. This strategy offers:
 
-### Phase 2: Hub & Core Article Migration
-1.  **Cardiovascular Hub**: Update `post/topic-cardiovascular-health.html` to provide a clear parent-child structure.
-2.  **Core Nutrients**: Update `post/fish-oil.html`, `post/zinc.html`, etc.
-3.  **Category Pages**: Update `category/tools.html`.
+*   **Maintainability**: Centralized logic means changes to breadcrumb structure, style, or logic require editing only one component.
+*   **Scalability**: Adding new content merely requires updating data, not manual HTML edits.
+*   **Consistency & Reliability**: Automation ensures uniform, error-free breadcrumbs across all pages.
+*   **Architectural Alignment**: Aligns with the project's existing pattern of encapsulating features in JavaScript components.
 
-### Phase 3: Global Rollout
-- Apply the standardized pattern to all remaining `post/` articles.
+## 2. Optimized Technical Roadmap: Automated Component Approach
 
-## 3. Task Checklist
+This roadmap focuses on building a dynamic `BreadcrumbComponent.js` to generate breadcrumbs programmatically.
 
-### Phase 1: Planning & Standardization
-- [ ] Define the site-wide hierarchy mapping (Home > Category > Page) <!-- id: 0 -->
-- [ ] Design the refined CSS layout (responsive & consistent) <!-- id: 1 -->
-- [ ] Finalize the JSON-LD `BreadcrumbList` schema template <!-- id: 2 -->
+### Step 1: Centralize Hierarchy Data (Data-Driven Approach)
 
-### Phase 2: Core Template Implementation
-- [ ] Refactor `post/00template.html` <!-- id: 3 -->
-    - [ ] Update semantic HTML (`<nav>`, `<ol>`) <!-- id: 4 -->
-    - [ ] Apply WAI-ARIA attributes (`aria-label`, `aria-current`) <!-- id: 5 -->
-    - [ ] Modernize CSS styling <!-- id: 6 -->
-    - [ ] Sync JSON-LD schema <!-- id: 7 -->
+The foundation of the automated system will be a centralized data source that defines the site's content hierarchy.
 
-### Phase 3: Global Rollout (Batch Priority)
-- [ ] Batch 1: High-Traffic Hubs <!-- id: 8 -->
-    - [ ] Apply to `post/topic-cardiovascular-health.html` <!-- id: 9 -->
-    - [ ] Apply to `category/tools.html` <!-- id: 10 -->
-- [ ] Batch 2: Core Nutrients <!-- id: 11 -->
-    - [ ] Apply to `post/fish-oil.html` <!-- id: 12 -->
-    - [ ] Apply to `post/zinc.html` <!-- id: 13 -->
-- [ ] Batch 3: All remaining articles <!-- id: 14 -->
+*   **Action**: Modify `assets/js/articles-data.js`.
+*   **Details**: For each entry in the `articles` object, add a `parent` property that points to the key of its parent article or category. This creates a relational map of the entire site.
 
-### Phase 4: Verification
-- [ ] Verify HTML validation (W3C) <!-- id: 15 -->
-- [ ] Validate Rich Results (Google Search Console Simulator) <!-- id: 16 -->
-- [ ] Accessibility check (Screen reader compatibility) <!-- id: 17 -->
+**Example in `articles-data.js`**:
+```javascript
+const articlesData = {
+  // ... other entries
+  'home': {
+    name: '首頁',
+    path: '/', // Assuming '/' is the homepage path
+    parent: null // Root element
+  },
+  'health-topics': {
+    name: '健康主題',
+    path: '/category/health-topics.html',
+    parent: 'home'
+  },
+  'topic-cardiovascular-health': {
+    name: '心血管健康',
+    path: '/post/topic-cardiovascular-health.html',
+    parent: 'health-topics'
+  },
+  'fish-oil': {
+    name: '魚油',
+    path: '/post/fish-oil.html',
+    parent: 'topic-cardiovascular-health'
+  }
+  // ... etc.
+};
+```
+
+### Step 2: Develop the `BreadcrumbComponent.js`
+
+This component is the core of the new system.
+
+*   **Action**: Create a new file at `assets/js/components/BreadcrumbComponent.js`.
+*   **Functionality**:
+    1.  The component's constructor will accept a `containerElement` (the DOM element where the breadcrumb will be rendered) and the current page's `articleId` (a unique identifier for the current page, e.g., 'fish-oil').
+    2.  It will use the `articleId` to look up the page in `articlesData`.
+    3.  It will recursively traverse the hierarchy using the `parent` property until it reaches `null` (the homepage), building the complete path.
+    4.  It will dynamically generate the full breadcrumb HTML, including:
+        *   A `<nav aria-label="Breadcrumb">` container.
+        *   An `<ol>` for the list.
+        *   `<li>` elements for each item in the path.
+        *   The final `<li>` for the current page will be a `<span>` with `aria-current="page"`, and not a clickable link.
+    5.  It will also dynamically generate a `<script type="application/ld+json">` tag containing the `BreadcrumbList` structured data based on the generated path.
+    6.  Finally, it will render both the HTML and the JSON-LD into the `containerElement`. The component must encapsulate its CSS within a Shadow DOM as per project conventions.
+
+### Step 3: Integrate the Component into the Template
+
+*   **Action**: Modify the main article template, `post/00template.html`.
+*   **Details**:
+    1.  Remove any existing hardcoded breadcrumb HTML.
+    2.  In its place, add an empty placeholder: `<div id="breadcrumb-container"></div>`.
+    3.  Add a `<script>` block that:
+        *   Imports `BreadcrumbComponent.js` (or ensures it's loaded).
+        *   Obtains the `articleId` for the current page (e.g., from a `data-page-id` attribute on the `<body>` tag or a global variable).
+        *   Instantiates `BreadcrumbComponent`, passing it the container element and the `articleId`.
+        *   Calls an `initialize()` or `render()` method on the component to generate and inject the breadcrumb.
+
+### Step 4: Sitewide Rollout and Verification
+
+*   **Action**: Because most pages use `00template.html`, the changes will apply globally and automatically. For specific pages not using the main template (e.g., some `category/*.html` files or `index.html`), manually add the container `div` and the component initialization script as needed.
+*   **Tasks**:
+    1.  Ensure `BreadcrumbComponent.js` is correctly linked/loaded on all relevant pages.
+    2.  Perform the verification steps:
+        *   Validate HTML using the W3C validator.
+        *   Validate the `BreadcrumbList` schema using Google's Rich Results Test.
+        *   Perform accessibility checks, ensuring screen readers correctly interpret the new structure.
+
+## 3. Optimized Task Checklist
+
+### Phase 1: Data Preparation & Component Development
+- [ ] Update `assets/js/articles-data.js` with `parent` and `path` properties for all relevant articles and categories. <!-- id: 0 -->
+- [ ] Create `assets/js/components/BreadcrumbComponent.js` with dynamic HTML and JSON-LD generation. <!-- id: 1 -->
+    - [ ] Implement Shadow DOM for CSS encapsulation. <!-- id: 2 -->
+    - [ ] Implement logic to traverse `articlesData` hierarchy. <!-- id: 3 -->
+    - [ ] Generate semantic HTML (`<nav>`, `<ol>`, `<li>`, `<span>` for current page). <!-- id: 4 -->
+    - [ ] Apply WAI-ARIA attributes (`aria-label`, `aria-current`). <!-- id: 5 -->
+    - [ ] Generate JSON-LD `BreadcrumbList` schema. <!-- id: 6 -->
+
+### Phase 2: Template Integration & Initial Rollout
+- [ ] Refactor `post/00template.html`: <!-- id: 7 -->
+    - [ ] Remove existing breadcrumb HTML. <!-- id: 8 -->
+    - [ ] Add `<div id="breadcrumb-container"></div>` placeholder. <!-- id: 9 -->
+    - [ ] Add script to load and initialize `BreadcrumbComponent.js`, passing `articleId`. <!-- id: 10 -->
+- [ ] Integrate component into key non-template pages (e.g., `category/tools.html`, `index.html`) as needed. <!-- id: 11 -->
+
+### Phase 3: Global Coverage & Verification
+- [ ] Ensure all remaining `post/` articles and `food/` articles correctly display the new breadcrumb (they should, due to `00template.html` usage). <!-- id: 12 -->
+- [ ] Verify HTML validation (W3C). <!-- id: 13 -->
+- [ ] Validate Rich Results (Google Search Console Simulator). <!-- id: 14 -->
+- [ ] Accessibility check (Screen reader compatibility). <!-- id: 15 -->

@@ -9,6 +9,12 @@
 本檔案的格式基於 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)，
 且本專案遵循 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
 
+## [1.6.0] - 2025-12-18
+### Fix
+- **TOC 目錄連結修復 (TOC-LINK-REPAIR)**:
+  - 全面檢查並修復了多篇文章頁面中，目錄 (TOC) 的「常見問題」連結失效的問題。
+  - 確保所有連結都準確指向對應的 `<h2>` 標題 (`id="faq-main-title"`)，提升使用者導覽體驗。
+  - 針對部分頁面缺失的 FAQ 區塊或 TOC 結構，進行了補全，確保全站結構一致性。
 
 ## [1.5.9] - 2025-12-18
 ### Feat
