@@ -41,11 +41,23 @@ const articlesData = {
   // ... 其他條目
   'home': { name: '首頁', path: '/', parent: null },
   'health-topics': { name: '健康主題', path: '/category/health-topics.html', parent: 'home' },
-  'topic-cardiovascular-health': { name: '心血管健康', path: '/post/topic-cardiovascular-health.html', parent: 'health-topics' },
-  'fish-oil': { name: '魚油', path: '/post/fish-oil.html', parent: 'topic-cardiovascular-health' }
+  // [CRITICAL] 必須定義父節點，即使它是一個分類頁面
+  'topic-card-cardiovascular-health': {
+      id: 'topic-card-cardiovascular-health',
+      parent: 'category-health-topics',
+      name: '心血管健康',
+      path: '/post/topic-card-cardiovascular-health.html',
+      type: '健康主題'
+  },
+  'fish-oil': { name: '魚油', path: '/post/fish-oil.html', parent: 'topic-card-cardiovascular-health' }
   // ... 等等
 };
 ```
+
+### 關鍵預備步驟：資料完整性檢查
+在實作前，**必須**確認 `articles-data.js` 中是否存在所有父節點的定義。
+*   **常見錯誤**: 子文章引用了 `parent: 'topic-card-xxx'`，但該 topic 節點本身未在 `articlesData` 中定義。這會導致導覽列斷裂。
+*   **解決方案**: 務必補上所有缺失的分類或主題節點。
 
 ### 步驟二：開發 `<breadcrumb-component>` 組件
 
@@ -95,6 +107,7 @@ const articlesData = {
 ## 3. 任務執行檢查清單
 
 ### 階段一：資料準備與組件開發
+- [ ] **[關鍵]** 檢查並修復 `assets/js/articles-data.js` 中缺失的父節點 (如 `topic-card-cardiovascular-health`)。 <!-- id: 0a -->
 - [ ] 更新 `assets/js/articles-data.js`，為所有相關的文章和分類添加 `parent` 和 `path` 屬性。 <!-- id: 0 -->
 - [ ] 建立 `<breadcrumb-component>` 自訂元素 (`assets/js/components/BreadcrumbComponent.js`)。 <!-- id: 1 -->
     - [ ] 實作 Shadow DOM 以封裝 CSS。 <!-- id: 2 -->
@@ -157,9 +170,12 @@ class BreadcrumbComponent extends HTMLElement {
     let depth = 0;
     const maxDepth = 10; // 防呆機制：防止無限迴圈
 
-    // 假設 articlesData 是全域變數或已匯入
-    while (currentId && articlesData[currentId] && depth < maxDepth) {
-      const item = articlesData[currentId];
+    // 假設 articlesData 和 topicArticles 是全域變數
+    // 實作時應同時檢查這兩個來源，或將其合併
+    const allArticles = { ...window.articlesData, ...window.topicArticles }; // 示意邏輯
+    
+    while (currentId && allArticles[currentId] && depth < maxDepth) {
+      const item = allArticles[currentId];
       // 將項目加到陣列開頭
       path.unshift({
         name: item.name,

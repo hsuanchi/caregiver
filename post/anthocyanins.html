@@ -249,6 +249,18 @@
     }
     </script>
 
+  <!-- Breadcrumb Component -->
+
+
+  <script type="module" src="../assets/js/components/BreadcrumbComponent.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const breadcrumb = document.getElementById('breadcrumb-component-container');
+      if (breadcrumb) {
+        breadcrumb.setAttribute('article-id', 'card-anthocyanins');
+      }
+    });
+  </script>
   <link rel="stylesheet" href="../assets/css/article.css">
 
   <style>
@@ -859,9 +871,7 @@
       <header class="article-header" id="article-top">
 
         <div class="article-hero">
-          <nav class="breadcrumb">
-            <a href="../index.html">首頁</a><span class="separator">/</span><span>花青素 - 終結3C眼疲勞、逆轉老化的超級抗氧化物</span>
-          </nav>
+          <breadcrumb-component id="breadcrumb-component-container"></breadcrumb-component>
           <span class="article-category">植化素</span>
           <h1 class="article-title">花青素 - 終結3C眼疲勞、逆轉老化的超級抗氧化物</h1>
           <p class="article-subtitle">
@@ -1107,144 +1117,146 @@
           </div>
         </section>
 
-        <section id="faq"><h2>常見問題</h2><h3 class="faq-category-title">A. 花青素基礎知識 (Basics)</h3>
-        <div class="faq-item" id="faq-antho-basic-1">
-          <div class="faq-question">Q1: 花青素和葉黃素有什麼不同？一起吃效果更好嗎？</div>
-          <div class="faq-answer">
-            <p><strong>A:</strong> 兩者功能互補，是守護眼睛的黃金搭檔。<a
-                href="/post/lutein.html">葉黃素</a>像「內建的太陽眼鏡」，主要過濾藍光、保護視網膜中心的黃斑部；花青素則像「循環系統的促進劑」，能增加眼部微血管的血流量、舒緩睫狀肌的疲勞。一起補充能達到更全面的保護效果。
-            </p>
+        <section id="faq">
+          <h2>常見問題</h2>
+          <h3 class="faq-category-title">A. 花青素基礎知識 (Basics)</h3>
+          <div class="faq-item" id="faq-antho-basic-1">
+            <div class="faq-question">Q1: 花青素和葉黃素有什麼不同？一起吃效果更好嗎？</div>
+            <div class="faq-answer">
+              <p><strong>A:</strong> 兩者功能互補，是守護眼睛的黃金搭檔。<a
+                  href="/post/lutein.html">葉黃素</a>像「內建的太陽眼鏡」，主要過濾藍光、保護視網膜中心的黃斑部；花青素則像「循環系統的促進劑」，能增加眼部微血管的血流量、舒緩睫狀肌的疲勞。一起補充能達到更全面的保護效果。
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" id="faq-antho-basic-2">
-          <div class="faq-question">Q2: 花青素、前花青素 (OPC)、生物類黃酮是一樣的東西嗎？</div>
-          <div class="faq-answer">
-            <p><strong>A:</strong> 它們都屬於「生物類黃酮」家族。花青素是顯色彩素，主攻眼部循環。前花青素 (OPCs)
-              則通常無色，強項在於維持血管彈性與膠原蛋白保護（常見於葡萄籽）。兩者功能互補，但專長各異。</p>
+          <div class="faq-item" id="faq-antho-basic-2">
+            <div class="faq-question">Q2: 花青素、前花青素 (OPC)、生物類黃酮是一樣的東西嗎？</div>
+            <div class="faq-answer">
+              <p><strong>A:</strong> 它們都屬於「生物類黃酮」家族。花青素是顯色彩素，主攻眼部循環。前花青素 (OPCs)
+                則通常無色，強項在於維持血管彈性與膠原蛋白保護（常見於葡萄籽）。兩者功能互補，但專長各異。</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" id="faq-antho-basic-3">
-          <div class="faq-question">Q3: 花青素的抗氧化能力真的比維生素 C、E 強嗎？</div>
-          <div class="faq-answer">
-            <p><strong>A:</strong> 在體外實驗中，花青素清除自由基的能力確實是 <a href="/post/vitamin-c.html">維生素 C</a> 的數十倍。但兩者不應互相取代，維生素 C
-              在體內有更基礎的代謝功能。最佳策略是將它們視為「團隊」，透過彩虹飲食全面攝取。</p>
+          <div class="faq-item" id="faq-antho-basic-3">
+            <div class="faq-question">Q3: 花青素的抗氧化能力真的比維生素 C、E 強嗎？</div>
+            <div class="faq-answer">
+              <p><strong>A:</strong> 在體外實驗中，花青素清除自由基的能力確實是 <a href="/post/vitamin-c.html">維生素 C</a> 的數十倍。但兩者不應互相取代，維生素 C
+                在體內有更基礎的代謝功能。最佳策略是將它們視為「團隊」，透過彩虹飲食全面攝取。</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" id="faq-antho-basic-4">
-          <div class="faq-question">Q4: 蝦紅素 (Astaxanthin) 和花青素有什麼不同？</div>
-          <div class="faq-answer">
-            <p><strong>A:</strong> 花青素是水溶性的，擅長增加血流量並放鬆睫狀肌；<a
-                href="/post/astaxanthin.html">蝦紅素</a>是脂溶性的，能深入細胞膜防止氧化，並提升眼睛的調節力。兩者結合能全方位應對 3C 疲勞。</p>
+          <div class="faq-item" id="faq-antho-basic-4">
+            <div class="faq-question">Q4: 蝦紅素 (Astaxanthin) 和花青素有什麼不同？</div>
+            <div class="faq-answer">
+              <p><strong>A:</strong> 花青素是水溶性的，擅長增加血流量並放鬆睫狀肌；<a
+                  href="/post/astaxanthin.html">蝦紅素</a>是脂溶性的，能深入細胞膜防止氧化，並提升眼睛的調節力。兩者結合能全方位應對 3C 疲勞。</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" id="faq-antho-basic-5">
-          <div class="faq-question">Q5: 烹煮會破壞花青素嗎？怎麼吃最好？</div>
-          <div class="faq-answer">
-            <p><strong>A:</strong> 會。花青素對熱、光、氧都很敏感。長時間高溫烹煮會讓其流失。建議<strong
-                class="highlight-nutrient">生食（如新鮮莓果）或低溫快炒</strong>為主，以保留最高活性。</p>
+          <div class="faq-item" id="faq-antho-basic-5">
+            <div class="faq-question">Q5: 烹煮會破壞花青素嗎？怎麼吃最好？</div>
+            <div class="faq-answer">
+              <p><strong>A:</strong> 會。花青素對熱、光、氧都很敏感。長時間高溫烹煮會讓其流失。建議<strong
+                  class="highlight-nutrient">生食（如新鮮莓果）或低溫快炒</strong>為主，以保留最高活性。</p>
+            </div>
           </div>
-        </div>
 
-        <h3 class="faq-category-title">B. 功效與科學解析 (Benefits)</h3>
-        <div class="faq-item" id="faq-antho-benefit-1">
-          <div class="faq-question">Q6: 花青素如何改善「3C 眼」的疲勞感？</div>
-          <div class="faq-answer">
-            <p><strong>A:</strong> 它能促進眼部微血管循環，並加速「視紫質」再生，這對於因盯螢幕過久而僵硬的睫狀肌具有極佳的舒緩作用，能有效降低乾澀與畏光感。</p>
+          <h3 class="faq-category-title">B. 功效與科學解析 (Benefits)</h3>
+          <div class="faq-item" id="faq-antho-benefit-1">
+            <div class="faq-question">Q6: 花青素如何改善「3C 眼」的疲勞感？</div>
+            <div class="faq-answer">
+              <p><strong>A:</strong> 它能促進眼部微血管循環，並加速「視紫質」再生，這對於因盯螢幕過久而僵硬的睫狀肌具有極佳的舒緩作用，能有效降低乾澀與畏光感。</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" id="faq-antho-benefit-2">
-          <div class="faq-question">Q7: 智利酒果中的「飛燕草素」有什麼特殊之處？</div>
-          <div class="faq-answer">
-            <p><strong>A:</strong> <a href="#action-plan-supplements">智利酒果</a>含有的飛燕草素 (Delphinidins)
-              是極小的抗氧化分子，能更有效地進入微循環。臨床研究指出它在舒緩「乾眼症」與「視覺對比度」方面效果尤為突出。</p>
+          <div class="faq-item" id="faq-antho-benefit-2">
+            <div class="faq-question">Q7: 智利酒果中的「飛燕草素」有什麼特殊之處？</div>
+            <div class="faq-answer">
+              <p><strong>A:</strong> <a href="#action-plan-supplements">智利酒果</a>含有的飛燕草素 (Delphinidins)
+                是極小的抗氧化分子，能更有效地進入微循環。臨床研究指出它在舒緩「乾眼症」與「視覺對比度」方面效果尤為突出。</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" id="faq-antho-benefit-3">
-          <div class="faq-question">Q8: 花青素對心血管健康有具體保護嗎？</div>
-          <div class="faq-answer">
-            <p><strong>A: 是的。</strong> 花青素能抑制體內膠原蛋白酶，保護血管壁的強韌。研究顯示，穩定攝取花青素能幫助血管擴張（藉由增加一氧化氮），對維持健康血壓有極大助益。</p>
+          <div class="faq-item" id="faq-antho-benefit-3">
+            <div class="faq-question">Q8: 花青素對心血管健康有具體保護嗎？</div>
+            <div class="faq-answer">
+              <p><strong>A: 是的。</strong> 花青素能抑制體內膠原蛋白酶，保護血管壁的強韌。研究顯示，穩定攝取花青素能幫助血管擴張（藉由增加一氧化氮），對維持健康血壓有極大助益。</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" id="faq-antho-benefit-4">
-          <div class="faq-question">Q9: 為什麼說花青素能「保護大腦」？</div>
-          <div class="faq-answer">
-            <p><strong>A:</strong> 它是少數能穿越「血腦屏障」的植化素。在大腦中，花青素能減少神經細胞的氧化損傷，並改善神經元之間的信號傳達，有助於預防認知退化與維持記憶力。</p>
+          <div class="faq-item" id="faq-antho-benefit-4">
+            <div class="faq-question">Q9: 為什麼說花青素能「保護大腦」？</div>
+            <div class="faq-answer">
+              <p><strong>A:</strong> 它是少數能穿越「血腦屏障」的植化素。在大腦中，花青素能減少神經細胞的氧化損傷，並改善神經元之間的信號傳達，有助於預防認知退化與維持記憶力。</p>
+            </div>
           </div>
-        </div>
 
-        <h3 class="faq-category-title">C. 攝取量與服用指南 (Usage)</h3>
-        <div class="faq-item" id="faq-antho-usage-1">
-          <div class="faq-question">Q10: 每日建議攝取多少花青素？</div>
-          <div class="faq-answer">
-            <p><strong>A:</strong> 基礎保健建議每日 50-100 毫克。若是重度 3C 使用者或需要加強保養者，研究常用 <strong
-                class="highlight-nutrient">160-320 毫克</strong> 甚至更高的劑量，此時多需透過高濃度補充品輔助。</p>
+          <h3 class="faq-category-title">C. 攝取量與服用指南 (Usage)</h3>
+          <div class="faq-item" id="faq-antho-usage-1">
+            <div class="faq-question">Q10: 每日建議攝取多少花青素？</div>
+            <div class="faq-answer">
+              <p><strong>A:</strong> 基礎保健建議每日 50-100 毫克。若是重度 3C 使用者或需要加強保養者，研究常用 <strong
+                  class="highlight-nutrient">160-320 毫克</strong> 甚至更高的劑量，此時多需透過高濃度補充品輔助。</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" id="faq-antho-usage-2">
-          <div class="faq-question">Q11: 花青素什麼時候吃最好？</div>
-          <div class="faq-answer">
-            <p><strong>A:</strong> 一般建議「隨餐或飯後」補充，這能利用餐後的微酸性環境來穩定花青素。若是為了改善白天用眼疲勞，早上或午餐後補充效果較佳；若想加強夜間修護，則推薦晚餐後。</p>
+          <div class="faq-item" id="faq-antho-usage-2">
+            <div class="faq-question">Q11: 花青素什麼時候吃最好？</div>
+            <div class="faq-answer">
+              <p><strong>A:</strong> 一般建議「隨餐或飯後」補充，這能利用餐後的微酸性環境來穩定花青素。若是為了改善白天用眼疲勞，早上或午餐後補充效果較佳；若想加強夜間修護，則推薦晚餐後。</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" id="faq-antho-usage-3">
-          <div class="faq-question">Q12: 補充品要挑選「總多酚」還是「純花青素」？</div>
-          <div class="faq-answer">
-            <p><strong>A: 優先看「花青素含量」。</strong> 總多酚是一個概括標示，而高品質產品會特別註明其含有的特定花青素（如飛燕草素、矢車菊素）的標準化百分比，這才是效果的保障。</p>
+          <div class="faq-item" id="faq-antho-usage-3">
+            <div class="faq-question">Q12: 補充品要挑選「總多酚」還是「純花青素」？</div>
+            <div class="faq-answer">
+              <p><strong>A: 優先看「花青素含量」。</strong> 總多酚是一個概括標示，而高品質產品會特別註明其含有的特定花青素（如飛燕草素、矢車菊素）的標準化百分比，這才是效果的保障。</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" id="faq-antho-usage-4">
-          <div class="faq-question">Q13: 吃了花青素尿液或糞便變色是正常的嗎？</div>
-          <div class="faq-answer">
-            <p><strong>A: 是的。</strong> 花青素是強效色素，未被腸道完全吸收的部分會隨排泄物排出，使其呈現紅紫色，這是完全無害的正常生理反應。</p>
+          <div class="faq-item" id="faq-antho-usage-4">
+            <div class="faq-question">Q13: 吃了花青素尿液或糞便變色是正常的嗎？</div>
+            <div class="faq-answer">
+              <p><strong>A: 是的。</strong> 花青素是強效色素，未被腸道完全吸收的部分會隨排泄物排出，使其呈現紅紫色，這是完全無害的正常生理反應。</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" id="faq-antho-usage-5">
-          <div class="faq-question">Q14: 藍莓和葡萄，哪一個花青素含量較高？</div>
-          <div class="faq-answer">
-            <p><strong>A: 藍莓勝出。</strong> 平均而言，新鮮藍莓的花青素含量比一般紫葡萄高出數倍。但葡萄籽含有大量前花青素 (OPCs)，兩者一起攝取能獲得更多層次的保護。</p>
+          <div class="faq-item" id="faq-antho-usage-5">
+            <div class="faq-question">Q14: 藍莓和葡萄，哪一個花青素含量較高？</div>
+            <div class="faq-answer">
+              <p><strong>A: 藍莓勝出。</strong> 平均而言，新鮮藍莓的花青素含量比一般紫葡萄高出數倍。但葡萄籽含有大量前花青素 (OPCs)，兩者一起攝取能獲得更多層次的保護。</p>
+            </div>
           </div>
-        </div>
 
-        <h3 class="faq-category-title">D. 安全風險與副作用 (Safety)</h3>
-        <div class="faq-item" id="faq-antho-safety-1">
-          <div class="faq-question">Q15: 補充花青素有劑量上限嗎？</div>
-          <div class="faq-answer">
-            <p><strong>A:</strong> 目前官方未設定嚴格上限。普遍認為從食物中獲取絕無過量問題。高濃度補充劑建議遵照包裝指示，長期每日超過 1000 毫克以上應諮詢相關專業人士。</p>
+          <h3 class="faq-category-title">D. 安全風險與副作用 (Safety)</h3>
+          <div class="faq-item" id="faq-antho-safety-1">
+            <div class="faq-question">Q15: 補充花青素有劑量上限嗎？</div>
+            <div class="faq-answer">
+              <p><strong>A:</strong> 目前官方未設定嚴格上限。普遍認為從食物中獲取絕無過量問題。高濃度補充劑建議遵照包裝指示，長期每日超過 1000 毫克以上應諮詢相關專業人士。</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" id="faq-antho-safety-2">
-          <div class="faq-question">Q16: 正在服用抗凝血劑 (如 Aspirin) 的人可以補充嗎？</div>
-          <div class="faq-answer">
-            <p><strong>A: 需要謹慎。</strong> 高濃度的花青素可能具有輕微的抗血小板聚積作用。若您正在服用強效抗凝血劑，請在使用「高濃度萃取物」前告知您的醫師，避免出血風險。</p>
+          <div class="faq-item" id="faq-antho-safety-2">
+            <div class="faq-question">Q16: 正在服用抗凝血劑 (如 Aspirin) 的人可以補充嗎？</div>
+            <div class="faq-answer">
+              <p><strong>A: 需要謹慎。</strong> 高濃度的花青素可能具有輕微的抗血小板聚積作用。若您正在服用強效抗凝血劑，請在使用「高濃度萃取物」前告知您的醫師，避免出血風險。</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" id="faq-antho-safety-3">
-          <div class="faq-question">Q17: 腎臟病患者攝取深色蔬果的注意事項？</div>
-          <div class="faq-answer">
-            <p><strong>A: 注意「鉀」含量。</strong> 許多富含花青素的深紫色蔬果（如黑豆、桑椹、紫葡萄）鉀離子較高。洗腎或腎功能受限者應由醫師控管攝取量，以免血鉀過高。</p>
+          <div class="faq-item" id="faq-antho-safety-3">
+            <div class="faq-question">Q17: 腎臟病患者攝取深色蔬果的注意事項？</div>
+            <div class="faq-answer">
+              <p><strong>A: 注意「鉀」含量。</strong> 許多富含花青素的深紫色蔬果（如黑豆、桑椹、紫葡萄）鉀離子較高。洗腎或腎功能受限者應由醫師控管攝取量，以免血鉀過高。</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" id="faq-antho-safety-4">
-          <div class="faq-question">Q18: 手術前需要停止補充花青素嗎？</div>
-          <div class="faq-answer">
-            <p><strong>A: 建議暫停。</strong> 與所有影響循環的保健品一樣，為確保手術期間凝血功能正常，建議在手術前 <strong class="highlight-nutrient">2
-                週</strong> 停止攝取高劑量的花青素補充劑。</p>
+          <div class="faq-item" id="faq-antho-safety-4">
+            <div class="faq-question">Q18: 手術前需要停止補充花青素嗎？</div>
+            <div class="faq-answer">
+              <p><strong>A: 建議暫停。</strong> 與所有影響循環的保健品一樣，為確保手術期間凝血功能正常，建議在手術前 <strong class="highlight-nutrient">2
+                  週</strong> 停止攝取高劑量的花青素補充劑。</p>
+            </div>
           </div>
-        </div>
 
-        <h3 class="faq-category-title">E. 特定族群建議 (Populations)</h3>
-        <div class="faq-item" id="faq-antho-pop-1">
-          <div class="faq-question">Q19: 發育中的學童適合額外補充花青素嗎？</div>
-          <div class="faq-answer">
-            <p><strong>A:</strong> 現代學童接觸螢幕的時間極早。鼓勵從天然莓果、紫米、茄子中攝取花青素對保護視力非常有益。若要使用補充劑，應由家長控管劑量並諮詢兒科專業建議。</p>
+          <h3 class="faq-category-title">E. 特定族群建議 (Populations)</h3>
+          <div class="faq-item" id="faq-antho-pop-1">
+            <div class="faq-question">Q19: 發育中的學童適合額外補充花青素嗎？</div>
+            <div class="faq-answer">
+              <p><strong>A:</strong> 現代學童接觸螢幕的時間極早。鼓勵從天然莓果、紫米、茄子中攝取花青素對保護視力非常有益。若要使用補充劑，應由家長控管劑量並諮詢兒科專業建議。</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" id="faq-antho-pop-2">
-          <div class="faq-question">Q20: 進入更年期的女性補充花青素有什麼特殊好處？</div>
-          <div class="faq-answer">
-            <p><strong>A:</strong> 花青素能幫助減少因荷爾蒙改變而加速的骨質流失。其強大的抗氧化力也能輔助維持膠原蛋白生成，減少更年期皮膚乾澀與細紋的產生。</p>
+          <div class="faq-item" id="faq-antho-pop-2">
+            <div class="faq-question">Q20: 進入更年期的女性補充花青素有什麼特殊好處？</div>
+            <div class="faq-answer">
+              <p><strong>A:</strong> 花青素能幫助減少因荷爾蒙改變而加速的骨質流失。其強大的抗氧化力也能輔助維持膠原蛋白生成，減少更年期皮膚乾澀與細紋的產生。</p>
+            </div>
           </div>
-        </div>
         </section>
         <div id="related-articles-container"></div>
       </article>

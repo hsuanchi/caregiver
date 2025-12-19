@@ -887,6 +887,24 @@ const topicArticles = [
         tag: '主題文章'
     },
     {
+        id: 'topic-card-cardiovascular-health',
+        parent: 'category-health-topics',
+        goal: '心血管健康',
+        title: '心血管健康全方位總綱：系統性風險評估與精準修復指南',
+        link: '/post/topic-cardiovascular-health.html',
+        description: "別死背醫學名詞，用科學實證邏輯看懂心血管健康。本文解析發炎、鈣化、粒線體衰竭三大致病機制，並透過數據分析，提供魚油、Q10、維生素K2的精準介入方案。",
+        keywords: "心血管健康, 動脈硬化, 降血壓, 降血脂, 血管鈣化, 魚油, 輔酶Q10, 維生素K2, 鎂, 鉀, 納豆激酶",
+        type: '主題式文章',
+        name: '心血管健康',
+        en_name: 'Cardiovascular Health',
+        func: '心血管系統風險評估與修復策略',
+        status: '完整',
+        category: 'topic',
+        published: '2025-12-10',
+        modified: '2025-12-10',
+        tag: '主題文章'
+    },
+    {
         id: 'topic-card-immune-boosting',
         parent: 'category-health-topics',
         goal: '免疫強化',
